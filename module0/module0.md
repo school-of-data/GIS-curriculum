@@ -56,11 +56,11 @@ When people think of the earth today, they usually picture a spherical mass of b
 <table>
   <tr>
    <td>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/The_Blue_Marble.jpg">
+        <img src="media/blue-marble.jpg">
         Figure 1. The Blue Marble (<a href="https://commons.wikimedia.org/wiki/Earth#/media/File:The_Blue_Marble.jpg">https://commons.wikimedia.org/wiki/Earth#/media/File:The_Blue_Marble.jpg</a>)
    </td>
    <td>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/3quarter_globe.jpg">  
+        <img src="media/globe.jpg">  
         Figure 2.  de l'Isle globe (1765) (<a href="https://commons.wikimedia.org/wiki/Globe#/media/File:3quarter_globe.jpg">https://commons.wikimedia.org/wiki/Globe#/media/File:3quarter_globe.jpg</a>)
    </td>
   </tr>
