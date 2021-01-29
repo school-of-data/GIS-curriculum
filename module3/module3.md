@@ -51,7 +51,7 @@ The ubiquity of maps in our lives is a byproduct of the sheer amount of location
 
 OpenStreetMap (OSM) ([https://www.openstreetmap.org/](https://www.openstreetmap.org/)) is a free, editable map of the whole world that is built by volunteers from across the globe and released with an open-content license. It is a project that creates and distributes free geographic data for the world -- a map of the world by the people and for the people. If something is missing on OSM, you are free to add it. If something is wrong in OSM, you are free to correct it. OSM is a digital common good that greatly amplifies the value of the information added to it.
 
-![alt_text](media/image1.png "image_tooltip")
+![OpenStreetMap website](media/osm.png "OpenStreetMap website")
 
 Figure 1. OpenStreetMap
 
@@ -88,11 +88,15 @@ Usually, the OSM community and local communities agree on certain key and value 
 
 ###### Exercise 1: Loading OSM data in QGIS using the QuickOSM plugin
 
-For this exercise, we will load road network data and locations of fast food chains from OSM that can be found in the province of Pampanga.
+or this exercise, we will load road network data and locations of fast food chains from OSM that can be found in the province of Pampanga using the QuickOSM plugin.
+
+QuickOSM works by querying the tags (keys and values) of the features in OSM. For more information about how to use the key/value in QuickOSM, go to: [https://wiki.openstreetmap.org/wiki/Mapfeatures](https://wiki.openstreetmap.org/wiki/Mapfeatures.).
+
+
 
 1. Load the Pampanga_province and Pampanga_SanFernando vector layers found inside the Pampanga_admin_boundaries geopackage.
 
-![alt_text](media/image2.png "image_tooltip")
+![Pampanga layers loaded in QGIS](media/quickosm-1.png "Pampanga layers loaded in QGIS")
 
 Figure 2. Pampanga layers loaded in QGIS
 
@@ -115,11 +119,11 @@ Figure 2. Pampanga layers loaded in QGIS
     5. About:
         * Shows information about the plugin.
 
-![alt_text](media/image3.png "image_tooltip")
+![QuickOSM plugin](media/quickosm-2.png "QuickOSM plugin")
 
 Figure 3. QuickOSM plugin
 
-4. Load all highways in the extent of the Pampanga_SanFernando layer.
+4. Load all highways inside the extent of the Pampanga_SanFernando layer.
 
     * Key: highway
     * Value: &lt;blank> (blank means ALL)
@@ -127,20 +131,20 @@ Figure 3. QuickOSM plugin
     * Advanced:
         * Check Node, Way, Relation, Lines, Multilinestrings
 
-![alt_text](media/image4.png "image_tooltip")
+![Load all highways in the Pampanga_SanFernando layer extent](media/quickosm-3.png "Load all highways in the Pampanga_SanFernando layer extent")
 
 Figure 4. Load all highways in the Pampanga_SanFernando layer extent
 
 5. Click Run query. Basically what we’re telling QuickOSM is to get all line or multilinestring features tagged with a highway key and load it in QGIS. When the plugin is done loading the layer, your map should look like below:
 
-![alt_text](media/image5.png "image_tooltip")
+![Highway data loaded from OSM](media/quickosm-4.png "Highway data loaded from OSM")
 
 Figure 5. Highway data loaded from OSM
 
 6. Note that the layers loaded by QuickOSM are temporary layers. You should save them as files or make them persistent if you need to use them later.
 7. If you want to see the Overpass query version of your Quick Query, click Show query and it will open the query in the Query tab. You can then edit your query to make it more complex.
 
-![alt_text](media/image6.png "image_tooltip")
+![The Overpass query version of the Quick query to load highways](media/quickosm-5.png "The Overpass query version of the Quick query to load highways")
 
 Figure 6. The Overpass query version of the Quick query to load highways
 
@@ -152,13 +156,13 @@ Figure 6. The Overpass query version of the Quick query to load highways
     * Advanced:
         * Check Node, Way, Relation, Points
 
-![alt_text](media/image7.png "image_tooltip")
+![Load amenities (points) tagged as fast_food in the Pampanga_province layer extent](media/quickosm-6.png "Load amenities (points) tagged as fast_food in the Pampanga_province layer extent")
 
 Figure 7: Load amenities (points) tagged as fast_food in the Pampanga_province layer extent
 
 9. The output should look something like below:
 
-![alt_text](media/image8.png "image_tooltip")
+![Fast food locations loaded from OSM](media/quickosm-7.png "Fast food locations loaded from OSM")
 
 Figure 8: Fast food locations loaded from OSM
 
@@ -176,9 +180,7 @@ Figure 8: Fast food locations loaded from OSM
 
 #### Phase 2 title: The High Resolution Settlement Layer (HRSL) data
 
-
 ##### Content/Tutorial
-
 
 ###### What is the High Resolution Settlement Layer (HRSL)?
 
@@ -198,7 +200,7 @@ For the current iteration of the HRSL, seven maps/datasets for the distribution 
 6. Elderly (ages 60+) 
 7. Women of reproductive age (ages 15-49)
 
-![alt_text](media/image9.png "image_tooltip")
+![HRSL data on HDX](media/hdx.png "HRSL data on HDX")
 
 Figure 9: HRSL data on HDX
 
@@ -223,7 +225,7 @@ The HRSL data found on HDX comes in GeoTIFF (raster) and CSV (vector) format. Th
 
 1. Load the **HRSL_Pampanga_Population** raster file in QGIS.
 
-![alt_text](media/image10.png "image_tooltip")
+![The HRSL for Pampanga, Philippines](media/hrsl-1.png "The HRSL for Pampanga, Philippines")
 
 Figure 10: The HRSL for Pampanga, Philippines
 
@@ -247,25 +249,25 @@ Using an Overpass query allows you to create more complex feature selection in Q
 
 1. Open the QuickOSM plugin and input the parameters we used for querying all fast foods.
 
-![alt_text](media/image11.png "image_tooltip")
+![QuickOSM parameters for loading fast foods in Pampanga](media/quickosm-5.png "QuickOSM parameters for loading fast foods in Pampanga")
 
 Quick query to load all amenities tagged as fast food
 
 2. Click Show query.
 
-![alt_text](media/image12.png "image_tooltip")
+![Overpass version of the query](media/overpass-1.png "Overpass version of the query")
 
 Overpass to load all amenities tagged as fast food
 
 3. Edit the query and add the line **&lt;has-kv k="name" v="Jollibee"/>** after each &lt;has-kv k="amenity" v="fast_food"/> line.
 
-![alt_text](media/image13.png "image_tooltip")
+![Overpass query to load only fast foods named Jollibee](media/overpass-2.png "Overpass query to load only fast foods named Jollibee")
 
 Overpass query to load all amenities tagged as fast food whose name is Jollibee
 
 4. Click Run query. This should load just the amenities tagged as fast_food with the name Jollibee. The layer name will be OsmQuery.
 
-![alt_text](media/image14.png "image_tooltip")
+![Amenities tagged as fast food whose name is Jollibee loaded from OSM](media/overpass-3.png "Amenities tagged as fast food whose name is Jollibee loaded from OSM")
 
 Amenities tagged as fast food whose name is Jollibee loaded from OSM
 
