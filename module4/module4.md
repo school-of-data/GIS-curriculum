@@ -17,8 +17,8 @@ This module is designed to teach you how to change the visual appearance of a ma
 *   Working computer
 *   Internet connection
 *   QGIS 3.10 or later
-*   Administrative level 1 boundary dataset: download [here](https://drive.google.com/file/d/1Grm8HYBJhhk255jGy9-5jISnhPH5iaQ_/view?usp=sharing)
-*   The High Resolution Settlement Layer data: download [here](https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing)
+*   Administrative level 1 boundary dataset here: [https://drive.google.com/file/d/1Grm8HYBJhhk255jGy9-5jISnhPH5iaQ_/view?usp=sharing](https://drive.google.com/file/d/1Grm8HYBJhhk255jGy9-5jISnhPH5iaQ_/view?usp=sharing)
+*   The High Resolution Settlement Layer data: download here: [https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing](https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing)
 
 
 ## Prerequisites
@@ -29,10 +29,10 @@ This module is designed to teach you how to change the visual appearance of a ma
 
 ## Resources
 
-*   [QGIS Symbology](https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html )
-*   [Style Sharing Repository](https://www.gislounge.com/qgis-style-sharing-repository/)
-*   [Styles](https://plugins.qgis.org/styles/ )
-*   [Style Hub](https://style-hub.github.io/)
+*   QGIS Symbology - [https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html](https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html)
+*   Style Sharing Repository - [https://www.gislounge.com/qgis-style-sharing-repository/](https://www.gislounge.com/qgis-style-sharing-repository/)
+*   Styles - [https://plugins.qgis.org/styles/](https://plugins.qgis.org/styles/)
+*   Style Hub - [https://style-hub.github.io/](https://style-hub.github.io/)
 
 
 ## Thematic introduction
@@ -54,8 +54,8 @@ Besides avoiding you dealing with the modal and blocking dialog of the layer pro
 
 From a drop-down list of current layers in the layer panel, select an item and:
 
-*   set its symbology, transparency, and histogram in the case of a raster layer. These options are the same available in[ Raster Properties Dialog](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog). Acces the Raster Properties Dialogue by Double Clicking the Raster Layer->General 
-*   set its symbology, and labels. These options are the same available in[ The Vector Properties Dialog](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog). Acces the Vector Properties Dialogue by Double Clicking the Vector Layer->General 
+*   set its symbology, transparency, and histogram in the case of a raster layer. These options are the same available in [Raster Properties Dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog). Access the Raster Properties Dialogue by Double Clicking the Raster Layer->General 
+*   set its symbology, and labels. These options are the same available in [The Vector Properties Dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog). Acces the Vector Properties Dialogue by Double Clicking the Vector Layer->General 
 *   follow the whole history of changes you applied to the layer style in the current project; you can therefore cancel or restore to any state by selecting it in the list and Click Apply.
 
 Another powerful feature of this panel is the Live update checkbox. Tick it and your changes are automatically rendered in the map canvas as you go on. You no longer need to Click the Apply button.
