@@ -32,14 +32,14 @@ In addition you’ll have learned the following skills;
 *   Style Library - [https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html](https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html)
 
 
-## Required tools and <span style="text-decoration:underline;">resources</span>
+## Required tools and resources
 
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
 *   Access the example Datasets
-    *   [Clinics](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing)
-    *   [High Resolution Population Density Layer](https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing)
+    *   Clinics - [https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing)
+    *   High Resolution Population Density Layer - [https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing](https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing)
 
 
 ## Thematic introduction
