@@ -54,8 +54,10 @@ Besides avoiding you dealing with the modal and blocking dialog of the layer pro
 
 From a drop-down list of current layers in the layer panel, select an item and:
 
-*   set its symbology, transparency, and histogram in the case of a raster layer. These options are the same available in [Raster Properties Dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog). Access the Raster Properties Dialogue by Double Clicking the Raster Layer->General 
-*   set its symbology, and labels. These options are the same available in [The Vector Properties Dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog). Acces the Vector Properties Dialogue by Double Clicking the Vector Layer->General 
+*   set its symbology, transparency, and histogram in the case of a raster layer. These options are the same available in Raster Properties Dialog ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog)). 
+    * Access the Raster Properties Dialogue by Double Clicking the Raster Layer->General 
+*   set its symbology, and labels. These options are the same available in The Vector Properties Dialog ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog)). 
+    * Access the Vector Properties Dialogue by Double Clicking the Vector Layer->General 
 *   follow the whole history of changes you applied to the layer style in the current project; you can therefore cancel or restore to any state by selecting it in the list and Click Apply.
 
 Another powerful feature of this panel is the Live update checkbox. Tick it and your changes are automatically rendered in the map canvas as you go on. You no longer need to Click the Apply button.
@@ -87,11 +89,11 @@ Figure 1: Symbology tab for vector and raster data, respectively
 
 QGIS offers four different Render types. The choice of renderer depends on the data type. The default render type is Single band grey color. You’ll have to change it to the appropriate type based on the data type. 
 
-*   [Multiband color](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color) - if the file comes with several bands (e.g. a satellite image with several bands).
-*   [Paletted/Unique values](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#paletted) - for single band files that come with an indexed palette (e.g. a digital topographic map) or for general use of palettes for rendering raster layers.
-*   [Singleband gray](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray) - (one band of) the image will be rendered as gray. QGIS will choose this renderer if the file is neither multiband nor paletted (e.g. a shaded relief map).
-*   [Singleband pseudocolor](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab) - this renderer can be used for files with a continuous palette or color map (e.g. an elevation map).
-*   [Hillshade](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer) - Creates hillshade from a band.
+*   Multiband color ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color)) - if the file comes with several bands (e.g. a satellite image with several bands).
+*   Paletted/Unique values ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#paletted]()) - for single band files that come with an indexed palette (e.g. a digital topographic map) or for general use of palettes for rendering raster layers.
+*   Singleband gray ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray)) - (one band of) the image will be rendered as gray. QGIS will choose this renderer if the file is neither multiband nor paletted (e.g. a shaded relief map).
+*   Singleband pseudocolor ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab)) - this renderer can be used for files with a continuous palette or color map (e.g. an elevation map).
+*   Hillshade ([(https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer)) - Creates hillshade from a band.
 
 
 #### Vector rendering
@@ -161,8 +163,6 @@ Figure 5: Final vector render
 
 
 ###### Example 2: Raster rendering
-
-
 
 1. Double click the raster layer which is also the population density layer. This also means it’s a normalized dataset and can therefore be visualized as a choropleth map.
 2. Select the symbology tab in the menu that appears
