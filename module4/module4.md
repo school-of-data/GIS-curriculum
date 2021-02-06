@@ -27,7 +27,7 @@ This module is designed to teach you how to change the visual appearance of a ma
 *   Fair understanding of all previous modules
 
 
-## Resources
+## Additional resources
 
 *   QGIS Symbology - [https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html](https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html)
 *   Style Sharing Repository - [https://www.gislounge.com/qgis-style-sharing-repository/](https://www.gislounge.com/qgis-style-sharing-repository/)

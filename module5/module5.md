@@ -18,20 +18,6 @@ In addition you’ll have learned the following skills;
 *   Managing different print layouts
 
 
-## Prerequisites
-
-*   Basic knowledge of operating a computer
-*   An understanding of all previous modules
-
-
-## Resources
-
-*   QGIS Map LayOut - [https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html](https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html )
-*   Layout Templates - [https://layout-hub.github.io/](https://layout-hub.github.io/)
-*   Style Manager - [https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html](https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html)
-*   Style Library - [https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html](https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html)
-
-
 ## Required tools and resources
 
 *   Working computer
@@ -40,6 +26,20 @@ In addition you’ll have learned the following skills;
 *   Access the example Datasets
     *   Clinics - [https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing)
     *   High Resolution Population Density Layer - [https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing](https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing)
+
+
+## Prerequisites
+
+*   Basic knowledge of operating a computer
+*   An understanding of all previous modules
+
+
+## Additional resources
+
+*   QGIS Map LayOut - [https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html](https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html )
+*   Layout Templates - [https://layout-hub.github.io/](https://layout-hub.github.io/)
+*   Style Manager - [https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html](https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html)
+*   Style Library - [https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html](https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html)
 
 
 ## Thematic introduction
@@ -57,7 +57,7 @@ This module will focus on the following key map making concepts; map canvas and 
 
 ![Print layout](media/print_comp2.png "Print layout")
 
-Figure 14: Print layout
+Figure 1: Print layout
 
 *   **map elements and properties**: Maps contain lots of information. Most maps will have the five following things: a Title, a Legend, a Grid, a Compass Rose to indicate direction, and a Scale. The Title tells you what is being represented on the map
 
@@ -78,7 +78,7 @@ In this tutorial, we’ll show two ways to ‘Export the map canvas’ to the QG
 
 ![Exporting the map](media/export-map-canvas.png "Exporting the map")
 
-Figure 15: Exporting the map
+Figure 2: Exporting the map
 
 3. Click **Save**. The map in the qgis canvas will be saved as a pdf or image document. Browse to the location where the file is saved and you’re now able to print or share the map.
 
@@ -95,19 +95,19 @@ Figure 16: Styled layer, ready for export from map canvas to print Layout
 
 ![Title dialogue](media/new_print_composer.PNG "Title dialogue")
 
-Figure 17: Title dialogue
+Figure 3: Title dialogue
 
 3. The print layout will open
 
 ![New Print layout](media/pampanga_print_composer.PNG "New Print layout")
 
-Figure 18: New Print layout
+Figure 4: New Print layout
 
 4. You’ll notice the print layout canvas is empty. To add the styled map from the QGIS canvas, Click the ‘Add new map to layout button’ ![alt_text](media/add_new_map_to_layout.PNG "image_tooltip"), left click your mouse and draw a rectangle in the white space at the center of the print layout. The map should be added. You’ve just exported a map to the print layout. It’s now possible to add all other map elements like the title, legend, grids etc. 
 
 ![Exported map from qgis map canvas to print layout view](media/print-canvas-map.png "Exported map from qgis map canvas to print layout view")
 
-Figure 19: Exported map from qgis map canvas to print layout view
+Figure 5: Exported map from qgis map canvas to print layout view
 
 ##### Quiz questions
 
@@ -143,13 +143,13 @@ button, hold down the left mouse button and draw a rectangle where you’d like 
 
 ![Add title of the map](media/pampanga_with_title.png "Add title of the map")
 
-Figure 20: Add title of the map
+Figure 6: Add title of the map
 
 2. Next, we’ll add the legend and scale. A data attribution statement can be added using the ‘Add label’ button Hover over the button on the left of the print layout and click the preferred button. Follow the same steps as in 1. Above to add the map element to the print layout. You can add other map elements but be careful that the map doesn’t get too cluttered. 
 
 ![Legend, scale and data attribution added to print layout](media/legend_scalebar_added.png "Legend, scale and data attribution added to print layout")
 
-Figure 21: Legend, scale and data attribution added to print layout
+Figure 7: Legend, scale and data attribution added to print layout
 
 3. If the map layout is satisfactory, the map can be exported as a pdf, png, jpeg or svg, ready for printing otherwise save the layout. All saving functionality can be accessed via the ‘layout’ menu.
 
@@ -180,25 +180,25 @@ If your organization publishes printed or online maps, you often would need to c
 
 ![Attribute table](media/attribute_table.png "Attribute table")
 
-Figure 22: Attribute table
+Figure 8: Attribute table
 
 2. In the right pane of the print layout, make sure to select the ‘Atlas’ menu and check the ‘Generate an atlas’ box
 
 ![Atlas Generation](media/generate_atlas.png "Atlas Generation")
 
-Figure 23: Atlas Generation
+Figure 9: Atlas Generation
 
 3. The next step is to choose the coverage layer; The coverage layer is the index layer used to create each page. QGIS Atlas dynamically changes the view-extent to each feature in the coverage layer. The number of records in the coverage determines how many pages will be in your map book.
 
 ![Select Coverage Layer](media/coverage_layer.png "Select Coverage Layer")
 
-Figure 24: Select Coverage Layer
+Figure 10: Select Coverage Layer
 
 4. In the “Item Properties” tab, check the box for “Controlled By Atlas”
 
 ![Controlled by Atlas](media/controlled_by_atlas.png "Controlled by Atlas")
 
-Figure 25: Controlled by Atlas
+Figure 11: Controlled by Atlas
 
 
 5. Click the  ‘Atlas’ menu, then select ‘Export Atlas as PDF’. You should have 81 maps generated. Each map will represent a province.

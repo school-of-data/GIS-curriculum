@@ -31,6 +31,15 @@ The required tools and resources for this module are:
 *   familiarity with spatial data formats, the QGIS interface, and how to load layers in QGIS (completion of Modules 0, 1, and 2)
 
 
+### Additional resources
+
+* OpenStreetMap - [https://www.openstreetmap.org/](https://www.openstreetmap.org/)
+* OpenStreetMap Wiki - [https://wiki.openstreetmap.org/](https://wiki.openstreetmap.org/)
+* Overpass API User Manual - [https://dev.overpass-api.de/overpass-doc/en/](https://dev.overpass-api.de/overpass-doc/en/)
+* Facebook - High Resolution Settlement Layer - [https://research.fb.com/downloads/high-resolution-settlement-layer-hrsl/](https://research.fb.com/downloads/high-resolution-settlement-layer-hrsl/)
+* CEISIN - High Resolution Settlement Layer - [https://ciesin.columbia.edu/data/hrsl/](https://ciesin.columbia.edu/data/hrsl/)
+* HDX HRSL - [https://data.humdata.org/search?organization=facebook&q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22](https://data.humdata.org/search?organization=facebook&q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22)
+
 ### Thematic introduction
 
 Maps have become ubiquitous in our daily lives. We can just pull up our phones and open applications that utilize maps and location data. There are apps that we use for orienting and locating ourselves, for navigating and getting from one place to another, maps are shown when we order food from our favorite delivery service, etc. Maps have become so integral to our day to day activities that we tend to forget that there are places in the world that are still unmapped or not found in the digital maps that we use.
@@ -100,8 +109,8 @@ QuickOSM works by querying the tags (keys and values) of the features in OSM. Fo
 
 Figure 2. Pampanga layers loaded in QGIS
 
-2. Make sure that the QuickOSM plugin is installed and activated. It should appear under **Vector -> QuickOSM** in the Menu bar. If not, install and activate the plugin first using the Manage and Install Plugins dialog.
-3. Open the QuickOSM plugin (**Vector -> QuickOSM -> QuickOSM**). A dialog should open with five tabs:
+2. Make sure that the QuickOSM plugin is installed and activated. It should appear under **Vector ‣ QuickOSM** in the Menu bar. If not, install and activate the plugin first using the Manage and Install Plugins dialog.
+3. Open the QuickOSM plugin (**Vector ‣ QuickOSM ‣ QuickOSM**). A dialog should open with five tabs:
 
     1. Quick Query
         * Allows the user to create and run a simple query with one key-value combination to load a subset of OSM feature data that meets the requirements of the query.
@@ -287,13 +296,3 @@ You can also test and create Overpass queries in Overpass turbo ([https://wiki.o
 
 If you can’t find the feature you want or need on OpenStreetMap, you can always add or edit features on the map itself. Sign up at [https://www.openstreetmap.org/](https://www.openstreetmap.org/) and start contributing!
 
-
-### Additional resources
-
-Facebook - High Resolution Settlement Layer - [https://research.fb.com/downloads/high-resolution-settlement-layer-hrsl/](https://research.fb.com/downloads/high-resolution-settlement-layer-hrsl/)
-
-CEISIN - High Resolution Settlement Laye - [https://ciesin.columbia.edu/data/hrsl/](https://ciesin.columbia.edu/data/hrsl/)
-
-Overpass API User Manual - [https://dev.overpass-api.de/overpass-doc/en/](https://dev.overpass-api.de/overpass-doc/en/)
-
-HDX HRSL - [https://data.humdata.org/search?organization=facebook&q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22](https://data.humdata.org/search?organization=facebook&q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22)
