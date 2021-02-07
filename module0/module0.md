@@ -1,6 +1,6 @@
 ## Module 0 - Gentle Introduction to GIS concepts
 
-**Author**: Ben
+**Author**: Ben Hur
 
 ### Pedagogical Introduction
 
@@ -25,7 +25,20 @@ The required tools and resources for this module are:
 
 
 ### Prerequisites
+
 *   basic knowledge of operating a computer
+
+
+### Additional resources
+
+* A Gentle Introduction to GIS - [https://docs.qgis.org/3.16/en/docs/gentle_gis_introduction/index.html](https://docs.qgis.org/3.16/en/docs/gentle_gis_introduction/index.html)
+*  QGIS User Guide - [https://docs.qgis.org/3.16/en/docs/user_manual/](https://docs.qgis.org/3.16/en/docs/user_manual/)
+* QGIS Training Manual - [https://docs.qgis.org/3.16/en/docs/training_manual/index.html](https://docs.qgis.org/3.16/en/docs/training_manual/index.html)
+* QGIS website - [https://qgis.org/en/site/](https://qgis.org/en/site/)
+* OSGeo website - [https://www.osgeo.org/](https://www.osgeo.org/)
+* OSGeoLive website - [https://live.osgeo.org/en/index.html](https://live.osgeo.org/en/index.html)
+* What is free software? - [https://www.gnu.org/philosophy/free-sw.en.html](https://www.gnu.org/philosophy/free-sw.en.html)
+* Open source definition - [https://opensource.org/osd](https://opensource.org/osd)
 
 
 ### Thematic introduction
@@ -421,21 +434,3 @@ N/A
 
 N/A
 
-
-### Additional resources
-
-A Gentle Introduction to GIS - [https://docs.qgis.org/3.16/en/docs/gentle_gis_introduction/index.html](https://docs.qgis.org/3.16/en/docs/gentle_gis_introduction/index.html)
-
-QGIS User Guide - [https://docs.qgis.org/3.16/en/docs/user_manual/](https://docs.qgis.org/3.16/en/docs/user_manual/)
-
-QGIS Training Manual - [https://docs.qgis.org/3.16/en/docs/training_manual/index.html](https://docs.qgis.org/3.16/en/docs/training_manual/index.html)
-
-QGIS website - [https://qgis.org/en/site/](https://qgis.org/en/site/)
-
-OSGeo website - [https://www.osgeo.org/](https://www.osgeo.org/)
-
-OSGeoLive website - [https://live.osgeo.org/en/index.html](https://live.osgeo.org/en/index.html)
-
-What is free software? - [https://www.gnu.org/philosophy/free-sw.en.html](https://www.gnu.org/philosophy/free-sw.en.html)
-
-Open source definition - [https://opensource.org/osd](https://opensource.org/osd)

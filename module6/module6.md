@@ -21,21 +21,7 @@ Additionally, you will learn the following skills;
 You’ll use the field calculator and qgis expression engine to run mathematical operations and functions in QGIS. 
 
 
-## Prerequisites
-
-*   A fair knowledge of all previous modules
-*   Basic knowledge of operating a computer
-
-
-## Resources
-
-*   Working with the Attribute Table - [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes)
-*   QGIS Expressions - [https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html)
-
-
 ## Required tools and resources
-
-
 
 *   Working computer
 *   Internet connection
@@ -44,6 +30,18 @@ You’ll use the field calculator and qgis expression engine to run mathematical
     *   Administrative Boundary Layer of the Philippines from [GADM](gadm.org). Download here: [https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing)
     *   Clinics from [OpenStreetMap](osm.org). Download here:[https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing)
     *   High Resolution Population Density Layer from [HDX](https://data.humdata.org/). Download here: [https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing](https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing)
+
+
+## Prerequisites
+
+*   A fair knowledge of all previous modules
+*   Basic knowledge of operating a computer
+
+
+## Additional resources
+
+*   Working with the Attribute Table - [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes)
+*   QGIS Expressions - [https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html)
 
 
 ## Thematic introduction
@@ -118,14 +116,14 @@ The attribute table displays information on features of a selected layer. Each r
 
 ![Several polygons](media/many_polygons.png "Several polygons")
 
-Figure 11: Several polygons
+Figure 1: Several polygons
 
 
 2. The next step is to explore the attribute table interface; open the attribute table by; Right Clicking the layer then Click **Open attribute table.** This is what the attribute table looks like. The tool bar has a range of buttons, hover over each button to see the embedded functionality.
 
 ![Open attribute table](media/attributetab.png "Open attribute table")
 
-Figure 12: Open attribute table
+Figure 2: Open attribute table
 
 3. For area calculations, the Coordinate Reference System should be a projected one. This allows you to calculate distances correctly. Remember, our interest is to automatically calculate the area for each of the 81 provinces. Check the Coordinate Reference System of the vector layer. If it’s a geographic coordinate reference system, then reproject the layer to a projected coordinate system. Check for different projections on the [EPSG](https://epsg.io/?q=Philippines%20kind%3APROJCRS) website. This is the Philippines, we’ll use [PRS92 / Philippines Zone 5](https://epsg.io/3125), EPSG:3125. From previous modules where map projections are extensively discussed, you may already know that map projections are applied relative to a given location on earth. 
 
@@ -133,20 +131,20 @@ Figure 12: Open attribute table
 
 ![Planimetric](media/non.PNG "Planimetric")
 
-Figure 13: Planimetric
+Figure 3: Planimetric
 
 5. Next, Click the ‘Open field calculator’ ![alt_text](media/field_calculator.png "image_tooltip")
  button to open the field calculator. The field calculator dialogue will open; fill in the output field name, in this case it will be ‘AREA’. Choose the Decimal number (double) on the output field type. Change the precision to 2 decimal places. To calculate the area, use the **_$area_** expression. You can find this expression under **Geometry**. Click OK and it will automatically calculate the area for each polygon. 
 
 ![Field calculator dialogue](media/fieldcalc.png "Field calculator dialogue")
 
-Figure 14: Field calculator dialogue
+Figure 4: Field calculator dialogue
 
 6. Open the attribute table to see the result. You just edited the contents of the attribute table, in an automated way as opposed to typing the values in each cell one by one. 
 
 ![New attribute table with new field and attributes](media/area.png "New attribute table with new field and attributes")
 
-Figure 15: New attribute table with new field and attributes
+Figure 5: New attribute table with new field and attributes
 
 
 
@@ -180,7 +178,7 @@ At this point, you might notice that the attribute table stores both spatial and
 
 ![Add different layers](media/add_layers.png "Add different layers")
 
-Figure 16: Add different layers
+Figure 6: Add different layers
 
 2. The selection will be applied to the Clinics layer, therefore Open the attribute table for the Clinic layer. Click the select features using expression ![alt_text](media/select_features_button.png "image_tooltip") button and type the following expression in the expression builder;  **"amenity"  =  'clinic' AND "emergency"  = 'yes'**
 
@@ -188,7 +186,7 @@ You’ll notice that the expression has a number of predicates like the comparis
 
 ![alt_text](media/select.png "image_tooltip")
 
-Figure 17: Select by Expression builder dialogue
+Figure 7: Select by Expression builder dialogue
 
 3. One Clinic is selected. You can see the selection highlighted in yellow. The selected clinic is also highlighted in the map canvas. Now we know there’s only one clinic with an emergency facility in Pampanga province.
 

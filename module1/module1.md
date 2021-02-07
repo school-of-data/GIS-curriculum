@@ -1,7 +1,7 @@
 
 ## Module 1 - Introduction to QGIS
 
-**Author**: Ben
+**Author**: Ben Hur
 
 ### Pedagogical Introduction
 
@@ -36,6 +36,11 @@ The required tools and resources for this module are:
 ### Prerequisites
 
 *   basic knowledge of operating a computer
+
+### Additional resources
+
+* QGIS User Guide - [https://docs.qgis.org/3.16/en/docs/user_manual/](https://docs.qgis.org/3.16/en/docs/user_manual/)
+* QGIS Training Manual - [https://docs.qgis.org/3.16/en/docs/training_manual/index.html](https://docs.qgis.org/3.16/en/docs/training_manual/index.html)
 
 
 ### Thematic introduction
@@ -159,9 +164,9 @@ At the center of the UI is a Map Canvas. Panels and Toolbars can be positioned a
 
 **Map Canvas **- the Map Canvas is where layers loaded in QGIS are shown. This is also where filters, selects, and symbologies created by the user are reflected. More than one map canvas can be present at any time. A user can zoom, pan, and even rotate the map canvas. A map canvas can also show 3D data.
 
-**Toolbars **- toolbars show click-and-run buttons. They allow easy access to QGIS commands, features, plugins, etc. They can be moved and docked around the Map Canvas. The list of toolbars can be found, activated, and deactivated from the Menu bar under **View -> Toolbars**. Examples of toolbars are the Attributes Toolbar and the Digitizing Toolbar.
+**Toolbars **- toolbars show click-and-run buttons. They allow easy access to QGIS commands, features, plugins, etc. They can be moved and docked around the Map Canvas. The list of toolbars can be found, activated, and deactivated from the Menu bar under **View ‣ Toolbars**. Examples of toolbars are the Attributes Toolbar and the Digitizing Toolbar.
 
-**Panels **- panels are similar to toolbars but instead of buttons, they provide an interface to more complex functions and features. The Layer Panel and the Browser Panel are examples. Similar to toolbars, they can be moved and docked around the Map Canvas. The list of panels can be found, activated, and deactivated from the Menu bar under **View -> Panels**. 
+**Panels **- panels are similar to toolbars but instead of buttons, they provide an interface to more complex functions and features. The Layer Panel and the Browser Panel are examples. Similar to toolbars, they can be moved and docked around the Map Canvas. The list of panels can be found, activated, and deactivated from the Menu bar under **View ‣ Panels**. 
 
 **Status Bar **- the Status Bar is commonly found at the bottom of the UI and shows relevant information such as the CRS, scale, notifications, etc.
 
@@ -200,7 +205,7 @@ Figure 4. The QGIS Interface with some customizations
 
 **Resetting the QGIS Interface**
 
-To reset your display to the default settings, go to**: Settings -> Options -> System Tab -> Settings -> Reset** button and restart QGIS
+To reset your display to the default settings, go to**: Settings ‣ Options ‣ System Tab ‣ Settings ‣ Reset** button and restart QGIS
 
 
 ##### Quiz questions
@@ -226,7 +231,7 @@ QGIS plugins can be classified as:
 
 Plugins can be installed in three (3) ways:
 
-1. Via the Manage and Install Plugins Dialog (**Plugins -> Manage and Install Plugins**)
+1. Via the Manage and Install Plugins Dialog (**Plugins ‣ Manage and Install Plugins**)
 2. Installing from ZIP which can be accessed under the** Install from ZIP** tab in the Manage and Install Plugins dialog.
 3. Manually adding the source code in your QGIS profile’s plugins folder. This folder can usually be found at: 
     1. **Linux**: .local/share/QGIS/QGIS3/profiles/default/python/plugins
@@ -260,7 +265,7 @@ Figure 6. The Manage and Install Plugins dialog
 
 ###### Tutorial/Exercise 2: Installing a QGIS Plugin
 
-1. Open the **Manage and Install Plugins dialog** from **Plugins -> Manage and Install Plugins **from the Menu bar. This will open the Manage and Install Plugins dialog.
+1. Open the **Manage and Install Plugins dialog** from **Plugins ‣ Manage and Install Plugins** from the Menu bar. This will open the Manage and Install Plugins dialog.
 
 ![Open Manage and Install Plugins dialog](media/plugins-menu-2.png "Open Manage and Install Plugins dialog")
 
@@ -275,7 +280,7 @@ Figure 6. The Manage and Install Plugins dialog
 
 ![Install QuickOSM plugin](media/quickosm-plugin.png "Install QuickOSM plugin")
 
-3. Check if the plugins are successfully installed. The Memory Layer Saver plugin should be available at **Plugins -> Memory Layer Saver** in the Menu bar while the QuickOSM plugin should be available from **Vector -> QuickOSM** in the Menu bar.
+3. Check if the plugins are successfully installed. The Memory Layer Saver plugin should be available at **Plugins ‣ Memory Layer Saver** in the Menu bar while the QuickOSM plugin should be available from **Vector ‣ QuickOSM** in the Menu bar.
 
 
 ##### Quiz questions
@@ -292,7 +297,7 @@ Figure 6. The Manage and Install Plugins dialog
 
 **System and Project Settings**
 
-QGIS Settings allow you to edit and manage different things about QGIS such as user profiles, styles, coordinate reference systems, keyboard shortcuts, the user interface, default colors, etc. System settings can be found in the **Settings **menu and are the default settings used by QGIS unless they are overridden by a Project’s settings. Project Settings can be found in **Project -> Properties** and pertain to settings or properties for the current project. These values override the system defaults.
+QGIS Settings allow you to edit and manage different things about QGIS such as user profiles, styles, coordinate reference systems, keyboard shortcuts, the user interface, default colors, etc. System settings can be found in the **Settings **menu and are the default settings used by QGIS unless they are overridden by a Project’s settings. Project Settings can be found in **Project ‣ Properties** and pertain to settings or properties for the current project. These values override the system defaults.
 
 ![alt_text](media/settings-1.png "image_tooltip")
 
@@ -305,7 +310,7 @@ Figure 7. Project Settings
 
 **Changing the QGIS Theme**
 
-You can change the look-and-feel of QGIS under **Settings -> Options -> General** Tab.
+You can change the look-and-feel of QGIS under **Settings ‣ Options ‣ General** Tab.
 
 You can choose between three themes -- default, Blend of Gray, and Night Mapping. You can also change the size of the icons, the font used by QGIS, and other system defaults.
 
@@ -321,7 +326,7 @@ QGIS 3.X introduced the concept of QGIS User Profiles.
 
 A User Profile is a collection of settings for plugins installed, toolbars enabled, arrangement of the User Interface, and other settings. QGIS comes with a default User Profile named default. User profiles allow the user to create different settings for specific analyses (e.g. a user profile specific for water resource management, digitizing data, cartography, etc.), particular projects, or even clients.
 
-User Profiles can be created and accessed from the menu bar under: **Settings -> User Profiles**.
+User Profiles can be created and accessed from the menu bar under: **Settings ‣ User Profiles**.
 
 The active user profile is shown with [User Profile] in the title bar.
 
@@ -329,11 +334,11 @@ The active user profile is shown with [User Profile] in the title bar.
 
 Figure 9. Accessing User Profiles
 
-User profiles are saved in a directory on your computer which can be accessed by clicking **Settings -> User Profiles -> Open Active Profile Folder**.
+User profiles are saved in a directory on your computer which can be accessed by clicking **Settings ‣ User Profiles ‣ Open Active Profile Folder**.
 
 ###### Tutorial/Exercise 03: Creating a User Profile 
 
-1. Go to **Settings -> User Profiles -> New Profile...**
+1. Go to **Settings ‣ User Profiles ‣ New Profile...**
 
 ![alt_text](media/user-profiles-2.png "image_tooltip")
 
@@ -422,10 +427,3 @@ For more information, see: [https://bnhr.xyz/2018/10/08/qgis-plugins-3.0.html](h
 #### Tips 
 
 N/A
-
-
-### Additional resources
-
-QGIS User Guide - [https://docs.qgis.org/3.16/en/docs/user_manual/](https://docs.qgis.org/3.16/en/docs/user_manual/)
-
-QGIS Training Manual - [https://docs.qgis.org/3.16/en/docs/training_manual/index.html](https://docs.qgis.org/3.16/en/docs/training_manual/index.html)

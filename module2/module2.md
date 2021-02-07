@@ -1,6 +1,6 @@
 ## Module 2 - Layers in QGIS
 
-**Author**: Ben
+**Author**: Ben Hur
 
 ### Pedagogical Introduction
 
@@ -33,6 +33,16 @@ The required tools and resources for this module are:
 
 *   basic knowledge of operating a computer
 *   familiarity with spatial data formats and the QGIS interface (completion of Modules 0 and 1)
+
+
+### Additional resources
+
+* QGIS User Guide - [https://docs.qgis.org/3.16/en/docs/user_manual/](https://docs.qgis.org/3.16/en/docs/user_manual/)
+* QGIS Training Manual - [https://docs.qgis.org/3.16/en/docs/training_manual/index.html](https://docs.qgis.org/3.16/en/docs/training_manual/index.html)
+* Basemaps in QGIS  -  [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
+* Connecting QGIS to Remote Services -[https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html](https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html)
+* Spreadsheet Layers Plugin -  [https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html](https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html)
+
 
 
 ### Thematic introduction
@@ -128,7 +138,7 @@ To learn more about the Browser Panel, go to: [https://docs.qgis.org/3.16/en/doc
 ###### Exercise 01.1: The Browser Panel
 
 1. Open QGIS.
-2. Check the Browser Pane (Figure 2). If you can’t find the Browser Panel, you can make it visible under **View -> Panels -> Browser Panel **in the Menu bar.
+2. Check the Browser Pane (Figure 2). If you can’t find the Browser Panel, you can make it visible under **View ‣ Panels ‣ Browser Panel** in the Menu bar.
 
 ![The QGIS Browser Panel](media/qgis-browser-1.png "The QGIS Browser Panel")
 
@@ -168,7 +178,7 @@ Figure 5. Layer Properties from Browser Panel
 9. You can load a layer from the Browser Panel by:
 
     1. **double-clicking the layer**
-    2. **right-clicking the layer -> Add Layer to Project**
+    2. **right-clicking the layer ‣ Add Layer to Project**
     3. **dragging the layer to the Map Canvas** 
 
 10. Try to load the **NCR_admin_boundary**, **NCR_districts**, and **NCR_municities** layers using any of the methods above.
@@ -180,7 +190,7 @@ Figure 6. The vector layers loaded in QGIS
 
 ###### The Layers Panel
 
-The Layers Panel lists all the current layers in the project. It helps manage their visibility, order, and can be used to show Layer Properties. The Layers Panel can be activated from **View -> Panels -> Layers Panel** or using the shortcut **CTRL+1**. It is also called the Map Legend. If you’ve loaded all the vectors from the previous exercise, your Layers Panel should appear like below:
+The Layers Panel lists all the current layers in the project. It helps manage their visibility, order, and can be used to show Layer Properties. The Layers Panel can be activated from **View ‣ Panels ‣ Layers Panel** or using the shortcut **CTRL+1**. It is also called the Map Legend. If you’ve loaded all the vectors from the previous exercise, your Layers Panel should appear like below:
 
 
 ![altThe Layers Panel_text](media/layers-panel-1.png "The Layers Panel")
@@ -193,7 +203,7 @@ The visibility of a layer can be controlled by checking or unchecking the box on
 
 The Layers Panel also allows the user to rename and remove layers, filter layer visibility, create and manage layer groups and map views.
 
-The attribute table of a vector layer can also be opened from the Layers Panel by **right-clicking on the layer -> Open attribute table**.
+The attribute table of a vector layer can also be opened from the Layers Panel by **right-clicking on the layer ‣ Open attribute table**.
 
 To learn more about the Layers Panel, go to: [https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel](https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel)
 
@@ -286,7 +296,7 @@ Figure 11. The Information tab after editing some metadata
 
 If you don’t want to use the Browser Panel to load layers, you can always use the **Data Source Manager**.
 
-The **Data Source Manager** was introduced with the release of QGIS 3. It is a “one-stop-shop” for adding and loading layers from different data sources in QGIS. Prior to its introduction, there were separate windows for loading different data sources (i.e. one for rasters, one for vectors, etc.). It can be accessed via** Layers -> Data Source Manager** or **CTRL + L**.
+The **Data Source Manager** was introduced with the release of QGIS 3. It is a “one-stop-shop” for adding and loading layers from different data sources in QGIS. Prior to its introduction, there were separate windows for loading different data sources (i.e. one for rasters, one for vectors, etc.). It can be accessed via** Layers ‣ Data Source Manager** or **CTRL + L**.
 
 ![Data Source Manager](media/data-source-manager-1.png "Data Source Manager")
 
@@ -385,7 +395,7 @@ XYZ tiles are usually used as basemaps and are utilized not just in desktop appl
 To connect to a tile server:
 
 1. Go to the **Browser Panel**
-2. **Right-click XYZ Tiles -> New Connection** 
+2. **Right-click XYZ Tiles ‣ New Connection** 
 3. Add the following:
 
 ```
@@ -425,7 +435,7 @@ Meanwhile, WFS or Web Feature Services is another OGC-compliant web service for 
 To connect to a WMS:
 
 1. Go to the **Browser Panel**
-2. **Right-click WMS/WMTS -> New Connection** 
+2. **Right-click WMS/WMTS ‣ New Connection** 
 3. Add the following:
 ```
 Name: LiPAD 100-year Flood Hazard
@@ -465,7 +475,7 @@ Figure 23. Flood hazard map from WMS loaded in QGIS
 
 ###### Exporting Layers from QGIS
 
-Exporting layers (or saving layers to files) is straightforward in QGIS. Simply **Right-click on the layer -> Export** to view the export options for the layer.
+Exporting layers (or saving layers to files) is straightforward in QGIS. Simply **Right-click on the layer ‣ Export** to view the export options for the layer.
 
 ![Exporting a layer from QGIS](media/exporting-layers.png "Exporting a layer from QGIS")
 
@@ -496,7 +506,7 @@ QGIS understands this and allows users to create **temporary / scratch** layers.
 
 The outputs of processing algorithms are stored as temporary layers by default.
 
-The downside of temporary layers is that QGIS “**forgets**” these “**layers in memory**” when it is closed. To remedy this, we can use the **Memory Layer Saver plugin** to allow our temporary layers to be persistent. When saving a QGIS project that uses temporary layers, it is good practice to run/activate the Memory Layer Saver plugin first. To use the Memory Layer Saver plugin, simply go to **Plugins -> Memory Layer Saver** before saving and closing your QGIS project. The next time you open your QGIS project, the temporary layers (or layers in memory) should still be present.
+The downside of temporary layers is that QGIS “**forgets**” these “**layers in memory**” when it is closed. To remedy this, we can use the **Memory Layer Saver plugin** to allow our temporary layers to be persistent. When saving a QGIS project that uses temporary layers, it is good practice to run/activate the Memory Layer Saver plugin first. To use the Memory Layer Saver plugin, simply go to **Plugins ‣ Memory Layer Saver** before saving and closing your QGIS project. The next time you open your QGIS project, the temporary layers (or layers in memory) should still be present.
 
 Of course you can also just make the temporary layer permanent by exporting the layer to a file. Clicking the ![Temporary layer symbol](media/image34.png "Temporary layer symbol") icon will automatically open an export layer dialog.
 
@@ -546,7 +556,7 @@ P.S. Some of these plugins require you to sign up for an account with the data p
 GeoNode ([https://geonode.org/](https://geonode.org/)) is an open-source Geospatial Content Management System built with a mature FOSS4G stack that includes PostGIS, GeoServer, MapStore, etc. You can think of GeoNode as a geospatial data portal. You can easily connect QGIS to a GeoNode instance via the GeoNode connector in the Browser Panel or the Data Source Manager.
 
 1. Go to the **Browser Panel**
-2. Right-click **GeoNode -> New Connection**
+2. Right-click **GeoNode ‣ New Connection**
 3. Add the following:
 ```
 Name: UNESCO IHP-WINS
@@ -571,7 +581,7 @@ When you are prompted that the file already exists, select Add New Layer.
 ![GeoPackage Layer exists](media/virtual-2.png "GeoPackage Layer exists")
 
 
-4. Toggle editing on Trees by right-clicking on it -> Toggle editing or clicking ![Toggle editing symbol](media/symbol-edit.png "Toggle editing symbol") in the Digitizing Toolbar.
+4. Toggle editing on Trees by right-clicking on it ‣ Toggle editing or clicking ![Toggle editing symbol](media/symbol-edit.png "Toggle editing symbol") in the Digitizing Toolbar.
 5. Select an area on the satellite image that has trees.
 6. With Editing toggled on, enable adding points to the Trees layer by clicking ![Add new point symbol](media/symbol-add-point.png "[Add new point symbol") (CTRL + .).
 7. Digitize individual trees by clicking on their location and adding the attribute information. Do this for 4 trees. For this exercise, can just guess the information.
@@ -589,7 +599,7 @@ When you are prompted that the file already exists, select Add New Layer.
 select fid, buffer(geometry, radius), species from Trees
 ```
 
-![Create Virtual Layer](media/virtual-5.png "reate Virtual Layer")
+![Create Virtual Layer](media/virtual-5.png "Create Virtual Layer")
 
 ![Virtual layer in QGIS](media/virtual-6.png "Virtual layer in QGIS")
 
@@ -615,10 +625,3 @@ Read here: [https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin
 #### Tips 
 
 1. If you ever need a world map layer, try typing **world** in the Coordinate bar of the Status bar. What happens? This is just one of the easter eggs found in QGIS when you type certain words in the Coordinate bar.
-
-
-### Additional resources
-
-QGIS User Guide - [https://docs.qgis.org/3.16/en/docs/user_manual/](https://docs.qgis.org/3.16/en/docs/user_manual/)
-
-QGIS Training Manual - [https://docs.qgis.org/3.16/en/docs/training_manual/index.html](https://docs.qgis.org/3.16/en/docs/training_manual/index.html)
