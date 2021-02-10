@@ -1,35 +1,35 @@
-## Module 0 - Gentle Introduction to GIS concepts
+## Módulo 0 - Introdução suave a conceitos de GIS
 
-**Author**: Ben Hur
+**Autor**: Ben Hur
 
-### Pedagogical Introduction
+### Introdução pedagógica
 
-This module serves as a gentle introduction to geographic concepts necessary for working with geographic information systems (GIS). By the end of this module, learners should understand the following concepts:
+Este módulo serve como uma introdução suave aos conceitos geográficos necessários para trabalhar com sistemas de informação geográfica (SIG, ou GIS em língua inglesa). Ao final deste módulo, os alunos deverão compreender os seguintes conceitos:
 
-*   map projections
-*   coordinate reference systems
-*   spatial data formats (e.g. vectors and rasters)
-*   parts and features of a GIS
-*   uses of a GIS
-*   examples of GIS and other geospatial applications
+*   projeções cartográficas
+*   sistemas de referência de coordenadas
+*   formatos de dados espaciais (exemplo: vetores e rasters)
+*   componentes e funções de um SIG
+*   usos de um SIG
+*   exemplos de uso de GIS e outras aplicações geoespaciais
 
-In addition, this module will also introduce some key concepts of Free and Open Source Software (FOSS) and Free and Open Source Software for Geospatial (FOSS4G) applications.
-
-
-### Required tools and resources
-
-The required tools and resources for this module are:
-
-*   working computer
-*   internet connection
+Além disso, este módulo irá também introduzir alguns conceitos chave de softwares livres e de código aberto (Free and Open Source Software, ou FOSS) e softwares livres e de código aberto para aplicações geoespaciais (FOSS4G).
 
 
-### Prerequisites
+### Ferramentas e recursos necessários
 
-*   basic knowledge of operating a computer
+As ferramentas e recursos necessários para este módulo são:
+
+*   computador
+*   conexão de internet
 
 
-### Additional resources
+### Pré-requisitos
+
+*   conhecimento básico de uso de computadores
+
+
+### Recursos adicionais
 
 * A Gentle Introduction to GIS - [https://docs.qgis.org/3.16/en/docs/gentle_gis_introduction/index.html](https://docs.qgis.org/3.16/en/docs/gentle_gis_introduction/index.html)
 *  QGIS User Guide - [https://docs.qgis.org/3.16/en/docs/user_manual/](https://docs.qgis.org/3.16/en/docs/user_manual/)
@@ -41,395 +41,395 @@ The required tools and resources for this module are:
 * Open source definition - [https://opensource.org/osd](https://opensource.org/osd)
 
 
-### Thematic introduction
+### Introdução temática
 
-Let’s start with an example:
+Vamos começar com um exemplo:
 
-You might have heard the phrase “All maps lie.” or you’ve seen a post on social media claiming that “The map of the world you’ve known all your life is wrong!”.  Well, it’s not that maps are actively choosing to lie to you, it’s just that maps can never show you the whole truth. One such example is the relative sizes of countries.
+Você pode ter ouvido a frase “todos os mapas mentem”, ou você viu uma postagem nas redes sociais afirmando que “O mapa mundi que você conheceu a vida inteira está errado!”. Bem, não é que os mapas estejam deliberadamente querendo mentir para você, mas a realidade é que os mapas não têm como te mostrar toda a verdade. Um exemplo disso são os tamanhos relativos dos países.
 
-The True Size Of ([https://thetruesize.com/](https://thetruesize.com/)) is a cool web mapping application that shows how the relative sizes of countries are distorted in one of the most common maps we use (one that uses the Mercator projection). It also shows some examples of spatial data types that we will learn more about in this module. Try to use the web application to compare the size of your country with others.
+The True Size Of ("O verdadeiro tamanho de") ([https://thetruesize.com/](https://thetruesize.com/)) é um mapa online (ou aplicativo web) interessante que mostra como os tamanhos relativos dos países são distorcidos em um dos mapas mais comuns que usamos (o mapa que usa a projeção de Mercator). Ele também mostra alguns exemplos de tipos de dados espaciais sobre os quais aprenderemos mais neste módulo. Tente usar esse site para comparar o tamanho do seu país com o de outros.
 
 ![True Size Of](media/true-size-of.png "True Size of Countries")
 
-#### Breakdown of the concepts
+#### Detalhando os conceitos
 
-So why is this the case? As you will learn in this module, it’s difficult to represent the 3-dimensional shape of the earth on a flat sheet of paper. To do this, cartographers use what’s called a **map** **projection** to project the points on the earth’s three-dimensional surface to a flat surface. However, by doing so, **distortion** is introduced. This distortion can be on the shape, size, direction, and distances of objects on the map. All maps have at least one of these distortions. Because of this distortion, a map can never show the whole truth about the earth.
+Então por que isso acontece? Como você aprenderá neste módulo, é difícil representar a forma tridimensional da Terra em uma folha de papel plana. Para fazer isso, os cartógrafos usam o que é chamado de **projeção cartográfica**, para projetar os pontos da superfície tridimensional da Terra em uma superfície plana. No entanto, ao fazer isso, eles introduzem alguma **distorção**. Essa distorção pode ser de forma, tamanho, direção e distâncias dos objetos representados no mapa. Todos os mapas têm pelo menos uma dessas distorções. Por causa dessa distorção, um mapa nunca pode mostrar toda a verdade sobre a Terra.
 
-In the web app we used, the background map that doesn’t change size (the grayish one) is an example of **raster** **data**. Raster data are pixel-based representations of the world similar to photographs. Meanwhile, the shape of the countries that we can move around are examples of **vector** **data**. Vector data, unlike rasters, represent the world using discrete objects such as points, lines, and polygons.
+No mapa online que usamos, o mapa de fundo que não muda de tamanho (em cinza) é um exemplo de **dados raster**. Os dados raster são representações do mundo baseadas em pixels, semelhantes a como fotografias funcionam. Enquanto isso, a forma dos países que podemos mover são exemplos de **dados vetor, ou vetoriais**. Os dados vetoriais, ao contrário dos rasters, representam o mundo usando objetos discretos (no sentido matemático da palavra), como pontos, linhas e polígonos.
 
 
-### Main content
+### Conteúdo principal
 
-#### Phase 1 title: Maps and Coordinates
+#### Título da Fase 1: Mapas e Coordenadas
 
-##### Content/Tutorial
+##### Conteúdo / Tutorial
 
-When people think of the earth today, they usually picture a spherical mass of blue, green, white, and brown floating in space. This is why the traditional way to model the earth is through the use of globes.
+Quando as pessoas pensam na Terra atualmente, elas geralmente imaginam uma massa esférica azul, verde, branca e marrom flutuando no espaço. É por isso que tradicionalmente usamos globos para representar a Terra.
+
+<table>
+   <tr>
+    <td>
+         <img src="media/blue-marble.jpg">
+         Figura 1. A Bola de Gude Azul (<a href="https://commons.wikimedia.org/wiki/Earth#/media/File:The_Blue_Marble.jpg"> https://commons.wikimedia.org/wiki/Earth#/media/File:The_Blue_Marble.jpg</a>)
+    </td>
+    <td>
+         <img src="media/globe.jpg">
+         Figura 2. Globo de l'Isle (1765) (<a href="https://commons.wikimedia.org/wiki/Globe#/media/File:3quarter_globe.jpg"> https://commons.wikimedia.org/wiki/Globe#/media/File:3quarter_globe.jpg</a>)
+    </td>
+   </tr>
+</table>
+
+
+No entanto, embora o globo seja capaz de capturar a maioria das características da Terra, ele possui duas desvantagens principais:
+
+*    Os globos são pesados e difíceis de transportar.
+*    Os globos só podem ser usados em pequenas escalas (por exemplo, encontrar locais de países, as posições relativas de cidades, etc.). Eles são praticamente inúteis para atividades que exigem grandes escalas ou detalhes finos (por exemplo, navegação dentro de uma cidade).
+
+É aqui que entram os mapas. Os mapas corrigem essas duas desvantagens dos globos, representando a Terra como uma superfície plana. Ao fazer isso, os mapas se tornam portáteis e adequados para uma infinidade de usos. Dito isso, os mapas também apresentam uma desvantagem própria. Através do processo de conversão de um objeto tridimensional (globo) em um bidimensional (mapa), distorções são geradas, de tal forma que é impossível para um mapa capturar perfeitamente as diferentes características da Terra (ou seja, formas, áreas e direções).
+
+
+###### Projeções cartográficas
+
+Uma projeção cartográfica é usada para achatar a superfície da Terra (ou de um globo qualquer) em um plano, a fim de criar um mapa. Este processo de transformação gera distorção.
+
+![A terra como uma laranja](media/dalandan.png "A terra como uma laranja")
+
+Pense na Terra como uma laranja. Se você descascá-la, poderá deixá-la plana, mas nunca poderá torná-la perfeitamente plana. Você sempre encontrará um dos seguintes problemas:
+
+*   **Alongamento** - o alongamento da casca (ou superfície) em uma ou mais direções
+*   **Rasgos** - a divisão ou ruptura da casca (ou superfície)
+*   **Compressão** - o encurtamento ou encolhimento da casca (ou superfície)
+
+Por causa desses problemas, cada mapa contém distorção em uma ou mais das seguintes características:
+
+*   **Forma**
+*   **Área**
+*   **Distância**
+*   **Direção**
+
+As projeções cartográficas podem preservar (sem distorção) uma ou mais dessas características, mas nunca todas ao mesmo tempo. Outra opção é balancear e minimizar as distorções para todas as características ao mesmo tempo. Isso se deve à natureza das próprias características.
+
+Características principais como **Forma** e **Área** são **mutuamente excludentes** e não podem ser preservadas simultaneamente. Enquanto isso, as características secundárias **Distância** e **Direção** **não têm como estar corretas em todos os lugares** do mapa.
+
+Ao escolher qual projeção cartográfica usar, é importante que você considere o propósito do mapa. Por exemplo, se deseja realizar análises baseadas em área, é melhor usar uma projeção cartográfica que preserva a área.
+
+Existem várias classificações de projeções cartográficas. A primeira é baseada nas **características que elas preservam**.
+
+*   Projeções de mapa **conforme** ou **ortomórficas** são aquelas que preservam a forma ou a conformidade angular. Estes são comumente usados ​​para fins de navegação ou meteorológicos. As formas são preservadas, mas as áreas são distorcidas. Quanto maior a área, maior a distorção.
+*   Projeções de mapa de **equivalente** ou **de igual área** são aquelas que preservam a proporção ou áreas relativas dos objetos no mapa. Nesse tipo de projeção cartográfica, quanto maior a área mapeada, mais precisa ela será.
+*   As projeções cartográficas **equidistantes** preservam a distância das linhas que originam em um ou dois pontos no mapa ou têm escala adequada ao longo de uma ou mais linhas.
+*   As projeções cartográficas **azimutais** preservam a direção a partir de um ou dois pontos no mapa. São úteis para mapear rotas de aeronaves e embarcações marítimas entre portos.
+
+Uma única projeção cartográfica pode preservar mais de uma característica (por exemplo, uma projeção azimutal equidistante que preserva a direção e as distâncias a partir de um ou dois pontos no mapa), mas nem todas delas, como mostrado na tabela abaixo.
+
 
 <table>
   <tr>
    <td>
-        <img src="media/blue-marble.jpg">
-        Figure 1. The Blue Marble (<a href="https://commons.wikimedia.org/wiki/Earth#/media/File:The_Blue_Marble.jpg">https://commons.wikimedia.org/wiki/Earth#/media/File:The_Blue_Marble.jpg</a>)
    </td>
-   <td>
-        <img src="media/globe.jpg">  
-        Figure 2.  de l'Isle globe (1765) (<a href="https://commons.wikimedia.org/wiki/Globe#/media/File:3quarter_globe.jpg">https://commons.wikimedia.org/wiki/Globe#/media/File:3quarter_globe.jpg</a>)
+   <td><strong>Conforme</strong>
+   </td>
+   <td><strong>Equivalente</strong>
+   </td>
+   <td><strong>Equidistante</strong>
+   </td>
+   <td><strong>Azimutal</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Conforme</strong></p>
+
+   </td>
+   <td>-
+   </td>
+   <td>Não
+   </td>
+   <td>Não
+   </td>
+   <td>Sim
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Equivalente</strong></p>
+
+   </td>
+   <td>Não
+   </td>
+   <td>-
+   </td>
+   <td>Não
+   </td>
+   <td>Sim
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Equidistante</strong></p>
+
+   </td>
+   <td>Não
+   </td>
+   <td>Não
+   </td>
+   <td>-
+   </td>
+   <td>Sim
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Azimutal</strong></p>
+
+   </td>
+   <td>Sim
+   </td>
+   <td>Sim
+   </td>
+   <td>Sim
+   </td>
+   <td>-
    </td>
   </tr>
 </table>
 
 
-However, even though the globe is able to capture most of the characteristics of the earth, it suffers from two main drawbacks:
-
-*   Globes are cumbersome and difficult to bring with you.
-*   Globes are only usable at small scales (e.g. finding locations of countries, the relative positions of cities, etc.). They are next to useless for activities that require large scales or fine details (e.g. city navigation).
-
-This is where maps come in. Maps remedy these two drawbacks of globes by representing the earth as a flat surface. By doing so, maps become portable and suitable for a multitude of uses. Having said that, maps also introduce a drawback of their own. Through the process of converting a three-dimensional object (globe) into a two-dimensional one (map), distortions are introduced such that it is impossible for a map to perfectly capture the different characteristics of the earth (i.e. shapes, areas, directions).
-
-
-###### Map Projections
-
-A map projection is used to flatten the earth’s (or globe’s) surface into a plane in order to create a map. This transformation process introduces distortion.
-
-![The earth as an orange](media/dalandan.png "The earth as an orange")
-
-You can think of the Earth as an orange. If you peel the skin, you can lay it down flat but you can never make it perfectly flat. You will always encounter one of the following issues:
-
-*   **Shearing** - the lengthening of the skin (or surface) in one or more directions
-*   **Tearing** - the splitting or breaking apart of the skin (or surface)
-*   **Compressing** - the shortening or shrinking of the skin (or surface)
-
-Because of these issues, every map contains distortion in one or more of the following characteristics:
-
-*   **Shape**
-*   **Area**
-*   **Distance**
-*   **Direction**
-
-Map projections can preserve (no distortion) one or more characteristics but never all at the same time. Alternatively, they can have a compromise where the distortions are balanced and minimized for all characteristics. This is due to the nature of the characteristics themselves.
-
-Major characteristics like **Shape** and **Area** are **mutually exclusive** and cannot be preserved simultaneously. Meanwhile, the minor characteristics, **Distance** and **Direction** **cannot be correct everywhere** on the map.
-
-In choosing what map projection to use, it’s important that you consider the purpose of the map. For example, if you wish to perform area-based analyses, it’s best to use a map projection that preserves the area.
+Tabela: Ambas características podem ser preservadas por um mapa ao mesmo tempo?
 
-There are several classifications of map projections. The first one is based on the **characteristic/s they preserve**.
+Existe outra classificação de projeções cartográficas que não preserva nenhuma das características do mapa, mas tenta minimizar todas as distorções no mapa. Estes são chamados de projeções **Erro Mínimo (Minimum Error, ou Compromise)** (mapas que não preservam a forma nem a área são chamados de **Afiláticos**).
 
-*   **Conformal** or **Orthomorphic** map projections are those that preserve shape or angular conformity. These are commonly used for navigation or meteorological purposes. Shapes are preserved but areas are distorted. The larger the area, the greater the distortion.
-*   **Equal-area** or **Authalic** map projections are those that preserve the proportion or relative areas of the objects in the map. In this kind of map projection, the larger the area being mapped, the more precise it is.
-*   **Equidistant** map projections preserve the distance of lines originating from one or two points on the map or have proper scale along one or more lines.
-*   **Azimuthal** map projections preserve the direction from one or two points on the map. These are useful for mapping routes of aircrafts and seacrafts between ports.
+Uma maneira de visualizar a distorção é usando o que é chamado de **indicador de Tissot**. Este indicador caracteriza as distorções locais usando círculos e mostrando como esses círculos são transformados ao longo do mapa.
 
-A single map projection can preserve more than one characteristic (e.g. an Azimuthal Equidistant projection that preserves the direction and distances from one or two points on the map) but not all of them as shown in the table below.
 
+![Projeção conforme](media/conformal.png "Projeção conforme")
 
-<table>
-  <tr>
-   <td>
-   </td>
-   <td><strong>Conformal</strong>
-   </td>
-   <td><strong>Equal Area</strong>
-   </td>
-   <td><strong>Equidistant</strong>
-   </td>
-   <td><strong>Azimuthal</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Conformal</strong></p>
+Figura 3. Projeção conforme com seu índice de Tissot. Os círculos permanecem como círculos por todo o mapa, mas suas áreas aumentam a medida que os círculos se movem do equador em direção aos pólos.
 
-   </td>
-   <td>-
-   </td>
-   <td>N
-   </td>
-   <td>N
-   </td>
-   <td>Y
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Equal Area</strong></p>
 
-   </td>
-   <td>N
-   </td>
-   <td>-
-   </td>
-   <td>N
-   </td>
-   <td>Y
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Equidistant</strong></p>
+![Projeção equivalente](media/authalic.png "Projeção equivalente")
 
-   </td>
-   <td>N
-   </td>
-   <td>N
-   </td>
-   <td>-
-   </td>
-   <td>Y
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Azimuthal</strong></p>
+Figura 4. Projeção equivalente com seu índice de Tissot. Os círculos tornam-se elipses, mas suas áreas permanecem as mesmas.
 
-   </td>
-   <td>Y
-   </td>
-   <td>Y
-   </td>
-   <td>Y
-   </td>
-   <td>-
-   </td>
-  </tr>
-</table>
 
+![Projeção equidistante](media/equidistant.png "Projeção equidistante")
 
-Table: Can both characteristics be preserved by a map at the same time?
 
-There exists another classification of map projections that doesn’t preserve any of the map’s characteristics but tries to minimize all the distortions in the map. These are called **Compromise** or **Minimum** **Error** map projections (maps that do not preserve shape nor area are called **Aphylactic**).
+Figura 5. Projeção equidistante com seu índice de Tissot. Observe que as alturas dos círculos são iguais, o que significa que a escala / distâncias ao longo dos meridianos são preservadas.
 
-One way to show and see distortion is by using what’s called the **Tissot’s** **indicatrix**. This indicator characterizes local distortions by using circles and showing how these circles are transformed over the map.
 
+![Projeção azimutal equidistante](media/az-equidistant.png "Projeção azimutal equidistante")
 
-![Conformal map projection](media/conformal.png "Conformal map projection")
+Figura 6. Projeção azimutal equidistante com seu índice de Tissot. Observe que os círculos estão todos apontando para o centro do mapa e as alturas dos círculos são todas iguais.
 
-Figure 3. Conformal map projection with its Tissot’s indicatrix. Circles remain as circles all over the map but their areas increase as the circles move from the equator toward the poles.
+Outra maneira de classificar as projeções do mapa é pela **superfície desenvolvível ("developable surface")** usada para criar o mapa. Uma superfície é desenvolvível se ela puder ser planificada sem introduzir distorções. As superfícies mais comumente usadas são: Cilindros (Figura 7), Cones (Figura 8) e Planos (Figura 9).
 
 
-![Equal-area map projection](media/authalic.png "Equal-area map projection")
+![Cilindro como uma superfície desenvolvível](media/cylinder.png "Cilindro como uma superfície desenvolvível")
 
-Figure 4. Equal-area map projection with its Tissot’s indicatrix. Circles become ellipses but their areas remain the same.
+Figura 7. As projeções cilíndricas têm meridianos (longitude) e paralelos (latitude) encontrando-se em ângulos retos com as distâncias entre os meridianos sendo iguais.
 
 
-![Equidistant map projection](media/equidistant.png "Equidistant map projection")
+![Cone como superfície desenvolvível](media/cone.png "Cone como superfície desenvolvível")
 
-Figure 5. Equidistant map projection with its Tissot’s indicatrix. Notice that the heights of the circles are equal which means that the scale/distances along meridians are preserved.
+Figura 8. As projeções cônicas têm meridianos retos indo para um ponto nos pólos. Os paralelos são arcos.
 
 
-![Azimuthal equidistant map projection](media/az-equidistant.png "Azimuthal equidistant map projection")
+![Plano como superfície desenvolvível](media/plane.png "Plano como superfície desenvolvível")
 
-Figure 6. Azimuthal equidistant projection with its Tissot’s indicatrix. Notice that the circles are all pointing towards the map’s center and the heights of the circles are all equal.
+Figura 9. As projeções planas (comumente usadas em projeções azimutais) têm meridianos retos semelhantes às projeções cônicas, mas seus paralelos são círculos em vez de arcos.
 
-Another way to classify map projections is by the **developable surface** used to create the map. A surface is developable if it can be flattened without introducing distortions. The most commonly used surfaces are: Cylinders (Figure 7), Cones (Figure 8), and Planes (Figure 9).
+Existem inúmeras outras superfícies desenvolvíveis que podem ser usadas para transformar um globo em um mapa. Eles podem ser uma variação das superfícies comuns, como no caso de projeções pseudo-cilíndricas e pseudo-cônicas ou podem ser superfícies únicas e diferentes, como no mapa Dymaxion, que usa um icosaedro (poliedro com 20 faces), ou a Projeção de Cahill-Keyes que usa um octaedro (poliedro com 8 faces).
 
+A projeção de um mapa também pode ser classificada de acordo com seu **aspecto** (Figura 10) ou o modo como a superfície desenvolvível está posicionada no globo: Normal, Transversal ou Oblíqua.
 
-![Cylinder as a developable surface](media/cylinder.png "Cylinder as a developable surface")
 
-Figure 7. Cylindrical projections have meridians (longitude) and parallels (latitude) meeting at right angles with the distances between meridians being equal.
+![Aspectos de uma projeção cartográfica](media/aspects.png "Aspectos de uma projeção cartográfica")
 
+Figura 10. Aspectos de uma projeção cartográfica
 
-![Cone as a developable surface](media/cone.png "Cone as a developable surface")
 
-Figure 8. Conic projections have straight meridians going to one point at the poles. The parallels are arcs.
+###### Sistemas de referência de coordenadas
 
+Um **Sistema de Referência de Coordenadas (SRC, ou CRS na sigla em inglês)** é usado para especificar a localização de um objeto na superfície da Terra por meio do uso de coordenadas. SRCs podem ser classificados em dois:
 
-![Plane as a developable surface](media/plane.png "Plane as a developable surface")
+*   **Sistemas de referência de coordenadas geográficas** usam graus de latitude e longitude como coordenadas para se referir à posição.
+*   **Sistemas de referência de coordenadas projetadas** usam unidades lineares (por exemplo, metros, pés, quilômetros) de leste e norte como coordenadas.
 
-Figure 9. Planar projections (commonly used in azimuthal projections) have straight meridians similar to conic projections but their parallels are circles instead of arcs.
+O conhecimento dos sistemas de referência de coordenadas é importante porque mesmo que dois mapas (ou camadas) mostrem o mesmo local, as coordenadas das localizações nesses mapas serão diferentes se os SRC que eles usam forem diferentes.
 
-There are countless other developable surfaces that can be used to transform a globe into a map. They can be a variation of the common surfaces like in the case of pseudo-cylindrical and pseudo-conic projections or they can be unique and entirely different surfaces such as in the Dymaxion map which uses a icosahedron (polyhedron with 20 faces), or the Cahill-Keyes projection which uses an octahedron (polyhedron with 8 faces).
+**Veja este exemplo:** Mapa A e Mapa B mostram a mesma área e extensão. Eles são basicamente o mesmo mapa. A única diferença é o sistema de referência de coordenadas que eles usam. O Mapa A usa SRC X e o Mapa B usa SRC Y. Digamos que obtivemos a coordenada do Ponto 1, que é (10, 10), do Mapa A. Se olharmos para a coordenada (10,10) no Mapa B, é possível que o Ponto 1 não esteja lá, pois o Mapa B usa um SRC diferente. Ou, se você sobrepor os mapas um ao outro usando uma referência comum, os objetos dos dois mapas não coincidirão. Este conhecimento de sistemas de referência de coordenadas é importante para qualquer tipo de GIS.
 
-A map projection can also be classified according to its **aspect** (Figure 10) or how the developable surface is positioned on the globe: either Normal, Transverse, or Oblique.
+As versões do QGIS anteriores à versão 3 tinham a opção de ativar o que é chamado de "OTF" ou "Transformação On-The-Fly (em 'tempo real')". Isso permitia que camadas com diferentes SRC fossem projetadas na tela do mapa como se estivessem no mesmo SRC. Com o QGIS 3 em diante, esta opção é ativada automaticamente como comportamento padrão do QGIS. QGIS também executa esta ação automaticamente para tarefas de processamento. Isso é muito importante porque se as camadas não estiverem no mesmo SRC, os resultados das consultas espaciais e do processamento como junções espaciais, clipes, etc. podem ser comprometidos.
 
+Você pode notar que alguns Sistemas de Referência de Coordenadas são referidos por seu Código EPSG. Este código se refere ao código do SRC no conjunto de dados de parâmetros geodésicos EPSG, que é um registro de dados geodésicos, sistemas de referência espacial, elipsóides terrestres, transformações de coordenadas e unidades de medida relacionadas. A maioria dos GIS, incluindo QGIS, referem-se ao código EPSG para identificar sistemas de referência de coordenadas, projeções e realizar transformações entre esses sistemas.
 
-![Aspects of a map projection](media/aspects.png "Aspects of a map projection")
+Alguns códigos EPSG comuns incluem:
 
-Figure 10. Aspects of a map projection
+*   **EPSG: 4326** - WGS 84, sistema de coordenadas de latitude / longitude baseado no Sistema de Posicionamento Global (GPS) entre outros.
+*   **EPSG: 3857** - Projeção Web Mercator usada para exibição por muitas ferramentas de mapeamento baseadas na web, como OpenStreetMap e Google Maps
+*   **EPSG: 31973 a EPSG: 31974 e EPSG: 31978 a EPSG: 31985** - Universal Transverse Mercator (UTM) Zonas 19N a 20N, e 18S a 25S. Zonas UTM usadas no Brasil
+*   **EPSG: 4674** - Sistema de Referência SIRGAS 2000, utilizado nas Américas a partir do ano 2000
 
 
-###### Coordinate Reference Systems
+##### Quiz
 
-A **Coordinate Reference System (CRS)** is used to specify the location of an object on the surface of the earth through the use of coordinates. They can be classified into two:
+1. Que tipo de projeção é melhor para os seguintes casos?
+    1. um mapa de uso geral que precisa ter uma aparência agradável
+    2. um mapa mostrando uma análise de área por unidade entre diferentes locais
+    3. um mapa que mostra uma comparação de uma zona de 10 km de raio de diferentes locais
+2. Que tipo de sistema de referência de coordenadas (geográfico ou projetado) é melhor utilizado para os seguintes casos?
+    4. mostrar a localização de pontos usando GPS
+    5. calcular a distância entre dois pontos
+3. Verdadeiro ou falso - É possível preservar as seguintes características do mapa juntas em um único mapa:
+    6. Área e forma
+    7. Distância e direção
 
-*   **Geographic Coordinate Reference Systems** use degrees of latitude and longitude as coordinates to refer to position.
-*   **Projected Coordinate Reference Systems** use linear units (e.g. meters, feet, kilometers) of eastings and northings as coordinates.
 
-Knowledge of coordinate reference systems is important because even if two maps (or layers) show the same area, the coordinates of the locations in those maps will be different if the CRS they use are different.
+#### Título da fase 2: Tipos de dados espaciais
 
-**Take this example:** Map A and Map B show the same area and extent. They’re basically the same map. The only difference is the coordinate reference system they use. Map A uses CRS X and Map B uses CRS Y. Let’s say we get the coordinate of Point 1, which is (10, 10), from Map A. If we look at the coordinate (10,10) in Map B, it’s possible that Point 1 won’t be there since Map B uses a different CRS. Or if you overlay the maps over each other using a common reference, the features on the two maps won’t coincide. This knowledge of coordinate reference systems is important in any GIS.
+##### Conteúdo / Tutorial
 
-Prior to QGIS 3.X, QGIS had an option to activate what’s called “OTF” or “On-The-Fly Transformation”. This allows layers with different CRS to be projected on the map canvas as if they were in the same CRS. With QGIS 3.X onward, this option is the default behavior of QGIS.  QGIS also performs this action automatically for processing tasks.  This is very important because if the layers aren’t in the same CRS, the results of spatial queries and processing like spatial joins, clips, etc. could be compromised.
+Em sua essência, um Sistema de Informação Geográfica (SIG) deve ser capaz de modelar objetos, informações e fenômenos do mundo real, como limites de lotes, rios, estradas, temperatura, etc. Ele faz isso por meio de modelos de dados espaciais.
 
-You may notice that some Coordinate Reference Systems are referred to by their EPSG Code. This code refers to the CRS’ code in the EPSG Geodetic Parameter Dataset which is a  registry of geodetic datums, spatial reference systems, Earth ellipsoids, coordinate transformations and related units of measurement. Most GIS, including QGIS, refer to the EPSG code to identify coordinate reference systems, projections, and perform transformations between these systems.
+Os modelos de dados espaciais são compostos de dois componentes principais que, quando combinados, modelam a realidade. Esses componentes são:
 
-Common EPSG Codes include:
+*   **Feições espaciais (ou geometria)**
+*   **Atributos**
 
-*   **EPSG:4326** - WGS 84, latitude/longitude coordinate system based used by the Global Positioning System (GPS) among others.
-*   **EPSG:3857** - Web Mercator projection used for display by many web-based mapping tools such as OpenStreetMap and Google Maps
-*   **EPSG:32650 to EPSG 32653** - Universal Transverse Mercator (UTM) Zone 50N to 53N. UTM zones used in the Philippines
-*   **EPSG:4683** - Philippine Reference System of 1992
+![Modelo de dados espaciais](media/spatial-model.png "Modelo de dados espaciais")
 
+Existem dois modelos principais de dados espaciais: **raster** e **vetorial**. Embora qualquer objeto do mundo real possa ser representado por qualquer um dos dois modelos de dados, um deles é geralmente melhor para representar certos objetos do mundo real do que o outro.
 
-##### Quiz questions
 
-1. What type of map projection is best for the following use-cases?
-    1. a general purpose map that needs to look pleasing
-    2. a map showing a per-unit area analysis between different locations
-    3. a map showing a comparison of a 10-km buffer zone from different locations
-2. What type (geographic or projected) of coordinate reference system is best to use for the following use cases?
-    4. showing the location of points using GPS
-    5. computing the distance between two points
-3. True or False -- It is possible to preserve the following map characteristics together in a single map:
-    6. Area and Shape
-    7. Distance and Direction
+###### Dados raster
 
+Os dados raster são mais utilizados ​​para representar fenômenos contínuos, como elevação ou temperatura.
 
-#### Phase 2 title: Spatial Data Types
+Um raster é uma representação de objetos do mundo real composta de linhas e colunas de células ou pixels, no qual cada célula ou pixel representa uma área geográfica (pense em uma fotografia ou imagem). O valor da célula representa o valor de um atributo na referida área geográfica. O tamanho da área depende da resolução espacial do raster.
 
-##### Content/Tutorial
+Rasters são bastante úteis para modelagem de adequação de locais (suitability modelling), pois você pode combinar rasters por meio de operações matemáticas (álgebra de raster).
 
-At its core, a Geographic Information System (GIS) must be able to model real-world objects, information, and phenomena such as lot boundaries, rivers, roads, temperature, etc. It does this through spatial data models.
 
-Spatial data models are composed of two primary components that, when combined, model reality. These components are:
+![Modelo de dados raster](media/raster.png "Modelo de dados raster")
 
-*   **Spatial features (or geometry)**
-*   **Attributes**
+Figura 12. Um raster consiste em pixels de tamanhos iguais em linhas e colunas.
 
-![Spatial data model](media/spatial-model.png "Spatial data modelling reality")
+Um pixel raster pode conter apenas um valor de cada vez. Assim, um raster pode modelar apenas um objeto ou fenômeno por vez.
 
-There are two main spatial data models: **raster** and **vector**. Although any real-world object can be represented by either data model, one data model is usually better at representing certain real-world objects than the other.
 
+###### Dados vetoriais
 
-###### Raster Data
+Os dados vetoriais são mais utilizados ​​para representar objetos discretos.
 
-Raster data is best used to represent continuous phenomena such as elevation or temperature.
+Os dados vetoriais possuem três formas: ponto, linha e polígono. São mais preciso que rasters porque pontos, linhas e polígonos são modelados usando coordenadas bem definidas, tornando-os melhores na representação de objetos discretos do que rasters.
 
-A raster is a cell-based or pixel-based representation of real-world objects composed of rows and columns of cells or pixels where each cell or pixel represents a geographical area (think of a photograph or an image). The value of the cell represents the value of an attribute in the said geographic area. The size of the area is dependent on the spatial resolution of the raster.
+Os vetores são comumente usados ​​quando necessitamos precisão com comprimentos, áreas e distâncias. Eles também são úteis ao realizar análises de rede (por exemplo, encontrar o caminho mais curto um ponto a outro em uma rede de vias).
 
-Rasters are quite useful for site suitability modelling since you can combine rasters via mathematical operations (raster algebra).
 
+![Modelo de dados vetoriais](media/vector.png "Modelo de dados vetoriais")
 
-![Raster data model](media/raster.png "Raster data model")
+Figura 13. Um vetor consiste em feições com seus atributos correspondentes.
 
-Figure 12. A raster consists of equal-sized pixels in rows and columns.
+Comparado aos pixels raster, uma feição vetorial pode conter mais de um valor por vez. Esses valores são armazenados como colunas na tabela de atributos. Cada feição é armazenada como uma linha.
 
-A raster pixel may only hold one value at a time. Thus, a raster may only model one object or phenomenon at a time.
 
+##### Quiz
 
-###### Vector Data
+1. Qual tipo de dado pode representar melhor os seguintes objetos / fenômenos:
+    1. estradas
+    2. casas
+    3. densidade populacional
+    4. perigo de inundação
 
-Vector data is best used to represent discrete objects.
 
-Vector data comes in three primary forms: point, line, and polygon. It is more precise than rasters because points, lines, and polygons are modelled using well-defined coordinates thus making them better at representing discrete objects than rasters.
+#### Título da Fase 3: Sistema de Informação Geográfica (SIG)
 
-Vectors are commonly used when precise lengths, areas, and distances are needed. They are also useful when performing network analysis (e.g. finding the shortest path of road from one point to another).
+##### Conteúdo / Tutorial
 
+As informações geográficas e de localização tornaram-se onipresentes no século 21 em todos os níveis de granularidade. Temos satélites, aeronaves e até drones comerciais que são capazes de capturar grandes quantidades de dados brutos em grandes áreas por longos períodos de tempo. Existem também sensores que coletam e reúnem informações de localização, como o GPS e outros aplicativos em nossos telefones e dispositivos.
 
-![Vector data model](media/vector.png "Vector data model")
+Com todos esses dados à nossa disposição, é fundamental saber gerenciá-los, analisá-los e apresentá-los. É aqui que entram os Sistemas de Informação Geográfica, ou mais comumente conhecidos como SIG, ou GIS.
 
-Figure 13. A vector consists of features with their corresponding attributes.
+SIG é uma ferramenta / framework / sistema que nos permite trabalhar com informação geográfica (ou espacial) e sua correspondente informação de atributo (não espacial). Em particular, um GIS deve ser capaz de:
 
-Compared to raster pixels, a vector feature may hold more than one value at a time. These values are stored as columns in the attribute table. Each feature, on the other hand, is stored as a row.
 
 
-##### Quiz questions
+*  **Coletar**, **armazenar**, **editar**, **manipular**, ou em termos mais gerais, **gerenciar** dados espaciais.
+* **Analizar** os dados usando seu componente espacial (onde os dados estão) ou atributo (o valor dos dados).
+* **Apresentar** os dados e análises como informações significativas por meio de mapas, gráficos, plotagens e outras visualizações.
 
-1. What data type can best represent the following objects/phenomenon:
-    1. roads
-    2. houses
-    3. population density
-    4. flood hazard
+_SIG não é apenas mapeamento_. Embora a elaboração de mapas seja um dos aspectos mais importantes e comumente conhecidos do SIG, ela ainda é apenas uma parte de seus muitos recursos. Podemos ver a estrutura SIG moderna como sendo composta por:
 
+* **Dados** - referem-se às informações utilizadas pelo SIG que podem ou não conter informações de localização (por exemplo, nomes de lojas, localizações de lojas).
+* **Tecnologia** - inclui os componentes de hardware e software de um SIG - as máquinas, instrumentos e computadores com os aplicativos de software usados ​​para fazer o trabalho geoespacial.
+* **Métodos e análises** - referem-se à ciência e matemática em SIG, que permitem realizar consultas e cálculos espaciais e não espaciais (de atributos).
+* **Visualização** - embora semelhante aos métodos e análises, a visualização pode ser considerada como um componente separado, pois se refere especificamente aos meios pelos quais um SIG representa os dados graficamente. Isso inclui não apenas mapas, embora seja o caso mais comum, mas também tabelas, gráficos, etc.
+* **Pessoas** - são as pessoas e / ou grupos de pessoas que estão envolvidas no uso, desenvolvimento, ensino e manutenção de SIG.
 
-#### Phase 3 title: Geographic Information System (GIS)
+Todas as partes da estrutura SIG moderna - dos dados às pessoas - são essenciais para garantir seu sucesso.
 
-##### Content/Tutorial
 
-Geographic and location information have become ubiquitous in the 21st century at all levels of granularity. We have satellites, aircrafts, and even commercial drones that are able to capture large quantities of raw data over large areas over long periods of time. There are also sensors that collect and gather location information such as the GPS and other applications on our phones and gadgets.
+##### Perguntas do questionário
 
-With all of this data available to us, knowing how to properly manage, analyse, and present them is imperative. This is where Geographic Information Systems, or more commonly known as GIS, come in.
+1. Verdadeiro ou falso:
+    1. Um SIG só pode ser usado com dados geoespaciais.
+    2. Um mapa é sempre o resultado ao se usar um SIG.
+    3. Aprender SIG é difícil e caro.
 
-GIS is a tool/framework/system that allows us to work with geographic (or spatial) information and its corresponding attribute (non-spatial) information. In particular, a GIS should be able to:
+#### Título da Fase 4 (adicional): Software Livre e de Código Aberto para uso Geoespacial (FOSS4G)
 
+##### Conteúdo / Tutorial
 
+QGIS é apenas um exemplo de software livre e de código aberto para uso geoespacial (FOSS4G). Outros exemplos de FOSS4G são GRASS, PostGIS, GeoServer, GeoNode, etc. Esses aplicativos FOSS4G são ótimas ferramentas para trabalhar não só porque são confiáveis, mas também porque, sendo gratuitos e de código aberto, têm uma barreira de entrada menor e são altamente personalizáveis para qualquer necessidade. Você pode encontrar uma variedade de softwares geoespaciais gratuitos e de código aberto para cada necessidade e para cada parte do "stack" geoespacial.
 
-*   **Collect**, **store**, **edit**, **manipulate**, or generally, **manage** spatial data.
-*   **Analyse** the data using its spatial component (where the data is) or attribute (the value of the data).
-*   **Present** the data and analyses as meaningful information through maps, charts, plots, and other visualizations.
 
-_GIS is not just mapping_. Although map-making is one of the most important and commonly-known aspects of GIS, it is still just one of its many parts and features. We can view the modern GIS framework as being composed of:
+![Stack de aplicativos de software livre e de código aberto para geoespaciais (FOSS4G)](media/foss4g-stack.jpeg "Stack de aplicativos de software livre e de código aberto para geoespaciais (FOSS4G)")
 
-*   **Data** - these refer to the pieces of information used by GIS which may or may not have location information (e.g. names of stores, locations of stores).
-*   **Technology** - these include both the hardware and software components of a GIS — the machines, instruments, and computers with the software applications used to do geospatial work.
-*   **Methods & Analysis** - these refer to the science and mathematics in GIS which allows it to perform both spatial and non-spatial (attribute) queries and computations.
-*   **Visualization** - although similar to methods & analysis, visualization can be considered as a separate component as these refer specifically to the means by which a GIS represents data graphically. These include not just maps, although that’s the most common case, but also tables, charts, graphs, etc.
-*   **People** - these are the people and/or groups of people who are involved in the use, development, teaching, and maintenance of GIS.
+Figura 14. Uma amostra de stack geoespacial de código aberto (ou FOSS4G) (de Simon Nitz ([https://twitter.com/si_nitz?lang=en](https://twitter.com/si_nitz?lang=en)))
 
-All parts of the modern GIS framework — from the data to the people — are integral in ensuring its success.
 
+###### Software grátis
 
-##### Quiz questions
+__Livre como em liberdade e não apenas grátis.__
 
-1. True or False:
-    1. GIS can only be used with geospatial data.
-    2. A map is always the output when using GIS.
-    3. Learning GIS is difficult and expensive.
+Software livre é o software que adere às Quatro Liberdades Essenciais do Software Livre, que são:
 
 
-#### Phase 4 title (additional): Free and Open Source Software for Geospatial (FOSS4G)
 
-##### Content/Tutorial
+1. A liberdade de executar o programa como desejar, para qualquer propósito (liberdade 0).
+2. A liberdade de estudar como o programa funciona e alterá-lo para que ele faça o que você deseja (liberdade 1). O acesso ao código-fonte é uma pré-condição para isso.
+3. A liberdade de redistribuir cópias para que você possa ajudar outras pessoas (liberdade 2).
+4. A liberdade de distribuir cópias de suas versões modificadas para outros (liberdade 3). Ao fazer isso, você pode dar a toda a comunidade a chance de se beneficiar com suas mudanças. O acesso ao código-fonte é uma pré-condição para isso.
 
-QGIS is just one example of Free and Open Source Software for Geospatial (FOSS4G) application. Other examples of FOSS4G are GRASS, PostGIS, GeoServer, GeoNode, etc. These FOSS4G applications are great tools to work with not only because they are reliable but also because, being free and open source, they have a lower barrier of entry and are highly customizable to any need. You can find a variety of free and open source geospatial applications for every need and for every part of the geospatial stack.
 
+###### Código aberto
 
-![Free and Open Source Software for Geospatial (FOSS4G) applications stack](media/foss4g-stack.jpeg "Free and Open Source Software for Geospatial (FOSS4G) applications stack")
+Softwares de código aberto são aqueles que possuem licenças que permitem uso sem precisar pagar royalties e que permitem a reutilização do software, juntamente com acesso livre ao código-fonte. Por convenção, essas licenças de código aberto são aquelas que estão em conformidade com a definição de código aberto prevista pela Open Source Initiative. O código-fonte aberto não só garante acesso gratuito ao software e código-fonte, mas também a capacidade de redistribuir o software sem custos adicionais.
 
-Figure 14. A sample open source geospatial (or FOSS4G) stack (from Simon Nitz ([https://twitter.com/si_nitz?lang=en](https://twitter.com/si_nitz?lang=en)))
-
-
-###### Free Software
-
-_Free as in freedom not just free food. _
-
-Free software are software that adhere to the the Four Essential Freedoms of Free Software, which are:
-
-
-
-1. The freedom to run the program as you wish, for any purpose (freedom 0).
-2. The freedom to study how the program works, and change it so it does your computing as you wish (freedom 1). Access to the source code is a precondition for this.
-3. The freedom to redistribute copies so you can help others (freedom 2).
-4. The freedom to distribute copies of your modified versions to others (freedom 3). By doing this you can give the whole community a chance to benefit from your changes. Access to the source code is a precondition for this.
-
-
-###### Open source
-
-Open source software are those that have licenses which provide royalty-free use and reuse of the software together with open access to the source code. By convention, these open source licenses are those that comply with the Open Source Definition as provided for by the Open Source Initiative.  Open source not only guarantees free access to the software and source code but also the ability to redistribute the software with no additional costs.
-
-Because of the open nature of open source software, it is also a great software development model where everyone is free to update, upgrade, modify, and share their modifications to the community.
+Por causa da natureza aberta do software de código aberto, ele também é um ótimo modelo de desenvolvimento de software, no qual todos são livres para atualizar, melhorar, modificar e compartilhar suas modificações com a comunidade.
 
 
 ###### OSGeo
 
-There are a lot of open source geospatial applications out there and sometimes the most difficult part is knowing where and how to start working with these applications. Thankfully, the Open Source Geospatial Foundation (OSGeo) ([https://www.osgeo.org/](https://www.osgeo.org/)) is there to help foster global adoption of open geospatial technology and support the development of these technologies.
+Existem muitos softwares geoespaciais de código aberto e, às vezes, a parte mais difícil é saber onde e como começar a trabalhar com esses softwares. Felizmente, a Open Source Geospatial Foundation (OSGeo) ([https://www.osgeo.org/](https://www.osgeo.org/)) existe para ajudar a promover a adoção global de tecnologia geoespacial aberta e apoiar o desenvolvimento dessas tecnologias.
 
 
-##### Quiz questions
+##### Perguntas do questionário
 
-N/A
-
-
-#### If you want to go further:  
-
-If you want to quickly try using FOSS4G applications, you can try OSGeoLive ([https://live.osgeo.org/en/index.html](https://live.osgeo.org/en/index.html)) which is a Linux distribution (Operating System) that comes pre-installed with QGIS, GRASS, and other FOSS4G applications.
+N/D
 
 
-#### To practice your new skills, try to…
+#### Se você quiser ir mais longe
 
-N/A
+Se você quiser testar usar aplicativos FOSS4G facilmente, experimente o OSGeoLive ([https://live.osgeo.org/en/index.html](https://live.osgeo.org/en/index.html)) que é uma distribuição Linux (sistema operacional) que vem pré-instalado com QGIS, GRASS e outros aplicativos FOSS4G.
 
 
-#### Tips
+#### Para praticar suas novas habilidades, tente...
 
-N/A
+N/D
+
+
+#### Dicas
+
+N/D
