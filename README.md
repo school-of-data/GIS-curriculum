@@ -1,5 +1,9 @@
 # GIS-curriculum
 
+## Localisations
+- [**Philippines**](philippines/)
+- [**Sri Lanka**](sri-lanka/)
+
 ## Modules
 - **Module 0**: Gentle Introduction to GIS concepts
 - **Module 1**: Introduction to QGIS
