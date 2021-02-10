@@ -5,7 +5,7 @@
 
 ### Pedagogical Introduction
 
-This module serves as an introduction to QGIS. At the end of this module, learners should be familiar with:
+This module serves as an introduction to **QGIS**. At the end of this module, learners should be familiar with:
 
 *   what QGIS is
 *   QGIS interface
