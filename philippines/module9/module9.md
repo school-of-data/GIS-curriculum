@@ -18,7 +18,7 @@ By the end of this module, learners will have the basic understanding of the fol
 *   change detection
 
 
-## **Required Tools and Resources**
+## Required Tools and Resources
 
 *   This module has been prepared using [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
 *   The datasets used for all exercises detailed in this module are presented in the table below:
@@ -109,7 +109,7 @@ Why is this important in our context? Because, as mentioned at the beginning, a 
 In the last two decades, the number of satellites capturing data from Earth has grown exponentially. Furthermore, an open data access policy that has been adopted by different space agencies, such as NASA for the [Landsat program](https://www.usgs.gov/core-science-systems/nli/landsat/landsat-data-access?qt-science_support_page_related_con=0#qt-science_support_page_related_con) or the European Space Agency for the [Copernicus program](https://www.copernicus.eu/en/access-data), has opened the door for an overwhelming stream of Earth Observation data. As a natural consequence, the scientific progress of algorithms, methodologies and the development of more powerful tools to process raster data - especially satellite imagery - has been impressive and extensive in fields such as agriculture, forestry, urban development, humanitarian activities, ocean and sea water monitoring, security and so many more. In the following 3 phases, we will introduce some of the most common processing techniques and what results to expect from them. 
 
 
-#### Step 1. Prepare your working environment. 
+#### **Step 1. Prepare your working environment.** 
 
 We will strat by adding to your QGIS project all the raster datasets that we will be working with, as follows: 
 
@@ -396,7 +396,7 @@ Your QGIS map window should look like in figure 9.6, maybe in slightly different
 Figure 9.6 - Loaded raster datasets
 
 
-#### Step 2. Understand what you are looking at. 
+#### **Step 2. Understand what you are looking at.** 
 
 Next, we will use a series of tools that will allow us to get a sense of the data we are working with. 
 
@@ -648,11 +648,11 @@ The second tab - Graph - displays in a united graph all values it reads at the p
 The third tab allows the user to customize what the `Value Tool` displays: what layers (all, only the visible ones or the selected ones) and which bands to show. 
 
 
-### Quiz questions
+#### **Quiz questions**
 
 1. Can raster layers be reprojected in other coordinate systems?
-*   _<span style="text-decoration:underline;">Yes.</span>_
-*   _No. _
+*   <span style="text-decoration:underline;">Yes.</span>
+*   No
 2. Can there be any gaps between the value ranges of a histogram computed for a raster layer?
 *   Yes. 
 *   <span style="text-decoration:underline;">No.</span>
@@ -661,7 +661,7 @@ The third tab allows the user to customize what the `Value Tool` displays: what 
 *   No. 
 
 
-## **Phase 2: Working Intro to working with raster data**
+### Phase 2: Working Intro to working with raster data
 
 Now that we’ve learned how to extract basic information on the loaded raster datasets, we will continue with a more in-depth raster data processing in order to obtain new derived rasters and, in consequence, more information.
 
@@ -811,33 +811,31 @@ Figure 9.37 - Resulting vector layer of Zonal Statistics
 And with this final step, we answered our exercise, how many people (and where) are living below 200m in Pampanga province. 
 
 
-### Quiz questions 
+#### **Quiz questions**
 
 1. Can raster data be clipped? 
-*   _<span style="text-decoration:underline;">Yes</span>. _
+*   _<span style="text-decoration:underline;">Yes</span>._
 *   _No._
 2. Can one use vector datasets loaded in the QGIS project in Raster Calculator?
-*   _Yes. _
+*   _Yes._
 *   _<span style="text-decoration:underline;">No.</span>_
 3. Can raster datasets be converted to vector datasets?
-*   _<span style="text-decoration:underline;">Yes</span>. _
+*   _<span style="text-decoration:underline;">Yes</span>._
 *   _No._
 
 
-## **Phase 3: Working with raster and vector data.**
+### Phase 3: Working with raster and vector data.
 
 *   Resampling HRSL to LandCover dimension - 30m to 100m
 *   Change detection exercise for land cover
 
 
-# References:
+## References:
 
 Center for International Earth Science Information Network - CIESIN - Columbia University. 2018. Gridded Population of the World, Version 4 (GPWv4): Population Density, Revision 11. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). [https://doi.org/10.7927/H49C6VHW](https://doi.org/10.7927/H49C6VHW).
 
 Resampling methods: [https://gisgeography.com/raster-resampling/](https://gisgeography.com/raster-resampling/)
 
-
-<!-- Footnotes themselves at the bottom. -->
 ## Notes
 
 [^1]: A primitive operation is a basic computation performed by an algorithm.  

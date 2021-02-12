@@ -58,7 +58,7 @@ Let’s start with an example: You have just landed for your city break in Angel
 Figure 8.1 - Getting from point A to B using Openstreetmap
 
 
-## **Breakdown of the concepts**
+## Breakdown of the concepts
 
 This is a classic example of vector data use and it breaks down into several concepts that we will define below. 
 
@@ -70,10 +70,7 @@ Figure 8.2 - Vector lines representing streets and the associated attribute tabl
 
 Streets represent a network model that is basically a collection of topologically interconnected point and line features. The results of the algorithm that calculates the route from point A to point B - in our case from the airport to the hotel - are highly dependent on the quality of the vectors, both in geometry - topology rules are respected - and in attributes - if a road is unidirectional that must be indicated so the routing doesn’t lead you the wrong way. 		
 
-
-## Main content
-
-### The vector data model**
+### The vector data model
 
 As presented in module 0, there are 2 data models used in a geographical information system - GIS: raster and vector. Geospatial data always includes a **spatial** component indicating the location or the spatial distribution of the phenomenon at hand and an **attribute** component that describes its properties. The choice between using the raster or the vector data model for a particular situation depends on the source of the data as well as its intended use. 
 
@@ -85,7 +82,7 @@ The vector data model is used to represent areas, lines and points (Figure 8.1).
 Figure 8.1 - vector data with attribute table
 
 
-#### **Metadata**
+### Metadata
 
 Metadata is most simply defined as data about data. It characterises, at different levels of detail, the dataset that it is associated to, including categories such as: who is the provider/owner of the dataset, what is the license, in what language are the attributes written, what was the coordinate system used, which geographical area it describes and what is the reference year, keywords, what are the known limitations, accuracy level, what was the original scope of the dataset and many more.
 
@@ -96,7 +93,7 @@ Because of the importance of metadata, its categories (their definitions, name, 
 It must be said that metadata is not a specificity of geospatial resources, but it applies to any kind of data.
 
 
-#### **Rational of vector processing**
+### Rational of vector processing
 
 The power of GIS lies in its unique capacity of connecting geometric properties that define real objects and phenomena in our world and their attributes - either observed, measured or calculated - and allowing through specialised software to perform operations on their geometries, on their attributes or both in order to derive new valuable information. 
 
@@ -118,14 +115,14 @@ Geoprocessing is a general term used to define any operation - process - applied
 Figure 8.4 - elements of a geoprocessing operation
 
 
-# Main content: 
+## Main content: 
 
-## **Phase 1: Understanding your data.**
+### Phase 1: Understanding your data.
 
 There are many geoprocessing operations that can be performed on vector data, most commonly including geographic feature overlay, feature selection and analysis, topology processing and data conversion. In this first phase, we will become familiar with some of them, understanding how they work and what results we can expect. 
 
 
-### Step 1. Prepare your working environment. 
+#### **Step 1. Prepare your working environment.**
 
 Open QGIS, set up the coordinate reference system you will work in - EPSG 3123 -  and add the following data layers:
 
@@ -142,7 +139,7 @@ Figure 8.5 - Loaded vector data sets: points, line and polygons
 
 **Check!** All layers are in the same coordinate system (EPSG 3123) by looking in the right down side corner. If it is so, then you are looking at 7 vector data layers overlaid. 
 
-### Step 2. Understand what you are looking at. 
+#### **Step 2. Understand what you are looking at.** 
 
 At this point, we have 7 vector layers loaded into our QGIS project. The next steps will help us understand our data. 
 
@@ -234,7 +231,7 @@ Mean length: 0.3669563599413767
 The results don’t look the same, we don’t have mean, nor median or standard deviation. That is because the attribute field we ran the algorithm on is different, we don’t have numbers but words - types of buildings. We find out that out of 827657 buildings in Pampanga, for 773210 we don’t know the type of the building. We also find out that there are 74 unique categories. 
 
 
-### Step 3. Basic checks to quickly find errors in your data.  
+#### **Step 3. Basic checks to quickly find errors in your data.**
 
 Perfect, flawless datasets are the equivalent of the ideal gas in physics. There is no such thing, but many can come very close to it. Therefore, before doing any kind of analysis to extract information, at least some basic checks are necessary on how _clean_ the data we have are. 
 
@@ -347,7 +344,7 @@ Figure 8.18 - Results of Delete duplicate geometries
 A complete cleaning of the vector datasets used for this module is out of scope. Its complexity transforms it in a more advanced module in itself.
 
 
-### Step 4. Take a closer look at the information attached to the points, lines and polygons.
+#### **Step 4. Take a closer look at the information attached to the points, lines and polygons.**
 
 Let's run one more algorithm to get a sense of what the attributes for our Pampanga layers are. After we’ve identified how many features each layer has, let’s see how many and which are the unique attributes in the following cases: 
 
@@ -467,7 +464,7 @@ Another interesting analysis can be run on the roads vector layer. Figure 8.22 s
 Figure 8.22 - Running GroupStats on the roads layer. 
 
 
-### Quiz questions
+#### **Quiz questions**
 
 1. Is metadata important? 
 *   _<span style="text-decoration:underline;">Yes, because it gives insight into the geographical data that otherwise one could not gain. </span>_
@@ -480,7 +477,7 @@ Figure 8.22 - Running GroupStats on the roads layer.
 *   _<span style="text-decoration:underline;">Both.</span>_
 
 
-## **Phase 2: Introduction into vector processing **
+### **Phase 2: Introduction into vector processing **
 
 First phase of the vector module made a brief introduction into the steps that one should make to have a basic understanding of the geospatial data they have at hand. 
 
@@ -643,7 +640,7 @@ To count the total number of public buildings in the 10X10 unit, we will use the
 Figure 8.40 - Spatial distribution of public buildings density per unit 10X10km
 
 
-### Quiz questions
+#### **Quiz questions**
 
 Q: If I have 2 vector layers - one represents the extent of the city where I am working and the second, the built roads in the entire country - what processing tool would I use to extract only the roads in my city: buffer or clip? 
 
@@ -658,7 +655,7 @@ Q: Which one of the three geoprocessing tools would you use to merge two similar
 A: Dissolve. 
 
 
-## **Phase 3: Geostatistics. Interpolation - estimating missing data**
+### Phase 3: Geostatistics. Interpolation - estimating missing data
 
 
 

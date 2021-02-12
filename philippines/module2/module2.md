@@ -197,7 +197,7 @@ Figure 2.7. The Layers Panel
 
 The visibility of a layer can be controlled by checking or unchecking the box on the left of the Layer Name. By dragging the layers up or down in the Layers Panel, their Z-ordering can be changed. Similar to image manipulation software like GIMP or Photoshop, the layers listed near the top are drawn over layers listed lower down. So if two layers show the same area, the layer that is higher in the Layers Panel will be drawn on top of the lower layer and may not make the lower layer visible in the Map Canvas. This is worth noting because there can be instances where we think a layer does not appear in QGIS when in reality it is being covered or hidden by a layer on top of it. 
 
-**NOTE: **The Z-ordering of layers in the Layers Panel can be overridden by the **Layer Order Panel**.
+**NOTE:** The Z-ordering of layers in the Layers Panel can be overridden by the **Layer Order Panel**.
 
 The Layers Panel also allows the user to rename and remove layers, filter layer visibility, create and manage layer groups and map views.
 
@@ -502,7 +502,7 @@ The outputs of processing algorithms are stored as temporary layers by default.
 
 The downside of temporary layers is that QGIS “**forgets**” these “**layers in memory**” when it is closed. To remedy this, we can use the **Memory Layer Saver plugin** to allow our temporary layers to be persistent. When saving a QGIS project that uses temporary layers, it is good practice to run/activate the Memory Layer Saver plugin first. To use the Memory Layer Saver plugin, simply go to **Plugins ‣ Memory Layer Saver** before saving and closing your QGIS project. The next time you open your QGIS project, the temporary layers (or layers in memory) should still be present.
 
-Of course you can also just make the temporary layer permanent by exporting the layer to a file. Clicking the ![Temporary layer symbol](media/image34.png "Temporary layer symbol") icon will automatically open an export layer dialog.
+Of course you can also just make the temporary layer permanent by exporting the layer to a file. Clicking the ![Temporary layer symbol](media/symbol-temp.png "Temporary layer symbol") icon will automatically open an export layer dialog.
 
 
 #### **Virtual Layers**

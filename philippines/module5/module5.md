@@ -62,15 +62,13 @@ Figure 5.1: Print layout
 *   **map elements and properties**: Maps contain lots of information. Most maps will have the five following things: a Title, a Legend, a Grid, a Compass Rose to indicate direction, and a Scale. The Title tells you what is being represented on the map
 
 
-### Main content
+## Main content
 
-#### Phase 1 title: Exporting the map canvas
-
-##### Content/Tutorial
+### Phase 1 title: Exporting the map canvas
 
 In this tutorial, we’ll show two ways to ‘Export the map canvas’ to the QGIS print layout. The first method is straightforward while the second method explores the more advanced capabilities provided by the print layout.
 
-###### First method: Export the map canvas without the print layout
+#### **First method: Export the map canvas without the print layout**
 
 1. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data. Add map decorations by clicking **View->Decorations**. Select your preferred map decoration. For example you may add the Title label, Scale bar and Copyright Label. For each decoration you’ll have to specify settings in a dialogue box.
 2. The final step is to export the map to either image or pdf format. To do this, Click **Project-> Import/Export** and then select your prefered export format. The export dialogue below should appear.
@@ -83,7 +81,7 @@ Figure 5.2: Exporting the map
 3. Click **Save**. The map in the qgis canvas will be saved as a pdf or image document. Browse to the location where the file is saved and you’re now able to print or share the map.
 
 
-###### Second method: Export the map canvas to the print layout
+#### **Second method: Export the map canvas to the print layout**
 
 1. In this tutorial, we’ll make a map showing the 1.) location of health centres and 2.) population density of Pampanga Province in the Philippines. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data.
 
@@ -109,13 +107,13 @@ Figure 5.4: New Print layout
 
 Figure 5.5: Exported map from qgis map canvas to print layout view
 
-##### Quiz questions
+#### **Quiz questions**
 
 1. What is the qgis map canvas? (check boxes)
 2. What is the use of the print layout? (check boxes)
 3. Which of the following is not a map element? (radio button)
     
-##### Quiz answers
+#### **Quiz answers**
 
 1. a. shows the map composed from overlaid map layers
    b. allows interaction with the map and layers
@@ -131,10 +129,10 @@ Figure 5.5: Exported map from qgis map canvas to print layout view
    d. Colors and designs
 
 
-#### Phase 2 title: Adding and editing map elements to the print layout 
+### Phase 2 title: Adding and editing map elements to the print layout 
 
 
-##### Content/Tutorial
+#### **Content/Tutorial**
 
 Now that the styled map has been added to print layout, it’s now time to add the relevant map elements like the title, scale, legend, grid, metadata etc to the print layout. Most of the buttons are located to the left of the print layout.
 
@@ -154,14 +152,14 @@ Figure 5.7: Legend, scale and data attribution added to print layout
 3. If the map layout is satisfactory, the map can be exported as a pdf, png, jpeg or svg, ready for printing otherwise save the layout. All saving functionality can be accessed via the ‘layout’ menu.
 
 
-##### Quiz questions
+#### **Quiz questions**
 
 1.  Under which of the following tabs can you change the properties of map elements? (radio button)
 2. What’s the difference between the print layout and print layout
 3. How can you add attribution text to the map layout
 
 
-##### Quiz answers
+#### **Quiz answers**
 
 1. a. Composition
    b. Item properties
@@ -170,9 +168,9 @@ Figure 5.7: Legend, scale and data attribution added to print layout
 3. Add a title box, then type the attribution text. Note that the title box allows you to add all forms of text to your map.
 
 
-#### Phase 3 title : Automating map creation using Atlas capabilities
+### Phase 3 title : Automating map creation using Atlas capabilities
 
-##### Content/Tutorial
+#### **Content/Tutorial**
 
 If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different provinces of the Philippines as an example, here’s Administrative Boundaries for the 81 provinces;
 
@@ -204,11 +202,11 @@ Figure 5.11: Controlled by Atlas
 5. Click the  ‘Atlas’ menu, then select ‘Export Atlas as PDF’. You should have 81 maps generated. Each map will represent a province.
  
 
-##### Quiz questions
+#### **Quiz questions**
 
 n/a
 
 
-##### Quiz answers
+#### **Quiz answers**
 
 n/a

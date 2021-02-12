@@ -2,7 +2,7 @@
 
 ## Localisations
 - [**Philippines**](philippines/)
-- [**Sri Lanka**](sri-lanka/)
+- [**Sri Lanka** (in English)](sri-lanka/)
 
 ## Modules
 - **Module 0**: Gentle Introduction to GIS concepts

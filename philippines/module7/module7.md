@@ -57,18 +57,16 @@ Figure 7.2: Here, buildings have been digitized (traced) on top of an aerial pho
 Georeferencing, on the other hand is the process of taking a digital image, it could be an airphoto, a scanned geologic map, or a picture of a topographic map, and adding geographic information to the image so that GIS or mapping software can 'place' the image in its appropriate real world location.
 
 
-### Main content
+## Main content
 
 QGIS allows you to create new layers in different formats. It provides tools for creating GeoPackage, Shapefile, SpatiaLite, GPX format and Temporary Scratch layers (aka memory layers). Editing allows you to add, delete and modify features in vector data sets. The first step is to put the data set into edit mode. Select the layer in the Layers panel and click Layer | Toggle Editing. Alternatively you can right click on a layer in the Layers panel and choose Toggle Editing from the context menu. Multiple layers can be edited at a time. The layer currently being edited is the one selected in the Layers panel. Once in edit mode the Digitizing Toolbar can be used to add, delete and modify features.
 
 Digitising, as you might have guessed, is the art (or science) of creating digital vector data from another source, such as a raster image. In order to begin digitising, we must first enter edit mode. GIS software commonly requires a separate mode for editing, to prevent users from accidentally editing or deleting important data. Edit mode is switched on or off individually for each layer.
 
 
-#### Phase 1 title: Creating a new GeoPackage layer or Shapefile
+### Phase 1 title: Creating a new GeoPackage layer or Shapefile
 
-##### Content/Tutorial
-
-###### Creating a new GeoPackage layer
+#### **Creating a new GeoPackage layer**
 
 1. To create a new GeoPackage layer, press the New GeoPackage Layer button ![alt_text](media/geopackage_button.PNG "image_tooltip")
  in the Layer ‣ Create Layer menu or from the Datasource Manager toolbar. The New GeoPackage Layer dialog will be displayed as shown in Figure 7.3.
@@ -93,7 +91,7 @@ Figure 7.3: New GeoPackage Layer dialogue
 8. Once you are happy with the attributes, click OK. QGIS will add the new layer to the legend, and you can edit it as described in section
 
 
-###### Creating a new Shapefile
+#### **Creating a new Shapefile**
 
 1. To create a new ESRI Shapefile format layer, press the ![alt_text](media/mActionNewVectorLayer.png "image_tooltip") New Shapefile Layer… button in the Layer ‣ Create Layer ‣ menu or from the Data Source Manager toolbar. The New Shapefile Layer dialog will be displayed as shown in Figure 7.4.
 
@@ -117,9 +115,9 @@ Figure 7.4: New shapefile layer dialogue
 9. Once you are happy with the attributes, click OK. QGIS will add the new layer to the legend, and you can edit it as described in the next Phase, ‘Digitizing an existing layer of this module.
 
 
-#### Phase 2 title: Digitizing an existing layer
+### Phase 2 title: Digitizing an existing layer
 
-##### Content/Tutorial
+#### **Content/Tutorial**
 
 This tutorial will show how to create a new shapefile using auxiliary data like satellite imagery provided by Google. In practice accurate ground truth data will be available. This would be accurate qualitative data about the topological feature. It’s important to know what feature you’d like to create beforehand, for example is it a point, line or polygon shapefile layer. When we create the layer, we must define what type of data it will contain. The purpose of this tutorial is to create a data type that can easily be manipulated, analysed and stored using a GIS system, hence the need to create shapefiles. We’ll create polygon features as an example;
 
@@ -244,12 +242,11 @@ If you make a mistake while digitising a feature, you can always edit it later. 
 19. Now try it on your own, digitize all the buildings in the image.
 
 
-#### Phase 3 title: Georeferencing a Topo map
+### Phase 3 title: Georeferencing a Topo map
 
-##### Content/Tutorial
+#### **Content/Tutorial**
 
 To georeference the map;
-
 
 1. Open the Georeferencer tool, Raster ► Georeferencer 
 2. Click the Add raster button ![Add Raster](media/add_raster.PNG "Add Raster") to add the map image file, Topo Map of Pampanga ([https://drive.google.com/file/d/1lgMsxIq50l8F9deNMOXxl7CQ6gizslxJ/view?usp=sharing](https://drive.google.com/file/d/1lgMsxIq50l8F9deNMOXxl7CQ6gizslxJ/view?usp=sharing)), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
@@ -291,16 +288,13 @@ Figure 7.12: First coordinate for the georeferencing
 
 Once you are happy with your control points, you can save them for later use:
 
-
-
 14. File ► Save GCP points as….
 15. Finally, georeference your map. File ► Start georeferencing
 
     Note: To check that your data is properly georeferenced you can open the topo map. Your map and this image should match quite well. Set the map transparency to 50% and compare it to the aerial image.
 
 
-
-##### Quiz questions
+#### **Quiz questions**
 
 1.  What is digitizing in GIS? (check-boxes)
 2.  Which of the following auxiliary datasets will support digitizing? (check boxes)
@@ -309,7 +303,7 @@ Once you are happy with your control points, you can save them for later use:
 5. Why is a data model important when creating new data? (radio button)
 
 
-##### Quiz answers
+#### Quiz answers
 
 1. a. the process of converting geographic data either from a scanned image or digital image into vector data by tracing the features
    

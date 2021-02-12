@@ -103,11 +103,9 @@ In the parcel layer example above, the Parcel ID field is an integer field. If t
 In addition, other concepts like the field calculator functionality in the attribute table allows one to perform calculations on basis of existing attribute values or defined functions, e.g to calculate length, area or population density. Note that the possible calculations are determined by the attributes or make up of your data. For example, it’s only possible to calculate population density if there’s a field with population counts. Using the expression engine and field calculator, you would then go on to construct an expression or formula to calculate population density. In this case the formula would be; total population as a number of people/the land area covered by that population. You’ll notice that it’s important to know what each of the fields in the layer attribute table represents. This means you need to know and understand your data thoroughly. This makes it easier to apply functions and expressions and therefore come up with meaningful analyses and visualizations/map products. 
 
 
-### Main content
+### Phase 1 title: Editing layer attributes
 
-#### Phase 1 title: Editing layer attributes
-
-##### Content/Tutorial
+#### **Content/Tutorial**
 
 The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.
 
@@ -147,8 +145,7 @@ Figure 6.4: Field calculator dialogue
 Figure 6.5: New attribute table with new field and attributes
 
 
-
-##### Quiz questions
+#### **Quiz questions**
 
 1. An attribute table is a database or tabular file containing information about a set of geographic features
 
@@ -157,16 +154,16 @@ Figure 6.5: New attribute table with new field and attributes
 3. It is necessary to reproject layers prior to area calculations when the layer has a geographic coordinate reference system
 
 
-##### Quiz answers
+#### **Quiz answers**
 
 1. True
 2. True
 3. True
 
 
-#### Phase 2 : Understanding and working with attribute data, queries and analysis
+### Phase 2 : Understanding and working with attribute data, queries and analysis
 
-##### Content/Tutorial
+#### **Content/Tutorial**
 
 At this point, you might notice that the attribute table stores both spatial and non-spatial data. In this tutorial you’ll discover ways of working with attribute table data. For example, Using expressions, select Clinics in Pampanga with an emergency facility, all using data from the attribute table. 
 
@@ -195,21 +192,21 @@ It’s also possible to make selections by clicking a feature  within the map ca
 Developing a functional expression starts with understanding your data; for example the attributes and   the values they hold. Then asking the right questions and finally, developing the correct expression, putting into consideration all mathematical rules that make an error free expression.
 
 
-##### Quiz questions
+#### **Quiz questions**
 
 1.  These operators are provided by the expression builder.  {+, -, *}
 2.  Single quotes must enclose a string.
 3. The attribute table stores only non spatial data.
 
 
-##### Quiz answers
+#### **Quiz answers**
 
 1. True
 2. True
 3. False
 
 
-#### Phase 3 title : Advanced QGIS expressions 
+### Phase 3 title : Advanced QGIS expressions 
 
 The Expression builder dialog offers access to the:
 
@@ -217,7 +214,7 @@ The Expression builder dialog offers access to the:
 * Function Editor tab ([https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor)) which helps to extend the list of functions by creating custom ones.
 
 
-##### Content/Tutorial
+#### **Content/Tutorial**
 
 There are many use cases for expressions, here are some examples. Notice how the expressions are developed and what operators or predicates are used. Also important is the fact that all these expressions are developed based on the content of the dataset. You may adapt this to your dataset of choice.
 
@@ -250,15 +247,8 @@ END
 5. Likewise, the previous expression could also be used to define which features should be labeled or shown in the map. 
 
 
-##### Quiz questions
+#### **Quiz questions**
 
-1.  Both Field calculator and Select by Expression dialogue can be used to develop expressions 
-2.  Expressions can be used to update a new field
-3.  Expressions can be used to apply a style 
-
-
-##### Quiz answers
-
-1. True
-2. True
-3. True
+1.  Both Field calculator and Select by Expression dialogue can be used to develop expressions -- ***True***
+2.  Expressions can be used to update a new field -- ***True***
+3.  Expressions can be used to apply a style  -- ***True***
