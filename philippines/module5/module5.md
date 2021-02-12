@@ -23,10 +23,10 @@ In addition you’ll have learned the following skills;
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
-*   Access the example Datasets
-    *   Clinics - [https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing)
-    *   High Resolution Population Density Layer - [https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing](https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing)
-
+*   Pampanga administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
+*   Pampanga clinics (inside [module5.gpkg](data/module5.gpkg))
+*   PHL provinces (inside [module5.gpkg](data/module5.gpkg))
+*   [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
 
 ## Prerequisites
 
@@ -70,9 +70,11 @@ In this tutorial, we’ll show two ways to ‘Export the map canvas’ to the QG
 
 #### **First method: Export the map canvas without the print layout**
 
-1. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data. Add map decorations by clicking **View->Decorations**. Select your preferred map decoration. For example you may add the Title label, Scale bar and Copyright Label. For each decoration you’ll have to specify settings in a dialogue box.
-2. The final step is to export the map to either image or pdf format. To do this, Click **Project-> Import/Export** and then select your prefered export format. The export dialogue below should appear.
+1. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data. Add map decorations by clicking **View ‣ Decorations**. Select your preferred map decoration. For example you may add the Title label, Scale bar and Copyright Label. For each decoration you’ll have to specify settings in a dialogue box.
+2. The final step is to export the map to either image or pdf format. To do this, Click **Project ‣ Import/Export** and then select your prefered export format. The export dialogue below should appear.
 
+
+![Exporting the map canvas as image](media/export-map-canvas-image.png "Exportzing the map canvas as image")
 
 ![Exporting the map](media/export-map-canvas.png "Exporting the map")
 
@@ -80,32 +82,35 @@ Figure 5.2: Exporting the map
 
 3. Click **Save**. The map in the qgis canvas will be saved as a pdf or image document. Browse to the location where the file is saved and you’re now able to print or share the map.
 
+![Map canvas exported as image](media/exported-map-canvas.png "Map canvas exported as image")
+
+Figure 5.3: Map canvas exported as image
 
 #### **Second method: Export the map canvas to the print layout**
 
 1. In this tutorial, we’ll make a map showing the 1.) location of health centres and 2.) population density of Pampanga Province in the Philippines. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data.
 
-![Styled layer, ready for export from map canvas to print layout](media/styled_layer2.png "Styled layer, ready for export from map canvas to print layout")
+![Creating new Print Layout](media/new-print-layout.png "Creating new Print Layout")
 
-Figure 5.16: Styled layer, ready for export from map canvas to print Layout
+Figure 5.4: Creating new Print Layout
 
 2. The map canvas can now be exported to the print Layout. Click the ‘new print layout layout button’ ![New Print Layout](media/newprint_composer.png "New Print Layout"). This can be accessed via the tool bar. Alternatively, access using the ‘Projects’ menu bar. A title dialogue will open, prompting you to type the title of the Print Layout. Type ‘Pampanga’ and Click OK.
 
-![Title dialogue](media/new_print_composer.PNG "Title dialogue")
+![Naming the Print Layout](media/new-print-layout-name.png "Naming the Print Layout")
 
-Figure 5.3: Title dialogue
+Figure 5.5: Naming the Print Layout
 
 3. The print layout will open
 
-![New Print layout](media/pampanga_print_composer.PNG "New Print layout")
+![The Print Layout window](media/new-print-layout-window.png "The Print Layout window")
 
-Figure 5.4: New Print layout
+Figure 5.6: The Print Layout window
 
-4. You’ll notice the print layout canvas is empty. To add the styled map from the QGIS canvas, Click the ‘Add new map to layout button’ ![alt_text](media/add_new_map_to_layout.PNG "image_tooltip"), left click your mouse and draw a rectangle in the white space at the center of the print layout. The map should be added. You’ve just exported a map to the print layout. It’s now possible to add all other map elements like the title, legend, grids etc. 
+4. You’ll notice the print layout canvas is empty. To add the styled map from the QGIS canvas, Click the ‘Add new map to layout button’ ![alt_text](media/add_new_map_to_layout.png "image_tooltip"), left click your mouse and draw a rectangle in the white space at the center of the print layout. The map should be added. You’ve just exported a map to the print layout. It’s now possible to add all other map elements like the title, legend, grids etc. 
 
-![Exported map from qgis map canvas to print layout view](media/print-canvas-map.png "Exported map from qgis map canvas to print layout view")
+![Add map to Print Layout](media/print-canvas-map.png "Add map to Print Layout")
 
-Figure 5.5: Exported map from qgis map canvas to print layout view
+Figure 5.7: Add map to Print Layout
 
 #### **Quiz questions**
 
@@ -139,18 +144,31 @@ Now that the styled map has been added to print layout, it’s now time to add t
 1. Click the ‘Add label’ ![alt_text](media/add_title.png "image_tooltip")
 button, hold down the left mouse button and draw a rectangle where you’d like to place the title of the map. Type the title under the ‘Main properties’ menu on the right side of the print layout. The font properties can be changed under the ‘Appearance’ menu item.
 
-![Add title of the map](media/pampanga_with_title.png "Add title of the map")
+![Add title of the map](media/print-layout-with-title.png "Add title of the map")
 
-Figure 5.6: Add title of the map
+Figure 5.8: Add title of the map
 
 2. Next, we’ll add the legend and scale. A data attribution statement can be added using the ‘Add label’ button Hover over the button on the left of the print layout and click the preferred button. Follow the same steps as in 1. Above to add the map element to the print layout. You can add other map elements but be careful that the map doesn’t get too cluttered. 
 
-![Legend, scale and data attribution added to print layout](media/legend_scalebar_added.png "Legend, scale and data attribution added to print layout")
 
-Figure 5.7: Legend, scale and data attribution added to print layout
+![Scale bar](media/scale-bar.png "Scale bar")
+Figure 5.9: Add scale bar to the map
+
+![Legend](media/legend.png "Legend")
+Figure 5.9: Add legend to the map
+
+![Attribution](media/attribution.png "Attribution")
+Figure 5.10: Add attribution to the map
 
 3. If the map layout is satisfactory, the map can be exported as a pdf, png, jpeg or svg, ready for printing otherwise save the layout. All saving functionality can be accessed via the ‘layout’ menu.
 
+4. Save the map as an image using via **Layout ‣ Export as Image...** or by clicking the **Export as Image** button ![Export map to image](media/export-image-btn.png "Export map to image"). QGIS will ask you what file to save the map to as well as the image parameters.
+
+![Image parameters](media/img-parameters.png "Image parameters")
+Figure 5.10: Add attribution to the map
+
+![Exported map as imgage](media/exported-map.png "Exported map as imgage")
+Figure 5.11: Exported map as imgage
 
 #### **Quiz questions**
 
@@ -178,29 +196,31 @@ If your organization publishes printed or online maps, you often would need to c
 
 ![Attribute table](media/attribute_table.png "Attribute table")
 
-Figure 5.8: Attribute table
+Figure 5.12: Attribute table
 
 2. In the right pane of the print layout, make sure to select the ‘Atlas’ menu and check the ‘Generate an atlas’ box
 
 ![Atlas Generation](media/generate_atlas.png "Atlas Generation")
 
-Figure 5.9: Atlas Generation
+Figure 5.13: Atlas Generation
 
 3. The next step is to choose the coverage layer; The coverage layer is the index layer used to create each page. QGIS Atlas dynamically changes the view-extent to each feature in the coverage layer. The number of records in the coverage determines how many pages will be in your map book.
 
 ![Select Coverage Layer](media/coverage_layer.png "Select Coverage Layer")
 
-Figure 5.10: Select Coverage Layer
+Figure 5.14: Select Coverage Layer
 
 4. In the “Item Properties” tab, check the box for “Controlled By Atlas”
 
 ![Controlled by Atlas](media/controlled_by_atlas.png "Controlled by Atlas")
 
-Figure 5.11: Controlled by Atlas
+Figure 5.15: Controlled by Atlas
 
 
 5. Click the  ‘Atlas’ menu, then select ‘Export Atlas as PDF’. You should have 81 maps generated. Each map will represent a province.
  
+
+For more information about the QGIS Atlas, see: [https://www.youtube.com/watch?v=tOnMJBUvEjY](https://www.youtube.com/watch?v=tOnMJBUvEjY).
 
 #### **Quiz questions**
 

@@ -23,6 +23,7 @@ The required tools and resources for this module are:
 *   working computer
 *   internet connection
 *   QGIS 3.16 installed in the computer ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
+*   Pampanga_province and Pampanga_SanFernando vector layers (inside [module3.gpkg](module3.gpkg)).
 
 
 ## Prerequisites
@@ -101,7 +102,7 @@ QuickOSM works by querying the tags (keys and values) of the features in OSM. Fo
 
 
 
-1. Load the Pampanga_province and Pampanga_SanFernando vector layers found inside the Pampanga_admin_boundaries geopackage.
+1. Load the Pampanga_province and Pampanga_SanFernando vector layers found inside the module3 geopackage.
 
 ![Pampanga layers loaded in QGIS](media/quickosm-1.png "Pampanga layers loaded in QGIS")
 

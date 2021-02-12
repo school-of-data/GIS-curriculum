@@ -8,15 +8,10 @@ This module is designed to teach you how to use QGIS tools to create a new GIS l
 
 *   Digitizing 
 *   Georeferencing
-
-
-
-
 *   Working computer
 *   Internet access
-*   QGIS 3.10 or later
-*   Access the example Datasets: 
-    - Topo Map of Pampanga - [https://drive.google.com/file/d/1lgMsxIq50l8F9deNMOXxl7CQ6gizslxJ/view?usp=sharing](https://drive.google.com/file/d/1lgMsxIq50l8F9deNMOXxl7CQ6gizslxJ/view?usp=sharing)
+*   QGIS 3.16 or later
+*   [Topo Map of Guagua, Pampanga](data/guagua-topo.jpeg)
 
 
 ## Prerequisites
