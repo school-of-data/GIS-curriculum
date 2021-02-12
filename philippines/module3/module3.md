@@ -1,8 +1,8 @@
-## Module 3 - OpenStreetMap and the High Resolution Settlement Layer
+# Module 3 - OpenStreetMap and the High Resolution Settlement Layer
 
 **Author**: Ben
 
-### Pedagogical Introduction
+## Pedagogical Introduction
 
 This module will introduce OpenStreetMap (OSM) and the High Resolution Settlement Layer (HRSL).  At the end of this module, learners would be familiar with:
 
@@ -16,22 +16,23 @@ They should also be able to:
 *   load the HRSL raster in QGIS
 
 
-### Required tools and resources
+## Required tools and resources
 
 The required tools and resources for this module are:
 
 *   working computer
 *   internet connection
 *   QGIS 3.16 installed in the computer ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
+*   Pampanga_province and Pampanga_SanFernando vector layers (inside [module3.gpkg](module3.gpkg)).
 
 
-### Prerequisites
+## Prerequisites
 
 *   basic knowledge of operating a computer
 *   familiarity with spatial data formats, the QGIS interface, and how to load layers in QGIS (completion of Modules 0, 1, and 2)
 
 
-### Additional resources
+## Additional resources
 
 * OpenStreetMap - [https://www.openstreetmap.org/](https://www.openstreetmap.org/)
 * OpenStreetMap Wiki - [https://wiki.openstreetmap.org/](https://wiki.openstreetmap.org/)
@@ -40,23 +41,21 @@ The required tools and resources for this module are:
 * CEISIN - High Resolution Settlement Layer - [https://ciesin.columbia.edu/data/hrsl/](https://ciesin.columbia.edu/data/hrsl/)
 * HDX HRSL - [https://data.humdata.org/search?organization=facebook&q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22](https://data.humdata.org/search?organization=facebook&q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22)
 
-### Thematic introduction
+## Thematic introduction
 
 Maps have become ubiquitous in our daily lives. We can just pull up our phones and open applications that utilize maps and location data. There are apps that we use for orienting and locating ourselves, for navigating and getting from one place to another, maps are shown when we order food from our favorite delivery service, etc. Maps have become so integral to our day to day activities that we tend to forget that there are places in the world that are still unmapped or not found in the digital maps that we use.
 
 
-#### Breakdown of the concepts
+## Breakdown of the concepts
 
 The ubiquity of maps in our lives is a byproduct of the sheer amount of location and spatial data that we are collecting. The opportunities and potential for creating something good from the geospatial data available to us is outstanding but this will only be possible if these geospatial datasets are free and open.
 
 
-### Main content
+## Main content
 
-#### Phase 1 title: OpenStreetMap (OSM) data
+### Phase 1 title: OpenStreetMap (OSM) data
 
-##### Content/Tutorial
-
-###### What is OpenStreetMap (OSM)?
+#### **What is OpenStreetMap (OSM)?**
 
 OpenStreetMap (OSM) ([https://www.openstreetmap.org/](https://www.openstreetmap.org/)) is a free, editable map of the whole world that is built by volunteers from across the globe and released with an open-content license. It is a project that creates and distributes free geographic data for the world -- a map of the world by the people and for the people. If something is missing on OSM, you are free to add it. If something is wrong in OSM, you are free to correct it. OSM is a digital common good that greatly amplifies the value of the information added to it.
 
@@ -71,7 +70,7 @@ You can also read: [https://wiki.openstreetmap.org/wiki/About_OpenStreetMap](htt
 According to OpenStreetMap, it “is open data, licensed under the Open Data Commons Open Database License (ODbL) ([https://opendatacommons.org/licenses/odbl/](https://opendatacommons.org/licenses/odbl/)) by the OpenStreetMap Foundation (OSMF) ([https://osmfoundation.org/](https://osmfoundation.org/))” and that “you are free to copy, distribute, transmit and adapt our data, as long as you credit OpenStreetMap and its contributors. If you alter or build upon our data, you may distribute the result only under the same licence.” When creating a map that uses OSM data, it is required that you credit  “© OpenStreetMap contributors”. You can read more about OpenStreetMap’s Copyright and License here: [https://www.openstreetmap.org/copyright](https://www.openstreetmap.org/copyright)
 
 
-###### Where is OpenStreetMap used?
+#### **Where is OpenStreetMap used?**
 
 One of the core values of OpenStreetMap is the ability to collect, edit, and share map data which can be used for many different purposes. Such is the freedom provided by the ObDL. Because OpenStreetMap allows users to utilize its data with very few restrictions, there is a wide variety of applications, services, and use-cases that are built, being built, or can be built with OpenStreetMap. OpenStreetMap is used for creating maps, routing services, education, and even humanitarian and advocacy purposes. 
 
@@ -82,7 +81,7 @@ OpenStreetMap is also a crucial part of some advocacy mapping communities such a
 A list of OpenStreetMap-based services can be found at [https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services](https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services).
 
 
-###### How can OpenStreetMap be used in QGIS?
+#### **How can OpenStreetMap be used in QGIS?**
 
 OSM data can be used in QGIS in several ways. The first one is by using OSM-derived tile layers as basemaps. In fact QGIS comes with a connection to an OpenStreetMap tile layer by default. You can find this layer named “OpenStreetMap” under the XYZ Tiles list in the Browser Panel. 
 
@@ -95,7 +94,7 @@ OSM feature data can also be directly loaded in QGIS using the QuickOSM plugin. 
 Usually, the OSM community and local communities agree on certain key and value combinations suitable for the most commonly used tags which ten act as an informal standard. This ensures that data users can expect consistency in tagging common features such as roads, buildings, etc. However. users can always create new tags to improve the style of the map or support analyses that rely on previously unmapped attributes or tags of the features.
 
 
-###### Exercise 1: Loading OSM data in QGIS using the QuickOSM plugin
+#### **Exercise 1: Loading OSM data in QGIS using the QuickOSM plugin**
 
 or this exercise, we will load road network data and locations of fast food chains from OSM that can be found in the province of Pampanga using the QuickOSM plugin.
 
@@ -103,7 +102,7 @@ QuickOSM works by querying the tags (keys and values) of the features in OSM. Fo
 
 
 
-1. Load the Pampanga_province and Pampanga_SanFernando vector layers found inside the Pampanga_admin_boundaries geopackage.
+1. Load the Pampanga_province and Pampanga_SanFernando vector layers found inside the module3 geopackage.
 
 ![Pampanga layers loaded in QGIS](media/quickosm-1.png "Pampanga layers loaded in QGIS")
 
@@ -178,20 +177,18 @@ Figure 3.8: Fast food locations loaded from OSM
 10. Notice that even data outside the polygons are loaded. This is because we are using the layer extent as our bounding box. If we need just the features inside the polygon, we can select or clip these features. The process of how to do this will be discussed in future modules.
 
 
-##### Quiz questions
+### **Quiz questions**
 
 1. True or False:
 
-    1. A feature in OpenStreetMap can only have one tag or attribute.
-    2. You can only add points in OpenStreetMap.
-    3. OpenStreetMap can only be used as an online map. 
+    1. A feature in OpenStreetMap can only have one tag or attribute. -- ***False***
+    2. You can only add points in OpenStreetMap.  -- ***False (you can also other features such as lines and polygons)***
+    3. OpenStreetMap can only be used as an online map.  -- ***False (you can also download and use the vector data created by OpenStreetMap such as when using them with the QuickOSM plugin)***
 
 
-#### Phase 2 title: The High Resolution Settlement Layer (HRSL) data
+### Phase 2 title: The High Resolution Settlement Layer (HRSL) data
 
-##### Content/Tutorial
-
-###### What is the High Resolution Settlement Layer (HRSL)?
+#### **What is the High Resolution Settlement Layer (HRSL)?**
 
 According to Facebook and the Center for International Earth Science Information Network (CIESIN) at Columbia University, the “High Resolution Settlement Layer (HRSL) provides estimates of human population distribution at a resolution of 1 arc-second (approximately 30m)”.
 
@@ -213,7 +210,7 @@ For the current iteration of the HRSL, seven maps/datasets for the distribution 
 
 Figure 3.9: HRSL data on HDX
 
-###### Use-cases of the HRSL
+#### **Use-cases of the HRSL**
 
 The population grids provide high-resolution and accurate information on both the delineation of settlements in urban and rural areas as well as the number of people living in these. This information is useful for many research areas such as disaster and humanitarian response, planning, and development of infrastructure.
 
@@ -228,7 +225,7 @@ Connecting the world with better maps - [https://engineering.fb.com/2016/02/21/c
 Mapping the world population one building at a time - [https://arxiv.org/abs/1712.05839](https://arxiv.org/abs/1712.05839)
 
 
-###### Exercise 2: Loading the HRSL data in QGIS
+#### **Exercise 2: Loading the HRSL data in QGIS**
 
 The HRSL data found on HDX comes in GeoTIFF (raster) and CSV (vector) format. The CSV are point locations with corresponding population values. For this exercise, a subset of the data for your country has already been prepared but you can always download the whole dataset or even other datasets to try.
 
@@ -241,16 +238,16 @@ Figure 3.10: The HRSL for Pampanga, Philippines
 2. Check the Properties of the layer.
 3. You can also edit the Symbology and Style of the raster (will be discussed in a future module)
 
-##### Quiz questions
+#### **Quiz questions**
 
 1. What datasets were used to get the location of settlements and allocate the population to these settlements?
 2. How did the HRSL get the locations of settlements?
 3. How was the population in an area allocated to settlements?
 
 
-#### If you want to go further:  
+### If you want to go further:  
 
-###### Use Overpass API to create a Query in OSM
+#### **Use Overpass API to create a Query in OSM**
 
 The Overpass API ([https://wiki.openstreetmap.org/wiki/Overpass_API](https://wiki.openstreetmap.org/wiki/Overpass_API)), formerly known as OSM Server Side Scripting, or OSM3S before 2011, is a read-only API that serves up custom selected parts of the OSM map data. Unlike the main API, which is optimized for editing, Overpass API is optimized for data consumers to get a small subset of the roughly 10 million elements in OpenStreetMap. These subsets can be selected by search criteria such as location, type of objects, tag properties, proximity, or combinations of them. The Overpass API serves as the backend for other OSM-based services like the QuickOSM plugin.
 
@@ -285,14 +282,14 @@ Amenities tagged as fast food whose name is Jollibee loaded from OSM
 You can also test and create Overpass queries in Overpass turbo ([https://wiki.openstreetmap.org/wiki/Overpass_turbo](https://wiki.openstreetmap.org/wiki/Overpass_turbo)) which is a web based data mining tool for OpenStreetMap.
 
 
-#### To practice your new skills, try to…
+### To practice your new skills, try to…
 
-###### Load more features from OSM using the QuickOSM plugin
+#### **Load more features from OSM using the QuickOSM plugin**
 
 1. Try to load other features (points, lines, polygons) like hospitals, schools, etc. using the QuickOSM plugin.
 
 
-#### Tips 
+### Tips 
 
 If you can’t find the feature you want or need on OpenStreetMap, you can always add or edit features on the map itself. Sign up at [https://www.openstreetmap.org/](https://www.openstreetmap.org/) and start contributing!
 

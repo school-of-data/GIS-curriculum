@@ -25,11 +25,11 @@ You’ll use the field calculator and qgis expression engine to run mathematical
 
 *   Working computer
 *   Internet connection
-*   QGIS 3.10 and above
-*   Datasets
-    *   Administrative Boundary Layer of the Philippines from [GADM](gadm.org). Download here: [https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing)
-    *   Clinics from [OpenStreetMap](osm.org). Download here:[https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing)
-    *   High Resolution Population Density Layer from [HDX](https://data.humdata.org/). Download here: [https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing](https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing)
+*   QGIS 3.16 and above
+*   Pampanga administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
+*   Pampanga clinics (inside [module6.gpkg](data/module6.gpkg))
+*   PHL provinces (inside [module6.gpkg](data/module6.gpkg))
+*   [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
 
 
 ## Prerequisites
@@ -103,52 +103,61 @@ In the parcel layer example above, the Parcel ID field is an integer field. If t
 In addition, other concepts like the field calculator functionality in the attribute table allows one to perform calculations on basis of existing attribute values or defined functions, e.g to calculate length, area or population density. Note that the possible calculations are determined by the attributes or make up of your data. For example, it’s only possible to calculate population density if there’s a field with population counts. Using the expression engine and field calculator, you would then go on to construct an expression or formula to calculate population density. In this case the formula would be; total population as a number of people/the land area covered by that population. You’ll notice that it’s important to know what each of the fields in the layer attribute table represents. This means you need to know and understand your data thoroughly. This makes it easier to apply functions and expressions and therefore come up with meaningful analyses and visualizations/map products. 
 
 
-### Main content
+### Phase 1 title: Editing layer attributes
 
-#### Phase 1 title: Editing layer attributes
-
-##### Content/Tutorial
+#### **Content/Tutorial**
 
 The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.
 
 
-1. Load a vector layer in QGIS. We’ll work with the Administrative boundary layer for the Philippines ([https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing)). As you can see below, the vector layer has many polygons in it. There are a total of 81 provinces.
+1. Load the PHL provinces vector layer (found inside [module6.gpkg](data/module6.gpkg)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 81 features corresponding to 81 provinces.
 
-![Several polygons](media/many_polygons.png "Several polygons")
+![Several polygons](media/many-polygons.png "Several polygons")
 
 Figure 6.1: Several polygons
 
 
-2. The next step is to explore the attribute table interface; open the attribute table by; Right Clicking the layer then Click **Open attribute table.** This is what the attribute table looks like. The tool bar has a range of buttons, hover over each button to see the embedded functionality.
+2. The next step is to explore the attribute table interface. Open the attribute table by **Right-clicking on the layer on the Layers Panel ‣ Open Attribute Table**. You can also click the **Open Attribute Table button** ![Open attribute table button](media/open-attribute-btn.png "Open attribute table button") from the Attributes Toolbar. This is what the attribute table looks like. The tool bar has a range of buttons, hover over each button to see the embedded functionality.
 
 ![Open attribute table](media/attributetab.png "Open attribute table")
 
 Figure 6.2: Open attribute table
 
-3. For area calculations, the Coordinate Reference System should be a projected one. This allows you to calculate distances correctly. Remember, our interest is to automatically calculate the area for each of the 81 provinces. Check the Coordinate Reference System of the vector layer. If it’s a geographic coordinate reference system, then reproject the layer to a projected coordinate system. Check for different projections on the [EPSG](https://epsg.io/?q=Philippines%20kind%3APROJCRS) website. This is the Philippines, we’ll use [PRS92 / Philippines Zone 5](https://epsg.io/3125), EPSG:3125. From previous modules where map projections are extensively discussed, you may already know that map projections are applied relative to a given location on earth. 
+If you don't want the attribute table to be a floating window but rather dock it on the QGIS interface, you can click the **Dock attribute table button** !["Dock attribute table"](media/dock-attr-btn.png "Dock attribute table"). When docked, attribute tables will appear as tabs instead of individual windows.
 
-4. Alternatively, Change the project Settings; Go to: Project -> Properties Properties -> General and check the Non/Planimetric option. This means the area calculation will use the planimetric method which supports calculations for two dimension surfaces. The units will be sq. metres. 
+![Docked attribute table](media/docked-attributetab.png "Docked attribute table")
 
-![Planimetric](media/non.PNG "Planimetric")
+Figure 6.3: Docked attribute table
 
-Figure 6.3: Planimetric
 
-5. Next, Click the ‘Open field calculator’ ![alt_text](media/field_calculator.png "image_tooltip")
- button to open the field calculator. The field calculator dialogue will open; fill in the output field name, in this case it will be ‘AREA’. Choose the Decimal number (double) on the output field type. Change the precision to 2 decimal places. To calculate the area, use the **_$area_** expression. You can find this expression under **Geometry**. Click OK and it will automatically calculate the area for each polygon. 
+3. For area calculations, the Coordinate Reference System should be a projected one. This allows you to calculate distances correctly. Remember, our interest is to automatically calculate the area for each of the 81 provinces. Check the Coordinate Reference System of the vector layer. If it’s a geographic coordinate reference system, then reproject the layer to a projected coordinate system. Check for different projections on the [EPSG](https://epsg.io/?q=Philippines%20kind%3APROJCRS) website. This is the Philippines, we’ll use [PRS92 / Philippines Zone 3](https://epsg.io/3123), EPSG:3123. From previous modules where map projections are extensively discussed, you may already know that map projections are applied relative to a given location on earth. 
+
+4. Check the project Settings; Go to: **Project ‣ Properties Properties ‣ General**.
+
+![Planimetric](media/gen-settings.png "Planimetric")
+
+Figure 6.4: General settings
+
+5. Next, Click the **Open field calculator** ![alt_text](media/field_calculator.png "image_tooltip") button on the Attributes Toolbar to open the field calculator. The field calculator dialogue will open; fill in the output field name, in this case it will be ‘AREA (SQ KM)’. Choose the Decimal number (double) on the output field type. Change the precision to 2 decimal places. To calculate the area, use the following expression:
+
+```
+$area / 1000000
+```
+
+ You can find this expression under **Geometry**. Click OK and it will automatically calculate the area for each polygon. Take note that the area computation is dependent on the coordinate reference system used so you may have different results depending on what CRS you used. You can also search and find information about expressions on the right side of the Field Calculator or Expression Builder.
 
 ![Field calculator dialogue](media/fieldcalc.png "Field calculator dialogue")
 
-Figure 6.4: Field calculator dialogue
+Figure 6.5: Field calculator dialogue
 
 6. Open the attribute table to see the result. You just edited the contents of the attribute table, in an automated way as opposed to typing the values in each cell one by one. 
 
 ![New attribute table with new field and attributes](media/area.png "New attribute table with new field and attributes")
 
-Figure 6.5: New attribute table with new field and attributes
+Figure 6.6: New attribute table with new field and attributes
 
 
-
-##### Quiz questions
+#### **Quiz questions**
 
 1. An attribute table is a database or tabular file containing information about a set of geographic features
 
@@ -157,59 +166,74 @@ Figure 6.5: New attribute table with new field and attributes
 3. It is necessary to reproject layers prior to area calculations when the layer has a geographic coordinate reference system
 
 
-##### Quiz answers
+#### **Quiz answers**
 
 1. True
 2. True
 3. True
 
 
-#### Phase 2 : Understanding and working with attribute data, queries and analysis
+### Phase 2 : Understanding and working with attribute data, queries and analysis
 
-##### Content/Tutorial
+#### **Content/Tutorial**
 
 At this point, you might notice that the attribute table stores both spatial and non-spatial data. In this tutorial you’ll discover ways of working with attribute table data. For example, Using expressions, select Clinics in Pampanga with an emergency facility, all using data from the attribute table. 
 
 1. Add the following datasets of the Philippines to the QGIS map canvas; 
-    - clinics - [https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing)
-    - Pampanga province administrative boundary data - [https://drive.google.com/file/d/1Grm8HYBJhhk255jGy9-5jISnhPH5iaQ_/view?usp=sharing](https://drive.google.com/file/d/1Grm8HYBJhhk255jGy9-5jISnhPH5iaQ_/view?usp=sharing)
-    - population density layer - [https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing](https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing)
 
+*   Pampanga administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
+*   Pampanga clinics (inside [module6.gpkg](data/module6.gpkg))
+*   PHL provinces (inside [module6.gpkg](data/module6.gpkg))
+*   [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
 
-![Add different layers](media/add_layers.png "Add different layers")
+![Add different layers](media/add-layers.png "Add different layers")
 
-Figure 6.6: Add different layers
+Figure 6.7: Add different layers
 
-2. The selection will be applied to the Clinics layer, therefore Open the attribute table for the Clinic layer. Click the select features using expression ![alt_text](media/select_features_button.png "image_tooltip") button and type the following expression in the expression builder;  **"amenity"  =  'clinic' AND "emergency"  = 'yes'**
+2. The selection will be applied to the Clinics layer, therefore Open the attribute table for the Clinic layer. Click the select features using expression ![alt_text](media/select_features_button.png "image_tooltip") button and type the following expression in the expression builder;
+
+```
+"amenity"  =  'clinic' AND "emergency"  = 'yes'
+```
 
 You’ll notice that the expression has a number of predicates like the comparison sign (=), the logical predicate(AND) and a string which is enclosed in single quotes (‘ ‘). There are also two attribute names(amenity, emergency) and their values (clinic,yes). 
 
 ![alt_text](media/select.png "image_tooltip")
 
-Figure 6.7: Select by Expression builder dialogue
+Figure 6.8: Select by Expression builder dialogue
 
 3. One Clinic is selected. You can see the selection highlighted in yellow. The selected clinic is also highlighted in the map canvas. Now we know there’s only one clinic with an emergency facility in Pampanga province.
+
+![alt_text](media/selected-canvas.png "image_tooltip")
+
+Figure 6.9: Selected clinic/feature is highlighted (yellow)
+
+
+![alt_text](media/selected-attr.png "image_tooltip")
+
+Figure 6.10: Selected clinic/feature is highlighted (blue)
+
 
 It’s also possible to make selections by clicking a feature  within the map canvas. 
 
 Developing a functional expression starts with understanding your data; for example the attributes and   the values they hold. Then asking the right questions and finally, developing the correct expression, putting into consideration all mathematical rules that make an error free expression.
 
 
-##### Quiz questions
+#### **Quiz questions**
 
 1.  These operators are provided by the expression builder.  {+, -, *}
 2.  Single quotes must enclose a string.
 3. The attribute table stores only non spatial data.
 
 
-##### Quiz answers
+#### **Quiz answers**
 
 1. True
 2. True
 3. False
 
 
-#### Phase 3 title : Advanced QGIS expressions 
+### Phase 3 title : Advanced QGIS expressions 
 
 The Expression builder dialog offers access to the:
 
@@ -217,7 +241,7 @@ The Expression builder dialog offers access to the:
 * Function Editor tab ([https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor)) which helps to extend the list of functions by creating custom ones.
 
 
-##### Content/Tutorial
+#### **Content/Tutorial**
 
 There are many use cases for expressions, here are some examples. Notice how the expressions are developed and what operators or predicates are used. Also important is the fact that all these expressions are developed based on the content of the dataset. You may adapt this to your dataset of choice.
 
@@ -250,15 +274,8 @@ END
 5. Likewise, the previous expression could also be used to define which features should be labeled or shown in the map. 
 
 
-##### Quiz questions
+#### **Quiz questions**
 
-1.  Both Field calculator and Select by Expression dialogue can be used to develop expressions 
-2.  Expressions can be used to update a new field
-3.  Expressions can be used to apply a style 
-
-
-##### Quiz answers
-
-1. True
-2. True
-3. True
+1.  Both Field calculator and Select by Expression dialogue can be used to develop expressions -- ***True***
+2.  Expressions can be used to update a new field -- ***True***
+3.  Expressions can be used to apply a style  -- ***True***

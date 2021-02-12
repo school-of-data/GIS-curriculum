@@ -17,9 +17,9 @@ This module is designed to teach you how to change the visual appearance of a ma
 *   Working computer
 *   Internet connection
 *   QGIS 3.16 or later
-*   Administrative level 1 boundary dataset here: [https://drive.google.com/file/d/1Grm8HYBJhhk255jGy9-5jISnhPH5iaQ_/view?usp=sharing](https://drive.google.com/file/d/1Grm8HYBJhhk255jGy9-5jISnhPH5iaQ_/view?usp=sharing)
-*   The High Resolution Settlement Layer data: download here: [https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing](https://drive.google.com/file/d/1cIL2MRzBVje4zxK2-T82T-22BoT5QiYA/view?usp=sharing)
-
+*   Pampanga administrative boundary layer (inside [module4.gpkg](data/module4.gpkg))
+*   Pampanga clinics (inside [module4.gpkg](data/module4.gpkg))
+*   [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ That’s why it’s always important to make a “Map showing different symbols 
 
 ### Important Panels, Tabs and Render types
 
-#### Layer Styling Panel 
+#### **Layer Styling Panel** 
 
 This panel is somehow a shortcut to some of the features of the layer properties dialog. It indeed offers you a quick and handy way to define the rendering and the behavior of a layer, and to visualize its effects without opening the layer properties dialog.
 
@@ -65,12 +65,12 @@ Another powerful feature of this panel is the Live update checkbox. Tick it and 
 To activate the panel, Click View->Panels, then tick Layer styling.
 
 
-![alt_text](media/layer_styling.PNG "image_tooltip")
+![alt_text](media/layer_styling.png "image_tooltip")
 
 Figure 4.1: Layer Styling Panel
 
 
-#### Symbology Tab in the Layers Properties
+#### **Symbology Tab in the Layers Properties**
 
 To access the Symbology Tab, Double Click the Layer to Open the Layer Properties-> Click Symbology
 
@@ -85,7 +85,7 @@ Here, you can specify the band rendering settings like, the render type, band, m
 Figure 4.2: Symbology tab for vector and raster data, respectively
 
 
-#### Raster rendering: Band rendering
+#### **Raster rendering: Band rendering**
 
 QGIS offers four different Render types. The choice of renderer depends on the data type. The default render type is Single band grey color. You’ll have to change it to the appropriate type based on the data type. 
 
@@ -96,7 +96,7 @@ QGIS offers four different Render types. The choice of renderer depends on the d
 *   Hillshade ([(https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer)) - Creates hillshade from a band.
 
 
-#### Vector rendering
+#### **Vector rendering**
 
 When you load spatial data layers into QGIS Desktop, they are styled with a random Single Symbol rendering. To change this click on Layer->Properties->Style.
 
@@ -110,28 +110,26 @@ There are several rendering choices available from the menu in the upper left co
 *   Inverted polygons – this is a new renderer that allows a feature polygon to be converted into a mask. For example, a city boundary polygon used with this renderer would become a mask around the city. It also allows for use of Categorized, Graduated and Rule-based renderers and SQL expressions.
 
 
-### Main content 
+## Main content 
 
-#### Phase 1: Basic raster and vector symbology
+### Phase 1: Basic raster and vector symbology
 
 Vector data symbology may vary by transparency, color, rotation, and size.  
 
-##### Content
+#### **Content**
 
 *   Layer properties and symbology menu
 *   Types of vector rendering
 *   Types of raster rendering (band rendering)
 
-##### Tutorial
-
-###### Example 1: Vector rendering
+#### **Example 1: Vector rendering**
 
 1. To demonstrate this example, we’ll use two example datasets; 1. [Clinics](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing) and 2. [Administrative boundary](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing) of Pampanga province 
 2. Add the two vector layers into qgis; Click the Add vector layer button ![alt_text](media/add-vector.png "image_tooltip")
  or use the browser panel. 
 3. This is how they render by default. You’ll notice we have a polygon and point layer. The next step is to change the symbology for each of them. Fill colors may not be the same, but that’s not a problem because QGIS selects colors randomly for different instances of the application.
 
-![Default render](media/default_vector_render.PNG "Default render")
+![Default render](media/default_vector_render.png "Default render")
 
 Figure 4.3: Default render
 
@@ -140,20 +138,20 @@ Figure 4.3: Default render
 6. Change the **Fill color** to **Transparent fill. Tip:** Click the drop down arrow under Fill color
 7. The result should be as below. You may notice that the no fill option has no color
 
-![No fill rendering for the polygon](media/no_fill_render.PNG "No fill rendering for the polygon")
+![No fill rendering for the polygon](media/no_fill_render.png "No fill rendering for the polygon")
 
 Figure 4.4: No fill rendering for the polygon
 
 8. The next step is to symbolize the point layer which is also the Clinics layer
-9. Double click the **Clinics layer** to open the** Layer Properties **dialogue. Change the render type from Single Symbol to **Categorized**, Select the **Value** as amenity. The value represents the field of interest. Specify the Symbol and Color ramp. Then Click classify.
+9. Double click the **Clinics layer** to open the **Layer Properties** dialogue. Change the render type from Single Symbol to **Categorized**, Select the **Value** as amenity. The value represents the field of interest. Specify the Symbol and Color ramp. Then Click classify.
 
-![Layer Properties dialogue](media/vector_style.PNG "Layer Properties dialogue")
+![Layer Properties dialogue](media/vector_style.png "Layer Properties dialogue")
 
 Figure 4.5: Layer Properties dialogue
 
 10. The resulting map should look as below
 
-![Final vector render](media/final_vector_render.PNG "Final vector render")
+![Final vector render](media/final_vector_render.png "Final vector render")
 
 Figure 4.6: Final vector render
 
@@ -162,13 +160,13 @@ Figure 4.6: Final vector render
 11.  Remember to arrange the layers in the **Layer Panel** in such a way that the polygon layer is below the point layer. This makes the point layer visible.
 
 
-###### Example 2: Raster rendering
+#### **Example 2: Raster rendering**
 
 1. Double click the raster layer which is also the population density layer. This also means it’s a normalized dataset and can therefore be visualized as a choropleth map.
 2. Select the symbology tab in the menu that appears
 3. Change the styling mode to ‘Singleband pseudocolor’
 
-![Symbology menu](media/qgis9.PNG  "Symbology menu")
+![Symbology menu](media/qgis9.png  "Symbology menu")
 
 Figure 4.7: Symbology menu
 
@@ -180,19 +178,19 @@ Figure 4.8: Population density of Pampanga Province, Philippines
 
 5.  Zoom in to see the new map in finer detail.
 
-![Zoomed-in map](media/zoom-in.png "Zoomed-in map")
+![Zoomed-in map](media/zoom_in.png "Zoomed-in map")
 
 Figure 4.9: Zoomed-in map
 
 6. Alternatively, use the layer styling panel
 
-##### Quiz questions
+#### **Quiz questions**
 
 1. What is layer symbology?
 2. Which of the rendering types below are applicable for vector data?
 3. What are the types of raster rendering
 
-##### Quiz answers
+#### **Quiz answers**
 
 1. a. graphical element represented as a marker, stroke or fill
    b. a pointer to the original data
@@ -213,15 +211,15 @@ Figure 4.9: Zoomed-in map
 4. d. multiband color
 
 
-#### Phase 2: Blending modes and draw effects
+### Phase 2: Blending modes and draw effects
 
-##### Content
+#### **Content**
 
 *   Altering symbol structures
 *   Altering draw effects and blending modes
 *   Impactful visualisation of data
 
-##### Tutorial
+#### **Tutorial**
 
 1. After loading the two layers into QGIS, the canvas will look as below. You’ll notice that both layers have plain styling. This tutorial will explain how to alter draw effects and blending modes for better visualization.
    
@@ -231,7 +229,7 @@ Figure 4.10: The expected initial workspace
 
 2. Open the Layer Properties window, then click the Symbology menu item for the administrative boundaries layer. Tip: Do this by double clicking the layer or use the layer styling panel. Enable the layer styling panel by clicking: View -> Panels -> Layer Styling. 
 
-At the bottom of the Symbology menu, there’s a checkbox for Draw effects. Let’s enable that, and then click the customise effects button ![alt_text](media/customise_effects_button.PNG "image_tooltip") to its right:
+At the bottom of the Symbology menu, there’s a checkbox for Draw effects. Let’s enable that, and then click the customise effects button ![alt_text](media/customise_effects_button.png "image_tooltip") to its right:
 
 ![Layer Properties window and Symbology menu](media/draw_effects.png "Layer Properties window and Symbology menu")
 
@@ -239,25 +237,25 @@ Figure 4.11: Layer Properties window and Symbology menu
 
 3. A new Effects Properties dialog opens
 
-![Effects properties dialogue](media/new_effects_dialogue.PNG "Effects properties dialogue")
+![Effects properties dialogue](media/new_effects_dialogue.png "Effects properties dialogue")
 
 Figure 4.12: Effects properties dialogue
    
 4. You can see that currently the only effect listed is a Source effect. Source effects aren’t particularly exciting – all they do is draw the original layer unchanged. Change this to a Blur effect by clicking the Effect type  combo box and selecting Blur:
 
-![Select effect type as blur](media/blur_effect.PNG "Select effect type as blur")
+![Select effect type as blur](media/blur_effect.png "Select effect type as blur")
 
 Figure 4.13: Select effect type as blur
 
 5. Apply the settings now, you’ll see that the polygon layer is now blurry. Now we’re getting somewhere!	
 
-![Blurry layer](media/blurry_result.png.png "Blurry layer")
+![Blurry layer](media/blurry_result.png "Blurry layer")
 
 Figure 4.14: Blurry layer
 
 6. Using the **Effects Properties** dialog again. Let’s try something a bit more advanced. Instead of just a single effect, it’s possible to chain multiple effects together to create different results. Let’s make a traditional drop shadow by adding a **Drop shadow** effect under the **Source** effect.
 
-![Effects properties dialogue](media/drop_shadow.png.png "Effects properties dialogue")
+![Effects properties dialogue](media/drop_shadow.png "Effects properties dialogue")
 
 Figure 4.15: Effects properties dialogue
 
@@ -272,13 +270,13 @@ Figure 4.16: Drop shadow effect
 Overall, remember that effects can either be applied to an entire layer, or to the individual symbol layers for features within a layer. Basically, the possibilities are almost endless! Python plugins can also extend this further by implementing additional effects.
 
 
-#### Phase 3: Data defined overrides and geometry generators
+### Phase 3: Data defined overrides and geometry generators
 
-##### Content
+#### **Content**
 
 *   Run a spatial operation within the layer symbology
 
-##### Tutorial
+#### **Tutorial**
 
 A geometry generator is a symbol layer type that lets you use code to create new geometries from existing features, and use the new 'generated' geometries as symbols that can, in turn, have styles applied. This is a powerful feature best explained with an example.
 
@@ -291,28 +289,28 @@ Moreover, you have all the styling options to change the appearance of the resul
 1. Double click the administrative boundary layer
 2. Click on Simple fill and change the Symbol layer type to Geometry generator. Before you start writing the spatial query, choose the Geometry Type in output. In this example we are going to create centroids for each feature, so change the Geometry Type to Point / Multipoint.
 
-![Centroid operation on administrative boundary layer](media/centroid.PNG "Centroid operation on administrative boundary layer")
+![Centroid operation on administrative boundary layer](media/centroid.png "Centroid operation on administrative boundary layer")
 
 Figure 4.17: Centroid operation on administrative boundary layer
 
 3. When you click on OK you will see that the administrative layer boundary is rendered as a point layer. We have just run a spatial operation within the layer symbology itself.
 
-![Point layer](media/centroid_result.PNG "Point layer")
+![Point layer](media/centroid_result.png "Point layer")
 
 Figure 4.18: Point layer
 
-4. Note that an alternative and easier way of writing spatial queries is using the ‘Expressions dialogue’. Click the ![alt_text](media/expression.PNG "image_tooltip")
+4. Note that an alternative and easier way of writing spatial queries is using the ‘Expressions dialogue’. Click the ![alt_text](media/expression.png "image_tooltip")
  expressions  button to open the 'Expression string builder' dialogue box. Here you’ll have access to an extensive function reference. You can search for a function by name. For example, type centroid in the search bar.
 5. With the Geometry generator symbology you can really go over the edge of normal symbology.
 6. If you want to go further, write a spatial query to calculate a buffer zone around the point, line or polygon layer. 
 
 
-##### Quiz questions
+#### **Quiz questions**
 
 1.N/A
 
 
-##### Quiz answers
+#### **Quiz answers**
 
 1.N.A
 
