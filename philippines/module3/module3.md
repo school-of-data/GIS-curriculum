@@ -177,7 +177,7 @@ Figure 3.8: Fast food locations loaded from OSM
 10. Notice that even data outside the polygons are loaded. This is because we are using the layer extent as our bounding box. If we need just the features inside the polygon, we can select or clip these features. The process of how to do this will be discussed in future modules.
 
 
-### **Quiz questions**
+#### **Quiz questions**
 
 1. True or False:
 
