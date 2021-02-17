@@ -97,25 +97,26 @@ None
 ## data
 * **module4.gpkg** -> same content with module3.gpkg + a clinics layer
     * clinics layer can be generated using QuickOSM with parameters key: amenity, value: clinic
-* **HRSL_*_Population.tif** -> High Resolution Settlement Layer raster data covering the larger admin area (same as module 3)
+* **HRSL_*_Population.tif** -> High Resolution Settlement Layer raster data covering the larger admin boundary layer (same as module 3)
 
 ## media
-* **media/blur-effect.png** -> replace with screenshot using localised data
-* **media/blurry-result.png** -> replace with screenshot using localised data
-* **media/centroid.png** -> replace with screenshot using localised data
-* **media/centroid-result.png** -> replace with screenshot using localised data
-* **media/default-vector-render.png** -> replace with screenshot using localised data
-* **media/draw-effects.png** -> replace with screenshot using localised data
-* **media/drop-shadow-result.png** -> replace with screenshot using localised data
-* **media/final-vector-render.png** -> replace with screenshot using localised data
-* **media/hrsl-style.png** -> replace with screenshot using localised data
-* **media/initial-workspace.png** -> replace with screenshot using localised data
-* **media/layer-styling.png** -> replace with screenshot using localised data
-* **media/new-effects-dialog** -> replace with screenshot using localised data
-* **media/no-fill-render.png** -> replace with screenshot using localised data
-* **media/qgis9.png** -> replace with screenshot using localised data
-* **media/vector-style.png** -> replace with screenshot using localised data
-* **media/zoom-in.png** -> replace with screenshot using localised data
+* **blur-effect.png** -> replace with screenshot using localised data
+* **blurry-result.png** -> replace with screenshot using localised data
+* **centroid.png** -> replace with screenshot using localised data
+* **centroid-result.png** -> replace with screenshot using localised data
+* **default-vector-render.png** -> replace with screenshot using localised data
+* **draw-effects.png** -> replace with screenshot using localised data
+* **drop-shadow-result.png** -> replace with screenshot using localised data
+* **final-vector-render.png** -> replace with screenshot using localised data
+* **hrsl-style.png** -> replace with screenshot using localised data
+    * color ramp is viridis, inverted, quantile, 5 classes
+* **initial-workspace.png** -> replace with screenshot using localised data
+* **layer-styling.png** -> replace with screenshot using localised data
+* **new-effects-dialog** -> replace with screenshot using localised data
+* **no-fill-render.png** -> replace with screenshot using localised data
+* **qgis9.png** -> replace with screenshot using localised data
+* **vector-style.png** -> replace with screenshot using localised data
+* **zoom-in.png** -> replace with screenshot using localised data
 
 ## module4
 * **line 20, 21, 22** -> replace name of layers (e.g. Pampanga -> Colombo)
@@ -124,10 +125,11 @@ None
 # Module 5
 
 ## data
-
+* **module5.gpkg** -> same content with module4.gpkg + country adm1 layer (same level as admin boundary layer)
+* **HRSL_*_Population.tif** -> High Resolution Settlement Layer raster data covering the admin boundary layer (same as module 3 and 4)
 
 ## media
-
+* **export-map-canvas-image** -> replace with screenshot using localised data
 
 ## module5
 
