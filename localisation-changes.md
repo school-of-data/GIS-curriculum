@@ -125,26 +125,76 @@ None
 # Module 5
 
 ## data
-* **module5.gpkg** -> same content with module4.gpkg + country adm1 layer (same level as admin boundary layer)
-* **HRSL_*_Population.tif** -> High Resolution Settlement Layer raster data covering the admin boundary layer (same as module 3 and 4)
+* **module5.gpkg** -> same content with module4.gpkg + province/district admin layer vector
+* **HRSL_*_Population.tif** -> High Resolution Settlement Layer raster data covering the province/district of interest boundary layer (same as module 3 and 4)
 
 ## media
-* **export-map-canvas-image** -> replace with screenshot using localised data
+* **atlas-attr.png** -> replace with screenshot using localised data 
+* **atlas-controlled.png** -> replace with screenshot using localised data 
+* **atlas-coverage.png** -> replace with screenshot using localised data 
+* **atlas-outputs.png** -> replace with screenshot using localised data 
+* **atlas-preview.png** -> replace with screenshot using localised data 
+* **atlas-print-layout.png** -> replace with screenshot using localised data 
+* **atlas-toolbar-nav.png** -> replace with screenshot using localised data 
+* **attribution.png** -> replace with screenshot using localised data 
+* **controlled_by_atlas.png** -> replace with screenshot using localised data 
+* **coverage-layer.png** -> replace with screenshot using localised data 
+* **exported-map.png** -> replace with screenshot using localised data 
+* **exported-map-canvas.png** -> replace with screenshot using localised data 
+* **export-map-canvas.png** -> replace with screenshot using localised data 
+* **export-map-canvas-image.png** -> replace with screenshot using localised data 
+* **generate-atlas.png** -> replace with screenshot using localised data 
+* **img-parameters.png** -> replace with screenshot using localised data 
+* **legend.png** -> replace with screenshot using localised data 
+* **legend_scalebar_added.png** -> replace with screenshot using localised data 
+* **newprint_composer.png** -> replace with screenshot using localised data 
+* **new-print-layout.png** -> replace with screenshot using localised data 
+* **new-print-layout-name.png** -> replace with screenshot using localised data 
+* **new-print-layout-window.png** -> replace with screenshot using localised data 
+* **print_comp2.png** -> replace with screenshot using localised data 
+* **print-layout-map.png** -> replace with screenshot using localised data 
+* **print-layout-with-title.png** -> replace with screenshot using localised data 
+* **scale-bar.png** -> replace with screenshot using localised data 
 
 ## module5
-
+* **line 26-30** -> replace name of files
+* **line 49** -> replace name of area and country
+* **line 91** -> replace name of area and country
+* **line 198** -> replace name of area and country
+* **line 208** -> replace number of maps to be generated
+* **line 223** -> replace number of maps/areas (e.g. 81 provinces -> 25 districts)
+* **line 235** -> replace number of maps to be generated
+* **line 241** -> replace number of maps to be generated
+* **line 248** -> replace kind of area (e.g. provinces -> districts)
 
 
 # Module 6
 
 ## data
-
+* **module6.gpkg** -> same as module 5.gpkg
+* **HRSL_*_Population.tif** -> High Resolution Settlement Layer raster data covering the province/district of interest boundary layer (same as module 3, 4, and 5)
 
 ## media
-
+* **add-layers.png** -> replace with screenshot using localised data 
+* **area.png** -> replace with screenshot using localised data 
+* **attribute-tab.png** -> replace with screenshot using localised data 
+* **dock-attr-btn.png** -> replace with screenshot using localised data 
+* **docked-attribute-tab.png** -> replace with screenshot using localised data 
+* **field_calculator.png** -> replace with screenshot using localised data 
+* **gen-settings.png** -> replace with screenshot using localised data 
+* **many-polygons.png** -> replace with screenshot using localised data
+* **select.png** -> replace with screenshot using localised data 
+* **selected-attr.png** -> replace with screenshot using localised data 
+* **selected-canvas.png** -> replace with screenshot using localised data
 
 ## module6
-
+* **line 29-32** -> replace name of files
+* **line 113** -> replace name of area and country
+* **line 133** -> replace name of country and CRS
+* **line 180** -> replace name of area
+* **line 184-187** -> replace name of files
+* **line 196, 199** -> replace if needed (e.g. current expression is invalid or does not return results)
+* **line 205** -> replace number of selected clinics based on result of query
 
 
 # Module 7
@@ -180,3 +230,5 @@ None
 
 
 ## module9
+
+

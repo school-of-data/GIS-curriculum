@@ -119,13 +119,13 @@ Figure 6.1: Several polygons
 
 2. The next step is to explore the attribute table interface. Open the attribute table by **Right-clicking on the layer on the Layers Panel ‣ Open Attribute Table**. You can also click the **Open Attribute Table button** ![Open attribute table button](media/open-attribute-btn.png "Open attribute table button") from the Attributes Toolbar. This is what the attribute table looks like. The tool bar has a range of buttons, hover over each button to see the embedded functionality.
 
-![Open attribute table](media/attributetab.png "Open attribute table")
+![Open attribute table](media/attribute-tab.png "Open attribute table")
 
 Figure 6.2: Open attribute table
 
 If you don't want the attribute table to be a floating window but rather dock it on the QGIS interface, you can click the **Dock attribute table button** !["Dock attribute table"](media/dock-attr-btn.png "Dock attribute table"). When docked, attribute tables will appear as tabs instead of individual windows.
 
-![Docked attribute table](media/docked-attributetab.png "Docked attribute table")
+![Docked attribute table](media/docked-attribute-tab.png "Docked attribute table")
 
 Figure 6.3: Docked attribute table
 
@@ -193,16 +193,16 @@ Figure 6.7: Add different layers
 2. The selection will be applied to the Clinics layer, therefore Open the attribute table for the Clinic layer. Click the select features using expression ![alt_text](media/select_features_button.png "image_tooltip") button and type the following expression in the expression builder;
 
 ```
-"amenity"  =  'clinic' AND "emergency"  = 'yes'
+"amenity" = 'clinic' AND "emergency" = 'yes'
 ```
 
-You’ll notice that the expression has a number of predicates like the comparison sign (=), the logical predicate(AND) and a string which is enclosed in single quotes (‘ ‘). There are also two attribute names(amenity, emergency) and their values (clinic,yes). 
+You’ll notice that the expression has a number of predicates like the comparison sign (=), the logical predicate (AND) and a string which is enclosed in single quotes (‘ ‘). There are also two attribute names(amenity, emergency) and their values (clinic,yes). 
 
 ![alt_text](media/select.png "image_tooltip")
 
 Figure 6.8: Select by Expression builder dialogue
 
-3. One Clinic is selected. You can see the selection highlighted in yellow. The selected clinic is also highlighted in the map canvas. Now we know there’s only one clinic with an emergency facility in Pampanga province.
+3. One Clinic is selected. You can see the selection highlighted in yellow. The selected clinic is also highlighted in the attribute table. Now we know there’s only one clinic with an emergency facility in Pampanga province.
 
 ![alt_text](media/selected-canvas.png "image_tooltip")
 

@@ -46,7 +46,7 @@ In addition you’ll have learned the following skills;
 
 Let’s start with an example: 
 
-To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Pampanga province’ in the Philippines. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
+To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Pampanga province in the Philippines. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
 
 Breakdown of the concepts
 
@@ -251,6 +251,7 @@ Figure 5.18: Atlas Outputs
 8. **TIP**: You can use QGIS Expressions and Data Defined overrides for setting the other map elements in your Atlas so that they also dynamically change depending on the coverage layer feature being mapped. For example, you can use a QGIS expression calling the value of the NAME_1 field on your label so that it dynamically changes into the value of NAME_1 for the current feature being mapped.
 
 For more information about the QGIS Atlas, see: [https://www.youtube.com/watch?v=tOnMJBUvEjY](https://www.youtube.com/watch?v=tOnMJBUvEjY).
+
 
 #### **Quiz questions**
 
