@@ -63,14 +63,14 @@ Digitising, as you might have guessed, is the art (or science) of creating digit
 
 #### **Creating a new GeoPackage layer**
 
-1. To create a new GeoPackage layer, press the New GeoPackage Layer button ![alt_text](media/geopackage_button.PNG "image_tooltip")
+1. To create a new GeoPackage layer, press the New GeoPackage Layer button ![alt_text](media/geopackage-button.png "image_tooltip")
  in the Layer ‣ Create Layer menu or from the Datasource Manager toolbar. The New GeoPackage Layer dialog will be displayed as shown in Figure 7.3.
 
-![New GeoPackage Layer dialogue](media/new_geopackage_dialogue_box.PNG "New GeoPackage Layer dialogue")
+![New GeoPackage Layer dialogue](media/new-geopackage-dialog.png "New GeoPackage Layer dialogue")
 
 Figure 7.3: New GeoPackage Layer dialogue
 
-2. The first step is to indicate the database file location. This can be done by pressing the ![alt_text](media/database_file_location.PNG "image_tooltip") button to the right of the Database field and select an existing GeoPackage file or create a new one. QGIS will automatically add the right extension to the name you provide.
+2. The first step is to indicate the database file location. This can be done by pressing the ![alt_text](media/database-file-location.png "image_tooltip") button to the right of the Database field and select an existing GeoPackage file or create a new one. QGIS will automatically add the right extension to the name you provide.
 3. Type a name for the new layer / table a name (Table name)
 4. Define the Geometry type. If not a geometryless layer, you can specify whether it should Include Z dimension and/or Include M values.
 5. Specify the coordinate reference system using the ![alt_text](media/mActionSetProjection.png "image_tooltip") button
@@ -78,9 +78,9 @@ Figure 7.3: New GeoPackage Layer dialogue
 6. To add fields to the layer you are creating:
 
     1. Enter the Name of the field
-    2. Select the data Type. Supported types are Text data, Whole number (both integer and integer64), 3ecimal number, Date and Date and time, Binary (BLOB) and Boolean.
+    2. Select the data Type. Supported types are Text data, Whole number (both integer and integer64), Decimal number, Date and Date and time, Binary (BLOB) and Boolean.
     4. Depending on the selected data format, enter the Maximum length of values.
-    5. Click on the ![alt_text](media/mActionNewAttribute.png "image_tooltip") Add to Fields List button
+    5. Click on the Add to Fields List ![alt_text](media/mActionNewAttribute.png "image_tooltip") button
 
 7. Reproduce the steps above for each field you need to add
 8. Once you are happy with the attributes, click OK. QGIS will add the new layer to the legend, and you can edit it as described in section
@@ -90,7 +90,7 @@ Figure 7.3: New GeoPackage Layer dialogue
 
 1. To create a new ESRI Shapefile format layer, press the ![alt_text](media/mActionNewVectorLayer.png "image_tooltip") New Shapefile Layer… button in the Layer ‣ Create Layer ‣ menu or from the Data Source Manager toolbar. The New Shapefile Layer dialog will be displayed as shown in Figure 7.4.
 
-![alt_text](media/new_shapefile.PNG "image_tooltip")
+![alt_text](media/new-shapefile-dialog.png "image_tooltip")
 
 Figure 7.4: New shapefile layer dialogue
 
@@ -104,7 +104,7 @@ Figure 7.4: New shapefile layer dialogue
     1. Enter the Name of the field
     2. Select the data Type. Only Decimal number, Whole number, Text data and Date attributes are supported.
     3. Depending on the selected data format, enter the Length and Precision.
-    4. Click on the[ ](https://docs.qgis.org/3.16/en/_media/mActionNewAttribute.png) ![alt_text](media/mActionNewAttribute.png "image_tooltip") Add to Fields List button
+    4. Click on the Add to Fields List ![alt_text](media/mActionNewAttribute.png "image_tooltip") button
 
 8. Reproduce the steps above for each field you need to add
 9. Once you are happy with the attributes, click OK. QGIS will add the new layer to the legend, and you can edit it as described in the next Phase, ‘Digitizing an existing layer of this module.
@@ -114,15 +114,15 @@ Figure 7.4: New shapefile layer dialogue
 
 #### **Content/Tutorial**
 
-This tutorial will show how to create a new shapefile using auxiliary data like satellite imagery provided by Google. In practice accurate ground truth data will be available. This would be accurate qualitative data about the topological feature. It’s important to know what feature you’d like to create beforehand, for example is it a point, line or polygon shapefile layer. When we create the layer, we must define what type of data it will contain. The purpose of this tutorial is to create a data type that can easily be manipulated, analysed and stored using a GIS system, hence the need to create shapefiles. We’ll create polygon features as an example;
+This tutorial will show how to create a new shapefile using auxiliary data like satellite imagery provided by Google. In practice accurate ground truth data will be available. This would be accurate qualitative data about the topological feature. It’s important to know what feature you’d like to create beforehand, for example is it a point, line or polygon vector layer. When we create the layer, we must define what type of data it will contain. The purpose of this tutorial is to create a data type that can easily be manipulated, analysed and stored using a GIS system, hence the need to create vector files. We’ll create polygon features as an example;
 
 1. Before you can add new vector data, you need a vector dataset (a layer) to add it to. In our case, we’ll begin by creating a new data layer, and then we’ll add features to it. First, we must define our dataset.
 2. Create a new project in QGIS by clicking on the _New Project_ ![alt_text](media/new-project.png  "image_tooltip") icon.
-3. Go to _Layer ‣ Create Layer ‣ New Shapefile Layer_. You’ll be presented with the following dialog:
+3. Go to _Layer ‣ Create Layer ‣ New GeoPackage Layer_. You’ll be presented with the following dialog:
 
-![alt_text](media/newshape.PNG "image_tooltip")
+![alt_text](media/new-vector.png "image_tooltip")
 
-Figure 7.5: New Shapefile dialogue
+Figure 7.5: New GeoPackage dialogue
 
 At this point we must decide what kind of dataset we want to create. Remember that a data layer can only contain features of points, lines or polygons - never a mix. When we create the layer, we must define what type of data it will contain.
 
@@ -130,27 +130,25 @@ Since polygons are made up of points and lines, let’s create polygons. Once yo
 
 Within the dialogue, specify a file name for the new file, file encoding, geometry type, the CRS and add specify data for the New Field. Add other field names. This requires a predesigned data model that properly captures all information about the said feature.
 
-4. The second step is to add the Google satellite layer to QGIS map canvas. Locate the browser panel which is found in the left corner of the QGIS main interface. Note that it’s possible to use any other datasets for example, processed satellite imagery or topographic maps. It’s also a good practice to put accuracy into consideration. This is partly affected by the specification (e.g resolution) of the imagery product you choose for digitizing.
+4. The second step is to add the ESRI World Imagery satellite layer to QGIS map canvas. We added this in a previous module and should be available to use in the **Browser Panel** under **XYZ Tiles**.
 
-![alt_text](media/browser_panel.PNG "image_tooltip")
+![ESRI World Imagery found in Browser Panel](media/xyz-2.png "ESRI World Imagery found in Browser Panel")
 
+![ESRI World Imagery loaded in QGIS](media/xyz-3.png "ESRI World Imagery loaded in QGIS")
 
-5. You’ll be prompted to type the details for the New Connection 
+Figure 7.6.1: QGIS canvas after adding ESRI World Imagery layer
 
-![alt_text](media/new_connection.png "image_tooltip")
+5. Zoom in the image until you can see features such as rooftops, roads, trees, etc. The rooftops can act as a 2D proxy for buildings, thus we’ll digitize the newly created building layer.
 
-6. This way, a connection to G Satellite is established by XYZ Tile in QGIS 3. To view inside QGIS simply double-click or drag the XYZ Tile service to the layers panel. You can now zoom in to the area of interest.As an example I zoomed in to an area in Pampanga province. The location has rooftops/buildings as seen in the image below;
+![ESRI World Imagery layer zoomed in](media/digitize-zoom.png "ESRI World Imagery layer zoomed in")
 
-![ QGIS canvas after adding Google Satellite imagery layer](media/google_satellite.png " QGIS canvas after adding Google Satellite imagery layer")
+Figure 7.6.2: ESRI World Imagery layer zoomed in
 
-Figure 7.6: QGIS canvas after adding Google Satellite imagery layer
-
-7. In the image, you’ll notice a range of features; rooftops of several houses, a road, trees and vegetation. The rooftops can act as a 2D proxy for buildings, thus we’ll digitize the newly created building layer
-8. Let’s enter edit mode for the _buildings_ layer
-9. Select _buildings_ in the Layers panel
-10. Click on the _Toggle Editing_ ![alt_text](media/edit-layer.png "image_tooltip") button
-11. If you can’t find this button, ensure that the Digitising toolbar is enabled. There should be a check mark next to the _View ‣ Toolbars ‣ Digitizing_ menu entry
-12. Once you are in edit mode, the digitising tools will become active
+6. Let’s enter edit mode for the _buildings_ layer
+7. Select _buildings_ in the Layers panel
+8. Click on the _Toggle Editing_ ![alt_text](media/edit-layer.png "image_tooltip") button
+9. If you can’t find this button, ensure that the Digitising toolbar is enabled. There should be a check mark next to the _View ‣ Toolbars ‣ Digitizing_ menu entry
+10. Once you are in edit mode, the digitising tools will become active
 
 ![Digitizing tools](media/digi-toolbar.png "Digitizing tools")
 
@@ -170,17 +168,26 @@ From left to right on the image above, they are:
 
 We want to add a new feature.
 
-13.  Click on the _Add Feature_ ![alt_text](media/add-feature.png "image_tooltip")  button to start digitizing. We’ll digitize the buildings
-14. Start by clicking on a point somewhere along the edge of the building
-15. Place more points by clicking further along the edge, until the shape you’re drawing completely covers the field. This is very similar to drawing a polygon. The beginning vertex and end vertex must touch, otherwise it remains a line.
-16. To place the last point, right-click where you want it to be. This will finalise the feature and bring up the Attributes dialog.
-17. Fill in the values as shown here
+11.  Click on the _Add Feature_ ![alt_text](media/add-feature.png "image_tooltip")  button to start digitizing. We’ll digitize the buildings
+12. Start by clicking on a point somewhere along the edge of the building
+13. Place more points by clicking further along the edge, until the shape you’re drawing completely covers the field. This is very similar to drawing a polygon. The beginning vertex and end vertex must touch, otherwise it remains a line.
+14. To place the last point, **right-click where you want it to be**. This will finalise the feature and bring up the Attributes dialog.
+15. Fill in the values as shown here
 
-![Fill in the attribute values](media/scoda_house.png "Fill in the attribute values")
+![ Digitizing new feature](media/digitize-1.png "Digitizing new feature")
 
-Figure 7.8: Fill in the attribute values
+Figure 7.8.1: Digitizing new feature
 
-18. Click _OK_. You’ve created a new feature!
+![Fill in the attribute values](media/digitize-2.png "Fill in the attribute values")
+
+Figure 7.8.2: Adding the attributes
+
+
+16. Click _OK_. You’ve created a new feature!
+
+![New feature created](media/digitize-3.png "New feature created")
+
+Figure 7.8.3: New feature created
 
 If you make a mistake while digitising a feature, you can always edit it later. Simply finish     digitising the feature and then follow these steps:
 
@@ -234,7 +241,7 @@ If you make a mistake while digitising a feature, you can always edit it later. 
 </table>
 
 
-19. Now try it on your own, digitize all the buildings in the image.
+17. Now try it on your own, digitize all the buildings in the image.
 
 
 ### Phase 3 title: Georeferencing a Topo map
@@ -244,49 +251,80 @@ If you make a mistake while digitising a feature, you can always edit it later. 
 To georeference the map;
 
 1. Open the Georeferencer tool, Raster ► Georeferencer 
-2. Click the Add raster button ![Add Raster](media/add_raster.PNG "Add Raster") to add the map image file, Topo Map of Pampanga ([https://drive.google.com/file/d/1lgMsxIq50l8F9deNMOXxl7CQ6gizslxJ/view?usp=sharing](https://drive.google.com/file/d/1lgMsxIq50l8F9deNMOXxl7CQ6gizslxJ/view?usp=sharing)), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
+2. Click the Add raster button ![Add Raster](media/add-raster.png "Add Raster") to add the map image file, Topo Map of Pampanga ([https://drive.google.com/file/d/1lgMsxIq50l8F9deNMOXxl7CQ6gizslxJ/view?usp=sharing](https://drive.google.com/file/d/1lgMsxIq50l8F9deNMOXxl7CQ6gizslxJ/view?usp=sharing)), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
 
-![Map in Georeferencer canvas](media/georeferencer.PNG "Map in Georeferencer canvas")
+![Map in Georeferencer canvas](media/georeferencer.png "Map in Georeferencer canvas")
 
 Figure 7.9: Map in Georeferencer canvas
 
 Next you should define the transformation settings for georeferencing the map:
 
-3. Open Settings ► Transformation settings
+3. Open Settings ► Transformation settings or click the Transformation Settings button ![alt_text](media/georef-settings-btn.png "image_tooltip").
 4. Click the ![alt_text](media/dots.png "image_tooltip") icon next to the Output raster box, go to the folder and create the folder 'pampanga data’ and name the file as pampanga_georef.tif.
 5. Set the rest of parameters as shown below
 
-![Transformation parameters](media/transformation_settings.PNG "Transformation parameters")
+![Transformation parameters](media/transformation-settings.png "Transformation parameters")
 
 Figure 7.10: Transformation parameters
+
+When selecting the transformation parameters, the things to consider are:
+* the map’s complexity and distortion (regular-shaped maps normally only need to use simple transformation parameters)
+* the number of GCPs that you can get on the map -- the more complex the transformation type, the more GCPs are needed to get good results.
+* the distribution of GCPs on the map -- poor GCP distribution results in more distortion especially in higher order transformation equations.
+* more (or more complex) is not always better.
+
+| Order of Transformation | Minimum GCPs Required |
+|:-----------------------:|:---------------------:|
+|            1            |           3           |
+|            2            |           6           |
+|            3            |           10          |
+|            4            |           15          |
+|            5            |           21          |
+|            6            |           28          |
+|            7            |           36          |
+
+Just to be safe, always have at least one more than the minimum to add redundancy.
+
 
 6. Click OK.
 7. The map contains several cross-hairs marking the coordinates in the map, we will use those to georeference this image. You can use the zooming and panning tools as you usually do in QGIS to inspect the image in the Georeferencer’s window.
 8. Zoom in to the left lower corner of the map and note that there is a cross-hair with a coordinate pair, X and Y, that as mentioned before are in the CRS, PRS 1992 also written as PRS 92, as referenced in the legend of the topo map.
-9. Click the Add point button ![Add Point](media/add_point.PNG "Add Point")  and click in the intersection of the cross-hairs (pan and zoom as needed).
-10. In the Enter map coordinates dialogue write the coordinates that appear in the map (X: 14° 45’ 00’’ and Y: 120° 30’ 00’’).
+9. Click the Add point button ![Add Point](media/add-point.png "Add Point")  and click in the intersection of the cross-hairs (pan and zoom as needed).
+10. In the Enter map coordinates dialogue write the coordinates that appear in the map (Y: 14° 45’ 00’’ and X: 120° 30’ 00’’).
 
-![Enter map coordinates](media/enter_coordinates.PNG "Enter map coordinates")
+![Select GCP](media/georef-1.png "Select GCP")
 
-Figure 7.11: Enter map coordinates
+Figure 7.11.1: Enter map coordinates
+
+![Enter map coordinates](media/georef-2.png "Enter map coordinates")
+
+Figure 7.11.2: Enter map coordinates
 
 11. Click OK.
 
-The first coordinate for the georeferencing is now ready. Below is a screenshot of what to expect    at this point
+The first coordinate for the georeferencing is now ready. Below is a screenshot of what to expect  at this point
 
-![First coordinate for the georeferencing](media/coords_entered.PNG "First coordinate for the georeferencing")
+![First coordinate for the georeferencing](media/georef-3.png "First coordinate for the georeferencing")
 
 Figure 7.12: First coordinate for the georeferencing
 
 12. Zoom out in the image and move to the right until you find other crosshair, and estimate how many kilometres you have moved. Try to get ground control points as far from each other as possible. Digitize at least three more ground control points in the same way you did the first one. Tip: Make sure the points are fairly equally distributed across the image for example in all four corners of the image or at equal distances to each other. This affects the performance of the transformation algorithm. Which in turn results in higher error rates.
-13. With already three digitized ground control points you will be able to see the georeferencing error as a red line coming out of the points. The error in pixels can be seen also in the GCP table in the dX[pixels] and dY[pixels] columns. The error in pixels should not be higher than 10 pixels, if it is you should review the points you have digitized and the coordinates you have entered to find what the problem is. You can use the image above as a guide.
 
-Once you are happy with your control points, you can save them for later use:
+13. With already three digitized ground control points you will be able to see the georeferencing error as a red line coming out of the points. The error in pixels can be seen also in the GCP table in the dX[pixels] and dY[pixels] columns. The residuals should not be higher than a threshold that you set, if it is you should review the points you have digitized and the coordinates you have entered to find what the problem is. You can use the image above as a guide.
 
-14. File ► Save GCP points as….
-15. Finally, georeference your map. File ► Start georeferencing
+14. Add more control points until you are happy with the expected results.
+14. You can save the GCPs vial **File ► Save GCP points as…**.
+15. Finally, georeference your map with **File ► Start georeferencing** or the Start Georeferencing button ![Start Georeferencing button](media/georef-start-btn.png "Start Georeferencing button").
 
-    Note: To check that your data is properly georeferenced you can open the topo map. Your map and this image should match quite well. Set the map transparency to 50% and compare it to the aerial image.
+![GCPs added](media/georef-4.png "GCPs added")
+
+Figure 7.13: GCPs added
+
+![Georeferenced map loaded in QGIS](media/georef-5.png "Georeferenced map loaded in QGIS")
+
+Figure 7.14: Georeferenced map loaded in QGIS
+
+Note: To check that your data is properly georeferenced you can open the topo map. Your map and this image should match quite well. Set the map transparency to 75% and compare it to the aerial image.
 
 
 #### **Quiz questions**

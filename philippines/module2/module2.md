@@ -400,9 +400,9 @@ To connect to a tile server:
 ```
 4. Click OK.
 
-![Adding and XYZ connection in QGIS](media/xyz-1.png "Adding and XYZ connection in QGIS")
+![Adding an XYZ connection in QGIS](media/xyz-1.png "Adding an XYZ connection in QGIS")
 
-Figure 2.18. Adding and XYZ connection in QGIS
+Figure 2.18. Adding an XYZ connection in QGIS
 
 5. This should add a PGP Basemap item under XYZ Tiles in the Browser Panel.
 
@@ -415,6 +415,17 @@ Figure 2.19. PGP Basemap Tile server added to the Browser Panel
 ![PGP Basemap layer loaded in QGIS](media/xyz-3.png "PGP Basemap layer loaded in QGIS")
 
 Figure 2.20. PGP Basemap layer loaded in QGIS
+
+7. Try to add the ESRI World Imagery layer as well.
+
+```
+    Name: ESRI World Imagery
+    URL: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
+```
+
+![Adding ESRI World Imagery as XYZ Tiles](media/xyz2-1.png "Adding ESRI World Imagery as XYZ Tiles")
+
+
 
 
 **BONUS:**  If you want to add several basemaps under XYZ Tiles in the Browser Panel, you can follow the instructions in this post: [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
