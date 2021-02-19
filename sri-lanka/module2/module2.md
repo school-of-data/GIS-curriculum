@@ -395,26 +395,26 @@ To connect to a tile server:
 3. Add the following:
 
 ```
-    Name: Google Satellite
-    URL: https://mt1.google.com/vt/lyrs=s&x=%7Bx%7D&y=%7By%7D&z=%7Bz%7D
+    Name: ESRI World Imagery
+    URL: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
 ```
 4. Click OK.
 
-![Adding and XYZ connection in QGIS](media/xyz-1.png "Adding and XYZ connection in QGIS")
+![Adding an XYZ connection in QGIS](media/xyz-1.png "Adding an XYZ connection in QGIS")
 
-Figure 2.18. Adding and XYZ connection in QGIS
+Figure 2.18. Adding an XYZ connection in QGIS
 
-5. This should add a PGP Basemap item under XYZ Tiles in the Browser Panel.
+5. This should add a ESRI World Imagery item under XYZ Tiles in the Browser Panel.
 
-![PGP Basemap Tile server added to the Browser Panel](media/xyz-2.png "PGP Basemap Tile server added to the Browser Panel")
+![ESRI World Imagery Tile server added to the Browser Panel](media/xyz-2.png "ESRI World Imagery Tile server added to the Browser Panel")
 
-Figure 2.19. PGP Basemap Tile server added to the Browser Panel
+Figure 2.19. ESRI World Imagery Tile server added to the Browser Panel
 
 6. You can load the XYZ tile layer as you would any other layer from the Browser Panel.
 
-![PGP Basemap layer loaded in QGIS](media/xyz-3.png "PGP Basemap layer loaded in QGIS")
+![ESRI World Imagery layer loaded in QGIS](media/xyz-3.png "ESRI World Imagery layer loaded in QGIS")
 
-Figure 2.20. PGP Basemap layer loaded in QGIS
+Figure 2.20. ESRI World Imagery layer loaded in QGIS
 
 
 **BONUS:**  If you want to add several basemaps under XYZ Tiles in the Browser Panel, you can follow the instructions in this post: [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)

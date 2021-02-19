@@ -46,7 +46,7 @@ In addition you’ll have learned the following skills;
 
 Let’s start with an example: 
 
-To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Pampanga province’ in the Philippines. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
+To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Pampanga province in the Philippines. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
 
 Breakdown of the concepts
 
@@ -108,7 +108,7 @@ Figure 5.6: The Print Layout window
 
 4. You’ll notice the print layout canvas is empty. To add the styled map from the QGIS canvas, Click the ‘Add new map to layout button’ ![alt_text](media/add_new_map_to_layout.png "image_tooltip"), left click your mouse and draw a rectangle in the white space at the center of the print layout. The map should be added. You’ve just exported a map to the print layout. It’s now possible to add all other map elements like the title, legend, grids etc. 
 
-![Add map to Print Layout](media/print-canvas-map.png "Add map to Print Layout")
+![Add map to Print Layout](media/print-layout-map.png "Add map to Print Layout")
 
 Figure 5.7: Add map to Print Layout
 
@@ -152,12 +152,15 @@ Figure 5.8: Add title of the map
 
 
 ![Scale bar](media/scale-bar.png "Scale bar")
+
 Figure 5.9: Add scale bar to the map
 
 ![Legend](media/legend.png "Legend")
+
 Figure 5.9: Add legend to the map
 
 ![Attribution](media/attribution.png "Attribution")
+
 Figure 5.10: Add attribution to the map
 
 3. If the map layout is satisfactory, the map can be exported as a pdf, png, jpeg or svg, ready for printing otherwise save the layout. All saving functionality can be accessed via the ‘layout’ menu.
@@ -165,9 +168,11 @@ Figure 5.10: Add attribution to the map
 4. Save the map as an image using via **Layout ‣ Export as Image...** or by clicking the **Export as Image** button ![Export map to image](media/export-image-btn.png "Export map to image"). QGIS will ask you what file to save the map to as well as the image parameters.
 
 ![Image parameters](media/img-parameters.png "Image parameters")
+
 Figure 5.10: Add attribution to the map
 
 ![Exported map as imgage](media/exported-map.png "Exported map as imgage")
+
 Figure 5.11: Exported map as imgage
 
 #### **Quiz questions**
@@ -192,35 +197,61 @@ Figure 5.11: Exported map as imgage
 
 If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different provinces of the Philippines as an example, here’s Administrative Boundaries for the 81 provinces;
 
-1. This means QGIS Atlas will generate 81 pages because there are 81 provinces. 
+![Coverage layer](media/atlas-coverage.png "Coverage layer")
 
-![Attribute table](media/attribute_table.png "Attribute table")
+Figure 5.12: Coverage layer
 
-Figure 5.12: Attribute table
+![Attribute table](media/atlas-attr.png "Attribute table")
 
-2. In the right pane of the print layout, make sure to select the ‘Atlas’ menu and check the ‘Generate an atlas’ box
+Figure 5.13: Attribute table
 
-![Atlas Generation](media/generate_atlas.png "Atlas Generation")
+1. This layer will serve as out coverage layer which means that the QGIS Atlas will 1 map for each of the features in this coverage layer. All in all, 81 maps will be generated.
 
-Figure 5.13: Atlas Generation
+2. Open or create a new Print Layout and add a map.
 
-3. The next step is to choose the coverage layer; The coverage layer is the index layer used to create each page. QGIS Atlas dynamically changes the view-extent to each feature in the coverage layer. The number of records in the coverage determines how many pages will be in your map book.
+![Atlas Print Layout](media/atlas-print-layout.png "Atlas Print Layout")
 
-![Select Coverage Layer](media/coverage_layer.png "Select Coverage Layer")
-
-Figure 5.14: Select Coverage Layer
-
-4. In the “Item Properties” tab, check the box for “Controlled By Atlas”
-
-![Controlled by Atlas](media/controlled_by_atlas.png "Controlled by Atlas")
-
-Figure 5.15: Controlled by Atlas
+Figure 5.14: Atlas Print Layout
 
 
-5. Click the  ‘Atlas’ menu, then select ‘Export Atlas as PDF’. You should have 81 maps generated. Each map will represent a province.
- 
+3. In the right pane of the Print Layout, make sure to select the **Atlas** menu and check the **Generate an atlas** box. You can also open the Atlas Settings using the Atlas Settings button ![Atlas Settings](media/atlas-settings-btn.png "Atlas Settings") on the Atlas toolbar.
+
+![Atlas Generation](media/generate-atlas.png "Atlas Generation")
+
+Figure 5.15: Atlas Generation
+
+3. The next step is to choose the coverage layer; The coverage layer is the index layer used to create each page. One map/page for the Atlas will be generated for each feature in the coverage layer. In our case, using the PHL_provinces coverage layer will create a map for each of the 81 provinces. QGIS Atlas dynamically changes the view-extent to each feature in the coverage layer. You can opt to make the coverage layer hidden in the maps that you create (i.e. the coverage layer will not be visible in the Print Layout) and select what to name each page of your Atlas. You can also perform some filtering and sorting of the coverage layer if you need to. For the **Output**, you can opt to have a single file as an output by checking the **Singe file export when possible** checkbox. If unchecked, you will generate 1 file per map.
+
+![Select Coverage Layer](media/coverage-layer.png "Select Coverage Layer")
+
+Figure 5.16: Select Coverage Layer
+
+4. Now that we've set the coverage layer, we should tell the Print Layout to use the atlas to control the extent of the maps (area visible on the printable map) that we will generate. In the **Item Properties** tab, check the box for **Controlled By Atlas**
+
+![Controlled by Atlas](media/atlas-controlled.png "Controlled by Atlas")
+
+Figure 5.17: Make sure that the map extent is controlled by the Atlas
+
+5. To preview your Atlas, click on the Preview Atlas button ![Preview Atlas button](media/atlas-preview-btn.png "Preview Atlas button") on the Atlas Toolbar. This will show you the 81 maps that you generated. Use the Atlas toolbar ![Atlas toolbar](media/atlas-toolbar-nav.png "Atlas toolbar") to navigate the Atlas maps. 
+
+![Atlas Preview](media/atlas-preview.png "Atlas Preview")
+
+Figure 5.18: Atlas Preview
+
+6. You can export the Atlas maps via the **Export Atlas** button ![Export Atlas button](media/atlas-export-btn.png "Export Atlas button") either as images or PDFs. Select **Export Atlas as Image**. You should have 81 maps generated wher each map shows the extent of the province.
+
+
+![Atlas Outputs](media/atlas-outputs.png "Atlas Outputs")
+
+Figure 5.18: Atlas Outputs
+
+7. **TIP**: For this example we only mapped the coverage layer. The power of the Atlas is when we map several layers. For example, we have the clinics, road network, and population density data for the entire country loaded as layers in QGIS. We would then want to create one map for each of the provinces showing these same layers. Using the Atlas would require us to only create one layout template and let the Atlas handle the generation of the other maps based on the coverage layer that we use.
+
+
+8. **TIP**: You can use QGIS Expressions and Data Defined overrides for setting the other map elements in your Atlas so that they also dynamically change depending on the coverage layer feature being mapped. For example, you can use a QGIS expression calling the value of the NAME_1 field on your label so that it dynamically changes into the value of NAME_1 for the current feature being mapped.
 
 For more information about the QGIS Atlas, see: [https://www.youtube.com/watch?v=tOnMJBUvEjY](https://www.youtube.com/watch?v=tOnMJBUvEjY).
+
 
 #### **Quiz questions**
 
