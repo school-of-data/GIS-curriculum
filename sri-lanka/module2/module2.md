@@ -433,6 +433,7 @@ To connect to a WMS:
 1. Go to the **Browser Panel**
 2. **Right-click WMS/WMTS ‣ New Connection** 
 3. Add the following:
+
 ```
 Name: GeoServer Demo
 URL: https://demo.geo-solutions.it/geoserver/geosolutions/wms
