@@ -200,13 +200,29 @@ None
 # Module 7
 
 ## data
-
+* **(topo map or any map of the country to be georeferenced)**
 
 ## media
-
+* **digitize-1.png** -> replace with screenshot using localised data
+* **digitize-2.png** -> replace with screenshot using localised data
+* **digitize-3.png** -> replace with screenshot using localised data
+* **digitize-zoom.png** -> replace with screenshot using localised data
+* **georef-1.png** -> replace with screenshot using localised data
+* **georef-2.png** -> replace with screenshot using localised data
+* **georef-3.png** -> replace with screenshot using localised data
+* **georef-4.png** -> replace with screenshot using localised data
+* **georef-5.png** -> replace with screenshot using localised data
+* **georeferencer.png** -> replace with screenshot using localised data
+* **new-geopackage-dialog.png** -> replace with screenshot using localised data
+* **new-shapefile-dialog.png** -> replace with screenshot using localised data
+* **transformation-settings.png** -> replace with screenshot using localised data
+* **xyz-1.png** -> replace with screenshot using localised data
+* **xyz-2.png** -> replace with screenshot using localised data
+* **xyz-3.png** -> replace with screenshot using localised data
 
 ## module7
-
+* **line 14** -> replace with file to be georeferenced
+* **line 254** -> replace name of map image file to that of the file to be georeferenced
 
 
 # Module 8

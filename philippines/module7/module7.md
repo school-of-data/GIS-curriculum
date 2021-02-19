@@ -45,7 +45,7 @@ Figure 7.1: Remotely sensed images of different coastlines. A. Interferometric S
 Digitizing in GIS is the process of “tracing”, in a geographically correct way, information from media/maps. The process of georeferencing relies on the coordination of points on the scanned image (data to be georeferenced) with points on a geographically referenced data (data to which the image will be georeferenced). By “linking” points on the image with those same locations in the geographically referenced data you will create a transformation that converts the location of the entire image to the correct geographic location.
 
 
-![Here, buildings have been digitized (traced) on top of an aerial photo](media/builidings.png "Here, buildings have been digitized (traced) on top of an aerial photo")
+![Here, buildings have been digitized (traced) on top of an aerial photo](media/buildings.png "Here, buildings have been digitized (traced) on top of an aerial photo")
 
 Figure 7.2: Here, buildings have been digitized (traced) on top of an aerial photo
 
@@ -251,7 +251,7 @@ If you make a mistake while digitising a feature, you can always edit it later. 
 To georeference the map;
 
 1. Open the Georeferencer tool, Raster ► Georeferencer 
-2. Click the Add raster button ![Add Raster](media/add-raster.png "Add Raster") to add the map image file, Topo Map of Pampanga ([https://drive.google.com/file/d/1lgMsxIq50l8F9deNMOXxl7CQ6gizslxJ/view?usp=sharing](https://drive.google.com/file/d/1lgMsxIq50l8F9deNMOXxl7CQ6gizslxJ/view?usp=sharing)), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
+2. Click the Add raster button ![Add Raster](media/add-raster.png "Add Raster") to add the map image file, [Topo Map of Pampanga ](data/guagua-topo.jpeg), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
 
 ![Map in Georeferencer canvas](media/georeferencer.png "Map in Georeferencer canvas")
 
