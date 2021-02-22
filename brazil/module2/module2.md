@@ -1,6 +1,6 @@
 # Módulo 2 - Camadas no QGIS
 
-** Autor **: Ben Hur
+**Autor**: Ben Hur
 
 ## Introdução Pedagógica
 
