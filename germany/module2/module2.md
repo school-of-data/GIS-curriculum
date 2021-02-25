@@ -13,7 +13,7 @@ In diesem Modul lernen Sie die grundlegenden Konzepte von Layern in QGIS und wie
 
 Sie sollten außerdem in der Lage sein:
 
-* Layer (sowohl Vektoren als auch Raster) mit Hilfe des Browser-Panels und des Datenquellen-Managers zu laden
+* Layer (sowohl Vektoren als auch Raster) mit Hilfe des Browser-Bedienfelds und des Datenquellen-Managers zu laden
 * QGIS mit entfernten Diensten zu verbinden
 * mit temporären und virtuellen Layern zu arbeiten
 * Erweiterungen zu installieren, um andere Datensätze in QGIS laden
@@ -64,7 +64,7 @@ Diese Datensätze können in verschiedenen Typen und Formaten vorliegen. Einige 
 
 ## Main content
 
-### Phase 1 title: Data Types, File Formats, the Browser Panel, and the Layers Panel
+### Teil 1: Datentypen, Dateiformate, das Browser- und das Layerbedienfeld
 
 #### **Gängige Datentypen und Dateiformate**
 
@@ -117,8 +117,8 @@ Dies macht QGIS zu einer integralen Komponente für jede Geodateninfrastruktur u
 
 Es gibt mehrere Möglichkeiten, Layer in QGIS zu laden. Diese beinhalten:
 
-1. **Drag-and-drop** des Layers in die QGIS Kartenansicht oder das Layer Panel. Dies ist zwar der einfachste Weg, einen Layer in QGIS zu laden, aber nicht die empfohlene Vorgehensweise, da es bei dieser Methode Probleme gibt, z.B. beim Laden von nicht-räumlichen tabellarischen Daten wie CSVs.
-2. Verwendung des **Browser Panels**.
+1. **Drag-and-drop** des Layers in die QGIS Kartenansicht oder das Layer Bedienfeld. Dies ist zwar der einfachste Weg, einen Layer in QGIS zu laden, aber nicht die empfohlene Vorgehensweise, da es bei dieser Methode Probleme gibt, z.B. beim Laden von nicht-räumlichen tabellarischen Daten wie CSVs.
+2. Verwendung des **Browser Bedienfelds**.
 3. Verwendung des **Datenquellen-Managers**.
 4. Verwenden der Symbolleiste **Datenquellenverwaltung** und der Symbolleiste **Ebenen verwalten**.
 
@@ -129,57 +129,57 @@ Es gibt mehrere Möglichkeiten, Layer in QGIS zu laden. Diese beinhalten:
 
 Das **Browser-Bedienfeld** zeigt einen Dateibaum an, der die Dateien und Ordner Ihres Computers sowie Verbindungen zu Datenbanken und Webservern anzeigt. Standardmäßig ist es an der linken Seite der QGIS-Benutzeroberfläche zusammen mit dem Layer-Bedienfeld angedockt.
 
-Das Browser-Panel bietet eine Vielzahl von Funktionen zum Verbinden, Laden und Anzeigen von Informationen über Layer. Sie können im Browserbedienfeld auch Verbindungen zu Favoritenverzeichnissen und räumlichen Lesezeichen erstellen.
+Das Browser-Bedienfeld bietet eine Vielzahl von Funktionen zum Verbinden, Laden und Anzeigen von Informationen über Layer. Sie können im Browserbedienfeld auch Verbindungen zu Favoritenverzeichnissen und räumlichen Lesezeichen erstellen.
 
 Um mehr über das Browser-Bedienfeld zu erfahren, gehen Sie zu: [https://docs.qgis.org/3.16/de/docs/user_manual/introduction/browser.html](https://docs.qgis.org/3.16/de/docs/user_manual/introduction/browser.html)
 
-#### **Übung 01.1: Das Browser-Panel**
+#### **Übung 01.1: Das Browser-Bedienfeld**
 
 1. Öffnen Sie QGIS.
-2. Prüfen Sie das Browser-Fenster (Abbildung 2.2). Wenn Sie das Browser-Panel nicht finden können, können Sie es unter **Ansicht ‣ Panels ‣ Browser Panel** in der Menüleiste sichtbar machen.
+2. Prüfen Sie das Browser-Fenster (Abbildung 2.2). Wenn Sie das Browser-Bedienfeld nicht finden können, können Sie es unter **Ansicht ‣ Bedienfelder ‣ Browser** in der Menüleiste sichtbar machen.
 
-![Das QGIS Browser Panel](media/qgis-browser-1.png "Das QGIS Browser Panel")
+![Das QGIS Browser Bedienfeld](media/qgis-browser-1.png "Das QGIS Browser Bedienfeld")
 
-Abbildung 2.2. Das Browser-Panel
+Abbildung 2.2. Das Browser-Bedienfeld
 
 3. Beachten Sie, wie die Laufwerke und Ordner aufgeklappt werden können, um die Unterordner darin anzuzeigen.
-4. Suchen Sie den Ordner **Module 2 - Layers in QGIS** (Abbildung 2.3) im Dateibaum (beachten Sie, wo Sie die Datei gespeichert oder heruntergeladen haben). Sie sollten die notwendigen Daten für diese Arbeitsmappe sehen können. In meinem Beispiel auf der rechten Seite habe ich den oben genannten Ordner als einen meiner Favoriten verknüpft, so dass ich vom Browser-Panel aus leicht dorthin wechseln kann. Sie können ein Favoritenverzeichnis zum Browser-Panel hinzufügen, indem Sie mit der rechten Maustaste auf Favoriten klicken und das Verzeichnis hinzufügen.
+4. Suchen Sie den Ordner **Module 2 - Layers in QGIS** (Abbildung 2.3) im Dateibaum (beachten Sie, wo Sie die Datei gespeichert oder heruntergeladen haben). Sie sollten die notwendigen Daten für diese Arbeitsmappe sehen können. In meinem Beispiel auf der rechten Seite habe ich den oben genannten Ordner als einen meiner Favoriten verknüpft, so dass ich vom Browser-Bedienfeld aus leicht dorthin wechseln kann. Sie können ein Favoritenverzeichnis zum Browser-Bedienfeld hinzufügen, indem Sie mit der rechten Maustaste auf Favoriten klicken und das Verzeichnis hinzufügen.
 5. Überprüfen Sie die Dateien im Ordner (Abbildung 2.3). Es gibt mehrere von ihnen. Aus dem Dateibaum selbst können wir bereits eine Vorstellung von den Dateien und Layern gewinnen, die wir in QGIS laden können. Die Icons links neben den Namen zeigen an, ob es sich um einen Vektor ![Vektorsymbol](media/symbol-vector.png "Vector symbol")
 , ein Raster ![Raster-Symbol](media/symbol-raster.png "Raster-Symbol"), eine Datenbank ![Datenbank-Symbol](media/symbol-db.png "Datenbank-Symbol"), oder einfache tabellarische Daten ![Tabellen-Symbol](media/symbol-table.png "Tabellen-Symbol").
 
 
-![Modul-2-Dateien im Browser-Panel](media/qgis-browser-2.png "Modul-2-Dateien im Browser-Panel")
+![Modul-2-Dateien im Browser-Bedienfeld](media/qgis-browser-2.png "Modul-2-Dateien im Browser-Bedienfeld")
 
-Abbildung 2.3. Die Moduldateien im Browser-Panel
+Abbildung 2.3. Die Moduldateien im Browser-Bedienfeld
 
 6. Es befinden sich 5 Dateien unter dem Ordner data:
 
-    1. ein GeoPackage (Philippines_NCR.gpkg), das eine Vektor- (NCR_Jollibee) und eine Rasterdatei (NCR_SRTM_DEM) enthält;
-    2. ein GeoJSON (NCR_districts.geojson);
-    3. eine Flatgeobuf-Datei (NCR_municities.fgb);
-    4. ein Shapefile (NCR_admin_boundary.shp); und
-    5. eine Datei mit kommagetrennten Werten (CSV) (NCR_McDonalds.csv).
+    1. ein GeoPackage (Sachsen.gpkg), das eine Vektor- (McDonalds) und eine Rasterdatei (Sachsen_SRTM_DEM) enthält;
+    2. ein GeoJSON (Sachsen_Landkreise.geojson);
+    3. eine Flatgeobuf-Datei (Sachsen_Gemeinden.fgb);
+    4. ein Shapefile (Sachsen_Landesgrenze.shp); und
+    5. eine Datei mit kommagetrennten Werten (CSV) (Sachsen_Burger-King.csv).
 
-7. Klicken Sie mit der rechten Maustaste auf NCR_admin_boundary.shp und klicken Sie auf Ebeneneigenschaften (Abbildung 2.4). Dadurch wird das Fenster mit den Ebeneneigenschaften geöffnet (Abbildung 2.5). Beachten Sie die Informationen, die im Fenster angezeigt werden. Wie ist die Geometrie des Layers? Welches CRS wird verwendet? Wie viele Features befinden sich auf dem Layer?
+7. Klicken Sie mit der rechten Maustaste auf Sachsen_Landesgrenze.shp und klicken Sie auf Layereigenschaften (Abbildung 2.4). Dadurch wird das Fenster mit den Layereigenschaften geöffnet (Abbildung 2.5). Beachten Sie die Informationen, die im Fenster angezeigt werden. Wie ist die Geometrie des Layers? Welches CRS wird verwendet? Wie viele Features befinden sich auf dem Layer?
 
 
-![Checking Layer Properties](media/qgis-browser-3.png "Checking Layer Properties")
+![Layereigenschaften anzeigen](media/qgis-browser-3.png "Layereigenschaften anzeigen")
 
-Abbildung 2.4.Checking Layer Properties
+Abbildung 2.4.Layereigenschaften anzeigen
 
-![Layer Properties from Browser Panel](media/qgis-browser-layer-properties.png "Layer Properties from Browser Panel")
+![Layereigenschaften Fenster](media/qgis-browser-layer-properties.png "Layereigenschaften Fenster")
 
-Abbildung 2.5. Layer-Eigenschaften aus dem Browser-Panel
+Abbildung 2.5. Layereigenschaften Fenster
 
 
 8. Neben der Bereitstellung von Metadaten zu den Layern können Sie im Layer-Eigenschaften-Fenster auch eine Vorschau der Geometrie und der Attribute des Layers anzeigen.
 9. Sie können eine Ebene aus dem Browser-Bedienfeld laden, indem Sie:
 
     1. **Doppelklick auf den Layer**
-    2. **Rechtsklick auf den Layer ‣ Layer zum Projekt hinzufügen**.
+    2. **Rechtsklick auf den Layer ‣ Layer zu Projekt hinzufügen**.
     3. **Layer auf die Kartenansicht ziehen**.
 
-10. Versuchen Sie, die Layer **NCR_admin_boundary**, **NCR_districts** und **NCR_municities** mit einer der oben genannten Methoden zu laden.
+10. Versuchen Sie, die Layer **Sachsen_Landesgrenze**, **Sachsen_Landkreise** und **Sachsen_Gemeinden** mit einer der oben genannten Methoden zu laden.
 
 ![Die in QGIS geladenen Vektorebenen](media/vector-layers-loaded-1.png "Die in QGIS geladenen Vektorebenen")
 
@@ -206,57 +206,9 @@ Die Attributtabelle eines Vektorlayers kann auch aus dem Ebenenbedienfeld heraus
 Weitere Informationen über das Ebenenbedienfeld finden Sie unter: [https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel](https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel)
 
 
-#### **Ebeneneigenschaften**
-
-Wenn Sie mit der rechten Maustaste auf eine Ebene im Ebenenbedienfeld klicken und "Ebeneneigenschaften" wählen, wird der Dialog "Ebeneneigenschaften" geöffnet.
-
-![Der Dialog Ebeneneigenschaften](media/layer-properties.png "Der Dialog Ebeneneigenschaften")
-
-Abbildung 2.8. Das Dialogfeld "Ebeneneigenschaften
-
-Im Dialogfeld "Ebeneneigenschaften" gibt es mehrere Registerkarten, auf denen der Benutzer Informationen anzeigen und sogar Eigenschaften der Ebene bearbeiten/verändern kann.
-
-Die Registerkarte "Information" zeigt eine schreibgeschützte Darstellung der zusammengefassten Informationen und Metadaten zur aktuellen Ebene, einschließlich
-
-* Datenanbieter
-* gefüllte Metadaten
-* Geometrie- oder Feldinformationen
-
-Die Registerkarte Quelle zeigt allgemeine Einstellungen für eine Vektorebene.
-
-Über Registerkarten wie Symbologie, Beschriftungen, Masken und 3D-Ansicht kann der Benutzer die Symbologie und den Stil des Layers ändern.
-
-Andere Registerkarten ermöglichen es dem Benutzer, Verknüpfungen mit dem Layer durchzuführen (Join), Informationen über die Attributfelder zu erhalten (Fields), benutzerdefinierte Formulare zum Hinzufügen neuer Daten hinzuzufügen (Attribute Forms) und vieles mehr.
-
-Eine weitere erwähnenswerte Registerkarte ist die Registerkarte "Metadaten", die dem Benutzer die Möglichkeit bietet, einen Metadatenbericht über den Layer zu erstellen und zu bearbeiten. Dieser enthält Informationen über:
-
-* Datenidentifikation: grundlegende Zuordnung des Datensatzes (Elternteil, Bezeichner, Titel, Zusammenfassung, Sprache...);
-* Kategorien, zu denen die Daten gehören, z. B. ISO-Kategorien und benutzerdefinierte Kategorien;
-* Schlüsselwörter zum Auffinden der Daten und zugehöriger Konzepte nach einem standardbasierten Vokabular;
-* Zugriff auf den Datensatz (Lizenzen, Rechte, Gebühren und Beschränkungen);
-* Umfang des Datensatzes, entweder räumlich (CRS, Kartenausdehnung, Höhen) oder zeitlich;
-* Kontakt des/der Eigentümer(s) des Datensatzes;
-* Links zu ergänzenden Ressourcen und verwandten Informationen; und
-* Historie des Datensatzes.
-
-Eine Zusammenfassung der ausgefüllten Informationen wird auf der Registerkarte "Validierung" bereitgestellt und hilft dabei, potenzielle Probleme im Zusammenhang mit dem Metadatenformular zu identifizieren. Derzeit werden die Metadaten in der Projektdatei gespeichert, sie können aber auch in einer separaten .qmd-Datei neben den dateibasierten Layern oder in einer lokalen .sqlite-Datenbank für Remote-Layer gespeichert werden.
-
-Weitere Informationen zu den Eigenschaften von Vektorebenen finden Sie unter: [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html)
-
-Weitere Informationen zu den Eigenschaften von Rasterebenen finden Sie unter: [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html)
-
-**HINWEIS:** Die Z-Reihenfolge von Layern im Layer-Bedienfeld kann durch das **Layerreihenfolge Bedienfeld** außer Kraft gesetzt werden.
-
-Das Layer-Bedienfeld ermöglicht auch das Umbenennen und Entfernen von Layern, das Filtern der Sichtbarkeit von Layern, sowie Erstellen und Verwalten von Layergruppen und Kartenansichten.
-
-Die Attributtabelle eines Vektorlayers kann auch aus dem Layer-Panel heraus geöffnet werden, indem Sie **mit der rechten Maustaste auf den Layer klicken ‣ Attributtabelle öffnen**.
-
-Weitere Informationen über das Layer-Bedienfeld finden Sie unter: [https://docs.qgis.org/3.16/de/docs/user_manual/introduction/general_tools.html#layers-panel](https://docs.qgis.org/3.16/de/docs/user_manual/introduction/general_tools.html#layers-panel)
-
-
 #### **Layer-Eigenschaften**
 
-Wenn Sie mit der rechten Maustaste auf eine Ebene im Ebenen-Bedienfeld klicken und "Eigenschaften" wählen, wird der Dialog "Layer-Eigenschaften" geöffnet.
+Wenn Sie mit der rechten Maustaste auf eine Ebene im Ebenen-Bedienfeld klicken und "Eigenschaften" wählen, wird der Dialog "LayerEigenschaften" geöffnet.
 
 ![Der Dialog "Layereigenschaften"](media/layer-properties.png "Der Dialog "Layereigenschaften"")
 
@@ -267,7 +219,7 @@ Im Dialogfeld "Layereigenschaften" gibt es mehrere Registerkarten, auf denen Inf
 Die Registerkarte "Information" zeigt eine schreibgeschützte Darstellung der zusammengefassten Informationen und Metadaten des aktuellen Layers, darunter:
 
 * Datenanbieter
-* gefüllte Metadaten
+* Metadaten
 * Geometrie- oder Feldinformationen
 
 Die Registerkarte Quelle zeigt allgemeine Einstellungen für einen Vektorlayer.
@@ -305,12 +257,12 @@ Die Bedeutung von Metadaten liegt darin, dass sie nicht nur die Transparenz för
 
 #### **Übung 01.2: Hinzufügen von Metadaten**
 
-1. Öffnen Sie die Layer-Eigenschaften des Layers "NCR_admin_boundary".
+1. Öffnen Sie die Layer-Eigenschaften des Layers "Sachsen_Landesgrenze".
 2. Prüfen Sie die Angaben auf der Registerkarte Information und schauen Sie sich die angezeigten Informationen an. Sind sie vollständig? Können wir weitere Informationen hinzufügen?
 
-![Informationseigenschaften des NCR_admin_boundary layer](media/metadata-1.png "Informationseigenschaften des NCR_admin_boundary layer")
+![Informationseigenschaften des Layers Sachsen_Landesgrenze](media/metadata-1.png "Informationseigenschaften des Layers Sachsen_Landesgrenze")
 
-Abbildung 2.9. Informationseigenschaften des NCR_admin_boundary Layers
+Abbildung 2.9. Informationseigenschaften des Sachsen_Landesgrenze Layers
 
 3. Wechseln Sie zur Registerkarte "Metadaten" und versuchen Sie, weitere Informationen über den Layer hinzuzufügen, wie z. B. den Umfang, die Datenkategorie, die Lizenz usw. Klicken Sie auf OK, wenn Sie fertig sind.
 
@@ -340,11 +292,11 @@ Abbildung 2.11. Die Registerkarte "Information" nach dem Bearbeiten einiger Meta
 
 Wenn Sie das Browser-Bedienfeld nicht zum Laden von Layern verwenden möchten, können Sie auch die **Datenquellenverwaltung** verwenden.
 
-Die **Datenquellenverwaltung** wurde mit der Veröffentlichung von QGIS 3 eingeführt und ist ein "One-Stop-Shop" für das Hinzufügen und Laden von Layern aus verschiedenen Datenquellen in QGIS. Vor ihrer Einführung gab es separate Fenster zum Laden verschiedener Datenquellen (z.B. eines für Raster, eines für Vektoren, etc.). Es kann über **Layers ‣ Datenquellenvwarltung** oder **CTRL + L** erreicht werden.
+Die **Datenquellenverwaltung** wurde mit der Veröffentlichung von QGIS 3 eingeführt und ist ein "One-Stop-Shop" für das Hinzufügen und Laden von Layern aus verschiedenen Datenquellen in QGIS. Vor ihrer Einführung gab es separate Fenster zum Laden verschiedener Datenquellen (z.B. eines für Raster, eines für Vektoren, etc.). Es kann über **Layer ‣ Datenquellenverwaltung** oder **CTRL + L** erreicht werden.
 
-![Datenquellenvwarltung](media/data-source-manager-1.png "Datenquellenvwarltung")
+![Datenquellenverwaltung](media/data-source-manager-1.png "Datenquellenverwaltung")
 
-Abbildung 2.12. Die Datenquellenvwarltung
+Abbildung 2.12. Die Datenquellenverwaltung
 
 
 #### **Übung 02.1: Die Datenquellenverwaltung**
@@ -352,11 +304,11 @@ Abbildung 2.12. Die Datenquellenvwarltung
 1. Öffnen Sie die **Datenquellenverwaltung**. Sie enthält auf der linken Seite Registerkarten, die sich auf die Art der Datenquelle beziehen, die Sie laden oder mit der Sie eine Verbindung herstellen möchten. Ähnlich wie im Browser können Sie auch in der Datenquellenverwaltung verschiedene Arten von Daten laden und verbinden.
 2. **Laden von Vektordaten**
 
-    1. Um Vektordaten zu laden, gehen Sie auf die Registerkarte "Vektor". Es können Dateien, Dateien innerhalb eines Verzeichnisses, eine Datenbank und sogar Remote-Dateien über ein Protokoll wie HTTP, Cloud usw. geladen werden.
-    2. Lassen Sie uns die Vektordatei (NCR_Jollibee) laden, die sich im Geopaket Philippines_NCR befindet. Dieser Layer ist ein Punkt-Layer mit den Standorten des Schnellrestaurants Jollibee in der NCR.
+    1. Um Vektordaten zu laden, gehen Sie auf die Registerkarte "Vektor". Es können Dateien, Datenbanken und sogar Remote-Dateien über Protokolle wie HTTP, Cloud usw. geladen werden.
+    2. Lassen Sie uns die Vektordatei (McDonalds) laden, die sich im Geopaket Sachsen.gpkg befindet. Dieser Layer ist ein Punkt-Layer mit den Standorten der McDonalds Filialen in Sachsen.
 
-        1. Quelle Typ: Datei
-        2. Quelle: Wählen Sie das Geopaket Philippines_NCR über die Schaltfläche ![Search button](media/data-source-manager-search.png "Search button")
+        1. Quelltyp: Datei
+        2. Quelle: Wählen Sie das Geopaket Sachsen über die Schaltfläche ![Suchbutton](media/data-source-manager-search.png "Suchbutton")
         3. Klicken Sie auf Hinzufügen
         4. Wenn mehr als eine Vektordatei im Geopaket enthalten ist, fragt QGIS Sie, welche geladen werden soll.
 
@@ -366,10 +318,10 @@ Abbildung 2.13. Laden von Vektordaten aus ein GeoPackage
 
 3. **Laden von Rasterdaten**
 
-    1. Um Rasterdaten zu laden, gehen Sie auf die Registerkarte "Raster". Es können Dateien und Remote-Dateien über ein Protokoll wie HTTP, Cloud, etc. geladen werden. Es gibt ein Raster (NCR_SRTM_DEM) innerhalb des Geopakets Philippines_NCR. Dieses Raster ist ein digitales Höhenmodell der NCR-Region. So laden Sie es:
+    1. Um Rasterdaten zu laden, gehen Sie auf die Registerkarte "Raster". Es können Dateien und Remote-Dateien über ein Protokoll wie HTTP, Cloud, etc. geladen werden. Es gibt ein Raster (Sachsen_SRTM_DEM) innerhalb des Geopakets Sachsen.gpkg. Dieses Raster ist ein digitales Höhenmodell für Sachsen. So laden Sie es:
 
-        1. Quellentyp: Datei
-        2. Quelle: Wählen Sie das Geopaket Philippines_NCR über die Schaltfläche ![Search button](media/data-source-manager-search.png "Search button")
+        1. Quelltyp: Datei
+        2. Quelle: Wählen Sie das Geopaket Sachsen über die Schaltfläche ![Suchbutton](media/data-source-manager-search.png "Suchbutton")
         3. Klicken Sie auf Hinzufügen
         4. Wenn mehr als eine Rasterdatei im Geopaket enthalten ist, fragt QGIS Sie, welche geladen werden soll
 
@@ -384,21 +336,21 @@ Abbildung 2.14. Laden von Rasterdaten aus einem GeoPackage
 
         1. Verwenden Sie die Datenquellenverwaltung zum Laden von CSV-Dateien, unabhängig davon, ob sie Geometrieinformationen enthalten oder nicht.
         2. Wenn CSVs über das Browser-Bedienfeld oder durch Ziehen geladen werden, stellen Sie sicher, dass eine entsprechende CSVT-Datei vorhanden ist, damit die Felddatentypen erhalten bleiben.
-        3. Wenn Sie Probleme mit der Erhaltung der Datentypen für Ihre CSVs haben, können Sie eine so genannte CSVT-Datei verwenden.  Sie können mehr über das Laden von CSVs in QGIS unter folgendem englischsprachigen Link lesen:  [https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html ](https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html)
+        3. Wenn Sie Probleme mit der Erhaltung der Datentypen für Ihre CSVs haben, können Sie eine so genannte CSVT-Datei verwenden. Sie können mehr über das Laden von CSVs in QGIS unter folgendem englischsprachigen Link lesen: [https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html ](https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html)
 
     3. CSVs und Tabellenkalkulationen können in QGIS mit oder ohne räumliche oder geometrische Informationen geladen werden. Wenn sie mit räumlichen Informationen geladen werden, werden sie als Vektordaten behandelt. Wenn sie ohne geladen werden, werden sie als normale tabellarische Daten behandelt.
-    4. Im Datenordner befindet sich eine CSV-Datei mit dem Namen NCR_McDonalds.csv, die Punktstandorte von McDonald's-Filialen in NCR enthält. Um sie zu laden:
+    4. Im Datenordner befindet sich eine CSV-Datei mit dem Namen Sachsen_Burger-King.csv, die Punktstandorte von Burger-King-Filialen in Sachsen enthält. Um sie zu laden:
 
         1. Wechseln Sie auf die Registerkarte "Getrennte Texte"
-        2. Dateiname: Wählen Sie die NCR_McDonalds CSV über die Schaltfläche ![Suchbutton](media/data-source-manager-search.png "Suchbutton")
+        2. Dateiname: Wählen Sie die Sachsen_Burger-King CSV über die Schaltfläche ![Suchbutton](media/data-source-manager-search.png "Suchbutton")
         3. Dateiformat: CSV
         4. Datensatz- und Feldoptionen: Standard beibehalten
         5. Geometriedefinition:
 
             * Punktkoordinaten
-            * X-Feld: Längengrad
-            * Y-Feld: Breitengrad
-            * Geometrie CRS: EPSG: 4326 - WGS 84
+            * X-Feld: x
+            * Y-Feld: y
+            * Geometrie-KBS: EPSG: 4326 - WGS 84
 
         6. Layer-Einstellungen: Wählen sie Datei überwachen und Räumlichen Index benutzen aus
 
@@ -432,19 +384,19 @@ Sie können die Layer im Layer-Bedienfeld beliebig neu anordnen.
 Neben Vektor- und Rasterdateien kann sich QGIS auch mit entfernten Diensten wie Kachelservices, OGC Web Services (WMS, WFS) und sogar ESRI ArcGIS Web Services verbinden. Diese Verbindung kann über das Browser-Panel oder die Datenquellenverwaltung hergestellt werden.
 
 
-#### **Übung 02.2: Verbinden mit XYZ-Kacheln**
+#### **Übung 02.2: Verbinden mit XYZ-Tiles**
 
-XYZ-Kacheln werden in der Regel als Basiskarten verwendet und kommen nicht nur in Desktop-Anwendungen, sondern auch in Web-Anwendungen zum Einsatz.
+XYZ-Tiles werden in der Regel als Basiskarten verwendet und kommen nicht nur in Desktop-Anwendungen, sondern auch in Web-Anwendungen zum Einsatz.
 
 So stellen Sie eine Verbindung zu einem Kachelserver her:
 
 1. Wechseln Sie zum **Browser-Bedienfeld**.
-2. **Klicken Sie mit der rechten Maustaste auf XYZ-Kacheln ‣ Neue Verbindung**.
+2. **Klicken Sie mit der rechten Maustaste auf XYZ-Tiles ‣ Neue Verbindung**.
 3. Fügen Sie Folgendes hinzu:
 
 ```
-    Name: PGP-Basemap
-    URL: https://basemapserver.geoportal.gov.ph/tiles/v2/PGP/{z}/{x}/{y}.png
+    Name: Stamen Watercolor
+    URL: http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg
 ```
 4. Klicken Sie auf OK.
 
@@ -454,9 +406,9 @@ Abbildung 2.18. Hinzufügen einer XYZ-Verbindung in QGIS
 
 5. Dies sollte ein PGP Basemap Element unter XYZ Kacheln im Browser Panel hinzufügen.
 
-![PGP-Basemap-Kachelserver dem Browser-Bedienfeld hinzugefügt](media/xyz-2.png "PGP-Basemap-Kachelserver dem Browser-Bedienfeld hinzugefügt")
+![Stamen Watercolor-Kachelserver dem Browser-Bedienfeld hinzugefügt](media/xyz-2.png "Stamen Watercolor-Kachelserver dem Browser-Bedienfeld hinzugefügt")
 
-Abbildung 2.19. PGP-Basemap-Kachelserver dem Browser-Bedienfeld hinzugefügt
+Abbildung 2.19. Stamen Watercolor-Kachelserver dem Browser-Bedienfeld hinzugefügt
 
 6. Sie können den XYZ-Kachellayer wie jeden anderen Layer aus dem Browser-Bedienfeld laden.
 
@@ -491,8 +443,8 @@ So stellen Sie eine Verbindung zu einem WFS her:
 2. **Rechtsklick auf WMS/WMTS ‣ Neue Verbindung**
 3. Fügen Sie Folgendes hinzu:
 ```
-Name: LiPAD 100-jährige Hochwassergefahr
-URL: https://api.mapbox.com/styles/v1/osmph/cjqrynb300m522sper0emmgs6/wmts?access_token=sk.eyJ1Ijoib3NtcGgiLCJhIjoiY2pxbjF6czN2MGllbTQ4bXVuOW44ZDlpbSJ9.pUqHal3xOR1yZUaM6LbLkg
+Name: Sachsen Ortophotos
+URL: https://geoportal.sachsen.de/portal/arcgis_wmts_capabilities/wmts_geosn_dop-rgb.xml  
 ```
 4. Klicken Sie auf Hinzufügen
 
@@ -500,17 +452,17 @@ URL: https://api.mapbox.com/styles/v1/osmph/cjqrynb300m522sper0emmgs6/wmts?acces
 
 Abbildung 2.21. Erstellen einer neuen WMS/WMTS Verbindung
 
-5. Dies sollte ein LiPAD 100-jähriges Hochwasserrisiko Element unter den WMS/WMTS und OWS Verbindungen im Bedienfeld des Browsers hinzufügen.
+5. Dies sollte ein SN DOP 020 Element unter den WMS/WMTS im Bedienfeld des Browsers hinzufügen.
 
-![](media/wms-2.png "The LiPAD 100-year Flood Hazard WMS added in the Browser Panel" (Das LiPAD 100-year Flood Hazard WMS im Bedienfeld hinzugefügt)
+![Die Ortophotos im Browser Bedienfeld](media/wms-2.png "Die Ortophotos im Browser Bedienfeld")
 
-Abbildung 2.22. Das LiPAD 100-jährliche Hochwassergefahren WMS im Bedienfeld des Browsers hinzugefügt
+Abbildung 2.22. Die Ortophotos im Browser Bedienfeld
 
 6. Sie können die WMS-Layer wie jeden anderen Layer aus dem Bedienfeld des Browsers laden.
 
-![Hochwassergefahrenkarte aus WMS in QGIS geladen](media/wms-3.png "Hochwassergefahrenkarte aus WMS in QGIS geladen")
+![Ortophotos aus WMS in QGIS geladen](media/wms-3.png "Ortophotos aus WMS in QGIS geladen")
 
-Abbildung 2.23. Hochwassergefahrenkarte aus WMS in QGIS geladen
+Abbildung 2.23. Ortophotos aus WMS in QGIS geladen
 
 7. Das Verbinden mit WFS erfolgt auf die gleiche Weise.
 
@@ -611,7 +563,7 @@ GeoNode ([https://geonode.org/](https://geonode.org/)) ist ein Open-Source Geosp
 3. Fügen Sie Folgendes hinzu:
 ```
 Name: UNESCO IHP-WINS
-URL: [http://ihp-wins.unesco.org/](http://ihp-wins.unesco.org/)
+URL: http://ihp-wins.unesco.org/
 ```
 
 ![Mit GeoNode verbinden](media/connect-geonode.png "Mit GeoNode verbinden")
@@ -629,10 +581,7 @@ Mehr über die Verbindung von QGIS mit entfernten Diensten erfahren Sie unter: [
 
 Wenn Sie gefragt werden, ob die Datei bereits existiert, wählen Sie "Neuen Layer hinzufügen".
 
-![GeoPackage Layer exists](media/virtual-2.png "GeoPackage Layer exists")
-
-
-4. Schalten Sie die Bearbeitung von Bäume ein, indem Sie mit der rechten Maustaste darauf klicken ‣ Bearbeitungsstatus umschalten oder klicken Sie auf ![Bearbeitungsstatus-Umschalten-ymbol](media/symbol-edit.png "Bearbeitungsstatus-Umschalten-Symbol") in der Digitalisierungs-Symbolleiste.
+4. Schalten Sie die Bearbeitung von Bäume ein, indem Sie mit der rechten Maustaste darauf klicken ‣ Bearbeitungsstatus umschalten oder klicken Sie auf ![Bearbeitungsstatus-Umschalten-Symbol](media/symbol-edit.png "Bearbeitungsstatus-Umschalten-Symbol") in der Digitalisierungs-Symbolleiste.
 5. Wählen Sie einen Bereich auf dem Satellitenbild aus, der Bäume enthält.
 6. Aktivieren Sie bei eingeschalteter Bearbeitung das Hinzufügen von Punkten zum Layer "Bäume", indem Sie auf ![Punktobjekt-hinzufügen](media/symbol-add-point.png "[Punktobjekt hinzufügen") klicken (CTRL + .).
 7. Digitalisieren Sie einzelne Bäume, indem Sie auf deren Standort klicken und die Attributinformationen hinzufügen. Tun Sie dies für 4 Bäume. Für diese Übung können Sie die Informationen einfach erraten.
@@ -663,7 +612,7 @@ Fügen Sie einen neuen Punkt hinzu und aktualisieren Sie dann die Kartenansicht 
 
 Neben den lokalen Binärdateien (Vektoren, Raster) kann QGIS auch Vektoren und Raster aus dem Internet laden. Verwenden Sie den Datenquellen-Manager, um die Daten von der folgenden URL zu laden:
 
-https://raw.githubusercontent.com/benhur07b/stomp-covid19-data/master/spatial/stompcovidph_regions.geojson
+https://raw.githubusercontent.com/tursics/open-data-atlas/master/data/polygon-de.geojson
 
 
 #### **Laden einer Tabellenkalkulation in QGIS mit Hilfe des Spreadsheet Layers Plugins**
