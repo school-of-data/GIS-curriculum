@@ -12,7 +12,26 @@
 
 
 # Module 1
-None
+
+## media
+* **change-theme.png** -> replace with screenshot of local/translated QGIS (if available)
+* **ex01-01.png** -> replace with screenshot of local/translated QGIS (if available)
+* **ex01-02.png** -> replace with screenshot of local/translated QGIS (if available)
+* **ex01-03.png** -> replace with screenshot of local/translated QGIS (if available)
+* **manage-and-install-plugins-dialog.png** -> replace with screenshot of local/translated QGIS (if available)
+* **manage-and-install-plugins-dialog-2.png** -> replace with screenshot of local/translated QGIS (if available)
+* **memory-layer-saver-plugin.png** -> replace with screenshot of local/translated QGIS (if available)
+* **plugins-menu.png** -> replace with screenshot of local/translated QGIS (if available)
+* **plugins-menu-2.png** -> replace with screenshot of local/translated QGIS (if available)
+* **qgis-interface.png** -> replace with screenshot of local/translated QGIS (if available)
+* **qgis-interface-custom.png** -> replace with screenshot of local/translated QGIS (if available)
+* **qgis-interface-parts.png** -> replace with screenshot of local/translated QGIS (if available)
+* **quickosm-plugin.png** -> replace with screenshot of local/translated QGIS (if available)
+* **settings-1.png** -> replace with screenshot of local/translated QGIS (if available)
+* **settings-2.png** -> replace with screenshot of local/translated QGIS (if available)
+* **user-profiles-1.png** -> replace with screenshot of local/translated QGIS (if available)
+* **user-profiles-2.png** -> replace with screenshot of local/translated QGIS (if available)
+* **user-profiles-3.png** -> replace with screenshot of local/translated QGIS (if available)
 
 
 # Module 2
@@ -230,13 +249,78 @@ None
 # Module 8
 
 ## data
+* **module8.gpkg** -> contains the following OSM layers downloaded from GeoFabrik, clipped to the province/district/state of interest, and projected to a projected CRS used by the country. For example, for the Philippines, layers are clipped to the province of Pampanga with EPSG 3123. For Sri Lanka, the district of Colombo is used with EPSG 5235.
+   * pois (point)
+   * pofw (point)
+   * road (line)
+   * waterways (line)
+   * buildings (polygon)
+   * landuse (polygon)
 
+**NOTE:** There's a possibility that module8.gpkg can exceed the 100MB single file size limit when pushing to GitHub. If this is the case, just put a text file inside the data folder with a link to where the data can be found or save the individual layers as shapefiles (or other vector formats) or save the layers into separate geopackages if these individual files will be less than 100MB.
 
 ## media
-
+* **fig81.png** -> replace with screenshot showing OSM routing using local places
+* **fig85.png** -> replace with screenshot using localised data
+* **fig86.png** -> replace with screenshot using localised data
+* **fig87.png** -> replace with screenshot using localised data
+* **fig88.png** -> replace with screenshot using localised data
+* **fig810.png** -> replace with screenshot using localised data
+* **fig811.png** -> replace with screenshot using localised data
+* **fig812.png** -> replace with screenshot using localised data
+* **fig813.png** -> replace with screenshot using localised data
+* **fig814.png** -> replace with screenshot using localised data
+* **fig815.png** -> replace with screenshot using localised data
+* **fig816.png** -> replace with screenshot using localised data
+* **fig817_b.png** -> replace with screenshot using localised data
+* **fig818_a.png** -> replace with screenshot using localised data
+* **fig818_b.png** -> replace with screenshot using localised data
+* **fig818_c.png** -> replace with screenshot using localised data
+* **fig819_a.png** -> replace with screenshot using localised data
+* **fig819_b.png** -> replace with screenshot using localised data
+* **fig820_a.png** -> replace with screenshot using localised data
+* **fig821.png** -> replace with screenshot using localised data
+* **fig822.png** -> replace with screenshot using localised data
+* **fig824.png** -> replace with screenshot using localised data
+* **fig825.png** -> replace with screenshot using localised data
+* **fig826_b.png** -> replace with screenshot using localised data
+* **fig827_b.png** -> replace with screenshot using localised data
+* **fig828_a.png** -> replace with screenshot using localised data
+* **fig828_b.png** -> replace with screenshot using localised data
+* **fig828_d.png** -> replace with screenshot using localised data
+* **fig829_b.png** -> replace with screenshot using localised data
+* **fig830_b.png** -> replace with screenshot using localised data
+* **fig832.png** -> replace with screenshot using localised data
+* **fig833.png** -> replace with screenshot using localised data
+* **fig834_b.png** -> replace with screenshot using localised data
+* **fig834_c.png** -> replace with screenshot using localised data
+* **fig834_e.png** -> replace with screenshot using localised data
+* **fig835_a.png** -> replace with screenshot using localised data
+* **fig835_b.png** -> replace with screenshot using localised data
+* **fig836_a.png** -> replace with screenshot using localised data
+* **fig836_b.png** -> replace with screenshot using localised data
+* **fig837_b.png** -> replace with screenshot using localised data
+* **fig837_d.png** -> replace with screenshot using localised data
+* **fig837_e.png** -> replace with screenshot using localised data
+* **fig838_b.png** -> replace with screenshot using localised data
+* **fig838_c.png** -> replace with screenshot using localised data
+* **fig839.png** -> replace with screenshot using localised data
+* **fig840_a.png** -> replace with screenshot using localised data
+* **fig840_b.png** -> replace with screenshot using localised data
+* **fig840_c.png** -> replace with screenshot using localised data
+* **fig840_d.png** -> replace with screenshot using localised data
 
 ## module8
-
+* **line 31** -> replace with coordinate reference system used in the country (e.g. *PRS92 / Philippines zone 3, EPSG 3123* becomes *SLD 99 / Sri Lanka Grid 1999, EPSG 5235*)
+* **line 53** -> replace area with local places (e.g. *Angeles, Pampanga, Philippines* becomes *Colombo, Sri Lanka*) 
+* **lines 129, 144, 163** -> replace with local EPSG code used (e.g. *3123* becomes *5235*)
+* **lines 195-215, 221-229** -> replace with output of Basic Statistics of Field algorithm using localised data
+* **line 233** -> replace with outputs of Basic Statistics of Field algorithm using localised data (e.g. *827657* becomes *158500*)
+* **line 281, 371, 557, 590, 595, 597, 602, 604, 612, 614, 617, 619, 660** -> replace name of area with local area of interest (e.g. *Pampanga* becomes *Colombo*, *province* becomes *district*) 
+* **line 322** -> replace number of features with output from localized data (e.g. *2727* becomes *394*) 
+* **line 408-451** -> replace with outputs of List unique values algorithm using localized data 
+* **line 478** -> replace name of area (*Pampanga* to *Colombo*) and values based on GroupStats computation (*3270 buildings* to *303 buildings*) 
+* **line 782 - 807** -> depending on the POI dataset, replace the fclass to be queried. If public buildings fclasses exist in the data (e.g. town_hall, hospital, etc.), no need to replace type of POI. If not, as with Sri Lanka which has different fclasses on the POI layer, replace with the appropriate POI class. In the case of Sri Lanka, I used towns and cities instead (Philippines uses public buildings POI classes like hospitals, schools, etc.). 
 
 
 # Module 9

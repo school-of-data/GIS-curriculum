@@ -444,6 +444,7 @@ To connect to a WMS:
 1. Go to the **Browser Panel**
 2. **Right-click WMS/WMTS ‣ New Connection** 
 3. Add the following:
+
 ```
 Name: LiPAD 100-year Flood Hazard
 URL: https://api.mapbox.com/styles/v1/osmph/cjqrynb300m522sper0emmgs6/wmts?access_token=sk.eyJ1Ijoib3NtcGgiLCJhIjoiY2pxbjF6czN2MGllbTQ4bXVuOW44ZDlpbSJ9.pUqHal3xOR1yZUaM6LbLkg
