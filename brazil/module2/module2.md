@@ -56,7 +56,7 @@ Aprendemos nos módulos anteriores que modelos de dados espaciais, como vetores 
 
 ## Detalhamento dos conceitos
 
-A imagem acima nos dá um exemplo simples e concreto disso. Imagine que você é um consultor GIS encarregado de encontrar a melhor localização para um novo restaurante de franquia (por exemplo um McDonalds). Para fazer isso, você precisaria reunir as informações relevantes que o ajudariam a decidir. Isso pode incluir informações sobre as ruas da cidade, lotes de terreno, localização e distribuição de possíveis clientes, a topografia da área, uso do solo, etc.
+A imagem acima nos dá um exemplo simples e concreto disso. Imagine que você é um consultor GIS encarregado de encontrar a melhor localização para uma nova escola. Para fazer isso, você precisaria reunir as informações relevantes que o ajudariam a decidir. Isso pode incluir informações sobre as ruas da cidade, lotes de terreno, localização e distribuição de possíveis estudantes, a topografia da área, uso do solo, etc.
 
 Esses conjuntos de dados podem vir em diferentes tipos e formatos. Alguns podem ser arquivos vetoriais, enquanto outros podem ser raster. Alguns podem estar no mesmo sistema de referência de coordenadas, enquanto outros podem estar em sistemas de referência de coordenadas diferentes. Alguns podem ser arquivos locais encontrados em seu computador, enquanto outros só podem ser carregados pela Internet. Por causa das muitas possibilidades do tipo de dados que você precisaria para sua análise espacial, um bom GIS deve ser capaz de manipular e gerenciar uma variedade de fontes de dados.
 
@@ -78,7 +78,7 @@ A maioria das pessoas que são novas em GIS geralmente são apresentadas aos dad
 * Não há suporte para alguns tipos de dados, como tempo.
 * Não armazena explicitamente topologia.
 
-Outros formatos de dados, como GeoPackage, GeoJSON, TopoJSON e flatgeobuff, corrigem essas limitações dos shapefiles. Na verdade, QGIS e GRASS GIS mudaram para GeoPackage como o formato de arquivo vetorial padrão ao importar ou exportar camadas e, embora GeoPackage também tenha algumas limitações, é um formato completamente aberto e permite que a comunidade ajude a moldar o futuro do formato.
+Outros formatos de dados, como GeoPackage, GeoJSON, TopoJSON e flatgeobuf, corrigem essas limitações dos shapefiles. Na verdade, QGIS e GRASS GIS mudaram para GeoPackage como o formato de arquivo vetorial padrão ao importar ou exportar camadas e, embora GeoPackage também tenha algumas limitações, é um formato completamente aberto e permite que a comunidade ajude a moldar o futuro do formato.
 
 Então, se não shapefiles, o que você deve usar?
 
@@ -138,7 +138,7 @@ Para saber mais sobre o painel do navegador, acesse: [https://docs.qgis.org/3.16
 1. Abra o QGIS.
 2. Verifique o painel do navegador (Figura 2.2). Se você não conseguir encontrar o painel do navegador, pode torná-lo visível em **Exibir ‣ Painéis ‣ Painel do navegador** na barra de menus.
 
-! [O painel do navegador QGIS](media/qgis-browser-1.png "O painel do navegador QGIS")
+![O painel do navegador QGIS](media/qgis-browser-1.png "O painel do navegador QGIS")
 
 Figura 2.2. O painel do navegador
 
@@ -153,13 +153,13 @@ Figura 2.3. Os arquivos do módulo no painel do navegador
 
 6. Existem 5 arquivos na pasta de dados:
 
-    1. um GeoPackage (Philippines_NCR.gpkg) que contém um arquivo vetorial (NCR_Jollibee) e raster (NCR_SRTM_DEM);
-    2. um GeoJSON (NCR_districts.geojson);
-    3. um arquivo flatgeobuf (NCR_municities.fgb);
-    4. um arquivo de forma (NCR_admin_boundary.shp); e
-    5. um arquivo de valores separados por vírgula (CSV) (NCR_McDonalds.csv).
+    1. um GeoPackage (br_rj.gpkg) que contém um arquivo vetorial (br_rj_hospitais) e raster (br_rj_srtm_dem);
+    2. um GeoJSON (br_ufs.geojson);
+    3. um arquivo kml (br_rj_municipios.kml);
+    4. um arquivo de forma (br_pais.shp); e
+    5. um arquivo de valores separados por vírgula (CSV) (br_rj_escolas.csv).
 
-7. Clique com o botão direito em NCR_admin_boundary.shp e clique em Propriedades da camada (Figura 2.4). Isso abre a janela de propriedades da camada (Figura 2.5). Observe as informações fornecidas na janela. Qual é a geometria da camada? Qual CRS é usado? Quantos recursos existem na camada?
+7. Clique com o botão direito em br_pais.shp e clique em Propriedades da camada (Figura 2.4). Isso abre a janela de propriedades da camada (Figura 2.5). Observe as informações fornecidas na janela. Qual é a geometria da camada? Qual CRS é usado? Quantos recursos existem na camada?
 
 
 ![Verificando as propriedades da camada](media/qgis-browser-3.png "Verificando as propriedades da camada")
@@ -178,9 +178,9 @@ Figura 2.5. Propriedades da camada no painel do navegador
     2. **clicando com o botão direito na camada ‣ Adicionar camada ao projeto**
     3. **arrastando a camada para a área do mapa**
 
-10. Tente carregar as camadas **NCR_admin_boundary**, **NCR_districts** e **NCR_municities** usando qualquer um dos métodos acima.
+10. Tente carregar as camadas **br_pais**, **br_ufs** e **br_rj_municipios** usando qualquer um dos métodos acima.
 
-![As camadas vetoriais carregadas no QGIS](media/vetor-camadas-carregadas-1.png "As camadas vetoriais carregadas no QGIS")
+![As camadas vetoriais carregadas no QGIS](media/vector-layers-loaded-1.png "As camadas vetoriais carregadas no QGIS")
 
 Figura 2.6. As camadas vetoriais carregadas no QGIS
 
@@ -255,12 +255,12 @@ A importância dos metadados é que eles não apenas promovem a transparência, 
 
 #### **Exercício 01.2: Adicionando metadados**
 
-1. Abra as Propriedades da camada da camada NCR_admin_boundary.
+1. Abra as Propriedades da camada da camada br_pais.
 2. Verifique as informações mostradas na guia Informações e observe as informações mostradas. Está completo? Podemos adicionar mais informações?
 
-![Propriedades de informações da camada NCR_admin_boundary](media/metadata-1.png "Propriedades de informações da camada NCR_admin_boundary")
+![Propriedades de informações da camada br_pais](media/metadata-1.png "Propriedades de informações da camada br_pais")
 
-Figura 2.9. Propriedades de informações da camada NCR_admin_boundary
+Figura 2.9. Propriedades de informações da camada br_pais
 
 3. Vá para a guia Metadados e tente adicionar mais informações sobre a camada, como extensão, categoria de dados, licença, etc. Clique em OK quando terminar.
 
@@ -297,16 +297,16 @@ O **Gerenciador de fonte de dados** foi introduzido com o lançamento do QGIS 3.
 Figura 2.12. O Gerenciador de fonte de dados
 
 
-#### ** Exercício 02.1: O Gerenciador de fonte de dados **
+#### **Exercício 02.1: O Gerenciador de fonte de dados**
 
 1. Abra o **Gerenciador de fonte de dados**. Ele contém guias no lado direito que pertencem ao tipo de fonte de dados que você deseja carregar ou conectar. Semelhante ao navegador, você pode carregar e conectar vários tipos de dados do Gerenciador de fonte de dados.
 2. **Carregando vetores**
 
     1. Para carregar vetores, vá para a guia Vetor. Podem ser carregados arquivos, arquivos dentro de um diretório, um banco de dados e até mesmo arquivos remotos por meio de um protocolo como HTTP, nuvem, etc.
-    2. Vamos carregar o arquivo vetorial (NCR_Jollibee) encontrado dentro do geopackage Philippines_NCR. Esta camada é uma camada de pontos das localizações do restaurante de fast food Jollibee em NCR.
+    2. Vamos carregar o arquivo vetorial (br_rj_hospitais) encontrado dentro do geopackage br_rj. Esta camada é uma camada de pontos das localizações dos hospitais na cidade do Rio de Janeiro.
 
         1. Tipo de fonte: Arquivo
-        2. Fonte: Selecione o geopackage Philippines_NCR usando o botão ![Botão Pesquisar](media/data-source-manager-search.png "botão Pesquisar")
+        2. Fonte: Selecione o geopackage br_rj usando o botão ![Botão Pesquisar](media/data-source-manager-search.png "botão Pesquisar")
         3. Clique em Adicionar
         4. Se houver mais de 1 arquivo vetorial dentro do geopackage, o QGIS pedirá que você selecione quais carregar.
 
@@ -316,10 +316,10 @@ Figura 2.13. Carregando um vetor dentro de um GeoPackage
 
 3. **Carregando Rasters**
 
-    1. Para carregar um raster, vá para a aba Raster. Arquivos e arquivos remotos podem ser carregados por meio de um protocolo como HTTP, nuvem, etc. Há um raster (NCR_SRTM_DEM) dentro do geopackage Philippines_NCR. Este raster é um modelo digital de elevação da região NCR. Para carregá-lo:
+    1. Para carregar um raster, vá para a aba Raster. Arquivos e arquivos remotos podem ser carregados por meio de um protocolo como HTTP, nuvem, etc. Há um raster (br_rj_srtm_dem) dentro do geopackage br_rj. Este raster é um modelo digital de elevação da região da cidade do Rio de Janeiro. Para carregá-lo:
 
         1. Tipo de fonte: Arquivo
-        2. Fonte: Selecione o geopackage Philippines_NCR usando o botão pesquisar ![Botão pesquisar](media/data-source-manager-search.png "Botão pesquisar")
+        2. Fonte: Selecione o geopackage br_rj usando o botão pesquisar ![Botão pesquisar](media/data-source-manager-search.png "Botão pesquisar")
         3. Clique em Adicionar
         4. Se há mais de 1 arquivo raster dentro do geopackage, o QGIS irá pedir para você selecionar quais carregar
 
@@ -337,10 +337,10 @@ Figura 2.14. Carregando um raster dentro de um GeoPackage
         3. Se você encontrar problemas ao preservar os tipos de dados para seus textos delimitados (especificamente CSVs), você pode usar o que é chamado de arquivo CSVT. Você pode ler mais sobre como carregar CSVs no QGIS no seguinte link: [https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html](https: //bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html)
 
     3. CSVs e planilhas podem ser carregados no QGIS com ou sem informações espaciais ou geométricas. Quando carregados com informações espaciais, são tratados como dados vetoriais. Quando são carregados sem, são tratados como dados tabulares normais.
-    4. Há um arquivo CSV na pasta de dados denominado NCR_McDonalds.csv que contém as localizações dos pontos das filiais do McDonald's no NCR. Para carregá-lo:
+    4. Há um arquivo CSV na pasta de dados denominado br_rj_escolas.csv que contém as localizações das escolas no Rio de Janeiro. Para carregá-lo:
 
         1. Vá para a guia Texto delimitado
-        2. Nome do arquivo: Selecione o NCR_McDonalds CSV usando o botão pesquisar ![Botão pesquisar](media/data-source-manager-search.png "Botão pesquisar")
+        2. Nome do arquivo: Selecione o br_rj_escolas CSV usando o botão pesquisar ![Botão pesquisar](media/data-source-manager-search.png "Botão pesquisar")
         3. Formato de arquivo: CSV
         4. Opções de registro e campos: mantenha o padrão
         5. Definição de geometria:
@@ -392,10 +392,11 @@ Para conectar a um servidor de tiles:
 2. **Clique com o botão direito do mouse em XYZ Tiles ‣ Nova conexão**
 3. Adicione o seguinte:
 
-`` `
+```
     Nome: PGP Basemap
     URL: https://basemapserver.geoportal.gov.ph/tiles/v2/PGP/{z}/{x}/{y}.png
-`` `
+```
+
 4. Clique em OK.
 
 ! [Adicionando uma conexão XYZ no QGIS](media/xyz-1.png "Adicionando uma conexão XYZ no QGIS")
@@ -410,16 +411,16 @@ Figura 2.19. Servidor PGP Basemap Tile adicionado ao Painel do Navegador
 
 6. Você pode carregar a camada de mosaico XYZ como qualquer outra camada do Painel do Navegador.
 
-![Camada do mapa base PGP carregada no QGIS](media/xyz-3.png "Camada do mapa base PGP carregada no QGIS")
+![Camada do mapa base OpenStreetMap carregada no QGIS](media/xyz-3.png "Camada do mapa base OpenStreetMap carregada no QGIS")
 
-Figura 2.20. Camada PGP Basemap carregada no QGIS
+Figura 2.20. Camada OpenStreetMap carregada no QGIS
 
 7. Tente adicionar a camada ESRI World Imagery também.
 
-`` `
+```
     Nome: ESRI World Imagery
     URL: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
-` ``
+```
 
 ![Adicionando ESRI Imagens mundiais como tiles XYZ](media/xyz2-1.png "Adicionando imagens mundiais da ESRI como tiles XYZ")
 
@@ -428,7 +429,7 @@ Figura 2.20. Camada PGP Basemap carregada no QGIS
 
 **BÔNUS:** Se você deseja adicionar vários mapas de base em tiles XYZ no painel do navegador, siga as instruções nesta postagem: [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
 
-** BÔNUS 2: ** Você pode adicionar os URLs dos tileservers encontrados no site Leaflet Providers ([https://leaflet-extras.github.io/leaflet-providers/preview/](https://leaflet- extras.github.io/leaflet-providers/preview/)) como tiles XYZ no painel do navegador.
+**BÔNUS 2:** Você pode adicionar os URLs dos tileservers encontrados no site Leaflet Providers ([https://leaflet-extras.github.io/leaflet-providers/preview/](https://leaflet- extras.github.io/leaflet-providers/preview/)) como tiles XYZ no painel do navegador.
 
 
 #### **Exercício 02.3: Conectando-se a WMS / WMTS e WFS**
@@ -442,17 +443,17 @@ Para conectar-se a um WMS:
 1. Vá para **Painel do navegador**
 2. **Clique com o botão direito em WMS / WMTS ‣ Nova conexão**
 3. Adicione o seguinte:
-`` `
-Nome: perigo de inundação LiPAD 100 anos
+```
+Nome: Risco de inundação LiPAD 100 anos
 URL de: https://api.mapbox.com/styles/v1/osmph/cjqrynb300m522sper0emmgs6/wmts?access_token=sk.eyJ1Ijoib3NtcGgiLCJhIjoiY2pxbjF6czN2MGllbTQy4bXVUOW44ZDlMS
-`` `
+```
 Clique em adicionar
 
 ![Criando uma nova conexão WMS/WMTS](media/wms-1.png "Criando uma nova conexão WMS/WMTS")
 
 Figura 2.21. Criação de uma nova conexão WMS / WMTS
 
-5. Isso deve adicionar um item de perigo de inundação LiPAD 100 anos nas conexões WMS / WMTS e OWS no painel do navegador.
+5. Isso deve adicionar um item de Risco de inundação LiPAD 100 anos nas conexões WMS / WMTS e OWS no painel do navegador.
 
 ![O LiPAD 100-year Flood Hazard WMS adicionado ao painel do navegador](media/wms-2.png "O LiPAD 100-year Flood Hazard WMS adicionado ao painel do navegador")
 
@@ -480,7 +481,7 @@ Figura 2.23. Mapa de risco de inundação do WMS carregado no QGIS
 
 Exportar camadas (ou salvar camadas em arquivos) é simples no QGIS. Simplesmente **clique com o botão direito do mouse na camada ‣ Exportar** para visualizar as opções de exportação da camada.
 
-![Exportando uma camada do QGIS](media/export-layers.png "Exportando uma camada do QGIS")
+![Exportando uma camada do QGIS](media/exporting-layers.png "Exportando uma camada do QGIS")
 
 Figura 2.24. Exportar uma camada do QGIS
 
@@ -561,10 +562,10 @@ GeoNode ([https://geonode.org/](https://geonode.org/)) é um sistema de gerencia
 1. Vá para o **Painel do navegador**
 2. Clique com o botão direito em **GeoNode ‣ Nova conexão**
 3. Adicione o seguinte:
-`` `
+```
 Nome: UNESCO IHP-WINS
 URL: [http://ihp-wins.unesco.org/](http://ihp-wins.unesco.org/)
-`` `
+```
 
 ![Conectar ao GeoNode](media/connect-geonode.png "Conectar ao GeoNode")
 
