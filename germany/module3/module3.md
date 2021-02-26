@@ -1,6 +1,8 @@
 # Modul 3 - OpenStreetMap und der High Resolution Settlement Layer
 
-**Autor**: Ben
+**Autor**: Ben Hur
+**Übersetzung**: Knut Hühne
+
 
 ## Pädagogische Einführung
 
@@ -23,9 +25,7 @@ Die benötigten Werkzeuge und Ressourcen für dieses Modul sind:
 * Computer
 * Internetverbindung
 * QGIS 3.16 auf dem Computer installiert ([https://qgis.org/de/site/forusers/download.html](https://qgis.org/de/site/forusers/download.html))
-[TODO]
-* Pampanga_province und Pampanga_SanFernando Vektor Layer (in [module3.gpkg](module3.gpkg)).
-[/TODO]
+* HRSL_Mittelsachsen.tif und Mittelsachsen.gpkg (in [./data/module3/](./data/module3/)).
 
 
 ## Voraussetzungen
@@ -93,90 +93,89 @@ OSM-Feature-Daten können auch direkt in QGIS geladen werden, indem das QuickOSM
 
 Normalerweise einigen sich die OSM-Community und lokale Communities auf bestimmte Schlüssel- und Wertekombinationen, die für die am häufigsten verwendeten Tags geeignet sind und als informeller Standard fungieren. Dadurch wird sichergestellt, dass die Datenbenutzer:innen Konsistenz bei der Kennzeichnung gemeinsamer Merkmale wie Straßen, Gebäude usw. erwarten können. Benutzer:innen können jedoch jederzeit neue Tags erstellen, um den Stil der Karte zu verbessern oder Analysen zu unterstützen, die sich auf zuvor nicht kartierte Attribute oder Tags der Merkmale stützen.
 
-[TODO]
-#### **Exercise 1: Loading OSM data in QGIS using the QuickOSM plugin**
 
-or this exercise, we will load road network data and locations of fast food chains from OSM that can be found in the province of Pampanga using the QuickOSM plugin.
+#### **Übung 1: Laden von OSM-Daten in QGIS unter Verwendung des QuickOSM-Plugins**
 
-QuickOSM works by querying the tags (keys and values) of the features in OSM. For more information about how to use the key/value in QuickOSM, go to: [https://wiki.openstreetmap.org/wiki/Mapfeatures](https://wiki.openstreetmap.org/wiki/Mapfeatures.).
+In dieser Übung werden wir Straßennetzdaten und Standorte von Fastfood-Ketten aus OSM laden, die Landkreis Mittelsachsen zu finden sind, indem wir das QuickOSM-Plugin verwenden.
+
+QuickOSM funktioniert durch Abfrage der Tags (Schlüssel und Werte) der Daten in OSM. Weitere Informationen über die Verwendung der Schlüssel/Werte (tags/values) in QuickOSM finden Sie unter: [https://wiki.openstreetmap.org/wiki/Mapfeatures](https://wiki.openstreetmap.org/wiki/Mapfeatures).
 
 
+1. Laden Sie die Vektorlayer Mittelsachsen und Frankenberg aus dem Geopaket Modul3.
 
-1. Load the Pampanga_province and Pampanga_SanFernando vector layers found inside the module3 geopackage.
+![Mittelsachsen Layer in QGIS](media/quickosm-1.png "Mittelsachsen Layer in QGIS")
 
-![Pampanga layers loaded in QGIS](media/quickosm-1.png "Pampanga layers loaded in QGIS")
+Abbildung 3.2. Mittelsachsen Layer in QGIS
 
-Figure 3.2. Pampanga layers loaded in QGIS
+2. Stellen Sie sicher, dass das QuickOSM-Plugin installiert und aktiviert ist. Es sollte unter **Vektor ‣ QuickOSM** in der Menüleiste erscheinen. Falls nicht, installieren und aktivieren Sie das Plugin zunächst über den Dialog "Plugins verwalten und installieren".
+3. Öffnen Sie das QuickOSM-Plugin (**Vektor ‣ QuickOSM ‣ QuickOSM**). Es sollte sich ein Dialog mit fünf Registerkarten öffnen:
 
-2. Make sure that the QuickOSM plugin is installed and activated. It should appear under **Vector ‣ QuickOSM** in the Menu bar. If not, install and activate the plugin first using the Manage and Install Plugins dialog.
-3. Open the QuickOSM plugin (**Vector ‣ QuickOSM ‣ QuickOSM**). A dialog should open with five tabs:
+    1. Schnelle Abfrage
+        * Ermöglicht es, eine einfache Abfrage mit einer Schlüssel-Wert-Kombination zu erstellen und auszuführen, um eine Teilmenge der OSM-Feature-Daten zu laden.
 
-    1. Quick Query
-        * Allows the user to create and run a simple query with one key-value combination to load a subset of OSM feature data that meets the requirements of the query.
+    2. Abfrage
+        * Ermöglicht die Ausführung komplexer Abfragen unter Verwendung der Overpass-API.
+        * Enthält eine Verknüpfung zur Overpass Turbo-Webanwendung. 
 
-    2. Query
-        * Allows the user to run complex queries using the Overpass API.
-        * Has a link to the Overpass Turbo web application. 
+    3. OSM-Datei:
+        * Ermöglicht das Laden von Daten aus OSM-Rohdateien (z. B. .pbf).
 
-    3. OSM File:
-        * Allows the user to load data from raw OSM files (e.g. .pbf).
+    4. Parameter:
+        * Ermöglicht es, die zu verwendenden Overpass-API Instanz auszuwählen.
 
-    4. Parameters:
-        * Allows the user to select the Overpass API to use.
+    5. Über:
+        * Zeigt Informationen über das Plugin an.
 
-    5. About:
-        * Shows information about the plugin.
+![QuickOSM-Plugin](media/quickosm-2.png "QuickOSM-Plugin")
 
-![QuickOSM plugin](media/quickosm-2.png "QuickOSM plugin")
+Abbildung 3.3. QuickOSM-Plugin
 
-Figure 3.3. QuickOSM plugin
+4. Laden Sie alle Straßen innerhalb der Ausdehnung des Layers Frankenberg.
 
-4. Load all highways inside the extent of the Pampanga_SanFernando layer.
+    * Schlüssel: highway
+    * Wert: *leer lassen* (das entspricht allen Werten)
+    * Layer-Ausdehnung: Frankenberg
+    * Erweitert:
+        * Way, Line, Multilinestrings anhaken
 
-    * Key: highway
-    * Value: &lt;blank> (blank means ALL)
-    * Layer Extent: Pampanga_SanFernando
-    * Advanced:
-        * Check Node, Way, Relation, Lines, Multilinestrings
+![Alle Straßen im Layerausschnitt Frankenberg](media/quickosm-3.png "Alle Straßen im Layerausschnitt Frankenberg")
 
-![Load all highways in the Pampanga_SanFernando layer extent](media/quickosm-3.png "Load all highways in the Pampanga_SanFernando layer extent")
+Abbildung 3.4. Alle Straßen im Layerausschnitt Frankenberg
 
-Figure 3.4. Load all highways in the Pampanga_SanFernando layer extent
+5. Klicken Sie auf Abfrage ausführen. Wir weisen QuickOSM an, alle Linien, die mit einem Highway-Schlüssel versehen sind, abzufragen und sie in QGIS zu laden. Wenn das Plugin mit dem Laden des Layers fertig ist, sollte Ihre Karte wie unten aussehen:
 
-5. Click Run query. Basically what we’re telling QuickOSM is to get all line or multilinestring features tagged with a highway key and load it in QGIS. When the plugin is done loading the layer, your map should look like below:
+![Geladene Straßendaten](media/quickosm-4.png "Geladene Straßendaten")
 
-![Highway data loaded from OSM](media/quickosm-4.png "Highway data loaded from OSM")
+Abbildung 3.5. Geladene Straßendaten
 
-Figure 3.5. Highway data loaded from OSM
+6. Beachten Sie, dass die von QuickOSM geladenen Layer temporäre Layer sind. Sie sollten sie als Dateien speichern oder persistent machen, wenn Sie sie später verwenden möchten.
+7. Wenn Sie die genaue Overpass Abfrage sehen möchten, die die "Schnelle Abfrage" für Sie erstellt hat, klicken Sie auf Show query (Abfrage anzeigen) und die Abfrage wird auf der Registerkarte Query geöffnet. Sie können Ihre Abfrage dann bearbeiten, um sie komplexer zu gestalten.
 
-6. Note that the layers loaded by QuickOSM are temporary layers. You should save them as files or make them persistent if you need to use them later.
-7. If you want to see the Overpass query version of your Quick Query, click Show query and it will open the query in the Query tab. You can then edit your query to make it more complex.
+![Die Overpass-Version der Schnellabfrage zum Laden von Straßen](media/quickosm-5.png "Die Overpass-Version der Schnellabfrage zum Laden von Straßen")
 
-![The Overpass query version of the Quick query to load highways](media/quickosm-5.png "The Overpass query version of the Quick query to load highways")
+Abbildung 3.6. Die Overpass-Version der Schnellabfrage zum Laden von Straßen
 
-Figure 3.6. The Overpass query version of the Quick query to load highways
+8. Als Nächstes wollen wir alle Fast-Food-Restaurant-Standorte in Mittelsachsen laden. Öffnen Sie das QuickOSM-Plugin und geben Sie auf der Registerkarte Schnellabfrage die folgenden Parameter ein:
 
-8. Next, let’s load all fast food restaurant locations in the Pampanga_province layer extent. Open the QuickOSM plugin and put the following parameters in the Quick query tab:
+    * Schlüssel: amenity
+    * Wert: fast_food
+    * Layer-Ausdehnung: Mittelsachsen
+    * Erweitert:
+        * Node, Way, Relation, Points anhaken
 
-    * Key: amenity
-    * Value: fast_food
-    * Layer Extent: Pampanga_province
-    * Advanced:
-        * Check Node, Way, Relation, Points
+![Als fast_food markierte Punkte in Mittelsachsen](media/quickosm-6.png "Als fast_food markierte Punkte in Mittelsachsen")
 
-![Load amenities (points) tagged as fast_food in the Pampanga_province layer extent](media/quickosm-6.png "Load amenities (points) tagged as fast_food in the Pampanga_province layer extent")
+Abbildung 3.7: Als fast_food markierte Punkte in Mittelsachsen
 
-Figure 3.7: Load amenities (points) tagged as fast_food in the Pampanga_province layer extent
+9. Die Ausgabe sollte in etwa wie folgt aussehen:
 
-9. The output should look something like below:
+![Fast-Food Standorte aus OSM](media/quickosm-7.png "Fast-Food Standorte aus OSM")
 
-![Fast food locations loaded from OSM](media/quickosm-7.png "Fast food locations loaded from OSM")
+Abbildung 3.8: Fast-Food Standorte aus OSM
 
-Figure 3.8: Fast food locations loaded from OSM
+10. Beachten Sie, dass auch Daten außerhalb des Landkreises geladen wurden. Das liegt daran, dass wir den Layerumfang als Begrenzungsrahmen verwenden. Wenn wir nur die Features innerhalb des Polygons benötigen, können wir diese Features auswählen oder ausschneiden. Wie das geht, wird in späteren Modulen besprochen.
 
-10. Notice that even data outside the polygons are loaded. This is because we are using the layer extent as our bounding box. If we need just the features inside the polygon, we can select or clip these features. The process of how to do this will be discussed in future modules.
 
-[/TODO]
 
 #### **Quizfragen**
 
@@ -230,16 +229,14 @@ Mapping the world population one building at a time - [https://arxiv.org/abs/171
 
 Die HRSL-Daten auf HDX liegen im GeoTIFF- (Raster) und CSV-Format (Vektor) vor. Die CSV sind Punktstandorte mit entsprechenden Bevölkerungswerten. Für diese Übung wurde bereits eine Teilmenge der Daten für Ihr Land vorbereitet, aber Sie können jederzeit den gesamten Datensatz oder auch andere Datensätze zum Ausprobieren herunterladen.
 
-[TODO]
-1. Laden Sie die Rasterdatei **HRSL_Pampanga_Bevölkerung** in QGIS.
+1. Laden Sie die Rasterdatei **HRSL_Mittelsachsen** in QGIS.
 
-![Die HRSL für Pampanga, Philippinen](media/hrsl-1.png "Die HRSL für Pampanga, Philippinen")
+![Der HRSL für Mittelsachsen](media/hrsl-1.png "Der HRSL für Mittelsachsen")
 
-Abbildung 3.10: Die HRSL für Pampanga, Philippinen
+Abbildung 3.10: Der HRSL für Mittelsachsen
 
 2. Prüfen Sie die Eigenschaften des Layers.
 3. Sie können auch die Symbologie und den Stil des Rasters bearbeiten (wird in einem späteren Modul behandelt)
-[/TODO]
 
 #### **Quizfragen**
 
@@ -254,38 +251,36 @@ Abbildung 3.10: Die HRSL für Pampanga, Philippinen
 
 Die Overpass API ([https://wiki.openstreetmap.org/wiki/DE:Overpass_API](https://wiki.openstreetmap.org/wiki/DE:Overpass_API)), früher bekannt als OSM Server Side Scripting oder OSM3S vor 2011, ist eine schreibgeschützte API, die benutzerdefinierte ausgewählte Teile der OSM-Kartendaten bereitstellt. Im Gegensatz zur Haupt-API, die für die Bearbeitung optimiert ist, ist die Overpass-API für Datenkonsument:innen optimiert, um eine kleine Teilmenge der etwa 10 Millionen Elemente in OpenStreetMap abzufragen. Diese Teilmengen können nach Suchkriterien wie Standort, Art der Objekte, Tag-Eigenschaften, Nähe oder Kombinationen davon ausgewählt werden. Die Overpass-API dient als Backend für andere OSM-basierte Dienste wie das QuickOSM-Plugin.
 
-[TODO]
-Die Verwendung einer Overpass-Abfrage ermöglicht es Ihnen, eine komplexere Feature-Auswahl in QuickOSM zu erstellen. Lassen Sie uns zum Beispiel wieder alle Fast Foods innerhalb der Ausdehnung von Pampanga_province laden, aber dieses Mal nur die Filialen von Jollibee. Wenn Sie sich die Attributtabelle des Layers "Fast Food" ansehen, werden Sie feststellen, dass sie ein Feld **Name** hat. Die Felder in der Attributtabelle der von OSM geladenen Daten entsprechen den Tag-Schlüsseln. Wenn wir also nur alle Jollibee-Filialen auswählen wollen, müssen wir einen Filter hinzufügen, der ein Feature auswählt, wenn es einen **Schlüssel:Wert** von **Name: Jollibee** hat. Dieser Filter kann einfach in einer Overpass-API hinzugefügt werden.
+Die Verwendung einer Overpass-Abfrage ermöglicht es Ihnen, eine komplexere Feature-Auswahl in QuickOSM zu erstellen. Lassen Sie uns zum Beispiel wieder alle Fast Foods innerhalb der Ausdehnung von Mittelsachsen laden, aber dieses Mal nur die Filialen von McDonald's. Wenn Sie sich die Attributtabelle des Layers "Fast Food" ansehen, werden Sie feststellen, dass sie ein Feld **name** hat. Die Felder in der Attributtabelle der von OSM geladenen Daten entsprechen den Tag-Schlüsseln. Wenn wir also nur alle McDonald's-Filialen auswählen wollen, müssen wir einen Filter hinzufügen, der ein Feature auswählt, wenn es für den Schlüssel **Name** den Wert **McDonald's** hat. Dieser Filter kann einfach in einer Overpass-API hinzugefügt werden.
 
 1. Öffnen Sie das QuickOSM-Plugin und geben Sie die Parameter ein, die wir für die Abfrage aller Fast Foods verwendet haben.
 
-![QuickOSM-Parameter zum Laden von Schnellrestaurants in Pampanga](media/quickosm-5.png "QuickOSM-Parameter zum Laden von Schnellrestaurants in Pampanga")
+![Schnellabfrage zum Laden aller als Fast Food gekennzeichneten Einrichtungen](media/overpass-0.png "Schnellabfrage zum Laden aller als Fast Food gekennzeichneten Einrichtungen")
 
 Schnellabfrage zum Laden aller als Fast Food gekennzeichneten Einrichtungen
 
 2. Klicken Sie auf Abfrage anzeigen.
 
-![Übergreifende Version der Abfrage](media/overpass-1.png "Übergreifende Version der Abfrage")
+![Overapss-Version der Abfrage](media/overpass-1.png "Overapss-Version der Abfrage")
 
-Überbrückung, um alle Einrichtungen zu laden, die als Fast Food gekennzeichnet sind
+Overapss-Version der Abfrage
 
-3. Bearbeiten Sie die Abfrage und fügen Sie die Zeile **&lt;has-kv k="name" v="Jollibee"/>** nach jeder &lt;has-kv k="amenity" v="fast_food"/> Zeile ein.
+3. Bearbeiten Sie die Abfrage und fügen Sie die Zeile `<has-kv k="name" v="McDonald's"/>` nach jeder <has-kv k="amenity" v="fast_food"/>` Zeile ein.
 
-![Überbrückungsabfrage, um nur Fastfood mit dem Namen Jollibee zu laden](media/overpass-2.png "Überbrückungsabfrage, um nur Fastfood mit dem Namen Jollibee zu laden")
+![Overpass-Abfrage, um nur Fastfood-Filialen mit dem Namen McDonald's](media/overpass-2.png "Overpass-Abfrage, um nur Fastfood-Filialen mit dem Namen McDonald's")
 
-Überbrückungsabfrage, um alle als Fast Food getaggten Einrichtungen zu laden, deren Name Jollibee ist
+Overpass-Abfrage, um nur Fastfood-Filialen mit dem Namen McDonald's
 
-4. Klicken Sie auf Abfrage ausführen. Dies sollte nur die als fast_food gekennzeichneten Annehmlichkeiten mit dem Namen Jollibee laden. Der Layer-Name lautet OsmQuery.
+4. Klicken Sie auf Run query. Dies sollte nur die als fast_food gekennzeichneten Punkte mit dem Namen McDonald's laden. Der Layer-Name lautet OsmQuery.
 
-![Amenities tagged as fast food whose name is Jollibee loaded from OSM](media/overpass-3.png "Amenities tagged as fast food whose name is Jollibee loaded from OSM")
+![McDonald's Filialen aus OSM](media/overpass-3.png "McDonald's Filialen aus OSM")
 
-Amenities tagged as fast food whose name is Jollibee loaded from OSM (Annehmlichkeiten, die als Fast Food gekennzeichnet sind und deren Name Jollibee ist)
+McDonald's Filialen aus OSM 
 
-5. Probieren Sie es mit anderen Fast-Food-Ketten.
+5. Probieren Sie es auch mit anderen Fast-Food-Ketten aus.
 
 Sie können auch Overpass-Abfragen in Overpass turbo ([https://wiki.openstreetmap.org/wiki/Overpass_turbo](https://wiki.openstreetmap.org/wiki/Overpass_turbo)), einem webbasierten Data-Mining-Tool für OpenStreetMap, testen und erstellen.
 
-[/TODO]
 
 ### Um Ihre neuen Fähigkeiten auszuprobieren, versuchen Sie...
 
