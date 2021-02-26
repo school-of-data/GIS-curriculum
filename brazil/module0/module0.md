@@ -49,7 +49,7 @@ Você pode ter ouvido a frase “todos os mapas mentem”, ou você viu uma post
 
 The True Size Of ("O verdadeiro tamanho de") ([https://thetruesize.com/](https://thetruesize.com/)) é um mapa online (ou aplicativo web) interessante que mostra como os tamanhos relativos dos países são distorcidos em um dos mapas mais comuns que usamos (o mapa que usa a projeção de Mercator). Ele também mostra alguns exemplos de tipos de dados espaciais sobre os quais aprenderemos mais neste módulo. Tente usar esse site para comparar o tamanho do seu país com o de outros.
 
-![True Size Of](media/true-size-of.png "True Size of Countries")
+![True Size Of](media/true-size-of.png "O verdadeiro tamanho dos países")
 
 #### Detalhando os conceitos
 

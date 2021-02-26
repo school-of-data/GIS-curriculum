@@ -184,7 +184,7 @@ Figura 1.4. A interface QGIS com algumas personalizações
 1. Abra o **QGIS**
 2. Clique no menu **Visão**
 
-![Abra o QGIS e clique no menu Exibir](media/ex01-01.png "Abra o QGIS e clique no menu Exibir")
+![Abra o QGIS e clique no menu Exibir](media/ex01-01.png "Abra o QGIS e clique no menu Visão")
 
 3. Observe o menu **Painéis**
 
