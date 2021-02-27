@@ -22,14 +22,11 @@ Darüber hinaus werden Sie die folgenden Fähigkeiten erlernt haben:
 
 * Arbeitsfähiger Computer
 * Internetzugang
-* QGIS 3.16 oder höher
-
-[TODO]
-* Pampanga administrative Grenzschicht (innerhalb von [module5.gpkg](data/module5.gpkg))
-* Pampanga Kliniken (innerhalb von [module5.gpkg](data/module5.gpkg))
-* PHL-Provinzen (innerhalb von [module5.gpkg](data/module5.gpkg))
-* [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
-[/TODO]
+* QGIS 3.16 oder neuer
+* Mittelsachsen (innerhalb von [Modul-5.gpkg](data/Modul-5.gpkg))
+* Schulen-Mittelsachsen (innerhalb von [Modul-5.gpkg](data/Modul-5.gpkg))
+* Landkreise_Sachsen (innerhalb von [Modul-5.gpkg](data/Modul-5.gpkg))
+* [Sachsen High Resolution Settlement Layer](data/HRSL_Mittelsachsen.tif)
 
 ## Voraussetzungen
 
@@ -49,9 +46,7 @@ Darüber hinaus werden Sie die folgenden Fähigkeiten erlernt haben:
 
 Lassen Sie uns mit einem Beispiel beginnen:
 
-[TODO]
-Um eine Karte zu erstellen, benötigen Sie eine Frage, das Sie besser verstehen möchten, z. B. "Räumliche Verteilung von Kliniken in der Provinz Pampanga auf den Philippinen". Sie werden feststellen, dass die Frage sowohl ein zu erforschendes Thema als auch die geografische Lage vorgibt. Mit diesen Informationen und den relevanten Daten, die es Ihnen erlauben, die Frage weiter zu erforschen, können Sie loslegen und eine Karte erstellen.
-[/TODO]
+Um eine Karte zu erstellen, benötigen Sie eine Frage, das Sie besser verstehen möchten, z. B. "Räumliche Verteilung von Schulen in Mittelsachsen". Sie werden feststellen, dass die Frage sowohl ein zu erforschendes Thema als auch die geografische Lage vorgibt. Mit diesen Informationen und den relevanten Daten, die es Ihnen erlauben, die Frage weiter zu erforschen, können Sie loslegen und eine Karte erstellen.
 
 ### Gliederung der Konzepte
 
@@ -68,7 +63,7 @@ Bild 5.1: Drucklayout
 
 ## Hauptinhalt
 
-### Phase 1: Exportieren der Kartenansicht
+### Teil 1: Exportieren der Kartenansicht
 
 In diesem Tutorial zeigen wir zwei Möglichkeiten, die Kartenansicht in das QGIS Drucklayout zu exportieren. Die erste Methode ist einfach, während die zweite Methode die erweiterten Möglichkeiten des Drucklayouts erforscht.
 
@@ -89,16 +84,16 @@ Bild 5.2: Exportieren der Karte
 
 Abbildung 5.3: Kartenansicht als Bild exportiert
 
-[TODO]
+
 #### **Zweite Methode: Exportieren der Kartenansicht in das Drucklayout**
 
-1. In diesem Tutorial werden wir eine Karte erstellen, die 1.) die Lage von Gesundheitszentren und 2.) die Bevölkerungsdichte der Provinz Pampanga auf den Philippinen zeigt. Die Daten-Layer sollten bereits zum QGIS-Canvas hinzugefügt sein. Die Layer können dann gestylt werden, um die Informationen in Ihren Daten zu vermitteln.
+1. In diesem Tutorial werden wir eine Karte erstellen, die 1.) die Lage von Schulen und 2.) die Bevölkerungsdichte in Mittelsachsen zeigt. Die Daten-Layer sollten bereits zum QGIS-Canvas hinzugefügt sein. Die Layer können dann gestylt werden, um die Informationen in Ihren Daten zu vermitteln.
 
 ![Neues Drucklayout erstellen](media/new-print-layout.png "Neues Drucklayout erstellen")
 
 Abbildung 5.4: Neues Drucklayout erstellen
 
-2. Die Kartenansicht kann nun in das Drucklayout exportiert werden. Klicken Sie dazu auf die Schaltfläche "Neues Drucklayout" !(media/newprint_composer.png "Neues Drucklayout"). Diese kann über die Symbolleiste aufgerufen werden. Alternativ können Sie auch über die Menüleiste "Projekte" darauf zugreifen. Es öffnet sich ein Titeldialog, der Sie auffordert, den Titel des Print-Layouts einzugeben. Geben Sie "Pampanga" ein und klicken Sie auf "OK".
+2. Die Kartenansicht kann nun in das Drucklayout exportiert werden. Klicken Sie dazu auf die Schaltfläche "Neues Drucklayout" !(media/newprint_composer.png "Neues Drucklayout"). Diese kann über die Symbolleiste aufgerufen werden. Alternativ können Sie auch über die Menüleiste "Projekte" darauf zugreifen. Es öffnet sich ein Titeldialog, der Sie auffordert, den Titel des Drucklayouts einzugeben. Geben Sie "Mittelsachsen" ein und klicken Sie auf "OK".
 
 ![Benennen des Drucklayouts](media/new-print-layout-name.png "Benennen des Drucklayouts")
 
@@ -108,14 +103,14 @@ Abbildung 5.5: Benennung des Drucklayouts
 
 ![Das Drucklayoutfenster](media/new-print-layout-window.png "Das Drucklayoutfenster")
 
-Bild 5.6: Das Fenster "Print Layout
+Bild 5.6: Das Drucklayoutfenster
 
-4. Sie werden feststellen, dass die Drucklayout-Leinwand leer ist. Um die gestylte Karte aus der QGIS-Leinwand hinzuzufügen, klicken Sie auf die Schaltfläche 'Add new map to layout' ![alt_text](media/add_new_map_to_layout.png "image_tooltip"), klicken Sie mit der linken Maustaste und zeichnen Sie ein Rechteck in den weißen Bereich in der Mitte des Drucklayouts. Die Karte sollte nun hinzugefügt werden. Sie haben soeben ein Kennfeld in das Drucklayout exportiert. Nun können Sie alle anderen Kartenelemente wie Titel, Legende, Raster usw. hinzufügen.
+4. Sie werden feststellen, dass die Drucklayout-Leinwand leer ist. Um die gestylte Karte aus der QGIS-Leinwand hinzuzufügen, klicken Sie auf die Schaltfläche "Karte hinzufügen" ![](media/add_new_map_to_layout.png), klicken Sie mit der linken Maustaste und zeichnen Sie ein Rechteck in den weißen Bereich in der Mitte des Drucklayouts. Die Karte sollte nun hinzugefügt werden. Nun können Sie alle anderen Kartenelemente wie Titel, Legende, Raster usw. hinzufügen.
 
 ![Karte zum Drucklayout hinzufügen](media/print-layout-map.png "Karte zum Drucklayout hinzufügen")
 
 Abbildung 5.7: Karte zum Drucklayout hinzufügen
-[/TODO]
+
 
 
 #### **Quizfragen**
@@ -141,7 +136,7 @@ Abbildung 5.7: Karte zum Drucklayout hinzufügen
 
 
 
-### Phase 2: Kartenelemente mit dem Drucklayout hinzufügen und bearbeiten
+### Teil 2: Kartenelemente mit dem Drucklayout hinzufügen und bearbeiten
 
 #### **Inhalt/Tutorial**
 
@@ -194,39 +189,35 @@ Bild 5.11: Exportierte Karte als Bild
 2. Fügen Sie eine neue Beschriftung hinzu und geben Sie dann den Quellenverweis ein.
 
 
-### Phase 3: Automatisierte Kartenerstellung mit der Atlas-Funktion
+### Teil 3: Automatisierte Kartenerstellung mit der Atlas-Funktion
 
 #### **Inhalt/Tutorial**
 
-[TODO]
-Wenn Ihre Organisation gedruckte oder Online-Karten veröffentlicht, müssen Sie oft viele Karten mit der gleichen Vorlage erstellen - normalerweise eine für jede Verwaltungseinheit oder Region. Die manuelle Erstellung dieser Karten kann sehr viel Zeit in Anspruch nehmen und wenn Sie gerade bei regelmäßigen Aktualisierungen lästig werden. QGIS hat ein Werkzeug namens Atlas, das Ihnen helfen kann, eine Kartenvorlage zu erstellen und einfach eine große Anzahl von Karten für verschiedene geographische Regionen zu veröffentlichen. Nehmen wir die verschiedenen Provinzen der Philippinen als Beispiel, hier sind die administrativen Grenzen für die 81 Provinzen;
+Wenn Ihre Organisation gedruckte oder Online-Karten veröffentlicht, müssen Sie oft viele Karten mit der gleichen Vorlage erstellen - normalerweise eine für jede Verwaltungseinheit oder Region. Die manuelle Erstellung dieser Karten kann sehr viel Zeit in Anspruch nehmen und wenn Sie gerade bei regelmäßigen Aktualisierungen lästig werden. QGIS hat ein Werkzeug namens Atlas, das Ihnen helfen kann, eine Kartenvorlage zu erstellen und einfach eine große Anzahl von Karten für verschiedene geographische Regionen zu veröffentlichen. Nehmen wir die verschiedenen Landkreise Sachsens als Beispiel.
 
 ![Abdeckungslayer](media/atlas-coverage.png "Abdeckungslayer")
 
 Bild 5.12: Abdeckungslayer
-[/TODO]
 
 ![Attributtabelle](media/atlas-attr.png "Attributtabelle")
 
 Bild 5.13: Attributtabelle
 
-1. Dieser Layer dient als Abdeckungslayer, was bedeutet, dass der QGIS-Atlas für jedes der Features in diesem Layer eine Karte erstellt. Insgesamt werden also 81 Karten erzeugt.
+1. Dieser Layer dient als Abdeckungslayer, was bedeutet, dass der QGIS-Atlas für jedes der Features in diesem Layer eine Karte erstellt. Insgesamt werden also 13 Karten erzeugt.
 
 2. Öffnen oder erstellen Sie ein neues Drucklayout und fügen Sie eine Karte hinzu.
 
-![Atlas Print Layout](media/atlas-print-layout.png "Atlas Print Layout")
+![Atlas Drucklayout](media/atlas-print-layout.png "Atlas Drucklayout")
 
 Abbildung 5.14: Atlas-Drucklayout
 
-3. Vergewissern Sie sich, dass Sie im rechten Bereich des Drucklayouts das Menü **Atlas** auswählen und das Kontrollkästchen **Atlas generieren** aktivieren. Sie können die Atlas-Einstellungen auch über die Schaltfläche ![Atlas-Einstellungen](media/atlas-settings-btn.png "Atlas-Einstellungen") in der Atlas-Symbolleiste öffnen.
+3. Wählen Sie dann im rechten Bereich des Drucklayouts das Menü **Atlas** aus und aktivieren Sie das Kontrollkästchen **Einen Atlas generieren**. Sie können die Atlas-Einstellungen auch über die Schaltfläche ![Atlas-Einstellungen](media/atlas-settings-btn.png "Atlas-Einstellungen") in der Atlas-Symbolleiste öffnen.
 
 ![Atlas-Generierung](media/generate-atlas.png "Atlas-Generierung")
 
 Bild 5.15: Atlas-Generierung
 
-[TODO]
-3. Der nächste Schritt ist die Auswahl des Abdeckungslayers; der Abdeckungslayer ist der Indexlayer, der zur Erstellung jeder Seite verwendet wird. Für jedes Merkmal im Abdeckungslayer wird eine Karte/Seite für den Atlas erzeugt. In unserem Fall wird bei Verwendung des Layers PHL_provinces eine Karte für jede der 81 Provinzen erstellt. QGIS Atlas ändert dynamisch den Ansichtsausschnitt für jedes Feature im Abdeckungslayer. Sie können den Abdeckungslayer in den von Ihnen erstellten Karten ausblenden (d.h. der Abdeckungslayer wird im Drucklayout nicht sichtbar sein) und auswählen, wie die einzelnen Seiten Ihres Atlas benannt werden sollen. Sie können auch einige Filterungen und Sortierungen des Abdeckungslayers vornehmen, wenn Sie dies benötigen. Für die **Ausgabe** können Sie sich für eine einzelne Datei als Ausgabe entscheiden, indem Sie das Kontrollkästchen **Einzeldateiexport wenn möglich** aktivieren. Wenn das Häkchen nicht gesetzt ist, wird 1 Datei pro Karte erzeugt.
-[/TODO]
+3. Der nächste Schritt ist die Auswahl des Abdeckungslayers; der Abdeckungslayer ist der Indexlayer, der zur Erstellung jeder Seite verwendet wird. Für jedes Merkmal im Abdeckungslayer wird eine Karte/Seite für den Atlas erzeugt. In unserem Fall wird bei Verwendung des Layers Landkreise_Sachsen eine Karte für jeden der 13 Landkreise erstellt. QGIS Atlas ändert dynamisch den Ansichtsausschnitt für jedes Feature im Abdeckungslayer. Sie können den Abdeckungslayer in den von Ihnen erstellten Karten ausblenden (d.h. der Abdeckungslayer wird im Drucklayout nicht sichtbar sein) und auswählen, wie die einzelnen Seiten Ihres Atlas benannt werden sollen. Sie können auch einige Filterungen und Sortierungen des Abdeckungslayers vornehmen, wenn Sie dies benötigen. Für das **Ergebnis** können Sie sich für eine einzelne Datei als Ausgabe entscheiden, indem Sie das Kontrollkästchen **Einzeldatei wenn möglich** aktivieren. Wenn das Häkchen nicht gesetzt ist, wird eine Datei pro Karte erzeugt.
 
 ![Abdeckungslayer auswählen](media/coverage-layer.png "Abdeckungslayer auswählen")
 
@@ -238,17 +229,13 @@ Bild 5.16: Abdeckungslayer auswählen
 
 Abbildung 5.17: Stellen Sie sicher, dass die Kartenausdehnung durch den Atlas gesteuert wird
 
-[TODO]
-5. Um eine Vorschau Ihres Atlas zu erhalten, klicken Sie auf die Schaltfläche Atlas-Vorschau anzeigen ![Atlas-Vorschau anzeigen Button](media/atlas-preview-btn.png "Atlas-Vorschau anzeigen Button") in der Atlas-Symbolleiste. Dies zeigt Ihnen die 81 Karten, die Sie erstellt haben. Verwenden Sie die Atlas-Symbolleiste ![Atlas-Symbolleiste](media/atlas-toolbar-nav.png "Atlas-Symbolleiste"), um in den Atlas-Karten zu navigieren.
-[/TODO]
+5. Um eine Vorschau Ihres Atlas zu erhalten, klicken Sie auf die Schaltfläche Atlas-Vorschau anzeigen ![Atlas-Vorschau anzeigen Button](media/atlas-preview-btn.png "Atlas-Vorschau anzeigen Button") in der Atlas-Symbolleiste. Dies zeigt Ihnen die 13 Karten, die Sie erstellt haben. Verwenden Sie die Atlas-Symbolleiste ![Atlas-Symbolleiste](media/atlas-toolbar-nav.png "Atlas-Symbolleiste"), um in den Atlas-Karten zu navigieren.
 
 ![Atlas-Vorschau](media/atlas-preview.png "Atlas-Vorschau")
 
 Abbildung 5.18: Atlas-Vorschau
 
-[TODO]
-6. Sie können die Atlas-Karten über die Schaltfläche **Atlas exportieren** ![Atlas exportieren](media/atlas-export-btn.png "Atlas exportieren") entweder als Bild oder als PDF exportieren. Wählen Sie **Atlas als Bild exportieren**. Sie sollten 81 Karten generiert haben, wobei jede Karte die Ausdehnung der Provinz zeigt.
-[/TODO]
+6. Sie können die Atlas-Karten über die Schaltfläche **Atlas exportieren** ![Atlas exportieren](media/atlas-export-btn.png "Atlas exportieren") entweder als Bild oder als PDF exportieren. Wählen Sie **Atlas als Bild exportieren**. Sie sollten 13 Karten generiert haben, wobei jede Karte die Ausdehnung jedes Landkreises zeigt.
 
 ![Atlas-Dateien](media/atlas-outputs.png "Atlas-Dateien")
 
@@ -256,7 +243,7 @@ Abbildung 5.18: Atlas Dateien
 
 7. **Tipp**: Für dieses Beispiel haben wir nur den Abdeckungslayer abgebildet. Die Stärke des Atlas liegt darin, dass er mehrere Layer abbildet. In unserem Beispiel haben wir die Daten zu Kliniken, Straßennetz und Bevölkerungsdichte für das gesamte Land als Layer in QGIS geladen. Würden wir eine Karte für jede Provinz erstellen wollen, die dieselben Layer zeigt, könnten wir nun den Atlas verwenden. Dabei müssen wir nur eine Layout-Vorlage erstellen, und der Atlas übernimmt die Erstellung der anderen Karten auf der Grundlage des verwendeten Layers.
 
-8. **Tipp**: Sie können QGIS Ausdrücke für die Einstellung der anderen Kartenelemente in Ihrem Atlas verwenden, so dass diese sich ebenfalls dynamisch in Abhängigkeit von dem abgebildeten Feature des Abdeckungslayers ändern. Sie können zum Beispiel einen QGIS-Ausdruck verwenden, der den Wert des Feldes NAME_1 auf Ihrem Label aufruft, so dass es sich dynamisch in den Wert von NAME_1 für das aktuell dargestellte Feature ändert.
+8. **Tipp**: Sie können QGIS Ausdrücke für die Einstellung der anderen Kartenelemente in Ihrem Atlas verwenden, so dass diese sich ebenfalls dynamisch in Abhängigkeit von dem abgebildeten Feature des Abdeckungslayers ändern. In unserem Beispiel können Sie zum Beispiel einen QGIS-Ausdruck verwenden um den aktuellen Landkreis in einem Beschriftungsfeld anzuzeigen. Wählen Sie dafür `[%BEZ + '-' + GEN%]` als Beschriftung. Diese wird sich in jeder der exportierten Karten an den entsprechenden Landkreis anpassen.
 
 Weitere Informationen über den QGIS Atlas finden Sie unter: [https://www.youtube.com/watch?v=tOnMJBUvEjY](https://www.youtube.com/watch?v=tOnMJBUvEjY).
 
