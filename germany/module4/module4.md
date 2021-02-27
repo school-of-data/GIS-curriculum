@@ -17,12 +17,10 @@ In diesem Modul lernen Sie, wie Sie das visuelle Erscheinungsbild einer Karte du
 
 * Computer
 * Internetverbindung
-* QGIS 3.16 oder höher
-[TODO]
-* Pampanga administrative boundary layer (innerhalb von [module4.gpkg](data/module4.gpkg))
-* Pampanga Kliniken (innerhalb von [module4.gpkg](data/module4.gpkg))
-* [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
-[/TODO]
+* QGIS 3.16 oder neuer
+* Mittelsachsen (innerhalb von [Modul4.gpkg](data/Modul4.gpkg))
+* Schulen-Mittelsachsen (innerhalb von [Modul4.gpkg](data/Modul4.gpkg))
+* [Mittelsachsen High Resolution Settlement Layer](data/HRSL_Mittelsachsen.tif)
 
 ## Voraussetzungen
 
@@ -74,9 +72,9 @@ Abbildung 4.1: Bedienfeld Layergestaltung
 
 #### **Registerkarte "Symbolisierung" in den Layereigenschaften**
 
-Um auf die Registerkarte "Symbolisierung" zuzugreifen, doppelklicken Sie auf den Layer, um die Layereigenschaften zu öffnen-> Klicken Sie auf Symbolisierung.
+Um auf die Registerkarte "Symbolisierung" zuzugreifen, doppelklicken Sie auf den Layer, um die Layereigenschaften zu öffnen. Wäheln Sie dann die Registerkarte Symbolisierung.
 
-Hier können Sie die diverse Einstellungen machen um zu beeinflussen, wie Ihre Daten dargestellt werden. In den Screenshots unten sehen Sie die Symbologie-Registerkarten für Vektor- bzw. Rasterdatensätze;
+Hier können Sie die diverse Einstellungen machen um zu beeinflussen, wie Ihre Daten dargestellt werden. In den Screenshots unten sehen Sie die Symbolisierung-Registerkarten für Vektor- bzw. Rasterdatensätze;
 
 
 ![alt_text](media/style-vector.png "image_tooltip")
@@ -84,7 +82,7 @@ Hier können Sie die diverse Einstellungen machen um zu beeinflussen, wie Ihre D
 ![alt_text](media/style-raster.png "image_tooltip")
 
 
-Figure 4.2: Symbologie für Vektor- und Rasterlayer
+Figure 4.2: Symbolisierung für Vektor- und Rasterlayer
 
 
 #### **Raster-Rendering: Kanal-Rendering**
@@ -115,7 +113,7 @@ Im Menü oben links stehen mehrere Darstellungsart-Optionen zur Verfügung:
 
 ## Hauptinhalt
 
-### Phase 1: Grundlegende Raster- und Vektorsymbologie
+### Teil 1: Grundlegende Raster- und Vektorsymbologie
 
 Die Symbologie von Vektordaten kann durch Transparenz, Farbe, Drehung und Größe variieren.
 
@@ -123,115 +121,86 @@ Die Symbologie von Vektordaten kann durch Transparenz, Farbe, Drehung und Größ
 
 * Layer-Eigenschaften und Symbologie-Menü
 * Arten der Vektordarstellung
-* Arten des Rasterrenderings (Kanalrendering)
+* Arten des Rasterdarstellung (Kanalrendering)
 
-[TODO]
-#### **Beispiel 1: Vektor-Rendering**
 
-1. Zur Demonstration dieses Beispiels werden zwei Beispieldatensätze verwendet: 1. [Kliniken](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing) und 2. [Verwaltungsgrenze](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing) der Provinz Pampanga
-2. Fügen Sie die beiden Vektorlayer in qgis hinzu; Klicken Sie auf den Button Add vector layer ![alt_text](media/add-vector.png "image_tooltip")
- oder benutzen Sie das Bedienfeld des Browsers.
-3. So werden sie standardmäßig gerendert. Sie werden feststellen, dass wir einen Polygon- und einen Punkt-Layer haben. Der nächste Schritt besteht darin, die Symbologie für jede von ihnen zu ändern. Die Füllfarben sind möglicherweise nicht die gleichen, aber das ist kein Problem, da QGIS die Farben für verschiedene Instanzen der Anwendung zufällig auswählt.
+#### **Beispiel 1: Vektordarstellung**
 
-![Default render](media/default-vector-render.png "Default render")
+1. Zur Demonstration dieses Beispiels werden zwei Beispieldatensätze verwendet: Die Schulen und die Landkreise vom Landkreis Mittelsachsen.
+2. Fügen Sie die beiden Vektorlayer zu QGIS hinzu.
+3. Schauen Sie sich an, wie die Daten standardmäßg dargestellt werden. Die Füllfarben aus dem Screenshot sind möglicherweise nicht die gleichen woe bei Ihnen, da QGIS die Farben für beim Anwendungsstart zufällig auswählt.
 
-Abbildung 4.3: Standard-Render
+![Standard-Darstellung](media/default-vector-render.png "Standard-Darstellung")
 
-4. Doppelklicken Sie auf den Polygon-Vektor-Layer, der gleichzeitig der administrative Boundary Layer der Provinz Pampanga auf den Philippinen ist
-5. Wählen Sie im erscheinenden Menü die Registerkarte **Symbologie**.
-6. Ändern Sie die **Füllfarbe** auf **Transparente Füllung**. Tipp:** Klicken Sie auf den Dropdown-Pfeil unter "Füllfarbe".**
-7. Das Ergebnis sollte wie unten dargestellt sein. Sie werden feststellen, dass die Option "Keine Füllung" keine Farbe hat
+Abbildung 4.3: Standard-Darstellung
 
-![Kein Füll-Rendering für das Polygon](media/no-fill-render.png "Kein Füll-Rendering für das Polygon")
+4. Doppelklicken Sie auf den "Mittelsachsen" der die Grenze des Landkreises beschreibt.
+5. Wählen Sie im erscheinenden Menü die Registerkarte **Symbolisierung**.
+6. Ändern Sie die **Füllfarbe** auf **Transparente Füllung**: ** Klicken Sie auf den Dropdown-Pfeil unter "Füllfarbe".**
+7. Das Ergebnis sollte wie unten dargestellt aussehen.
 
-Bild 4.4: Kein Füllrendering für das Polygon
+![Transparente Füllung für das Polygon](media/no-fill-render.png "Transparente Füllung für das Polygon")
 
-8. Der nächste Schritt ist die Symbolisierung des Punkt-Layers, der gleichzeitig der Clinics Layer ist
-9. Doppelklicken Sie auf den Layer **Kliniken**, um den Dialog **Eigenschaften des Layers** zu öffnen. Ändern Sie den Rendertyp von Einzelsymbol auf **Kategorisiert**, wählen Sie als Eigenschaft den **Wert**. Der Wert stellt den Bereich von Interesse dar. Legen Sie das Symbol und die Farbrampe fest. Klicken Sie dann auf Klassifizieren.
+Bild 4.4: Transparente Füllung für das Polygon
 
-![Dialog Layer Properties](media/vector-style.png "Dialog Layer Properties")
+8. Der nächste Schritt ist die Symbolisierung des Punkt-Layers - den Schulen.
+9. Doppelklicken Sie auf den Layer **Schulen-Mittelsachsen**, um den Dialog **Layereigenschaften** zu öffnen. Ändern Sie den Rendertyp von Einzelsymbol auf **Kategorisiert**, wählen Sie als Eigenschaft den **Wert**. Der Wert stellt den Bereich von Interesse dar. Legen Sie das Symbol und die Farbrampe fest. Klicken Sie dann auf Klassifizieren. In unserem Beispiel werden wir die Schulen wieder nach ihrer barrierefreiheit für Rollstühle klassifizieren.
 
-Bild 4.5: Layer-Eigenschaften-Dialog
+![Der Layereigenschaften Dialog für den Schullayer](media/vector-style.png "Der Layereigenschaften Dialog für den Schullayer")
+
+Bild 4.5: Der Layereigenschaften Dialog für den Schullayer
 
 10. Die resultierende Karte sollte wie folgt aussehen
 
-![Final vector render](media/final-vector-render.png "Final vector render")
+![Kartendarstellung der Schulen](media/final-vector-render.png "Kartendarstellung der Schulen")
 
-Bild 4.6: Endgültiges Vektorrender
+Bild 4.6: Kartendarstellung der Schulen
 
 
 11.  Denken Sie daran, die Layer im **Layer-Bedienfeld** so anzuordnen, dass der Polygon-Layer unterhalb des Punkt-Layers liegt. Dadurch wird die Punktebene sichtbar.
 
 
 
-#### **Example 2: Raster rendering**
+#### **Beispiel 2: Rasterdarstellung**
 
-1. Double click the raster layer which is also the population density layer. This also means it’s a normalized dataset and can therefore be visualized as a choropleth map.
-2. Select the symbology tab in the menu that appears
-3. Change the styling mode to ‘Singleband pseudocolor’
+1. Doppelklicken Sie auf den HRSL_Mittelsachsen Rasterlayer.
+2. Wählen Sie im erscheinenden Menü die Registerkarte Symbologie
+3. Ändern Sie die Darstellungsart auf "Einkanalpseudofarbe".
 
-![Symbology menu](media/qgis9.png  "Symbology menu")
+![Symbolisierung-Menü](media/qgis9.png "Symbolisierung-Menü")
 
-Figure 4.7: Symbology menu
+Bild 4.7: Symbolisierung-Menü
 
-4. Specify the interpolation, color ramp and mode. Click classify. The result is a choropleth map showing population density across Pampanga province in the Philippines.
+4. Legen Sie die Interpolation, den Farbverlauf und den Modus fest. Klicken Sie auf Klassifizieren. Das Ergebnis ist eine Choroplethenkarte, die die Bevölkerungsdichte zeigt.
 
-![Population density of Pampanga Province, Philippines](media/hrsl-style.png "Population density of Pampanga Province, Philippines")
+![Bevölkerungsdichte im Landkreis Mittelsachsen](media/hrsl-style.png "Bevölkerungsdichte im Landkreis Mittelsachsen")
 
-Figure 4.8: Population density of Pampanga Province, Philippines
+Abbildung 4.8: Bevölkerungsdichte im Landkreis Mittelsachsen
 
-5.  Zoom in to see the new map in finer detail.
+5.  Zoomen Sie hinein, um die neue Karte feiner zu sehen.
 
-![Zoomed-in map](media/zoom-in.png "Zoomed-in map")
+![Vergrößerte Karte](media/zoom-in.png "Vergrößerte Karte")
 
-Figure 4.9: Zoomed-in map
+Abbildung 4.9: Vergrößerte Karte
 
-6. Alternatively, use the **Layer Styling panel**.
+6. Alternativ können Sie auch das **Layergestaltung-Bedienfeld** verwenden.
 
-[/TODO]
 
-[TODO drop?]
-#### **Quizfragen**
+#### **Teil 2: Effekte**
 
-1. Was ist die Layer-Symbolik?
-2. Welche der folgenden Darstellungsaten sind für Vektordaten anwendbar?
-3. Welche Darstellungsaten gibt es für Rasterdaten?
+1. Im folgenden wollen wir uns noch ein wenig mit fortgeschrittenen Darstellungsarten beschäftigten. Ladne Sie dzau den HRSL_Mittelsachsen und den Mittelsachsen Layer. In diesem Tutorial wird erklärt, wie Sie die Zeicheneffekte und Blending-Modi für eine bessere Darstellung verändern können.
 
-#### **Quizantworten**
+![Der anfängliche Arbeitsbereich](media/initial-workspace.png "Der anfängliche Arbeitsbereich")
 
-1. a. ein grafisches Element, das als Marker, Strich oder Füllung dargestellt wird
-   b. ein Zeiger auf die Originaldaten
-   c. ein Repository mit verschiedenen Farbschemata
+Abbildung 4.10: Der anfängliche Arbeitsbereich
 
-2. a. Renderer für einzelne Symbole
-   b. kein Symbol-Renderer
-   c. kategorisierter Renderer
-   d. abgestufter Renderer
-   e. proportionales Symbol
-   f. proportionales Symbol
-   g. Punkt-Cluster-Renderer
+2. Öffnen Sie das Fenster Layereigenschaften und klicken Sie dann auf den Menüpunkt Symbolisierung für den Sachsen-Layer.
 
-3. a. Einfarbige Pseudofarbe
-   b. Einfarbiges Grau
-   c. palettiert
-   d. Multiband-Farbe
-[/TODO]
-
-#### **Tutorial**
-
-1. Nachdem Sie die beiden Layer in QGIS geladen haben, sieht die Kartenansicht wie unten dargestellt aus. Sie werden feststellen, dass beide Ebenen ein einfaches Styling haben. In diesem Tutorial wird erklärt, wie Sie die Zeicheneffekte und Blending-Modi für eine bessere Darstellung verändern können.
-
-![Der erwartete anfängliche Arbeitsbereich](media/initial-workspace.png "Der erwartete anfängliche Arbeitsbereich")
-
-Abbildung 4.10: Der erwartete anfängliche Arbeitsbereich
-
-2. Öffnen Sie das Fenster Layereigenschaften und klicken Sie dann auf den Menüpunkt Symbolisierung für die Ebene Verwaltungsgrenzen. Tipp: Führen Sie dazu einen Doppelklick auf die Ebene aus oder verwenden Sie das Bedienfeld für die Layergestaltung. Sie finden dieses Bedienfeld unter Ansicht -> Bedienfelder -> Layergestaltung.
-
-Unten im Menü befindet sich ein Kontrollkästchen für Zeicheneffekte. Aktivieren Sie dieses, und klicken Sie dann auf die Schaltfläche Effekte anpassen ![alt_text](media/customise-effects-button.png "image_tooltip") rechts daneben:
+Unten im Menü befindet sich ein Kontrollkästchen für Zeicheneffekte. Aktivieren Sie dieses, und klicken Sie dann auf die Schaltfläche Effekte einstellen ![](media/customise-effects-button.png "Effekte einstellen") rechts daneben:
 
 ![Layereigenschaften-Fenster und Symbologie-Menü](media/draw-effects.png "Layereigenschaften-Fenster und Symbologie-Menü")
 
-Bild 4.11: Fenster "Layereigenschaften" und Menü "Symbolik
+Bild 4.11: Fenster "Layereigenschaften" und Menü "Symbolisierung"
 
 3. Es öffnet sich ein neuer Effekteigenschaften-Dialog
 
@@ -251,7 +220,7 @@ Bild 4.13: Effekttyp Verwischen auswählen
 
 Bild 4.14: Unscharfe Ebene
 
-6. Erneute Verwendung des Dialogs **Effekteigenschaften**. Lassen Sie uns etwas Fortgeschritteneres ausprobieren. Anstatt nur einen einzigen Effekt zu verwenden, können Sie mehrere Effekte miteinander verknüpfen, um verschiedene Ergebnisse zu erzielen. Lassen Sie uns einen traditionellen Schlagschatten erzeugen, indem wir einen **Schattenwurf**-Effekt unter dem **Quellen**-Effekt hinzufügen.
+6. Öffenen Sie den **Effekteigenschaften-Dialog** erneut. Lassen Sie uns etwas Fortgeschritteneres ausprobieren. Anstatt nur einen einzigen Effekt zu verwenden, können Sie mehrere Effekte miteinander verknüpfen, um verschiedene Ergebnisse zu erzielen. Lassen Sie uns einen traditionellen Schlagschatten erzeugen, indem wir einen **Schattenwurf**-Effekt unter dem **Quellen**- und dem **Verwischen**-Effekt hinzufügen. Sollten Sie noch die transparente Füllung des Layers aus dem letzten Schritt ausgewählt haben, sollten Sie diese nun zu einer Farbe ändern um ein schöneres Resultat zu erhalten.
 
 ![Dialog Effekteigenschaften](media/drop-shadow.png "Dialog Effekteigenschaften")
 
@@ -271,7 +240,9 @@ Weitere Beispiele dafür, was Sie mit Misch- und Zeichemodi in QGIS machen könn
 * Hillshade in QGIS (englischsprachig) -[https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html](https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html)
 * Kartierung von Eisbergen in QGIS (englischsprachig) - [https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html](https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html)
 
-### Phase 3: Data defined overrides and geometry generators
+
+
+### Teil 3: Geometriegeneratoren
 
 #### **Inhalt**
 
@@ -285,23 +256,22 @@ Sie können die Symbolik des Geometriegenerators mit allen Layer-Typen (Punkte, 
 
 In aller Kürze: Die Geometriegenerator-Symbologie ermöglicht es Ihnen, einige räumliche Operationen innerhalb der Symbologie selbst auszuführen. So können Sie z. B. eine echte räumliche Schwerpunktoperation auf einem Polygon-Layer ausführen, ohne einen Punkt-Layer zu erstellen.
 
-Außerdem haben Sie alle Styling-Optionen, um das Aussehen des resultierenden Symbols zu ändern. Hier ist ein Beispiel-Tutorial:
+Außerdem haben Sie alle Darstellungsoptionen, um das Aussehen des resultierenden Symbols zu ändern. Hier ein kleines Beispiel:
 
-1. Doppelklicken Sie auf den Administrative-Grenzen Layer
+1. Doppelklicken Sie auf den Sachsen Layer
 2. Klicken Sie auf Einfache Füllung und ändern Sie den Layer-Typ Symbol in Geometriegenerator. Bevor Sie mit dem Schreiben der räumlichen Abfrage beginnen, wählen Sie den Geometrietyp in der Ausgabe. In diesem Beispiel werden wir Zentroide für jedes Feature erstellen, also ändern Sie die Geometrieart auf Punkt / Mehrpunkt.
 
-![Zentroid-Operation auf Administrative-Grenzen-Layer](media/centroid.png "Zentroid-Operation auf Administrative-Grenzen-Layer")
+![Zentroid-Operation auf Sachsen-Layer](media/centroid.png "Zentroid-Operation auf Sachsen-Layer")
 
-Bild 4.17: Zentroid-Operation auf Administrative-Grenzen-Layer
+Bild 4.17: Zentroid-Operation auf Sachsen-Layer
 
 3. Wenn Sie auf OK klicken, sehen Sie, dass der administrative Layer als Punkt-Layer gerendert wird. Wir haben gerade eine räumliche Operation innerhalb der Layer-Symbologie selbst ausgeführt.
 
-![Point layer](media/centroid-result.png "Point layer")
+![HRSL-Layer mit Centroid aus dem Vektorlayer](media/centroid-result.png "HRSL-Layer mit Centroid aus dem Vektorlayer")
 
-Abbildung 4.18: Punkt-Layer
+Abbildung 4.18: HRSL-Layer mit Centroid aus dem Vektorlayer
 
-4. Beachten Sie, dass eine alternative und einfachere Möglichkeit, räumliche Abfragen zu schreiben, die Verwendung des "Ausdrucksdialogs" ist. Klicken Sie auf die ![alt_text](media/expression.png "image_tooltip")
- Schaltfläche, um das Dialogfeld zu öffnen. Hier haben Sie Zugriff auf eine umfangreiche Funktionsreferenz. Sie können nach einer Funktion anhand ihres Namens suchen. Geben Sie zum Beispiel centroid in die Suchleiste ein.
+4. Beachten Sie, dass eine alternative und einfachere Möglichkeit, räumliche Abfragen zu schreiben, die Verwendung des "Ausdrucksdialogs" ist. Klicken Sie auf die ![](media/expression.png "Ausdrucksdialog") Schaltfläche, um das Dialogfeld zu öffnen. Hier haben Sie Zugriff auf eine umfangreiche Funktionsreferenz. Sie können nach einer Funktion anhand ihres Namens suchen. Geben Sie zum Beispiel centroid in die Suchleiste ein.
 5. Mit dem Geometrie-Generator Symbologie können Sie wirklich über den Rand der normalen Symbologie hinausgehen.
 6. Wenn Sie noch weiter gehen wollen, schreiben Sie eine räumliche Abfrage, um eine Pufferzone um den Punkt-, Linien- oder Polygon-Layer zu berechnen.
 
