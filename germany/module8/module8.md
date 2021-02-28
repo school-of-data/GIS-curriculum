@@ -28,9 +28,14 @@ Außerdem erwerben Sie die folgenden Fähigkeiten:
 ## Erforderliche Werkzeuge und Ressourcen
 
 * Dieses Modul wurde mit [QGIS Version 3.16.1 - Hannover](https://qgis.org/de/site/forusers/download.html) erstellt.
-[TODO]
-* Die Datensätze, die für alle in diesem Modul beschriebenen Übungen verwendet werden, sind in der folgenden Tabelle aufgeführt:
-[/TODO]
+* Die folgenden Datensätzen aus dem Geopackage Modul-8.gpkg:
+    - Gebäude (Polygone) - buildings
+    - Landnutzung (Polygone) - landuse
+    - Administrative Grenze von Mittelsachsen (Polygone) - Mittelsachsen
+    - Gotteshäuser (Punkte) - pofw
+    - Points of Interest (Punkte) - pois
+    - Straßen (Linien) - roads
+    - Waserwege (Linien) - waterways
 * Das verwendete Koordinatenreferenzsystem ist das ETRS89/UTM Zone 33N, EPSG 25833. Da es sich um ein projiziertes Koordinatensystem handelt, ermöglicht es geometrische Berechnungen. 
 
 
@@ -111,16 +116,6 @@ Obwohl GIS meist eng mit Karten assoziiert wird, die einfach nur geografische In
 GIS-Software bietet Funktionalitäten, die es erlauben, relevante Topologieregeln zu definieren, sowie Algorithmen, um zu prüfen, ob sie zutreffen, und um den Vektor-Layer zu bereinigen, wenn Inkonsistenzen festgestellt werden. 
 
 Geoverarbeitung ist ein allgemeiner Begriff, der alle Operationen - Prozesse - definiert, die auf einen geografischen Datensatz angewendet werden, mit dem Ziel, einen abgeleiteten Datensatz zu erhalten, der neue Erkenntnisse über die Daten ermöglicht. Übliche Geoverarbeitungsperationen sind die Überlagerung von geografischen Merkmalen, die Auswahl und Analyse von Merkmalen, die Topologieverarbeitung und die Datenkonvertierung. Geoverarbeitung ermöglicht es, geografische Informationen zu definieren, zu verwalten und zu analysieren, um die Entscheidungsfindung zu unterstützen. 
-
-
-TODO
-![Elemente einer Geoverarbeitungsoperation](media/fig84.png "Elemente einer Geoverarbeitungsoperation")
-
-Abbildung 8.4 - Elemente einer Geoverarbeitungsoperation
-
-**TIP**: Auf Verarbeitungsalgorithmen (wie sie in diesem Modul verwendet werden) können Sie über die **Verarbeitungs-Toolbox** oder die **Locatorleiste** zugreifen.
-/TODO
-
 
 
 ## Hauptinhalt: 
@@ -676,80 +671,75 @@ Abbildung 8.37d - Berechnetes Verhältnis von Grün- und bebauter Fläche
 Abbildung 8.37e - Verhältnis von Grünflächen und bebauten Flächen im 10km x 10km-Raster
 
 
-#### 2. total length of streets and waterways for each unit;
+#### 2. Gesamtlänge der Straßen und Wasserwege für jede Einheit;
 
-To accomplish this task, QGIS offers an algorithm that takes a polygon layer and a line layer and measures the total length of lines and the total number of them that cross each polygon. The resulting layer has the same features as the input polygon layer, but with two additional attributes containing the length and count of the lines across each polygon. Go to **Analysis Tools - Sum Line Lengths** and set the parameters as follows: 
-- polygons - Grid
-- lines - roads
-- lines length field name - roadsL
-- lines count field name - roadsC
+Um diese Aufgabe zu erfüllen, bietet QGIS einen Algorithmus, der einen Polygon-Layer und einen Linien-Layer nimmt und die Gesamtlänge der Linien und die Gesamtzahl der Linien, die jedes Polygon durchqueren, misst. Der resultierende Layer hat die gleichen Eigenschaften wie der Eingabe-Polygon-Layer, aber mit zwei zusätzlichen Attributen, die die Länge und Anzahl der Linien über jedes Polygon enthalten. Gehen Sie zu **Vektor - Analyse-Werkzeuge - Linienlängen summieren** und stellen Sie die Parameter wie folgt ein: 
+- Polygone - Gitter
+- Linien - roads
+- Linienlänge Feldname - roads_laenge
+- Linienanzahl Feldname - roads_anzahl
 
-You can create a temporary layer or save it as a file on your computer. If for representation, you use natural breaks, your map should look like in figure 8.38c. 
-
-
-![Sum Line Lengths parameters](media/fig838_a.png "Sum Line Lengths parameters")
-
-Figure 8.38a - Sum Line Lengths parameters
+Sie können einen temporären Layer erstellen oder ihn als Datei auf Ihrem Computer speichern. Sie können außerdem die Stilisierungsparameter aus Abbildung 8.38c übernehmen, um die gleiche Kartenansicht zu erhalten. 
 
 
-![Road lengths and counts per Grid cell](media/fig838_b.png "Road lengths and counts per Grid cell")
+![Parameter für "Linienlängen summieren"](media/fig838_a.png)
 
-Figure 8.38b - Road lengths and counts per Grid cell
-
-
-![Spatial distribution of 10X10km units with most roads](media/fig838_c.png "Spatial distribution of 10X10km units with most roads")
-
-Figure 8.38c - Spatial distribution of 10X10km units with most roads
-
-Now, repeat the same processing for waterways lengths in each grid cell. Running the process on the grid file obtained earlier will help you in having all information obtained so far attached to the same geometry. We advise you save this file on your computer with line_lengths_gridded.  If for representation, you use natural breaks, your map should look like în figure 8.39.
+Abbildung 8.38a - Parameter für "Linienlängen summieren"
 
 
-![Spatial distribution of 10X10km units with most waterways](media/fig839.png "Spatial distribution of 10X10km units with most waterway")
+![Straßenlänge- und anzahl pro Gitterzelle](media/fig838_b.png)
 
-Figure 8.39 -  Spatial distribution of 10X10km units with most waterways 
-
-3. total number of public buildings (schools, kindergartens, hospitals , town halls etc.) for each grid cell
-
-To count the total number of public buildings in the 10X10 unit, we will use the pois_cleaned. First, we run **Vector ‣ Analysis Tools ‣ List unique values..** and decide which building we consider public. We will select from our vector point data layer (pois) the following features: `"fclass" = 'town_hall' or "fclass" = 'kindergarten' or "fclass" = 'hospital' or "fclass" = 'doctors' or "fclass" = 'fire_station' or "fclass" = 'community_centre' or "fclass" = 'stadium' or "fclass" = 'museum' or "fclass" = 'school' or "fclass" = 'theatre'.` Similarly, you can just type `"fclass" in ('town_hall', 'kindegarten', 'hospital', 'doctors', 'fire_station', 'community_centre', 'stadium', 'museum', 'school', 'theatre')`. Your selection should have 227 features in total. 
+Abbildung 8.38b - Straßenlänge- und anzahl pro Gitterzelle
 
 
-![Selecting public POIs](media/fig840_a.png "Selecting public POIs")
+![Räumliche Verteilung der Straßenkilometer](media/fig838_c.png)
 
-Figure 8.40a - Selecting public POIs
+Abbildung 8.38c - Räumliche Verteilung der Straßenkilometer
 
+Dieses Vorgehen können Sie nun analog für die Wasserwege wiederholen.
 
-![Selected public POIS](media/fig840_b.png "Selected public POIS")
+#### 3. Gesamtzahl der öffentlichen Gebäude (Schulen, Kindergärten, Krankenhäuser, Rathäuser usw.) für jede Gitterzelle
 
-Figure 8.40b - Selected public POIS
-
-To answer our request, we will use **Vector ‣ Analysis Tools ‣ Count points in polygon** algorithm. This algorithm takes a points layer and a polygon layer and counts the number of points from the first one in each polygons of the second one. A new polygons layer is generated, with the exact same content as the input polygons layer, but containing an additional field with the points count corresponding to each polygon. Set the point layer to pois_cleand and the polygon Grid layer with the calculated information in the previous round. For the points, check the **Selected features only** checkbox, so the algorithm calculates only the selected points - the public POIs. Save the output file as grid_info. 
-
-
-![Count public POIS in each 10km x 10km grid](media/fig840_c.png "Count public POIS in each 10km x 10km grid")
-
-Figure 8.40c - Count public POIS in each 10km x 10km grid
+Um die Gesamtzahl der öffentlichen Gebäude in der 10X10-Einheit zu zählen, verwenden wir pois-bereinigt. Zuerst führen wir **Vektor ‣ Analyse-Werkzeuge ‣ Eindeutige Werte auflisten..** aus und entscheiden, welche Gebäude wir als öffentlich betrachten. Wir wählen aus unserem Vektorpunkt-Daten-Layer (pois) die folgenden Merkmale aus: `"fclass" in ('optician','college','swimming_pool','arts_centre','library','school','courthouse','university','sports_centre','museum','fire_station','kindergarten','post_office','community_centre','nursing_home','biergarten','town_hall','dentist','observation_tower','tourist_info','hospital','theatre','doctors','public_building','police')`. Wenn Sie möchten, können Sie natürlich auch eine andere Auswahl wählen. Wählen sie die gezeigt Auswahl sollten, insgesamt 3442 markiert werden. 
 
 
-![Spatial distribution of public POIs density per unit 10X10km](media/fig840_d.png "Spatial distribution of public POIs density per unit 10X10km")
+![](media/fig840_a.png "Auswählen von öffentlichen POIs")
+
+Abbildung 8.40a - Auswählen von öffentlichen POIs
 
 
-Figure 8.40d - Spatial distribution of public POIs density per unit 10X10km
+![Ausgewählte öffentliche POIS](media/fig840_b.png "Ausgewählte öffentliche POIS")
+
+Abbildung 8.40b - Ausgewählte öffentliche POIS
+
+Um unsere Anfrage zu beantworten, verwenden wir den Algorithmus **Vektor ‣ Analyse-Werkzeuge ‣ Punkte in Polygon zählen**. Dieser Algorithmus nimmt einen Punkte-Layer und einen Polygon-Layer und zählt die Anzahl der Punkte aus dem ersten Layer in jedem Polygon des zweiten Layers. Es wird ein neuer Layer "Polygone" erzeugt, der genau den gleichen Inhalt hat wie der eingegebene Layer "Polygone", aber ein zusätzliches Feld mit der Anzahl der Punkte für jedes Polygon enthält. Setzen Sie den Layer für die Punkte auf pois-bereinigt und den Layer für das Gitter auf den dafür erzeugten Layer. Aktivieren Sie für die Punkte das Kontrollkästchen **Nur gewählte Symbole**, damit der Algorithmus nur die ausgewählten Punkte - die öffentlichen POIs - berechnet. Speichern Sie die Ausgabedatei als grid_info. 
 
 
-#### **Quiz questions**
+![Anzahl öffentlicher POIS in jeder 10km x 10km Zelle](media/fig840_c.png)
 
-Q: If I have 2 vector layers - one represents the extent of the city where I am working and the second, the built roads in the entire country - what processing tool would I use to extract only the roads in my city: buffer or clip? 
-
-A: Clip. 
-
-Q. Is the buffer tool useful in the following case: I have a polygon vector layer with historic monuments in my region and I want to draw a 50m protection area around them? 
-
-A: Yes
-
-Q: Which one of the three geoprocessing tools would you use to merge two similar vector layers ? Voronoi polygons, dissolve, intersection? 
-
-A: Dissolve. 
+Abbildung 8.40c - Anzahl öffentlicher POIS in jeder 10kmx10km Zelle
 
 
-### Phase 3: Geostatistics. Interpolation - estimating missing data
+![Räumliche Verteilung öffentlicher POIs pro 10X10km Zelle](media/fig840_d.png)
+
+
+Abbildung 8.40d - Räumliche Verteilung öffentlicher POIs pro 10X10km Zelle
+
+
+#### **Quizfragen**
+
+F: Wenn ich 2 Vektor-Layer habe - einer repräsentiert die Ausdehnung der Stadt, in der ich arbeite, und der zweite die bebauten Straßen im gesamten Land - welches Verarbeitungswerkzeug würde ich verwenden, um nur die Straßen in meiner Stadt zu extrahieren: Puffer oder Zuschneiden? 
+
+A: Zuschneiden
+
+Q. Ist das Puffer-Werkzeug in folgendem Fall nützlich: Ich habe einen Polygon-Vektor-Layer mit historischen Denkmälern in meiner Region und möchte einen 50m-Schutzbereich um sie herum ziehen? 
+
+A: Ja
+
+F: Welches der drei Geoprozessierungswerkzeuge würden Sie verwenden, um zwei ähnliche Vektor-Layer zu verschmelzen? Voronoi-Polygone, Auflösen, Zuschneiden? 
+
+A: Auflösen
+
+
+### Phase 3: Geostatistik. Interpolation - Schätzung fehlender Daten
 
