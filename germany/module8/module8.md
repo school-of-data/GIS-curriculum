@@ -365,136 +365,85 @@ Abbildung 8.18b - Ergebnisse des Entfernens doppelter Geometrien auf dem Gebäud
 Eine vollständige Bereinigung der für dieses Modul verwendeten Vektordatensätze würde den Rahmen sprengen. Seine Komplexität macht es zu einem eigenen, fortgeschritteneren Modul.
 
 
-#### **Step 4. Take a closer look at the information attached to the points, lines and polygons.**
+#### **Schritt 4. Genauere Informationen zu den Punkten, Linien und Polygonen**
 
-Let's run one more algorithm to get a sense of what the attributes for our Pampanga layers are. After we’ve identified how many features each layer has, let’s see how many and which are the unique attributes in the following cases: 
+Führen wir einen weiteren Algorithmus durch, um ein Gefühl dafür zu bekommen, welche Attribute unsere Layer haben. Nachdem wir festgestellt haben, wie viele Features jeder Layer hat, wollen wir sehen, wie viele und welche die eindeutigen Attribute in den folgenden Fällen sind: 
 
-* layer buildings_cleaned - attribute type;
-* layer pois_cleaned - attribute fclass;
-* layer waterways - attribute fclass;
-* layer pofw - attribute fclass;
-* layer roads -attribute fclass;
-* layer landuse - attribute fclass;
+* Layer buildings-bereinigt - Attribut type;
+* Layer pois-bereinigt - Attribut fclass;
+* Layer waterways - Attribut fclass;
+* Layer pofw - Attribut fclass;
+* Layer roads - Attribut fclass;
+* Layer landuse - Attribut fclass;
 
-For that, go to **Vector ‣ Analysis Tools ‣ List unique values** (figure 8.19)
-
-
-![List unique values in a vector layer functionality](media/fig819_a.png "List unique values in a vector layer functionality")
-
-Figure 8.19a - List unique values in a vector layer functionality
-
-In the window that opens, insert each layer's name and attribute of interest as enumerated in the list above and you should have the following results: 
+Gehen Sie dazu auf **Vektor ‣ Analyse-Werkzeuge ‣ Eindeutige Werte auflisten** (Abbildung 8.19)
 
 
-![List unique values in a vector layer functionality (Batch Processing)](media/fig819_b.png "List unique values in a vector layer functionality (Batch Processing)")
+![Eindeutige Werte in einem Vektor Layer auflisten Funktionalität](media/fig819_a.png "Eindeutige Werte in einem Vektor Layer auflisten Funktionalität")
 
-Figure 8.19b - List unique values in a vector layer functionality (Batch Processing)
+Bild 8.19a - Eindeutige Werte in einer Vektor-Layer-Funktionalität auflisten
 
-<table>
-  <tr>
-   <td><strong>Layer name</strong>
-   </td>
-   <td><strong>No. of unique values</strong>
-   </td>
-   <td><strong>Unique values</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>buildings_cleaned
-   </td>
-   <td>74
-   </td>
-   <td>military;parking;gymnasium;mosque;yes;house;NULL;track;college;Idelfonso';'Tuazon Str;terrace;with roof;construction;veterinary;gazebo;hut;connector_bridge_sky;barn;roof;Yakult;kindergarten;hospital;pharmacy;laboratory;apartments;multipurpose;public;warehouse;farm;quarry;school;footway;Not_sure.;temple;service;garage;office;allotment_house;train_station;commercial;transportation;industrial;storage_tank;hotel;marketplace;farm_auxiliary;university;Unsure_-_please_chec;power_substation;clinic;hall;hangar;greenhouse;gawad kaling phase 1;tennis;church;Brgy. San Vicente;fire_station;toilets;civic;pumping_station;retail;residential;shed;chapel;supermarket;clubhouse;dormitory;Pineda Residence;government;carport;manufacture;garages;motorway;house
-   </td>
-  </tr>
-  <tr>
-   <td>pois_cleaned
-   </td>
-   <td>105
-   </td>
-   <td>alpine_hut;artwork;bicycle_shop;comms_tower;college;chalet;beverages;tourist_info;veterinary;hunting_stand;greengrocer;gift_shop;food_court;restaurant;ruins;pharmacy;bank;fountain;convenience;monument;clothes;caravan_site;cafe;camera_surveillance;recycling;atm;furniture_shop;sports_shop;post_office;hospital;viewpoint;guesthouse;kindergarten;cinema;biergarten;garden_centre;doityourself;florist;lighthouse;fast_food;butcher;mobile_phone_shop;sports_centre;nightclub;motel;department_store;graveyard;fire_station;bar;car_rental;shoe_shop;stationery;golf_course;picnic_site;post_box;pitch;theatre;recycling_metal;playground;school;shelter;stadium;computer_shop;toy_shop;doctors;beauty_shop;bakery;kiosk;hostel;recycling_glass;laundry;pub;bicycle_rental;water_well;archaeological;nursing_home;swimming_pool;camp_site;town_hall;supermarket;toilet;bookshop;water_tower;park;courthouse;telephone;attraction;memorial;library;optician;mall;hotel;travel_agent;car_dealership;observation_tower;video_shop;tower;water_works;dentist;police;community_centre;car_wash;bench;hairdresser;museum
-   </td>
-  </tr>
-  <tr>
-   <td>waterways
-   </td>
-   <td>4
-   </td>
-   <td>river;canal;drain;stream
-   </td>
-  </tr>
-  <tr>
-   <td>pofw
-   </td>
-   <td>5
-   </td>
-   <td>christian_evangelical;christian_methodist;buddhist;christian_catholic;christian
-   </td>
-  </tr>
-  <tr>
-   <td> roads 
-   </td>
-   <td>25
-   </td>
-   <td>secondary;trunk;track;bridleway;primary;tertiary;path;track_grade2;steps;footway;cycleway;trunk_link;track_grade4;unclassified;service;primary_link;pedestrian;unknown;tertiary_link;secondary_link;living_street;track_grade5;residential;motorway_link;motorway
-   </td>
-  </tr>
-  <tr>
-   <td>landuse
-   </td>
-   <td>19
-   </td>
-   <td>military;park;forest;cemetery;recreation_ground;nature_reserve;heath;farmland;quarry;commercial;vineyard;industrial;scrub;orchard;grass;farmyard;meadow;retail;residential
-   </td>
-  </tr>
-</table>
+Klicken Sie in dem sich öffnenden Fenster unten auf "Als Batchprozess starten" und geben Sie den Namen und das Attribut jedes Layers ein, das Sie interessiert, wie in der obigen Liste aufgezählt, und Sie sollten die folgenden Ergebnisse erhalten: 
+
+![Eindeutige Werte in einer Vektor-Layer-Funktionalität auflisten (Batch-Verarbeitung)](media/fig819_b.png)
+
+Abbildung 8.19b - Eindeutige Werte in einer Vektor-Layer-Funktionalität auflisten (Batch-Verarbeitung)
+
+| Layername     | Anzahl eindeutiger Werte | Eindeutige Werte  |
+| ------------- | ------------------------ | ----------------- |
+| buildings-bereinigt | 113                      | attached;65b;government;AWO*Seniorenzentrum*;hall_of_residence;tent;henhouse;parish_hall;toilets;collapsed;college;covered;commercial;yes;grandstand;service;riding_hall;station;manufacture;storage_tank;school;sty;castle;semi_attached;flat_terrace;university;semidetached_house;residential;farm;sports_centre;civic;no;fire_station;static_caravan;winter_garden;house;kindergarten;commercial;pavilion;carport;religious;shelter;10;disused;construction;hut;abandoned;transformer_tower;retail;public;garage;shop;NULL;54;industrial;greenhouse;Pfarrei;parking;church;decaying;substation;stable;G;gym;outbuilding;water_works;allotment_house;biergarten;balcony;bridge;tipi;mill;shed;tech_cab;ruins;hotel;barn;store;roof;terraced_house;cabin;farm_auxiliary;silo;terrace;transformer_house;healthcare;supermarket;apartments;transportation;bungalow;sports_hall;temple;stadium;35;work_shop;kiosk;train_station;20d;wall;chapel;garages;factory;hospital;yard;dormitory;warehouse;office;hangar;electricity;gatehouse;different;detached;villa;cowshed |
+| pois-bereinigt|119 | wayside_cross;laundry;memorial;travel_agent;garden_centre;outdoor_shop;nightclub;optician;bench;windmill;greengrocer;florist;college;jeweller;swimming_pool;vending_cigarette;veterinary;monument;hostel;camp_site;recycling_paper;arts_centre;drinking_water;fountain;picnic_site;library;clothes;school;guesthouse;castle;department_store;pitch;courthouse;sports_shop;university;furniture_shop;theme_park;telephone;sports_centre;museum;gift_shop;fire_station;atm;chemist;kindergarten;bakery;doityourself;post_office;shelter;community_centre;pub;water_mill;convenience;car_sharing;pharmacy;stationery;artwork;recycling_metal;hairdresser;fast_food;recycling_glass;bicycle_shop;tower;recycling_clothes;bookshop;vending_parking;wayside_shrine;chalet;water_well;nursing_home;butcher;toilet;recycling;archaeological;water_works;computer_shop;biergarten;cinema;vending_any;town_hall;hunting_stand;comms_tower;waste_basket;ruins;hotel;mobile_phone_shop;viewpoint;post_box;bar;playground;dentist;supermarket;shoe_shop;car_rental;newsagent;cafe;beverages;observation_tower;toy_shop;kiosk;tourist_info;wastewater_plant;attraction;hospital;theatre;doctors;public_building;police;caravan_site;ice_rink;restaurant;bank;car_wash;water_tower;battlefield;beauty_shop;car_dealership;camera_surveillance;food_court|
+| waterway| 4 |drain;canal;river;stream |
+| pofw          |        3                  |           christian_lutheran;christian;christian_protestant       |
+| roads          |     24                     |      track_grade2;track_grade5;secondary_link;cycleway;primary;track_grade1;residential;steps;track_grade3;tertiary;living_street;track;service;motorway;track_grade4;footway;primary_link;unclassified;motorway_link;secondary;bridleway;path;tertiary_link;pedestrian |
+| landuse          |       20                   |     farmyard;recreation_ground;industrial;meadow;grass;military;residential;scrub;nature_reserve;orchard;commercial;park;forest;farmland;vineyard;heath;cemetery;allotments;quarry;retail             |
 
 
-Table 8.1 - Table identifying how many and what are the unique values for the selected attributes
+Tabelle 8.1 - Tabelle der eindeutigen Werte
 
-For a more in depth analysis of the attributes of our vector layers, we will use the GroupStats plugin. It was developed to support statistics calculation for feature groups in a vector layer making it very useful to gain more understanding of your data, as well as to spot potential errors in the attributes. 
+Für eine weitergehende Analyse der Attribute unserer Layer verwenden wir das Plugin GroupStats. Es wurde entwickelt, um die Berechnung von Statistiken für Objekt-Gruppen in einem Vektor-Layer zu unterstützen, was sehr nützlich ist, um ein besseres Verständnis für Ihre Daten zu erhalten und mögliche Fehler in den Attributen zu erkennen. 
 
-First, make sure that you have installed and activated the GroupStats plugin. Afterwards, to open the GroupStats window, go to   **Vector ‣ GroupStats ‣ GroupStats**.
+Stellen Sie zunächst sicher, dass Sie die GroupStats-Erweiterung installiert und aktiviert haben. Um das GroupStats-Fenster zu öffnen, gehen Sie anschließend zu **Vektor ‣ GroupStats ‣ GroupStats**.
 
 ![GroupStats plugin](media/fig820_a.png "GroupStats plugin")
 
-Figure 8.20a - GroupStats plugin
+Abbildung 8.20a - GroupStats-Plugin
 
-A new window like the one in figure 8.20b should open. 
-
-
-![GroupStats window](media/fig820_b.png "GroupStats window")
-
-Figure 8.20b - GroupStats window
-
-As per the analysis done earlier, we have seen that for the layer buildings we have 74 different types of buildings, but how many each and what is the total built area taken by each category? How much space for schools, for markets, houses? GroupStats can help us answer this question. On the right side of the window, there is the control panel, where we choose what we want to calculate, as well as how the data should be arranged. Using drag&drop, follow the arrangement in figure 8.21, then press calculate. 
+Es sollte sich ein neues Fenster wie das in Abbildung 8.20b öffnen. 
 
 
-![Running GroupStats on the building layer](media/fig821.png "Running GroupStats on the building layer")
+![GroupStats-Fenster](media/fig820_b.png "GroupStats-Fenster")
 
-Figure 8.21 - Running GroupStats on the building layer. 
+Abbildung 8.20b - GroupStats-Fenster
 
-Looking at the result, we can extract important insights regarding our data. For example, for residential purposes in the Pampanga province, we have 3270 buildings with a total surface area built of 405937 square meters, approx. 40 hectares. We also find out that the largest has 1474 square meters as the smallest has 10 square meters. And one can continue the analysis for further valuable information. 
+Wie aus der zuvor durchgeführten Analyse hervorgeht, haben wir für den Layer Gebäude 113 verschiedene Gebäudetypen, aber wie viele sind es jeweils und wie groß ist die gesamte bebaute Fläche, die von jeder Kategorie eingenommen wird? Wie viel Fläche für Schulen, für Märkte, für Häuser? GroupStats kann uns helfen, diese Frage zu beantworten. Auf der rechten Seite des Fensters befindet sich das Bedienfeld, in dem wir auswählen, was wir berechnen wollen und wie die Daten angeordnet werden sollen. Folgen Sie per Drag&Drop der Anordnung in Abbildung 8.21 und drücken Sie dann auf "Calculate". 
 
-Another interesting analysis can be run on the roads vector layer. Figure 8.22 shows how to calculate the lengths of roads categorised by type of road (primary, residential, motorway etc.) and maximum speed allowed. 
+![GroupStats auf dem Gebäudelayer](media/fig821.png)
+
+Abbildung 8.21 - GroupStats auf dem Gebäudelayer 
+
+Wenn wir uns das Ergebnis ansehen, können wir wichtige Erkenntnisse über unsere Daten gewinnen. Zum Beispiel haben wir für Wohnzwecke (Schlüssel: apartment) 2316 Gebäude mit einer bebauten Gesamtfläche von 570459 Quadratmetern. Wir finden auch heraus, dass das größte 4900   Quadratmeter hat, während das kleinste 23 Quadratmeter hat. 
+
+Eine weitere interessante Analyse kann auf dem Straßen-Vektor Layer durchgeführt werden. Abbildung 8.22 zeigt, wie man die Längen von Straßen, kategorisiert nach Straßentyp (Hauptstraße, Wohnstraße, Autobahn usw.) und zulässiger Höchstgeschwindigkeit, berechnen kann. 
 
 
-![Running GroupStats on the roads layer](media/fig822.png "Running GroupStats on the roads layer")
+![GroupStats auf dem Straßenlayer](media/fig822.png)
 
-Figure 8.22 - Running GroupStats on the roads layer. 
+Abbildung 8.22 - GroupStats auf dem Straßenlayer 
 
 
-#### **Quiz questions**
+#### **Quizfragen**
 
-1. Is metadata important? 
-* _<span style="text-decoration:underline;">Yes, because it gives insight into the geographical data that otherwise one could not gain. </span>_
-* _No, it’s just bureaucracy. _
-2. Topology is relevant to the geometry or to the attribute table of a vector layer?
-* _to the geometry of the vector layer. _
-3. What is more important, the geometry or the attribute data? 
-* _Geometry._
-* _Attribute data._
-* _<span style="text-decoration:underline;">Both.</span>_
+1. Sind Metadaten wichtig? 
+  - <span style="text-decoration:underline;">Ja, denn sie geben einen Einblick in die geografischen Daten, den man sonst nicht erhalten könnte. </span>
+  - Nein, sie sind nur erweiterter Bürokratieaufwand
+2. Ist die Topologie relevant für die Geometrie oder für die Attributtabelle eines Vektorlayers?
+  - für die Geometrie der Vektorebene
+3. Was ist wichtiger, die Geometrie oder die Attributdaten? 
+  - Geometrie
+  - Attributdaten
+  - <span style="text-decoration:underline;">Beides.</span>
+
 
 
 ### Phase 2: Introduction into vector processing
