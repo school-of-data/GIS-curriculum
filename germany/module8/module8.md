@@ -519,178 +519,164 @@ Abbildung 8.28c - Ausführen des Voronoi-Algorithmus
 
 Abbildung 8.28d - Ergebnis des Voronoi-Algorithmus
 
-Sometimes, the necessities impose the requirement of having information in smaller, clearly defined and equal areas and not for an entire large region, such as a country or a big city. Therefore, the data needs to be analysed and visualised in a sliced, well-defined way, allowing comparison that otherwise could prove difficult without a ground common reference. 
+Manchmal ergibt sich die Anforderung, Informationen in kleineren, klar definierten und gleichen Bereichen zu haben und nicht für eine ganze große Region, wie ein Land oder eine Großstadt. Daher müssen die Daten in einer kleineren, klar definierten Weise analysiert und visualisiert werden, um Vergleiche zu ermöglichen, die sich sonst ohne eine gemeinsame Basisreferenz als schwierig erweisen könnten. 
 
-Let us assume that you have to present a report that will allow comparisons done for units of 10X10 km over the administrative unit, including: 
+Nehmen wir an, dass Sie einen Bericht vorlegen müssen, der Vergleiche für Einheiten von 10X10 km über die Verwaltungseinheit ermöglicht, einschließlich 
 
-1. density of green spaces (parks, forests) in report to the built-up space per unit;
-2. total length of streets for each unit;
-3. total length of waterways for each unit;
-4. total number of public buildings for each unit (schools, kindergartens, hospitals , town halls etc.).
+1. Dichte der Grünflächen (Parks, Wälder) im Bericht zur bebauten Fläche pro Einheit
+2. Gesamtlänge der Straßen für jede Einheit
+3. Gesamtlänge der Wasserwege für jede Einheit
+4. Gesamtzahl der öffentlichen Gebäude für jede Einheit (Schulen, Kindergärten, Krankenhäuser, Rathäuser usw.).
 
-We’ve seen that there are tools that can assist us in calculating the total surface occupied by a certain type of feature, however the first step is to create our 10X10 units - cell grids. To do that, go to: **Vector ‣ Research Tools ‣ Create grid..** Set the parameters to: 
-- Grid type - Rectangle (polygon)
-- Grid extent - Pampanga_admin_boundary layer
-- Horizontal spacing - 10 km
-- Vertical spacing - 10 km 
+Wir haben gesehen, dass es Werkzeuge gibt, die uns bei der Berechnung der Gesamtfläche, die von einer bestimmten Art von Merkmalen eingenommen wird, helfen können, aber der erste Schritt ist die Erstellung unserer 10X10-Einheiten - Zellgitter. Um das zu tun, gehen Sie zu: **Vektor ‣ Forschungswerkzeuge ‣ Gitter erstellen..** Stellen Sie die Parameter auf: 
+- Gittertyp - Rechteck (Polygon)
+- Rasterausdehnung - "... > aus Layer berechnen > Mittelsachsen"
+- Horizontaler Abstand - 10 km
+- Vertikaler Abstand - 10 km 
 
 
-![Creating a 10X10km vector grid for the Pampanga province](media/fig829_a.png "Creating a 10X10km vector grid for the Pampanga province")
+![Erstellen eines 10X10km-Vektorgitters](media/fig829_a.png "Erstellen eines 10X10km-Vektorgitters")
 
-Figure 8.29a - Create 10kmx10km vector grid for Pampanga province
+Abbildung 8.29a - Erstellen eines 10kmx10km-Vektorgitters
 
-You should get a result like in figure 8.29b. 
+Sie sollten ein Ergebnis wie in Abbildung 8.29b erhalten. 
 
 
-![10X10km vector grid for the Pampanga province](media/fig829_b.png "10X10km vector grid for the Pampanga province")
+![10X10km Vektorgitter](media/fig829_b.png "10X10km Vektorgitter")
 
-Figure 8.29b - 10X10km vector grid for the Pampanga province
+Abbildung 8.29b - 10X10km-Vektorgitter
 
-Going further in answering the questions in our exercise, we need to do the following:
+Zur weiteren Beantwortung der Fragen in unserer Übung müssen wir Folgendes tun:
 
-1. green spaces (parks, forests) built-up space per unit ratio:
+1. Verhältnis von Grünflächen (Parks, Wälder) und bebauter Fläche pro Einheit:
 
-Green spaces and built-up spaces is data contained by the landuse vector layer, polygon type. To know exactly what are the ‘green spaces’ we need to see what are the categories enclosed in the dataset. For that, we run **List unique values** algorithm on the `fclass` attribute and find out that we have the following ‘green’ classes: meadow, grass, nature_reserve, park, forest and the following ‘built-up space’ classes: retail, commercial, industrial,  residential.  Figure 8.30b presents a visualisation of our selections: 
+Grünflächen und bebaute Flächen sind Daten, die im Landnutzungs-Layer enthalten sind. Um genau zu wissen, was die "Grünflächen" sind, müssen wir sehen, welche Kategorien im Datensatz enthalten sind. Dazu führen wir den Algorithmus **Eindeutige Werte auflisten** auf das Attribut "fclass" aus und finden heraus, dass wir die folgenden Grünflächen vorfinden: 'recreation_ground', 'meadow', 'grass', 'nature_reserve', 'orchard', 'park', 'forest', 'farmland', 'vineyard', 'cemetery', 'scrub', 'heath'. Außerdem finden wir die folgenden bebauten Flächen: 'farmyard', 'residential', 'industrial', 'commercial', 'allotments', 'retail'.
+Abbildung 8.30b zeigt eine Visualisierung unserer Selektionen: 
 
-![Filtering green areas and built-up space in Pampanga](media/fig830_a.png "Filtering green areas and built-up space in Pampanga ")
 
-Figure 8.30a - Filtering green areas and built-up space in Pampanga 
+![Räumliche Verteilung der Grünflächen und bebauten Flächen](media/fig830_b.png)
 
+Abbildung 8.30b - Räumliche Verteilung der Grünflächen und bebauten Flächen (zufällige Farben)
 
-![Spatial distribution of the green areas and built-up space in Pampanga](media/fig830_b.png "Spatial distribution of the green areas and built-up space in Pampanga")
+Der zweite Schritt zur Beantwortung der Anforderung besteht darin, zu ermitteln, wie viel Grünfläche und wie viel bebaute Fläche es in jedem 10X10 km gibt. Dazu werden die beiden überlagerten Polygon-Vektor-Layer **vereinigt**. Der Algorithmus extrahiert die überlappenden Teile der Features im Input - dem Landuse Layer und dem Overlay Layer - dem Grid Layer. Gehen Sie zu **Vektor - Geoverarbeitungswerkzeuge - Vereinugngen**. Stellen Sie die Algorithmusparameter wie in Abbildung 8.31 ein. Stellen Sie im anschluss die Symbolisierung für den neuen Layer wie im Screenshot weiter unten zu sehen ein.
 
-Figure 8.30b - Spatial distribution of the green areas and built-up space in Pampanga 
 
-The second step to answer the requirement, is to identify how much green space and how much built-up space there is in each 10X10 km. To obtain that we will **intersect** the 2 overlaid polygon vector layers. The algorithm extracts the overlapping portions of features in the Input - the landuse layer and Overlay layer - the grid layer. Go to **Vector - Geoprocessing Tools - Intersection** or look for **Intersection in the Processing Toolbox or Locator Bar** Set the algorithm parameters as in figure 8.31.
+![Parameter für den Vereinugngen-Algorithmus](media/fig831.png)
 
+Abbildung 8.31 -  Parameter für den Vereinugngen-Algorithmus
 
-![Parameters for the intersect algorithm](media/fig831.png "Parameters for the intersect algorithm")
+Das Ergebnis sollte wie in Abbildung 8.32 aussehen.
 
-Figure 8.31 - Parameters for the intersect algorithm
+![Ergebnis der Ausführung des Vereinigungen-Algorithmus](media/fig832.png")
 
-The result should look like in figure 8.32.
+Abbildung 8.32 - Ergebnis der Ausführung des Vereinigungen-Algorithmus
 
-![Result of running the intersection algorithm to clip the landuse vector polygons to the grid layer](media/fig832.png "Result of running the intersection algorithm to clip the landuse vector polygons to the grid layer")
+Jetzt haben wir für jede 10X10 km Einheit die Landnutzungsmerkmale, mit denen wir arbeiten können. Die Attributtabelle speichert auch diese Informationen, da jede Gitterzelle eine eindeutige ID hat, siehe Abbildung 8.33. 
 
-Figure 8.32 - Result of running the intersection algorithm to clip the landuse vector polygons to the grid layer. 
+![Landnutzungsmerkmale, die für jede Rasterzelle ausgeschnitten wurden, und die zugehörige Attributtabelle. ](media/fig833.png)
 
-Now for each 10X10 km unit, we have the landuse features that we can work with. The attribute table also stores this information, as each grid cell - unit - has a unique id, see figure 8.33. 
+Abbildung 8.33 - Landnutzungsmerkmale, die für jede Rasterzelle ausgeschnitten wurden, und die zugehörige Attributtabelle. 
 
+Nachdem wir nun alle Landnutzungsmerkmale pro 10X10 km Einheit haben, fahren wir damit fort, die Geometrien derjenigen zu trennen, die die Grünfläche und die bebaute Fläche ausmachen, wie zuvor definiert - für jede Rasterzelle.  So werden wir für die Grünfläche alle Features auswählen, die folgende Attributwert für "fclass" haben: 'recreation_ground', 'meadow', 'grass', 'nature_reserve', 'orchard', 'park', 'forest', 'farmland', 'vineyard', 'cemetery', 'scrub', 'heath'. Erstellen Sie dafür folgenden Ausdruck in der Attributstabelle eingeben: `"fclass" in ('recreation_ground', 'meadow', 'grass', 'nature_reserve', 'orchard', 'park', 'forest', 'farmland', 'vineyard', 'cemetery', 'scrub', 'heath')`. Exportieren Sie die ausgewählten Features als grünflächen-gitter (siehe Modul 6 für weitere Details). Vergessen Sie nicht, das Häkchen bei **Nur ausgewählte Merkmale speichern** zu setzen. Die neue Ausgabe sollte 25871 Objekte enthalten. Machen Sie dasselbe für die bebaute Fläche. Wählen Sie die Features in landuse aus, die den Attributwert für `fclass` wie folgt haben: 'farmyard', 'residential', 'industrial', 'commercial', 'allotments', 'retail'. Ihre neue Ausgabe sollte 5570 Features enthalten. 
 
-![Landuse features clipped per each grid cell and it's associated attribute table](media/fig833.png "Landuse features clipped per each grid cell and it's associated attribute table")
+Alternativ können Sie auch einen Filter anstelle einer Auswahl verwenden.
 
-Figure 8.33 - Landuse features clipped per each grid cell and it's associated attribute table. 
 
-Now, that we have all landuse features per 10X10 km unit, we will continue with separating the geometries of the ones that make up the green space and built-up space as defined earlier - for each grid cell.  Thus, for green space, we will select all features that have the attribute value for `fclass: `meadow, grass, nature_reserve, park, forest. In attribute table, in the expression filed write down: ` "fclass" =  'meadow' or  "fclass" =  'grass' or  "fclass" =  'nature_reserve' or  "fclass" =  'park' or  "fclass"  =  'forest'`. Similarly, you can just type: `"fclass" in ('meadow', 'grass', 'nature_reserve', 'park', 'forest')`. Export the selected features as green_spaces_gridded  (see module 6 for more details). Don't forget to check **Save only selected features**. The new output should have 621 features. Do the same for the built-up space. Select the features in landuse that have the attribute value for `fclass` the following: retail, commercial, industrial,  residential, by writing the following expression in the Expression based filter window: `"fclass" =  'retail' or  "fclass" =  'commercial' or  "fclass" =  'industrial' or  "fclass" =  'residential'.` Select the filtered geometries and export as builtup_spaces_gridded. Your new output should have 3849 features. 
+![Auswahl der Grünflächen](media/fig834_a.png "Auswahl der Grünflächen")
 
-Alternatively, you can also use a filter instead of a selection.
+Bild 8.34a - Auswählen der Grünflächen.
 
 
-![Selecting the green spaces](media/fig834_a.png "Selecting the green spaces")
+![Ausgewählte Grünflächen](media/fig834_b.png "Ausgewählte Grünflächen")
 
-Figure 8.34a - Selecting the green spaces.
+Abbildung 8.34b - Ausgewählte Grünflächen.
 
 
-![Selected green spaces](media/fig834_b.png "Selected green spaces")
+![Grün- und bebaute Flächen](media/fig834_c.png "Grün- und bebaute Flächen")
 
-Figure 8.34b - Selected green spaces.
+Abbildung 8.34c - Grünflächen und bebaute Flächen.
 
+Berechnen Sie als nächstes die Fläche, die von jedem Merkmal der 2 Layer eingenommen wird. Gehen Sie in die Attributtabelle jedes Layers und fügen Sie dann die geometrische Spalte Fläche hinzu, indem Sie den Ausdruck `round($area,2) ` in den Feldrechner einfügen.  (siehe Modul 6 für Details, falls erforderlich). Das 10X10km-Gitter hat jedoch eine bekannte Anzahl von Gitterzellen, und zwar 56. Daher müssen wir die Flächen für alle Arten von Grünflächen (Wälder, Parks etc.) und bebauten Flächen (Gewerbe, Wohnen etc.) zusammenfassen und entsprechend zu allen 56 Gitterzellen verbinden. Dazu werden wir das Plugin **GroupStats** verwenden, um für jede grid_id alle Grünkategorien bzw. alle bebauten Kategorien zusammenzufassen. Für den Layer grünflächen-gitter stellen Sie die Parameter wie in Abbildung 8.34e ein. 
 
-![Green and Built-up spaces](media/fig834_c.png "Green and Built-up spaces")
+![Berechnung der Fläche jedes Objekts](media/fig834_d.png)
 
-Figure 8.34c - Green and Built-up spaces.
+Abbildung 8.34d - Berechnung der Fläche jedes Objekts.
 
-Next, calculate the area occupied by each feature of the 2 layers. Go to the attribute table of each layer and then add the geometric column area by inserting the expression `round($area,2) `in the field calculator.  (see module 6 for details, if needed). However, the 10X10km grid of the Pampanga province has a known number of grid cells, and that is 42. Therefore, we need to summarise the areas for all types of green spaces (forests, parks etc.) an built-up spaces (commercial, residential etc.) and join it accordingly to all of the 42 grid cells. To do this, we will use the **GroupStats** plugin to sum up for each grid_id all the green categories, respectively all the built-up categories. For the green_spaced_gridded vector layer, set the parameters as in figure 8.34e. 
+![GroupStat-Parameter zum Aufsummieren der Grünflächen pro jede 10X10km-Zelle](media/fig834_e.png)
 
+Abbildung 8.34e - GroupStat-Parameter zum Aufsummieren der Grünflächen pro jede 10X10km-Zelle
 
-![Computing the area of each feature](media/fig834_d.png "Computing the area of each feature")
+Speichern Sie anschließend die Ergebnisse als .csv-Datei mit dem Namen "grünflächen-gitter". Gehen Sie zu **Data ‣ Save all to CSV file.**
 
-Figure 8.34d - Computing the area of each feature.
+Führen Sie GroupStats für die bebaute Fläche auf die gleiche Weise aus und speichern Sie die Ergebnisse als CSV-Datei unter dem Namen "bebaute-flächen-gitter".
 
-![GroupStat parameters setup to sum up the green areas per each 10X10km grid cell](media/fig834_e.png "GroupStat parameters setup to sum up the green areas per each 10X10km grid cell")
+Als nächstes bringen wir die 2 mit GroupStat berechneten csv-Dateien in QGIS (**Layer ‣ Layer hinzufügen ‣ Getrennte Textdatei als Layer hinzufügen** - siehe mehr Details in Modul 2). 
 
-Figure 8.34e - GroupStat parameters setup to sum up the green areas per each 10X10km grid cell.
 
-Afterwards, save the results as a .csv file named `green_spaces_gridded`. Go to **Data ‣ Save all to CSV file.**
+![Laden von grünflächen-gitter.csv](media/fig835_a.png)
 
-Run GroupStats for the built-up space in the same manner and then save it as a csv file named `builtup_spaces_gridded`.
+Abbildung 8.35a - Laden von grünflächen-gitter.csv
 
-Next, we will bring the 2 csv files calculated with GroupStat into QGIS  (**Layer ‣ Add layer ‣ Add delimited text layer** - see more details in module 2). 
+![Die grünflächen-gitter CSV Attributtabelle](media/fig835_b.png)
 
+Abbildung 8.35b - Die grünflächen-gitter CSV Attributtabelle
 
-![Loading green_spaces_gridded CSV](media/fig835_a.png "Loading green_spaces_gridded CSV")
+Als nächstes müssen wir die berechneten Flächen - grün und bebaut - mit jedem 10X10 km-Zellenraster verbinden. Wählen Sie dazu den Gitter -Layer, öffnen Sie das Eigenschaftsfenster und gehen Sie auf **Verbindungen**. Diese Funktionalität erlaubt es Ihnen, über ein gemeinsames Attributfeld, andere zu verbinden. In unserem Fall werden wir über den gemeinsamen grid_id-Wert die Summe der bebauten Flächen und der Grünflächen aus den 2 csv-Dateien verbinden, die wir im vorherigen Schritt erhalten haben.
 
-Figure 8.35a - Loading green_spaces_gridded CSV
+Klicken Sie im Fenster **Verknüpfungen** auf die grüne Plus-Schaltfläche ![](media/add_join_btn.png) und stellen Sie die Parameter wie in Abbildung 8.35, für Grünflächen, ein.
 
 
-![The green_spaces_gridded CSV attribute table](media/fig835_b.png "The green_spaces_gridded CSV attribute table")
+![Einstellungen um über eine Verkünpfung der Felder grid_id und id die Grünflächngröße zu den Gitterzellen hinzuzufügen](media/fig835_c.png)
 
-Figure 8.35b - The green_spaces_gridded CSV attribute table
+Abbildung 8.35c - Einstellungen um über eine Verkünpfung der Felder grid_id und id die Grünflächngröße zu den Gitterzellen hinzuzufügen
 
-Moving forward, we need to join the calculated spaces - green and built-up - to each 10X10 km cell grid. For that, select the grid10km vector layer in the TOC, open the properties window and go to **Joins**. This functionality allows you to join by a common attribute field, others. In our case, using the common grid_id value we will join, the sum of the built-up areas and green spaces fro the 2 csv files obtained in the previous stage.
+Wiederholen Sie den Vorgang für bebaute Flächen. 
 
-In the **Join** window, push on the green plus button below ![Add join layer button](media/add_join_btn.png "Add join layer button") and set the parameters like in figure 8.35, for green spaces.
+Die Ergebnisse der beiden Verknüpfungen sind in der Attributtabelle sichtbar, wie in Abbildung 8.36_b zu sehen ist. Wir haben die grid_id in beiden Joins beibehalten, um sicherzugehen, dass keine Fehler aufgetreten sind. Wir können visuell schnell überprüfen, ob die 3 Attributfelder: id, grünflächen_id und bebaute-flächen_id genau gleich sind. 
 
+![Verknüpfungseinstellungen ](media/fig836_a.png)
 
-![Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit](media/fig835_c.png "Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit")
+Abbildung 8.36a - Verknüpfungseinstellungen
 
-Figure 8.35c - Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit.
+![Flächen in der Gitter-Attributtabelle](media/fig836_b.png")
 
-Repeat for built-up spaces. 
+Abbildung 8.36b - Flächen in der Gitter-Attributtabelle 
 
-The results of the two joins are visible in the attribute table, as can be seen in figure 8.36_b. We have kept the grid_id in both joins, to be sure no mistakes occurred. We can visually quickly check to make sure the 3 attribute fields: id, builtupgrid_id and greengrid_id are exactly the same. 
 
-
-![Green and built-up CSV joined to Grid](media/fig836_a.png "Green and built-up CSV joined to Grid")
-
-Figure 8.36a - Green and built-up CSV joined to Grid. 
-
-
-![Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces](media/fig836_b.png "Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces")
-
-Figure 8.36b - Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces. 
-
-
-As we have gathered all the needed information for green and built-up spaces in the attribute table of the grid layer, all we need to do is calculate the percentage of these spaces within the 10X10 km grid cell. We will calculate it using the field calculator, using the following expression: `round(100*green_None/100000000, 5)` and `round(100*builtup_None/100000000, 5).` Next, we add a new field in which we calculate the report of the GreenPre/BuilupPer, and thus reaching the answer to our request: green spaces (parks, forests) built-up space per unit ratio: `round( "greenPer" / "builtupPer" , 5).` To have a clear overview of our dataset, in cases where there is no built-up space in the grid cell - we insert the value 1000 in the attribute table, in cases where there is no green space, we will insert value 999, while in case both values are NULL then we insert 1001.  For this we can use the expression:
+Da wir alle benötigten Informationen für Grün- und bebaute Flächen in der Attributtabelle des Gitter-Layers gesammelt haben, müssen wir nur noch den prozentualen Anteil dieser Flächen innerhalb der 10X10 km Rasterzelle berechnen. Wir berechnen ihn mit Hilfe des Feldrechners, indem wir folgenden Ausdruck verwenden: `round("grünfläche_None" / (10 * 1000 * 10 * 1000), 2)` und `round("bebaute-fläche_None" / (10 * 1000 * 10 * 1000), 2)` Als nächstes fügen wir ein neues Feld hinzu, in dem wir den Bericht der Grünfläche/Bebauungsfläche berechnen und so die Antwort auf unsere Anfrage erreichen: Grünflächen (Parks, Wälder) bebaute Fläche pro Einheitsverhältnis. An sich könnten wir das erreichen mit `round("grünfläche_prozent" / "bebaute-fläche_prozent" , 5). Um einen klaren Überblick über unseren Datensatz zu haben, fügen wir in den Fällen, in denen es keine bebaute Fläche in der Gitterzelle gibt, den Wert 1000 in die Attributtabelle ein, in den Fällen, in denen es keine Grünfläche gibt, fügen wir den Wert 999 ein, während wir im Falle, dass beide Werte NULL sind, 1001 einfügen.  Hierfür können wir den Ausdruck verwenden:
 
 ```
 CASE 
-WHEN (greenPer is NULL) and (builtupPer is not NULL) then 999
-WHEN (builtupPer is NULL) and (greenPer is not NULL) then 1000
-WHEN (greenPer is NULL) and (builtupPer is NULL) then 1001
-ELSE round(greenPer / builtupPer, 5)
+WHEN ("grünflächen_prozent" is NULL) and ("bebaute-fläche_prozent" is not NULL) then 999
+WHEN ("bebaute-fläche_prozent" is NULL) and ("grünflächen_prozent" is not NULL) then 1000
+WHEN ("grünflächen_prozent" is NULL) and ("bebaute-fläche_prozent" is NULL) then 1001
+ELSE round("grünflächen_prozent" / "bebaute-fläche_prozent", 5)
 END
 ```
 
-The final result would look like in figure 8.37e. 
+Das Endergebnis würde wie in Abbildung 8.37e aussehen. 
+
+![Prozentsatz der grünen Fläche im 10km x 10km-Raster](media/fig837_a.png "Prozentsatz der grünen Fläche im 10km x 10km-Raster")
+
+Abbildung 8.37a - Prozentualer Anteil der Grünfläche im 10km x 10km-Raster
 
 
-![Percentage of green area in the 10km x 10km grid](media/fig837_a.png "Percentage of green area in the 10km x 10km grid")
+![Berechnung für das Verhältnis von Grün- und bebauter Fläche](media/fig837_c.png "Berechnung für das Verhältnis von Grün- und bebauter Fläche")
 
-Figure 8.37a - Percentage of green area in the 10km x 10km grid
-
-
-![Computed percentage of green and built-up area](media/fig837_b.png "Computed percentage of green and built-up area")
-
-Figure 8.37b - Computed percentage of green and built-up area
+Abbildung 8.37c - Berechnung für das Verhältnis von Grün- und bebauter Fläche
 
 
-![Computing for the ratio of green and built-up areas](media/fig837_c.png "Computing for the ratio of green and built-up areas")
+![Berechnetes Verhältnis von Grün- und bebauter Fläche](media/fig837_d.png "Berechnetes Verhältnis von Grün- und bebauter Fläche")
 
-Figure 8.37c - Computing for the ratio of green and built-up areas
-
-
-![Computed ratio of green and built-up areas](media/fig837_d.png "Computed ratio of green and built-up areas")
-
-Figure 8.37d - Computed ratio of green and built-up areas
+Abbildung 8.37d - Berechnetes Verhältnis von Grün- und bebauter Fläche
 
 
-![Ratio of green and built-up areas in the 10km x 10km grid](media/fig837_e.png "Ratio of green and built-up areas in the 10km x 10km grid")
+![Verhältnis von Grün- und bebauten Flächen im 10km x 10km Raster](media/fig837_e.png "Verhältnis von Grün- und bebauten Flächen im 10km x 10km Raster")
 
-Figure 8.37e - Ratio of green and built-up areas in the 10km x 10km grid
+Abbildung 8.37e - Verhältnis von Grünflächen und bebauten Flächen im 10km x 10km-Raster
 
 
-2. total length of streets and waterways for each unit;
+#### 2. total length of streets and waterways for each unit;
 
 To accomplish this task, QGIS offers an algorithm that takes a polygon layer and a line layer and measures the total length of lines and the total number of them that cross each polygon. The resulting layer has the same features as the input polygon layer, but with two additional attributes containing the length and count of the lines across each polygon. Go to **Analysis Tools - Sum Line Lengths** and set the parameters as follows: 
 - polygons - Grid
