@@ -15,13 +15,13 @@ Am Ende dieses Moduls sollten Sie ein grundlegendes Verständnis für die folgen
 * Geodatenanalyse
 * Geostatistik
 * Topologie
-* Geoprocessing
+* Geoverarbeitung
 
 Außerdem erwerben Sie die folgenden Fähigkeiten:
 
 * Qualitätskontrolle von geometrischen Vektordatensätzen mit Algorithmen zur Überprüfung der Vektordatentopologie und Durchführung grundlegender automatischer Korrekturen
 * Arbeiten mit Algorithmen zur Identifizierung von Fehlern in der Attributtabelle
-* Vektordatenverarbeitung - Ausführen einfacher Geoprocessing-Algorithmen zur Beantwortung möglicher Anforderungen, z. B. wie viele öffentliche Gebäude gibt es in meiner Verwaltungsregion?
+* Vektordatenverarbeitung - Ausführen einfacher Geoverarbeitungsalgorithmen zur Beantwortung möglicher Anforderungen, z. B. wie viele öffentliche Gebäude gibt es in meiner Verwaltungsregion?
 * Vektordatenverarbeitung - Verwendung von Geostatistik-Algorithmen zum Auffüllen fehlender Daten. 
 
 
@@ -110,7 +110,7 @@ Obwohl GIS meist eng mit Karten assoziiert wird, die einfach nur geografische In
 
 GIS-Software bietet Funktionalitäten, die es erlauben, relevante Topologieregeln zu definieren, sowie Algorithmen, um zu prüfen, ob sie zutreffen, und um den Vektor-Layer zu bereinigen, wenn Inkonsistenzen festgestellt werden. 
 
-Geoprocessing ist ein allgemeiner Begriff, der alle Operationen - Prozesse - definiert, die auf einen geografischen Datensatz angewendet werden, mit dem Ziel, einen abgeleiteten Datensatz zu erhalten, der neue Erkenntnisse über die Daten ermöglicht. Übliche Geoprocessing-Operationen sind die Überlagerung von geografischen Merkmalen, die Auswahl und Analyse von Merkmalen, die Topologieverarbeitung und die Datenkonvertierung. Geoprocessing ermöglicht es, geografische Informationen zu definieren, zu verwalten und zu analysieren, um die Entscheidungsfindung zu unterstützen. 
+Geoverarbeitung ist ein allgemeiner Begriff, der alle Operationen - Prozesse - definiert, die auf einen geografischen Datensatz angewendet werden, mit dem Ziel, einen abgeleiteten Datensatz zu erhalten, der neue Erkenntnisse über die Daten ermöglicht. Übliche Geoverarbeitungsperationen sind die Überlagerung von geografischen Merkmalen, die Auswahl und Analyse von Merkmalen, die Topologieverarbeitung und die Datenkonvertierung. Geoverarbeitung ermöglicht es, geografische Informationen zu definieren, zu verwalten und zu analysieren, um die Entscheidungsfindung zu unterstützen. 
 
 
 TODO
@@ -446,83 +446,78 @@ Abbildung 8.22 - GroupStats auf dem Straßenlayer
 
 
 
-### Phase 2: Introduction into vector processing
+### Teil 2: Einführung in die Vektorverarbeitung
 
-First phase of the vector module made a brief introduction into the steps that one should make to have a basic understanding of the geospatial data they have at hand. 
+Der erste Teil des Vektormoduls gab eine Einführung in die Schritte, die ein grundlegendes Verständnis für die vorliegenden Geodaten schaffen können. 
 
-This second phase of the module leads you into a more in depth work to process vector data in order to extract valuable insights to assist decision making. Following the concepts described at the beginning of this module, geoprocessing represents any process applied to a geographical dataset, with the scope of obtaining a derived dataset opening new insights on the data. And this is what we will attempt to do in the following. 
+Dieser zweite Teil des Moduls führt Sie in eine tiefergehende Arbeit zur Verarbeitung von Vektordaten ein, um wertvolle Erkenntnisse für die Entscheidungsfindung zu gewinnen. In Anlehnung an die zu Beginn dieses Moduls beschriebenen Konzepte stellt Geoverarbeitung jeden Prozess dar, der auf einen geografischen Datensatz angewendet wird, mit dem Ziel, einen abgeleiteten Datensatz zu erhalten, der neue Erkenntnisse über die Daten eröffnet. Und genau das werden wir im Folgenden tun. 
 
-There are many operations that can be performed on one or more geospatial datasets and during this first step, we will run some of the most common ones to understand how they operate. 
+Es gibt viele Operationen, die auf einen oder mehrere Geodatensätze angewendet werden können, und in diesem ersten Schritt werden wir einige der gängigsten ausführen, um zu verstehen, wie sie funktionieren. 
 
-**Buffer.** Imagine that you need to analyse a new piece of legislation that asks that on an area of 500 meters around places of worship there can be no other construction built. You would want to see where exactly those delinations are and maybe even how many square meters that is for your district. First step is to define a buffer around the places of worship: **Vector ‣ geoprocessing tools ‣ Buffer**. When the buffer window opens, set the parameters like in figure 8.23: 
-
-
-![Setting the parameters for a 500 m buffer around the places of worship](media/fig823.png "Setting the parameters for a 500 m buffer around the places of worship")
-
-Figure 8.23 - Setting the parameters for a 500 m buffer around the places of worship
-
-A detail of the result of the geoprocessing is depicted in figure 8.24: 
+**Puffer**: Stellen Sie sich vor, Sie müssen ein neues Gesetz analysieren, das vorschreibt, dass in einem Umkreis von 500 Metern um Gotteshäuser keine weiteren Gebäude errichtet werden dürfen. Sie würden sehen wollen, wo genau diese Abgrenzungen sind und vielleicht sogar, wie viele Quadratmeter das für Ihren Bezirk sind. Der erste Schritt besteht darin, einen Puffer um die Gotteshäuser zu definieren: **Vektor ‣ Geoverarbeitsungswerkzeuge ‣ Puffer**. Wenn sich das Pufferfenster öffnet, stellen Sie die Parameter wie in Abbildung 8.23 ein: 
 
 
-![Running buffer on a point vector layer](media/fig824.png "Running buffer on a point vector layer")
+![Einstellen der Parameter für einen 500 m Puffer um Gotteshäuser](media/fig823.png)
 
-Figure 8.24 - Running buffer on a point vector layer
+Abbildung 8.23 - Einstellen der Parameter für einen 500 m Puffer um Gotteshäuser
 
-To completely answer the initial question, the next step is to calculate the areas for all buffers and sum them up (see Phase 1, step 4) - figure 8.25. 
+Ein Detail des Ergebnisses der Geoverarbeitung ist in Abbildung 8.24 dargestellt: 
 
+![Ergebnis der Pufferberechnung](media/fig824.png)
 
-![Calculate area for the newly obtained layer, then calculate using GroupStats the total sum](media/fig825.png "Running buffer on Calculate area for the newly obtained layer, then calculate using GroupStats the total sum point vector layer")
+Abbildung 8.24 - Ergebnis der Pufferberechnung
 
-Figure 8.25 - Calculate area for the newly obtained layer, then calculate using GroupStats the total sum.
+Um die Ausgangsfrage vollständig zu beantworten, müssen im nächsten Schritt die Flächen für alle Puffer berechnet und aufsummiert werden (siehe Teil 1, Schritt 4) - Abbildung 8.25. 
 
-**Clip.** Imagine you want to know where all the industrial delineated areas are in your district and also how many buildings are within that perimeter. Visual inspecting your vector data, you notice that you have a number of industrial areas that contain several buildings. You want to separate those buildings and to use them further. First step is to select all features in the landuse layer that have as attribute industrial (see module 6 for how to do that). Afterwards, you go to **Vector ‣ Geoprocessing tools ‣ Clip** and choose as the layer to be clipped buildings_cleaned. Your results should look like in figure 8.27b. 
+![Fläche für den neu erhaltenen Layer, mit GroupStats berechnet](media/fig825.png)
 
+Abbildung 8.25 - Fläche für den neu erhaltenen Layer, mit GroupStats berechnet
 
-![Figure 8.26a - Select landuse fclass = industrial](media/fig826_a.png "Figure 8.26a - Select landuse fclass = industrial")
+**Zuschneiden**: Stellen Sie sich vor, Sie möchten wissen, wo sich alle abgegrenzten Industriegebiete in Ihrem Bezirk befinden und auch, wie viele Gebäude sich innerhalb dieses Gebiets befinden. Bei der visuellen Inspektion Ihrer Vektordaten stellen Sie fest, dass Sie eine Reihe von Industriegebieten haben, die mehrere Gebäude enthalten. Sie möchten diese Gebäude abgrenzen und weiter verwenden. Als ersten Schritt wählen Sie alle Features im Landnutzungs-Layer aus, die als Attribut Industrie haben (siehe Modul 6, wie das geht). Anschließend gehen Sie auf **Vektor ‣ Geoverarbeitungswerkzeuge ‣ Zuschneiden** und wählen als zu zuzuschneidenen Layer building-bereinigt. Ihr Ergebnis sollte wie in Abbildung 8.27b aussehen. 
 
-Figure 8.26a - Select landuse fclass = industrial. 
+![Auswahl der Flächennutzung fclass = industrial](media/fig826_a.png)
 
+Abbildung 8.26a - Auswahl der Flächennutzung fclass = industrial. 
 
-![Reduced selection of a few buildings and industrial landuse, so the computation can finish faster](media/fig826_b.png "Reduced selection of a few buildings and industrial landuse, so the computation can finish faster")
+![Ausgewählte Industrieflächen](media/fig826_b.png)
 
-Figure 8.26b - Reduced selection of a few buildings and industrial landuse, so the computation can finish faster. 
+Abbildung 8.26b - Ausgewählte Industrieflächen 
 
-Run the Clip algorithm. Make sure to check **Selected features only** box for the Overlay layer (landuse). This will ensure that only the currently selected features will be used for clipping and speed up the computations.
+Führen Sie den Zuschneiden-Algorithmus aus. Stellen Sie sicher, dass das Kontrollkästchen **Nur ausgewählte Features** für den Overlay Layer (landuse) aktiviert ist. Dadurch wird sichergestellt, dass nur die aktuell ausgewählten Features für das Zuschneidenping verwendet werden und die Berechnungen beschleunigt werden.
 
+![Ausführen des Zuschneiden-Algorithmus](media/fig827_a.png)
 
-![Running the Clip algorithm](media/fig827_a.png "Running the Clip algorithm")
+Abbildung 8.27a - Ausführen des Zuschneiden-Algorithmus
 
-Figure 8.27a - Running the Clip algorithm
+Nach der Ausführung des Algorithmus sollten Ihre Ergebnisse wie in Abbildung 8.27b aussehen. Die beschnittenen Gebäude sind grün eingefärbt (die Farbe kann bei Ihnen wie immer eine andere sein). Wie viele Industriegebäude bleiben über und wie groß ist deren Gesamtfläche? 
 
-After running the algorithm, your results should look like in figure 8.27b. The clipped buildings are colored in green (might be different on your machince). How many industrial buildings have you clipped and what is their total area? 
+![Ergebnis der Zuschneiden-Funktionalität](media/fig827_b.png)
 
-![Results of the clip functionality](media/fig827_b.png "Results of the clip functionality")
+Abbildung 8.27b - Ergebnis der Zuschneiden-Funktionalität
 
-Figure 8.27b - Results of the clip functionality
+**Thiessen (Voronoi)-Polygone**: Stellen Sie sich vor, Sie müssen eine Reihe von Verwaltungsentscheidungen in Ihrem Bezirk treffen, die darauf basieren, wie viele Schulen es gibt und welche spezifischen Bereiche sie bedienen. Eine raumbezogene Analyse kann dabei hilfreich sein. Sie können damit beginnen, die Thiessen-Polygone zu berechnen. Ausgehend von einer Fläche, die mindestens zwei Punkte enthält, ist ein Thiessen-Polygon eine 2-dimensionale Form, deren Grenzen den gesamten Raum enthalten, der näher an einem Punkt innerhalb der Fläche liegt als an jedem anderen Punkt außerhalb der Fläche. Ein gutes Anwendungsbeispiel ist die Meteorologie, wo Wetterstationen diskrete Punkte sind, die gesammelten Informationen aber als auf der Fläche gemessen gelten, basierend auf den Thiessen-Polygonen. 
 
-**Thiessen (Voronoi) polygons.** Imagine you have to make a series of administrative decisions in your district based on how many schools there are and what specific areas they serve. Geospatial analysis can be of assistance. You can start by calculating the Thiessen polygons. Based on an area containing at least two points, a Thiessen Polygon is a 2-dimensional shape which boundaries contain all space which is closer to a point within the area than any other point without the area. A good use example is in meteorology, where weather stations are discrete points, yet the information collected is considered to be measured out on the surface based on the thiessen polygons. 
-
-To respond to the above question, we will run the algorithm only for points that have the attribute school at type. Thus, make the selection as instructed in module 6. You should have 88 features selected on layer pois_cleaned. Go to **Vector ‣ Geometry Tools ‣ Voronoi Polygons..** After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Pampanga province is contained, you should see a result like in figure 8.28d. 
-
-
-![Filtering the poi layer to get all schools](media/fig828_a.png "Filtering the poi layer to get all schools")
-
-Figure 8.28a - Filtering the poi layer to get all schools
+Um die obige Frage zu beantworten, werden wir den Algorithmus nur für Punkte ausführen, die das Attribut Schule am Typ haben. Nehmen Sie also die Auswahl wie in Modul 6 beschrieben vor. Sie sollten 88 Features auf dem Layer pois_cleaned ausgewählt haben. Gehen Sie zu **Vektor ‣ Geometrie-Werkzeuge ‣ Voronoi-Polygone..** Nachdem Sie die Parameter eingestellt haben - wählen Sie den Punkt-Layer, für den die Voronoi-Polygone berechnet werden sollen, und eine 30-prozentige Erweiterung, so dass die gesamte Provinz Pampanga enthalten ist, sollten Sie ein Ergebnis wie in Abbildung 8.28d sehen. Sollten Sie dabei die Fehlermeldung bekommen, dass die Funktion nur auf Objekte des Typs "Point" und nicht "Multipoint" angewandt werden kann, wählen sie "Vektor > Gemoetrie-Werkzeuge > Mehr- zu eindeutig" und wenden sie den Voronoi-Algorithmus auf den neuen Layer an.
 
 
-![All schools in the poi layer](media/fig828_b.png "All schools in the poi layer")
+![Filtern des POI-Layer nach Schulen](media/fig828_a.png)
 
-Figure 8.28b - All schools in the poi layer
-
-
-![Running the Voronoi polygon algorithm](media/fig828_c.png "Running the Voronoi polygon algorithm")
-
-Figure 8.28c - Running the Voronoi polygon algorithm
+Abbildung 8.28a - Filtern des POI-Layer nach Schulen
 
 
-![Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer](media/fig828_d.png "Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer")
+![Schulen im POI-Layer](media/fig828_b.png)
 
-Figure 8.28d - Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer
+Abbildung 8.28b - Schulen im POI-Layer
+
+
+![Ausführen des Voronoi-Algorithmus](media/fig828_c.png)
+
+Abbildung 8.28c - Ausführen des Voronoi-Algorithmus
+
+
+![Ergebnis des Voronoi-Algorithmus](media/fig828_d.png)
+
+Abbildung 8.28d - Ergebnis des Voronoi-Algorithmus
 
 Sometimes, the necessities impose the requirement of having information in smaller, clearly defined and equal areas and not for an entire large region, such as a country or a big city. Therefore, the data needs to be analysed and visualised in a sliced, well-defined way, allowing comparison that otherwise could prove difficult without a ground common reference. 
 
