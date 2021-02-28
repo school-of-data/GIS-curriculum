@@ -237,137 +237,132 @@ Die Ergebnisse sehen nicht gleich aus, wir haben weder Mittelwert, noch Median o
 
 
 
-#### **Step 3. Basic checks to quickly find errors in your data.**
+#### **Schritt 3. Grundlegende Prüfungen, um schnell Fehler in Ihren Daten zu finden.**
 
-Perfect, flawless datasets are the equivalent of the ideal gas in physics. There is no such thing, but many can come very close to it. Therefore, before doing any kind of analysis to extract information, at least some basic checks are necessary on how _clean_ the data we have are. 
+Perfekte, makellose Datensätze sind das Äquivalent zum idealen Gas in der Physik. So etwas gibt es nicht, aber viele können ihm sehr nahe kommen. Bevor Sie also irgendeine Art von Analyse durchführen, um Informationen zu extrahieren, sind zumindest einige grundlegende Prüfungen notwendig, wie _sauber_ die Daten sind, die wir haben. 
 
-There are many types of errors that can affect the quality of your data and, given the scope of your geospatial analysis, their influence on the final result can be more or less important. For example, if you use geospatial data to route yourself from point A to point B by car, then having a roads layer complete with attributes on which streets are one way or  closed to road traffic, is essential to get a viable result.  However, if your routing is by foot, then that information is not crucial for your result. 
+Es gibt viele Arten von Fehlern, die die Qualität Ihrer Daten beeinträchtigen können, und je nach Umfang Ihrer Geodatenanalyse kann deren Einfluss auf das Endergebnis mehr oder weniger wichtig sein. Wenn Sie z. B. Geodaten verwenden, um sich mit dem Auto von Punkt A nach Punkt B zu bewegen, dann ist ein Straßen-Layer mit den Attributen, welche Straßen eine Einbahnstraße sind oder für Autos gesperrt sind, unerlässlich, um ein brauchbares Ergebnis zu erhalten.  Wenn Sie jedoch zu Fuß unterwegs sind, sind diese Informationen für Ihr Ergebnis nicht entscheidend. 
 
-When referring to geospatial data errors, there are 2 main terms that need to be well understood: 
+Wenn von Fehlern in Geodaten die Rede ist, gibt es 2 Hauptbegriffe, die gut verstanden werden müssen: 
 
-**Accuracy** is the degree to which information on a map matches real-world values and it applies both to the geometry and to attributes.
+**Genauigkeit** ist der Grad, in dem die Informationen auf einer Karte mit den realen Werten übereinstimmen und bezieht sich sowohl auf die Geometrie als auch auf die Attribute.
 
-**Precision** refers to the level of measurement and exactness of description in a geospatial dataset.
+**Präzision** bezieht sich auf den Grad der Messung und Genauigkeit der Beschreibung in einem Geodatensatz.
 
-**An error** encompasses both the imprecision of data and its inaccuracies. **Data quality **refers to the level of precision and accuracy of the datasets and it is most often documented in data quality reports. 
+Der Begriff **Fehler** umfasst sowohl die Ungenauigkeit von Daten als auch deren Fehlerhaftigkeit. Die **Datenqualität** bezieht sich auf den Grad der Präzision und Genauigkeit der Datensätze und wird meist in Datenqualitätsberichten dokumentiert. 
 
-Analysing and _cleaning _a geospatial dataset can be a very time consuming and cumbersome task, however - as shown in the example above - it is essential. In this section, we present a few GIS functionalities that allow a user to perform fast checks on vector data and draw a set of preliminary conclusions on its quality. 
+Die Analyse und _Bereinigung_ eines Geodatensatzes kann eine sehr zeitaufwendige und mühsame Aufgabe sein, ist aber - wie im obigen Beispiel gezeigt - unerlässlich. In diesem Abschnitt stellen wir einige GIS-Funktionen vor, mit denen schnelle Prüfungen von Vektordaten durchgeführt und eine Reihe von vorläufigen Schlussfolgerungen über deren Qualität gezogen werden kann. 
 
-**Topology checks.**
+**Topologie-Checks**.
 
-QGIS offers a core functionality that allows the user to perform a series of topological checks on the loaded vector datasets, named Topology Checker. The Topology Checker is a Core plugin and can be activated from the **Manage and Install Plugins Dialog**. Open the Manage and Install Plugins Dialog and make sure that the Topology Checker plugin is activated (with check sign). It can be found under the **Installed** tab.
+QGIS bietet eine Kernfunktionalität, die es ermöglicht, eine Reihe von topologischen Prüfungen an den geladenen Vektordatensätzen durchzuführen, die sogennannte Topologie-Prüfung. Die Topologie-Prüfung ist eine Kernerweiterung und kann über den Dialog **Erweiterungen verwalten und installieren** aktiviert werden. Öffnen Sie den Dialog "Erweiterungen verwalten und installieren" und stellen Sie sicher, dass das Plugin "Topologie-Prüfung" aktiviert ist (mit einem Häkchen versehen). Sie finden es unter der Registerkarte **Installiert**.
 
-![Topology checker plugin](media/fig89_a.png "Topology checker plugin")
+![Topologie-Prüfung-Plugin](media/fig89_a.png "Topologie-Prüfung-Plugin")
 
-Figure 8.9.a - Topology checker plugin
+Abbildung 8.9.a - Topologie-Prüfung-Plugin
 
-To show the Topology Checker, enable it as a panel under **View ‣ Panels ‣ Topology Checker** (figure 8.9.b). If it does not appear in the Panels menu, you can enable it by clicking the Topology Checker button ![Topology checker button](media/fig89_btn.png "Topology checker button") on the Plugins toolbar. Once activated it’s window looks like in figure 8.9.c.  
+Um die Topologie-Prüfung anzuzeigen, aktivieren Sie sie als Bedienfeld unter **Vektor ‣ Topologie-Prüfung** (Abbildung 8.9.b). Sobald sie aktiviert ist, sieht ihr Fenster wie in Abbildung 8.9.c aus.  
 
 
-![Topology checker panel](media/fig89_b.png "Topology checker panel")
+![Topologie-Prüfungsfenster](media/fig89_c.png "Topologie-Prüfungsfenster")
 
-Figure 8.9.b - Topology checker panel
+Bild 8.9.c - Topologie-Prüfungsfenster
 
 
-![Topology checker window](media/fig89_c.png "Topology checker window")
+Um die Topologieregeln zu definieren, klicken Sie auf das dritte Symbol ![](media/fig810_btn.png), wodurch sich ein Fenster wie in Abbildung 8.10 öffnet. 
 
-Figure 8.9.c - Topology checker window
 
+![Topologieregeleinstellungen](media/fig810.png)
 
-To define the topology rules, click on the third icon ![Topology rule settings button](media/fig810_btn.png "Topology rule settings button"), opening a window as in figure 8.10. 
+Bild 8.10 - Fenster "Topologieregeleinstellungen"
 
 
-![Topology rule settings window](media/fig810.png "Topology rule settings window")
+Wir werden eine Reihe von Regeln für die Layer setzen, die wir in unser QGIS-Projekt geladen haben, unter Berücksichtigung der Objekte der realen Welt, die sie darstellen - Straßen, Gebäude, Wasserwege. 
 
-Figure 8.10 - Topology rule settings window
+Die Konfiguration der Topologie ist einfach, da die Regeln, die auf Basis des ausgewählten Layers angewendet werden können, bereits in diese Funktionalität eingebettet sind, wie Abbildung 8.11 zeigt. 
 
 
-We will set a number of rules for the layers we have loaded in our QGIS project, considering the real world objects they depict- roads, buildings, waterways in the district of Pampanga. 
+![Dropdown-Menü für Topologieregeln auf Basis des ausgewählten Layers](media/fig811.png "Dropdown-Menü für Topologieregeln auf Basis des ausgewählten Layers")
 
-The configuration of the topology is straightforward, as the rules that can be applied based on the selected layer are already embedded in this functionality, as figure 8.11 depicts. 
+Abbildung 8.11 - Dropdown-Menü "Topologieregeln" basierend auf dem ausgewählten Layer.
 
+Wählen Sie die Topologieregeln wie in Abbildung 8.12 dargestellt. 
 
-![Topology rules dropdown menu based on the selected layer](media/fig811.png "Topology rules dropdown menu based on the selected layer")
 
-Figure 8.11 - Topology rules dropdown menu based on the selected layer.
+![Zu setzende Topologieregeln](media/fig812.png "Zu setzende Topologieregeln")
 
-Choose the topology rules as depicted in figure 8.12. 
+Bild 8.12 - Einzustellende Topologieregeln 
 
+Klicken Sie auf das erste Symbol ![Alle prüfen Button](media/fig813_btn.png "Alle prüfen Button") im Fenster des Topologieprüfers, um die Prüfung auszuführen, und warten Sie auf die Ergebnisse. Nach dem Ausführen der Topologieprüfung sollte Ihr Kartenfenster wie in Abbildung 8.13 aussehen. 
 
-![Topology rules to be set](media/fig812.png "Topology rules to be set")
 
-Figure 8.12 - Topology rules to be set 
+![Topologieprüfungsergebnisse](media/fig813.png "Topologieprüfungsergebnisse")
 
-Click on the first icon ![Validate rules button](media/fig813_btn.png "Validate rules button") on the Topology Checker window to run and wait for the results. After running the topology check, your map windows should look like in figure 8.13. 
+Abbildung 8.13 - Ergebnisse der Topologieprüfung
 
+Im Topologie-Prüfungsfensters werden alle Fehler aufgelistet, die auf der Grundlage der Regeln, die wir in der vorherigen Phase definiert haben, identifiziert wurden. Wenn das Kontrollkästchen Fehler anzeigen aktiviert ist, werden die Fehler in der Karte rot hervorgehoben. Durch einen Doppelklick auf einen markierten Fehler wird die Karte an die entsprechende Stelle verschoben. 
 
-![Topology check results](media/fig813.png "Topology check results")
+Der Prozess der Korrektur von Fehlern in einem Datensatz, sei es in Bezug auf die Geometrie (Duplikate, Lücken etc.) oder in Bezug auf die Attribute (fehlende Werte, Rechtschreibfehler etc.), wird als Bereinigung eines Datensatzes bezeichnet und ist meist ebenso mühsam wie notwendig. Obwohl es Funktionalitäten gibt, die einen halbautomatischen Bereinigungsprozess unterstützen, ist oft eine manuelle Korrektur notwendig. In Abbildung 8.14 haben wir zum Beispiel einen Fehler in unserem Points of Interests Layer eingezoomt, einen doppelten (sogar dreifachen) Punkt. Wie man sieht, gibt es drei Punkte, die ein Café darstellen, der Unterschied liegt in der Attributtabelle, in der einer als Café, einer als Bäckerei und einer als Gaststätte aufgeführt ist.
 
-Figure 8.13 - Topology check results
 
-In the down right side corner, the topology checker window lists all errors identified based on the rules we have defined in the earlier phase. If the Show errors checkbox is ticked, then the errors will be highlighted on the map with red. Double clicking on a selected error, will move the map to its location. 
+![Doppelter Punk im Points Of Interests Layer](media/fig814.png "Doppelter Punk im Points Of Interests Layer")
 
-The process of correcting the errors in a dataset, be it geometry related (duplicates, gaps etc.) or in the attribute related  (missing values, misspelled etc.) is called cleaning a dataset and it is most times as cumbersome as it is necessary. Although there are functionalities to support a semi-automatically cleaning process, the user’s input is often necessary. For example, in figure 8.14, we have zoomed in an error in our points of interest layer, a duplicated point. As it can be seen, there are 2 point depicting one cafe, the difference being in the attribute table where one is listed as a cafe and one as a “doityourself” - which one can assume might be a popular name for cafes where you prepare your own coffee. 
+Abbildung 8.14 - Doppelter Punk im Points Of Interests Layer
 
+In diesem speziellen Fall wäre die Entscheidung des Anwenders höchstwahrscheinlich, den doppelten Punkt zu entfernen, da er bei der weiteren räumlichen Analyse Fehler verursachen kann. Wenn z.B. ein Stadtbeamter wissen möchte, wie viele Restaurants und Cafés sich in einem bestimmten Viertel befinden, wird der doppelte Punkt einen Fehler in die Ergebnisse einfügen, was letztendlich zu falschen Entscheidungen führen könnte.  
 
-![Duplicate point error in points of interest vector layer](media/fig814.png "sDuplicate point error in points of interest vector layer")
+Deshalb werden wir mit einer automatischen Entfernung der doppelten Punkte fortfahren. Dazu verwenden wir eine Kernfunktion von QGIS - **Doppelte Geometrien löschen** - zu finden in der Verarbeitungs-Toolbox. Ihr QGIS sollte wie in Abbildung 8.15 aussehen. 
 
-Figure 8.14 - Duplicate point error in points of interest vector layer
 
-In this particular case, the decision of the user would most probably be to remove the duplicate point, as it can insert error in further spatial analysis. For example, if a town official wants to know how many restaurants and cafes are in a specific neighbourhood, the duplicate point will insert an error in the results and that could eventually lead to mislead decisions.  
+![ Doppelte Geometrien im Layer Points of Interest löschen](media/fig815.png)
 
-Therefore, we will proceed with an automatic removal of the duplicate points. To do it, we will use a core functionality of QGIS - **Delete duplicate geometries** - found in the processing toolbox. Your QGIS should look as in figure 8.15. 
+Abbildung 8.15 - Doppelte Geometrien im Layer Points of Interest löschen
 
+Nach der Ausführung des Algorithmus präsentiert das Funktionsfenster die Ergebnisse, es hat 127 doppelte Punkte identifiziert - genau wie der Topologie-Checker - und sie gelöscht, so dass der Layer pois mit **12138 Features** übrig bleibt. Benennen Sie diesen Layer in **pois-bereinigt** um. Beachten Sie, dass die Ausgabe ein Layer im Speicher ist, den Sie dauerhaft machen können, indem Sie ihn in einer Datei speichern.
 
-![ Delete duplicate geometries on layer points of interest](media/fig815.png " Delete duplicate geometries on layer points of interest")
 
-Figure 8.15 - Delete duplicate geometries on layer points of interest
+![Nach dem Löschen der Duplikate](media/fig816.png)
 
-After running the algorithm, the functionality window presents the results, it has identified 6 duplicate points, just as the topology checker, and it informs the user that it has deleted them all, leaving the points of interest layer with **2727 features**. Rename this layer to **pois_cleaned**. Note that the output is a layer in memory, you can make it permanent by saving it to a file.
+Abbildung 8.16 - Nach dem Löschen der Duplikate
 
+Eine erneute Ausführung der Topologieprüfung führt zu einem Ergebnis von 0 Fehlern in Bezug auf die Topologieregel, dass es keine geometrischen Duplikate für den Layer "Points of Interest" gibt. 
 
-![Result of running delete duplicate geometries](media/fig816.png "Result of running delete duplicate geometries")
+**Achtung!** Der Algorithmus berücksichtigt **nur Geometrien** und ignoriert das Attribut. Wenn es, wie in unserem Fall, einige Unterschiede im Attribut für die Duplikate gibt, haben Sie keine Kontrolle darüber, welches beibehalten wird. Wenn also alle Informationen beibehalten werden sollen, müssen sie zuerst in alle Geometrien kopiert werden, so dass beim Löschen eines doppelten Features kein Informationsverlust entsteht. 
 
-Figure 8.16 - Result of running delete duplicate geometries
+Lassen Sie uns eine weitere Topologieprüfung durchführen, diesmal auf unserem Gebäude-Layer. Konfigurieren Sie die folgenden Regeln: 
 
-Re-running the topology checker will lead to a 0 errors results with respect to the topology rule of no geometric duplicates for the points of interest layer. 
+* darf keine ungültigen Geometrien haben
+* darf keine Duplikate enthalten
 
-**Attention!** The algorithm considers **only geometries**, ignoring the attribute. If, such is our case, there are some differences in the attribute for the duplicates, the user has no control over which one will be kept. Therefore, if there is a need for all information to be kept, it must be first copied to all geometries, so when a duplicate feature is deleted there is no info loss. 
+![Topologieprüfung auf dem Gebäude-Vektor-Layer](media/fig817_a.png)
 
-Let us run another topology check, this time on our building layer. Configure the following rules: 
+Abbildung 8.17a - Topologieprüfungsregeln auf dem Gebäude-Vektor-Layer
 
-* No duplicate
-* No invalid geometries
+Führen Sie den Algorithmus aus. 
 
-![Topology check on the buildings vector layer](media/fig817_a.png "Topology check on the buildings vector layer")
+Das Ergebnis sollte wie in Abbildung 8.17b aussehen. 
 
-Figure 8.17a - Topology checker rules on the buildings vector layer
 
-Run the algorithm. 
+![Ergebnisse der Topologieprüfung auf dem Gebäude-Vektor-Layer](media/fig817_b.png)
 
-The result should look like figure 8.17b. 
+Abbildung 8.17b - Ergebnisse der Topologieprüfung auf dem Gebäude-Vektor-Layer
 
+Bereinigen Sie das Duplikat-Feature mit Hilfe des oben angegebenen Verfahrens (Abbildung 8.18a)
 
-![Results of topology check on the buildings vector layer](media/fig817_b.png "Results of topology check on the buildings vector layer")
 
-Figure 8.17b - Results of topology check on the buildings vector layer
+![Entfernen von doppelten Geometrien auf dem Gebäude-Vektor-Layer](media/fig818_a.png)
 
-Clean the duplicate feature by using the process indicated above (figure 8.18a)
+Abbildung 8.18a - Entfernen von doppelten Geometrien auf dem Gebäude-Vektor-Layer
 
 
-![Remove duplicate geometries on the buildings vector layer](media/fig818_a.png "Remove duplicate geometries on the buildings vector layer")
+![Ausgabe nach dem Entfernen doppelter Geometrien auf dem Gebäude-Vektorlayer](media/fig818_b.png)
 
-Figure 8.18a - Remove duplicate geometries on the buildings vector layer
+![Ergebnisse des Entfernens doppelter Geometrien auf dem Gebäude-Vektorlayer](media/fig818_c.png)
 
+Abbildung 8.18b - Ergebnisse des Entfernens doppelter Geometrien auf dem Gebäude-Vektor-Layer
 
-![Results of remove duplicate geometries on the buildings vector layer](media/fig818_b.png "Results of remove duplicate geometries on the buildings vector layer")
 
-![Results of Delete duplicate geometries](media/fig818_c.png "Results of Delete duplicate geometries")
-
-Figure 8.18b - Results of removing duplicate geometries on the buildings vector layer
-
-
-A complete cleaning of the vector datasets used for this module is out of scope. Its complexity transforms it in a more advanced module in itself.
+Eine vollständige Bereinigung der für dieses Modul verwendeten Vektordatensätze würde den Rahmen sprengen. Seine Komplexität macht es zu einem eigenen, fortgeschritteneren Modul.
 
 
 #### **Step 4. Take a closer look at the information attached to the points, lines and polygons.**
