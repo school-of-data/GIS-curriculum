@@ -23,7 +23,7 @@ As ferramentas e recursos necessários para este módulo são:
 * computador
 * conexão com a internet
 * QGIS 3.16 instalado no computador ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
-* Camadas vetoriais Pampanga_province e Pampanga_SanFernando (dentro de [module3.gpkg](module3.gpkg)).
+* Camadas vetoriais `br_rj_capital` e `br_rj_centro` (dentro de [module3.gpkg](module3.gpkg)).
 
 
 ## Pré-requisitos
@@ -96,17 +96,17 @@ Normalmente, a comunidade OSM e as comunidades locais concordam com certas combi
 
 #### **Exercício 1: Carregando dados OSM no QGIS usando o plugin QuickOSM**
 
-Neste exercício, vamos carregar dados da rede rodoviária e localizações de cadeias de fast food do OSM que podem ser encontradas na província de Pampanga usando o QuickOSM plugar.
+Neste exercício, vamos carregar dados da rede rodoviária e localizações de cadeias de fast food do OSM que podem ser encontradas no Rio de Janeiro, capital usando o QuickOSM plugar.
 
 QuickOSM funciona consultando as tags (chaves e valores) dos recursos do OSM. Para obter mais informações sobre como usar a chave / valor no QuickOSM, vá para: [https://wiki.openstreetmap.org/wiki/Mapfeatures](https://wiki.openstreetmap.org/wiki/Mapfeatures.).
 
 
 
-1. Carregue as camadas vetoriais Pampanga_province e Pampanga_SanFernando encontradas dentro do geopackage module3.
+1. Carregue as camadas vetoriais `br_rj_capital` e `br_rj_centro` encontradas dentro do geopackage module3. Certifique-se de que a camada `br_rj_capital` está sobre a camada `br_rj_centro`, para que ela seja visível.
 
-![Camadas Pampanga carregadas no QGIS](media/quickosm-1.png "Camadas Pampanga carregadas no QGIS")
+![Camadas do Rio de Janeiro carregadas no QGIS](media/quickosm-1.png "Camadas Rio de Janeiro carregadas no QGIS")
 
-Figura 3.2. Camadas Pampanga carregadas no QGIS
+Figura 3.2. Camadas do Rio de Janeiro (capital e centro da cidade) carregadas no QGIS
 
 2. Certifique-se de que o plugin QuickOSM está instalado e ativado. Ele deve aparecer em **Vetor ‣ QuickOSM** na barra de menus. Caso contrário, instale e ative o plug-in primeiro usando a caixa de diálogo Gerenciar e instalar plug-ins.
 3. Abra o plugin QuickOSM (**Vetor ‣ QuickOSM ‣ QuickOSM**). Uma caixa de diálogo deve abrir com cinco guias:
@@ -131,21 +131,21 @@ Figura 3.2. Camadas Pampanga carregadas no QGIS
 
 Figura 3.3. Plugin QuickOSM
 
-4. Carregue todas as rodovias dentro da extensão da camada Pampanga_SanFernando.
+4. Carregue todas as rodovias dentro da extensão da camada `br_rj_centro`.
 
-    * Chave: rodovia
-    * Valor: &lt;blank> (em branco significa TODOS)
-    * Extensão da camada: Pampanga_SanFernando
+    * Chave: highway
+    * Valor: <deixe em branco> (em branco significa TODOS)
+    * Extensão da camada: `br_rj_centro`
     * Avançado:
-        * Marque Node, Way, Relation, Lines, Multilinestrings
+        * Marque Nó, Caminho, Relação, Linhas, Multilinhas
 
-![Carregar todas as estradas na extensão da camada Pampanga_SanFernando](mídia/quickosm-3.png "Carregar todas as rodovias na extensão da camada Pampanga_SanFernando")
+![Carregar todas as estradas na extensão da camada br_rj_centro](media/quickosm-3.png "Carregar todas as rodovias na extensão da camada br_rj_centro")
 
-Figura 3.4. Carregue todas as rodovias na extensão da camada Pampanga_SanFernando
+Figura 3.4. Carregue todas as rodovias na extensão da camada `br_rj_centro`
 
-5. Clique em Executar consulta. Basicamente, o que estamos dizendo ao QuickOSM é obter todos os recursos de linha ou multilinha marcados com uma chave de estrada e carregá-los no QGIS. Quando o plugin terminar de carregar a camada, seu mapa deverá ficar assim:
+5. Clique em Executar consulta. Basicamente, o que estamos dizendo ao QuickOSM é obter todos os recursos de linha ou multilinha marcados com uma chave (tag) de estrada e carregá-los no QGIS. Quando o plugin terminar de carregar a camada, seu mapa deverá ficar assim:
 
-![Dados da estrada carregados do OSM](media/quickosm-4.png "Dados da estrada carregados do OSM")
+![Dados de estradas carregados do OSM](media/quickosm-4.png "Dados de estradas carregados do OSM")
 
 Figura 3.5. Dados da rodovia carregados do OSM
 
@@ -156,17 +156,17 @@ Figura 3.5. Dados da rodovia carregados do OSM
 
 Figura 3.6. A versão de consulta Overpass da consulta rápida para carregar rodovias
 
-8. Em seguida, vamos carregar todos os locais de restaurantes fast food na extensão da camada Pampanga_province. Abra o plug-in QuickOSM e coloque os seguintes parâmetros na guia Consulta rápida:
+8. Em seguida, vamos carregar todos os locais de restaurantes fast food na extensão da camada `br_rj_capital`. Abra o plug-in QuickOSM e coloque os seguintes parâmetros na guia Consulta rápida:
 
     * Chave: amenity
     * Valor: fast_food
-    * Extensão da camada: Pampanga_province
+    * Extensão da camada: `br_rj_capital`
     * Avançado:
-        * Marque Node, Way, Relation, Points
+        * Marque Nó, Caminho, Relação, Pontos
 
-![Carregar amenidades (pontos) marcados como fast_food na extensão da camada Pampanga_province](media/quickosm-6.png "Carregar amenidades (pontos) marcados como fast_food na extensão da camada Pampanga_province")
+![Carregar amenidades (pontos) marcados como fast_food na extensão da camada `br_rj_capital`](media/quickosm-6.png "Carregar amenidades (pontos) marcados como fast_food na extensão da camada `br_rj_capital`")
 
-Figura 3.7: Carregar amenidades (pontos) marcados como fast_food na extensão da camada Pampanga_province
+Figura 3.7: Carregar amenidades (pontos) marcados como fast_food na extensão da camada `br_rj_capital`
 
 9. O resultado deve ser semelhante a abaixo:
 
@@ -229,11 +229,11 @@ Mapeando a população mundial, um prédio por vez - [https://arxiv.org/abs/1712
 
 Os dados HRSL encontrados no HDX vêm em formato GeoTIFF (raster) e CSV (vetor). Os CSV são localizações de pontos com valores de população correspondentes. Para este exercício, um subconjunto de dados para seu país já foi preparado, mas você sempre pode baixar o conjunto de dados inteiro ou mesmo outros conjuntos de dados para experimentar.
 
-1. Carregue o arquivo raster **HRSL_Pampanga_Population** no QGIS.
+1. Carregue o arquivo raster **hrsl_rj_capital_populacao** no QGIS.
 
-![O HRSL para Pampanga, Filipinas](media/hrsl-1.png "O HRSL para Pampanga, Filipinas")
+![O HRSL para Rio de Janeiro, capital](media/hrsl-1.png "O HRSL para Rio de Janeiro, capital")
 
-Figura 3.10: O HRSL para Pampanga, Filipinas
+Figura 3.10: O HRSL para Rio de Janeiro, capital
 
 2. Verifique as Propriedades da camada.
 3. Você também pode editar a Simbologia e o Estilo do raster (será discutido em um módulo futuro)
@@ -251,11 +251,11 @@ Figura 3.10: O HRSL para Pampanga, Filipinas
 
 A API Overpass ([https://wiki.openstreetmap.org/wiki/Overpass_API](https:/ /wiki.openstreetmap.org/wiki/Overpass_API)), anteriormente conhecido como OSM Server Side Scripting, ou OSM3S antes de 2011, é uma API somente leitura que fornece partes personalizadas selecionadas dos dados do mapa OSM. Ao contrário da API principal, que é otimizada para edição, a API Overpass é otimizada para consumidores de dados para obter um pequeno subconjunto dos cerca de 10 milhões de elementos no OpenStreetMap. Esses subconjuntos podem ser selecionados por critérios de pesquisa, como localização, tipo de objetos, propriedades de tag, proximidade ou combinações deles. A API Overpass serve como back-end para outros serviços baseados em OSM, como o plugin QuickOSM.
 
-O uso de uma consulta Overpass permite criar uma seleção de recursos mais complexa no QuickOSM. Por exemplo, vamos carregar todos os fast foods novamente dentro da extensão de Pampanga_province, mas desta vez vamos apenas pegar as franquias de Jollibee. Se você observar a tabela de atributos da camada de fast food, notará que ela possui um campo **name**. Os campos na tabela de atributos de dados carregados do OSM correspondem às chaves de tag, portanto, se quisermos apenas selecionar todos os ramos do Jollibee fast food, precisamos adicionar um filtro que seleciona um recurso se ele tiver um **chave:valor** de **name:Jollibee**. Este filtro pode ser facilmente adicionado na API Overpass.
+O uso de uma consulta Overpass permite criar uma seleção de recursos mais complexa no QuickOSM. Por exemplo, vamos carregar todos os fast foods novamente dentro da extensão de `br_rj_capital`, mas desta vez vamos apenas pegar as franquias do Subway. Se você observar a tabela de atributos da camada de fast food, notará que ela possui um campo **name**. Os campos na tabela de atributos de dados carregados do OSM correspondem às chaves de tag, portanto, se quisermos apenas selecionar todos os ramos do Subway fast food, precisamos adicionar um filtro que seleciona um recurso se ele tiver um **chave:valor** de **name:Subway**. Este filtro pode ser facilmente adicionado na API Overpass.
 
 1. Abra o plugin QuickOSM e insira os parâmetros que usamos para consultar todos os fast foods.
 
-![Parâmetros QuickOSM para carregar fast food em Pampanga](media/quickosm-5.png "Parâmetros QuickOSM para carregar fast food em Pampanga")
+![Parâmetros QuickOSM para carregar fast food no Rio de Janeiro](media/quickosm-5.png "Parâmetros QuickOSM para carregar fast food no Rio de Janeiro")
 
 Consulta rápida para carregar todas as comodidades marcadas como fast food
 
@@ -265,17 +265,17 @@ Consulta rápida para carregar todas as comodidades marcadas como fast food
 
 Consulta Overpass para carregar todas as comodidades marcadas como fast food
 
-3. Edite a consulta e adicione a linha **&lt;has-kv k="name" v="Jollibee"/>** após cada linha &lt;has-kv k="amenity" v="fast_food"/>.
+3. Edite a consulta e adicione a linha **&lt;has-kv k="name" v="Subway"/>** após cada linha &lt;has-kv k="amenity" v="fast_food"/>.
 
-![Consulta Overpass para carregar fast foods Jollibee](media/overpass-2.png "Consulta Overpass para carregar fast foods Jollibee")
+![Consulta Overpass para carregar fast foods Subway](media/overpass-2.png "Consulta Overpass para carregar fast foods Subway")
 
-Consulta Overpass para carregar fast foods Jollibee
+Consulta Overpass para carregar fast foods Subway
 
-4. Clique em Rodar consulta. Isso deve carregar apenas as amenidades marcadas como fast_food com o nome Jollibee. O nome da camada será OsmQuery.
+4. Clique em Executar consulta. Isso deve carregar apenas as amenidades marcadas como fast_food com o nome Subway. O nome da camada será OsmQuery.
 
-![Amenidades marcadas como fast food cujo nome é Jollibee carregado do OSM](media/overpass-3.png "Amenidades marcadas como fast food cujo nome é Jollibee carregado do OSM")
+![Amenidades marcadas como fast food cujo nome é Subway carregado do OSM](media/overpass-3.png "Amenidades marcadas como fast food cujo nome é Subway carregado do OSM")
 
-Amenidades marcadas como fast food cujo nome é Jollibee carregado do OSM
+Amenidades marcadas como fast food cujo nome é Subway carregado do OSM
 
 5. Experimente com outras redes de fast food.
 
