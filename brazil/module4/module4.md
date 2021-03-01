@@ -17,9 +17,9 @@ Este módulo foi desenvolvido para te ensinar como mudar a aparência visual de 
 * Computador
 * Conexão com a Internet
 * QGIS 3.16 ou posterior
-* Pampanga camada limite administrativa (dentro de [module4.gpkg](data/module4.gpkg))
-* Clínicas Pampanga (dentro de [module4.gpkg](data/module4.gpkg))
-* [Camada de assentamentos de alta resolução de Pampanga](data/HRSL_Pampanga_Population.tif )
+* Camada do limite administrativo do Rio de Janeiro (dentro de [module4.gpkg](data/module4.gpkg))
+* Clínicas do Rio de Janeiro (dentro de [module4.gpkg](data/module4.gpkg))
+* [Camada de assentamentos de alta resolução do Rio de Janeiro](data/hrsl_rj_capital_populacao.tif )
 
 ## Pré-requisitos
 
@@ -64,7 +64,7 @@ Em uma lista suspensa de camadas atuais no painel de camadas, selecione um item 
 
 Outro recurso poderoso deste painel é a caixa de seleção Atualização ao vivo. Marque-o e suas alterações serão automaticamente renderizadas na tela do mapa conforme você avança. Assim, você não precisa mais clicar no botão Aplicar.
 
-Para ativar o painel, clique em Exibir -> Painéis e, a seguir, marque Estilo de camada.
+Para ativar o painel, clique em Visão -> Painéis e, a seguir, marque Estilização de camadas.
 
 
 ![alt_text](media/layer-styling.png "image_tooltip")
@@ -94,7 +94,7 @@ QGIS oferece quatro tipos diferentes de renderização. A escolha do renderizado
 * Cores multibanda  ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color)) - se o arquivo vier com várias bandas (por exemplo, uma imagem de satélite com várias bandas).
 * Valores paletados / únicos ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#paletted]()) - para arquivos de banda única que vêm com uma paleta indexada (por exemplo, um mapa topográfico digital), ou para uso geral de paletas para renderizar camadas raster.
 * Faixa única de cinzas ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray](https://docs.qgis.org/3.16/en/docs/ user_manual / working_with_raster / raster_properties.html # singleband-grey)) - a imagem será renderizada como cinza (uma banda só dela). O QGIS escolherá este renderizador se o arquivo não for multibanda nem paletizado (por exemplo, um mapa de relevo sombreado).
-* Pseudocor de banda única ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab](https://docs.qgis.org/3.16/en/docs/ user_manual / working_with_raster / raster_properties.html # label-colormaptab)) - este renderizador pode ser usado para arquivos com uma paleta contínua ou mapa de cores (por exemplo, um mapa de elevação).
+* Banda simples falsa-cor ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab](https://docs.qgis.org/3.16/en/docs/ user_manual / working_with_raster / raster_properties.html # label-colormaptab)) - este renderizador pode ser usado para arquivos com uma paleta contínua ou mapa de cores (por exemplo, um mapa de elevação).
 * Hillshade ([(https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer](https://docs.qgis.org/3.16/en/docs/ user_manual / working_with_raster / raster_properties.html # hillshade-renderer)) - Cria hillshade (sombras de colina) a partir de uma banda.
 
 
@@ -126,7 +126,7 @@ A simbologia de dados vetoriais pode variar de acordo com a transparência, cor,
 
 #### **Exemplo 1: Renderização vetorial**
 
-1. Para demonstrar este exemplo, nós usaremos dois conjuntos de dados de exemplo; 1. [Clínicas](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing) e 2. [Limite administrativo](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?Usp=sharing) da província de Pampanga
+1. Para demonstrar este exemplo, nós usaremos dois conjuntos de dados de exemplo; 1. Clínicas (equipamentos de saúde, identificados no OpenStreetMap com a tag "clinics") e 2. Limite administrativo da cidade do Rio de Janeiro
 2. Adicione as duas camadas vetoriais ao QGIS; Clique no botão Adicionar camada vetorial ![alt_text](media/add-vector.png "image_tooltip") ou use o painel do navegador.
 3. É assim que eles são renderizados por padrão. Você notará que temos uma camada de polígono e uma camada de pontos. O próximo passo é mudar a simbologia de cada um deles. As cores de preenchimento podem não ser as mesmas do que as você está vendo aqui, mas isso não é um problema porque o QGIS seleciona cores aleatoriamente quando você adiciona uma camada.
 
@@ -134,17 +134,17 @@ A simbologia de dados vetoriais pode variar de acordo com a transparência, cor,
 
 Figura 4.3:
 
-4. Clique duas vezes na camada vetorial de polígono, que também é a camada de limite administrativo da província de Pampanga nas Filipinas
+4. Clique duas vezes na camada vetorial de polígono, que também é a camada de limite administrativo da cidade do Rio de Janeiro
 5. Selecione a **Aba Simbologia** no menu que aparece
-6. Altere a **Cor de preenchimento** para **Preenchimento transparente**. Dica: Clique na seta suspensa em Cor de preenchimento
+6. Altere a **Cor do preenchimento** para **Preenchimento transparente**. Dica: Clique na seta suspensa em Cor do preenchimento
 7. O resultado deve ser o seguinte. Você pode notar que a opção sem preenchimento não tem cor
 
 ![Sem renderização de preenchimento para o polígono](media/no-fill-render.png "Sem renderização de preenchimento para o polígono")
 
 Figura 4.4: Polígono sem preenchimento
 
-8. A próxima etapa é simbolizar a camada de ponto que também é a camada Clínicas
-9. Clique duas vezes na **camada Clínicas** para abrir o diálogo **Propriedades da camada**. Altere o tipo de renderização de Símbolo Único para **Categorizado**, selecione **Valor** como `amenity`. O valor representa o campo de interesse. Especifique o símbolo e a escala de cor. Em seguida, clique em classificar.
+8. A próxima etapa é simbolizar a camada de ponto que também é a camada `rj_clinics`
+9. Clique duas vezes na **camada `rj_clinics`** para abrir o diálogo **Propriedades da camada**. Altere o tipo de renderização de Símbolo Único para **Categorizado**, selecione **Valor** como `amenity`. O valor representa o campo de interesse. Especifique o símbolo e a escala de cor. Em seguida, clique em classificar.
 
 ![Diálogo de Propriedades da Camada](media/vector-style.png "Diálogo de Propriedades da Camada")
 
@@ -152,7 +152,7 @@ Figura 4.5: Diálogo de Propriedades da Camada
 
 10. O mapa resultante deve ser o seguinte
 
-![Renderização vetorial final](renderizaçãovetorialfinal/media.png "Renderização vetorial final")
+![Renderização vetorial final](media/final-vector-render.png "Renderização vetorial final")
 
 Figura 4.6: Renderização vetorial final
 
@@ -165,17 +165,17 @@ Figura 4.6: Renderização vetorial final
 
 1. Clique duas vezes na camada raster, que também é a camada de densidade populacional. Isso também significa que ela é um conjunto de dados normalizado e, portanto, pode ser visualizado como um mapa coroplético.
 2. Selecione a guia de simbologia no menu que aparece
-3. Altere o modo de estilo para 'Pseudocor de banda única'
+3. Altere o modo de estilo para 'Banda simples falsa-cor'
 
 ![Menu de simbologia](media/qgis9.png "Menu de simbologia")
 
 Figura 4.7: Menu de simbologia
 
-4. Especifique a interpolação, escala de cor e modo. Clique em classificar. O resultado é um mapa coroplético mostrando a densidade populacional na província de Pampanga, nas Filipinas.
+4. Especifique a interpolação, escala de cor e modo. Clique em classificar. O resultado é um mapa coroplético mostrando a densidade populacional na cidade do Rio de Janeiro.
 
-![Densidade populacional da Província de Pampanga, Filipinas](media/hrsl-style.png "Densidade populacional da Província de Pampanga, Filipinas")
+![Densidade populacional da cidade do Rio de Janeiro](media/hrsl-style.png "Densidade populacional da cidade do Rio de Janeiro")
 
-Figura 4.8: Densidade populacional da Província de Pampanga, Filipinas
+Figura 4.8: Densidade populacional da cidade do Rio de Janeiro
 
 5. Amplie para ver o novo mapa em maior detalhe
 
@@ -183,7 +183,7 @@ Figura 4.8: Densidade populacional da Província de Pampanga, Filipinas
 
 Figura 4.9: Mapa ampliado
 
-6. Como alternativa, use o **painel Estilo de camada**.
+6. Como alternativa, use o **painel Estilização de camadas**.
 
 #### **Perguntas do questionário**
 
@@ -227,17 +227,17 @@ Figura 4.9: Mapa ampliado
 
 Figura 4.10: A área de trabalho inicial esperada
 
-2. Abra a janela Propriedades da camada e clique no item de menu Simbologia para a camada de limites administrativos. Dica: faça isso clicando duas vezes na camada ou use o painel de estilo da camada. Ative o painel de estilo da camada clicando em: Exibir -> Painéis -> Estilo da camada.
+2. Abra a janela Propriedades da camada e clique no item de menu Simbologia para a camada de limites administrativos. Dica: faça isso clicando duas vezes na camada ou use o painel de estilo da camada. Ative o painel de estilo da camada clicando em: Visão -> Painéis -> Estilo da camada.
 
-Na parte inferior do menu Symbology, há uma caixa de seleção para efeitos do Draw. Vamos habilitar isso e, em seguida, clicar no botão personalizar efeitos! [Alt_text] (media / customize-effects-button.png "image_tooltip") à sua direita:!
+Na parte inferior do menu Simbologia, há uma caixa de seleção para efeitos do Desenho. Vamos habilitar isso e, em seguida, clicar no botão personalizar efeitos ![Alt_text](media/customise-effects-button.png "image_tooltip") à sua direita:
 
-[Janela Propriedades da camada e menu de simbologia](media/draw-effects.png "Janela Propriedades da camada e menu Simbologia")
+![Janela Propriedades da camada e menu de simbologia](media/draw-effects.png "Janela Propriedades da camada e menu Simbologia")
 
 Figura 4.11: Janela Propriedades da camada e menu Simbologia
 
 3. Uma nova caixa de diálogo Propriedades de efeitos é aberta
 
-! [Caixa de diálogo Propriedades de efeitos](media/new-effects-dialog.png "caixa de diálogo Propriedades de efeitos")
+![Caixa de diálogo Propriedades de efeitos](media/new-effects-dialog.png "caixa de diálogo Propriedades de efeitos")
 
 Figura 4.12: Diálogo de propriedades de efeitos
 
@@ -314,4 +314,4 @@ Figura 4.18: Camada de pontos
 
 #### ** Respostas do questionário **
 
-1.NA
+1.N / A
