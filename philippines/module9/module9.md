@@ -20,8 +20,12 @@ By the end of this module, learners will have the basic understanding of the fol
 
 ## Required Tools and Resources
 
-*   This module has been prepared using [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
-*   The datasets used for all exercises detailed in this module are presented in the table below:
+*   This module has been prepared using [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
+*   [module9.gpkg](data/module9.gpkg)
+    *   Pampanga_admin_boundary
+*   [High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   [SRTM Digital Elevation Model](data/SRTM_DEM)
+*   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
 *   The coordinate reference system used is the PRS92 / Philippines zone 3, EPSG 3123. 
 
 ## Prerequisites: 
@@ -114,12 +118,13 @@ In the last two decades, the number of satellites capturing data from Earth has 
 We will strat by adding to your QGIS project all the raster datasets that we will be working with, as follows: 
 
 *   High Resolution Settlement Layer Data 
-*   ALOS Global Digital Surface Model "ALOS World 3D - 30m (AW3D30)"
+*   Shuttle Radar Topography Mission (SRTM) Digital Elevation Model (DEM)
 *   Moderate Dynamic Land Cover: the 5 available epochs 2015, 2016, 2017, 2018 and 2019. 
 
 As the High Resolution Settlement Layer Data has been presented in a previous module, we will also detail information on the other 2 dataset we will employ in this module. 
 
-1. ALOS Global Digital Surface Model (AW3D30) is a global digital surface model (DSM) dataset with a horizontal resolution of approximately 30 meters (1 arcsec mesh). A DSM includes ground surface, vegetation and man-made objects, such as buildings, bridges etc. as opposed to the digital elevation model that considered strictly the terrain. 
+1. Shuttle Radar Topography Mission (SRTM) Digital Elevation Model (DEM) is a global digital surface model (DSM) dataset with a horizontal resolution of approximately 30 meters (1 arcsec mesh). A DSM includes ground surface, vegetation and man-made objects, such as buildings, bridges etc. as opposed to the digital terrain model (DTM) that considered strictly the terrain. 
+
 2. Dynamic Land Cover Map is a  Copernicus Global Land Service (CGLS) product derived from the PROBA-V 100 m time-series and several other land cover datasets.  The product provides primary land cover discrete classes, as well as continuous field layers for all basic land cover classes that provide proportional estimates for vegetation/ground cover for the land cover types. The product has 3 bands: discrete_classification, forest_type and urban_coverfraction. The following 2 tables present the values for each discrete class: 
 
 Tabel 1 Discrete_classification band value table
@@ -384,7 +389,7 @@ Tabel 2 forest_type band value table
 
 
 
-To organize your layers better, group them by category, as follows: for the land cover 5 raster layers, make one group named Land Cover (in the TOC, click on the Add group pictogram). For the digital surface model, make one group named JAXA[^3] DSM. 
+To organize your layers better, group them by category, as follows: for the land cover 5 raster layers, make one group named Land Cover (in the Layers Panel, click on the Add Group button ![Add Group Button](media/add-group-btn.png "Add Group Button")). For the digital surface model, make one group named SRTM DEM. 
 
 Don’t forget to also add the boundary of the working area, province of Pampanga, which is a vector dataset. 
 
@@ -402,9 +407,9 @@ Next, we will use a series of tools that will allow us to get a sense of the dat
 
 After loading all the datasets, we will check the coordinate reference system in which all our datasets are in.  As we know from previous modules, QGIS offers the possibility to reproject all datasets loaded into the project on the fly, however that could lead to geoprocessing issues along the way. Thus, even if all layers are correctly overlaid, as can one say by visual inspection, we will proceed in reprojecting them all in the official coordinate system of our region of interest, Pampanga province - EPSG: 3123. 
 
-There are several ways to get information on the loaded layers in QGIS, some providing the user with more details than others. For a quick overview of a dataset’s metadata, one must select the layer - double click and open `Properties ‣ Information. `
+There are several ways to get information on the loaded layers in QGIS, some providing the user with more details than others. For a quick overview of a dataset’s metadata, **double-click the layer and open Properties ‣ Information**.
 
-For layer hrsl_phl_pop, the information window would look like in figure 9.7. 
+For layer HRSL_Pampanga_Population, the information window would look like in figure 9.7. 
 
 
 ![Extracting basic metadata from a raster layer](media/fig97.png "Extracting basic metadata from a raster layer")
@@ -415,27 +420,32 @@ With regard to our first question on what CRS is being used for the datasets we 
 
 Thus, the first thing to do is to reproject all datasets we will work with in the same coordinate system - EPSG 3123.
 
-Starting with the HRSL datasets, we go to `Raster ‣ Projections ‣ Warp (Reproject) `(see figure 9.8).` `
+Starting with the HRSL datasets, we go to **Raster ‣ Projections ‣ Warp (Reproject)** (see figure 9.8).
 
 
 ![Reproject functionality in QGIS](media/fig98.png "Reproject functionality in QGIS")
 
 Figure 9.8 - Reproject functionality in QGIS
 
-After selecting the Warp functionality, a new window will appear allowing the user to set the correct parameters (see figure 9.9). 
+After selecting the Warp functionality, a new window will appear allowing the user to set the correct parameters (see figure 9.9a). 
 
 
-![Warp (reproject) QGIS window](media/fig99.png "Warp (reproject) QGIS window")
+![Warp (reproject) QGIS window](media/fig99_a.png "Warp (reproject) QGIS window")
 
-Figure 9.9 - Warp (reproject) QGIS window
+Figure 9.9a - Warp (reproject) QGIS window
+
+If you selected the output to be **[Save to temporary file]** then there will be a raster layer named `Reprojected` in the Layers Panel. This is a memory layer and you can rename this layer to Reprojected_HRLS_Pampanga_Population and save it to make it persistent.
+
+
+![Reprojected HRSL](media/fig99_b.png "Reprojected HRSL")
+
+Figure 9.9b - Reprojected HRSL
 
 You will notice that unlike when you reprojected vector datasets, there is a new parameter that you can set “Resampling method to use”. 
 
-**Resampling **represents the interpolation of the cell values so that it transforms the raster as indicated by the user. There are multiple resampling methods available within the warp functionality, each with its own mathematical support. Yet, detailed explanations on each one is not the scope of this exercise. Further reading is available at references. 
+**Resampling** represents the interpolation of the cell values so that it transforms the raster as indicated by the user. There are multiple resampling methods available within the warp functionality, each with its own mathematical support. Yet, detailed explanations on each one is not the scope of this exercise. Further reading is available at references. 
 
-In this particular case, we want to reproject population data - numerical values. 
-
-and based on the selected resampling method (nearest neighbour),  the coordinate of each output pixel will be used to calculate a new value from close-by pixel values in the input layer (see figure 9.10). 
+In this particular case, we want to reproject population data - numerical values and based on the selected resampling method (nearest neighbour),  the coordinate of each output pixel will be used to calculate a new value from close-by pixel values in the input layer (see figure 9.10). 
 
 
 ![Resample method - nearest neighbour](media/fig910.png "Resample method - nearest neighbour")
@@ -453,9 +463,9 @@ Figure 9.11 - Resample method - bilinear (photo credit: ILWIS documentation - [(
 
 The bilinear method determines the new value of a cell based on a weighted distance average of the four nearest input cell centers. It is useful for continuous data and will cause some smoothing of the data. 
 
-We proceed in checking the CRS of the 5 land cover datasets that we have loaded into our QGIS project. Accessing `Layer properties ‣ information`, we can see that all 5 land cover layers are projected in EPSG:3857 - WGS 84 / Pseudo-Mercator. One solution would be to use the Reproject tool and configure for each layer individually. Yet, a faster way is to use the reproject functionality running as a _batch process_.
+We proceed in checking the CRS of the 5 land cover datasets that we have loaded into our QGIS project. Accessing **Layer properties ‣ information**, we can see that all 5 land cover layers are projected in EPSG:3857 - WGS 84 / Pseudo-Mercator. One solution would be to use the Reproject tool and configure for each layer individually. Yet, a faster way is to use the reproject functionality running as a **batch process**.
 
-**Batch processing** is the ability of running repetitive processes on data, with minimum user interaction. Most QGIS functionalities have this option available and it can be activated in the process window by switching to the Run batch process tab (see figure 9.12). 
+**Batch processing** is the ability of running repetitive processes on data, with minimum user interaction. Most QGIS functionalities have this option available and it can be activated in the process window by clicking the **Run Batch Process** button ![Run batch processe button](media/batch-btn.png "Run batch processe button") and switching to the Run batch process tab (see figure 9.12). 
 
 
 ![Batch processing tab on a QGIS functionality window](media/fig912.png "Batch processing tab on a QGIS functionality window")
@@ -463,34 +473,66 @@ We proceed in checking the CRS of the 5 land cover datasets that we have loaded 
 Figure 9.12 - Batch processing tab on a QGIS functionality window
 
 
-For the 5 land cover raster layers, we will use the batch processing and as resample method nearest neighbour. To add a new layer, click on the + pictogram. To automatically fill the CRS and resampling method parameters, click on autofill button on top of the corresponding columns and select `Fill down`. Rename the reprojected rasters by adding the EPSG code at the end of the name, for example LandCover2015, will become landCover2015_3123. Set your parameters as in figure 9.13: source CRS: EPSG: 3857, target CRS EPSG 3123, resampling method to use: nearest neighbour (we explained in the paragraph above why), nodata value for output bands: 255 (from the information window, we see the data type - yte - 8bit unsigned integer - which means that the maximum value can be 255), output resolution:100 m (as the initial land cover rasters). After setting all parameters, check the box in the left corner of the window -` Load layers on completion.` Hit `Run`. 
+For the 5 land cover raster layers, we will use the batch processing and as resample method nearest neighbour. To add a new layer, click on the + pictogram. To automatically fill the CRS and resampling method parameters, click on autofill button on top of the corresponding columns and select `Fill down`. Rename the reprojected rasters by adding the EPSG code at the end of the name, for example LandCover2015, will become landCover2015_3123. Set your parameters as in figure 9.13: source CRS: EPSG: 3857, target CRS EPSG 3123, resampling method to use: nearest neighbour (we explained in the paragraph above why), nodata value for output bands: 255 (from the information window, we see the data type - yte - 8bit unsigned integer - which means that the maximum value can be 255), output resolution:100 m (as the initial land cover rasters). After setting all parameters, check the box in the left corner of the window - **Load layers on completion** and click **Run**. 
 
 
-![Batch processing to reproject the land cover rasters](media/fig913.png "Batch processing to reproject the land cover rasters")
+![Batch processing to reproject the land cover rasters](media/fig913_a.png "Batch processing to reproject the land cover rasters")
 
-Figure 9.13 - Batch processing to reproject the land cover rasters
+Figure 9.13a - Batch processing to reproject the land cover rasters
+
+
+![Autofill output names](media/fig913_b.png "Autofill output names")
+
+Figure 9.13b - Autofill output names
+
+
+![Reprojected land cover rasters](media/fig913_c.png "Reprojected land cover rasters")
+
+Figure 9.13c - Reprojected land cover rasters
 
 Next comes the digital surface model rasters. As one can observe, to cover our region of interest, we needed several _raster tiles_. When raster files become too large - imagine one single DSM file at 30 m for Europe which has over 10 million square kilometers - they are splitted into **tiles **because, in smaller areas, they are more easily manageable. 
 
-Although we could use the wrap tool in batch mode to reproject all the DSM raster files, at a visual inspection, one can also notice that the delimitations between each tile is fairly visible, making it, at least, visually unattractive. What would be useful is to have a complete overview of the terrain, as a continuous phenomena - as it is, in fact - without artificial disruptions. To obtain that, we will use the GDAL merge tool, available in the Processing toolbar to merge all DSM rasters together. To open it, go to `Processing ‣ Toolbox `and in the search bar write merge (see figure 9.14)`.`
+Although we could use the wrap tool in batch mode to reproject all the DSM raster files, at a visual inspection, one can also notice that the delimitations between each tile is fairly visible, making it, at least, visually unattractive. What would be useful is to have a complete overview of the terrain, as a continuous phenomena - as it is, in fact - without artificial disruptions. To obtain that, we will use the GDAL merge tool, available in the Processing toolbar to merge all DSM rasters together. To open it, go to **Processing ‣ Toolbox** and in the search bar write **Merge** (see figure 9.14). Alternatively, you can search for Merge in the Locator Bar.
 
 
 ![Finding the GDAL merge tool in the Processing Toolbox](media/fig914.png "Finding the GDAL merge tool in the Processing Toolbox")
 
 Figure 9.14 - Finding the GDAL merge tool in the Processing Toolbox 
 
-In the merge window that opens, select the DSM raster files that we want to mosai and click run. Save the result as DSM_mosaic. The result should look like in figure 9.15. 
+In the merge window that opens, select the DSM raster files that we want to mosaic and click run. The result should look like in figure 9.15c. 
 
 
-![Mosaic of all DSM files corresponding to our work region](media/fig915.png "Mosaic of all DSM files corresponding to our work region")
+![Selecting the SRTM layers to merge](media/fig915_a.png "Selecting the SRTM layers to merge")
 
-Figure 9.15 - Mosaic of all DSM files corresponding to our work region
+Figure 9.15a - Selecting the SRTM layers to merge
 
-Now, we can proceed to reprojecting the mosaic - one file, instead of 6 files. Go to `Raster ‣ projection ‣ Wrap (reproject)` and set the known parameters: Source CRS EPSG 4326, Target CRS: EPSG:3123, Resampling method: Nearest neighbour, output file resolution - 30 m. Save the result as DSM_mosaic_3123. 
+
+![Parameters of the Merge processing algorithm](media/fig915_b.png "Parameters of the Merge processing algorithm")
+
+Figure 9.15b - Parameters of the Merge processing algorithm
+
+
+![Mosaic of all DSM files corresponding to our work region](media/fig915_c.png "Mosaic of all DSM files corresponding to our work region")
+
+Figure 9.15c - Mosaic of all DSM files corresponding to our work region
+
+
+Now, we can proceed to reprojecting the mosaic - one file, instead of 6 files. Go to **Raster ‣ projection ‣ Wrap (reproject)** and set the known parameters: 
+
+   * Source CRS EPSG 4326
+   * Target CRS: EPSG:3123 
+   * Resampling method: Nearest neighbour
+   * Output file resolution - 30 m. 
 
 At his point, we should have all layers in the same CRS - EPSG 3123. 
 
-We can do another check to make sure that all rasters we are working with are projected as well as getting any additional information on the data by running a batch process of Raster Information on all. To open the functionality window, go to `Raster ‣ Miscellaneous ‣ Raster Information`. Your batch processing raster information window should look as in figure 9.16. 
+
+![Reproject Merged raster](media/fig915_d.png "Reproject Merged raster")
+
+Figure 9.15d - Reproject Merged raster
+
+
+We can do another check to make sure that all rasters we are working with are projected as well as getting any additional information on the data by running a batch process of Raster Information on all. To open the functionality window, go to **Raster ‣ Miscellaneous ‣ Raster Information**. Your batch processing raster information window should look as in figure 9.16. 
 
 
 ![Batch process to extract information in a separate HTML file for multiple raster layers](media/fig916.png "Batch process to extract information in a separate HTML file for multiple raster layers")
@@ -502,7 +544,7 @@ A raster information HTML file should look like below. A HTML file can be open w
 
 ```
         Driver: GTiff/GeoTIFF
-        Files: /Users/codrinamariailie/Google Drive/02_OK/Gov_Geospatial_Trainings/Data/module9/LandCover2019_3123.tif
+        Files: /Users/codrinamariailie/Google Drive/02_OK/Gov_Geospatial_Trainings/Data/module9/Reprojected_LandCover2019.tif
         Size is 678, 570
         Coordinate System is:
         PROJCRS["PRS92 / Philippines zone 3",
@@ -621,16 +663,14 @@ Figure 9.19 - Selecting min and max values to reclassify the raster
 
 After pressing apply, the raster will be represented using the new selected min-max range. This functionality allows the user to ignore extreme values that can stretch ab-normally the raster. 
 
-Even though the next tool we use is a plugin (see module 1 for plugin details), we consider it very useful in starting working with raster. We are referring to the `Value Tool` that allows immediate identification of cell values by hovering over raster layers. 
+Even though the next tool we use is a plugin (see module 1 for plugin details), we consider it very useful in starting working with raster. We are referring to the **Value Tool** that allows immediate identification of cell values by hovering over raster layers. 
 
-Go to` Plugin ‣ Manage and Install Plugins` and search for the `Value Tool` plugin and click install. Afterwards, right click on the QGIS main window bar to open all available Panels and Toolbars in your QGIS installation (see figure 9.20). 
+Go to **Plugin ‣ Manage and Install Plugins** and search for the **Value Tool** plugin and click install. Afterwards, right click on the QGIS main window bar to open all available Panels and Toolbars in your QGIS installation and select the **Value Tool panel**. Check your QGIS interface to see where it opened.
 
 
-![Panels and toolbars availability in QGIS](media/fig920.png "Panels and toolbars availability in QGIS")
+![The Value Tool Panel](media/fig920.png "The Value Tool Panel")
 
-Figure 9.20 - Panels and toolbars availability in QGIS 
-
-Select the `Value Tool` panel, then check your QGIS interface to see where it opened, in your case.  As seen in picture 9.20, Value Tool opened in the left downside corner, for me. 
+Figure 9.20 - The Value Tool Panel
 
 The practicality of this tool resides in its simplicity of use, with just a few clicks, one can very easily extract value cells in the exact areas of interest. Furthermore, it allows this for all loaded raster layers. 
 
@@ -641,7 +681,7 @@ The Value Tool has 3 tabs: Table, Graph, Options (see figure 9.21).
 
 Figure 9.21 - Loaded value tool - highlight on first tab - Table
 
-The first tab - Tabel - presents a list of all loaded raster layers and the values of cells, as the user moves the mouse. There is also the possibility of selecting with how many decimals the values should be displayed. If the mouse is hovered outside a raster layer extent, instead of a value, a message will be displayed: “out of extent”. 
+The first tab - Table - presents a list of all loaded raster layers and the values of cells, as the user moves the mouse. There is also the possibility of selecting with how many decimals the values should be displayed. If the mouse is hovered outside a raster layer extent, instead of a value, a message will be displayed: “out of extent”. 
 
 The second tab - Graph - displays in a united graph all values it reads at the position of the mouse. It allows the user to insert values for min and max on the Y axis - that is the axis of cell values. The X axis lists all bands of the raster it displays in the tabel, with the corresponding order numbers: the band that has number 1 in first tab, will also be number 1 in the graph. 
 
@@ -669,7 +709,7 @@ As you may have noticed, due to the raster data model structure, the layers we h
 
 As you have noticed by now, the datasets we load into a GIS - in our case into QGIS - can be processed together even if they are of different nature, such as joining csv tables to vector layers to add information to geometries. The same applies to raster and vector data, as we will see. 
 
-To work only with raster layers that are relevant to our Pampanga province, we will use the vector extent layer (Pampanga3123) to cut/clip all relevant raster layers. Go to` Raster ‣ Extraction ‣ Clip Raster by Mask Layer` (see figure 9.22)`.`
+To work only with raster layers that are relevant to our Pampanga province, we will use the vector extent layer (Pampanga_admin_boundary) to cut/clip all relevant raster layers. Go to **Raster ‣ Extraction ‣ Clip Raster by Mask Layer** (see figure 9.22). Similarly, you can search for Clip in the Processing Toolbar or the Locator bar.
 
 
 ![Using a vector mask to extract the raster data on a specific region](media/fig922.png "Using a vector mask to extract the raster data on a specific region")
@@ -685,7 +725,11 @@ Your batch processing window setup should look like in figure 9.23.
 
 Figure 9.23 - Batch process cliping all required raster layers by Pampanga Province geometry
 
-The parameters setup are the following: mask layer: Pampanga3123, both source and target CRS is EPSG 3123, select yes to: `match the extent of the clipped raster to the mask layer` and `keep resolution of input layer`. Be aware, for the DSM_mosaic we will also select yes` to create an output alpha band`. Load layers at completion. 
+The parameters setup are the following:
+* mask layer: Pampanga_admin_boundary
+* both source and target CRS is EPSG 3123
+* select yes to: `match the extent of the clipped raster to the mask layer` and `keep resolution of input layer`. 
+* Be aware, for the DSM_mosaic we will also select yes` to create an output alpha band`. Load layers at completion. 
 
 If everything went smoothly, your QGIS main window should look like in figure 9.24. 
 
@@ -710,19 +754,30 @@ Using your knowledge acquired in module 4, you can style the DSM layer by these 
 
 Figure 9.25 - DSM_mosaic_clipped representation
 
-In order to calculate the number of people based on the raster data HRSL that live up to 200 meters in Pampanga province, we must see which pixels fall in each of those categories. To do that, we will use `Raster Calculator`. This is a functionality allowing the user to perform calculations on the basis of existing raster pixel values. The results are written to a new raster layer in a GDAL[^5]-supported format.
+In order to calculate the number of people based on the raster data HRSL that live up to 200 meters in Pampanga province, we must see which pixels fall in each of those categories. To do that, we will use **Raster Calculator**. This is a functionality allowing the user to perform calculations on the basis of existing raster pixel values. The results are written to a new raster layer in a GDAL[^5]-supported format.
 
-To open the Raster Calculator go to `Raster ‣ Raster Calculator. `The functionality window should now be on your screen (see figure 9.26). 
+There are several ways to open the raster calclulator in QGIS. You can do so from the Menu bar **Raster ‣ Raster Calculator** or by searching raster calculator on the Processing Toolbox or Locator bar. If we run the Raster Calculator under Raster analysis in the Processing Toolbox, the window in Figure 9.26b should appear. 
 
 
-![Raster calculator](media/fig926.png "Raster calculator")
+![Opening the Raster calculator](media/fig926_a.png "Opening the Raster calculator")
 
-Figure 9.26 - Raster calculator
+Figure 9.26a - Opening the Raster calculator
 
-In this window, we can recognize the operations detailed in the Concepts section, substractions, additions, comparisons and all the others (see page 3). Next, we will ‘slice’ our DSM_mosaic_clipped raster layer to extract only the pixels with values up to 200 meters. We know that the value cells of the DSM-mosaic_clipped represent a continuous numerical data (not discrete values, such as LandCover). Therefore, the operation we need to employ in this case is a comparison one - cell values &lt; 200 meters. To obtain this, we will write the following the Raster Calculator: 
 
-`"DSM_mosaic_clipped@1" &lt; 200.` The naming convention for the rasters can be observed: what comes before the @ is the name of the raster layer, what comes after the @ is the number of the band. Save the calculator result as DSM_clipped200.tiff. Your Raster Calculator should look like in figure 9.27. 
+![Raster calculator](media/fig926_b.png "Raster calculator")
 
+Figure 9.26b - Raster calculator
+
+In this window, we can recognize the operations detailed in the Concepts section, substractions, additions, comparisons and all the others (see page 3). **Clipped_Reprojected_Merged_SRTM@1** The naming convention for the rasters can be observed: what comes before the @ is the name of the raster layer, what comes after the @ is the number of the band.
+
+
+Next, we will ‘slice’ our DSM_mosaic_clipped raster layer to extract only the pixels with values up to 200 meters. We know that the value cells of the DSM-mosaic_clipped represent a continuous numerical data (not discrete values, such as LandCover). Therefore, the operation we need to employ in this case is a comparison one - cell values <= 200 meters. To obtain this, we will write the following the Raster Calculator: 
+
+```
+"Clipped_Reprojected_Merged_SRTM@1" <= 200
+``` 
+
+Set the **Reference layer** as **Clipped_Reprojected_Merged_SRTM@1**. Your Raster Calculator should look like in figure 9.27.
 
 ![Inserting a formula into the Raster Calculator](media/fig927.png "Inserting a formula into the Raster Calculator")
 
@@ -735,7 +790,7 @@ Your result should look like in figure 9.28.
 
 Figure 9.28 - Result of identify all pixel values that are below 200 meters using the Raster Calculator
 
-As we can see in the TOC, the raster layer we have obtained has only 2 values 0 and 1. That is because we have used a rational operation, a comparison, therefore every pixel that is below 200 meters received value = 1 and all above, value = 0. We can test this by using the `Value Tool`. Figure 9.29 presents only pixels of value 1, in other words the pixels we are interested in for our exercise. 
+The result will be named `Output`. You can rename this to `< 200`. As we can see in the Layers Panel, the raster layer we have obtained has only 2 values 0 and 1. That is because we have used a rational operation, a comparison, therefore every pixel that is below 200 meters received value = 1 and all above, value = 0. We can test this by using the `Value Tool`. Figure 9.29 presents only pixels of value 1, in other words the pixels we are interested in for our exercise. 
 
 
 ![Spatial distribution of all pixels of value 1, meaning with altitude lower than 200 meters](media/fig929.png "Spatial distribution of all pixels of value 1, meaning with altitude lower than 200 meters")
@@ -746,7 +801,11 @@ Going further, we can show the spatial distribution of population at the 30 m sp
 
 The formula is fairly simple, given that all DSM cell values we are interested in have value 1. 
 
-Open the Calculator and insert the following formula: `"DSM_clipped200@1"*"hsrl_clipped@1"`
+Open the Calculator and insert the following formula: 
+
+```
+"< 200@1"*"Reprojected_HRSL_Pampanga_Population@1"
+```
 
 
 ![Using raster calculator to identify population distribution classes based on altitude of up to 200m](media/fig930.png "Using raster calculator to identify population distribution classes based on altitude of up to 200m")
@@ -760,7 +819,7 @@ As opposed to previous raster calculator use, we have used 2 different raster da
 
 Figure 9.31 - Using Value Tool to check results of Raster Calculator
 
-You can see that even if hrsl_clipped has values in this specific mouse location, the raster obtained with Raster Calculator hrsl_dsm_clipped has value 0. 
+You can see that even if Reprojected_HRSL_Pampanga_Population has values in this specific mouse location, the raster obtained with Raster Calculator HRSL_DSM has value 0. 
 
 Next, we present the spatial distribution of the population that lives below 200m in Pampanga province. To choose an appropriate classification, we calculate the histogram. We can notice that most values are between 0.1 and 200 people per 30m. The classification we’ve chosen is visible in figure 9.32. 
 
@@ -769,16 +828,23 @@ Next, we present the spatial distribution of the population that lives below 200
 
 Figure 9.32 - Distribution of population that lives below 200m in Pampanga province, represented at a 30m resolution. 
 
-If we are interested in the total number of people living below 200m in Pampanga province and not the geographical distribution per 30 m spatial resolution, then we need to sum up all pixel values of the raster layer hrsl_dsm_clipped. One way to obtain this number is to transform the DSM_clipped200 from raster to vector and them [....]
+If we are interested in the total number of people living below 200m in Pampanga province and not the geographical distribution per 30 m spatial resolution, then we need to sum up all pixel values of the raster layer HRSL_DSM. One way to obtain this number is to transform the DSM_clipped200 from raster to vector and them [....]
 
-To do that go to `Raster ‣ Conversion ‣ Polygonize (Raster to Vector) `(see figure 9.33). 
+To do that go to **Raster ‣ Conversion ‣ Polygonize (Raster to Vector)** (see figure 9.33). 
 
 
-![Raster to vector conversion](media/fig933.png "Raster to vector conversion")
+![Raster to vector conversion](media/fig933_a.png "Raster to vector conversion")
 
-Figure 9.33 - Raster to vector conversion
+Figure 9.33a - Raster to vector conversion
 
-Remember that this raster layer had only 2 values - 0 and 1, so choose as the parameter by which to construct the vector the DN (digital number). Save the result as DSM_clipped200.geojson. Your result should look like in figure 9.34. 
+Remember that this raster layer had only 2 values - 0 and 1, so choose as the parameter by which to construct the vector the DN (digital number). 
+
+
+![Raster to vector conversion parameters](media/fig933_b.png "Raster to vector conversion parameters")
+
+Figure 9.33a - Raster to vector conversion parameters
+
+Your result should look like in figure 9.34. 
 
 
 ![Result of converting a raster dataset to a vector dataset](media/fig934.png "Result of converting a raster dataset to a vector dataset")
@@ -787,7 +853,7 @@ Figure 9.34 -  Result of converting a raster dataset to a vector dataset.
 
 Delete the geometry of value 0. 
 
-To find our answer we will use `Zonal Statistics`. To quickly find this functionality, open the Processing Toolbox and type in the search box “zonal” (see figure 9.35).
+To find our answer we will use **Zonal Statistics**. To quickly find this functionality, open the Processing Toolbox and type in the search box “zonal” (see figure 9.35).
 
 
 ![Identifying Zonal Statistics in the Processing Toolbox](media/fig935.png "Identifying Zonal Statistics in the Processing Toolbox")
@@ -824,26 +890,293 @@ And with this final step, we answered our exercise, how many people (and where) 
 *   _No._
 
 
-### Phase 3: Working with raster and vector data.
+### **Phase 3: Working with raster and vector data.**
 
-*   Resampling HRSL to LandCover dimension - 30m to 100m
-*   Change detection exercise for land cover
+In the previous phase, we have seen how we can process 2 raster datasets in order to derive new information. We have used the digital surface model and the High Resolution Settlement Layer to find out how many people live below 200m in Pampanga province. Before doing any analysis, we made sure that the datasets were in the same projection and, furthermore if the rasters have the same spatial resolution so that the results we obtained are viable. When referring to the coordinate reference system, the reasoning is clear, but why the same spatial resolution? 
+
+Remembering spatial resolution, it is the size of the ground surface measured in units of length, in other words, the size of the pixel measured on ground. If a raster has a 30m resolution, that means that the smallest linear object we could detect on that image is of 30 m, any smaller and we could not detect it. Continuing the analogy, we can compare it with the scale of a map. If a map has a scale of 1:25000, that means that 1 unit of length on the map represents 25000 units on the ground, that is 1 cm is 25000cm, 1 cm on the map equals 250m on the ground. For example, a 2km road would have 8 cm on the map.
+
+Why is that important when working with raster datasets? Figure 9.38 might offer an explanation.
+
+
+![alt_text](media/fig938.png "image_tooltip")
+
+Figure 9.38 - Example of different resolutions specific to different satellite imagery - Landsat and SPOT -  for the same area 
+
+_(Photo credit: Congedo,  L.  and  Munafò,  M, (2013) Assessment  of  Land  Cover  Change  Using Remote  Sensing:  Objectives,  Methods  and  Results, Rome:  Sapienza  University.  Available  at:
+http://www.planning4adaptation.eu/_
+
+Figure 9.38 details the relation between the resolution of the satellite imagery and the land cover information extracted from these images captured. Remember as we detailed at the beginning that the value of the pixel cell is attributed to the entire area it covers, yet that does not mean that is the reality on the ground. These represent decisions made by the EO experts that derive various products based on Earth Observation imagery - all documented in peer-reviewed papers and algorithm descriptions. Further explanations are beyond the scope of this module, but it is important to keep in mind the relation between what a sensor onboard a satellite captures and the products we use. 
+
+Coming back to our region of interest - Pampanga province - we can test these differences with the data that we have at hand. We have loaded into our QGIS project the 5 raster layers of LandCover for 5 years: 2015, 2016, 2017, 2018 and 2019. Next, we will load a mosaic of Sentinel-2[^6] imagery. We will load the WMS layer EOX Sentinel-2 cloudless, available [here](https://s2maps.eu/). Remembering from module 2, to add a WMS layer, go to **Layer ‣ Add layer ‣ Add WM/WMTS Layer..**
+
+When the add window opens, use the following parameters:
+```
+Name: EOX Sentinel-2
+URL: https://tiles.maps.eox.at/wms?service=wms&request=getcapabilities
+```
+
+
+![alt_text](media/fig939.png "image_tooltip")
+
+Figure 9.39 - Adding a WMS layer to QGIS 
+
+After connecting to the newly WMS layer added, we will load the layer named Sentinel-2 cloudless layer for 2019 by EOX - 4326 into QGIS. After zooming to the region of interest extent, your map window should look like in figure 9.40. 
+
+
+![alt_text](media/fig940.png "image_tooltip")
+
+Figure 9.40  - Sentinel-2 cloudless layer for 2019 by EOX - 4326 for Pampanga province
+
+Although the LandCover products have been obtained using other satellite data (Proba-V), let us compare the 2 layers so we can get a sense of what different resolutions mean. Remember that the LandCover product is at 100m and Sentinel 2 imagery is at 10m. To accomplish that, we will open the Clipped_Reprojected_LandCover 2019 and the WMS layer. To make comparisons between 2 layers, we will use a new plugin that you must install. Therefore, go to **Plugins ‣ manage and install plugins** and write in the search box `MapSwipe Tool`. Once you install it, it should appear as a new pictogram in your toolbar (![MapSwipe Tool button](media/mapswipe-btn.png "MapSwipe Tool button")). 
+
+
+![alt_text](media/fig941.png "image_tooltip")
+
+Figure 9.41 - Comparing 2 raster layers using MapSwipe Tool plugin 
+
+To activate the MapSwipe tool, click on it while the raster layer you want to drape is selected in the Layers Panel. The resolution differences are obvious, as well as the fact that the satellite product (Land Cover) has been developed using a satellite image (PROBA-V) of a coarser resolution. However, the general larger classes are well identified, as can be seen in figure 9.42. 
+
+
+![alt_text](media/fig942.png "image_tooltip")
+
+Figure 9.42 - LandCover2019 obtained from PROBA-V(100m) on top of Sentinel 2 mosaic (30m)
+
+Adding the HRSL to the map, will show a good match between HRSL and the LandCover. The urban space is depicted in red and, as you can see in figure 9.43, it is almost completely covered by the HRSL layer. 
+
+
+![alt_text](media/fig943.png "image_tooltip")
+
+Figure 9.43 - HRSL added on top of the Clipped_Reprojected_LandCover 2019.
+
+However, zooming in you can see the difference in resolution between the 2 raster products, as in figure 9.44. 
+
+
+![alt_text](media/fig944.png "image_tooltip")
+
+Figure 9.44 - Difference in spatial resolution between HRSL (30m - pinkish) and the Clipped_Reprojected_LandCover 2019 (100m - red and magenta colours)
+
+Now, if any analysis would be made using these rasters, these results would not be viable, because we would be comparing values that apply to different resolutions. As a preprocessing phase, the user must _resample_ one of the 2 to match. 
+
+**Resampling** refers to changing the cell values due to changes in the raster cell grid and there are only 2 options: (1) **upsampling** refers to cases where we are converting to higher resolution/smaller cells and (2) **downsampling** is resampling to lower resolution/larger cell sizes. 
+
+Let us imagine the following exercise. We need to identify the population numbers for each category of land cover we have defined in the Pampanga province. As explained above, we need to _pre-process_ the data we have in order to get viable results from our analysis, i.e. in our case, we need to bring both our raster datasets to the same spatial resolution. As detailed above, we can either increase or decrease the pixels’ dimensions. It must be highlighted that resample, with up or downscale, will involve an interpolation process (see page 12 for more details) - so the result introduces a statistical error. The usual practice is to resample all rasters to correspond to the raster with the lower resolution, but again this decision must be taken with consideration to all factors. Detailing the decision making process for resampling raster layers far exceeds the scope of this curriculum. 
+
+A difference between the 2 products must be highlighted: the LandCover product covers the **entire area** of the considered extent, as opposed to the HSRL product, where the raster layer contains strictly the cell where values above 0 exist. This situation poses issues when interpolation cell values to resample, because no matter the interpolation method chosen, that would take into consideration the surrounding pixels, following a specific well-defined algorithm and in this particular situation, the edge pixels are not at the edge of the study region, but within it. Therefore, in our demonstrative case, we will consider upsampling the Land Cover product from 100m to 30m resolution to match the LandCover product resolution. The resampling method we choose is crucial, as results can vary significantly. For the purpose of demonstration, we will resample the LandCover product using 2 different methods - Nearest Neighbour and Mode. 
+
+To resample, go to **Raster ‣ Projections ‣ Wrap (reproject).** In the functionality window set the following parameters: 
+* input layer: Clipped_Reprojected_LandCover 2019, 
+* Source CRS and Target CRS: EPSG: 3123, 
+* Resampling method: Nearest Neighbour, 
+* No data: 255, output file resolution: 30, 
+* Output data type: use input layer data type, 
+* georeference extent: select the Clipped_Reprojected_LandCover 2019 layer. 
+
+Save the output layer as LC2019_NearestNeighbour. 
+
+
+![alt_text](media/fig945.png "image_tooltip")
+
+Figure 9.45 - Resampling the Land Cover layer
+
+
+Follow the exact steps, except that for resample method parameter choose Mode. Save the output layer as LC2019_Mode.  
+
+Now, let’s compare results - see figure 9.45 and 9.46. 
+
+
+![alt_text](media/fig946_a.png "image_tooltip")
+
+Figure 9.46a - Resampling Land Cover product using the Nearest Neighbour resampling method
+
+
+![alt_text](media/fig946_b.png "image_tooltip")
+
+Figure 9.46b - Resampling Land Cover product using the Mode resampling method
+
+Both rasters have the same symbology applied and we can observe that in figure 9.45 there are values that don’t fall in either category - pixels are not showing. However, we know that the Land Cover product is a seamless layer - it has no gaps between the same categories defined. Let us dig deeper and look at the histograms for all three layers. For that go to **Properties ‣ Histogram** and choose from Prefs/Actions to show only Band 1. Save the histogram by clicking on the save icon on the right side of the window (see figure 9.47).
+
+
+![alt_text](media/fig947.png "image_tooltip")
+
+Figure 9.47 - Show values only for one selected band in the histogram.
+
+Figure 9.48 (a), (b) and (c) present the 3 histograms of interest. 
+
+
+![alt_text](media/fig948_a.png "image_tooltip")
+
+![alt_text](media/fig948_b.png "image_tooltip")
+
+![alt_text](media/fig948_c.png "image_tooltip")
+
+Figure 9.48 - Histograms of (a) Clipped_Reprojected_LandCover 2019 (100m), (b) LC2019_NearestNeighbour and (c) LC2019_Mode
+
+We can observe the differences in the distribution of values for the 3 datasets, emphasis on (b), where we used the nearest neighbour resampling method, resulting - as expecting - in a calculated pixel values and thus resulting in values that do not correspond with any values in the Land Cover product (see table 1, page 7). Hence, the white spaces - pixels with no color assigned in figure 9.45. As inferred, the mode resampling method - or majority resampling method -  selects the value which appears most often.
+
+At this point, your map windows should look like in figure 9.49. 
+
+
+![alt_text](media/fig949.png "image_tooltip")
+
+Figure 9.49 - The 2 raster products: Land Cover 2019 and HRSL overlaid. 
+
+Going back to our exercise, the requirements was to identify the population numbers for each category of land cover we have defined in the Pampanga province. At this point, we have pre-processed our raster data, as to have it in the same coordinate system, with the same spatial resolution. We will continue with a conversion algorithm, we will transform the raster dataset Land Cover into a vector dataset - polygon type. This will allow us to more easily identify the population count for each land cover category. 
+
+For conversions, from raster to polygon, as well as from vector to polygon, go to **Raster ‣ Conversion** and here we have more options. We will choose **Polygonize (Raster to vector)..** We will convert to vector the latest raster dataset that we have obtained: LC2019_Mode. Your result should look like in figure 9.50b. 
+
+
+![alt_text](media/fig950_a.png "image_tooltip")
+
+Figure 9.50a - Polygonizing the LC2019_Mode (30m) raster layer
+
+
+![alt_text](media/fig950_b.png "image_tooltip")
+
+Figure 9.50b - Result of polygonizing the LC2019_Mode (30m) raster layer
+
+As we can observe, each pixel - each group of adjacent pixels with the same category code (see table 1, page 7) was converted into one polygon. However, we are not interested in each distinct region, but in the entire category. Thus, we will dissolve the vector layer we have obtained using the class identification as the common attribute (**Vector ‣ Geoprocessing tools ‣ Dissolve** - for more details, check module 8).
+
+Attaching the same styling as for the raster and we will notice the same vector classes correspond to the raster ones (see figure 9.51). 
+
+
+![alt_text](media/fig951.png "image_tooltip")
+
+Figure 9.51 - LC2019_Mode polygonez 
+
+As we can observe, the HRSL’s pixels are, as expected, not perfectly contained in a polygon of the land cover product (see picture 9.52).
+
+
+![alt_text](media/fig952.png "image_tooltip")
+
+Figure 9.52 - Mismatch of HRSl pixels and the land cover vector dataset  
+
+To eliminate this inconvenience, we will vectorize the HRSL layer as well, just that this time we will transfer the pixel cell value to a point - the geometric center of each pixel.
+
+Go to **Processing ‣ Toolbox**. In the search bar write the keywords `raster point` and choose the `Raster pixels to points` algorithm (see figure 9.53a). Save the output as HRSL_points. 
+
+
+![alt_text](media/fig953_a.png "image_tooltip")
+
+Figure 9.53a - Raster pixels to points
+
+
+![alt_text](media/fig953_b.png "image_tooltip")
+
+Figure 9.53b - Running Raster pixels to points algorithm
+
+Considering the extent of your study area, this operation can be significantly lengthy in time. Figure 9.54 shows how many points we have obtained for Pampanga province.
+
+
+![alt_text](media/fig954.png "image_tooltip")
+
+Figure 9.54 - Loading point vector data obtained
+
+The number of features is considerably high and without importing it into a database, any kind of processing or visualisation would require too much time. In these types of situations, the reasonable solution is to divide the datasets we have to process into manageable chunks. Therefore, we will consider processing the necessary calculations on smaller well-defined areas. To split the HRSL layer we will use the option to create a VRT. Select the HRSl layer and choose **Export as..** In the new window, tick on the **Create VRT** option and set the following parameters: browse to a folder where the splitted raster will be exported to, CRS: EPSg:3123, VRT tiles: max columns 1000, max rows: 1000 (see figure 9.55).
+
+
+![alt_text](media/fig955.png "image_tooltip")
+
+Figure 9.55 - Creating a VRT file with specific raster tiles
+
+After exporting, load all the raster tiles into your QGIS project. The result should look like in figure 9.56. 
+
+
+![alt_text](media/fig956.png "image_tooltip")
+
+Figure 9.56 - Raster tiles for the Pampanga province HRSL 
+
+Next, we will re-run the **Raster pixels to points** algorithm for each of the raster tiles. Because we have several tiles, we will use the batch processing function (see figure 9.57).
+
+
+![alt_text](media/fig957.png "image_tooltip")
+
+Figure 9.57 - Running raster to points for all raster tiles 
+
+The resultant vector points should look like in figure 9.58. 
+
+
+![alt_text](media/fig958.png "image_tooltip")
+
+Figure 9.58 - Point vector dataset for the HRSL layer with pixel values stored in the VALUE column
+
+Taking a closer look at the results of the algorithm, we can see that the vector points fall exactly in the center of the pixel they extract the value from (see figure 9.59.).
+
+
+![alt_text](media/fig959.png "image_tooltip")
+
+Figure 9.59 - Verifying the values of the point vector data vs. raster pixel values
+
+To resolve the exercise, the sum of the values of points extracted from the HRSL product that fall within each polygon of the land cover product must be calculated. To do that, we will use a function that is available in Field Calculator - `aggregation()`. This function is quite powerful as it does spatial joins on the fly allowing various calculations. In our case, the function must identify the points that fall into each polygon and then sum up the values of those points. To do that, go the attribute table of the LC2019_Mode vector dataset and open the field calculator. Creating a new field, introduce the following expression:
+
+
+```
+aggregate(
+    layer:= 'HRSL_vectors1',
+    aggregate:='sum',
+    expression:=VALUE,
+    filter:=intersects($geometry, geometry(@parent))
+)
+```
+
+
+Where, <code>layer<em> </em></code>is the name of the dataset from which we want to extract information (in our case, the point dataset that holds the pixel values of the HRSL raster layer), <code>aggregate</code> - indicates the action to be performed once the spatial join is confirmed (sum, count, mean, median, concatenate etc.), <code>expression - </code>indicates the what column we want to extract data from, <code>filter - </code>indicates<code> </code>the geometry function (intersect, within etc.) (see figure 9.60).
+
+
+![alt_text](media/fig960.png "image_tooltip")
+
+Figure 9.60 - Using built-in functions with field calculator
+
+The results are, as expected, saved in the attribute table of the LC2019_Mode. And thus, the exercise has been completed. 
+
+**Please, be aware! This last step can be excessively lengthy depending on the volume of your data! Test to find your best tiling dimensions.**
+
+If using the Field Calculator and the aggregate function doesn't work, we can also use the **Join attributes by location (summary)** algorithm to compute for the sum of the values of the points inside the LC_Mode_vector features.
+
+
+![alt_text](media/fig961.png "image_tooltip")
+
+Figure 9.61 - Parameters of the Join attributes by location (summary) algorithm
+
+
+![alt_text](media/fig962.png "image_tooltip")
+
+Figure 9.62 - Output of the Join attributes by location (summary) algorithm
+
+In this third phase of our module 9, we have worked with raster, as well as with vector data. We have taken a closer look at what resampling means and what are the implications of the rasters characteristics, such as coordinate reference system, spatial resolution etc. Most often, one must work with both raster and vector datasets and thus, it is important to know that it is possible in a number of ways. We’ve also tested a number of conversions, from raster to vector and vice-versa. However, in our processing we must not lose sight of the phenomena we are studying, as well as the initial scale at which the data has been collected, be it vector or raster. When performing conversions, it is important to know the correspondence between a map scale and raster resolution. According to cartographer Waldo Tobler “the rule is divide the denominator of the map scale by 1000 to get the detectable size in meters. The resolution is one half of this amount.” In other words, the formula would be:  `map scale = raster resolution (in m) X 2 X 1000. `
+
+The solutions given to our exercises in this module, as in module 8 as well, are just one way to solve the requirements. As one advances the study of the open source tools for geospatial, one finds out that there are several possibilities to get to the same outcome - some better than others. 
+
+
+#### Quiz questions 
+
+1. What is the name of the process through which the resolution of a raster datasets can be made higher or lower?
+*   _<span style="text-decoration:underline;">Resampling.</span>_ 
+2. What does a histogram show us? 
+*   <span style="text-decoration:underline;">The frequency of pixel values, arranged in adjacent value ranges.</span>
+3. Can a raster dataset be converted to a polygon? What about the other way around?
+*   <span style="text-decoration:underline;">Yes and yes. </span>
 
 
 ## References:
 
-Center for International Earth Science Information Network - CIESIN - Columbia University. 2018. Gridded Population of the World, Version 4 (GPWv4): Population Density, Revision 11. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). [https://doi.org/10.7927/H49C6VHW](https://doi.org/10.7927/H49C6VHW).
+Center for International Earth Science Information Network - CIESIN - Columbia University. 2018. Gridded Population of the World, Version 4 (GPWv4): Population Density, Revision 11. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). [https://doi.org/10.7927/H49C6VHW](https://doi.org/10.7927/H49C6VHW). Accessed DAY MONTH YEAR.
 
 Resampling methods: [https://gisgeography.com/raster-resampling/](https://gisgeography.com/raster-resampling/)
 
+
+<!-- Footnotes themselves at the bottom. -->
 ## Notes
 
-[^1]: A primitive operation is a basic computation performed by an algorithm.  
-
-[^2]: The temporal resolution depends on latitude. 
-
-[^3]: JAXA is the Japan Aerospace Exploration Agency 
-
-[^4]: For the sake of this exercise we will consider the DSM as a digital elevation model. For more details on the differences please see the Breakdown of concepts section (page
-
-[^5]: The Geospatial Data Abstraction Library (GDAL) is a computer software library for reading and writing raster and vector geospatial data formats. 
+[^1]:
+     A primitive operation is a basic computation performed by an algorithm.  
+[^2]:
+     The temporal resolution depends on latitude. 
+[^3]:
+     JAXA is the Japan Aerospace Exploration Agency 
+[^4]:
+     For the sake of this exercise we will consider the DSM as a digital elevation model. For more details on the differences please see the Breakdown of concepts section
+[^5]:
+     The Geospatial Data Abstraction Library (GDAL) is a computer software library for reading and writing raster and vector geospatial data formats. 
+[^6]:
+     Sentinel-2 is an Earth observation mission from the Copernicus Programme that systematically acquires optical imagery at high spatial resolution (10 m to 60 m) over land and coastal waters. For more details go [here](https://sentinel.esa.int/web/sentinel/missions/sentinel-2). 

@@ -1,5 +1,10 @@
 **LIST OF CHANGES FOR LOCALISATION OF MODULES**
 
+# TIPS
+* Utilize Search and Replace
+    * Search and replace *Pampanga province* with the name of your area of interest (e.g. for Sri Lanka, I replaced *Pampanga province* with *Colombo district*)
+    * Search and replace *Philippines* with the name of your country of interest (e.g. for Sri Lanka, I replaced *Philippines* with *Sri Lanka*)
+
 # Module 0
 
 ## media
@@ -309,21 +314,151 @@
 * **fig840_b.png** -> replace with screenshot using localised data
 * **fig840_c.png** -> replace with screenshot using localised data
 * **fig840_d.png** -> replace with screenshot using localised data
+* **fig841.png** -> replace with screenshot using localised data
+* **fig842.png** -> replace with screenshot using localised data
+* **fig843.png** -> replace with screenshot using localised data
+* **fig844.png** -> replace with screenshot using localised data
+* **fig845.png** -> replace with screenshot using localised data
+* **fig846.png** -> replace with screenshot using localised data
+* **fig847.png** -> replace with screenshot using localised data
+* **fig849.png** -> replace with screenshot using localised data
+* **fig850.png** -> replace with screenshot using localised data
 
 ## module8
-* **line 31** -> replace with coordinate reference system used in the country (e.g. *PRS92 / Philippines zone 3, EPSG 3123* becomes *SLD 99 / Sri Lanka Grid 1999, EPSG 5235*)
-* **line 53** -> replace area with local places (e.g. *Angeles, Pampanga, Philippines* becomes *Colombo, Sri Lanka*) 
-* **lines 129, 144, 163** -> replace with local EPSG code used (e.g. *3123* becomes *5235*)
-* **lines 195-215, 221-229** -> replace with output of Basic Statistics of Field algorithm using localised data
-* **line 233** -> replace with outputs of Basic Statistics of Field algorithm using localised data (e.g. *827657* becomes *158500*)
-* **line 281, 371, 557, 590, 595, 597, 602, 604, 612, 614, 617, 619, 660** -> replace name of area with local area of interest (e.g. *Pampanga* becomes *Colombo*, *province* becomes *district*) 
-* **line 322** -> replace number of features with output from localized data (e.g. *2727* becomes *394*) 
-* **line 408-451** -> replace with outputs of List unique values algorithm using localized data 
-* **line 478** -> replace name of area (*Pampanga* to *Colombo*) and values based on GroupStats computation (*3270 buildings* to *303 buildings*) 
-* **line 782 - 807** -> depending on the POI dataset, replace the fclass to be queried. If public buildings fclasses exist in the data (e.g. town_hall, hospital, etc.), no need to replace type of POI. If not, as with Sri Lanka which has different fclasses on the POI layer, replace with the appropriate POI class. In the case of Sri Lanka, I used towns and cities instead (Philippines uses public buildings POI classes like hospitals, schools, etc.). 
+* **line 36** -> replace with coordinate reference system used in the country (e.g. *PRS92 / Philippines zone 3, EPSG 3123* becomes *SLD 99 / Sri Lanka Grid 1999, EPSG 5235*)
+* **line 59** -> replace area with local places (e.g. *Angeles, Pampanga, Philippines* becomes *Colombo, Sri Lanka*) 
+* **lines 135, 150, 169** -> replace with local EPSG code used (e.g. *3123* becomes *5235*)
+* **lines 201-221, 227-236** -> replace with output of Basic Statistics of Field algorithm using localised data
+* **line 239** -> replace with outputs of Basic Statistics of Field algorithm using localised data (e.g. *827657* becomes *158500*)
+* **line 287, 377, 563, 596, 601, 603, 608, 610, 618, 620, 623, 625, 666, 855, 859, 878, 898, 900, 923, 929** -> replace name of area with local area of interest (e.g. *Pampanga* becomes *Colombo*, *province* becomes *district*) 
+* **line 328** -> replace number of features with output from localized data (e.g. *2727* becomes *394*) 
+* **line 414-457** -> replace with outputs of List unique values algorithm using localized data 
+* **line 484** -> replace name of area (*Pampanga* to *Colombo*) and values based on GroupStats computation (*3270 buildings* to *303 buildings*) 
+* **line 788 - 813** -> depending on the POI dataset, replace the fclass to be queried. If public buildings fclasses exist in the data (e.g. town_hall, hospital, etc.), no need to replace type of POI. If not, as with Sri Lanka which has different fclasses on the POI layer, replace with the appropriate POI class. In the case of Sri Lanka, I used towns and cities instead (Philippines uses public buildings POI classes like hospitals, schools, etc.). 
 
 
 # Module 9
+
+## Downloading data for Module 9
+- For the SRTM DEM, you can use the SRTM Downloader plugin in QGIS and download the tiles covering your area of choice. Save the downloaded layers as TIFF files.
+- For the Copernicus Global Land Cover layers, the easiest way to download is to use Google Earth Engine.
+    1. Get the extent of your Area of Interest (AOI)
+    2. Use the following script to download the LC data from 2015 to 2019 (the script below does 1 download per run, feel free to modify it to run as a loop)
+
+    ```javascript
+    // Select geometry to extract PROBA-V Landcover data
+    // Replace the vertices with the vertices of the extent of your area
+    var geometry = ee.Geometry.Polygon([ [ [ 79.8397728261881383, 6.7136763269970103 ], [ 80.2238350772961866, 6.7136763269970103 ], [ 80.2238350772961866, 6.9797629738920230 ], [ 79.8397728261881383, 6.9797629738920230 ], [ 79.8397728261881383, 6.7136763269970103 ]]]);
+
+    // Location
+    var area = ee.FeatureCollection(geometry);
+    // Set study area as map center.
+
+    Map.centerObject(area);
+
+    // Select dataset from the Copernicus Landcover Proba-V
+    // Just replace the year at the end of the URL (e.g. replace Global/2015 to Global/2016 to download the 2016 data)
+    var landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2015").select('discrete_classification','forest_type','urban-coverfraction').clip(area);
+
+    // Check the console for the result of the data selection
+    print (landcover);
+
+    // Add dataset to the map
+    Map.addLayer(landcover, {}, "Land Cover");
+
+    // Export files as cloud-optimized GeoTIFFs.
+    Export.image.toDrive({
+    image: landcover, 
+    description: 'LandCover_2015', 
+    scale: 30, 
+    region: area, 
+    maxPixels: 1e10, 
+    fileFormat: 'GeoTIFF', 
+    formatOptions: {cloudOptimized: true}
+    });
+    ```
+
+## data
+* **module9.gpkg** - contains admin boundary of Area of Interest (e.g. Pampanga province, Colombo district)
+* **SRTM_DEM** - folder contains the SRTM DEM layers (.tiff)
+* **Dynamic_Land_Cover_Map** - folder contains the Copernicus Land Cover maps downloaded using the GEE script above
+* **HRSL_area_Population.tif** - HRSL of the Area of Interest
+
+## media
+* **fig96.png** -> replace with screenshot using localised data
+* **fig97.png** -> replace with screenshot using localised data
+* **fig98.png** -> replace with screenshot using localised data
+* **fig99_a.png** -> replace with screenshot using localised data
+* **fig99_b.png** -> replace with screenshot using localised data
+* **fig912.png** -> replace with screenshot using localised data
+* **fig913_a.png** -> replace with screenshot using localised data
+* **fig913_b.png** -> replace with screenshot using localised data
+* **fig913_c.png** -> replace with screenshot using localised data
+* **fig914.png** -> replace with screenshot using localised data
+* **fig915_a.png** -> replace with screenshot using localised data
+* **fig915_b.png** -> replace with screenshot using localised data
+* **fig915_c.png** -> replace with screenshot using localised data
+* **fig915_d.png** -> replace with screenshot using localised data
+* **fig916.png** -> replace with screenshot using localised data
+* **fig917.png** -> replace with screenshot using localised data
+* **fig918.png** -> replace with screenshot using localised data
+* **fig919.png** -> replace with screenshot using localised data
+* **fig920.png** -> replace with screenshot using localised data
+* **fig921.png** -> replace with screenshot using localised data
+* **fig922.png** -> replace with screenshot using localised data
+* **fig923.png** -> replace with screenshot using localised data
+* **fig924.png** -> replace with screenshot using localised data
+* **fig925.png** -> replace with screenshot using localised data
+* **fig926_a.png** -> replace with screenshot using localised data
+* **fig926_b.png** -> replace with screenshot using localised data
+* **fig927.png** -> replace with screenshot using localised data
+* **fig928.png** -> replace with screenshot using localised data
+* **fig929.png** -> replace with screenshot using localised data
+* **fig930.png** -> replace with screenshot using localised data
+* **fig931.png** -> replace with screenshot using localised data
+* **fig932.png** -> replace with screenshot using localised data
+* **fig933_a.png** -> replace with screenshot using localised data
+* **fig933_b.png** -> replace with screenshot using localised data
+* **fig934.png** -> replace with screenshot using localised data
+* **fig935.png** -> replace with screenshot using localised data
+* **fig936.png** -> replace with screenshot using localised data
+* **fig937.png** -> replace with screenshot using localised data
+* **fig939.png** -> replace with screenshot using localised data
+* **fig940.png** -> replace with screenshot using localised data
+* **fig941.png** -> replace with screenshot using localised data
+* **fig942.png** -> replace with screenshot using localised data
+* **fig943.png** -> replace with screenshot using localised data
+* **fig944.png** -> replace with screenshot using localised data
+* **fig945.png** -> replace with screenshot using localised data
+* **fig946_a.png** -> replace with screenshot using localised data
+* **fig946_b.png** -> replace with screenshot using localised data
+* **fig947.png** -> replace with screenshot using localised data
+* **fig948_a.png** -> replace with screenshot using localised data
+* **fig948_b.png** -> replace with screenshot using localised data
+* **fig948_c.png** -> replace with screenshot using localised data
+* **fig949.png** -> replace with screenshot using localised data
+* **fig950_a.png** -> replace with screenshot using localised data
+* **fig950_b.png** -> replace with screenshot using localised data
+* **fig951.png** -> replace with screenshot using localised data
+* **fig952.png** -> replace with screenshot using localised data
+* **fig953_a.png** -> replace with screenshot using localised data
+* **fig953_b.png** -> replace with screenshot using localised data
+* **fig954.png** -> replace with screenshot using localised data
+* **fig955.png** -> replace with screenshot using localised data
+* **fig956.png** -> replace with screenshot using localised data
+* **fig957.png** -> replace with screenshot using localised data
+* **fig958.png** -> replace with screenshot using localised data
+* **fig959.png** -> replace with screenshot using localised data
+* **fig960.png** -> replace with screenshot using localised data
+* **fig961.png** -> replace with screenshot using localised data
+* **fig962.png** -> replace with screenshot using localised data
+
+## module9
+
+
+
+
+# Module 10
 
 ## data
 
