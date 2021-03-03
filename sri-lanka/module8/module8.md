@@ -27,8 +27,15 @@ and acquire the following skills:
 ## Required tools and resources
 
 * This module has been prepared using [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
-* The datasets used for all exercises detailed in this module are presented in the table below:
-* The coordinate reference system used is the SLD 99 / Sri Lanka Grid 1999, EPSG 5235. As it is a projected coordinate system, it allows geometric calculations. 
+* [module8.gpkg](data/module8.gpkg) which contains the following layers:
+   * pois (point)
+   * pofw (point)
+   * road (line)
+   * waterways (line)
+   * buildings (polygon)
+   * landuse (polygon)
+   * admin_boundary (polygon)
+* The coordinate reference system used is the SLD 99 / Sri Lanka Grid 1999, EPSG 5235. As it is a projected coordinate system, it allows geometric calculations.
 
 
 ## Prerequisites
@@ -824,3 +831,138 @@ A: Dissolve.
 
 ### Phase 3: Geostatistics. Interpolation - estimating missing data
 
+The last phase of the vector data module introduces the concept of data estimation. We are used to estimating almost daily on various topics, for example how much time it will take to get from home to work in certain conditions. We are used to giving our best guess,  based on previous experience and hunches. However, in estimating missing data the best guess is replaced by very well defined mathematical equations with well known limitations. 
+
+The subject requires significant knowledge in statistics and results should always be regarding through the light of their limitations. 
+
+That being said, we will introduce a short example of data estimation that will make the transition to the next module - raster data processing. 
+
+**Interpolation** is a mathematical process through which one can estimate the values that are missing based on a limited number of values that do exist. And those situations are common - imagine meteorological information. Data on surface temperatures and of how much rain has fallen can be measured only in specific points at calibrated meteo stations, and not on the entirety of a surface. However, we don’t have “blind spots'' of no temperatures on the maps we see in the meteo section. Thus, the rest of the values - as to construct the seamless phenomena - are obtained by interpolation. 
+The assumption on which interpolation is based is that spatially distributed objects are spatially correlated; in other words, things that are close together tend to have similar characteristics. 
+
+There are many interpolation methods implemented in GIS software packages, deciding which one is the best in each particular case depends on the specificity of the data, what it represents and the geostatistics understanding of the user doing the interpolation. 
+
+To make a quick check on what interpolation methods are available in QGIS, go to the Processing Toolbox and write in the search bar the keyword interpolation. The result should look like in figure 8.41. 
+
+
+![Interpolation methods available in QGIS](media/fig841.png "Interpolation methods available in QGIS")
+
+Figure 8.41 - Interpolation methods available in QGIS
+
+
+As can be observed, through QGIS the user has access to other algorithms, implemented in GRASS or SAGA, as a result of the integration into QGIS of these (and other) very powerful software solutions. 
+
+Diving into the math behind each interpolation algorithm is beyond the scope of this module. However, for demonstration purposes, we will simulate precipitation data interpolation to obtain a seamless dataset on the quantity of precipitations fallen in our area of interest, Colombo district. 
+
+As the exercise is purely for showing purposes, we will create our own set of point data - to represent the meteo stations where precipitation values have been registered for the course of one week. 
+
+Thus, the first step is creating a new vector layer - point type - with points randomly assigned inside the extent of the Colombo district. There are several ways to do that, either with the algorithm of **Random points in polygons..** or with the algorithm **Random points in layer bounds..**. Go to **Vector ‣ Research Tools ‣ Random points in polygons…**. You may also search for the algorithm in the Processing Toolbox or Locator bar. Choose as parameters: 
+* 93 points
+* minimum 5 km.
+
+The result should look like in figure 8.42. 
+
+
+![Creating random points inside a polygon layer](media/fig842.png "Creating random points inside a polygon layer")
+
+Figure 8.42 - Creating random points inside a polygon layer
+
+
+The resulting point layer will look approximately like in figure 8.43.
+
+
+![Point data layer - randomly created within specified polygons](media/fig843.png "Point data layer - randomly created within specified polygons")
+
+Figure 8.43 - Point data layer - randomly created within specified polygons.
+
+Now that we have our imaginary meteo stations that measure precipitations in Colombo district, we will continue by adding fictitious measurements on the course of 7 days. 
+
+To do that, we can use the random function provided by QGIS. Open the attribute table of the point data layer created and open field calculator. In a newly created field (Whole number integer), insert the following formula rand(min, max), where min and max will be replaced by the following pair of numbers for the corresponding 7 days (see figure 8.44):
+
+1. 0 - 59;
+2. 2 - 35;
+3. 10 - 45;
+4. 0 - 21;
+5. 5 - 63;
+6. 0 - 10;
+7. 0 - 21. 
+
+
+![Creating random values within specified limits](media/fig844.png "Creating random values within specified limits")
+
+Figure 8.44 - Creating random values within specified limits
+
+After adding all 7 columns, your attribute table should look like in figure 8.45. 
+
+
+![Fictitious precipitation data for the 93 fictitious meteo stations in Colombo district](media/fig845.png "Fictitious precipitation data for the 93 fictitious meteo stations in Colombo district")
+
+Figure 8.45 - Fictitious precipitation data for the 93 fictitious meteo stations in Colombo district.
+
+Next, we will interpolate these values for each of the 7 days  to obtain a seamless layer that covers the entire territory of the province. Given that the operation is repetitive, we will use batch processing. The selected interpolation method selected - strictly for demonstration purposes! - is IDW - inverse distance weighted. 
+
+Set the following parameters: 
+* distance coefficient: 2
+* extent: Colombo_admin_boundary
+* output raster size: 50. 
+
+Your parameters should look like in the following figure 8.46.
+
+
+![Setting up the batch processing window to interpolate the precipitation values for all 7 days](media/fig846.png "Setting up the batch processing window to interpolate the precipitation values for all 7 days")
+
+Figure 8.46 - Setting up the batch processing window to interpolate the precipitation values for all 7 days
+
+The interpolation result will look approximately like in figure 8.47. 
+
+
+![Interpolated datasets](media/fig847.png "Interpolated datasets")
+
+Figure 8.47 - Interpolated datasets
+
+The meteo stations are visible on the map canvas and in the TOC you can see all the 7 newly created raster datasets that represent precipitation values for each day in the Colombo district. 
+
+Next, let’s change the symbology of the 7 layers to a more colourful one (**Properties ‣ Symbology ‣ Singleband pseudocolour ‣ Magma**). 
+
+Looking at the point data and the raster datasets created based on them, we can notice that now we have values for the entire region and not only in the measured location. There are many processing algorithms that can be applied to these rasters in order to extract information, but more on that in the next module - processing and visualisation of raster data.  
+
+However, as we have interpolated values for 7 days, let us prepare a short animation on how precipitation values have evolved for the Colombo district. 
+
+To do that, open the **Properties dialog of test_meteo_stations_1 raster ‣ click on the Temporal tab ‣ tick the Temporal option ‣ select start and end date**, like in figure 8.48. Do the same for all 7 raster layers. 
+
+
+![Setting temporal information to the raster dataset (1)](media/fig848_a.png "Setting temporal information to the raster dataset (1)")
+
+
+![Setting temporal information to the raster dataset (2)](media/fig848_b.png "Setting temporal information to the raster dataset (2)")
+
+
+![Setting temporal information to the raster dataset (7)](media/fig848_c.png "Setting temporal information to the raster dataset (7)")
+
+Figure 8.48 - Setting temporal information to the raster dataset (1, 2, 7).
+
+
+Open Temporal Controller Panel (can be found in **View ‣ Panels ‣ Temporal Controller Panel**) and set the parameters as in figure 8.49. 
+
+
+![Set the parameters of the Time Controller Panel](media/fig849.png "Set the parameters of the Time Controller Panel")
+
+Figure 8.49 - Set the parameters of the Time Controller Panel. 
+
+Click on the play button ![Play button](media/play-btn.png "Play button") and see how the values change. You can choose what other layers to be visible. In figure 8.50, we added the buildings vector layer. 
+
+
+![Selecting other layers to be visible in the temporal animation](media/fig850.png "Selecting other layers to be visible in the temporal animation")
+
+Figure 8.50 - Selecting other layers to be visible in the temporal animation.
+
+
+Quiz questions
+
+1. Is there one algorithm to interpolate data in QGIS or more?
+
+*There are more algorithms implemented.*
+
+2. What is interpolation useful for?
+
+*Interpolation is useful to estimate data based on known data.*
