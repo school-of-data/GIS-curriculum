@@ -434,7 +434,7 @@ After selecting the Warp functionality, a new window will appear allowing the us
 
 Figure 9.9a - Warp (reproject) QGIS window
 
-If you selected the output to be **[Save to temporary file]** then there will be a raster layer named `Reprojected` in the Layers Panel. This is a memory layer and you can rename this layer to Reprojected_HRLS_Pampanga_Population and save it to make it persistent.
+If you selected the output to be **[Save to temporary file]** then there will be a raster layer named `Reprojected` in the Layers Panel. This is a memory layer and you can rename this layer to Reprojected_HRSL_Pampanga_Population and save it to make it persistent.
 
 
 ![Reprojected HRSL](media/fig99_b.png "Reprojected HRSL")
@@ -1072,7 +1072,7 @@ Considering the extent of your study area, this operation can be significantly l
 
 Figure 9.54 - Loading point vector data obtained
 
-The number of features is considerably high and without importing it into a database, any kind of processing or visualisation would require too much time. In these types of situations, the reasonable solution is to divide the datasets we have to process into manageable chunks. Therefore, we will consider processing the necessary calculations on smaller well-defined areas. To split the HRSL layer we will use the option to create a VRT. Select the HRSl layer and choose **Export as..** In the new window, tick on the **Create VRT** option and set the following parameters: browse to a folder where the splitted raster will be exported to, CRS: EPSg:3123, VRT tiles: max columns 1000, max rows: 1000 (see figure 9.55).
+The number of features is considerably high and without importing it into a database, any kind of processing or visualisation would require too much time. In these types of situations, the reasonable solution is to divide the datasets we have to process into manageable chunks. Therefore, we will consider processing the necessary calculations on smaller well-defined areas. To split the HRSL layer we will use the option to create a VRT. Select the HRSl layer and choose **Export as..** In the new window, tick on the **Create VRT** option and set the following parameters: browse to a folder where the splitted raster will be exported to, CRS: EPSG:3123, VRT tiles: max columns 1000, max rows: 1000 (see figure 9.55).
 
 
 ![alt_text](media/fig955.png "image_tooltip")

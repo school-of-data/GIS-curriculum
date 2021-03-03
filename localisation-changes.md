@@ -454,7 +454,9 @@
 * **fig962.png** -> replace with screenshot using localised data
 
 ## module9
-
+* **line 25, 26, 29, 394, 408, 412, 437, 708, 712, 724, 726, 729, 737, 739, 741, 757, 800, 807, 822, 824, 827, 829, 831, 877, 895, 911, 929, 963, 1024, 1068, 1087** -> replace name of area with local area of interest (e.g. *Pampanga* becomes *Colombo*, *province* becomes *district*)  
+* **line 545** -> replace with output of raster information algorithm
+* **line 29, 408, 421, 476, 523, 527, 653, 655, 730, 969, 1075** -> replace with coordinate reference system used in the country (e.g. *PRS92 / Philippines zone 3, EPSG 3123* becomes *SLD 99 / Sri Lanka Grid 1999, EPSG 5235*)
 
 
 
