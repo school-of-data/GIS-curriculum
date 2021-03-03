@@ -1,10 +1,10 @@
-# Module 7 - Creating and Editing Layers
+# Module 7 - Tạo và chỉnh sửa Layers
 
-**Author**: Ketty
+**Author**: Quách Đồng Thắng
 
-## Pedagogical Introduction
+## Giới thiệu chung
 
-This module is designed to teach you how to use QGIS tools to create a new GIS layer. You'll learn concepts like digitizing and georeferencing. In addition, you’ll learn  the following concepts;
+Module này được thiết kế để hướng dẫn bản cách sử dụng các công cụ QGIS để tạo một layer mới trong QGIS. Bạn sẽ học các khái niệm như số hoá (digitizing) và đăng ký toạ độ (georeferencing). Ngoài ra, bạn sẽ được học các khái niệm;
 
 *   Digitizing 
 *   Georeferencing

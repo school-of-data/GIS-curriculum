@@ -1,12 +1,12 @@
-# **Module 8 - Vector processing and analysis**
+# **Module 8 - Xử lý và phân tích dữ liệu Vector**
 
-**Author**: Codrina
+**Author**: Quách Đồng Thắng
 
-## Pedagogical Introduction
+## Giới thiệu
 
-This module is focused on a specific type of geographical data model: vector geodata.
+Module này tập trung vào mô hình dữ liệu địa lý cụ thể, đó là mô hình vector.
 
-By the end of this module, learners will have the basic understanding of the following concepts:
+Kết thúc Module này, người học sẽ nắm được các kiến thức cơ bản về các khái niệm sau:
 
 *   vector data model
 *   metadata
@@ -16,30 +16,28 @@ By the end of this module, learners will have the basic understanding of the fol
 *   topology
 *   geoprocessing
 
-and acquire the following skills:
+và có được các kỹ năng sau
 
-*   Checking geometric vector dataset quality using algorithms to check vector data topology and perform basic automatic corrections;
-*   Working with algorithms to identify errors in the attribute table;
-*   Vector data processing - running simple geoprocessing algorithms to answer potential requirements, such as how many public buildings are in my administrative region?
-*   Vector data processing - using geostatistics algorithms to fill in missing data. 
+*   Kiểm tra chất lượng dữ liệu vector sử dụng các thuật toán kiểm tra topology và thực hiện các hiệu chỉnh tự động cơ bản;
+*   Làm việc với các thuật toán để xác định các lỗi có trong bảng thuộc tính;
+*   Vector data processing - Chạy các thuật toán xử lý không gian đơn giải để trả lời các câu hỏi như có bao nhiêu toà nhà/ công trình công cộng trong một khu vực địa lý nhất định?
+*   Vector data processing - sử dụng các thuật toán thống kê không gian để điền các dữ liệu còn thiếu.
 
+## Các công cụ và tài nguyên cần thiết
 
-## Required tools and resources
+*   Module này được thiết kế sử dụng [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
+*   Dữ liệu được sử dụng trong các bài tập cụ thể của Module này được trình bày trong bảng bên dưới:
+*   CRS được sử dụng là VN-2000 / UTM zone 48N, EPSG:3405. Bởi vì đây là hệ toạ độ phẳng, cho phép thực hiện các tính toán hình học.
 
-*   This module has been prepared using [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
-*   The datasets used for all exercises detailed in this module are presented in the table below:
-*   The coordinate reference system used is the PRS92 / Philippines zone 3, EPSG 3123. As it is a projected coordinate system, it allows geometric calculations. 
+## Yêu cầu về kỹ năng
 
+*   Kiến thức cơ bản về vận hành máy tính
+*   Nắm vững các Module 0,1, 2 và 6. Module 0 giới thiệu khái niệm về mô hình dữ liệu vector, là cốt lõi của Module này. Nắm vững các Module 1,2 và 6 cho phép bạn tập trung hoàn toàn vào các khái niệm và chức năng mới của QIS được giới thiệu trong Module này mà không cần phải băn khoăn về cách tải một layer mới vào project, hoặc cách làm việc với bảng thuộc tính.
 
-## Prerequisites
-
-*   Basic knowledge of operating a computer
-*   A robust understanding of modules 0, 1 and 2 and 6 of this curriculum. Module 0 introduces the notion of vector data model that is at the core of this current section. Prior understanding of modules 1, 2 and 6 allows you to focus strictly on the new notions and QGIS functionalities introduced in this new section, without having to wonder how you could load a new layer into your project, or how to work with the attribute table of your dataset.  
-
-As part of this module, you will learn how to efficiently work with vector geographical datasets so that you can extract new information. This includes a more in depth understanding of what vector data is, what quality standards it must comply so that it is truly useful, what are the most common operations done on vector data (geoprocessing, geostatistics). 
+Là một phần của Module này, bạn sẽ học cách làm việc hiệu quả với dữ liệu vector để từ đó có thể trích xuất thông tin mới. Điều này bao gồm một hiểu biết sâu hơn về dữ liệu vector là gì, các tiêu chuẩn chất lượng nào phải tuân theo để nó thực sự hữu dụng, các phép toán thường dùng nhất nào được thực hiện trên dữ liệu vector (geoprocessing, geostatistics)
 
 
-## Additional resources: 
+## Các tài nguyên bổ sung: 
 
 *   [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/functions_list.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/functions_list.html) 
 *   [http://www.geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm](http://www.geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm)
@@ -48,146 +46,140 @@ As part of this module, you will learn how to efficiently work with vector geogr
 *   [Basics of Metadata](https://www.fgdc.gov/resources/factsheets/documents/GeospatialMetadata-July2011.pdf) by the Federal Geographic Data Committee;
 
 
-## Thematic introduction
+## Giới thiệu chuyên đề
 
-Let’s start with an example: You have just landed for your city break in Angeles, Pampanga, Philippines and you need to get from the airport to your hotel. You have no knowledge of where the airport is situated with respect to the city, nor where the hotel, so the first thing you do is open a map to help you navigate through this new and excited city! You take your phone out, open a map app and you select the start point - the airport - and the end point - your hotel - then ask for the route, by foot, car or public transport. In a matter of seconds, the routing app offers you the best solution for you to get from point A to point B and it highlights it by drawing a distinct line following streets and alleys, as visible in figure 8.1.
-
-
-![Getting from point A to B using Openstreetmap](media/fig81.png "Getting from point A to B using Openstreetmap")
-
-Figure 8.1 - Getting from point A to B using Openstreetmap
+Hãu bắt đầu với một ví dụ: bạn vừa đáp chuyến máy bay để đi nghỉ ở một nơi xa lạ và bạn cần di chuyển từ sân bay đến khách sạn. Bạn không biết vị trí của sân bay cũng như khách sạn, nên điều đầu tiên bạn làm là mở bản đồ để tìm đường đi. Bạn lấy điện thoại ra, mở ứng dụng bản đồ và chọn điểm bắt đầu - sân bay và điểm kết thúc - khách sạn - và tìm đường đi (đi bộ, xe máy, ô tô hoặc xe bus). Chỉ trong vài giây, ứng dụng sẽ cung cấp cho bạn giải pháp tốt nhất để đi từ điểm A đến điểm B, và làm nổi bật nó bằng cách vẽ một đường đi riêng, chồng lên các đường phố như hình bên dưới
 
 
-## Breakdown of the concepts
+![Đường đi từ điểm A đến điểm B trong Openstreetmap](media/fig81.png "Đường đi từ điểm A đến điểm B trong Openstreetmap")
 
-This is a classic example of vector data use and it breaks down into several concepts that we will define below. 
-
-The data used is spatial - it has a very well defined location on Earth, its attributes are also well identified. Thus, a point with longitude and latitude and the attribute name= Clark International Airport - represents the starting point A and a point with another pair of longitude and latitude and the attribute name= Hotel Boss represents the end point B. Streets are represented by lines composed of segments and vertices (represented by blue small circles in figure 8.2), with attributes such as name, direction, speed limitation etc. 
-
-![Vector lines representing streets and the associated attribute table](media/fig82.png "Vector lines representing streets and the associated attribute table")
-
-Figure 8.2 - Vector lines representing streets and the associated attribute table
-
-Streets represent a network model that is basically a collection of topologically interconnected point and line features. The results of the algorithm that calculates the route from point A to point B - in our case from the airport to the hotel - are highly dependent on the quality of the vectors, both in geometry - topology rules are respected - and in attributes - if a road is unidirectional that must be indicated so the routing doesn’t lead you the wrong way. 		
-
-### The vector data model
-
-As presented in module 0, there are 2 data models used in a geographical information system - GIS: raster and vector. Geospatial data always includes a **spatial** component indicating the location or the spatial distribution of the phenomenon at hand and an **attribute** component that describes its properties. The choice between using the raster or the vector data model for a particular situation depends on the source of the data as well as its intended use. 
-
-The vector data model is used to represent areas, lines and points (Figure 8.1). 
+Hình 8.1 - Đường đi từ điểm A đến điểm B trong Openstreetmap
 
 
-![vector data with attribute table](media/fig83.png "vector data with attribute table")
+## Phân tích các khái niệm
 
-Figure 8.1 - vector data with attribute table
+Đây là một ví dụ cổ điển về sử dụng dữ liệu vector và nó được chia thành một số khái niệm sẽ được định nghĩa bên dưới.
+
+Dữ liệu được sử dụng là dữ liệu không gian - nó có mội vị trí được xác định rất tốt trên trái đất, các thuộc tính của nó cũng được xác định rõ ràng. Do đó, một điểm có kinh độ, vĩ độ và tên thuộc tính name = Tan San nhot International Airport biểu diễn điểm bắt đầu A và một điểm thứ 2 với kinh độ, vĩ độ và thuộc tính name = Caravelle Hotel biểu diễn điểm kết thúc B. Các đường phố được biểu diễn bằng các line bao gồm các đoạn thẳng (segment) và đỉnh (vertice, được biểu diễn bằng các hình tròn nhỏ màu xanh trong Hình 8.2), với các thuộc tính như name, direction, speed limitation,... 
+
+![Vector line thể hiện đường phố và bảng thuộc tính](media/fig82.png "Vector line thể hiện đường phố và bảng thuộc tính")
+
+Hình 8.2 - Vector line thể hiện đường phố và bảng thuộc tính
+
+Đường phố biểu diễn một mô hình mạng về cơ bản là một tập hợp các đối tượng điểm và đường được kết nối với nhau theo một cấu trúc liên kết. Kết quả của thuậ toán tính toán lộ trình từ điểm A đến điểm B - trong trường hợp này là từ sân bay đến khách sạn - phụ thuộc rất nhiều vào chất lượng của các dữ liêu vector, trong cả yếu tố hình họ - topology và thuộc tính - ví dụ như đối với đường một chiều hoặc 2 chiều thì kết quả lộ trình sẽ khác.
+
+### Mô hình dữ liệu vector
+
+Như đã giới thiệu trong Module 0, có 2 mô hình dữ liệu được sử dụng trong GIS: raster và vector. Dữ liệu không gian địa lý luôn bao gồm một thành phần **spatial** thể hiện vị trí hoặc phân bố không gian của sự vật/ hiện tượng v2 thành phần **attribute** để mô tả các thuộc tính của nó. Việc lựa chọn sử dụng mô hình raster hoặc vector cho một trường hợp cụ thể phụ thộc vào nguồn dữ liệu cũng như mục đích sử dụng.
+
+Mô hình dữ liệu vector được dùng để biểu diễn vùng, đường và điểm (Hình 8.1)
+
+![vector data với attribute table](media/fig83.png "vector data với attribute table")
+
+Hình 8.1 - vector data với attribute table
 
 
 ### Metadata
 
-Metadata is most simply defined as data about data. It characterises, at different levels of detail, the dataset that it is associated to, including categories such as: who is the provider/owner of the dataset, what is the license, in what language are the attributes written, what was the coordinate system used, which geographical area it describes and what is the reference year, keywords, what are the known limitations, accuracy level, what was the original scope of the dataset and many more.
+Siêu dữ liệu Metadata là dữ liệu về dữ liệu. Nó mô tả, ở các mức chi tiết khác nhau về tập dữ liệu với cách thông tin như: Nhà cung cấp/ sở hữu dữ liệu, loại giấy phép sử dụng dữ liệu, ngôn ngữ của thuộc tính dữ liệu, hệ quy chiếu toạ độ, khu vực địa lý, thời điểm xuất bản, từ khoá, giới hạn, độ chính xác, phạm vi ban đầu của tập dữ liệu và nhiều thông tin khác.
 
-Metadata is paramount because a clear understanding of the data to be used in a specific analysis can make the difference between a correct or a biased decision. If one must identify where to place a new temporary hospital, but the road data is old and no longer reflects the reality on site, then any decision based on it will be inaccurate. 
+Metadata là rất quan trọng vì hiểu biết rõ ràng về dữ liệu được sử dụng trong một phân tích cụ thể có thể tạo ra sự khác biệt giữa một quyết định đúng hay sai. Nếu ai đó phải xác định vị trí để đặt một bệnh viện mới, nhưng dữ liệu giao thông đã cũ và không phản ánh đúng thực tế, thì quyết định dựa trên dữ liệu này sẽ không chính xác. 
 
-Because of the importance of metadata, its categories (their definitions, name, what kind of information they can store etc.) follow well-defined and standardized structures. These metadata well-structured files can then be integrated in dedicated catalogues, allowing a user to search and find geographical data only by querying the characteristics she is interested in, without downloading and analysing the data herself. There are numerous metadata catalogues and, when standardised, they can be accessed through different functionalities within GIS software. An example of that will be presented in Module 9 QGIS Plugins. 
+Do tầm quan trọng của metadata, các danh mục metadata (định nghỉa, tên, loại thông tin lưu trữ,...) tuân thủ các cấu trúc được định nghĩa rõ ràng và được chuẩn hoá. Các thông tin metadata được cấu trúc tốt có thể được tích hợp trong các danh mục chuyên dụng, cho phép người dùng tìm kiếm dữ liệu không gian địa lý chỉ bằng cách truy vấn các thông tin mà họ quan tâm mà không cần tự tải xuống và xem xét dữ liệu. Có nhiều dạnh mục metadata và, khi được chuẩn hoá, chúng có thể được truy cập thông qua các chức năng khác nhau trong các phần mềm GIS. Một ví dụ cho vấn đề này sẽ được trình bày trong Module 9 QGIS Plugins.
 
-It must be said that metadata is not a specificity of geospatial resources, but it applies to any kind of data.
+Cần phải nói thêm rằng metadata không chỉ chuyên dùng cho dữ liệu không gian địa lý mà nó áp dụng cho bất kì loại dữ liệu nào.
 
 
 ### Rational of vector processing
 
-The power of GIS lies in its unique capacity of connecting geometric properties that define real objects and phenomena in our world and their attributes - either observed, measured or calculated - and allowing through specialised software to perform operations on their geometries, on their attributes or both in order to derive new valuable information. 
+Sức mạnh của GIS nằm ở khả năng kết nối yếu tố hình học thể hiện các sự vật hiện tượng trho thế giới thực với các thuộc tính của nó - thông qua quan sát, đo lường hoặc tính toán - và cho phép thông qua các phần mềm chuyên dụng thực hiện các phép toán hình học, thuộc tính hoặc cả hai để thu được thông tin mới, có giá trị.
 
-Although most oftenly, GIS is closely associated with maps that simply display geographical information, its functionalities go far beyond the creation of cartographic representations, be they dynamic or static. 
+Mặc dù thông thường, GIS được kết hợp chặt chẽ với các bản đồ để hiển thị các thông tin địa lý, các chức năng của nó vượt xa việc chỉ tạo ra các trình diễn bản đồ, dù là bản đồ động hay tĩnh. 
 
-**Spatial data analysis** (synonyms: spatial analysis, geospatial analysis, geographical analysis, spatial interaction) is a general term referring to any technique designed to identify patterns, to detect anomalies and to test theories based on spatial data. An analysis is spatial if and only if the results are sensible to relocation of the objects analysed - simply put, **location matters**. As information technology evolved, scientists started applying various techniques from the literature of statistics, geometry, topology and other sciences to the analysis of geographic data to study patterns and phenomena on the Earth’s surface. 
+**Spatial data analysis** - phân tích không gian (đồng nghĩa: spatial analysis, geospatial analysis, geographical analysis, spatial interaction) là một thuật ngữ chung, đề cập đến bất kỳ kỹ thuật nào được thiết kế để xác định các mẫu, phát hiện các bất thường và để kiểm tra các lý thuyết dựa trên dữ liệu không gian. Một phân tích được gọi là phân tích không gian khi và chỉ khi các kết quả phù hợp với việc chuyển vị trí của các đối tượng được phân tích, nói một cách đơn giản là **location matters**. Khi công nghệ thông tin phát triển, các nhà khoa học bắt đầu áp dụng nhiều công nghệ từ thống kê, hình học, topology và các ngành khoa học khác trong phân tích dữ liệu địa lý để nghiên cứu các mô hình và sự vật/ hiện tượng trên bề mặt trái đất.
 
-**Geostatistics **is a branch of statistics that applies to spatial data. The most common employed methods are related to interpolation, which is a mathematical process that allows  estimation of unknown values based on the known ones. 
+**Geostatistics** - thống kê không gian là một nhánh của thống kê áp dụng cho dữ liệu không gian. Các phương pháp thường được áp dụng nhất liên quan đến phép nội suy, là một quá trình toán học cho phép ước tính các giá trị chưa biết dựa trên các giá trị đã biết.
 
-**Topology** is a branch of mathematics that allows the GIS user to control the geometric relationships between features and maintain geometric integrity. Topology is best understood as a set of rules that ensures spatial data quality that can apply to the same vector layer or more. The rules are designed as to respect the real world relationships that the vector layers represent. For example there can be no gaps between the polygons that represent cadastral parcels in a region, or no point belonging to the vector layer that represents individual trees can not be contained in any polygon of the vector layer that represents buildings within a region. 
+**Topology** là một nhánh của toán học cho phép người dùng GIS kiểm soát mối quan hệ về mặt hình học giữa các đối tượng và đảm bảo tính toàn vẹn hình học. Topology được hiểu là một tập các luật để đảm bảo chất lượng dữ liệu, áp dụng trên cùng một hoặc nhiều vector layer. Các luật này được thiết kế theo hướng tôn trọng các mối quan hệ trong thế giới thực mà các vector layer này biểu diễn. Ví dụ, sẽ không có các lỗ hổng (gaps) giữa các polygon biểu diễn các thửa đất trong một khu vực, hoặc không có điểm nào thuộc vector layer thể hiện cây xanh độc lập có thể được chứa trong bất cứ polygon nào trong vetor layer biểu diễn cho các toà nhà.
 
-GIS software offers functionalities allowing the user to define relevant topology rules, as well as algorithms to check if they apply and to clean the vector layer where inconsistencies are identified. 
+Các phần mềm GIS cung cấp các chức năng cho phép người dùng định nghĩa các luật topology liên quan, cũng như các thuật toán để kiểm tra topology và làm sạch/ chỉnh sửa các lỗi topology của vector layer.
 
-Geoprocessing is a general term used to define any operation - process - applied to a geographical dataset, with the scope of obtaining a derived dataset opening new insights on the data. Common geoprocessing operations are geographic feature overlay, feature selection and analysis, topology processing and data conversion. Geoprocessing allows one to define, manage, and analyze geographic information to support decision making. 
+**Geoprocessing** - xử lý không gian là một thuật ngữ chung được dùng để định nghĩa bất cứ phép toán - quy trình nào áp dụng cho tập dữ liệu địa lý để thu được một tập dữ liệu mới, mở ra những hiểu biết mới về dữ liệu. Các phép toán xử lý không gian phổ biến như chồng lớp, chọn và phân tích, xử lý topology và chuyển đổi dữ liệu. Geoprocessing cho phép người dùng định nghĩa, quản lý và phân tích thông tin địa lý để hỗ trợ ra quyết định.
 
+![Cấu trúc một geoprocessing](media/fig84.png "Cấu trúc một geoprocessing")
 
-![elements of a geoprocessing operation](media/fig84.png "elements of a geoprocessing operation")
-
-Figure 8.4 - elements of a geoprocessing operation
-
-
-## Main content: 
-
-### Phase 1: Understanding your data.
-
-There are many geoprocessing operations that can be performed on vector data, most commonly including geographic feature overlay, feature selection and analysis, topology processing and data conversion. In this first phase, we will become familiar with some of them, understanding how they work and what results we can expect. 
+Hình 8.4 - Cấu trúc một geoprocessing
 
 
-#### **Step 1. Prepare your working environment.**
+## Nội dung chính: 
 
-Open QGIS, set up the coordinate reference system you will work in - EPSG 3123 -  and add the following data layers:
+### Phase 1: Hiểu dữ liệu của bạn.
 
-*   Polygons - administrative boundaries; buildings; land use;
-*   Lines - roads, rivers;
-*   Points - places of worship, places of interest
-
-At this point, your QGIS map window should look like in figure 8.5, of course, most probably, in other colours. 
+Có nhiều phép toán geoprocessing có thể thực hiện trên vector data, phổ biến nhất bao gồm chồng lớp, chọn và phân tích đối tượng, xử lý topoplogy và chuyển đổi dữ liệu. Trong phase 1, chúng ta sẽ làm quen với một trong số phép toán này, hiểu cách chúng làm việc và những kết quả mà chúng ta có thể mong đợi.
 
 
-![Loaded vector data sets: points, line and polygons](media/fig85.png "Loaded vector data sets: points, line and polygons")
+#### **Bước 1. Chuẩn bị môi trường làm việc.**
 
-Figure 8.5 - Loaded vector data sets: points, line and polygons
+Mở QGIS, thiết lập CRS mà bạn sẽ làm việc - EPSG 3405 - và thêm các layer sau:
 
-**Check!** All layers are in the same coordinate system (EPSG 3123) by looking in the right down side corner. If it is so, then you are looking at 7 vector data layers overlaid. 
+*   Polygons - ranh giới hành chính; nhà; sử dụng đất
+*   Lines - giao thông, thuỷ hệ
+*   Points - cơ sở tôn giáo, địa điểm tham quan
 
-#### **Step 2. Understand what you are looking at.** 
+Kết quả sau khi thêm vào QGIS như hình 8.5 (tất nhiên có thể QGIS tô màu khác nhau cho các layer) 
 
-At this point, we have 7 vector layers loaded into our QGIS project. The next steps will help us understand our data. 
+![Các lớp dữ liệu vector được tải: points, line và polygons](media/fig85.png "Các lớp dữ liệu vector được tải: points, line và polygons")
 
-*   Check how many features we have in a layer - there are several ways to do that: 
+Hình 8.5 - Các lớp dữ liệu vector được tải: points, line và polygons
+
+**Kiểm tra!** Tất cả các layer ở cùng CRS (EPSG 3405) bằng cách quan sát góc phải bên dưới trong giao diện QGIS. 
+
+#### **Bước 2. Hiểu những gì bạn đang nhìn thấy.** 
+
+Chúng ta đang có 7 layer được tải vào QGIS project. Bước tiếp theo sẽ giúp chúng ta hiểu dữ liệu của mình.
+
+*   Kiểm tra số đối tượng có trong từng layer - có nhiều cách để làm việc này:
 
 ```
-Double click on the layer of interest - Properties - Information - Feature count
-Open the attribute table of the layer of interest and look at the upper central side 
+Kích đúp chuột vào layer - Properties - Information - Faeature count
+Mở bảng thuộc tính và nhìn vào phía trên của bảng thuộc tính 
 ```
 
-Before running any basic statistics, let us complete the attribute table with some geometric attributes (see Module 6 for details): 
+Trước khi chạy một số thống kê cơ bản, chúng ta hãy hoàn chỉnh bảng thuộc tính với một số thuộc tính hình học (xem lại Module 6)
 
-*   Roads layer - calculate length for each road segment and store it in the attribute table: output field name - length `round($length, 2)`
-*   Buildings layer - calculate the area for each building and store it in the attribute table; output field name - area `round($area, 2)`
+*   Lớp giao thông - tính toán chiều dài của từng đường giao thông bổ sung vào bảng thuộc tính: output field name - length `round($length, 2)`
+*   Lớp nhà - tính toán diện tích của từng căn nhà và bổ sung vào bảng thuộc tính; output field name - area `round($area, 2)`
 
-Now, the attribute fields are filled, yet if you are not certain in which measurement unit QGIS has calculated the length of roads segments and areas of buildings, then checking the coordinate system information will help you. 
+Bây giờ bảng thuộc tính đã đầy đủ, nếu bạn chưa chắc chắn đơn vị tính QGIS sử dụng để tính toán chiều dài đường giao thông và diện tích của căn nhà, hãy kiểm tra lại CRS (CRS ở dạng Projected - hệ toạ độ phẳng) 
 
-Click on the down right corner of the QGIS map window, on EPSG 3123 and a window as the one in figure 8.6 will appear. 
+Kích chuột vào góc phải bên dưới của QGIS, EPSG 3405 để mở cửa sổ như hình 8.6
 
+![Các thông số của CRS](media/fig86.png "Các thông số của CRS")
 
-![Specifications of the coordinate reference system used in the QGIS project](media/fig86.png "Specifications of the coordinate reference system used in the QGIS project")
+Hình 8.6 - Các thông số của CRS
 
-Figure 8.6 - Specifications of the coordinate reference system used in the QGIS project
+Theo đó, chúng ta thấy rằng đơn vị đo lường là mét, nên chiều dài tính toán là mét và diện tích là mét vuông.
 
-Thus, we find out that the measurement unit is the meter, therefore the lengths are measured in meters and the areas in square meters. 
-
-*   Run basic statistics on the loaded layers to get a better grip on your data (figure 8.7 ):
+*   Chạy một số thống kê cơ bản trên các layer để hiểu hơn về dữ liệu của bạn (Hình 8.7)
 
 ```
 Vector menu ‣ Analysis Tools ‣ Basic statistics for fields
-Processing toolbox window ‣ search for 'stats'
+Processing toolbox window ‣ tìm 'stats'
 ```
 
-![Basics statistics for fields](media/fig87.png "Basics statistics for fields")
+![Các thống kê cơ bản cho thuộc tính](media/fig87.png "Các thống kê cơ bản cho thuộc tính")
 
-Figure 8.7 - Basics statistics for fields
+Hình 8.7 - Các thống kê cơ bản cho thuộc tính
 
-The statistics returned depend on the field type we choose and are generated as an HTML file.
+Kết quả thống kê tuỳ thuộc vào loại trường dữ liệu chúng ta chọn và được tạo dưới dạng HTML file
 
-Let’s run it on our roads layer and see what results we get. Complete the window, like in figure 8.8. 
+Hãy chạy thống kê trên lớp giao thông và xem kết quả. Nhập các thông số như hình 8.8.
 
+![Chuẩn bị chạy thống kê cơ bản cho lớp giao thông](media/fig88.png "Chuẩn bị chạy thống kê cơ bản cho lớp giao thông")
 
-![Preparing to run basics statistics for roads layer](media/fig88.png "Preparing to run basics statistics for roads layer")
+Hình 8.8 - Chuẩn bị chạy thống kê cơ bản cho lớp giao thông
 
-Figure 8.8 - Preparing to run basics statistics for roads layer
-
-The output file is an html which can be opened with any browser (Firefox, Chrome, Safari etc. ) that should look like below: 
-
+File đầi ra ở dạng HTML, có thể mở bằng các trình duyệt như Firefox, Chrome, Safari,... như hình bên dưới:
 
 ```
 Analyzed field: length
@@ -210,10 +202,9 @@ Interquartile Range (IQR): 188.96
 ```
 
 
-From these basic statistics, we find out that there are 64473 road segments in the loaded layer, where the shortest has 0.04m and the longest 19690.45m - almost 20 km. We find out that the sum of roads in Pampanga is almost 14k km (13927.358 km). Given that the mean is greater than the median, it tells us that the 2nd half of the dataset contains longer road segments and that it outweighs the road segments in the 1st half. However, the median shows that most road segments have length around 100 m. 
+Từ các thống kê cơ bản này, chúng ta thấy rằng có 64473 đường giao thông trong lớp giao thông, với đường ngắn nhất là 0.04m và đường dài nhất là longest 19690.45m. Chúng ta thấy rằng tổng số lượng đường giao thông tại Tp.HCM là khoảng ...km. Giả sử giá trị trung bình mean lớn hơn trung vị median, nó cho chúng ta thấy rằng nửa trên của tập dữ liệu chứa các đoạn đường dài hơn và lớn hơn các đoạn đường ở nửa đầu. Tuy nhiên, giá trị trung vị median cho thấy hầu hết các đoạn đường có độ dài khoảng ....m
 
-Running the basic statistics on the layer Buildings for the type category, we obtain the followings: 
-
+Chạy các thống kê cơ bản cho lớp nhà cho trường type, chúng ta có kết quả như sau:
 
 ```
 Analyzed field: type
@@ -228,28 +219,27 @@ Maximum length: 20
 
 Mean length: 0.3669563599413767
 
-The results don’t look the same, we don’t have mean, nor median or standard deviation. That is because the attribute field we ran the algorithm on is different, we don’t have numbers but words - types of buildings. We find out that out of 827657 buildings in Pampanga, for 773210 we don’t know the type of the building. We also find out that there are 74 unique categories. 
+Kết quả trông không giống bên trên, chúng ta không có mean, median hoặc standard deviation. Điều này là do trường thuộc tính mà chúng ta chạy thuật toán khác nhau - kiểu chuỗi so với kiểu số - trong trường hợp này là loại nhà. Chúng ta thấy rằng có ..... căn nhà ở Tp.HCM, trong đó có ..... căn nhà không có thông tin loại nhà, đồng thời có .... loại nhà khác nhau. 
 
+#### **Bước 3. Các kiểm tra cơ bản để tìm nhanh các lỗi trong dữ liệu.**
 
-#### **Step 3. Basic checks to quickly find errors in your data.**
+Các tập dữ liệu hoàn hảo giống như khí lý tưởng trong vật lý. Không có điều gì là hoàn hảo, chỉ là gần hảo mà thôi. Do đó, trước khi thực hiện bất cứ phân tích nào để trích lọc thông tin, ít nhất một số kiểm tra cơ bản là cần thiết để _làm sạch_ dữ liệu.   
 
-Perfect, flawless datasets are the equivalent of the ideal gas in physics. There is no such thing, but many can come very close to it. Therefore, before doing any kind of analysis to extract information, at least some basic checks are necessary on how _clean_ the data we have are. 
+Có nhiều loại lỗi có thể ảnh hưởng đến châ1t lượng dữ liệu, trong trường hợp phân tích không gian, ảnh hưởng của chúng lên kết quả cuối cùng có thể quan trọng ít nhiều. Ví dụ, nếu bạn sử dụng dữ liệu không gian địa lý để tìm lộ trình từ điểm A đến điểm B bằng ô tô, thì việc có lớp giao thông hoàn chỉnh với các thuộc tính như đường một chiều hoặc đườc cấm là rất cần thiết để có một kết quả khả thi. Tuy nhiên, nếu là lộ trình đi bộ, thì các thông tin này là không quan trọng. 
 
-There are many types of errors that can affect the quality of your data and, given the scope of your geospatial analysis, their influence on the final result can be more or less important. For example, if you use geospatial data to route yourself from point A to point B by car, then having a roads layer complete with attributes on which streets are one way or  closed to road traffic, is essential to get a viable result.  However, if your routing is by foot, then that information is not crucial for your result. 
+Khi nói đến lỗi dữ liệu không gian, có 02 khái niệm cần nắm rõ:
 
-When referring to geospatial data errors, there are 2 main terms that need to be well understood: 
+**Accuracy - Độ chính xác** là mức độ mà thông tin trên bản đồ khớp với các giá trị trong thế giới thực về cả không gian và thuộc tính
 
-**Accuracy** is the degree to which information on a map matches real-world values and it applies both to the geometry and to attributes.
+**Precision - Độ chính xác phép đo** đề cập đến mức độ đo lường và độ chính xác của mô tả trong tập dữ liệu không gian địa lý
 
-**Precision** refers to the level of measurement and exactness of description in a geospatial dataset.
+**An error - lỗi** bao gồm cả imprecision và inaccuratacy. **Data quality - Chất lượng dữ liệu** đề cấp đến mức độ của precision và accuracy của tập dữ liệu và nó thường được thể hiện trong các báo cáo chất lượng dữ liệu. 
 
-**An error** encompasses both the imprecision of data and its inaccuracies. **Data quality **refers to the level of precision and accuracy of the datasets and it is most often documented in data quality reports. 
+Phân tích và _làm sạch_ một tập dữ liệu không gian địa lý có thể rất tốn thời gian và nặng nề, tuy nhiên - như trong ví dụ trên -  nó rất quan trọng. Phần này trình bày một số chức năng GIS cho phép người dùng thực hiện các kiểm tra nhanh trên dữ liệu vector và đưa ra một số kết luận sơ bộ về chất lượng dữ liệu.
 
-Analysing and _cleaning _a geospatial dataset can be a very time consuming and cumbersome task, however - as shown in the example above - it is essential. In this section, we present a few GIS functionalities that allow a user to perform fast checks on vector data and draw a set of preliminary conclusions on its quality. 
+**Kiểm tra Topology.**
 
-**Topology checks.**
-
-QGIS offers a core functionality that allows the user to perform a series of topological checks on the loaded vector datasets, named Topology Checker. It can be found as one of the panels (figure 8.9.a) and once activated it’s window looks like in figure 8.9.b. 
+QGIS cung cấp chức năng cho phép người dùng thực hiện một chuỗi các kiểm tra topology trên các tập dữ liệu được tải trong QGIS, được gọi là Topology Checker. Nó có thể được kích hoạt từ panels (Hình 8.9.a) và sau khi được kích hoạt như Hình 8.9.b
 
 
 ![Topology checker panel](media/fig89_1.png "Topology checker panel")
@@ -258,111 +248,105 @@ QGIS offers a core functionality that allows the user to perform a series of top
 ![Topology checker window](media/fig89_2.png "Topology checker window")
 
 
-Figure 8.9.a - Topology checker panel; b - Topology checker window
+Hình 8.9.a - Topology checker panel; b - Topology checker window
 
-To define the topology rules, click on the third icon, opening a window as in figure 8.10. 
+Để định nghĩa các luật topology, kích chuột vào icon thứ ba để mở cửa sổ như Hình 8.10
 
 
 ![Topology rule settings window](media/fig810.png "Topology rule settings window")
 
-Figure 8.10 - Topology rule settings window
+Hình 8.10 - Topology rule settings window
+
+Chúng ta sẽ thiết lập một số luật cho các layer đã tải vào QGIS project, xem xét các đối tượng trong thế giới thực mà chúng mô tả - giao thông, nhà, thuỷ hệ.
+
+Cấu hình Topology rất đơn giản, vì các luật có thể được áp dụng tuỳ theo layer được chọn từ danh sách các layer có trong project, như hình 8.11
 
 
-We will set a number of rules for the layers we have loaded in our QGIS project, considering the real world objects they depict- roads, buildings, waterways in the district of Pampanga. 
+![Topology rules dropdown theo các layer được chọn](media/fig811.png "Topology rules dropdown theo các layer được chọn")
 
-The configuration of the topology is straightforward, as the rules that can be applied based on the selected layer are already embedded in this functionality, as figure 8.11 depicts. 
+Hình 8.11 - Topology rules dropdown theo các layer được chọn 
 
-
-![Topology rules dropdown menu based on the selected layer](media/fig811.png "Topology rules dropdown menu based on the selected layer")
-
-Figure 8.11 - Topology rules dropdown menu based on the selected layer.
-
-Choose the topology rules as depicted in figure 8.12, then click on the first icon on the window to run and wait for the results. 
+Chọn các luật topology được mô tả trong hình 8.12, sau đó chọn icon thứ nhất trong cửa sổ để chạy và đợi xem kết quả.
 
 
-![Topology rules to be set](media/fig812.png "Topology rules to be set")
+![Chọn các luật topology](media/fig812.png "Chọn các luật topology")
 
-Figure 8.12 - Topology rules to be set 
+Hình 8.12 - Chọn các luật topology
 
-After running the topology check, your map windows should look like in figure 8.13. 
-
-
-![Topology check results](media/fig813.png "Topology check results")
-
-Figure 8.13 - Topology check results
-
-In the down right side corner, the topology checker window lists all errors identified based on the rules we have defined in the earlier phase. If the Show errors checkbox is ticked, then the errors will be highlighted on the map with red. Double clicking on a selected error, will move the map to its location. 
-
-The process of correcting the errors in a dataset, be it geometry related (duplicates, gaps etc.) or in the attribute related  (missing values, misspelled etc.) is called cleaning a dataset and it is most times as cumbersome as it is necessary. Although there are functionalities to support a semi-automatically cleaning process, the user’s input is often necessary. For example, in figure 8.14, we have zoomed in an error in our points of interest layer, a duplicated point. As it can be seen, there are 2 point depicting one cafe, the difference being in the attribute table where one is listed as a cafe and one as a “doityourself” - which one can assume might be a popular name for cafes where you prepare your own coffee. 
+Sau khi chạy topology check như hình 8.13
 
 
-![Duplicate point error in points of interest vector layer](media/fig814.png "Duplicate point error in points of interest vector layer")
+![Kết quả kiểm tra Topology](media/fig813.png "Kết quả kiểm tra Topology")
 
-Figure 8.14 - Duplicate point error in points of interest vector layer
+Hình 8.13 - Kết quả kiểm tra Topology
 
-In this particular case, the decision of the user would most probably be to remove the duplicate point, as it can insert error in further spatial analysis. For example, if a town official wants to know how many restaurants and cafes are in a specific neighbourhood, the duplicate point will insert an error in the results and that could eventually lead to mislead decisions.  
+Ở phía góc dưới bên phải, cửa sổ topology checker liệt kê tất cả các lỗi được xác định dựa trên các luật mà chúng ta đã định nghĩa ở bước trên. Nếu chọn "Show errors", các lỗi sẽ được tô màu đỏ trong map canvas. Kích đúp chuột vào một lỗi để di chuyển nhanh đến vị trí lỗi trên bản đồ.
 
-Therefore, we will proceed with an automatic removal of the duplicate points. To do it, we will use a core functionality of QGIS - Delete duplicate geometries - found in the processing toolbox. Your QGIS should look as in figure 8.15. 
+Quy trính để chỉnh sửa các lỗi dữ liệu, có thể là lỗi hình học (duplicates, gaps,...) hoặc lỗi thuộc tính (nhập thiếu, lỗi chính tả,...) được gọi là làm sạch dữ liệu - rất cần thiết nhưng cũng mất thời gian. Mặc dù có các chức năng hỗ trợ làm sạch bán tự động, thường cần phải có sự can thiệp của người dùng. Ví dụ, trong Hình 8.14, chúng ta đã zoom tới một lỗi trong lớp POI (Điểm tham quan), một điểm bị trùng lặp (duplicated). Có thể thấy rằng, có 02 điểm đều là một quán cafe, sự khác biệt nằm trong bảng thuộc tính - có 01 điểm thực sự là quán cafe và một là “doityourself”.
+
+![Lỗi duplicated của lớp POI](media/fig814.png "Lỗi duplicated của lớp POI")
+
+Hình 8.14 - Lỗi duplicated của lớp POI
+
+Trong trường hợp cụ thể này, quyết định của người dùng có thể là xoá điểm duplicated này, vì nó có thể phát sinh lỗi cho các phân tích không gian sâu hơn. Ví dụ, nếu nhà quản lý muốn biết có bao nhiêu nhà hàng và cafe trong một khu vực nào đó, thì điểm duplicate này sẽ phát sinh lỗi trong kết quả phân tích và có thể dẫn đến các quyết định sai lầm.
+
+Do đó, chúng ta sẽ xử lý các điểm trùng lặp này một cách tự động bằng chức năng có sẵn của QGIS - Delete duplicate geometries - trong processing toolbox, như Hình 8.15
 
 
-![ Delete duplicate geometries on layer points of interest](media/fig_815.png " Delete duplicate geometries on layer points of interest")
+![ Delete duplicate geometries cho lớp POI](media/fig_815.png " Delete duplicate geometries cho lớp POI")
 
-Figure 8.15 - Delete duplicate geometries on layer points of interest
+Hình 8.15 - Delete duplicate geometries cho lớp POI
 
-After running the algorithm, the functionality window presents the results, it has identified 6 duplicate points, just as the topology checker, and it informs the user that it has deleted them all, leaving the points of interest layer with 2727 features. 
+Sau khi chạy thuật toán, cửa sổ hiển thị kết quả, nó chỉ ra ....điểm trùng lặp, giống như công cụ topology checker, và nó thông báo đến người dùng là đã xoá tất cả các điểm trùng lặp, do đó lớp POI lúc này chỉ còn .... đối tượng
 
 
-![Result of running delete duplicate geometries](media/fig816.png "Result of running delete duplicate geometries")
+![Kết quả delete duplicate geometries](media/fig816.png "Kết quả delete duplicate geometries")
 
-Figure 8.16 - Result of running delete duplicate geometries
+Hình 8.16 - Kết quả delete duplicate geometries
 
-Re-running the topology checker will lead to a 0 errors results with respect to the topology rule of no geometric duplicates for the points of interest layer. 
+Lúc này, chạy lại topology checker với luật topology là "no geometric duplicates" cho lớp POI sẽ cho kết quả là 0 errors
 
-**Attention!** The algorithm considers **only geometries**, ignoring the attribute. If, such is our case, there are some differences in the attribute for the duplicates, the user has no control over which one will be kept. Therefore, if there is a need for all information to be kept, it must be first copied to all geometries, so when a duplicate feature is deleted there is no info loss. 
+**Lưu ý!** Thuật toán chỉ quan tâm đến yếu tố hình học **only geometries**, không quan tâm đến thuộc tính. Nếu trong trường hợp thuộc tính của các điểm duplicate này là khác nhau, người dùng sẽ không thể lựa chọn nên giữ lại đối tượng nào. Do đó, nếu muốn tất cả các thông tin được giữ lại, đầu tiên nó cần phải được sao chép vào tất cả các đối tượng, nên khi một đối tượng trùng lặp bị xoá thì không bị mất thông tin.
 
-Let us run another topology check, this time on our building layer. Configure the following rules: 
+Chúng ta hãy chạy một topology check khác cho lớp nhà. Cấu hình các luật sau đây:
 
 *   No duplicate
 *   No invalid geometries
 
-Run the algorithm. 
+Chạy thuật toán. 
 
-The result should look like figure 8.17. 
+Kết quả như Hình 8.17. 
 
+![Kết quả topology check cho lớp nhà](media/fig817.png "Kết quả topology check cho lớp nhà")
 
-![Results of topology check on the buildings vector layer](media/fig817.png "Results of topology check on the buildings vector layer")
+Hình 8.17 - Kết quả topology check cho lớp nhà
 
-Figure 8.17 - Results of topology check on the buildings vector layer
+Xoá các đối tượng trùng lặp theo cách đã làm bên trên (Hình 8.18)
 
-Clean the duplicate feature by using the process indicated above (figure 8.18)
+![Kết quả Delete duplicate geometries](media/fig818.png "Kết quả Delete duplicate geometries")
 
-
-![Results of Delete duplicate geometries](media/fig818.png "Results of Delete duplicate geometries")
-
-Figure 8.18 - Results of Delete duplicate geometries
-
-A complete cleaning of the vector datasets used for this module is out of scope. Its complexity transforms it in a more advanced module in itself.
+Hình 8.18 - Kết quả Delete duplicate geometries
 
 
-#### **Step 4. Take a closer look at the information attached to the points, lines and polygons.**
+#### **Bước 4. Xem kĩ hơn thông tin đính kèm với các lớp point, line và polygon.**
 
-Let's run one more algorithm to get a sense of what the attributes for our Pampanga layers are. After we’ve identified how many features each layer has, let’s see how many and which are the unique attributes in the following cases: 
+Hãy chạy thêm một thuật toán để cho biết các thuộc tính của các lớp dữ liệu là gì. Sau khi chúng ta xác định số lượng đối tượng trong từng layer, hãy xem có bao nhiêu giá trị duy nhất ứng với các thuộc tính sau:
 
-*   layer buildings_a_3123_cleaned - attribute type;
-*   layer Pois_3123_cleaned - attribute fclass;
-*   layer waterways_3123 - attribute fclass;
-*   layer pofw_3123 - attribute fclass;
-*   layer roads_3123 -attribute fclass;
-*   layer landuse_a_3123 - attribute fclass;
+*   layer buildings_a_3405_cleaned - attribute type;
+*   layer Pois_3405_cleaned - attribute fclass;
+*   layer waterways_3405 - attribute fclass;
+*   layer pofw_3405 - attribute fclass;
+*   layer roads_3405 -attribute fclass;
+*   layer landuse_a_3405 - attribute fclass;
 
-For that, go to `Vector ‣ Analysis Tools ‣ List unique values (figure 8.19)`
+Truy cập `Vector ‣ Analysis Tools ‣ List unique values (Hình 8.19)`
 
 
-![List unique values in a vector layer functionality](media/fig819.png "List unique values in a vector layer functionality")
+![Liệt kê các giá trị duy nhất trong vector layer ](media/fig819.png "Liệt kê các giá trị duy nhất trong vector layer")
 
-Figure 8.19 - List unique values in a vector layer functionality
+Hình 8.19 - Liệt kê các giá trị duy nhất trong vector layer
 
-In the window that opens, insert the, one at a time, each layer name and attribute of interest as enumerated in the list above and you should have the following results: 
+Lần lượt thêm vào các layer và thuộc tính theo danh sách bên trên, kết quả như sau:
 
 <table>
   <tr>
@@ -434,39 +418,39 @@ In the window that opens, insert the, one at a time, each layer name and attribu
 </table>
 
 
-Table 8.1 - Table identifying how many and what are the unique values for the selected attributes
+Bảng 8.1 - Bảng liệt kê số lượng của từng giá trị duy nhất ứng với từng thuộc tính được chọn
 
-For a more in depth analysis of the attributes of our vector layers, we will use the GroupStats plugin. It was developed to support statistics calculation for feature groups in a vector layer making it very useful to gain more understanding of your data, as well as to spot potential errors in the attributes. 
+Để phân tích sâu hơn các thuộc tính của vector layer, chúng ta sẽ sử dụng GroupStats plugin. Nó được phát triển để hỗ trợ các tính toán thống kê cho các nhóm đối tượng trong một vector layer, rất hữu dụng để hiểu thêm về dữ liệu cũng như phát hiện các lỗi có thể có trong các thuộc tính
 
-To open the GroupStats window, go to   `Vector ‣ GroupStats ‣ GroupStats`. 
+Vào  `Vector ‣ GroupStats ‣ GroupStats`. 
 
-A new window like the one in figure 8.20 should open. 
+Một cửa sổ mới được mở ra như Hình 8.20
 
 
 ![GroupStats window](media/fig820.png "GroupStats window")
 
-Figure 8.20 - GroupStats window
+Hình 8.20 - GroupStats window
 
-As per the analysis done earlier, we have seen that for the layer buildings we have 74 different types of buildings, but how many each and what is the total built area taken by each category? How much space for schools, for markets, houses? GroupStats can help us answer this question. On the right side of the window, there is the control panel, where we choose what we want to calculate, as well as how the data should be arranged. Using drag&drop, follow the arrangement in figure 8.21, then press calculate. 
-
-
-![Running GroupStats on the building layer](media/fig821.png "Running GroupStats on the building layer")
-
-Figure 8.21 - Running GroupStats on the building layer. 
-
-Looking at the result, we can extract important insights regarding our data. For example, for residential purposes in the Pampanga provinceregion, we have 3270 buildings with a total surface area built of 405937 square meters, approx. 40 hectares. We also find out that the largest has 1474 square meters as the smallest has 10 square meters. And one can continue the analysis for further valuable information. 
-
-Another interesting analysis can be run on the roads vector layer. Figure 8.22 shows how to calculate the lengths of roads categorised by type of road (primary, residential, motorway etc.) and maximum speed allowed. 
+Đối với mỗi phân tích đã thực hiện trước đây, chúng ta thấy rằng đối với lớp nhà, chúng ta có .... loại (type), nhưng mỗi loại có bao nhiêu đối tượng và diện tích xây dựng cho mỗi loại? Có bao nhiêu không gian cho trường học, chợ, nhà ở? GroupStats có thể giúp chúng ta trả lời câu hỏi này. Ở bên phải cửa sổ, có một control panel để chọn các thông tin cần tính toán cũng như cách sắp xếp dữ liệu. Sử dụng kéo - thả, theo sự sắp xếp trong Hình 8.21, và chọn calculate
 
 
-![Running GroupStats on the roads layer](media/fig822.png "Running GroupStats on the roads layer")
+![Chạy GroupStats cho lớp nhà](media/fig821.png "Chạy GroupStats cho lớp nhà")
 
-Figure 8.22 - Running GroupStats on the roads layer. 
+Hình 8.21 - Chạy GroupStats cho lớp nhà. 
+
+Nhìn vào kết quả, chúng ta có thể trích lọc các thông tin quan trọng từ dữ liệu. Ví dụ, cho mục đích đất ở, chúng ta có ....toà nhà với tổng diện tích xây dựng là.... m2, khoảng....ha. Chúng ta cũng thấy rằng toà nhà lớn nhất có diện tích ....m2, toà nhà nhỏ nhất có diện tích ...m2. Và chúng ta có thể tiếp tục phân tích cho các thông tin giá trị hơn nữa.
+
+Một phân tích thú vị khác có thể chạy trên lớp giao thông. Hình 8.22 cho thấy cách tính toán chiều dài của các đường giao thông theo từng loại đường khác nhau (primary, residential, motorway,...) và tốc độ tối đa cho phép.
 
 
-#### **Quiz questions**
+![Chạy GroupStats cho lớp giao thông](media/fig822.png "Chạy GroupStats cho lớp giao thông")
 
-1. Is metadata important? 
+Hình 8.22 - Chạy GroupStats cho lớp giao thông. 
+
+
+#### **Câu hỏi**
+
+1. Metadata có quan trọng không? 
 *   _<span style="text-decoration:underline;">Yes, because it gives insight into the geographical data that otherwise one could not gain. </span>_
 *   _No, it’s just bureaucracy. _
 2. Topology is relevant to the geometry or to the attribute table of a vector layer?
@@ -477,51 +461,52 @@ Figure 8.22 - Running GroupStats on the roads layer.
 *   _<span style="text-decoration:underline;">Both.</span>_
 
 
-### **Phase 2: Introduction into vector processing **
+### **Phase 2: Giới thiệu vector processing **
 
-First phase of the vector module made a brief introduction into the steps that one should make to have a basic understanding of the geospatial data they have at hand. 
+Phase 1 của Module này đã giới thiệu ngắn gọn các bước để người dùng có được những hiểu biết căn bản về dữ liệu không gian của mình. 
 
-This second phase of the module leads you into a more in depth work to process vector data in order to extract valuable insights to assist decision making. Following the concepts described at the beginning of this module, geoprocessing represents any process applied to a geographical dataset, with the scope of obtaining a derived dataset opening new insights on the data. And this is what we will attempt to do in the following. 
+Phase 2 sẽ hướng dẫn bạn sâu hơn về xử lý dữ liệu vector để trích lọc các thông tin giá trị, hỗ trợ ra quyết định. Theo các khái niệm đã được trình bày trong phần đầu của Module, geoprocessing là bất cứ xử lý nào áp dụng cho dữ liệu địa lý nhằm thu được một tập dữ liệu dẫn xuất, mở ra những hiểu biết mới về dư4 liệu. Và đây là những gì chúng tôi cố gắng thực hiện trong phần tiếp theo. 
 
-There are many operations that can be performed on one or more geospatial datasets and during this first step, we will run some of the most common ones to understand how they operate. 
+Có nhiều phép toán có thể thực hiện trên một hoặc nhiều tập dữ liệu không gian và trong bước đầu tiên này, chúng ta sẽ chạy một số phép xử lý thông dụng nhất để hiểu cách hoạt động của nó.
 
-**Buffer. **Imagine that you need to analyse a new piece of legislation that asks that on an area of 30 meters around places of worship there can be no other construction built. You would want to see where exactly those delinations are and maybe even how many square meters that is for your district. First step is to define a buffer around the places of worship: `Vector ‣ geoprocessing tools ‣ buffer. `When the buffer window opens, set the parameters like in figure 8.23: 
-
-
-![Setting the parameters for a 30 m buffer around the places of worship](media/fig823.png "Setting the parameters for a 30 m buffer around the places of worship")
-
-Figure 8.23 - Setting the parameters for a 30 m buffer around the places of worship
-
-A detail of the result of the geoprocessing is depicted in figure 8.24: 
+**Buffer.** Hãy tưởng tượng bạn cần phân tích một điều luật mới yêu cầu rằng trong vòng bán kính 30m tính từ cơ sở tôn giáo thì không cho phép công trình xây dựng nào khác. Bạn sẽ muốn xem chính xác những khu vực này là gì và có thể thậm chí nó chiếm diện tích bao nhiêu. Bước đầu tiên là định nghĩa một buffer - vùng đệm xung quanh các cơ sở tôn giáo: `Vector ‣ geoprocessing tools ‣ buffer. ` và nhập các thông số như hình 8.23:
 
 
-![Running buffer on a point vector layer](media/fig824.png "Running buffer on a point vector layer")
+![Nhập thông số 30m buffer xung quanh cơ sở tôn giáo](media/fig823.png "Nhập thông số 30m buffer xung quanh cơ sở tôn giáo")
 
-Figure 8.24 - Running buffer on a point vector layer
+Hình 8.23 - Nhập thông số 30m buffer xung quanh cơ sở tôn giáo
 
-To completely answer the initial question, the next step is to calculate the areas for all buffers and sum them up (see Phase 1, step 4) - figure 8.25. 
+Chi tiết kết quả trong hình 8.24:
 
 
-![Calculate area for the newly obtained layer, then calculate using GroupStats the total sum](media/fig825.png "Running buffer on Calculate area for the newly obtained layer, then calculate using GroupStats the total sum point vector layer")
+![Chạy buffer trên một lớp điểm](media/fig824.png "Chạy buffer trên một lớp điểm")
 
-Figure 8.25 - Calculate area for the newly obtained layer, then calculate using GroupStats the total sum.
+Hình 8.24 - Chạy buffer trên một lớp điểm
 
-**Clip.** Imagine you want to know where all the industrial delineated areas are in your district and also how many buildings are within that perimeter. Visual inspecting your vector data, you notice that you have a number of industrial areas that contain several buildings. You want to separate those buildings and to use them further. First step is to select all features in the landuse_a_3123 layer that have as attribute industrial (see module 6 for how to do that). Afterwards, you go to `Vector ‣ Geoprocessing tools ‣ Clip `and choose as the layer to be clipped buildings_a_3213_cleaned. Your results should look like in figure 8.26. 
+Để hoàn tất trả lời cho câu hỏi ban đầu, bước tiếp theo là tính diện tích của tất cả các buffer và tính tổng của chúng (xem Phase 1, bước 4) - hình 8.25
+
+
+![ Tính diện tích cho lớp buffer vừa tạo, sau đó sử dụng GroupStats để tính tổng diện tích](media/fig825.png "Tính diện tích cho lớp buffer vừa tạo, sau đó sử dụng GroupStats để tính tổng diện tích")
+
+Hình 8.25 - Tính diện tích cho lớp buffer vừa tạo, sau đó sử dụng GroupStats để tính tổng diện tích.
+
+**Clip.** Hãy tưởng tượng bạn muốn biết tất cảc các khu công nghiệp trong khu vực và bao nhiêu toà nhà trong phạm vi đó. Kiểm tra trực quan dữ liệu vector, bạn thấy rằng có một số khu công nghiệp chứa một số toà nhà. Bạn muốn tách các toà nhà và sử dụng chúng sau này. Đầu tiên là chọn tất cả các đối tượng trong lớp landuse_a_3405 có thuộc tính industrial (Xem lại Module 6). Sau đó, vào `Vector ‣ Geoprocessing tools ‣ Clip ` và chọn layer được clip là buildings_a_3405_cleaned. Kết quả như Hình 8.26
 
 
 ![Reduced selection of a few buildings and industrial landuse, so the computation can finish faster](media/fig825.png "Reduced selection of a few buildings and industrial landuse, so the computation can finish faster")
 
 Figure 8.26 - Reduced selection of a few buildings and industrial landuse, so the computation can finish faster. 
 
-After running the algorithm, your results should look like in figure 8.27. The clipped buildings are colored in pink. In the perimeter, we’ve chosen there are 298 buildings that occupy an area of almost 30 hectares. How many industrial buildings have you clipped? 
+Sau khi chạy thuật toán, kê1t quả sẽ như hình 8.27. Các toà nhà được clip có màu hồng. Trong phạm vi, chúng ta đã chọn có ... toà nhà chiếm diện tích khoảng ...ha. Vậy có bao nhiêu toà nhà công nghiệp bạn đã clip?
 
 
-![Results of the clip functionality](media/fig826.png "Results of the clip functionality")
+![Kết quả của chứng năng clip](media/fig826.png "Kết quả của chức năng clip")
 
 
-Figure 8.27 - Results of the clip functionality
+Hình 8.27 - Kết quả của chức năng clip
 
-**Thiessen (Voronoi) polygons. **Imagine you have to make a series of administrative decisions in your district based on how many schools there are and what specific areas they serve. Geospatial analysis can be of assistance. You can start by calculating the Thiessen polygons. Based on an area containing at least two points, a Thiessen Polygon is a 2-dimensional shape which boundaries contain all space which is closer to a point within the area than any other point without the area. A good use example is in meteorology, where weather stations are discrete points, yet the information collected is considered to be measured out on the surface based on the thiessen polygons. 
+**Thiessen (Voronoi) polygons.** Hãy tưởng tượng bạn phải đưa ra một loạt các quyết định hành chính dựa trên số lượng trường học và phạm vi đáp ứng của chúng trong khu vực. Phân tích không gian có thể hỗ trợ điều này. Bạn có thể bắt đầu bằng việc tính toán Thiessen polygon. Dựa trên một khu vư5c chứa ít nhất 2 điểm, một Thiessen Polygon là một đối tượng hình học 2 chiều có ranh giới chứa tất cả các 
+Imagine you have to make a series of administrative decisions in your district based on how many schools there are and what specific areas they serve. Geospatial analysis can be of assistance. You can start by calculating the Thiessen polygons. Based on an area containing at least two points, a Thiessen Polygon is a 2-dimensional shape which boundaries contain all space which is closer to a point within the area than any other point without the area. A good use example is in meteorology, where weather stations are discrete points, yet the information collected is considered to be measured out on the surface based on the thiessen polygons. 
 
 To respond to the above question, we will run the algorithm only for points that have the attribute school at type. Thus, make the selection as instructed in module 6. You should have 88 features selected on layer pois_3123_cleaned. Go to `Vector ‣ Geometry Tools ‣ Voronoi Polygons..` After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Pampanga province is contained, you should see a result like in figure 8.28. 
 

@@ -87,117 +87,117 @@ Tại đây, bạn có thể thiết lập hiển thị cho các kênh ảnh (đ
 ![alt_text](media/style-raster.png "image_tooltip")
 
 
-Figure 4.2: Symbology tab cho dữ liệu vector và raster
+Figure 4.2: Symbology cho dữ liệu vector và raster
 
 
 #### **Raster rendering: Band rendering**
 
-QGIS offers four different Render types. The choice of renderer depends on the data type. The default render type is Single band grey color. You’ll have to change it to the appropriate type based on the data type. 
+QGIS cung cấp 04 kiểu hiển thị (render) dữ liệu raster. Lựa chọn cách hiển thị nào tuỳ thuộc vào loại dữ liệu. Loại render mặc định là đơn kênh (màu xám). Bạn sẽ phải thay đổi kiểu hiển thị thích hợp tuỳ vào loại dữ liệu.
 
-*   Multiband color ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color)) - if the file comes with several bands (e.g. a satellite image with several bands).
-*   Paletted/Unique values ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#paletted]()) - for single band files that come with an indexed palette (e.g. a digital topographic map) or for general use of palettes for rendering raster layers.
-*   Singleband gray ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray)) - (one band of) the image will be rendered as gray. QGIS will choose this renderer if the file is neither multiband nor paletted (e.g. a shaded relief map).
-*   Singleband pseudocolor ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab)) - this renderer can be used for files with a continuous palette or color map (e.g. an elevation map).
-*   Hillshade ([(https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer)) - Creates hillshade from a band.
+*   Multiband color - Màu đa kênh ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color)) - nếu raster có nhiểu kênh ảnh (ví dụ như ảnh vệ tinh được chụp ở nhiều kênh phổ khác nhau).
+*   Paletted/Unique values ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#paletted]()) - đối với ảnh đơn kênh (đơn phổ) với một bảng màu được đánh chỉ mục - indexed palette (ví dụ bản đồ địa hình số) hoặc cho các trường hợp chung sử dụng palette để hiển thị raster.
+*   Singleband gray - xám đơn kênh ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray)) - (một kênh của) ảnh sẽ được hiển thị dưới dạng màu xám. QGIS sẽ chọn kiểu hiển thị này nếu raster không phải là ảnh đa kênh hoặc palette (ví dụ như bản đồ dạng shaded relief)
+*   Singleband pseudocolor -  màu giả đơn kênh([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab](https://docs.qgis.org/3.16/en/docs/user-_manual/working_with_raster/raster_properties.html#label-colormaptab)) - cách hiển thị này có thể được dùng cho các raster với raster có bảng màu liên tục hoặc các bản đồ màu (ví dụ như bản đồ độ cao)
+*   Hillshade ([(https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer)) - Tạo hillshade từ một kênh ảnh.
 
 
 #### **Vector rendering**
 
-When you load spatial data layers into QGIS Desktop, they are styled with a random Single Symbol rendering. To change this click on Layer->Properties->Style.
-
-There are several rendering choices available from the menu in the upper left corner:
-
-*   Single Symbol – this is the default rendering in which one symbol is applied to all the features in a layer.
-*   Categorized – allows you to choose a categorical attribute field to style the layer with. Choose the field, and click Classify and QGIS will apply a different symbol to each unique value in the field. You can also use the Set column expression button to enhance the styling with a SQL expression.
-*   Graduated – allows you to classify the data by a numeric field attribute into discrete categories. You can specify the parameters of the classification (classification type and number of classes) and can use the Set column expression button to enhance the styling with a SQL expression.
-*   Rule-based – use this to create custom rule based styling. Rules will be based on SQL expressions.
-*   Point displacement – if you have a point layer with stacked points, this option can be used to displace the points so they are all visible.
-*   Inverted polygons – this is a new renderer that allows a feature polygon to be converted into a mask. For example, a city boundary polygon used with this renderer would become a mask around the city. It also allows for use of Categorized, Graduated and Rule-based renderers and SQL expressions.
+Khi bạn tải các lớp dữ liệu không gian trong QGIS Desktop, chúng được gán style Single Symbol với màu ngẫu nhiên. Để thay đổi, kích vào Layer->Properties->Style 
 
 
-## Main content 
+Có nhiều tuỳ chọn hiển thị:
 
-### Phase 1: Basic raster and vector symbology
+*   Single Symbol – Đây là kiểu hiển thị mặc định với một symbol (kiểu đường, màu sắc) áp dụng cho tất cả các đối tượng của layer.
+*   Categorized – cho phép chọn một thuộc tính phân loại để tạo stlye cho layer. Sau khi chọn thuộc tính phân loại, chọn Classify để QGIS áp dụng các symbol khác nhau tương ứng với từng giá trị khác nhau của thuộc tính được chọn. Bạn cũng có thể chọn chức năng tính toán giá trị thuộc tính thông qua các biểu thức SQL. 
+*   Graduated – cho phép phân lớp dữ liệu bởi một trường thuộc tính dạng số thành các nhóm riêng biệt. Bạn có thể chọn các tham số choa việc phân lớp (cách phân lớp và số lớp) và có thể chọn chức năng tính toán giá trị thuộc tính thông qua các biểu thức SQL. 
+*   Rule-based – dùng để tạo một style dựa trên luật do người dùng định nghĩa. Các luật này có cấu trúc dựa trên biểu thức SQL.
+*   Point displacement – nếu bạn có một lớp điểm với các điểm xếp chồng lên nhau, tuỳ chọn này có thể được sử dụng để dời vị trí các điểm sao cho tất cả điểm đều được hiển thị.
+*   Inverted polygons – Đây là một cách hiển thị mới, cho phép một đối tượng polygon được chuyển đổi thành một mặt nạ. Ví dụ, một polygon thể hiện ranh giới thành phố sử dụng cách hiển thị này sẽ trở thành một mặt nạ xung quanh thành phố. Nó cũng cho phép sử dụng thêm các cách hiển thị khác như Categorized, Graduated và Rule-based, cũng như sử dụng các biểu thức SQL.  
 
-Vector data symbology may vary by transparency, color, rotation, and size.  
 
-#### **Content**
+## Nội dung chính 
 
-*   Layer properties and symbology menu
-*   Types of vector rendering
-*   Types of raster rendering (band rendering)
+### Phase 1: Symbology cơ bản cho raster và vector
 
-#### **Example 1: Vector rendering**
+Symbology cho dữ liệu vector có thể thay đổi dựa vào độ trong suốt, màu sắc, góc quay và kích thước.
 
-1. To demonstrate this example, we’ll use two example datasets; 1. [Clinics](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing) and 2. [Administrative boundary](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing) of Pampanga province 
-2. Add the two vector layers into qgis; Click the Add vector layer button ![alt_text](media/add-vector.png "image_tooltip")
- or use the browser panel. 
-3. This is how they render by default. You’ll notice we have a polygon and point layer. The next step is to change the symbology for each of them. Fill colors may not be the same, but that’s not a problem because QGIS selects colors randomly for different instances of the application.
+#### **Nội dung**
+
+*   Layer properties và symbology menu
+*   Các loại hiển thị Vector
+*   Các loại hiển thị raster(band rendering)
+
+#### **Ví dụ 1: Hiển thị Vector**
+
+1. Để minh hoạ cho ví dụ này, chúng ta sẽ sử dụng 02 tập dữ liệu mẫu;1. [Clinics](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing) và 2. [Administrative boundary](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing) của Tp.HCM 
+2. Thêm 02 lớp vector này vào QGIS; Kích chọn nút Add vector layer ![alt_text](media/add-vector.png "image_tooltip") hoặc sử dụng Browser Panel. 
+3. Đây là cách chúng hiển thị theo mặc định. Bạn chú ý là chúng ta có một lớp dạng vùng (polygon) và một lóp dạng điểm (point). Bước tiếp theo là thay đổi symbology cho từng lớp này. Fill color có thể không trùng nhau, nhưng không vấn đề gì bởi vì QGIS chọn màu ngẫu nhiên cho các lớp dữ liệu.
 
 ![Default render](media/default-vector-render.png "Default render")
 
-Figure 4.3: Default render
+Hình 4.3: Hiển thị mặc định
 
-4. Double click the polygon vector layer, which is also the administrative boundary layer of Pampanga province in the Philippines
-5. Select the **Symbology Tab** in the menu that appears
-6. Change the **Fill color** to **Transparent fill. Tip:** Click the drop down arrow under Fill color
-7. The result should be as below. You may notice that the no fill option has no color
+4. Kích đúp chuột vào lớp polygon, chính là ranh giới hành chính của Tp.HCM. 
+5. Chọn **Symbology Tab** 
+6. Thay đổi **Fill color** thành **Transparent fill. Mẹo:** Kích vào mũi tên chỉ xuống, phía dưới Fill color
+7. Kết quả như hình bên dưới. Bạn có thể thấy là không có màu nền.
 
-![No fill rendering for the polygon](media/no-fill-render.png "No fill rendering for the polygon")
+![Polygon không có màu nền](media/no-fill-render.png "Polygon không có màu nền")
 
-Figure 4.4: No fill rendering for the polygon
+Hình 4.4: Polygon không có màu nền
 
-8. The next step is to symbolize the point layer which is also the Clinics layer
-9. Double click the **Clinics layer** to open the **Layer Properties** dialogue. Change the render type from Single Symbol to **Categorized**, Select the **Value** as amenity. The value represents the field of interest. Specify the Symbol and Color ramp. Then Click classify.
+8. Bước tiếp theo là định nghĩa symbology cho point layer (lớp cơ sở y tế)
+9. Kích đúp chuột vào lớp **Cơ sở y tế** để mở cửa sổ **Layer Properties** . Đổi kiểu hiển thị Single Symbol thành **Categorized**, chọn  **Value** là amenity. Chọn Symbol và Color ramp, sau đó chọn Classify 
 
 ![Layer Properties dialogue](media/vector-style.png "Layer Properties dialogue")
 
-Figure 4.5: Layer Properties dialogue
+Hình 4.5: Layer Properties dialogue
 
-10. The resulting map should look as below
+10. Kết quả như hình bên dưới
 
-![Final vector render](media/final-vector-render.png "Final vector render")
+![Kết quả hiển thị vector](media/final-vector-render.png "Kết quả hiển thị vector")
 
-Figure 4.6: Final vector render
-
-
-
-11.  Remember to arrange the layers in the **Layer Panel** in such a way that the polygon layer is below the point layer. This makes the point layer visible.
+Hình 4.6: Kết quả hiển thị vector
 
 
-#### **Example 2: Raster rendering**
 
-1. Double click the raster layer which is also the population density layer. This also means it’s a normalized dataset and can therefore be visualized as a choropleth map.
-2. Select the symbology tab in the menu that appears
-3. Change the styling mode to ‘Singleband pseudocolor’
+11.  Cần nhớ sắp xếp các layer trong **Layer Panel** sao cho polygon layer nằm bên dưới point layer để point layer không bị che khuất.
+
+
+#### **Ví dụ 2: Raster rendering**
+
+1. Kích đúp chuột vào raster layer, chính là lớp mật độ dân số (population density). Đây cũng dữ liệu được chuẩn hoá để có thể hiển thị dưới dạng một choropleth map.
+2. Chọn tab Symbology
+3. Chọn kiểu styling là ‘Singleband pseudocolor’
 
 ![Symbology menu](media/qgis9.png  "Symbology menu")
 
-Figure 4.7: Symbology menu
+Hình 4.7: Symbology menu
 
-4. Specify the interpolation, color ramp and mode. Click classify. The result is a choropleth map showing population density across Pampanga province in the Philippines.
+4. Chọn phương pháp nội suy (interpolation), color ramp và mode. Chọn classify. Kết quả l2 một choropleth map hiển thị mật độ dân số của Tp.HCM
 
-![Population density of Pampanga Province, Philippines](media/hrsl-style.png "Population density of Pampanga Province, Philippines")
+![Mậ độ dân số Tp.HCM](media/hrsl-style.png "Mật độ dân số Tp.HCM")
 
-Figure 4.8: Population density of Pampanga Province, Philippines
+Hình 4.8: Mật độ dân số Tp.HCM
 
-5.  Zoom in to see the new map in finer detail.
+5.  Phóng to bản đồ để hiển thị chi tiết hơn.
 
-![Zoomed-in map](media/zoom-in.png "Zoomed-in map")
+![Bản đồ phóng to](media/zoom-in.png "Bản đồ phóng to")
 
-Figure 4.9: Zoomed-in map
+Hình 4.9: Bản đồ phóng to
 
-6. Alternatively, use the **Layer Styling panel**.
+6. Ngoài ra, có thể sử dụng **Layer Styling panel** để thiết lập hiển thị cho raster. 
 
-#### **Quiz questions**
+#### **Câu hỏi**
 
-1. What is layer symbology?
-2. Which of the rendering types below are applicable for vector data?
-3. What are the types of raster rendering
+1. Layer symbology là gì ?
+2. Phương pháp hiển thị nào là thích hợp cho dữ liệu vector?
+3. Các loại hiển thị dữ liệu raster?
 
-#### **Quiz answers**
+#### **Các phương án trả lời**
 
-1. a. graphical element represented as a marker, stroke or fill
+1. a. graphical element represented as a marker, stroke or fill 
    b. a pointer to the original data
    c. a repository of different color schemes
 
@@ -212,65 +212,65 @@ Figure 4.9: Zoomed-in map
 3. a. singleband pseudocolor
    b. singleband gray
    c. paletted
+   d. multiband color
 
-4. d. multiband color
 
+### Phase 2: Blending modes và draw effects
 
-### Phase 2: Blending modes and draw effects
+#### **Nội dung**
 
-#### **Content**
+*   Thay đổi cấu trúc symbol
+*   Thay đổi draw effects and blending modes
+*   Trực quan hoá dữ liệu
 
-*   Altering symbol structures
-*   Altering draw effects and blending modes
-*   Impactful visualisation of data
+#### **Hướng dẫn**
 
-#### **Tutorial**
-
-1. After loading the two layers into QGIS, the canvas will look as below. You’ll notice that both layers have plain styling. This tutorial will explain how to alter draw effects and blending modes for better visualization.
+1. Sau khi tải 02 layer vào QgiS, map canvas sẽ như hình bên dưới. Bạn có thể thấy là cả 02 layer đều có style đơn giản. Hướng dẫn này sẽ giải thích cách thay đổi draw effects và blending modes để trực quan hoá tốt hơn 
    
-![The expected initial workspace](media/initial-workspace.png "The expected initial workspace")
+![Workspace ban đầu](media/initial-workspace.png "Workspace ban đầu")
 
-Figure 4.10: The expected initial workspace
+Hình 4.10: Workspace ban đầu
 
-2. Open the Layer Properties window, then click the Symbology menu item for the administrative boundaries layer. Tip: Do this by double clicking the layer or use the layer styling panel. Enable the layer styling panel by clicking: View -> Panels -> Layer Styling. 
+2. Mở cửa sổ Layer Properties, chọn Symbology cho lớp ranh giới hành chính. Mẹo: kích đúp chuột vào layer hoặc sử dụng Layer Styling Panel. Kích hoạt Layer Styling Panel bằng cách: View -> Panels -> Layer Styling.
 
-At the bottom of the Symbology menu, there’s a checkbox for Draw effects. Let’s enable that, and then click the customise effects button ![alt_text](media/customise-effects-button.png "image_tooltip") to its right:
+Ở dưới Symbology menu, có một checkbox Draw Effects. Kích chọn checkbox này và kích chọn nút tuỳ chỉnh hiệu ứng ![alt_text](media/customise-effects-button.png "image_tooltip") ở bên phải:
 
-![Layer Properties window and Symbology menu](media/draw-effects.png "Layer Properties window and Symbology menu")
+![Layer Properties window và Symbology menu](media/draw-effects.png "Layer Properties window và Symbology menu")
 
-Figure 4.11: Layer Properties window and Symbology menu
+Hình 4.11: Layer Properties window và Symbology menu
 
-3. A new Effects Properties dialog opens
+3. Cửa sổ Effects Properties xuất hiện
 
 ![Effects properties dialogue](media/new-effects-dialog.png "Effects properties dialogue")
 
-Figure 4.12: Effects properties dialogue
+Hình 4.12: Effects properties dialogue
    
-4. You can see that currently the only effect listed is a Source effect. Source effects aren’t particularly exciting – all they do is draw the original layer unchanged. Change this to a Blur effect by **clicking the Effect type  combo box and selecting Blur**. You can then play around with the blur parameters.
+4. Bạn có thể thấy chỗ Effect type Source effect được chọn mặc định. Source effect không thú vị lắm - nó chỉ đơn giản là vẽ lại layer mà không thay đổi gì cả. Hãy chọn Blur effect bằng cách **kích vào combobox Effec type và chọn Blur**. Bạn có thể thử thiết lập các tham số cho tuỳ chọn Blur
+   
+![Chọn Effect Type la Blur](media/blur-effect.png "Chọn Effect Type la Blur")
 
-![Select effect type as blur](media/blur-effect.png "Select effect type as blur")
+Hình 4.13: Chọn Effect Type la Blur
 
-Figure 4.13: Select effect type as blur
+1. Chọn Apply, bạn có thể thấy polygon layer lúc này bị mờ.
 
-5. Apply the settings now, you’ll see that the polygon layer is now blurry. Now we’re getting somewhere!	
+![Layer với hiệu ứng mờ](media/blurry-result.png "Layer với hiệu ứng mờ")
 
-![Blurry layer](media/blurry-result.png "Blurry layer")
+Hình 4.14: Layer với hiệu ứng mờ
 
-Figure 4.14: Blurry layer
-
-6. Using the **Effects Properties** dialog again. Let’s try something a bit more advanced. Instead of just a single effect, it’s possible to chain multiple effects together to create different results. Let’s make a traditional drop shadow by adding a **Drop shadow** effect under the **Source** effect.
+6. Trở lại  **Effects Properties**. Hãy thử nâng cao hơn một chút. Thay vì chỉ chọn một hiệu ứng, có thể chọn cùng lúc nhiều hiệu ứng khác nhau. Hãy chọn thêm hiệu ứng **Drop shadow**
 
 ![Effects properties dialogue](media/drop-shadow.png "Effects properties dialogue")
 
-Figure 4.15: Effects properties dialogue
+Hình 4.15: Effects properties dialogue
 
-7. Effects are drawn top-down, so the drop shadow will appear below the source polygons
+7. Các hiệu ứng sẽ được vẽ từ trên xuống, do đó Drop shadow sẽ hiển thị bên dưới source polygon
 
-![Drop shadow effect](media/drop-shadow-result.png "Drop shadow effect")
+![Hiệu ứng Drop shadow](media/drop-shadow-result.png "Hiệu ứng Drop shadow")
 
-Figure 4.16: Drop shadow effect
+Hình 4.16: Hiệu ứng Drop shadow
 
-8. You can stack as many effects as you like. For example an **inner glow** over a **source effect**, with a **drop shadow** below everything. Try it out!
+8. Bạn có thể thêm bao nhiêu hiệu ứng tuỳ ý. Ví dụ một **inner glow** trên  **source effect**, với **drop shadow** ở dưới cùng. Hãy làm thử để xem kết quả thế nào!
+
 
 Overall, remember that effects can either be applied to an entire layer, or to the individual symbol layers for features within a layer. Basically, the possibilities are almost endless! Python plugins can also extend this further by implementing additional effects.
 

@@ -1,40 +1,40 @@
-# Module 5 - Making Maps
+# Module 5 - Tạo bản đồ
 
-**Author**: Ketty 
-
-
-## Pedagogical Introduction
-
-This module will provide you with an overview of the common steps needed to complete a map in QGIS. At the end of the module, participants will know the following concepts;
-
-*   Map canvas and related layers 
-*   The print layout and print layout 
-*   Map elements and properties
-
-In addition you’ll have learned the following skills;
-
-*   Using the print layout to make a map
-*   Adding map elements to the map
-*   Managing different print layouts
+**Author**: Quách Đồng Thắng
 
 
-## Required tools and resources
+## Giới thiệu
 
-*   Working computer
-*   Internet access
-*   QGIS 3.16 or later
-*   Pampanga administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
-*   Pampanga clinics (inside [module5.gpkg](data/module5.gpkg))
-*   PHL provinces (inside [module5.gpkg](data/module5.gpkg))
-*   [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+Module này sẽ cung cấp cho bạn cái nhìn tổng quan về các bước phổ biến cần thiết để hoàn tất một bản đồ trong QGIS. Kết thúc module, người học sẽ nắm được các khái niệm;
+
+*   Map canvas và các layer liên quan
+*   Bản in - Print layout 
+*   Các yếu tố và thuộc tính của bản đồ
+
+Ngoài ra bạn sẽ học được các kỹ năng;
+
+*   Sử dụng print layout để tạo bản đồ
+*   Thêm các yếu tố bản đồ vào bản đồ
+*   Quản lý nhiều print layout khác nhau
+
+
+## Các công cụ và tài nguyên cần thiết
+
+*   Máy tính
+*   Kết nối Internet
+*   QGIS 3.16 trở lên
+*   Lớp ranh giới hành chính Tp.HCM (trong [module5.gpkg](data/module5.gpkg))
+*   Cơ sở y tế Tp.HCM (trong [module5.gpkg](data/module5.gpkg))
+*   Vietnam provinces (inside [module5.gpkg](data/module5.gpkg))
+*   [HCM City High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
 
 ## Prerequisites
 
-*   Basic knowledge of operating a computer
-*   An understanding of all previous modules
+*   Kiến thức cơ bản về vận hành máy tính
+*   Nắm vững các Module trước
 
 
-## Additional resources
+## Tài nguyên bổ sung
 
 *   QGIS Map LayOut - [https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html](https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html )
 *   Layout Templates - [https://layout-hub.github.io/](https://layout-hub.github.io/)
@@ -42,10 +42,11 @@ In addition you’ll have learned the following skills;
 *   Style Library - [https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html](https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html)
 
 
-## Thematic introduction
+## Giới thiệu chuyên đề
 
-Let’s start with an example: 
+Hãy bắt đầu với một ví dụ: 
 
+Để tạo một bản đồ, bạn cần một chủ đề, chẳng hạn như 'Sự phân bố không gian của các cơ sở y tế ở Tp.HCM'. 
 To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Pampanga province in the Philippines. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
 
 Breakdown of the concepts
