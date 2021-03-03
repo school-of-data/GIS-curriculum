@@ -466,8 +466,8 @@
 
 
 ## media
+* **You are free to keep the screenshots as is but you may also use your own screenshots using local data if you have time (or if you think that is better).**
 
-
-## module9
-
+## module10
+* **Feel free to add/replace/edit the plugins featured in the module as you see fit**
 
