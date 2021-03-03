@@ -741,5 +741,132 @@ F: Welches der drei Geoprozessierungswerkzeuge würden Sie verwenden, um zwei ä
 A: Auflösen
 
 
-### Phase 3: Geostatistik. Interpolation - Schätzung fehlender Daten
+### Teil 3: Geostatistik. Interpolation - Schätzung fehlender Daten
 
+Der letzte Teil des Moduls Vektordaten führt in das Konzept der Datenschätzung ein. Wir sind es gewohnt, fast täglich Schätzungen zu verschiedenen Themen vorzunehmen, z. B. wie viel Zeit wir unter bestimmten Bedingungen für den Weg von zu Hause zur Arbeit benötigen. Wir sind es gewohnt, unsere beste Schätzung abzugeben, basierend auf früheren Erfahrungen und Vermutungen. Bei der Schätzung fehlender Daten wird die beste Schätzung jedoch durch sehr gut definierte mathematische Gleichungen mit bekannten Einschränkungen ersetzt. 
+
+Das Thema erfordert erhebliche Kenntnisse in Statistik und die Ergebnisse sollten immer im Lichte ihrer Einschränkungen betrachtet werden. 
+
+In diesem Sinne stellen wir ein kurzes Beispiel für die Datenschätzung vor, das den Übergang zum nächsten Modul - der Rasterdatenverarbeitung - bildet. 
+
+**Interpolation** ist ein mathematischer Prozess, durch den man die fehlenden Werte auf der Grundlage einer begrenzten Anzahl von vorhandenen Werten schätzen kann. Und solche Situationen sind häufig - stellen Sie sich meteorologische Daten vor. Daten über Oberflächentemperaturen und darüber, wie viel Regen gefallen ist, können nur an bestimmten Punkten an kalibrierten Meteostationen gemessen werden, und nicht auf der gesamten Fläche. Auf den Karten, die wir im Wetterbericht sehen, gibt es jedoch keine "blinden Flecken" ohne Temperaturen. Daher werden die restlichen Werte durch Interpolation gewonnen. 
+Die Annahme, auf der die Interpolation basiert, ist, dass räumlich verteilte Objekte räumlich korreliert sind; mit anderen Worten, Dinge, die nahe beieinander liegen, neigen dazu, ähnliche Eigenschaften zu haben. 
+
+Es gibt viele Interpolationsmethoden, die in GIS-Software implementiert sind. Die Entscheidung, welche in jedem einzelnen Fall die beste ist, hängt von der Spezifität der Daten ab, was sie repräsentieren und vom geostatistischen Verständnis der Person, die Interpolation durchführt. 
+
+Um schnell zu prüfen, welche Interpolationsmethoden in QGIS zur Verfügung stehen, gehen Sie in die Verarbeitungswerkzeuge und geben Sie in die Suchleiste das Stichwort Interpolation ein. Das Ergebnis sollte wie in Abbildung 8.41 aussehen. 
+
+
+![In QGIS verfügbare Interpolationsmethoden](media/fig841.png "In QGIS verfügbare Interpolationsmethoden")
+
+Abbildung 8.41 - In QGIS verfügbare Interpolationsmethoden
+
+
+Wie zu sehen ist, biete QGIS auch Zugang zu anderen Algorithmen, die in GRASS oder SAGA implementiert sind.
+
+Es würde den Rahmen dieses Moduls sprengen, auf die mathematischen Grundlagen der einzelnen Interpolationsalgorithmen einzugehen. Zu Demonstrationszwecken werden wir jedoch die Interpolation von Niederschlagsdaten simulieren, um einen nahtlosen Datensatz über die Menge der gefallenen Niederschläge in unserem Betrachtungsgebiet zu erhalten. 
+
+Da die Übung nur zu Demonstrationszwecken dient, werden wir unseren eigenen Satz von Punktdaten erstellen - um die Meteostationen darzustellen, an denen Niederschlagswerte im Laufe einer Woche registriert wurden. 
+
+Der erste Schritt ist also die Erstellung eines neuen Punk-Vektor Layers mit zufällig zugewiesenen Punkten innerhalb Mittelsachsen. Dazu gibt es mehrere Möglichkeiten, entweder mit dem Algorithmus **Zufällige Punkte in Polygonen..** oder mit dem Algorithmus **Zufällige Punkte in den Layergrenzen..**. Gehen Sie zu **Vektor ‣ Forschungswerkzeuge ‣ Zufällige Punkte in Polygonen...**. Sie können den Algorithmus auch in der Symbolleiste Verarbeitung oder in der Suchleiste suchen. Wählen Sie als Parameter: 
+* 93 Punkte
+* mindestens 5 km.
+
+Die Einstellungen sollte wie in Abbildung 8.42 aussehen. 
+
+
+![Erzeugen von Zufallspunkten innerhalb eines Polygon-Layers](media/fig842.png)
+
+Abbildung 8.42 - Erzeugen von Zufallspunkten innerhalb eines Polygon-Layers
+
+
+Der resultierende Punkt-Layer sieht ungefähr so aus wie in Abbildung 8.43.
+
+
+![Punktdaten-Layer - zufällig innerhalb der angegebenen Polygone erzeugt](media/fig843.png)
+
+Abbildung 8.43 - Punktdaten-Layer - zufällig innerhalb der angegebenen Polygone erzeugt
+
+Da wir nun unsere imaginären Wetterstationen haben, werden wir fiktive Messungen in einem Zeitrahmen von 7 Tagen hinzufügen. 
+
+Dazu können wir die von QGIS bereitgestellte Zufallsfunktion verwenden. Öffnen Sie die Attributtabelle des erstellten Punktdaten-Layers und öffnen Sie den Feldrechner. Fügen Sie in ein neu angelegtes Feld (Ganze Zahl) die folgende Formel rand(min, max) ein, wobei min und max durch das folgende Zahlenpaar für die entsprechenden 7 Tage ersetzt werden (siehe Abbildung 8.44):
+
+1. 0 - 59;
+2. 2 - 35;
+3. 10 - 45;
+4. 0 - 21;
+5. 5 - 63;
+6. 0 - 10;
+7. 0 - 21. 
+
+
+![Zufallswerte innerhalb vorgegebener Grenzen erzeugen](media/fig844.png "Zufallswerte innerhalb vorgegebener Grenzen erzeugen")
+
+Abbildung 8.44 - Erzeugen von Zufallswerten innerhalb vorgegebener Grenzen
+
+Nachdem Sie alle 7 Spalten hinzugefügt haben, sollte Ihre Attributtabelle wie in Abbildung 8.45 aussehen. 
+
+
+![Fiktive Nierderschlagsmengen in der Attributtabelle](media/fig845.png)
+
+Abbildung 8.45 - Fiktive Nierderschlagsmengen in der Attributtabelle
+
+Als nächstes werden wir diese Werte für jeden der 7 Tage interpolieren, um einen nahtlosen Layer zu erhalten, der das gesamte Gebiet abdeckt. Da es sich um einen sich wiederholenden Vorgang handelt, werden wir eine Stapelverabeitung verwenden. Die gewählte Interpolationsmethode, die - rein zu Demonstrationszwecken! - ist IDW - invers abstandsgewichtet. Sie finden diese, indem Sie in den Verarbeitungswerkzeugen nach IDW suchen und dann per Rechtsklick den Stapelprozess auswählen
+
+Stellen Sie die folgenden Parameter ein: 
+* Abstandskoeffizient: 2
+* Ausdehnung: Pampanga_admin_boundary
+* Größe des Ausgaberasters: 50. 
+
+Ihre Parameter sollten wie in der folgenden Abbildung 8.46 aussehen.
+
+
+![Einstellungen im Stapelverarbeitungsfensters zur Interpolation der Niederschlagswerte für alle 7 Tage](media/fig846.png)
+
+Abbildung 8.46 - Einstellungen im Stapelverarbeitungsfensters zur Interpolation der Niederschlagswerte für alle 7 Tage
+
+Das Interpolationsergebnis sieht ungefähr so aus wie in Abbildung 8.47. 
+
+
+![Interpolierte Datensätze](media/fig847.png)
+
+Abbildung 8.47 - Interpolierte Datensätze
+
+Die Wetterstationen sind in der Kartenansicht sichtbar und in der Layerliste sehen Sie alle 7 neu erstellten Rasterdatensätze, die die Niederschlagswerte für jeden Tag darstellen. Sollten die Daten nicht automatisch geladen worden sein, könenn Sie diese wie gewohnt als Layer hinzufügen.
+
+Als nächstes ändern wir die Symbologie der 7 Layer auf eine buntere (**Eigenschaften ‣ Symbolisierung ‣ Einkanalpseudofarbe ‣ Magma**). 
+
+Betrachtet man die Punktdaten und die daraus erstellten Rasterdatensätze, so stellt man fest, dass man nun Werte für die gesamte Region hat und nicht nur am gemessenen Ort. Es gibt viele Verarbeitungsalgorithmen, die auf diese Raster angewendet werden können, um Informationen zu extrahieren, aber dazu mehr im nächsten Modul - Verarbeitung und Visualisierung von Rasterdaten.  
+
+Da wir jedoch Werte für 7 Tage interpoliert haben, wollen wir eine kurze Animation vorbereiten, wie sich die Niederschlagswerte entwickelt haben. 
+
+Öffnen Sie dazu die **Eigenschaften des Rasters wetterstationen_1 ‣ klicken Sie auf die Registerkarte Zeitlich ‣ markieren Sie die Option Zeitlich ‣ wählen Sie Start- und Enddatum**, wie in Abbildung 8.48. Führen Sie das gleiche für alle 7 Raterlayer - jeweils um einen Tag verschoben - durch.
+
+![Zeitliche Informationen zum Rasterdatensatz setzen (1)](media/fig848.png )
+
+Abbildung 8.48 - Einstellen der zeitlichen Informationen zum Rasterdatensatz
+
+
+Öffnen Sie das Bedienfeld "Zeitsteuerung" (zu finden in **Ansicht ‣ Bedienfelder ‣ Zeitsteuerung**) und stellen Sie die Parameter wie in Abbildung 8.49 ein. 
+
+
+![Einstellen der Parameter des Zeitsteuerungsfeldes](media/fig849.png)
+
+Abbildung 8.49 - Einstellen der Parameter des Zeitsteuerungsfeldes. 
+
+Klicken Sie auf den Play-Button ![Play-Button](media/play-btn.png "Play-Button") und schauen Sie sich an, wie sich die Werte ändern. Sie können auswählen, welche anderen Layer sichtbar sein sollen. In Abbildung 8.50 haben wir den Gebäude-Vektor-Layer hinzugefügt. 
+
+![Auswählen anderer Layer, die in der zeitlichen Animation sichtbar sein sollen](media/fig850.png)
+
+Abbildung 8.50 - Auswählen von anderen Layern, die in der zeitlichen Animation sichtbar sein sollen.
+
+
+##### Quizfragen
+
+1. Gibt es nur einen Algorithmus zur Interpolation von Daten in QGIS oder mehrere?
+
+  * Es sind mehrere Algorithmen implementiert.
+
+2. Wozu ist die Interpolation nützlich?
+
+  * Interpolation ist nützlich, um Daten auf der Grundlage bekannter Daten zu schätzen.
