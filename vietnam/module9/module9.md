@@ -2,36 +2,36 @@
 
 **Author**: Codrina
 
-## Pedagogical Introduction
+## Giới thiệu chung
 
-This module is focused on a specific type of geographical data model: raster geodata.
+Module này tập trung vào một mô hình dữ liệu địa lý cụ thể: mô hình raster
 
-By the end of this module, learners will have the basic understanding of the following concepts:
+Kết thúc Module này, người học sẽ có những kiến thức cơ bản về các khái niệm sau:
 
-*   raster data model
-*   grid point vs grid cell
-*   bands of a raster dataset
+*   Mô hình dữ liệu vector
+*   grid point và grid cell
+*   các kênh của ảnh raster
 *   map algebra 
-*   the four resolutions of a raster (spatial, temporal, spectral and radiometric)
-*   Resampling
-*   Batch processing
-*   change detection
+*   4 loại độ phân giải của raster (không gian, thời gian, phổ và bức xạ)
+*   Resampling 
+*   Batch processing - xử lý hàng loạt
+*   change detection - phát hiện biến động 
 
 
-## Required Tools and Resources
+## Các công cụ và tài nguyên cần thiết
 
-*   This module has been prepared using [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
+*   [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
 *   [module9.gpkg](data/module9.gpkg)
-    *   Pampanga_admin_boundary
-*   [High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+    *   Ranh giới hành chính Tp.HCM
+*   [High Resolution Settlement Layer](data/HRSL_HCMC_Population.tif)
 *   [SRTM Digital Elevation Model](data/SRTM_DEM)
 *   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
-*   The coordinate reference system used is the PRS92 / Philippines zone 3, EPSG 3123. 
+*   CRS sử dụng là VN-2000 / UTM zone 48N, EPSG 3405. 
 
-## Prerequisites: 
+## Yên cầu kỹ năng: 
 
-*   Basic knowledge of operating a computer
-*   A robust understanding of modules 0, 1, 2, 6 and 8 of this curriculum. 
+*   Kiến thức cơ bản về vận hành máy tính
+*   Nắm vững Module 0, 1, 2, 6 và 8
 
 
 ## Thematic introduction
