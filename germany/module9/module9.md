@@ -699,193 +699,176 @@ Auf der dritten Registerkarte können Sie einstellen, was das "Value Tool" anzei
 * Nein. 
 
 
-### Phase 2: Working Intro to working with raster data
+### Teil 2: Einführung in die Arbeit mit Rasterdaten
 
-Now that we’ve learned how to extract basic information on the loaded raster datasets, we will continue with a more in-depth raster data processing in order to obtain new derived rasters and, in consequence, more information.
+Nachdem wir nun gelernt haben, wie man grundlegende Informationen aus den geladenen Rasterdatensätzen extrahiert, werden wir mit einer tiefer gehenden Rasterdatenverarbeitung fortfahren, um neue abgeleitete Raster und damit mehr Informationen zu erhalten.
 
-As you may have noticed, due to the raster data model structure, the layers we have loaded are expanding over our region of interest - Pampanga province. That is undesirable due to several reasons but mainly because you end up processing more data than you actually need, which translates in bigger storage and computer processing needs. That is why, before moving forward to any other steps, we will make sure that we process exactly as much data as we need. **Be aware **as you will start working on your own datasets, that the size of your files is an important factor when it comes to processing times. The bigger the files, more time will be required. Because of the model data structure - raster vs vector - raster files are usually much larger. 
+Wie Sie vielleicht bemerkt haben, dehnen sich die geladenen Layer aufgrund der Struktur des Rasterdatenmodells über die Region aus, die uns interessiert - den Landkreis Mittelsachsen. Das ist aus mehreren Gründen unerwünscht, aber hauptsächlich deshalb, weil man am Ende mehr Daten verarbeitet, als man eigentlich braucht, was sich in einem größeren Speicher- und Computerbedarf niederschlägt. Aus diesem Grund werden wir, bevor wir zu weiteren Schritten übergehen, sicherstellen, dass wir genau so viele Daten verarbeiten, wie wir benötigen. Wenn Sie mit der Arbeit an Ihren eigenen Datensätzen beginnen, sollten Sie sich bewusst sein, dass die Größe der Dateien ein wichtiger Faktor ist, wenn es um die Verarbeitungszeiten geht. Je größer die Dateien sind, desto mehr Zeit wird benötigt. Aufgrund der Struktur der Modelldaten - Raster vs. Vektor - sind Rasterdateien in der Regel wesentlich größer. 
 
-As you have noticed by now, the datasets we load into a GIS - in our case into QGIS - can be processed together even if they are of different nature, such as joining csv tables to vector layers to add information to geometries. The same applies to raster and vector data, as we will see. 
+Wie Sie inzwischen bemerkt haben, können die Datensätze, die wir in ein GIS - in unserem Fall in QGIS - laden, zusammen verarbeitet werden, auch wenn sie unterschiedlicher Natur sind, wie z. B. das Verbinden von CSV-Tabellen mit Vektor-Layern, um Informationen zu Geometrien hinzuzufügen. Das Gleiche gilt für Raster- und Vektordaten, wie wir noch sehen werden. 
 
-To work only with raster layers that are relevant to our Pampanga province, we will use the vector extent layer (Pampanga_admin_boundary) to cut/clip all relevant raster layers. Go to **Raster ‣ Extraction ‣ Clip Raster by Mask Layer** (see figure 9.22). Similarly, you can search for Clip in the Processing Toolbar or the Locator bar.
+Um nur mit Raster-Layern zu arbeiten, die für Mittelsachsen relevant sind, werden wir den Vektor-Layer Mittelsachsen verwenden, um alle relevanten Raster-Layer darauf zuzuschneiden. Gehen Sie dazu auf **Raster ‣ Extraktion ‣ Raster auf Layermaske zuschneiden** (siehe Abbildung 9.22). Auf ähnliche Weise können Sie in den Verarbeitungswerkzeugen oder in der Suchleiste nach "zuschneiden" suchen.
 
+![Verwenden einer Vektormaske, um die Rasterdaten einer bestimmten Region zu extrahieren](media/fig922.png)
 
-![Using a vector mask to extract the raster data on a specific region](media/fig922.png "Using a vector mask to extract the raster data on a specific region")
+Abbildung 9.22 - Verwenden einer Vektormaske, um die Rasterdaten einer bestimmten Region zu extrahieren
 
-Figure 9.22 - Using a vector mask to extract the raster data on a specific region
+Da wir mit 7 Raster-Layern arbeiten - den 5 Landbedeckungs-Layern, dem digitalen Oberflächenmodell und der HRSL - werden wir die Stapelverarbeitung verwenden, um alle Layer auf einmal zu beschneiden. Wenn Sie den Schritt der Reprojektion übersprungen haben, haben Sie Layer in unterschiedlichen Projektionen und der Algorithmus wird entweder nicht funktionieren oder unerwartete Ergebnisse liefern. 
 
-Given that we will work with 7 raster layers - the 5 Land Cover layers - the digital surface model and the HRSLl, we will use Batch processing to clip all layers at once. **Be aware,** if you have skipped the reprojecting step you have layers in different projections and the algorithm will either not work or produce unexpected results. 
+Der Aufbau des Stapelverarbeitungsfensters sollte wie in Abbildung 9.23 aussehen. 
 
-Your batch processing window setup should look like in figure 9.23. 
+![Stapelverarbeitung zum Ausschneiden aller benötigten Raster-Layer auf Basis des Vektorlayers](media/fig923.png)
 
+Abbildung 9.23 - Stapelverarbeitung zum Ausschneiden aller benötigten Raster-Layer auf Basis des Vektorlayers
 
-![Batch process cliping all required raster layers by Pampanga Province geometry](media/fig923.png "Batch process cliping all required raster layers by Pampanga Province geometry")
+Die eingestellten Parameter sind die folgenden:
+* Maskenlayer: Mittelsachsen
+* sowohl Quell- als auch Ziel-KRS ist EPSG 25833
+* Wählen Sie "Ja" für: `Ausdeghnung des zugeschnittenen Raster an die des Maskenlayers anpassen` und `Auflösung des Eingeberasters beibehalten`. 
+* Laden Sie die Layer nach Fertigstellung. 
 
-Figure 9.23 - Batch process cliping all required raster layers by Pampanga Province geometry
-
-The parameters setup are the following:
-* mask layer: Pampanga_admin_boundary
-* both source and target CRS is EPSG 3123
-* select yes to: `match the extent of the clipped raster to the mask layer` and `keep resolution of input layer`. 
-* Be aware, for the DSM_mosaic we will also select yes` to create an output alpha band`. Load layers at completion. 
-
-If everything went smoothly, your QGIS main window should look like in figure 9.24. 
+Wenn alles reibungslos geklappt hat, sollte Ihr QGIS-Hauptfenster wie in Abbildung 9.24 aussehen. 
 
 
-![Raster layers clipped by Pampanga province contour](media/fig924.png "Raster layers clipped by Pampanga province contour")
+![Zugeschnittene Rasterlayer](media/fig924.png)
 
-Figure 9.24 - Raster layers clipped by Pampanga province contour.  
+Abbildung 9.24 - Zugeschnittene Rasterlayer  
 
-Now, imagine that you have to present a report on where most people are living but with consideration to the altitude[^4]. You must know how many people live between 0 and 200 m altitude in the Pampanga province. There are a few elements to consider. Firstly, what is the data we will use and what are its characteristics. For population, we have the High Resolution Settlement Layer Data and for relief, we have the ALOS World 3D - 30m (AW3D30). Both raster layers have a spatial resolution of 30m, which allows us to proceed to other considerations. Relief is a continuous phenomena, the spread of the population is not, yet the report would make no sense to be done by the 30m pixel. We need to identify all the pixels with cell values from 0 to 200. Considering the histogram of the DSM_mosaic for our region of interest, we’ve seen that most cell values are between 0 and 200m. We can proceed to making a basic relief map based on the following divisions: 
+Stellen Sie sich nun vor, dass Sie einen Bericht darüber erstellen müssen, wo die meisten Menschen leben, aber unter Berücksichtigung der Höhenlage[^4]. Sie müssen wissen, wie viele Menschen in Mittelsachsen zwischen 0 und 200 m Höhe leben. Es gibt ein paar Elemente zu berücksichtigen. Erstens, welche Daten wir verwenden werden und welche Eigenschaften sie haben. Für die Bevölkerung haben wir die High Resolution Settlement Layer Daten und für das Relief haben wir die ALOS World 3D - 30m (AW3D30). Beide Raster Layer haben eine räumliche Auflösung von 30m, was uns erlaubt, zu weiteren Überlegungen überzugehen. Das Relief ist ein kontinuierliches Phänomen, die Ausbreitung der Bevölkerung ist es nicht, dennoch würde es keinen Sinn machen, den Bericht über die 30m-Pixel zu erstellen. Wir müssen alle Pixel mit Zellwerten von 0 bis 200 identifizieren. Wenn wir das Histogramm des SRTM für unsere interessierende Region betrachten, haben wir gesehen, dass die meisten Zellwerte zwischen 200 und 350m liegen. Wir können damit fortfahren, eine grundlegende Reliefkarte zu erstellen, die auf 7 "Gleiches Interavall"-Klassen basieren. Da wir keine Werte haben, die bei 0m liegen, können wir diesen Wert als Transparenzwert hinzufügen. Gehen Sie dafür in die Layereigentschaften und fügen Sie unter "Transaprenz" den zusätzlicher Leerwert 0 hinzu.
 
-1. 0 - 50m
-2. 51 - 100m
-3. 101 - 150m
-4. 151 - 200m
-5. 250 - 600m
-6. 600 - 1300m
+Mit dem in Modul 4 erworbenen Wissen können Sie den SRTM-Layer nach diesen Kategorien gestalten. Ihre Karte sollte wie in Abbildung 9.25 aussehen.
 
-Using your knowledge acquired in module 4, you can style the DSM layer by these categories. Your map should look like in figure 9.25.
+![SRTM Daten stylisiert als Einkanalpseudofarbe](media/fig925.png)
 
+Abbildung 9.25 - SRTM Daten stylisiert als Einkanalpseudofarbe)
 
-![DSM_mosaic_clipped representation](media/fig925.png "DSM_mosaic_clipped representation")
+Um die Anzahl der Menschen auf Basis der Rasterdaten HRSL zu berechnen, die in der Provinz Pampanga in einer Höhe von bis zu 200 Metern leben, müssen wir sehen, welche Pixel in jede dieser Kategorien fallen. Dazu werden wir den **Rasterrechner** verwenden. Dabei handelt es sich um eine Funktionalität, die es ermöglicht, Berechnungen auf der Grundlage vorhandener Rasterpixelwerte durchzuführen. Die Ergebnisse werden in einen neuen Raster Layer in einem GDAL[^5]-unterstützten Format geschrieben.
 
-Figure 9.25 - DSM_mosaic_clipped representation
+Es gibt mehrere Möglichkeiten, den Rasterkalklulator in QGIS zu öffnen. Sie können dies über die Menüleiste **Raster ‣ Rasterrechner** tun oder indem Sie in den Verarbeitungswerkzeugen nach "Calculator" suchen. Wenn Sie den Rechner über die Verarbeitsungswerkzuge geöffent, haben, dann sollten Sie folgendes Fesnter sehen:
 
-In order to calculate the number of people based on the raster data HRSL that live up to 200 meters in Pampanga province, we must see which pixels fall in each of those categories. To do that, we will use **Raster Calculator**. This is a functionality allowing the user to perform calculations on the basis of existing raster pixel values. The results are written to a new raster layer in a GDAL[^5]-supported format.
+![Der Rasterrechner](media/fig926.png)
 
-There are several ways to open the raster calclulator in QGIS. You can do so from the Menu bar **Raster ‣ Raster Calculator** or by searching raster calculator on the Processing Toolbox or Locator bar. If we run the Raster Calculator under Raster analysis in the Processing Toolbox, the window in Figure 9.26b should appear. 
+Bild 9.26 - Der Rasterrechner
+
+In diesem Fenster können wir die im Abschnitt _Konzepte_ beschriebenen Operationen, Subtraktionen, Additionen, Vergleiche und alle anderen wiederfinden. Die Namenskonvention für die Raster ist dabei wie folgt: was vor dem @ kommt, ist der Name des Raster-Layers, was nach dem @ kommt, ist die Nummer des Kanals.
 
 
-![Opening the Raster calculator](media/fig926_a.png "Opening the Raster calculator")
-
-Figure 9.26a - Opening the Raster calculator
-
-
-![Raster calculator](media/fig926_b.png "Raster calculator")
-
-Figure 9.26b - Raster calculator
-
-In this window, we can recognize the operations detailed in the Concepts section, substractions, additions, comparisons and all the others (see page 3). **Clipped_Reprojected_Merged_SRTM@1** The naming convention for the rasters can be observed: what comes before the @ is the name of the raster layer, what comes after the @ is the number of the band.
-
-
-Next, we will ‘slice’ our DSM_mosaic_clipped raster layer to extract only the pixels with values up to 200 meters. We know that the value cells of the DSM-mosaic_clipped represent a continuous numerical data (not discrete values, such as LandCover). Therefore, the operation we need to employ in this case is a comparison one - cell values <= 200 meters. To obtain this, we will write the following the Raster Calculator: 
+Als nächstes werden wir unseren SRTM Raster Layer "zerschneiden", um nur die Pixel mit Werten bis zu 200 Metern zu extrahieren. Wir wissen, dass die Wertezellen des SRTM Layers eine kontinuierliche numerische Information darstellen (nicht diskrete Werte, wie z. B. LandCover). Daher ist die Operation, die wir in diesem Fall anwenden müssen, eine Vergleichsoperation - Zellenwerte <= 200 Meter. Um dies zu erreichen, werden wir folgendes in den Raster Calculator schreiben: 
 
 ```
-"Clipped_Reprojected_Merged_SRTM@1" <= 200
+"Zugeschnitten_SRTM_zusammengeführt_reprojiziert@1" <= 200
 ``` 
 
-Set the **Reference layer** as **Clipped_Reprojected_Merged_SRTM@1**. Your Raster Calculator should look like in figure 9.27.
+Setzen Sie den **Reference Layer** als **Zugeschnitten_SRTM_zusammengeführt_reprojiziert@1**. Ihr Raster Calculator sollte wie in Abbildung 9.27 aussehen.
 
-![Inserting a formula into the Raster Calculator](media/fig927.png "Inserting a formula into the Raster Calculator")
+![Einfügen einer Formel in den Raster Calculator](media/fig927.png)
 
-Figure 9.27 - Inserting a formula into the Raster Calculator. 
+Abbildung 9.27 - Einfügen einer Formel in den Raster Calculator
 
-Your result should look like in figure 9.28. 
-
-
-![Result of identify all pixel values that are below 200 meters using the Raster Calculator](media/fig928.png "Result of identify all pixel values that are below 200 meters using the Raster Calculator")
-
-Figure 9.28 - Result of identify all pixel values that are below 200 meters using the Raster Calculator
-
-The result will be named `Output`. You can rename this to `< 200`. As we can see in the Layers Panel, the raster layer we have obtained has only 2 values 0 and 1. That is because we have used a rational operation, a comparison, therefore every pixel that is below 200 meters received value = 1 and all above, value = 0. We can test this by using the `Value Tool`. Figure 9.29 presents only pixels of value 1, in other words the pixels we are interested in for our exercise. 
+Ihr Ergebnis sollte wie in Abbildung 9.28 aussehen. 
 
 
-![Spatial distribution of all pixels of value 1, meaning with altitude lower than 200 meters](media/fig929.png "Spatial distribution of all pixels of value 1, meaning with altitude lower than 200 meters")
+![Neuer Layer mit allen Pixeln unter 200 Metern, erstellt mit dem Raster Calculator](media/fig928.png)
 
-Figure 9.29 - Spatial distribution of all pixels of value 1, meaning with altitude lower than 200 meters 
+Abbildung 9.28 - Neuer Layer mit allen Pixeln unter 200 Metern, erstellt mit dem Raster Calculator
 
-Going further, we can show the spatial distribution of population at the 30 m spatial resolution only in this specific geographical region, we’ve selected - Pampanga province, below 200m. To do that, we again employ Raster Calculator. 
+Das Ergebnis wird als `Output` bezeichnet. Sie können es in `<=200m` umbenennen. Wie wir im Bedienfeld "Layer" sehen können, hat der von uns erhaltene Raster-Layer nur 2 Werte: 0 und 1. Das liegt daran, dass wir eine binäre Operation, einen Vergleich, verwendet haben, daher erhielt jedes Pixel, das unter 200 Metern liegt, den Wert = 1 und alle darüber, den Wert = 0. Wir können dies mit dem `Value Tool` testen. Abbildung 9.29 zeigt nur Pixel mit dem Wert 1, also die Pixel, die uns für unsere Übung interessieren. 
 
-The formula is fairly simple, given that all DSM cell values we are interested in have value 1. 
 
-Open the Calculator and insert the following formula: 
+![Räumliche Verteilung aller Pixel mit dem Wert 1, d. h. mit einer Höhe von weniger als 200 Metern](media/fig929.png)
+
+Abbildung 9.29 - Räumliche Verteilung aller Pixel mit dem Wert 1, d. h. mit einer Höhe von weniger als 200 Metern 
+
+Als nächstes können wir die räumliche Verteilung der Bevölkerung bei der räumlichen Auflösung von 30 m unterhalb von 200 m betrachten. Dazu verwenden wir wieder den Raster Calculator. 
+
+Die Formel ist recht einfach, da alle SRTM-Zellenwerte, an denen wir interessiert sind, den Wert 1 haben. 
+
+Öffnen Sie den Rechner und fügen Sie die folgende Formel ein: 
 
 ```
-"< 200@1"*"Reprojected_HRSL_Pampanga_Population@1"
+"<=200m@1"*"Zugeschnitten_HRSL_Mittelsachen_reprojiziert@1"
 ```
 
 
-![Using raster calculator to identify population distribution classes based on altitude of up to 200m](media/fig930.png "Using raster calculator to identify population distribution classes based on altitude of up to 200m")
+![Verwendung des Raster Calculators zur Ermittlung von Bevölkerungsverteilungsklassen auf der Basis von Höhenlagen bis 200 m](media/fig930.png)
 
-Figure 9.30 - Using raster calculator to identify population distribution classes based on altitude of up to 200m
+Abbildung 9.30 - Verwendung des Raster Calculators zur Ermittlung von Bevölkerungsverteilungsklassen auf der Basis von Höhenlagen bis 200 m
 
-As opposed to previous raster calculator use, we have used 2 different raster datasets to obtain the desired result, yet you will observe that even if there are pixels that fall outside the DMS_clipped200.tif in the result, their value is 0. Use Value Tool to check (see figure 9.31). 
+Im Gegensatz zur vorherigen Verwendung des Rasterrechners haben wir 2 verschiedene Rasterdatensätze verwendet, um das gewünschte Ergebnis zu erhalten. Verwenden Sie das Value Tool, um sich die Werte im neuen Layer genauer anzuschauen (siehe Abbildung 9.31). 
 
+![UsiVerwenden des Value Tools zur Überprüfung der Ergebnisse der Rasterberechnung](media/fig931.png)
 
-![Using Value Tool to check results of Raster Calculator](media/fig931.png "Using Value Tool to check results of Raster Calculator")
+Abbildung 9.31 - Verwenden des Value Tools zur Überprüfung der Ergebnisse der Rasterberechnung
 
-Figure 9.31 - Using Value Tool to check results of Raster Calculator
+Sie können sehen, dass der neue Layer "HRSL <= 200m" an einigen Stellen den Wert 0 hat, obwohl Zugeschnitten_HRSL_Mittelsachen_reprojiziert Werte an dieser spezifischen Mausposition hat. 
 
-You can see that even if Reprojected_HRSL_Pampanga_Population has values in this specific mouse location, the raster obtained with Raster Calculator HRSL_DSM has value 0. 
-
-Next, we present the spatial distribution of the population that lives below 200m in Pampanga province. To choose an appropriate classification, we calculate the histogram. We can notice that most values are between 0.1 and 200 people per 30m. The classification we’ve chosen is visible in figure 9.32. 
-
-
-![Distribution of population that lives below 200m in Pampanga province, represented at a 30m resolution](media/fig932.png "Distribution of population that lives below 200m in Pampanga province, represented at a 30m resolution")
-
-Figure 9.32 - Distribution of population that lives below 200m in Pampanga province, represented at a 30m resolution. 
-
-If we are interested in the total number of people living below 200m in Pampanga province and not the geographical distribution per 30 m spatial resolution, then we need to sum up all pixel values of the raster layer HRSL_DSM. One way to obtain this number is to transform the DSM_clipped200 from raster to vector and them [....]
-
-To do that go to **Raster ‣ Conversion ‣ Polygonize (Raster to Vector)** (see figure 9.33). 
+Als nächstes stellen wir die räumliche Verteilung der Bevölkerung dar, die unterhalb von 200 m lebt. Um eine geeignete Klassifizierung zu wählen, berechnen wir das Histogramm. Wir können feststellen, dass die meisten Werte zwischen 0,8 und 2,2 Personen pro 30m liegen. Die von uns gewählte Klassifizierung ist in Abbildung 9.32 zu sehen. 
 
 
-![Raster to vector conversion](media/fig933_a.png "Raster to vector conversion")
+![Bevölkerungsverteilung unter 200m, in einem 30m Raster](media/fig932.png)
 
-Figure 9.33a - Raster to vector conversion
+Abbildung 9.32 - Bevölkerungsverteilung unter 200m, in einem 30m Raster 
 
-Remember that this raster layer had only 2 values - 0 and 1, so choose as the parameter by which to construct the vector the DN (digital number). 
+Wenn wir uns für die Gesamtzahl der Menschen interessieren, die in Mittelsachsen unterhalb von 200 m leben, und nicht für die geografische Verteilung pro 30 m räumlicher Auflösung, dann müssen wir alle Pixelwerte des Raster Layers "<=200m" aufsummieren. Eine Möglichkeit, diese Zahl zu erhalten, besteht darin, den Layer "<=200m" von Raster in Vektor zu transformieren.
 
-
-![Raster to vector conversion parameters](media/fig933_b.png "Raster to vector conversion parameters")
-
-Figure 9.33a - Raster to vector conversion parameters
-
-Your result should look like in figure 9.34. 
+Gehen Sie dazu auf **Raster ‣ Konvertierung ‣ Vektorisieren (Raster nach Vektor)** (siehe Abbildung 9.33). 
 
 
-![Result of converting a raster dataset to a vector dataset](media/fig934.png "Result of converting a raster dataset to a vector dataset")
+![Raster-zu-Vektor-Konvertierung](media/fig933_a.png "Raster-zu-Vektor-Konvertierung")
 
-Figure 9.34 -  Result of converting a raster dataset to a vector dataset. 
-
-Delete the geometry of value 0. 
-
-To find our answer we will use **Zonal Statistics**. To quickly find this functionality, open the Processing Toolbox and type in the search box “zonal” (see figure 9.35).
+Abbildung 9.33a - Raster-zu-Vektor-Konvertierung
+ 
+Erinnern Sie sich daran, dass dieser Raster Layer nur 2 Werte hatte - 0 und 1. Wählen Sie die Parameter, wie im folgenden Bild zu sehen: 
 
 
-![Identifying Zonal Statistics in the Processing Toolbox](media/fig935.png "Identifying Zonal Statistics in the Processing Toolbox")
+![Parameter für die Umwandlung von Raster in Vektor](media/fig933_b.png)
 
-Figure 9.35 - Identifying Zonal Statistics in the Processing Toolbox
+Abbildung 9.33a - Parameter für die Umwandlung von Raster in Vektorter
 
-In the window that has opened, select the parameters like in figure 9.36. As statistics calculated, select: count, sum, min and max. 
-
-
-![Setting the parameters for Zonal Statistics](media/fig936.png "Setting the parameters for Zonal Statistics")
-
-Figure 9.36 - Setting the parameters for Zonal Statistics
-
-The resulting layer is a vector layer that has as attributes the statistics that we have selected (see figure 9.37). 
+Ihr Ergebnis sollte wie in Abbildung 9.34 aussehen. 
 
 
-![Resulting vector layer of Zonal Statistics](media/fig937.png "Resulting vector layer of Zonal Statistics")
+![Ergebnis der Konvertierung eines Rasterdatensatzes in einen Vektordatensatz](media/fig934.png)
 
-Figure 9.37 - Resulting vector layer of Zonal Statistics
+Abbildung 9.34 - Ergebnis der Konvertierung eines Rasterdatensatzes in einen Vektordatensatz. 
 
-And with this final step, we answered our exercise, how many people (and where) are living below 200m in Pampanga province. 
+An dieser Stelle können Sie in der Attributtabelle alle Zeilen mit dem Wert 0 für die Spalte DN löschen, da diese für uns nicht weiter wichtig sind.
+
+Um unsere Antwort zu finden, werden wir die **Zonenstatistik** verwenden. Um diese Funktionalität schnell zu finden, öffnen Sie die Verarbeitunsgwerkzeugen und geben im Suchfeld "Zonen" ein (siehe Abbildung 9.35).
 
 
-#### **Quiz questions**
+![Zonenstatistik in den Verarbeitunsgwerkzeugen](media/fig935.png)
 
-1. Can raster data be clipped? 
-*   _<span style="text-decoration:underline;">Yes</span>._
-*   _No._
-2. Can one use vector datasets loaded in the QGIS project in Raster Calculator?
-*   _Yes._
-*   _<span style="text-decoration:underline;">No.</span>_
-3. Can raster datasets be converted to vector datasets?
-*   _<span style="text-decoration:underline;">Yes</span>._
-*   _No._
+Abbildung 9.35 - Zonenstatistik in den Verarbeitunsgwerkzeugen
+
+Wählen Sie im geöffneten Fenster die Parameter wie in Abbildung 9.36. Wählen Sie als berechnete Statistiken: Anzahl, Summe, Minimum, Maximum. 
+
+
+![Einstellen der Parameter für die zonale Statistik](media/fig936.png "Einstellen der Parameter für die zonale Statistik")
+
+Abbildung 9.36 - Einstellen der Parameter für die zonale Statistik
+
+Der resultierende Layer ist ein Vektor-Layer, der als Attribute die von uns gewählten Statistiken hat (siehe Abbildung 9.37). Sollten Sie dabei die Fehlermeldung bekommen, dass eine Geometrie nicht gültig ist, kann der Ratschlag in [diesem Stackoverflow-Post (englischsprachig)] Abhilfe schaffen: Erstellen sie einen minimalen Puffer um Ihren Vektorisierten Layer und benutzen Sie dann den gepufferten Layer als Eingabelayer.
+
+
+![Resultierender Vektorlayer der Zonenstatistik](media/fig937.png)
+
+Abbildung 9.37 - Resultierender Vektor-Layer der Zonenstatistik
+
+Und mit diesem letzten Schritt haben wir unsere Übungsaufgabe beantwortet, wie viele Menschen (und wo) unterhalb von 200m in Mittelsachsen leben. 
+
+
+#### **Quizfragen**
+
+1. Können Rasterdaten beschnitten werden? 
+* _Ja_
+* Nein
+2. Kann man Vektordatensätze, die im QGIS-Projekt geladen sind, im Raster Calculator verwenden?
+* Ja
+* _Nein_
+3. Können Rasterdatensätze in Vektordatensätze umgewandelt werden?
+* _Ja_
+* Nein
 
 
 ### **Phase 3: Working with raster and vector data.**
