@@ -871,229 +871,223 @@ Und mit diesem letzten Schritt haben wir unsere Übungsaufgabe beantwortet, wie 
 * Nein
 
 
-### **Phase 3: Working with raster and vector data.**
+### Teil 3: Arbeiten mit Raster- und Vektordaten
 
-In the previous phase, we have seen how we can process 2 raster datasets in order to derive new information. We have used the digital surface model and the High Resolution Settlement Layer to find out how many people live below 200m in Pampanga province. Before doing any analysis, we made sure that the datasets were in the same projection and, furthermore if the rasters have the same spatial resolution so that the results we obtained are viable. When referring to the coordinate reference system, the reasoning is clear, but why the same spatial resolution? 
+Im vorhergehende Teil haben wir gesehen, wie wir 2 Rasterdatensätze verarbeiten können, um neue Informationen abzuleiten. Vor der Analyse haben wir uns vergewissert, dass die Datensätze in der gleichen Projektion vorliegen und dass die Raster die gleiche räumliche Auflösung haben, so dass die Ergebnisse, die wir erhalten haben, tragfähig sind. Wenn man sich auf das Koordinatenreferenzsystem bezieht, ist die Argumentation klar, aber warum die gleiche räumliche Auflösung? 
 
-Remembering spatial resolution, it is the size of the ground surface measured in units of length, in other words, the size of the pixel measured on ground. If a raster has a 30m resolution, that means that the smallest linear object we could detect on that image is of 30 m, any smaller and we could not detect it. Continuing the analogy, we can compare it with the scale of a map. If a map has a scale of 1:25000, that means that 1 unit of length on the map represents 25000 units on the ground, that is 1 cm is 25000cm, 1 cm on the map equals 250m on the ground. For example, a 2km road would have 8 cm on the map.
+Zur Erinnerung: Die räumliche Auflösung ist die Größe der Bodenoberfläche, gemessen in Längeneinheiten, mit anderen Worten, die Größe des Pixels, gemessen am Boden. Wenn ein Raster eine Auflösung von 30 m hat, bedeutet das, dass das kleinste lineare Objekt, das wir auf diesem Bild erkennen könnten, 30 m groß ist. Um die Analogie fortzusetzen, können wir es mit dem Maßstab einer Karte vergleichen. Wenn eine Karte einen Maßstab von 1:25000 hat, bedeutet das, dass 1 Längeneinheit auf der Karte 25000 Einheiten auf dem Boden darstellt, d.h. 1 cm ist 25000cm, 1 cm auf der Karte entspricht 250m auf dem Boden. Zum Beispiel würde eine 2km lange Straße 8 cm auf der Karte haben.
 
-Why is that important when working with raster datasets? Figure 9.38 might offer an explanation.
+Warum ist das bei der Arbeit mit Rasterdatensätzen wichtig? Abbildung 9.38 könnte eine Erklärung bieten.
 
 
-![alt_text](media/fig938.png "image_tooltip")
+![](media/fig938.png)
 
-Figure 9.38 - Example of different resolutions specific to different satellite imagery - Landsat and SPOT -  for the same area 
+Abbildung 9.38 - Beispiel für unterschiedliche Auflösungen bei verschiedenen Satellitenbildern - Landsat und SPOT - für dasselbe Gebiet 
 
-_(Photo credit: Congedo,  L.  and  Munafò,  M, (2013) Assessment  of  Land  Cover  Change  Using Remote  Sensing:  Objectives,  Methods  and  Results, Rome:  Sapienza  University.  Available  at:
-http://www.planning4adaptation.eu/_
+_(Bildnachweis: Congedo, L. und Munafò, M, (2013) Assessment of Land Cover Change Using Remote Sensing:  Objectives, Methods and Results, Rom:  Universität Sapienza.  Verfügbar unter:
+http://www.planning4adaptation.eu/)_
 
-Figure 9.38 details the relation between the resolution of the satellite imagery and the land cover information extracted from these images captured. Remember as we detailed at the beginning that the value of the pixel cell is attributed to the entire area it covers, yet that does not mean that is the reality on the ground. These represent decisions made by the EO experts that derive various products based on Earth Observation imagery - all documented in peer-reviewed papers and algorithm descriptions. Further explanations are beyond the scope of this module, but it is important to keep in mind the relation between what a sensor onboard a satellite captures and the products we use. 
+Abbildung 9.38 zeigt die Beziehung zwischen der Auflösung der Satellitenbilder und den aus diesen Bildern extrahierten Landbedeckungsinformationen. Erinnern Sie sich, wie wir zu Beginn beschrieben haben, dass der Wert der Pixelzelle der gesamten Fläche, die sie abdeckt, zugeschrieben wird, was jedoch nicht bedeutet, dass dies die Realität vor Ort ist. Dies sind Entscheidungen, die von den Erdebeobachtungs-Expert:innen getroffen wurden, um verschiedene Produkte auf der Grundlage von Erdbeobachtungsbildern abzuleiten. Alle Entscheidungen sind dabei in Fachzeitschriften und Algorithmusbeschreibungen dokumentiert. Weitere Erklärungen würden den Rahmen dieses Moduls sprengen, aber es ist wichtig, sich die Beziehung zwischen dem, was ein Sensor an Bord eines Satelliten erfasst, und den Produkten, die wir verwenden, vor Augen zu halten. 
 
-Coming back to our region of interest - Pampanga province - we can test these differences with the data that we have at hand. We have loaded into our QGIS project the 5 raster layers of LandCover for 5 years: 2015, 2016, 2017, 2018 and 2019. Next, we will load a mosaic of Sentinel-2[^6] imagery. We will load the WMS layer EOX Sentinel-2 cloudless, available [here](https://s2maps.eu/). Remembering from module 2, to add a WMS layer, go to **Layer ‣ Add layer ‣ Add WM/WMTS Layer..**
+Um auf die Region zurückzukommen, die uns interessiert - Mittelsachsen - können wir diese Unterschiede mit den uns zur Verfügung stehenden Daten testen. Wir haben in unser QGIS-Projekt die 5 Raster Layer von LandCover für 5 Jahre geladen: 2015, 2016, 2017, 2018 und 2019. Als nächstes laden wir Bilddaten von Sentinel-2[^6]. Wir werden den WMS Layer EOX Sentinel-2 cloudless  laden, der [hier] verfügbar ist (https://s2maps.eu/). Erinnern Sie sich an Modul 2: Um einen WMS Layer hinzuzufügen, gehen Sie zu **Layer ‣ Layer hinzufügen ‣ WMS/WMTS Layer hinzufügen..**.
 
-When the add window opens, use the following parameters:
+Wenn sich das Hinzufügen-Fenster öffnet, verwenden Sie die folgenden Parameter:
 ```
 Name: EOX Sentinel-2
 URL: https://tiles.maps.eox.at/wms?service=wms&request=getcapabilities
 ```
 
 
-![alt_text](media/fig939.png "image_tooltip")
+![](media/fig939.png)
 
-Figure 9.39 - Adding a WMS layer to QGIS 
+Abbildung 9.39 - Hinzufügen eines WMS Layers zu QGIS 
 
-After connecting to the newly WMS layer added, we will load the layer named Sentinel-2 cloudless layer for 2019 by EOX - 4326 into QGIS. After zooming to the region of interest extent, your map window should look like in figure 9.40. 
+Nachdem wir uns mit dem neu hinzugefügten WMS-Layer verbunden haben, laden wir den Layer mit dem Namen Sentinel-2 cloudless layer for 2019 by EOX - 4326 in QGIS. Nach dem Zoomen auf die Ausdehnung der Region von Interesse, sollte Ihr Kartenfenster wie in Abbildung 9.40 aussehen. 
 
 
-![alt_text](media/fig940.png "image_tooltip")
+![](media/fig940.png)
 
-Figure 9.40  - Sentinel-2 cloudless layer for 2019 by EOX - 4326 for Pampanga province
+Abbildung 9.40 - Sentinel-2 cloudless layer for 2019 by EOX - 4326 für Mittelsachsen
 
-Although the LandCover products have been obtained using other satellite data (Proba-V), let us compare the 2 layers so we can get a sense of what different resolutions mean. Remember that the LandCover product is at 100m and Sentinel 2 imagery is at 10m. To accomplish that, we will open the Clipped_Reprojected_LandCover 2019 and the WMS layer. To make comparisons between 2 layers, we will use a new plugin that you must install. Therefore, go to **Plugins ‣ manage and install plugins** and write in the search box `MapSwipe Tool`. Once you install it, it should appear as a new pictogram in your toolbar (![MapSwipe Tool button](media/mapswipe-btn.png "MapSwipe Tool button")). 
+Obwohl die LandCover-Produkte mit anderen Satellitendaten (Proba-V) gewonnen wurden, lassen Sie uns die beiden Layer vergleichen, damit wir ein Gefühl dafür bekommen, was unterschiedliche Auflösungen bedeuten. Denken Sie daran, dass das LandCover-Produkt eine Auflösung von 100 m und die Sentinel-2-Bilder eine Auflösung von 10 m haben. Zu diesem Zweck öffnen wir den Zugeschnitten_LandCover_2019_25833 und den WMS Layer. Um Vergleiche zwischen 2 Layern durchzuführen, werden wir eine neue Erweiterung verwenden, die Sie installieren müssen. Gehen Sie dazu auf **Erweiterungen ‣ Erweiterungen verwalten und installieren** und suchen Sie nach `MapSwipe Tool`. Sobald Sie es installiert haben, sollte es als neues Piktogramm in Ihrer Symbolleiste erscheinen (![MapSwipe Tool button](media/mapswipe-btn.png "MapSwipe Tool button")). 
 
 
-![alt_text](media/fig941.png "image_tooltip")
+![](media/fig941.png)
 
-Figure 9.41 - Comparing 2 raster layers using MapSwipe Tool plugin 
+Bild 9.41 - Vergleich von 2 Raster-Layern mit dem MapSwipe Tool-Plugin 
 
-To activate the MapSwipe tool, click on it while the raster layer you want to drape is selected in the Layers Panel. The resolution differences are obvious, as well as the fact that the satellite product (Land Cover) has been developed using a satellite image (PROBA-V) of a coarser resolution. However, the general larger classes are well identified, as can be seen in figure 9.42. 
+Um das MapSwipe-Werkzeug zu aktivieren, klicken Sie es an, während der zu überlagernde Raster-Layer im Bedienfeld "Layer" ausgewählt ist. Die Auflösungsunterschiede sind offensichtlich, ebenso wie die Tatsache, dass das Satellitenprodukt (Land Cover) aus einem Satellitenbild (PROBA-V) mit einer gröberen Auflösung entwickelt wurde. Die allgemeinen größeren Klassen sind jedoch gut erkennbar (die Beschreibungen der Klassen wurden hier aus der Tabelle vom Anfang dieses Moduls manuell übernommen), wie in Abbildung 9.42 zu sehen ist. 
 
 
-![alt_text](media/fig942.png "image_tooltip")
+![](media/fig942.png)
 
-Figure 9.42 - LandCover2019 obtained from PROBA-V(100m) on top of Sentinel 2 mosaic (30m)
+Abbildung 9.42 - LandCover2015 aus PROBA-V(100m) über Sentinel 2-Mosaik (30m)
 
-Adding the HRSL to the map, will show a good match between HRSL and the LandCover. The urban space is depicted in red and, as you can see in figure 9.43, it is almost completely covered by the HRSL layer. 
+Das Hinzufügen der HRSL zur Karte zeigt eine gute Übereinstimmung zwischen der HRSL und dem LandCover. Der urbane Raum wird in rot dargestellt und ist, wie in Abbildung 9.43 zu sehen ist, fast vollständig vom HRSL Layer abgedeckt. 
 
 
-![alt_text](media/fig943.png "image_tooltip")
+![](media/fig943.png)
 
-Figure 9.43 - HRSL added on top of the Clipped_Reprojected_LandCover 2019.
+Abbildung 9.43 - HRSL, das über der Ebene Zugeschnitten_LandCover_2015_25833 hinzugefügt wurde.
 
-However, zooming in you can see the difference in resolution between the 2 raster products, as in figure 9.44. 
+Wenn Sie jedoch hineinzoomen und die globale Deckkraft des LandCover Layers etwas verringern, können Sie den Unterschied in der Auflösung zwischen den 2 Rasterprodukten sehen: 
 
+![](media/fig944.png)
 
-![alt_text](media/fig944.png "image_tooltip")
+Abbildung 9.44 - Unterschied in der räumlichen Auflösung zwischen HRSL (30m - rosafarben) und dem Clipped_Reprojected_LandCover 2019 (100m - rot und magentafarben)
 
-Figure 9.44 - Difference in spatial resolution between HRSL (30m - pinkish) and the Clipped_Reprojected_LandCover 2019 (100m - red and magenta colours)
+Wenn nun eine Analyse mit diesen Rastern durchgeführt würde, wären diese Ergebnisse nicht brauchbar, da wir Werte vergleichen würden, die für unterschiedliche Auflösungen gelten. Als Vorverarbeitungsphase muss einer der beiden Raster _resampeled_ werden. 
 
-Now, if any analysis would be made using these rasters, these results would not be viable, because we would be comparing values that apply to different resolutions. As a preprocessing phase, the user must _resample_ one of the 2 to match. 
+**Resampling/Neuabtastung** bezieht sich auf die Änderung der Zellenwerte aufgrund von Änderungen im Rasterzellenraster und es gibt nur 2 Möglichkeiten: (1) **Upsampling** bezieht sich auf Fälle, in denen wir in eine höhere Auflösung/kleinere Zellen konvertieren, und (2) **Downsampling** ist das Resampling in eine niedrigere Auflösung/größere Zellengröße. 
 
-**Resampling** refers to changing the cell values due to changes in the raster cell grid and there are only 2 options: (1) **upsampling** refers to cases where we are converting to higher resolution/smaller cells and (2) **downsampling** is resampling to lower resolution/larger cell sizes. 
+Stellen wir uns die folgende Übung vor. Wir müssen die Bevölkerungszahlen für jede Kategorie der Landbedeckung ermitteln, die wir in Mittelsachsen definiert haben. Wie oben erklärt, müssen wir die Daten, die wir haben, _vorverarbeiten_, um brauchbare Ergebnisse aus unserer Analyse zu erhalten, d. h. in unserem Fall müssen wir unsere beiden Rasterdatensätze auf die gleiche räumliche Auflösung bringen. Wie oben beschrieben, können wir die Dimensionen der Pixel entweder erhöhen oder verringern. Es muss hervorgehoben werden, dass die Neuabtastung, mit Hoch- oder Herunterskalierung, einen Interpolationsprozess beinhaltet - daher führt das Ergebnis einen statistischen Fehler ein. Die übliche Praxis ist, alle Raster neu abzutasten, um dem Raster mit der geringeren Auflösung zu entsprechen, aber auch diese Entscheidung muss unter Berücksichtigung aller Faktoren getroffen werden. Eine detaillierte Beschreibung des Entscheidungsprozesses für ein Resampling von Raster-Layern würde den Rahmen dieses Lehrplans bei weitem sprengen. 
 
-Let us imagine the following exercise. We need to identify the population numbers for each category of land cover we have defined in the Pampanga province. As explained above, we need to _pre-process_ the data we have in order to get viable results from our analysis, i.e. in our case, we need to bring both our raster datasets to the same spatial resolution. As detailed above, we can either increase or decrease the pixels’ dimensions. It must be highlighted that resample, with up or downscale, will involve an interpolation process (see page 12 for more details) - so the result introduces a statistical error. The usual practice is to resample all rasters to correspond to the raster with the lower resolution, but again this decision must be taken with consideration to all factors. Detailing the decision making process for resampling raster layers far exceeds the scope of this curriculum. 
+Ein Unterschied zwischen den beiden Layern muss hervorgehoben werden: Das Produkt LandCover deckt die **gesamte Fläche** des betrachteten Ausmaßes ab, im Gegensatz zum Produkt HSRL, bei dem der Raster Layer nur die Zelle enthält, in der Werte über 0 existieren. Diese Situation wirft Probleme bei der Interpolation der Zellenwerte für das Resampling auf, da unabhängig von der gewählten Interpolationsmethode die umgebenden Pixel berücksichtigt werden müssen, und zwar nach einem bestimmten, genau definierten Algorithmus, und in dieser speziellen Situation befinden sich die Randpixel nicht am Rand der Untersuchungsregion, sondern innerhalb derselben. Daher werden wir in unserem demonstrativen Fall ein Upsampling des Land Cover-Produkts von 100 m auf 30 m Auflösung in Betracht ziehen, um die Auflösung des HRSL-Produkts zu erreichen. Die von uns gewählte Resampling-Methode ist von entscheidender Bedeutung, da die Ergebnisse erheblich variieren können. Zur Veranschaulichung werden wir das LandCover-Produkt mit 2 verschiedenen Methoden neu abtasten - Nächster Nachbar und Modus. 
 
-A difference between the 2 products must be highlighted: the LandCover product covers the **entire area** of the considered extent, as opposed to the HSRL product, where the raster layer contains strictly the cell where values above 0 exist. This situation poses issues when interpolation cell values to resample, because no matter the interpolation method chosen, that would take into consideration the surrounding pixels, following a specific well-defined algorithm and in this particular situation, the edge pixels are not at the edge of the study region, but within it. Therefore, in our demonstrative case, we will consider upsampling the Land Cover product from 100m to 30m resolution to match the LandCover product resolution. The resampling method we choose is crucial, as results can vary significantly. For the purpose of demonstration, we will resample the LandCover product using 2 different methods - Nearest Neighbour and Mode. 
+Um das Resampling durchzuführen, gehen Sie zu **Raster ‣ Projektionen ‣ Transformieren (Reprojizieren).** Im Funktionsfenster stellen Sie folgende Parameter ein: 
+* Input Layer: Zugeschnitten_LandCover_2019_25833, 
+* Quell-CRS und Ziel-CRS: EPSG: 25833, 
+* Resampling-Methode: Nächster Nachbar, 
+* Keine Daten: 255, * Auflösung der Ausgabedatei: 30, 
+* Ausgabedatentyp: Verwenden Sie den Datentyp des Eingabe-Layers, 
+* Georeferenzausdehnung: wählen Sie den Layer Zugeschnitten_LandCover_2019_25833. 
 
-To resample, go to **Raster ‣ Projections ‣ Wrap (reproject).** In the functionality window set the following parameters: 
-* input layer: Clipped_Reprojected_LandCover 2019, 
-* Source CRS and Target CRS: EPSG: 3123, 
-* Resampling method: Nearest Neighbour, 
-* No data: 255, output file resolution: 30, 
-* Output data type: use input layer data type, 
-* georeference extent: select the Clipped_Reprojected_LandCover 2019 layer. 
+Speichern Sie den Output Layer als LC2019_Nächster_Nachbar. 
 
-Save the output layer as LC2019_NearestNeighbour. 
 
+![](media/fig945.png)
 
-![alt_text](media/fig945.png "image_tooltip")
+Abbildung 9.45 - Resampling des Land Cover Layers
 
-Figure 9.45 - Resampling the Land Cover layer
 
+Führen Sie genau die gleichen Schritte aus, außer dass Sie für den Parameter Resample-Methode den Modus wählen. Speichern Sie den ausgegebenen Layer als LC2019_Mode.  
 
-Follow the exact steps, except that for resample method parameter choose Mode. Save the output layer as LC2019_Mode.  
+Lassen Sie uns nun die Ergebnisse vergleichen - siehe Abbildung 9.45 und 9.46. 
 
-Now, let’s compare results - see figure 9.45 and 9.46. 
 
+![](media/fig946_a.png)
 
-![alt_text](media/fig946_a.png "image_tooltip")
+Abbildung 9.46a - Resampling des Land Cover Layers mit der Methode Nächster Nachbar
 
-Figure 9.46a - Resampling Land Cover product using the Nearest Neighbour resampling method
 
+![](media/fig946_b.png)
 
-![alt_text](media/fig946_b.png "image_tooltip")
+Abbildung 9.46b - Resampling des Land Cover Layers mit der Methode Modus
 
-Figure 9.46b - Resampling Land Cover product using the Mode resampling method
+Auf beide Raster wurde die gleiche Symbologie angewandt und wir können beobachten, dass es in Abbildung 9.45 Werte gibt, die in keine der beiden Kategorien fallen - die Pixel werden nicht angezeigt. Wir wissen jedoch, dass das Produkt Land Cover ein nahtloser Layer ist - es hat keine Lücken zwischen den gleichen Kategorien definiert. Lassen Sie uns tiefer graben und die Histogramme für alle drei Layer betrachten. Gehen Sie dazu auf **Eigenschaften ‣ Histogramm** und wählen Sie unter Voreinstellungen/Aktionen, dass nur Band 1 angezeigt werden soll. Speichern Sie das Histogramm, indem Sie auf das Speichersymbol auf der rechten Seite des Fensters klicken 
 
-Both rasters have the same symbology applied and we can observe that in figure 9.45 there are values that don’t fall in either category - pixels are not showing. However, we know that the Land Cover product is a seamless layer - it has no gaps between the same categories defined. Let us dig deeper and look at the histograms for all three layers. For that go to **Properties ‣ Histogram** and choose from Prefs/Actions to show only Band 1. Save the histogram by clicking on the save icon on the right side of the window (see figure 9.47).
+Abbildung 9.48 (a), (b) und (c) zeigen die 3 Histogramme von Interesse. 
 
 
-![alt_text](media/fig947.png "image_tooltip")
+![Zugeschnitten_LandCover_2019_25833 (100m)](media/fig948_a.png)
 
-Figure 9.47 - Show values only for one selected band in the histogram.
+![LC2019_Nächster_Nachbar](media/fig948_b.png)
 
-Figure 9.48 (a), (b) and (c) present the 3 histograms of interest. 
+![LC2019_Modus](media/fig948_c.png)
 
+Abbildung 9.48 - Histogramme von (a) Zugeschnitten_LandCover_2019_25833 (100m), (b) LC2019_Nächster_Nachbar und (c) LC2019_Modus
 
-![alt_text](media/fig948_a.png "image_tooltip")
+Wir können die Unterschiede in der Verteilung der Werte für die 3 Datensätze beobachten, wobei die Betonung auf (b) liegt, wo wir die Nächster-Nachbar-Resampling-Methode verwendet haben, was - wie zu erwarten - zu einem berechneten Pixelwert führt und damit zu Werten, die mit keinem Wert im Produkt Land Cover übereinstimmen (siehe Tabelle 1 vom Anfang des Moduls). Daher die weißen Flächen - Pixel ohne Farbzuordnung in Abbildung 9.45. Wie vermutet, wählt das Modus-Resampling-Verfahren - oder Majoritäts-Resampling-Verfahren - den Wert aus, der am häufigsten vorkommt.
 
-![alt_text](media/fig948_b.png "image_tooltip")
+An diesem Punkt sollten Ihre Kartenfenster wie in Abbildung 9.49 aussehen. 
 
-![alt_text](media/fig948_c.png "image_tooltip")
 
-Figure 9.48 - Histograms of (a) Clipped_Reprojected_LandCover 2019 (100m), (b) LC2019_NearestNeighbour and (c) LC2019_Mode
+![](media/fig949.png)
 
-We can observe the differences in the distribution of values for the 3 datasets, emphasis on (b), where we used the nearest neighbour resampling method, resulting - as expecting - in a calculated pixel values and thus resulting in values that do not correspond with any values in the Land Cover product (see table 1, page 7). Hence, the white spaces - pixels with no color assigned in figure 9.45. As inferred, the mode resampling method - or majority resampling method -  selects the value which appears most often.
+Abbildung 9.49 - Die 2 Rasterprodukte: Land Cover 2019 und HRSL überlagert. 
 
-At this point, your map windows should look like in figure 9.49. 
+Um auf unsere Übung zurückzukommen, bestand die Anforderung darin, die Bevölkerungszahlen für jede von uns definierte Kategorie der Landbedeckung  zu ermitteln. An diesem Punkt haben wir unsere Rasterdaten vorverarbeitet, so dass sie im gleichen Koordinatensystem und mit der gleichen räumlichen Auflösung vorliegen. Wir werden mit einem Konvertierungsalgorithmus fortfahren, wir werden den Rasterdatensatz Land Cover in einen Vektordatensatz - Typ Polygon - umwandeln. Dies wird es uns ermöglichen, die Bevölkerungszahl für jede Landbedeckungskategorie leichter zu identifizieren. 
 
+Für Konvertierungen, sowohl von Raster zu Polygon, als auch von Vektor zu Polygon, gehen Sie zu **Raster ‣ Konvertierung** und hier haben wir mehr Optionen. Wir wählen **Vektorisieren (Raster nach Vektor)..** Wir konvertieren den letzten Rasterdatensatz, den wir erhalten haben, in einen Vektor: LC2019_Mous. Ihr Ergebnis sollte wie in Abbildung 9.50b aussehen. 
 
-![alt_text](media/fig949.png "image_tooltip")
 
-Figure 9.49 - The 2 raster products: Land Cover 2019 and HRSL overlaid. 
+![](media/fig950_a.png)
 
-Going back to our exercise, the requirements was to identify the population numbers for each category of land cover we have defined in the Pampanga province. At this point, we have pre-processed our raster data, as to have it in the same coordinate system, with the same spatial resolution. We will continue with a conversion algorithm, we will transform the raster dataset Land Cover into a vector dataset - polygon type. This will allow us to more easily identify the population count for each land cover category. 
+Abbildung 9.50a - Polygonisierung des LC2019_Mode (30m) Raster Layers
 
-For conversions, from raster to polygon, as well as from vector to polygon, go to **Raster ‣ Conversion** and here we have more options. We will choose **Polygonize (Raster to vector)..** We will convert to vector the latest raster dataset that we have obtained: LC2019_Mode. Your result should look like in figure 9.50b. 
 
+![](media/fig950_b.png)
 
-![alt_text](media/fig950_a.png "image_tooltip")
+Abbildung 9.50b - Ergebnis der Polygonisierung des LC2019_Modus (30m) Raster Layers
 
-Figure 9.50a - Polygonizing the LC2019_Mode (30m) raster layer
+Wie wir sehen können, wurde jedes Pixel - jede Gruppe von benachbarten Pixeln mit demselben Kategoriecode (siehe Tabelle 1, Seite 7) in ein Polygon umgewandelt. Wir sind jedoch nicht an jeder einzelnen Region interessiert, sondern an der gesamten Kategorie. Daher werden wir den erhaltenen Vektor-Layer auflösen, indem wir die Klassenidentifikation als gemeinsames Attribut verwenden (**Vektor ‣ Geoverarbeitungswerkzeuge ‣ Auflösen** - für weitere Details siehe Modul 8). Auch hier müssen Sie unter Umständen wieder den Puffer-Trick von weiter oben anwenden.
 
+Wenn Sie das gleiche Styling wie für das Raster anbringen, werden Sie feststellen, dass die gleichen Vektorklassen auch den Rasterklassen entsprechen (siehe Abbildung 9.51).
 
-![alt_text](media/fig950_b.png "image_tooltip")
 
-Figure 9.50b - Result of polygonizing the LC2019_Mode (30m) raster layer
+![](media/fig951.png)
 
-As we can observe, each pixel - each group of adjacent pixels with the same category code (see table 1, page 7) was converted into one polygon. However, we are not interested in each distinct region, but in the entire category. Thus, we will dissolve the vector layer we have obtained using the class identification as the common attribute (**Vector ‣ Geoprocessing tools ‣ Dissolve** - for more details, check module 8).
+Abbildung 9.51 - LC2019_Modus Vektorlayer 
 
-Attaching the same styling as for the raster and we will notice the same vector classes correspond to the raster ones (see figure 9.51). 
+Wie wir beobachten können, sind die Pixel der HRSL erwartungsgemäß nicht perfekt in einem Polygon des Landbedeckungsprodukts enthalten (siehe Bild 9.52).
 
 
-![alt_text](media/fig951.png "image_tooltip")
+![](media/fig952.png)
 
-Figure 9.51 - LC2019_Mode polygonez 
+Abbildung 9.52 - Fehlende Übereinstimmung von HRSL-Pixeln und dem Landbedeckungs-Vektordatensatz  
 
-As we can observe, the HRSL’s pixels are, as expected, not perfectly contained in a polygon of the land cover product (see picture 9.52).
+Um diese Unannehmlichkeit zu beseitigen, werden wir auch den HRSL-Layer vektorisieren, nur dass wir dieses Mal den Wert der Pixelzellen auf einen Punkt übertragen - den geometrischen Mittelpunkt jedes Pixels.
 
+Öffnen Sie die  **Verarbeitungswerkzeuge** und geben Sie in der Suchleiste `Rasterpixel` ein und wählen Sie den Algorithmus `Rasterpixel zu Punkten` (siehe Abbildung 9.53a). Speichern Sie die Ausgabe als HRSL_Punkte. 
 
-![alt_text](media/fig952.png "image_tooltip")
 
-Figure 9.52 - Mismatch of HRSl pixels and the land cover vector dataset  
+![](media/fig953_a.png)
 
-To eliminate this inconvenience, we will vectorize the HRSL layer as well, just that this time we will transfer the pixel cell value to a point - the geometric center of each pixel.
+Abbildung 9.53a - Rasterpixel in Punkte
 
-Go to **Processing ‣ Toolbox**. In the search bar write the keywords `raster point` and choose the `Raster pixels to points` algorithm (see figure 9.53a). Save the output as HRSL_points. 
 
+![](media/fig953_b.png)
 
-![alt_text](media/fig953_a.png "image_tooltip")
+Abbildung 9.53b - Ausführen des Algorithmus Rasterpixel in Punkte
 
-Figure 9.53a - Raster pixels to points
+In Anbetracht der Ausdehnung Ihres Untersuchungsgebiets kann dieser Vorgang sehr viel Zeit in Anspruch nehmen. Abbildung 9.54 zeigt, wie viele Punkte wir für die Provinz Pampanga erhalten haben.
 
 
-![alt_text](media/fig953_b.png "image_tooltip")
+![](media/fig954.png)
 
-Figure 9.53b - Running Raster pixels to points algorithm
+Abbildung 9.54 - Laden der erhaltenen Punktvektordaten
 
-Considering the extent of your study area, this operation can be significantly lengthy in time. Figure 9.54 shows how many points we have obtained for Pampanga province.
+Die Anzahl der Merkmale ist beträchtlich hoch und ohne den Import in eine Datenbank würde jede Art von Verarbeitung oder Visualisierung zu viel Zeit in Anspruch nehmen. In solchen Situationen ist es sinnvoll, die zu verarbeitenden Datensätze in überschaubare Teile aufzuteilen. Daher werden wir in Erwägung ziehen, die notwendigen Berechnungen auf kleineren, klar definierten Bereichen durchzuführen. Um den HRSL-Layer aufzuteilen, verwenden wir die Option zum Erstellen eines VRTs. Markieren Sie den Layer HRSL_Mittelsachsen_reprojiziert und wählen Sie **Speichern als...** Im neuen Fenster kreuzen Sie die Option **VRT erstellen** an und stellen folgende Parameter ein: Durchsuchen Sie einen Ordner, in den das aufgeteilte Raster exportiert werden soll, KBS: EPSG:25833, VRT-Kacheln: Maximale Spalten/Zeilten: 1000 (siehe Abbildung 9.55).
 
 
-![alt_text](media/fig954.png "image_tooltip")
+![](media/fig955.png)
 
-Figure 9.54 - Loading point vector data obtained
+Bild 9.55 - Erstellen einer VRT-Datei mit bestimmten Rasterkacheln
 
-The number of features is considerably high and without importing it into a database, any kind of processing or visualisation would require too much time. In these types of situations, the reasonable solution is to divide the datasets we have to process into manageable chunks. Therefore, we will consider processing the necessary calculations on smaller well-defined areas. To split the HRSL layer we will use the option to create a VRT. Select the HRSl layer and choose **Export as..** In the new window, tick on the **Create VRT** option and set the following parameters: browse to a folder where the splitted raster will be exported to, CRS: EPSG:3123, VRT tiles: max columns 1000, max rows: 1000 (see figure 9.55).
+Nach dem Exportieren laden Sie alle Rasterkacheln in Ihr QGIS-Projekt. Das Ergebnis sollte wie in Abbildung 9.56 aussehen. 
 
 
-![alt_text](media/fig955.png "image_tooltip")
+![](media/fig956.png)
 
-Figure 9.55 - Creating a VRT file with specific raster tiles
+Abbildung 9.56 - Rasterkacheln für den HRSL in Mittelsachsen 
 
-After exporting, load all the raster tiles into your QGIS project. The result should look like in figure 9.56. 
+Als nächstes führen wir den Algorithmus **Rasterpixel zu Punkten** für jede der Rasterkacheln erneut aus. Da wir mehrere Kacheln haben, verwenden wir die Stapelverarbeitungsfunktion (siehe Abbildung 9.57).
 
 
-![alt_text](media/fig956.png "image_tooltip")
+![](media/fig957.png)
 
-Figure 9.56 - Raster tiles for the Pampanga province HRSL 
+Abbildung 9.57 - Raster zu Punkten für alle Raster-Kacheln 
 
-Next, we will re-run the **Raster pixels to points** algorithm for each of the raster tiles. Because we have several tiles, we will use the batch processing function (see figure 9.57).
+Die resultierenden Vektorpunkte sollten wie in Abbildung 9.58 aussehen. 
 
 
-![alt_text](media/fig957.png "image_tooltip")
+![](media/fig958.png)
 
-Figure 9.57 - Running raster to points for all raster tiles 
+Abbildung 9.58 - Punkt-Vektor-Datensatz für den Layer HRSL mit den in der Spalte VALUE gespeicherten Pixelwerten
 
-The resultant vector points should look like in figure 9.58. 
+Wenn man sich die Ergebnisse des Algorithmus genauer ansieht, kann man erkennen, dass die Vektorpunkte genau in die Mitte des Pixels fallen, aus dem sie den Wert extrahieren (siehe Abbildung 9.59).
 
 
-![alt_text](media/fig958.png "image_tooltip")
+![](media/fig959.png)
 
-Figure 9.58 - Point vector dataset for the HRSL layer with pixel values stored in the VALUE column
+Abbildung 9.59 - Überprüfen der Werte der Punktvektordaten vs. Rasterpixelwerte
 
-Taking a closer look at the results of the algorithm, we can see that the vector points fall exactly in the center of the pixel they extract the value from (see figure 9.59.).
-
-
-![alt_text](media/fig959.png "image_tooltip")
-
-Figure 9.59 - Verifying the values of the point vector data vs. raster pixel values
-
-To resolve the exercise, the sum of the values of points extracted from the HRSL product that fall within each polygon of the land cover product must be calculated. To do that, we will use a function that is available in Field Calculator - `aggregation()`. This function is quite powerful as it does spatial joins on the fly allowing various calculations. In our case, the function must identify the points that fall into each polygon and then sum up the values of those points. To do that, go the attribute table of the LC2019_Mode vector dataset and open the field calculator. Creating a new field, introduce the following expression:
+Um die Aufgabe zu lösen, muss die Summe der Werte der aus dem HRSL-Produkt extrahierten Punkte berechnet werden, die in jedes Polygon des Landbedeckungsprodukts fallen. Dazu verwenden wir eine Funktion, die im Feldrechner verfügbar ist - `aggregate()`. Diese Funktion ist recht leistungsfähig, da sie räumliche Verknüpfungen im laufenden Betrieb vornimmt und verschiedene Berechnungen ermöglicht. In unserem Fall muss die Funktion die Punkte identifizieren, die in jedes Polygon fallen, und dann die Werte dieser Punkte aufsummieren. Gehen Sie dazu in die Attributtabelle des LC2019_Modus-Vektordatensatzes und öffnen Sie den Feldrechner. Erstellen Sie ein neues Feld und geben Sie den folgenden Ausdruck ein:
 
 
 ```
 aggregate(
-    layer:= 'HRSL_vectors1',
+    layer:= 'Punkte_HRSL-VRTs.0 Punkte_HRSL-VRTs',
     aggregate:='sum',
     expression:=VALUE,
     filter:=intersects($geometry, geometry(@parent))
@@ -1101,63 +1095,62 @@ aggregate(
 ```
 
 
-Where, <code>layer<em> </em></code>is the name of the dataset from which we want to extract information (in our case, the point dataset that holds the pixel values of the HRSL raster layer), <code>aggregate</code> - indicates the action to be performed once the spatial join is confirmed (sum, count, mean, median, concatenate etc.), <code>expression - </code>indicates the what column we want to extract data from, <code>filter - </code>indicates<code> </code>the geometry function (intersect, within etc.) (see figure 9.60).
+Dabei ist <code>layer</code> der Name des Datensatzes, aus dem wir Informationen extrahieren wollen (in unserem Fall der Punktdatensatz, der die Pixelwerte des HRSL-Raster-Layers enthält), <code>aggregate</code> - gibt die Aktion an, die ausgeführt werden soll, sobald die räumliche Verknüpfung bestätigt ist (Summe, Anzahl, Mittelwert, Median, usw. ), <code>expression</code> gibt an, aus welcher Spalte wir Daten extrahieren wollen, <code>filter</code>gib die Geometriefunktion an (intersects, within etc.) (siehe Abbildung 9.60).
 
 
-![alt_text](media/fig960.png "image_tooltip")
+![](media/fig960.png)
 
-Figure 9.60 - Using built-in functions with field calculator
+Abbildung 9.60 - Verwendung eingebauter Funktionen mit Feldrechner
 
-The results are, as expected, saved in the attribute table of the LC2019_Mode. And thus, the exercise has been completed. 
+Die Ergebnisse werden, wie erwartet, in der Attributtabelle des LC2019_Modus gespeichert. Und damit ist die Übung - zumindest für einen kleinen Teilbereich unserer Daten - abgeschlossen. 
 
-**Please, be aware! This last step can be excessively lengthy depending on the volume of your data! Test to find your best tiling dimensions.**
+**Bitte beachten Sie! Dieser letzte Schritt kann je nach Umfang Ihrer Daten sehr langwierig sein! Testen Sie, um Ihre besten Kachelmaße zu finden.**
 
-If using the Field Calculator and the aggregate function doesn't work, we can also use the **Join attributes by location (summary)** algorithm to compute for the sum of the values of the points inside the LC_Mode_vector features.
-
-
-![alt_text](media/fig961.png "image_tooltip")
-
-Figure 9.61 - Parameters of the Join attributes by location (summary) algorithm
+Wenn die Verwendung des Feldrechners und der Aggregierungsfunktion nicht funktioniert, können wir auch den Algorithmus **Attribute nach Position verknüpfen (Zusammenfassung)** verwenden, um die Summe der Werte der Punkte innerhalb der LC2019_Modus Vektorlayers zu berechnen. Wählen Sie dafür unter "Zusammenzufassende Felder" das "VALUE" Feld aus und unter "Zu berechnende Zusammenfassungen" ausschließlich die Summe.
 
 
-![alt_text](media/fig962.png "image_tooltip")
+![](media/fig961.png)
 
-Figure 9.62 - Output of the Join attributes by location (summary) algorithm
-
-In this third phase of our module 9, we have worked with raster, as well as with vector data. We have taken a closer look at what resampling means and what are the implications of the rasters characteristics, such as coordinate reference system, spatial resolution etc. Most often, one must work with both raster and vector datasets and thus, it is important to know that it is possible in a number of ways. We’ve also tested a number of conversions, from raster to vector and vice-versa. However, in our processing we must not lose sight of the phenomena we are studying, as well as the initial scale at which the data has been collected, be it vector or raster. When performing conversions, it is important to know the correspondence between a map scale and raster resolution. According to cartographer Waldo Tobler “the rule is divide the denominator of the map scale by 1000 to get the detectable size in meters. The resolution is one half of this amount.” In other words, the formula would be:  `map scale = raster resolution (in m) X 2 X 1000. `
-
-The solutions given to our exercises in this module, as in module 8 as well, are just one way to solve the requirements. As one advances the study of the open source tools for geospatial, one finds out that there are several possibilities to get to the same outcome - some better than others. 
+Abbildung 9.61 - Parameter des Algorithmus Attribute nach Position verknüpfen (Zusammenfassung)
 
 
-#### Quiz questions 
+![](media/fig962.png)
 
-1. What is the name of the process through which the resolution of a raster datasets can be made higher or lower?
-*   _<span style="text-decoration:underline;">Resampling.</span>_ 
-2. What does a histogram show us? 
-*   <span style="text-decoration:underline;">The frequency of pixel values, arranged in adjacent value ranges.</span>
-3. Can a raster dataset be converted to a polygon? What about the other way around?
-*   <span style="text-decoration:underline;">Yes and yes. </span>
+Abbildung 9.62 - Bevökerungsverteilung nach Landklassifizierung für einen kleinen Teil unseres Beobachtungsgebiets
 
+In diesem dritten Teil unseres Moduls 9 haben wir sowohl mit Raster- als auch mit Vektordaten gearbeitet. Wir haben uns genauer angesehen, was Resampling bedeutet und welche Auswirkungen die Eigenschaften des Rasters haben, wie z. B. das Koordinatenreferenzsystem, die räumliche Auflösung usw. Meistens muss man sowohl mit Raster- als auch mit Vektordatensätzen arbeiten und daher ist es wichtig zu wissen, dass dies auf verschiedene Weise möglich ist. Wir haben auch eine Reihe von Konvertierungen getestet, von Raster zu Vektor und andersherum. Bei der Verarbeitung dürfen wir jedoch nicht die Phänomene aus den Augen verlieren, die wir untersuchen, und auch nicht den ursprünglichen Maßstab, in dem die Daten gesammelt wurden, sei es Vektor oder Raster. Bei der Durchführung von Konvertierungen ist es wichtig, die Beziehung zwischen einem Kartenmaßstab und einer Rasterauflösung zu kennen. Laut dem Kartographen Waldo Tobler "gilt die Regel, dass der Nenner des Kartenmaßstabs durch 1000 geteilt wird, um die erkennbare Größe in Metern zu erhalten. Die Auflösung ist die Hälfte dieses Betrags." Mit anderen Worten würde die Formel lauten:  `Kartenmaßstab = Rasterauflösung (in m) X 2 X 1000. `
 
-## References:
-
-Center for International Earth Science Information Network - CIESIN - Columbia University. 2018. Gridded Population of the World, Version 4 (GPWv4): Population Density, Revision 11. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). [https://doi.org/10.7927/H49C6VHW](https://doi.org/10.7927/H49C6VHW). Accessed DAY MONTH YEAR.
-
-Resampling methods: [https://gisgeography.com/raster-resampling/](https://gisgeography.com/raster-resampling/)
+Die Lösungen zu unseren Aufgaben in diesem Modul, wie auch in Modul 8, sind nur eine Möglichkeit, die Anforderungen zu lösen. Wenn man das Studium der Open-Source-Tools für Geodaten vorantreibt, stellt man fest, dass es mehrere Möglichkeiten gibt, um zum gleichen Ergebnis zu kommen - einige besser als andere. 
 
 
-<!-- Footnotes themselves at the bottom. -->
-## Notes
+#### Quizfragen 
+
+1. Wie nennt man den Prozess, durch den die Auflösung eines Rasterdatensatzes höher oder niedriger gemacht werden kann?
+* _Resampling_ 
+2. Was zeigt uns ein Histogramm? 
+* _Die Häufigkeit von Pixelwerten, angeordnet in benachbarten Wertebereichen_
+3. Kann ein Rasterdatensatz in ein Polygon umgewandelt werden? Und andersherum?
+* _Ja und ja_
+
+
+## Referenzen:
+
+Center for International Earth Science Information Network - CIESIN - Columbia University. 2018. Gridded Population of the World, Version 4 (GPWv4): Population Density, Revision 11. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). [https://doi.org/10.7927/H49C6VHW](https://doi.org/10.7927/H49C6VHW).
+
+Resampling-Methoden: [https://gisgeography.com/raster-resampling/](https://gisgeography.com/raster-resampling/)
+
+
+## Anmerkungen
 
 [^1]:
-     A primitive operation is a basic computation performed by an algorithm.  
+     Eine primitive Operation ist eine grundlegende Berechnung, die von einem Algorithmus ausgeführt wird.  
 [^2]:
-     The temporal resolution depends on latitude. 
+     Die zeitliche Auflösung dieser Daten ist abhängig vom Breitengrad. 
 [^3]:
-     JAXA is the Japan Aerospace Exploration Agency 
+     JAXA ist die Japan Aerospace Exploration Agency 
 [^4]:
-     For the sake of this exercise we will consider the DSM as a digital elevation model. For more details on the differences please see the Breakdown of concepts section
+     Für die Zwecke dieser Übung betrachten wir das DHM als digitales Höhenmodell. Weitere Details zu den Unterschieden finden Sie im Abschnitt Begriffsgliederung
 [^5]:
-     The Geospatial Data Abstraction Library (GDAL) is a computer software library for reading and writing raster and vector geospatial data formats. 
+     Die Geospatial Data Abstraction Library (GDAL) ist eine Computersoftware-Bibliothek zum Lesen und Schreiben von Raster- und Vektordatenformaten für Geodaten. 
 [^6]:
-     Sentinel-2 is an Earth observation mission from the Copernicus Programme that systematically acquires optical imagery at high spatial resolution (10 m to 60 m) over land and coastal waters. For more details go [here](https://sentinel.esa.int/web/sentinel/missions/sentinel-2). 
+     Sentinel-2 ist eine Erdbeobachtungsmission des Copernicus-Programms, die systematisch optische Bilder mit hoher räumlicher Auflösung (10 m bis 60 m) über Land und Küstengewässern aufnimmt. Weitere Einzelheiten finden Sie [hier (englischsprachig)](https://sentinel.esa.int/web/sentinel/missions/sentinel-2). 
