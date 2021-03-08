@@ -347,8 +347,6 @@ With all of this data available to us, knowing how to properly manage, analyse, 
 
 GIS is a tool/framework/system that allows us to work with geographic (or spatial) information and its corresponding attribute (non-spatial) information. In particular, a GIS should be able to:
 
-
-
 *   **Collect**, **store**, **edit**, **manipulate**, or generally, **manage** spatial data.
 *   **Analyse** the data using its spatial component (where the data is) or attribute (the value of the data).
 *   **Present** the data and analyses as meaningful information through maps, charts, plots, and other visualizations.

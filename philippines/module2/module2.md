@@ -191,7 +191,7 @@ Figure 2.6. The vector layers loaded in QGIS
 The Layers Panel lists all the current layers in the project. It helps manage their visibility, order, and can be used to show Layer Properties. The Layers Panel can be activated from **View ‣ Panels ‣ Layers Panel** or using the shortcut **CTRL+1**. It is also called the Map Legend. If you’ve loaded all the vectors from the previous exercise, your Layers Panel should appear like below:
 
 
-![altThe Layers Panel_text](media/layers-panel-1.png "The Layers Panel")
+![The Layers Panel](media/layers-panel-1.png "The Layers Panel")
 
 Figure 2.7. The Layers Panel
 
@@ -364,12 +364,14 @@ Figure 2.15. Loading a CSV file
 
 Once all the layers in the previous exercises are loaded, the Layers Panel should look something like below:
 
+
 ![Layers Panel with all layers loaded](media/layers-panel-2.png "Layers Panel with all layers loaded")
 
 Figure 2.16. Layers Panel with all layers loaded
 
 
 The Map Canvas should look something like:
+
 
 ![QGIS Interface with all layers loaded](media/map-canvas-1.png "QGIS Interface with all layers loaded")
 
@@ -598,8 +600,7 @@ When you are prompted that the file already exists, select Add New Layer.
 
 ![New points (trees) added](media/virtual-4.png "New points (trees) added]")
 
-9. Add a virtual layer by clicking ![Add virtual layer symbol](media/symbol-virtual.png "Add virtual layer symbol")
- in the Data Source Manager toolbar.
+9. Add a virtual layer by clicking ![Add virtual layer symbol](media/symbol-virtual.png "Add virtual layer symbol") in the Data Source Manager toolbar.
 10. Set Layer name to Tree Canopy. Import Trees. Add the following query: 
 ```
 select fid, buffer(geometry, radius), species from Trees
