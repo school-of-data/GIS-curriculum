@@ -319,225 +319,218 @@ Abbildung 10.13b - Verwendung der Erweiterung Active Fire zum Laden von NASA-Feu
 Die Erweiterung berechnet auch die Anzahl der registrierten Feuerpixel. 
 
 
-#### **[Qgis2web](https://github.com/tomchadwin/qgis2web)**
+#### qgis2web
 
 
 ![alt_text](media/fig1014_a.png "image_tooltip")
 
-Figure 10.14a - The Active Fire plugin
+Abbildung 10.14a - Das qgis2web Plugin
 
-This is a plugin that allows the user to quickly export her QGIS project to a** web map**. 
+Bei qgis2web handelt es sich um eine Erweiterung, mit der Benutzer:innen QGIS-Projekte als **Webkarte** exportieren können. 
 
-A web map is an interactive display of geographic information that can be opened in browsers, on devices, or in desktop map viewers. We daily interact with such representations, just think of OpenStreetMap, Google Maps, Waze, Pokemon Go. 
+Eine Webkarte ist eine interaktive Darstellung von geografischen Informationen, die in Browsern geöffnet werden kann. Wir interagieren täglich mit solchen Darstellungen, man denke nur an OpenStreetMap, Google Maps, Waze, etc. 
 
-This plugin gives one the possibility to very fast prepare and export a map that could end up on the Internet, via the web-technologies of [OpenLayer3](https://openlayers.org/) or [Leaflet](https://leafletjs.com/). Qgis2web does its best to interpret a QGIS project and to export HTML, Javascript, and CSS to create a web map as close to the QGIS project as possible.
+Dieses Plugin ermöglicht uns, sehr schnell eine Karte vorzubereiten und zu exportieren, die im Internet veröffentlicht werde kann. Dies funktioniert über die Web-Technologien von [OpenLayer3](https://openlayers.org/) oder [Leaflet](https://leafletjs.com/). Qgis2web tut sein Bestes, um ein QGIS-Projekt zu interpretieren und HTML, Javascript und CSS zu exportieren, um eine Webkarte zu erstellen, die so nah wie möglich am QGIS-Projekt ist.
 
-After the installation of the qgis2web plugin, a new icon appears to the QGIS toolbar, the same as depicted in the Plugin Manager. Clicking on it will open a window, such as the one in figure 10.14b.
+Nach der Installation des qgis2web-Plugins erscheint ein neues Icon in der QGIS-Symbolleiste, wie es auch im Plugin-Manager abgebildet ist. Wenn Sie darauf klicken, öffnet sich ein Fenster, wie in Abbildung 10.14b.
 
 
 ![alt_text](media/fig1014_b.png "image_tooltip")
 
-Figure 10.14b - Choosing what your map will show in the browser. 
+Abbildung 10.14b - Auswählen, was Ihre Karte im Browser zeigen soll. 
 
-The interface is intuitive, but keep in mind the heavier the datasets, longer it will take to prepare and export. After choosing where to export, click on the export button to finalise (see figure 10.14c).
+Die Benutzeroberfläche ist intuitiv, aber bedenken Sie, je größer die Datensätze sind, desto länger dauert die Vorbereitung und der Export. Nachdem Sie ausgewählt haben, wohin exportiert werden soll, klicken Sie auf den Button "Export", um den Vorgang abzuschließen (siehe Abbildung 10.14c).
 
 
-![alt_text](media/fig1014_c.png "image_tooltip")
-
-Figure 10.14c - QGIS2web preparing the necessary files and folders for the OpenLayer 3 web technology
-
-The folder exported contains several files, depending on what web mapping technology was selected - Leaflet or Openlayers3. In case of OpenLayer3, the folder chosen for the export contains the following files and folders: `images, index.html, layers, resources, styles, webfonts. `Double click on the index.html file and your exported map will open in  your browser, where you can toggle what layers to be visible (see figure 10.14d). 
+Der exportierte Ordner enthält mehrere Dateien, je nachdem, welche WebMapping-Technologie gewählt wurde - Leaflet oder Openlayers3. Ein Doppelklick auf die Datei index.html öffnet die exportierte Karte in Ihrem Browser (siehe Abbildung 10.14d). 
 
 
 ![alt_text](media/fig1014_d.png "image_tooltip")
 
-Figure 10.14d - Opening the index.html file in your browser 
+Abbildung 10.14d - Öffnen der Datei index.html in Ihrem Browser 
 
-As you noticed, the browser opens this map from your local folder (where you told qgis2web to export). 
-
-This QGIS plugin is a great tool to help you prepare your maps for the web. 
-
-For a detailed description of the plugin capabilities, together with a more comprehensive tutorial, check the qgis2web [webpage](https://github.com/tomchadwin/qgis2web). 
+Eine detaillierte Beschreibung der Fähigkeiten des Plugins, zusammen mit einem umfassenderen Tutorial, finden Sie auf der qgis2web [Website (englischsprachig)](https://github.com/tomchadwin/qgis2web). 
 
 
-#### **DataPlotly**
 
+#### DataPlotly
+
+#### DatenPlotly
 
 ![alt_text](media/fig1015_a.png "image_tooltip")
 
-Figure 10.14a - The DataPlotly plugin
+Abbildung 10.14a - Das DataPlotly-Plugin
 
-The DataPlotly plugin was specifically developed to support interactive plot type visualizations of the loaded vector data in QGIS. The plugin is based on a Python library named Plotly, that is quite powerful providing the possibility to create multitude of interactive, publication-quality graphs: line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, multiple-axes, polar charts, and bubble charts. More information on this specific py library is available on the official [website](https://plotly.com/python/). 
+Das DataPlotly-Plugin wurde speziell entwickelt, um interaktive Graphen der geladenen Vektordaten in QGIS zu unterstützen. Das Plugin basiert auf einer Python-Bibliothek namens Plotly, die sehr leistungsfähig ist und die Möglichkeit bietet, eine Vielzahl von interaktiven Diagrammen zu erstellen: Liniendiagramme, Streudiagramme, Flächendiagramme, Balkendiagramme, Fehlerbalken, Boxplots, Histogramme, Heatmaps, Subplots, mehrere Achsen, Polardiagramme und Blasendiagramme. Weitere Informationen zu dieser speziellen py-Bibliothek finden Sie auf der offiziellen [Website](https://plotly.com/python/). 
 
-Install the plugin using the Plugin Manager and load some vector layers to visualize: 
+Installieren Sie das Plugin über den Plugin-Manager und laden Sie einige Vektorlayer zur Visualisierung. In den Screenshots werden wir uns wieder auf das Beispiel von den Philippinen beziehen, Sie können aber auch hier wieder analog für Mittelsachsen vorgehen (nutzen Sie dafür die Daten aus Modul 8). Laden Sie zwei unterschiedliche Layer: 
 
-*   Waterways_3123 (line type);
-*   Populated places (point type);
+* Wasserstraßen (Linien);
+* Besiedelte Orte (Punkte);
 
-Let us prepare an interactive chart showing how many rivers vs. channels vs. streams vs. drains segments we have in our dataset.
+Lassen Sie uns ein interaktives Diagramm vorbereiten, das zeigt, wie viele Flüsse vs. Kanäle vs. Bäche vs. Abwasserkanäle wir in unserem Datensatz haben.
 
-By clicking on the specific pictogram a new window will open, see figure 10.24. 
+Wenn Sie auf das jeweilige Piktogramm klicken, öffnet sich ein neues Fenster, siehe Abbildung 10.24. 
 
 
 ![alt_text](media/fig1015_b.png "image_tooltip")
 
-Figure 10.15b - DataPlotly window/panel.
+Abbildung 10.15b - DataPlotly-Fenster/Panel.
 
-Next, set up the parameters, like in figure 10.15c. 
+Als nächstes stellen Sie die Parameter ein, wie in Abbildung 10.15c. 
 
 
 ![alt_text](media/fig1015_c.png "image_tooltip")
 
-Figure 10.15c - Setting up the parameters for the pie chart representing types of water lines
+Abbildung 10.15c - Einrichten der Parameter für das Kreisdiagramm, das die Arten von Wasserstraßen darstellt
 
-Choose waterways_3123 as the vector layer from which to extract the data plotted, grouping field - fclass, Y field - length. If length needs to be calculated, go to the attribute table of the vector layer and write in the field calculator `round($length)`. For more details, see module 8.  Afterwards, select ‘single plot’ at the ploty type and click on the Create plot button, in the lower right-hand side. Your result should look like in figure 10.15d. 
+Wählen Sie den Wasserwege-Vektorlayer, aus dem die geplotteten Daten extrahiert werden sollen, Grouping field - fclass, Y-field - length. Um sicherzustellen, dass alle Segmente eine Länge haben, gehen Sie in die Attributtabelle des Vektorlayers und erstellen Sie mit dem Feldrechner eine neue Spalte mit der Formel `round($length)` wie Sie es auch schon in Modul 8 gelernt haben.  Wählen Sie anschließend beim Plot-Typ 'Singe Plot' und klicken Sie unten rechts auf die Schaltfläche 'Create Plot'. Ihr Ergebnis sollte wie in Abbildung 10.15d aussehen. 
 
 
 ![alt_text](media/fig1015_d.png "image_tooltip")
 
-Figure 10.15d - Waterways types by length pie chart.
+Abbildung 10.15d - Kreisdiagramm der Wasserstraßenarten nach Länge.
 
-When hovering with the mouse over each pie chart segment, a pop-up appears showing the name (taken from fclass column), lengths sum and percentage out of the total. 
+Wenn Sie mit der Maus über jedes Kreisdiagrammsegment fahren, erscheint ein Popup-Fenster, das den Namen (aus der Spalte fclass), die Summe der Längen und den prozentualen Anteil an der Gesamtsumme anzeigt. 
 
-One significant functionality of DataPlotly is the connection with the QGIS map canvas. To understand what that is, click on one of the sections of the pie chart. You should see that some features are **automatically** selected in your map canvas (see figure 10.15e). 
+Eine wichtige Funktionalität von DataPlotly ist die Verbindung mit der QGIS Kartenansicht. Klicken Sie auf einen der Abschnitte des Kreisdiagramms und Sie sollten sehen, dass einige Features **automatisch** in der Kartenansicht ausgewählt werden (siehe Abbildung 10.15e). 
 
 
-![alt_text](media/fig1015_e.png "image_tooltip")
+![alt_text](media/fig1015_d.png "image_tooltip")
 
-Figure 10.15e - DataPlotly and QGIS map canvas interactive connection testing
+Abbildung 10.15e - Hervorhebung von Daten in DataPlotly und der Kartenansicht
 
-That also means that you can interactively update your plot, for example, to show only the selected features. To test, select only a part of the waterways in your map canvas, then go to the DataPlotly, first tab and at plot parameters, tick the ‘only selected features’ option (see figure 10.15f). 
+Das bedeutet auch, dass Sie Ihren Plot interaktiv aktualisieren können, um z. B. nur die ausgewählten Features anzuzeigen. Um das zu testen, markieren Sie nur einen Teil der Wasserstraßen in Ihrer Kartenansicht, dann gehen Sie in DataPlotly auf den ersten Reiter und setzen bei den Plot-Parametern ein Häkchen bei der Option 'only selected features' (siehe Abbildung 10.15f). 
 
 
 ![alt_text](media/fig1015_f.png "image_tooltip")
 
-Figure 10.15f - Interactively update the plot to show only selected features.   
+Abbildung 10.15f - Interaktives Aktualisieren des Plots, um nur ausgewählte Features anzuzeigen.   
 
-Afterwards, click on the Update plot button at the bottom right-hand side of the DataPlotly window. Results should look approximately as in figure 10.29 (just approximately, because your selection mostly probably differs from the one shown in figure 10.15g). 
-
+Klicken Sie anschließend auf die Schaltfläche "Update plot". Das Ergebnis sollte ungefähr so aussehen wie in Abbildung 10.29. 
 
 ![alt_text](media/fig1015_g.png "image_tooltip")
 
-Figure 10.15g - Update the plot to show only the selected features on the map canvas. 
+Abbildung 10.15g - Aktualisieren Sie den Plot, um nur die ausgewählten Features auf der Kartenleinwand anzuzeigen. 
 
-Furthermore, DataPlotly provides the user with an export function - either in a .pdf file or an .html file. The corresponding buttons are in the very low, right-hand side of the DataPlotly window, see figure 10.15h. 
+Darüber hinaus bietet DataPlotly eine Exportfunktion - entweder in eine .pdf-Datei oder in eine .html-Datei. Die entsprechenden Schaltflächen befinden sich am unteren, rechten Rand des DataPlotly-Fensters, siehe Abbildung 10.15h. 
 
 
 ![alt_text](media/fig1015_h.png "image_tooltip")
 
-Figure 10.15h - Export capabilities of DataPlotly
+Abbildung 10.15h - Exportmöglichkeiten von DataPlotly
 
 
-Exporting as HTML file allows the user to prepare a wide variety of data plots ready for web publication (see figure 10.15i).
+Der Export als HTML-Datei ermöglicht es, eine Vielzahl von Datenplots für die Veröffentlichung im Internet vorzubereiten (siehe Abbildung 10.15i).
 
 
 ![alt_text](media/fig1015_i.png "image_tooltip")
 
-Figure 10.15i - Using a browser to open the HTML file exported by DataPlotly.  
+Abbildung 10.15i - Verwendung eines Browsers zum Öffnen der von DataPlotly exportierten HTML-Datei.  
 
-The plugin is also very well documented, for the users they provide a help menu for each plot type. You can access it by clicking on the fourth tab on the DataPlotly (see figure 10.15j).
+Das Plugin ist auch sehr gut dokumentiert und es gibt ein Hilfemenü für jeden Plot-Typ. Sie können darauf zugreifen, indem Sie auf den vierten Reiter in DataPlotly klicken (siehe Abbildung 10.15j).
 
 
 ![alt_text](media/fig1015_j.png "image_tooltip")
 
-Figure 10.15j - Help menu for each plot type accessible through the plugin window. 
+Abbildung 10.15j - Hilfemenü für jeden Plot-Typ, das über das Plugin-Fenster zugänglich ist. 
 
-Due to the direct, interactive link with the QGIS loaded datasets, expressions can also be used when preparing a plot. To test this capability,  we will create a plot base on the Populated places vector layer. Set the following parameters: type: bar plot, layer: populated places, X_field: is_in, Y_field - open the field calculator and insert  `"population" is not null `(see figure 10.15k and figure 10.15l). 
+Durch die direkte, interaktive Verknüpfung mit den in QGIS geladenen Datensätzen können beim Erstellen eines Plots auch Ausdrücke verwendet werden. Um diese Fähigkeit zu testen, werden wir einen Plot auf Basis des Vektorlayers "Besiedelte Orte" erstellen. Stellen Sie die folgenden Parameter ein: Typ: Balkenplot, Layer: Besiedelte Orte, X_Feld: is_in, Y_Feld - öffnen Sie den Feldrechner und fügen Sie `"Bevölkerung" ist nicht null ` ein (siehe Abbildung 10.15k und Abbildung 10.15l). 
 
 
 ![alt_text](media/fig1015_k.png "image_tooltip")
 
-Figure 10.15k - Opening the field editor in DataPlotly based on attributes of the selected QGIS layer in order to apply an expression for filtering what the plot will display
+Abbildung 10.15k - Öffnen des Feldeditors in DataPlotly basierend auf Attributen des ausgewählten QGIS-Layers, um einen Ausdruck zur Filterung dessen, was der Plot anzeigen wird, anzuwenden
 
 
 ![alt_text](media/fig1015_l.png "image_tooltip")
 
-Figure 10.15l - Inserting an expression in the field calculator 
+Abbildung 10.15l - Einfügen eines Ausdrucks in den Feldrechner 
 
-The result should look like in figure 10.35. . 
+Das Ergebnis sollte wie in Abbildung 10.35 aussehen. . 
 
 
 ![alt_text](media/fig1015_m.png "image_tooltip")
 
-Figure 10.15m - DataPlotly result of filtering by expression
+Abbildung 10.15m - DataPlotly-Ergebnis der Filterung nach Ausdruck
 
-If we are to interpret this plot, it shows us that among all the provinces where populated places have been registered, the population attribute is different from 0 în only 3 regions, Alaminos, Sual, Pangasian and Bagac. One can easily test this conclusion by looking in the attribute table.
+Wenn wir diesen Plot interpretieren sollen, zeigt er uns, dass unter allen Provinzen, in denen besiedelte Orte registriert wurden, das Attribut Bevölkerung nur in 3 Regionen überhaupt gesetzt ist: Alaminos, Sual, und Bagac. Man kann diese Schlussfolgerung leicht testen, indem man in die Attributtabelle schaut.
 
-DataPlotly also provides the user with the possibility of creating subplots, which means that multiple plots can be displayed in a single figure. 
+DataPlotly bietet auch die Möglichkeit, Subplots zu erstellen, was bedeutet, dass mehrere Plots in einer einzigen Abbildung dargestellt werden können. 
 
-To test this functionality, we will use the Population places vector layer. We have the following attributes of interest: `place` = type of place (city, town, village, etc.,` is_in `=  name of province to which it belongs (if known), `population` = (population numbers) and `name `= the name of the place (if known). We will integrate in the same figure, 2 data plots: one to show us how many of the populated places fall into each category of `place `and the second one, how is the population divided by the 4 types of` places. `
+Um diese Funktionalität zu testen, werden wir den Vektorlayer "Besiedelte Orte" verwenden. Wir haben die folgenden Attribute von Interesse: `place` = Typ des Ortes (Stadt, Dorf, etc.), `is_in` = Name der nächstgrößeren Verwaltungseinheit, zu der er gehört (falls bekannt), `population` = (Bevölkerungszahl) und `name` = der Name des Ortes. Wir werden in der gleichen Abbildung zwei Datendiagramme integrieren: eines, um uns zu zeigen, wie viele der besiedelten Orte in jede Kategorie von `place` fallen und das zweite, wie sich die Bevölkerung auf die 4 Arten von `place` aufteilt.
 
 
 ![alt_text](media/fig1015_n.png "image_tooltip")
 
-Figure 10.15n - Setting up the parameters for the first plot  - types of settlements by their numbers
+Abbildung 10.15n - Einstellen der Parameter für die erste Darstellung - Siedlungstypen nach ihrer Anzahl
 
 
 ![alt_text](media/fig1015_o.png "image_tooltip")
 
-Figure 10.15o - Setting up the parameters for the second plot - types of settlements by population  numbers.
+Abb. 10.15o - Einstellen der Parameter für das zweite Diagramm - Siedlungstypen nach Einwohnerzahlen.
 
 
 ![alt_text](media/fig1015_p.png "image_tooltip")
 
-Figure 10.15p - Subplots in a row
+Abbildung 10.15p - Subplots in einer Reihe
 
-For a detailed description of the plugin capabilities, together with a more comprehensive tutorial, check the DataPlotly [webpage](https://github.com/ghtmtt/DataPlotly). 
+Eine ausführliche Beschreibung der Möglichkeiten des Plugins sowie ein umfassenderes Tutorial finden Sie auf der DataPlotly [Website (englischsprachig)](https://github.com/ghtmtt/DataPlotly). 
 
 
-#### **QuickMapServices / OpenLayers plugin**
 
+
+#### QuickMapServices / OpenLayers 
 
 ![alt_text](media/fig1016_a1.png "image_tooltip")
 
 
 ![alt_text](media/fig1016_a2.png "image_tooltip")
 
-Figure 10.16a - QuickMapServices plugin; 10.16b - OpenLayers plugin
+Abbildung 10.16a - QuickMapServices-Erweiterung; 10.16b - OpenLayers-Erweiterung
 
-These 2 plugins are exceptionally useful when a user needs to add basemaps to her/his QGIS project. For example, one wants to see in context the positioning of a new vector layer received, or maybe just to prepare a more attractive cartographic representation for a report. Either the scope, QuickMapServices allows the use to load into their desktop client with only 2 clicks, basemap layers from different provides, such as OpenStreetMap, NASA, Bing or Google Maps. 
+Diese beiden Erweiterungen sind außerordentlich nützlich, wenn Sie Basiskarten zu Ihrem QGIS-Projekt hinzufügen möchten. So ein Basislayer hilft zum Beispiel, um die korrekte Positionierung eines neu Vektorlayers zu überprüfen. QuickMapServices erlabut es uns, mit nur 2 Klicks Basiskarten-Layer von verschiedenen Anbietern, wie OpenStreetMap, NASA, Bing oder Google Maps, in seinen Desktop-Client zu laden. 
 
-Install both plugins using Plugin Manager. In this case, you will notice that they will appear under the Web tab (see figure 10.16b). 
+Installieren Sie beide Erweiterungen über die Erweiterungsverwaltung. Die Erweiterungen erscheinen dann im Menü unter "Web" (siehe Abbildung 10.16b). 
 
 
 ![alt_text](media/fig1016_b.png "image_tooltip")
 
-Figure 10.16b - Location of the QuickMapServices and OpenLayers plugins.
+Abbildung 10.16b - Menüs der Erweiterungen QuickMapServices und OpenLayers.
 
-Using them is pretty straight forward, you just click on the layer you want to bring in your map canvas and the plugin will do all the work. Needless to say, that the use of this plugin requires good internet connection, as it uses data served by its providers through standardized web mapping services. 
+Die Verwendung dieser Plugins ist ziemlich einfach: Sie klicken einfach auf den Layer, den Sie in Ihre Kartenansicht bringen möchten, und die Erweiterung macht den Rest.
 
-Figure 10.16c presents the OSM Humanitarian Data Model brought as a basemap for the region of interest used in module 8 and 9, province Pampanga in Philippines. 
-
+Abbildung 10.16c zeigt die Stamen Toner Karte als Basiskarte für einige der in Modul 8 und 9 verwendeten Daten aus Mittelsachsen.
 
 ![alt_text](media/fig1016_c.png "image_tooltip")
 
-Figure 10.16c - Using OpenLayers plugin. 
+Abbildung 10.16c - Verwendung der OpenLayers-Erweiterung. 
 
-Figure 10.16d illustrates the perfect alignment of the basemap loaded in the QGIS map canvas using the OpenLayers plugin. Even though the 2 layers are not in the same projection, QGIS allows projection on-the-fly, so overlay is possible. 
+Abbildung 10.16d zeigt die perfekte Ausrichtung der in die QGIS Kartenansicht geladenen Basiskarte unter Verwendung der OpenLayers Erweiterung. Obwohl die 2 Layer nicht in der gleichen Projektion sind, erlaubt QGIS eine Projektion on-the-fly, so dass eine Überlagerung möglich ist. Hier sehen wir auch, dass die Stamen Toner Karte eine relativ reduzierte Ansicht nutzt und viele der kleineren Straßen in der Darstellung auslässt.
 
 
 ![alt_text](media/fig1016_d.png "image_tooltip")
 
-Figure 10.16d - Loaded vector data (roads) overlaid on to the OSM Humanitarian Data model 
+Abbildung 10.16d - Geladene Vektordaten (Straßen), überlagert mit einer Stamen Basiskarte 
 
-For a detailed description of the plugins capabilities, together with a more comprehensive tutorial, check their webpage: [QuickMapServices](https://nextgis.com/blog/quickmapservices/) and [OpenLayer Plugin](https://github.com/sourcepole/qgis-openlayers-plugin). 
+Eine detaillierte Beschreibung der Fähigkeiten der Erweiterungen sowie ein umfassenderes Tutorial finden Sie auf deren (englischsprachigen) Webseite: [QuickMapServices](https://nextgis.com/blog/quickmapservices/) und [OpenLayer Plugin](https://github.com/sourcepole/qgis-openlayers-plugin). 
 
 
-#### **Table2Style**
 
+#### Table to Style
 
 ![alt_text](media/fig1017_a.png "image_tooltip")
 
-Figure 10.17a - The Table to Style plugin
+Abbildung 10.17a - Das Table to Style-Plugin
 
-This plugin is useful for situations where there are specific values for pixels within a raster layer that correspond perfectly to a specific color. In this curriculum, we have encountered  such an example, when working with the land cover data (see figure 10.17b). 
+Dieses Plugin ist nützlich für Situationen, in denen Sie einen Rasterdatensatz haben, in dem bestimmte Pixelwerte zur Kategorisierung von Daten genutzt werden. Wir kennen das aus dem Modul 9 in dem wir mit den Landbedeckungsdaten gearbeitet haben (siehe Abbildung 10.17b). 
 
 
 ![alt_text](media/fig1017_b.png "image_tooltip")
 
-Figure 10.17b - Exemplifying situations where pixel values correspond to an exact colour 
+Abbildung 10.17b - Beispielhafte Situationen, in denen Pixelwerte einen Wert kategorisieren 
 
-From the provider of this product based on satellite imagery, the pixel values and the associated colours are also made available: 
+Vom Anbieter dieses Produkts, das auf Satellitenbildern basiert, werden auch die Pixelwerte und die zugehörigen Farben zur Verfügung gestellt: 
 
 
 <table>
@@ -736,165 +729,145 @@ From the provider of this product based on satellite imagery, the pixel values a
 </table>
 
 
-When a new dataset - raster or vector - is loaded, QGIS is randomly assigning it a visual representation. It is the user that must define appropriate colours and schemas of the representations. For more information on layers styling, go to module 4. 
+Wenn ein neuer Datensatz - Raster oder Vektor - geladen wird, weist QGIS ihm eine zufällige visuelle Darstellung zu. Es liegt an den Benutzer:innen, geeignete Farben und Stylisierungen der Daten zu definieren. Weitere Informationen zum Styling von Layern finden Sie in Modul 4. 
 
-To test the table2style plugin, we will use the LandCover2019 raster dataset, used also in module nr.9. By loading the raster into QGIS you should have a restul similar with the one in figure 10.17c.
+Um das Table to Style Plugin zu testen, verwenden wir den Rasterdatensatz LandCover2019, der auch in Modul Nr. 9 verwendet wird. Wenn Sie das Raster in QGIS laden, sollten Sie eine ähnliche Darstellung wie in Abbildung 10.17c erhalten.
 
 
 ![alt_text](media/fig1017_c.png "image_tooltip")
 
-Figure 10.17c - QGIS randomly assigns colours to pixel values
+Abbildung 10.17c - QGIS ordnet den Pixelwerten zufällig Farben zu
 
-As per the data provider, we know that for each pixel value there is a clearly assigned colour  and in the land cover domain, these colours already represent conventions, just as in classic cartography. Forests are represented with a specific kind of green, pastures with another, ocean is depicted with a different kind of blue than inland surface water and so forth. Worst case would be to manually assign all these colours to their respective values. However, the table2style plugin solves this issue automatically, in a matter of seconds. 
+Vom Datenanbieter wissen wir, dass es für jeden Pixelwert eine eindeutig zugewiesene Farbe gibt und im Bereich Landbedeckung stellen diese Farben bereits Konventionen dar, genau wie in der klassischen Kartographie. Wälder werden mit einer bestimmten Art von Grün dargestellt, Weiden mit einer anderen, Meer wird mit einer anderen Art von Blau dargestellt als Binnengewässer und so weiter. Im schlimmsten Fall müsste man alle diese Farben manuell zuordnen. Das Table to Style Plugin löst dieses Problem jedoch automatisch und in Sekundenschnelle. 
 
-Go to Manager plugin and install the table2style plugin. A new icon will appear on your toolbar. Open it by double clicking it. A setting up window should appear, like in figure 10.17d. 
+Gehen Sie in die Erweiterungsverwaltung und installieren Sie das Table to Style Plugin. Es erscheint ein neues Symbol in Ihrer Symbolleiste. Wenn Sie es öffnen, sollte ein Einstellungsfenster erscheinen, wie in Abbildung 10.17d. 
 
 
 ![alt_text](media/fig1017_d.png "image_tooltip")
 
-Figure 10.17d - Table2style window
+Abbildung 10.17d - Table2style-Fenster
 
-The plugin requires 2 parameters - a raster layer and an attribute table with pixel values, description label and color codes in one of the three systems: RGB, HSV or Hex. As per our table above, we have Hex codes for the assigned colors. Thus, load the table into QGIS (`Layer - Add layer - Add delimited text layer… `). Of course, it has no geometry. The LandCover values table should look like in figure 10.17e. 
+Das Plugin benötigt 2 Parameter - eine Rasterebene und eine Attributtabelle mit Pixelwerten, Beschriftung und Farbcodes in einem der drei Systeme: RGB, HSV oder Hex. In unserer Tabelle oben haben wir Hex-Codes für die zugeordneten Farben. Laden Sie die CSV-Datei wie gewohnt als Layer - die Daten haben dabei natürlich keine Geometrie. Die Tabelle der LandCover-Werte sollte wie in Abbildung 10.17e aussehen. 
 
 
 ![alt_text](media/fig1017_e.png "image_tooltip")
 
-Figure 10.17e - Attribute table with pixel values, color codes and description for Land Cover
+Bild 10.17e - Attributtabelle mit Pixelwerten, Farbcodes und Beschreibung für Land Cover
 
-Now, let us take a look at the raster dataset. The table2style works only on a 1-band raster, as it is a one to one connection: pixel value - color code. If more bands are available, judging after the plugin setup window, it would not know which one to choose. However, checking the LandCover2019 layer properties, we notice that there are 3 bands (`Properties - Information - scroll down to Bands`). As we need only Band 1 - discrete classification, we will employ the raster calculator to extract it (`Raster - Raster calculator` and insert in the expression field only "LandCover2019_1band@1" - save the result). For more details on how to work with rasters, check module 9. 
+Werfen wir nun einen Blick auf den Rasterdatensatz. Die Table to Style Erweiterung funktioniert nur bei einem 1-Band-Raster, da es sich um eine 1 zu 1 Verbindung handelt: Pixelwert - Farbcode. Wenn mehr Kanäle vorhanden wären, wüsste nicht, welches es wählen sollte. Wenn wir jedoch die Eigenschaften der Ebene LandCover2019 überprüfen, stellen wir fest, dass es 3 Kanäle gibt (`Eigenschaften - Informationen - nach unten zu Bänder scrollen`). Da wir nur Kanal 1 - discrete_classification - benötigen, werden wir den Raster Calculator verwenden, um es zu extrahieren. Fügen Sie dort im Ausdrucksfeld nur "LandCover2019@1" ein. Weitere Details zur Arbeit mit Rastern finden Sie in Modul 9. 
 
-Now, we have all we need to test the plugin. Set up the parameters as in figure 10.17f. 
+Jetzt haben wir alles, was wir brauchen, um das Plugin zu testen. Stellen Sie die Parameter wie in Abbildung 10.17f ein. 
 
 
 ![alt_text](media/fig1017_f.png "image_tooltip")
 
-Figure 10.17f - Setting up table2style plugin parameters for the Land Cover dataset
+Abbildung 10.17f - Einstellen der Parameter des Table to Style Plugins für den Datensatz LandCover_2019-Band-1
 
-The result should look like in figure 10.17g. 
+Das Ergebnis sollte wie in Abbildung 10.17g aussehen. 
 
 
 ![alt_text](media/fig1017_g.png "image_tooltip")
 
-Figure 10.17g - Automatically styled raster dataset using table2style plugin
+Abbildung 10.17g - Automatisch gestylter Rasterdatensatz mit Table to Style -Plugin
 
-For a detailed description of the plugin capab[https://github.com/ptarroso/table2style](https://github.com/ptarroso/table2style)ilities, together with a more comprehensive tutorial, check the Table 2 Style plugin webpage. 
+Eine ausführliche Beschreibung der Fähigkeiten des Plugins sowie ein umfassenderes Tutorial finden Sie auf der Webseite des Plugins Table 2 Style. 
 
 
-#### **ORS Tools**
+#### ORS Tool
 
 
 ![alt_text](media/fig1018_a.png "image_tooltip")
 
-Figure 10.48a - The ORS Tools plugin
+Bild 10.48a - Das ORS Tools-Plugin
 
-For our last presented plugin, we have prepared one to show you the amazing capabilities of the interconnected world of GIS data, tools and services. We have seen previously that there are plugins that can assist us in loading in our QGIS data from other providers without any hassle related to downloading, storing and knowing how to open it (OpenLayers plugin , Active Fire). Yet, the ORS Tools plugin is built to provide access to an outside routing service - the openrouteservice.org, based on OpenStreetMap. 
+In unserer letzten Erweiterungen wollen wir Ihnen die Möglichkeiten der vernetzten Welt der GIS-Daten, -Tools und -Dienste zu zeigen. Wir haben bereits gesehen, dass es Erweiterungen gibt, die uns dabei helfen können, unsere QGIS-Daten von anderen Anbietern zu laden, ohne dass wir sie mühsam herunterladen, speichern und öffnen müssen (OpenLayers-Plugin , Active Fire). Die Erweiterung ORS Tools wurde jedoch entwickelt, um den Zugriff auf einen externen Routing-Dienst zu ermöglichen - den openrouteservice.org, der auf OpenStreetMap basiert. 
 
-**Routing** is the process of selecting a path for traffic in a network or between or across multiple selected points. 
+**Routing** ist der Prozess der Auswahl eines Pfades für den Verkehr in einem Netzwerk oder zwischen oder über mehrere ausgewählte Punkte. 
 
-The tool set includes routing, isochrones and matrix calculations, either interactive in the map canvas or from point files within the processing framework. 
+Die Erweiterung ermöglicht Routing, Isochronen und Matrixberechnungen, entweder interaktiv in der Kartenansicht oder aus Punktdateien innerhalb des Verarbeitungsrahmens. 
 
-Using Plugin Manager, install the ORS Tools plugin. A new pictogram will appear on your toolbar. Double click to open (see figure 10.18b). 
+Installieren Sie mit der Erweiterungsverwaltung das Plugin "ORS Tools". Ein neues Piktogramm erscheint in Ihrer Werkzeugleiste. Doppelklicken Sie darauf, um es zu öffnen (siehe Abbildung 10.18b). 
 
 
 ![alt_text](media/fig1018_b.png "image_tooltip")
 
-Figure 10.18b - Open ORS Tools window. 
+Abbildung 10.18b - Fenster "ORS Tools" öffnen. 
 
-As mentioned, this plugin is using an external database - OpenStreetMap - and external algorithms that are packaged up in service - openrouteservice. In order to be able to connect to this external service, we will need to make an account on their web page and ask for an **API key. **
+Wie bereits erwähnt, verwendet diese Erweiterung eine externe Datenbank - OpenStreetMap - und externe Algorithmen, die in einen Dienst - openrouteservice - angeboten werden. Um eine Verbindung zu diesem externen Dienst herstellen zu können, müssen wir ein Konto auf deren Webseite erstellen und einen **API-Key anfordern**.
 
-An API key is a unique identifier used to authenticate a user, developer, or calling program to an API. The API is like a gateway to the insides of a software, a programmatic access to its processes and algorithms. Thus, to use the openrouteservice through QGIS, we will ask for a _key_. 
+Ein API-Schlüssel/API-Key/API-Token ist eine eindeutige Kennung, die zur Authentifizierung gegenüber einer API verwendet wird. Die API ist wie Zugang zum Innenleben einer Software, ein programmatischer Zugang zu deren Prozessen und Algorithmen. Um also den openrouteservice durch QGIS zu nutzen, werden wir nach einem _Schlüssel_ fragen. 
 
-Proceed with the following steps: 
+Fahren Sie mit den folgenden Schritten fort: 
 
 
-
-1. Click on the Sign Up button on the ORS Tools window (figure 10.49). 
+1. Klicken Sie auf die Schaltfläche Sign Up im Fenster ORS Tools (Abbildung 10.49). 
 
 
 ![alt_text](media/fig1018_c.png "image_tooltip")
 
-Figure 10.18c - Sign in button
+Bild 10.18c - Schaltfläche "Sign in"
 
-2. Make a free account on the website on the openrouteservice website that opened. 
+2. Legen Sie auf der geöffneten openrouteservice-Website ein kostenloses Konto an. 
 
 
 ![alt_text](media/fig1018_d.png "image_tooltip")
 
-Figure 10.18d - Openrouteservice account page 
+Bild 10.18d - Openrouteservice-Kontoseite 
 
 
-3. After making the account, you will receive an email informing you of what  you have just gained free access. 
+3. Nach dem Anlegen des Kontos erhalten Sie eine E-Mail, die Sie über den soeben erhaltenen kostenlosen Zugang informiert. 
 
 
-![alt_text](media/fig1018_e.png "image_tooltip")
+![alt_text](media/fig1018_d.png "image_tooltip")
 
-Figure 10.18e - Email received from openrouteservice
+Abbildung 10.18e - E-Mail von openrouteservice erhalten
 
-4. Login to your newly made account and request a token. 
+4. Melden Sie sich an Ihrem neu erstellten Konto an und fordern Sie ein Token an. 
 
 
 ![alt_text](media/fig1018_f.png "image_tooltip")
 
-Figure 10.18f - Request openrouteservice token
+Bild 10.18f - openrouteservice-Token anfordern
 
-5. After your token has been created, click on the long alphanumeric string below the name key. A message informing you that it has been copied will appear. 
-6. Return to QGIS and insert the copied API key.
+5. Nachdem Ihr Token erstellt wurde, klicken Sie auf die lange alphanumerische Zeichenfolge unterhalb des Namensschlüssels. Es erscheint eine Meldung, dass es kopiert wurde. 
+6. Kehren Sie zu QGIS zurück und fügen Sie den kopierten API-Schlüssel ein.
 
 
 ![alt_text](media/fig1018_g.png "image_tooltip")
 
-Figure 10.18g - Insert openrouteserviceAPI key into your QGIS
+Abbildung 10.18g - Einfügen des openrouteserviceAPI-Schlüssels in Ihr QGIS
 
-At this point, your QGIS should be ready to calculate routes using openrouteservice and OpenStreetMap. To test its basic capabilities, load into QGIS the Pampanga building layers. Make sure you are working in EPSG 3857 or EPSG:4326. After loading the layer, start inserting the routing points. Open the ORS Tools, and press the green + button (see figure 10.18h). 
+An diesem Punkt sollte Ihr QGIS bereit sein, Routen mit openrouteservice und OpenStreetMap zu berechnen. Um die grundlegenden Fähigkeiten zu testen, laden Sie den Layer der Gebäude aus Mittelsachsen. Stellen Sie sicher, dass Sie in EPSG:3857 arbeiten - hierfür kann es nötig sein, dass Sie den Gebäudelayer voerst in das KBS EPSG:5650 reporojizieren. Nachdem Sie den Layer geladen haben, beginnen Sie mit dem Einfügen der Routingpunkte. Öffnen Sie die ORS-Tools, und drücken Sie die grüne + Taste (siehe Abbildung 10.18h). 
 
 
 ![alt_text](media/fig1018_h.png "image_tooltip")
 
-Figure 10.18h - Inserting the routing points using ORS Tools. 
+Bild 10.18h - Einfügen der Routingpunkte mit den ORS-Tools. 
 
-Choose Traveling Salesman routing algorithm and click on apply. After a few moments, a new vector layer has been created: Routes_ORS. 
+Wählen Sie den Routing-Algorithmus Traveling Salesman und klicken Sie auf Anwenden. Nach wenigen Augenblicken ist ein neuer Vektor-Layer erstellt worden: Routes_ORS. 
 
 
 ![alt_text](media/fig1018_i.png "image_tooltip")
 
-Figure 10.18i - Result of running ORS Tools. 
-
-Opening OpenStreetMap, we will notice that  ORS Tools has tried to build a route to touch all points given by clicking on the map. **Please take note! **QGIS has only one layer loaded and that was the building layer and yet now, a new layer has been calculated and automatically added to your map canvas! 
-
+Abbildung 10.18i - Ergebnis der Ausführung der ORS Tools. 
 
 ![alt_text](media/fig1018_j.png "image_tooltip")
 
-Figure 10.18j - The calculated route overlaid on top of OpenStreetMap.
+Abbildung 10.18j - Die berechnete Route, mit eine OpenStreetMap Hintergrundkarte
 
-The results of ORS Tools highly depend on the quality of the databases used, in this case - the OpenStreetMap. 
+Die Ergebnisse der ORS-Tools hängen stark von der Qualität der verwendeten Datenbanken ab, in diesem Fall - der OpenStreetMap. 
 
-The plugin, as well as the openroutingservice, has more to offer but we leave you to discover that in your GIS journey. 
-
-
-***Philippine-specific***
-
-#### **Azimuth and Distance Plugin**
+Die Erweiterung, wie auch der openroutingservice, hat noch mehr zu bieten, aber wir überlassen es Ihnen, das auf Ihrer GIS-Reise zu entdecken. 
 
 
+#### **Quizfragen**
 
-
-#### **SRTM Downloader Plugin**
-
-
-
-
-#### **OpenHazardsPH Plugin**
-
-
-
-#### **Quiz questions**
-
-1. Can QGIS plugins be run outside the QGIS platform? 
-*   _<span style="text-decoration:underline;">No</span>. _
-*   _Yes. _
-2. In order to use a QGIS plugin one needs to learn how to code. 
-*   _<span style="text-decoration:underline;">No.</span>_
-*   _Yes. _
-3. It is highly recommended that all plugins be installed through the Plugin Manager, even if they could be installed by downloading the zip file and putting it into the right QGIS folder. 
-*   _No._
-*   _<span style="text-decoration:underline;">Yes. </span>_
+1. Können QGIS-Erweiterungen außerhalb der QGIS-Plattform betrieben werden? 
+* _Nein_
+* Ja
+2. Um eine QGIS Erweiterung zu benutzen, muss man programmieren lernen.
+* _Nein_
+* Ja
+3. Es wird empfohlen, dass alle Erweiterungen über die Erweiterungsverwaltung installiert werden, auch wenn sie durch Herunterladen der Zip-Datei und Ablegen im richtigen QGIS-Ordner installiert werden könnten. 
+* Nein
+* _Ja_
