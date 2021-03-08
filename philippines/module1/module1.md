@@ -101,8 +101,8 @@ A QGIS release is specified by three numbers (X.Y.Z). For example, QGIS 3.16.4.
 There are three main branches of QGIS that users can install. These are the **Long Term Release (LTR)** branch, **Latest Release (LR)** branch, and the **Development (Nightly)** branch.
 
 *   **Long Term Release (LTR)** is named that way because it is maintained and receives bug fixes until the next LTR is released. Currently, that means one (1) year. As of February 2021, the current LTR is 3.16.4. This is scheduled to be replaced by QGIS 3.22.4 in February 2022.
-*   **Latest Release (LR) **refers to the release version of QGIS that contains the most recent or latest features. A new LR is released every four (4) months. For example, a new 3.18 LR was released this February 2021. The next LR (3.20) will be released 4 months from now which is in June 2021. Currently, every 3rd LR becomes the next LTR. For example, the LTR this February 2021 is the 3.16 release. The 3rd LR from 3.16 is 3.22  therefore the next LTR will be based on the 3.22 release version. 
-*   **Development/Nightly **is based on the most recent version of the QGIS source code but is useful if you want to test, debug, or help in the development of QGIS.
+*   **Latest Release (LR)** refers to the release version of QGIS that contains the most recent or latest features. A new LR is released every four (4) months. For example, a new 3.18 LR was released this February 2021. The next LR (3.20) will be released 4 months from now which is in June 2021. Currently, every 3rd LR becomes the next LTR. For example, the LTR this February 2021 is the 3.16 release. The 3rd LR from 3.16 is 3.22  therefore the next LTR will be based on the 3.22 release version. 
+*   **Development/Nightly** is based on the most recent version of the QGIS source code but is useful if you want to test, debug, or help in the development of QGIS.
 
 So which version should you use? It depends. If you need a version that is maintained for a longer time and you don’t necessarily need new features as they are released then the LTR version might be for you. If you need to have the most recent features and don’t mind doing an upgrade every few months, the LR version just might be for you. Sometimes it’s also good to take a look at the development or nightly versions especially if you are curious or excited about the upcoming features in QGIS.
 
@@ -185,13 +185,16 @@ Figure 1.4. The QGIS Interface with some customizations
 1. Open **QGIS**
 2. Click the **View** menu
 
+
 ![Open QGIS and click on View menu](media/ex01-01.png "Open QGIS and click on View menu")
 
 3. Observe the **Panels** menu
 
+
 ![Observe the Panels menu](media/ex01-02.png "Observe the Panels menu")
 
 4. Observe the **Toolbars** menu
+
 
 ![Observe the Toolbars menu](media/ex01-03.png "Observe the Toolbars menu")
 
@@ -235,14 +238,13 @@ Plugins can be installed in three (3) ways:
 
 Figure 1.5. Accessing the Manage and Install Plugins dialog
 
-**Manage and Install Plugins Dialog**
+
+#### **Manage and Install Plugins Dialog**
 
 The Manage and Install Plugins Dialog connects to the QGIS Official Plugin repository (or any repository that you indicate in the Settings Tab) to fetch plugins available for your version of QGIS. It has five (5) tabs:
 
-
-
-*   **All Tab **– shows ALL the plugins available for your QGIS version including those that are already installed on your machine
-*   **Installed Tab **– shows only the plugins installed on your machine
+*   **All Tab** – shows ALL the plugins available for your QGIS version including those that are already installed on your machine
+*   **Installed Tab** – shows only the plugins installed on your machine
 *   **Not installed Tab** – shows the plugins that are not installed on your machine
 *   **Install from ZIP **– allows you to install plugins from a ZIP file
 *   **Settings Tab** – gives you options on when to check for plugin updates, whether or not to include experimental and deprecated plugins, or add/change the repository to fetch plugins from
@@ -262,9 +264,11 @@ Figure 1.6. The Manage and Install Plugins dialog
 
 ![Open Manage and Install Plugins dialog](media/plugins-menu-2.png "Open Manage and Install Plugins dialog")
 
+
 ![Manage and Install Plugins dialog](media/manage-and-install-plugins-dialog.png "Manage and Install Plugins dialog")
 
 2. Install the following plugins by searching for them in the **All tab **and clicking **Install Plugin** in the bottom right corner of the Manage and Install plugins dialog.
+
    - Memory Layer Saver
 
 ![Install Memory Layer Saver plugin](media/memory-layer-saver-plugin.png "Install Memory Layer Saver plugin")
@@ -285,7 +289,7 @@ Figure 1.6. The Manage and Install Plugins dialog
 
 ### Phase 3 title: QGIS Settings
 
-**System and Project Settings**
+#### **System and Project Settings**
 
 QGIS Settings allow you to edit and manage different things about QGIS such as user profiles, styles, coordinate reference systems, keyboard shortcuts, the user interface, default colors, etc. System settings can be found in the **Settings **menu and are the default settings used by QGIS unless they are overridden by a Project’s settings. Project Settings can be found in **Project ‣ Properties** and pertain to settings or properties for the current project. These values override the system defaults.
 
@@ -298,11 +302,12 @@ Figure 1.7. The System Settings
 
 Figure 1.8. Project Settings
 
-**Changing the QGIS Theme**
+#### **Changing the QGIS Theme**
 
 You can change the look-and-feel of QGIS under **Settings ‣ Options ‣ General** Tab.
 
 You can choose between three themes -- default, Blend of Gray, and Night Mapping. You can also change the size of the icons, the font used by QGIS, and other system defaults.
+
 
 ![General Settings of QGIS](media/change-theme.png "General Settings of QGIS")
 
@@ -310,7 +315,7 @@ Figure 1.9. General Settings of QGIS
 
 For some settings in QGIS, you might need to restart the application for them to take effect.
 
-**User Profiles**
+#### **User Profiles**
 
 QGIS 3.X introduced the concept of QGIS User Profiles.
 
@@ -330,10 +335,11 @@ User profiles are saved in a directory on your computer which can be accessed by
 
 1. Go to **Settings ‣ User Profiles ‣ New Profile...**
 
+
 ![alt_text](media/user-profiles-2.png "image_tooltip")
 
-
 2. Give your new user profile a name.
+
 
 ![alt_text](media/user-profiles-3.png "image_tooltip")
 
@@ -396,7 +402,7 @@ When using GeoPackages (.gpkg), a .qml file is oftentimes not needed since you c
 
 You can try to create your own QGIS plugin.  If there’s no plugin that does what you want then you can always make one yourself.
 
-The **Plugin Builder **is a plugin that creates a template that can serve as the starting point for QGIS plugin development so you won’t have to create one from scratch. You can install it from the Manage and Install Plugins Dialog.
+The **Plugin Builder** is a plugin that creates a template that can serve as the starting point for QGIS plugin development so you won’t have to create one from scratch. You can install it from the Manage and Install Plugins Dialog.
 
 Of course, you can always create a plugin from scratch. If you are interested in creating your own plugin, you can check the Official QGIS documentation ([https://documentation.qgis.org/](https://documentation.qgis.org/)). For Python plugins, it’s a good idea to check out the PyQGIS Developer Cookbook ([https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/)).
 

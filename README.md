@@ -1,8 +1,10 @@
 # GIS-curriculum
 
 ## Localisations
+- [**Argentina**](argentina/)
 - [**Philippines**](philippines/)
 - [**Sri Lanka** (in English)](sri-lanka/)
+- [**Vietnam**](vietnam/)
 
 *instructions/list of changes for localisation can be found [here](localisation-changes.md)*
 
