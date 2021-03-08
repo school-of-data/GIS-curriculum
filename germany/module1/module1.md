@@ -175,8 +175,7 @@ Abbildung 1.3. Teile der QGIS-Oberfläche
 Einer der Vorteile von QGIS ist die Anpassungsfähigkeit, die es seinen Benutzern bietet. Diese Anpassungsfähigkeit beginnt mit der Benutzeroberfläche. Indem man einige Einstellungen bearbeitet und einige Teile der Oberfläche verschiebt, kann man ein QGIS haben, das so aussieht:
 
 
-[TODO: Translate and localise in one go]
-![QGIS interface with some customizations](media/qgis-interface-custom.png "QGIS interface with some customizations")
+![QGIS-Oberfläche mit einigen Anpassungen](media/qgis-interface-custom.png)
 
 Abbildung 1.4. Die QGIS-Oberfläche mit einigen Anpassungen
 
@@ -188,21 +187,20 @@ Abbildung 1.4. Die QGIS-Oberfläche mit einigen Anpassungen
 
 ![QGIS öffnen und auf das Menü Ansicht klicken](media/ex01-01.png "QGIS öffnen und auf das Menü Ansicht klicken")
 
-3. Beobachten Sie das Menü **Panels**
+3. Werfen Sie einen Blick auf das Menü **Bedienfelder**
 
-![Beobachten Sie das Menü "Panels"](media/ex01-02.png "Beobachten Sie das Menü "Panels"")
+![Das Menü "Bedienfelder"](media/ex01-02.png)
 
-4. Beobachten Sie das Menü **Symbolleisten**
+4. Werfen Sie einen Blick auf das Menü **Werkzeugkästen**
 
-![Beobachten Sie das Menü Symbolleisten](media/ex01-03.png "Beobachten Sie das Menü Symbolleisten")
+![Das Menü Werkzeugkästen](media/ex01-03.png)
 
-5. Wählen Sie die **Symbolleisten** und **Panels** aus, die in der Benutzeroberfläche angezeigt werden sollen. Einige der nützlichen Bedienfelder sind das **Ebenenstyling** und die **Bearbeitungssymbolleiste**.
-6. Verschieben Sie die **Symbolleisten** und **Bedienfelder** an die Positionen, die für Sie am sinnvollsten sind
+5. Wählen Sie die **Werkzeugkästen** und **Bedienfelder** aus, die in der Benutzeroberfläche angezeigt werden sollen. Einige der nützlichen Bedienfelder sind das **Layergestaltung** und die **Layer**.
+6. Verschieben Sie die **Werkzeugkästen** und **Bedienfelder** an die Positionen, die für Sie am sinnvollsten sind
 
-**Resetting the QGIS Interface**
+**Zurücksetzen der QGIS-Oberfläche**
 
-To reset your display to the default settings, go to**: Settings ‣ Options ‣ System Tab ‣ Settings ‣ Reset** button and restart QGIS
-[/ END TODO]
+Um die QGIS-Oberfläche zurückzusetzen, gehen Sie in die globalen QGIS-Einstellungen und wählen Sie dann **: System ‣ Einstellungen ‣ Benutzeroberfläche zurücksetzen**. Nach einem Neustart ist die Oberfläche wieder im Ausgangszustand.
 
 
 #### **Quizfragen**

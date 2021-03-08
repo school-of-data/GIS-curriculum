@@ -742,7 +742,7 @@ Mit dem in Modul 4 erworbenen Wissen können Sie den SRTM-Layer nach diesen Kate
 
 Abbildung 9.25 - SRTM Daten stylisiert als Einkanalpseudofarbe)
 
-Um die Anzahl der Menschen auf Basis der Rasterdaten HRSL zu berechnen, die in der Provinz Pampanga in einer Höhe von bis zu 200 Metern leben, müssen wir sehen, welche Pixel in jede dieser Kategorien fallen. Dazu werden wir den **Rasterrechner** verwenden. Dabei handelt es sich um eine Funktionalität, die es ermöglicht, Berechnungen auf der Grundlage vorhandener Rasterpixelwerte durchzuführen. Die Ergebnisse werden in einen neuen Raster Layer in einem GDAL[^5]-unterstützten Format geschrieben.
+Um die Anzahl der Menschen auf Basis der Rasterdaten HRSL zu berechnen, die in Mittelsachsen in einer Höhe von bis zu 200 Metern leben, müssen wir sehen, welche Pixel in jede dieser Kategorien fallen. Dazu werden wir den **Rasterrechner** verwenden. Dabei handelt es sich um eine Funktionalität, die es ermöglicht, Berechnungen auf der Grundlage vorhandener Rasterpixelwerte durchzuführen. Die Ergebnisse werden in einen neuen Raster Layer in einem GDAL[^5]-unterstützten Format geschrieben.
 
 Es gibt mehrere Möglichkeiten, den Rasterkalklulator in QGIS zu öffnen. Sie können dies über die Menüleiste **Raster ‣ Rasterrechner** tun oder indem Sie in den Verarbeitungswerkzeugen nach "Calculator" suchen. Wenn Sie den Rechner über die Verarbeitsungswerkzuge geöffent, haben, dann sollten Sie folgendes Fesnter sehen:
 
@@ -1040,7 +1040,7 @@ Abbildung 9.53a - Rasterpixel in Punkte
 
 Abbildung 9.53b - Ausführen des Algorithmus Rasterpixel in Punkte
 
-In Anbetracht der Ausdehnung Ihres Untersuchungsgebiets kann dieser Vorgang sehr viel Zeit in Anspruch nehmen. Abbildung 9.54 zeigt, wie viele Punkte wir für die Provinz Pampanga erhalten haben.
+In Anbetracht der Ausdehnung Ihres Untersuchungsgebiets kann dieser Vorgang sehr viel Zeit in Anspruch nehmen. Abbildung 9.54 zeigt, wie viele Punkte wir für unser Betrachtungsgebiet haben.
 
 
 ![](media/fig954.png)

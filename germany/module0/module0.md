@@ -263,17 +263,18 @@ Gängige EPSG-Codes sind:
 
 * **EPSG:4326** - WGS 84, Breiten-/Längenkoordinatensystem, das unter anderem vom Global Positioning System (GPS) verwendet wird.
 * **EPSG:3857** - Web-Mercator-Projektion, die von vielen webbasierten Kartentools wie OpenStreetMap und Google Maps für die Anzeige verwendet wird
-* **EPSG:32650 bis EPSG 32653** - WGS 84 / Universal Transverse Mercator (UTM) Zone 50N bis 53N. Auf den Philippinen verwendete UTM-Zonen
-* **EPSG:4683** - Philippinisches Referenzsystem von 1992
+* **EPSG:25833 und EPSG 5650** - ETRS 89 / Universal Transverse Mercator (UTM) Zone 33N. Übliche Referenzsystem für den Osten Deutschlands. Einmal mit und einmal ohne den 33. Prefix in den Koordinaten.
+* **EPSG:3398 und EPSG:3399** - RD/83 / 3-degree Gauss-Krüger zone 4 - ehemals vielverwendete Bezugssystem in Deutschland
+
+Da wir uns in diesem Curriculum primär mit der Region Mittelsachsen beschäftigen werden, empfiehlt sich ein Blick auf [dieses PDF mit üblichen EPSG-Codes vom Staatsbetrieb Geobasisinformation und Vermessung Sachsen](https://www.landesvermessung.sachsen.de/prod_fest_raum_fest/EPSG-Code-Tabelle.pdf).
 
 
 #### **Quizfragen**
 
-[TODO: Check answers again]
 1. Welche Art von Kartenprojektion eignet sich am besten für die folgenden Anwendungsfälle?
     1. eine Karte für allgemeine Zwecke, die ansprechend aussehen soll -- ***Kompromiss***
-    2. eine Karte, die eine Flächenanalyse zwischen verschiedenen Orten zeigt -- ***Flächengleichheit oder Authalik***
-    3. eine Karte, die einen Vergleich einer 10-km-Pufferzone von verschiedenen Standorten zeigt -- ***equidistant***
+    2. eine Karte, die eine Flächenanalyse zwischen verschiedenen Orten zeigt -- ***Flächentreu***
+    3. eine Karte, die einen Vergleich einer 10-km-Pufferzone von verschiedenen Standorten zeigt -- ***Längentreu***
 
 2. Welche Art von Koordinatenreferenzsystem (geografisch oder projiziert) ist für die folgenden Anwendungsfälle am besten geeignet?
     1. Darstellung der Lage von Punkten unter Verwendung von GPS -- ***Geografisches Koordinatenreferenzsystem***
@@ -281,7 +282,7 @@ Gängige EPSG-Codes sind:
 
 3. Richtig oder falsch -- Es ist möglich, die folgenden Kartenmerkmale zusammen in einer Karte zu erhalten:
     1. Fläche und Form -- ***Falsch***
-    2. Entfernung und Richtung -- ***Wahr***
+    2. Entfernung und Richtung -- ***Richtig***
 
 
 ### Phase 2: Räumliche Datentypen

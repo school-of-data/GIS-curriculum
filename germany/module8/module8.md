@@ -492,7 +492,7 @@ Abbildung 8.27b - Ergebnis der Zuschneiden-Funktionalität
 
 **Thiessen (Voronoi)-Polygone**: Stellen Sie sich vor, Sie müssen eine Reihe von Verwaltungsentscheidungen in Ihrem Bezirk treffen, die darauf basieren, wie viele Schulen es gibt und welche spezifischen Bereiche sie bedienen. Eine raumbezogene Analyse kann dabei hilfreich sein. Sie können damit beginnen, die Thiessen-Polygone zu berechnen. Ausgehend von einer Fläche, die mindestens zwei Punkte enthält, ist ein Thiessen-Polygon eine 2-dimensionale Form, deren Grenzen den gesamten Raum enthalten, der näher an einem Punkt innerhalb der Fläche liegt als an jedem anderen Punkt außerhalb der Fläche. Ein gutes Anwendungsbeispiel ist die Meteorologie, wo Wetterstationen diskrete Punkte sind, die gesammelten Informationen aber als auf der Fläche gemessen gelten, basierend auf den Thiessen-Polygonen. 
 
-Um die obige Frage zu beantworten, werden wir den Algorithmus nur für Punkte ausführen, die das Attribut Schule am Typ haben. Nehmen Sie also die Auswahl wie in Modul 6 beschrieben vor. Sie sollten 88 Features auf dem Layer pois_cleaned ausgewählt haben. Gehen Sie zu **Vektor ‣ Geometrie-Werkzeuge ‣ Voronoi-Polygone..** Nachdem Sie die Parameter eingestellt haben - wählen Sie den Punkt-Layer, für den die Voronoi-Polygone berechnet werden sollen, und eine 30-prozentige Erweiterung, so dass die gesamte Provinz Pampanga enthalten ist, sollten Sie ein Ergebnis wie in Abbildung 8.28d sehen. Sollten Sie dabei die Fehlermeldung bekommen, dass die Funktion nur auf Objekte des Typs "Point" und nicht "Multipoint" angewandt werden kann, wählen sie "Vektor > Gemoetrie-Werkzeuge > Mehr- zu eindeutig" und wenden sie den Voronoi-Algorithmus auf den neuen Layer an.
+Um die obige Frage zu beantworten, werden wir den Algorithmus nur für Punkte ausführen, die das Attribut Schule am Typ haben. Nehmen Sie also die Auswahl wie in Modul 6 beschrieben vor. Sie sollten 88 Features auf dem Layer pois_cleaned ausgewählt haben. Gehen Sie zu **Vektor ‣ Geometrie-Werkzeuge ‣ Voronoi-Polygone..** Nachdem Sie die Parameter eingestellt haben - wählen Sie den Punkt-Layer, für den die Voronoi-Polygone berechnet werden sollen, und eine 30-prozentige Erweiterung, so dass das gesamte Betrachtungsgebiet enthalten ist, sollten Sie ein Ergebnis wie in Abbildung 8.28d sehen. Sollten Sie dabei die Fehlermeldung bekommen, dass die Funktion nur auf Objekte des Typs "Point" und nicht "Multipoint" angewandt werden kann, wählen sie "Vektor > Gemoetrie-Werkzeuge > Mehr- zu eindeutig" und wenden sie den Voronoi-Algorithmus auf den neuen Layer an.
 
 
 ![Filtern des POI-Layer nach Schulen](media/fig828_a.png)
@@ -815,7 +815,7 @@ Als nächstes werden wir diese Werte für jeden der 7 Tage interpolieren, um ein
 
 Stellen Sie die folgenden Parameter ein: 
 * Abstandskoeffizient: 2
-* Ausdehnung: Pampanga_admin_boundary
+* Ausdehnung: Mittelsachsen
 * Größe des Ausgaberasters: 50. 
 
 Ihre Parameter sollten wie in der folgenden Abbildung 8.46 aussehen.
