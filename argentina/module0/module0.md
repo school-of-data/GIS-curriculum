@@ -2,6 +2,8 @@
 
 **Autor**: Ben Hur
 
+**Traductora**: Malena
+
 ## Introducción Pedagógica
 
 Este módulo sirve como una introducción suave a los conceptos geográficos necesarios para trabajar con sistemas de información geográfica (SIG). Al final de este módulo, los estudiantes deberán comprender los siguientes conceptos:

@@ -1,6 +1,6 @@
 # Module 5 - Making Maps
 
-**Author**: Ketty 
+**Author**: Ketty, Ben Hur
 
 
 ## Pedagogical Introduction
