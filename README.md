@@ -7,6 +7,7 @@
 - [**Vietnam**](vietnam/)
 
 *instructions/list of changes for localisation can be found [here](localisation-changes.md)*
+*status of localisatons can be found [here](status-tracker.md)*
 
 ## Modules
 - **Module 0**: Gentle Introduction to GIS concepts
