@@ -1,6 +1,6 @@
 # Module 4 - Styling Layers
 
-**Author**: Ketty
+**Author**: Ketty, Ben Hur
 
 ## Pedagogical Introduction
 

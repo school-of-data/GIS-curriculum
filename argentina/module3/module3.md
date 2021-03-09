@@ -1,6 +1,6 @@
 # Módulo 3 - OpenStreetMap y la Capa de Alta Resolución de Asentamientos 
 
-**Autor**: Ben
+**Autor**: Ben Hur
 
 **Traductora**: Malena
 

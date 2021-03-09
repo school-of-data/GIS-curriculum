@@ -1,6 +1,6 @@
 # Module 7 - Creating and Editing Layers
 
-**Author**: Ketty
+**Author**: Ketty, Ben Hur
 
 ## Pedagogical Introduction
 

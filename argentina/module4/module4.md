@@ -1,7 +1,8 @@
-**Módulo 4 - Estilo de Capas (Styling Layers)**
+# Módulo 4 - Estilo de Capas (Styling Layers)
 
-Autor: Ketty
+**Autor:** Ketty, Ben Hur
 
+**Traductora**: Malena
 
 ## Introducción pedagógica
 
