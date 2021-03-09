@@ -1,6 +1,35 @@
 ## CURRENT STATUS OF TRANSLATIONS AND LOCALISATIONS ON THIS REPO
 
+- **Complete:**
+    - Argentina *(module 0-5)*
+    - Philippines *(module 0-10)*
+    - Sri Lanka *(module 0-8)*
+- **For localisation:** 
+    - Australia *(module 0-10)*
+    - Argentina *(module 6-7)*
+    - Bangladesh *(module 0-10)*
+    - Ethiopia *(module 0-10)*
+    - Ghana *(module 0-10)*
+    - India *(module 0-10)*
+    - Kenya *(module 0-10)*
+    - Mexico *(module 0-7)*
+    - Nigeria *(module 0-10)*
+    - South Africa *(module 0-10)*
+    - Sri Lanka *(module 9-10)*
+    - Vietnam *(module 0, 6)*
+- **For translation + localisation:** 
+    - Argentina *(module 8-10)*
+    - Brazil *(module 0-10)*
+    - Egypt *(module 0-10)*
+    - Germany *(module 0-10)*
+    - Mexico *(module 8-10)*
+    - Vietnam *(module 1-5, 7-10)*
+
+
+## TABLE/TRACKER
+
 ### Legend
+
 **C : Complete** - module has been translated and localised (i.e. screenshots, exercises, and examples use local data)
 
 **L: For localisation** - translation is complete but still needs to be localised
@@ -24,4 +53,4 @@
 | **Philippines**  |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **South Africa** |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Sri Lanka**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     L    |     L     |
-| **Vietnam **     |     L    |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |     L    |   T, L   |   T, L   |   T, L   |    T, L   |
+| **Vietnam**     |     L    |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |     L    |   T, L   |   T, L   |   T, L   |    T, L   |
