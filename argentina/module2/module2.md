@@ -47,11 +47,7 @@ Manual de entrenamiento en QGIS - [https://docs.qgis.org/3.16/en/docs/training_m
 
 ## Introducción Temática
 
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
-
+![Multiple layer analysis in GIS](media/spatial-layers.jpg "Multiple layer analysis in GIS")
 
 Figura 1. Una superposición de mapa que contiene diferentes capas y tipos de datos (https://www.lexgeo.com/arquitecturaenterreno/)
 

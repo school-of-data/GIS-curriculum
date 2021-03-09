@@ -2,8 +2,6 @@
 
 **Autor:** Ketty, Ben Hur
 
-**Traductora**: Malena
-
 ## Introducción pedagógica
 
 Este módulo está diseñado para enseñarle cómo cambiar la apariencia visual de un mapa seleccionando los símbolos apropiados, los colores del mapa y aplicando los efectos apropiados. Al final del módulo, debe conocer conceptos como simbología de mapas y estilos de mapas. Además, aprenderá las siguientes habilidades;

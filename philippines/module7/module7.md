@@ -63,8 +63,7 @@ Digitising, as you might have guessed, is the art (or science) of creating digit
 
 #### **Creating a new GeoPackage layer**
 
-1. To create a new GeoPackage layer, press the New GeoPackage Layer button ![alt_text](media/geopackage-button.png "image_tooltip")
- in the Layer ‣ Create Layer menu or from the Datasource Manager toolbar. The New GeoPackage Layer dialog will be displayed as shown in Figure 7.3.
+1. To create a new GeoPackage layer, press the New GeoPackage Layer button ![alt_text](media/geopackage-button.png "image_tooltip")  in the Layer ‣ Create Layer menu or from the Datasource Manager toolbar. The New GeoPackage Layer dialog will be displayed as shown in Figure 7.3.
 
 ![New GeoPackage Layer dialogue](media/new-geopackage-dialog.png "New GeoPackage Layer dialogue")
 
@@ -98,9 +97,10 @@ Figure 7.4: New shapefile layer dialogue
 3. Next, indicate the File encoding of the data
 4. Choose the Geometry type of the layer: No Geometry (resulting in a .DBF format file), point, multipoint, line or polygon
 5. Specify whether the geometry should have additional dimensions: None, Z (+ M values) or M values
-6. Specify the coordinate reference system using the ![alt_text](media/mActionSetProjection.png "image_tooltip")  button, you may select the universal WGS 84 which is well suited for web mapping projects across the globe
+6. Specify the coordinate reference system using the ![alt_text](media/mActionSetProjection.png "image_tooltip") button, you may select the universal WGS 84 which is well suited for web mapping projects across the globe
 
 7. To add fields to the layer you are creating:
+
     1. Enter the Name of the field
     2. Select the data Type. Only Decimal number, Whole number, Text data and Date attributes are supported.
     3. Depending on the selected data format, enter the Length and Precision.
@@ -168,7 +168,7 @@ From left to right on the image above, they are:
 
 We want to add a new feature.
 
-11.  Click on the _Add Feature_ ![alt_text](media/add-feature.png "image_tooltip")  button to start digitizing. We’ll digitize the buildings
+11.  Click on the _Add Feature_ ![alt_text](media/add-feature.png "image_tooltip") button to start digitizing. We’ll digitize the buildings
 12. Start by clicking on a point somewhere along the edge of the building
 13. Place more points by clicking further along the edge, until the shape you’re drawing completely covers the field. This is very similar to drawing a polygon. The beginning vertex and end vertex must touch, otherwise it remains a line.
 14. To place the last point, **right-click where you want it to be**. This will finalise the feature and bring up the Attributes dialog.
@@ -181,7 +181,6 @@ Figure 7.8.1: Digitizing new feature
 ![Fill in the attribute values](media/digitize-2.png "Fill in the attribute values")
 
 Figure 7.8.2: Adding the attributes
-
 
 16. Click _OK_. You’ve created a new feature!
 
@@ -289,7 +288,7 @@ Just to be safe, always have at least one more than the minimum to add redundanc
 6. Click OK.
 7. The map contains several cross-hairs marking the coordinates in the map, we will use those to georeference this image. You can use the zooming and panning tools as you usually do in QGIS to inspect the image in the Georeferencer’s window.
 8. Zoom in to the left lower corner of the map and note that there is a cross-hair with a coordinate pair, X and Y, that as mentioned before are in the CRS, PRS 1992 also written as PRS 92, as referenced in the legend of the topo map.
-9. Click the Add point button ![Add Point](media/add-point.png "Add Point")  and click in the intersection of the cross-hairs (pan and zoom as needed).
+9. Click the Add point button ![Add Point](media/add-point.png "Add Point") and click in the intersection of the cross-hairs (pan and zoom as needed).
 10. In the Enter map coordinates dialogue write the coordinates that appear in the map (Y: 14° 45’ 00’’ and X: 120° 30’ 00’’).
 
 ![Select GCP](media/georef-1.png "Select GCP")

@@ -2,8 +2,6 @@
 
 **Autor:** Ketty, Ben Hur
 
-**Traductora**: Malena
-
 ## Introducción Pedagógica
 
 Este módulo le proporcionará una descripción general de los pasos comunes necesarios para trabajar con la tabla de atributos y los atributos de capa en QGIS. Al final del módulo, podrá comprender los siguientes conceptos;

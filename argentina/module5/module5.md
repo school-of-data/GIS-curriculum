@@ -2,8 +2,6 @@
 
 **Autor:** Ketty, Ben Hur
 
-**Traductora**: Malena
-
 ## Introducción Pedagógica
 
 Este módulo le proporcionará una descripción general de los pasos comunes necesarios para completar un mapa en QGIS. Al final del módulo, los participantes conocerán los siguientes conceptos;
