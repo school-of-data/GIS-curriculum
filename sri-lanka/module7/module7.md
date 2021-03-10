@@ -8,6 +8,8 @@ This module is designed to teach you how to use QGIS tools to create a new GIS l
 
 *   Digitizing 
 *   Georeferencing
+
+## Required tools and resources
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
