@@ -1,7 +1,6 @@
 # Modul 4 - Layer-Styling
 
-**Autor**: Ketty
-**Übersetzung**: Knut Hühne
+**Autor:in**: Ketty
 
 ## Pädagogische Einführung
 

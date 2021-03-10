@@ -1,7 +1,6 @@
 # **Modul 8 - Vektorverarbeitung und -analyse**
 
-**Autor**: Codrina
-**Übersetzung**: Knut Hühne
+**Autor:in**: Codrina
 
 ## Pädagogische Einführung
 

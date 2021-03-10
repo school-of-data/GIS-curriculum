@@ -1,7 +1,6 @@
 # Modul 0 - Sanfte Einführung in GIS-Konzepte
 
-**Autor**: Ben Hur
-**Übersetzung**: Knut Hühne
+**Autor:in**: Ben Hur
 
 ## Pädagogische Einführung
 

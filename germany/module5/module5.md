@@ -1,6 +1,6 @@
 # Modul 5 - Karten erstellen
 
-**Autor**: Ketty
+**Autor:in**: Ketty
 
 
 ## Pädagogische Einführung

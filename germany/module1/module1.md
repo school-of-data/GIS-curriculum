@@ -1,7 +1,6 @@
 # Modul 1 - Einführung in QGIS
 
-**Autor**: Ben Hur
-**Übersetzung**: Knut Hühne
+**Autor:in**: Ben Hur
 
 ## Pädagogische Einführung
 

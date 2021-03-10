@@ -1,7 +1,6 @@
 # **Modul 9 - Rasterverarbeitung und -analyse**
 
-**Autor**: Codrina
-**Übersetzung**: Knut Hühne
+**Autor:in**: Codrina
 
 ## Pädagogische Einführung
 
@@ -519,7 +518,7 @@ Bild 9.15b - Parameter des Merge-Verarbeitungsalgorithmus
 Abbildung 9.15c - Zusammengeführte DSM-Daten
 
 
-Nun können wir mit der Reprojektion des Layers fortfahren. Gehen Sie zu **Raster ‣ Projektion ‣ Transformieren (reporjizieren))** und stellen Sie die bekannten Parameter ein: 
+Nun können wir mit der Reprojektion des Layers fortfahren. Gehen Sie zu **Raster ‣ Projektion ‣ Transformieren (reprojizieren))** und stellen Sie die bekannten Parameter ein: 
 
    * Quell-CRS: EPSG:4326
    * Ziel-CRS: EPSG:25833 

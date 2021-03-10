@@ -1,7 +1,6 @@
 # Modul 3 - OpenStreetMap und der High Resolution Settlement Layer
 
-**Autor**: Ben Hur
-**Übersetzung**: Knut Hühne
+**Autor:in**: Ben Hur
 
 
 ## Pädagogische Einführung

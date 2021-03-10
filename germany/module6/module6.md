@@ -1,7 +1,6 @@
 # Modul 6 - Layer-Attribute
 
-**Autor**: Ketty
-**Übersetzung**: Knut Hühne
+**Autor:in**: Ketty
 
 ## Pädagogische Einführung
 

@@ -1,6 +1,6 @@
 # Modul 10 - QGIS-Erweiterungen / -Plugins
 
-**Autor**: Codrina
+**Autor:in**: Codrina
 
 
 ## Pädagogische Einführung

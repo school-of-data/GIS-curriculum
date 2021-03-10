@@ -1,7 +1,6 @@
 # Modul 7 - Erstellen und Bearbeiten von Layern
 
-**Autor:**: Ketty
-**Übersetzung:** Knut Hühne
+**Autor:in**: Ketty
 
 ## Pädagogische Einführung
 
