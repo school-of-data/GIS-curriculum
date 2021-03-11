@@ -2,6 +2,7 @@
 
 - **Complete:**
     - Argentina *(module 0-5)*
+    - Germany *(module 0-10)*
     - Philippines *(module 0-10)*
     - Sri Lanka *(module 0-8)*
 - **For localisation:** 
@@ -21,7 +22,6 @@
     - Argentina *(module 8-10)*
     - Brazil *(module 0-10)*
     - Egypt *(module 0-10)*
-    - Germany *(module 0-10)*
     - Mexico *(module 8-10)*
     - Vietnam *(module 1-5, 7-10)*
 
@@ -44,7 +44,7 @@
 | **Brazil**       |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |    T, L   |
 | **Egypt**        |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |    T, L   |
 | **Ethiopia**     |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
-| **Germany**      |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |    T, L   |
+| **Germany**      |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **Ghana**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **India**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Kenya**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
