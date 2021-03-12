@@ -26,10 +26,10 @@ Você usará a calculadora de campo e o gerador de expressão QGIS para executar
 * Computador
 * Conexão com a Internet
 * QGIS 3.16 e superior
-* Camada limite administrativa Pampanga (dentro de [module6.gpkg](data/module6.gpkg))
-* Clínicas Pampanga (dentro de [module6.gpkg](data/module6.gpkg))
-* Províncias PHL (dentro de [module6.gpkg](data/module6.gpkg))
-* [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+* Camada de limite administrativo do Rio de Janeiro `rj_capital` (dentro de [module6.gpkg](data/module6.gpkg))
+* Clínicas do Rio de Janeiro `rj_clinics` (dentro de [module6.gpkg](data/module6.gpkg))
+* UFs do Brasil `br_ufs` (dentro de [module6.gpkg](data/module6.gpkg))
+* [RJ High Resolution Settlement Layer](data/hrsl_rj_capital_populacao.tif)
 
 
 ## Pré-requisitos
@@ -48,7 +48,7 @@ Você usará a calculadora de campo e o gerador de expressão QGIS para executar
 
 Vamos começar com um exemplo:
 
-Em alguns casos, por exemplo, para fins de planejamento de infraestrutura, você pode querer saber a área dos polígonos em uma camada. Se você tiver só um polígono, isso não será um problema. Mas e se você tiver muitos polígonos/áreas na camada? Calcular cada área uma a uma seria quase impossível. A camada de vetor de fronteira administrativa das Filipinas tem muitos polígonos, o que significa que seria um bom conjunto de dados para este tutorial. Vamos calcular a área de cada polígono de forma automatizada. No total, será calculada a área de 81 províncias.
+Em alguns casos, por exemplo, para fins de planejamento de infraestrutura, você pode querer saber a área dos polígonos em uma camada. Se você tiver só um polígono, isso não será um problema. Mas e se você tiver muitos polígonos/áreas na camada? Calcular cada área uma a uma seria quase impossível. A camada de vetor das Unidades Feterativas do Brasil tem muitos polígonos, o que significa que seria um bom conjunto de dados para este tutorial. Vamos calcular a área de cada polígono de forma automatizada. No total, será calculada a área de 27 UFs.
 
 
 ## Detalhamento dos conceitos
@@ -110,7 +110,7 @@ Além disso, outros conceitos como a funcionalidade de calculadora de campo na t
 A tabela de atributos exibe informações sobre os recursos de uma camada selecionada. Cada linha da tabela representa uma feição (com ou sem geometria) e cada coluna contém uma informação específica sobre a feição. As feições da tabela podem ser pesquisadas, selecionadas, movidas ou mesmo editadas.
 
 
-1. Carregue a camada vetorial de províncias PHL (encontrada em [module6.gpkg](data/module6.gpkg)) no QGIS. Você pode descobrir quantas feições estão no recurso atual **clicando com o botão direito do mouse na camada no painel Camadas ‣ Mostrar contagem de feições**. Como você pode ver abaixo, a camada vetorial tem muitas feições. No total, são 81 feições correspondentes a 81 províncias.
+1. Carregue a camada vetorial de UFs PHL (encontrada em [module6.gpkg](data/module6.gpkg)) no QGIS. Você pode descobrir quantas feições estão no recurso atual **clicando com o botão direito do mouse na camada no painel Camadas ‣ Mostrar contagem de feições**. Como você pode ver abaixo, a camada vetorial tem muitas feições. No total, são 27 feições correspondentes a 27 UFs.
 
 ![Vários polígonos](media/many-polygons.png "Vários polígonos")
 
@@ -130,7 +130,7 @@ Se você não quiser que a tabela de atributos seja uma janela flutuante, mas si
 Figura 6.3: Tabela de atributos ancorada
 
 
-3. Para cálculos de área, o Sistema de Referência de Coordenadas deve ser projetado. Isso permite calcular as distâncias corretamente. Lembre-se, nosso interesse é calcular automaticamente a área para cada uma das 81 províncias. Verifique o Sistema de Referência de Coordenadas da camada vetorial. Se for um sistema de referência de coordenadas geográficas, então reprojete a camada para um sistema de coordenadas projetadas. Verifique as diferentes projeções no site [EPSG](https://epsg.io/?q=Philippines%20kind%3APROJCRS). Estas são as Filipinas, usaremos [PRS92/Filipinas Zona 3](https://epsg.io/3123), EPSG: 3123. Dos módulos anteriores, onde as projeções de mapas são amplamente discutidas, você já deve saber que as projeções de mapas são aplicadas em relação a um local específico na Terra.
+3. Para cálculos de área, o Sistema de Referência de Coordenadas deve ser projetado. Isso permite calcular as distâncias corretamente. Lembre-se, nosso interesse é calcular automaticamente a área para cada uma das 27 UFs. Verifique o Sistema de Referência de Coordenadas da camada vetorial. Se for um sistema de referência de coordenadas geográficas, então reprojete a camada para um sistema de coordenadas projetadas. Verifique as diferentes projeções no site [EPSG](https://epsg.io/?q=Brazil+kind%3APROJCRS). No Brasil, usaremos [SIRGAS 2000 / Brazil Mercator](https://epsg.io/5641), EPSG: 5641. Dos módulos anteriores, onde as projeções de mapas são amplamente discutidas, você já deve saber que as projeções de mapas são aplicadas em relação a um local específico na Terra.
 
 4. Verifique as configurações do projeto; Acesse: **Projeto ‣ Propriedades Propriedades ‣ Geral**.
 
@@ -138,10 +138,10 @@ Figura 6.3: Tabela de atributos ancorada
 
 Figura 6.4: Configurações gerais
 
-5. Em seguida, clique no botão **Abrir calculadora de campo** ![Alt_text](media/field_calculator.png "image_tooltip") no botão da barra de ferramentas. A caixa de diálogo da calculadora de campo será aberta; preencha o nome do campo de saída, neste caso será 'AREA (SQ KM)'. Escolha o número decimal (duplo) no tipo de campo de saída. Altere a precisão para 2 casas decimais. Para calcular a área, use a seguinte expressão:
+5. Em seguida, clique no botão **Abrir calculadora de campo** ![Alt_text](media/field_calculator.png "image_tooltip") no botão da barra de ferramentas. A caixa de diálogo da calculadora de campo será aberta; preencha o nome do campo de saída, neste caso será 'area_km2'. Escolha o número decimal (real) no tipo de campo de saída. Altere a precisão para 2 casas decimais. Para calcular a área, use a seguinte expressão:
 
 ```
-$area/1000000`
+$area/1000000
 ```
 
 Você pode encontrar esta expressão em **Geometria**. Clique em OK e irá calcular automaticamente a área de cada polígono. Observe que o cálculo da área depende do sistema de referência de coordenadas usado, portanto, você pode ter resultados diferentes dependendo do CRS usado. Você também pode pesquisar e encontrar informações sobre expressões no lado direito da Calculadora de campo ou Construtor de expressões.
@@ -177,20 +177,19 @@ Figura 6.6: Nova tabela de atributos com novos campos e atributos
 
 #### **Conteúdo/Tutorial**
 
-Neste ponto, você pode notar que a tabela de atributos armazena dados espaciais e não espaciais. Neste tutorial, você descobrirá maneiras de trabalhar com dados da tabela de atributos. Por exemplo, usando expressões, você poderá selecionar Clínicas em Pampanga com uma unidade de emergência, usando os dados da tabela de atributos.
+Neste ponto, você pode notar que a tabela de atributos armazena dados espaciais e não espaciais. Neste tutorial, você descobrirá maneiras de trabalhar com dados da tabela de atributos. Por exemplo, usando expressões, você poderá selecionar Clínicas em no Rio de Janeiro com atendimento de emergência, usando os dados da tabela de atributos.
 
-1. Adicione os seguintes conjuntos de dados das Filipinas à tela do mapa QGIS:
+1. Adicione os seguintes conjuntos de dados à tela do mapa QGIS:
 
-* Camada de fronteira administrativa de Pampanga (dentro de [module6.gpkg](data/module6.gpkg))
-* Clínicas Pampanga (dentro de [module6.gpkg](data/module6.gpkg))
-* Províncias PHL (dentro de [module6.gpkg](dados /module6.gpkg))
-* [Camada de liquidação de alta resolução Pampanga](data/HRSL_Pampanga_Population.tif)
+* Camada de limite administrativo do Rio de Janeiro `rj_capital` (dentro de [module6.gpkg](data/module6.gpkg))
+* Clínicas do Rio de Janeiro `rj_clinics` (dentro de [module6.gpkg](data/module6.gpkg))
+* [RJ High Resolution Settlement Layer](data/hrsl_rj_capital_populacao.tif)
 
 ![Adicionar camadas diferentes](media/add-layers.png "Adicionar camadas diferentes")
 
 Figura 6.7: Adicionar camadas diferentes
 
-2. O a seleção será aplicada à camada Clínicas, portanto, abra a tabela de atributos da camada Clínica. Clique no botão selecionar recursos usando a expressão! [Alt_text](media/select_features_button.png "image_tooltip") e digite a seguinte expressão no construtor de expressão;
+2. O a seleção será aplicada à camada Clínicas, portanto, abra a tabela de atributos da camada Clínica. Clique no botão selecionar recursos usando a expressão ![Alt_text](media/select_features_button.png "image_tooltip") e digite a seguinte expressão no construtor de expressão;
 
 ```
 "amenity" = 'clinic' AND "emergency" = 'yes'
@@ -198,11 +197,11 @@ Figura 6.7: Adicionar camadas diferentes
 
 Você notará que a expressão tem uma série de predicados como o sinal de comparação (=), o predicado lógico (AND) e uma string que é colocada entre aspas simples (''). Existem também dois nomes de atributos (amenity, emergency) e seus valores (clinic, yes).
 
-![alt_text](media/select.png "image_tooltip")
+![select](media/select.png "select")
 
 Figura 6.8: Selecione pelo diálogo Construtor de Expressão
 
-3. Uma Clínica é selecionada. Você pode ver a seleção destacada em amarelo. A clínica selecionada também é destacada na tabela de atributos. Agora sabemos que há apenas uma clínica com serviço de emergência na província de Pampanga.
+3. 11 clínicas são selecionadas. Você pode ver a seleção destacada em amarelo. As clínicas selecionadas também são destacada na tabela de atributos. Agora sabemos que há 11 clínicas com serviço de emergência no Rio de Janeiro (no dados do OpenStreetMap, pelo menos).
 
 ![alt_text](media/selected-canvas.png "image_tooltip")
 
@@ -226,7 +225,7 @@ O desenvolvimento de uma expressão funcional começa com a compreensão de seus
 3. A tabela de atributos armazena apenas dados não espaciais.
 
 
-#### ** Respostas do questionário **
+#### **Respostas do questionário**
 
 1. Verdadeiro
 2. Verdadeiro
