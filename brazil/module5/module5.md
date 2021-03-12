@@ -46,7 +46,7 @@ Além disso, você terá aprendido as seguintes habilidades;
 
 Vamos começar com um exemplo:
 
-Para fazer um mapa, você precisará de um tópico que gostaria de entender melhor, por exemplo 'Distribuição espacial de clínicas (equipamentos de saúde) no estado do Rio de Janeiro'. Você notará que o tópico fornece um tema para explorar e a localização geográfica. Munido com essas informações e os dados relevantes que permitem que você explore mais a questão, você pode prosseguir para elaborar um mapa.
+Para fazer um mapa, você precisará de um tópico que gostaria de entender melhor, por exemplo 'Distribuição espacial de clínicas (equipamentos de saúde) no Rio de Janeiro'. Você notará que o tópico fornece um tema para explorar e a localização geográfica. Munido com essas informações e os dados relevantes que permitem que você explore mais a questão, você pode prosseguir para elaborar um mapa.
 
 ### Detalhamento dos conceitos
 
@@ -88,13 +88,13 @@ Figura 5.3: Tela do mapa exportada como imagem
 
 #### **Segundo método: Exportar a tela do mapa para a impressão layout**
 
-1. Neste tutorial, faremos um mapa mostrando a 1.) localização dos centros de saúde e 2.) densidade populacional do estado do Rio de Janeiro. As camadas de dados já devem ser adicionadas à tela do QGIS. As camadas podem então ser estilizadas para comunicar as informações dos seus dados.
+1. Neste tutorial, faremos um mapa mostrando a 1.) localização dos centros de saúde e 2.) densidade populacional do Rio de Janeiro. As camadas de dados já devem ser adicionadas à tela do QGIS. As camadas podem então ser estilizadas para comunicar as informações dos seus dados.
 
 ![Criando novo layout de impressão](media/new-print-layout.png "Criando novo layout de impressão")
 
 Figura 5.4: Criando novo layout de impressão
 
-2. A tela do mapa agora pode ser exportada para o layout de impressão. Clique no 'botão novo layout de impressão' ![Novo layout de impressão](media/newprint_composer.png "Novo layout de impressão"). Isso pode ser acessado através da barra de ferramentas. Como alternative, acesse usando a barra de menu 'Projetos'. Uma caixa de diálogo de título será aberta, solicitando que você digite o título do Layout de impressão. Digite 'Estado do Rio de Janeiro' e clique em OK.
+2. A tela do mapa agora pode ser exportada para o layout de impressão. Clique no 'botão novo layout de impressão' ![Novo layout de impressão](media/newprint_composer.png "Novo layout de impressão"). Isso pode ser acessado através da barra de ferramentas. Como alternative, acesse usando a barra de menu 'Projetos'. Uma caixa de diálogo de título será aberta, solicitando que você digite o título do Layout de impressão. Digite 'Rio de Janeiro' e clique em OK.
 
 ![Nomeando o layout de impressão](media/new-print-layout-name.png "Nomeando o layout de impressão")
 
