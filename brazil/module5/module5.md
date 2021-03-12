@@ -23,10 +23,10 @@ Além disso, você terá aprendido as seguintes habilidades;
 * Computador
 * Acesso à Internet
 * QGIS 3.16 ou posterior
-* Camada de limite administrativo Pampanga (dentro de [module5.gpkg](data/module5.gpkg))
-* Clínicas Pampanga (dentro de [module5.gpkg](data/module5.gpkg))
-* Províncias PHL (dentro de [module5.gpkg](data/module5.gpkg))
-* [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+* Camada de limite administrativo `rj_capital` (dentro de [module5.gpkg](data/module5.gpkg))
+* `rj_clinics` (dentro de [module5.gpkg](data/module5.gpkg))
+* Unidades Federativas do Brasil, `br_ufs` (dentro de [module5.gpkg](data/module5.gpkg))
+* [RJ High Resolution Settlement Layer](data/hrsl_rj_capital_populacao.tif)
 
 ## Pré-requisitos
 
@@ -46,7 +46,7 @@ Além disso, você terá aprendido as seguintes habilidades;
 
 Vamos começar com um exemplo:
 
-Para fazer um mapa, você precisará de um tópico que gostaria de entender melhor, por exemplo 'Distribuição espacial de clínicas na província de Pampanga, nas Filipinas'. Você notará que o tópico fornece um tema para explorar e a localização geográfica. Munido com essas informações e os dados relevantes que permitem que você explore mais a questão, você pode prosseguir para elaborar um mapa.
+Para fazer um mapa, você precisará de um tópico que gostaria de entender melhor, por exemplo 'Distribuição espacial de clínicas (equipamentos de saúde) no estado do Rio de Janeiro'. Você notará que o tópico fornece um tema para explorar e a localização geográfica. Munido com essas informações e os dados relevantes que permitem que você explore mais a questão, você pode prosseguir para elaborar um mapa.
 
 ### Detalhamento dos conceitos
 
@@ -88,13 +88,13 @@ Figura 5.3: Tela do mapa exportada como imagem
 
 #### **Segundo método: Exportar a tela do mapa para a impressão layout**
 
-1. Neste tutorial, faremos um mapa mostrando a 1.) localização dos centros de saúde e 2.) densidade populacional da província de Pampanga nas Filipinas. As camadas de dados já devem ser adicionadas à tela do QGIS. As camadas podem então ser estilizadas para comunicar as informações dos seus dados.
+1. Neste tutorial, faremos um mapa mostrando a 1.) localização dos centros de saúde e 2.) densidade populacional do estado do Rio de Janeiro. As camadas de dados já devem ser adicionadas à tela do QGIS. As camadas podem então ser estilizadas para comunicar as informações dos seus dados.
 
 ![Criando novo layout de impressão](media/new-print-layout.png "Criando novo layout de impressão")
 
 Figura 5.4: Criando novo layout de impressão
 
-2. A tela do mapa agora pode ser exportada para o layout de impressão. Clique no 'botão novo layout de impressão' ![Novo layout de impressão](media/newprint_composer.png "Novo layout de impressão"). Isso pode ser acessado através da barra de ferramentas. Como alternative, acesse usando a barra de menu 'Projetos'. Uma caixa de diálogo de título será aberta, solicitando que você digite o título do Layout de impressão. Digite 'Pampanga' e clique em OK.
+2. A tela do mapa agora pode ser exportada para o layout de impressão. Clique no 'botão novo layout de impressão' ![Novo layout de impressão](media/newprint_composer.png "Novo layout de impressão"). Isso pode ser acessado através da barra de ferramentas. Como alternative, acesse usando a barra de menu 'Projetos'. Uma caixa de diálogo de título será aberta, solicitando que você digite o título do Layout de impressão. Digite 'Estado do Rio de Janeiro' e clique em OK.
 
 ![Nomeando o layout de impressão](media/new-print-layout-name.png "Nomeando o layout de impressão")
 
@@ -102,7 +102,7 @@ Figura 5.5: Nomeando o layout de impressão
 
 3. O layout de impressão será aberto
 
-![A janela Layout de impressão](mídia/new-print-layout-window.png "A janela Layout de impressão")
+![A janela Layout de impressão](media/new-print-layout-window.png "A janela Layout de impressão")
 
 Figura 5.6: A janela Layout de impressão
 
@@ -158,7 +158,7 @@ Figura 5.9: Adicionar barra de escala ao mapa
 
 Figura 5.9: Adicionar legenda ao mapa
 
-![Atribuição](media/atribuição.png "Atribuição")
+![Atribuição](media/attribution.png "Atribuição")
 
 Figura 5.10: Adicionar atribuição ao mapa
 
@@ -170,7 +170,7 @@ Figura 5.10: Adicionar atribuição ao mapa
 
 Figura 5.10: Adicionar atribuição ao mapa
 
-![Mapa exportado como img.](Media/export-map.png "Mapa exportado como img.")
+![Mapa exportado como img.](media/exported-map.png "Mapa exportado como img.")
 
 Figura 5.11 : Mapa exportado como imagem
 
@@ -194,9 +194,9 @@ Figura 5.11 : Mapa exportado como imagem
 
 #### **Conteúdo/Tutorial**
 
-Se sua organização publica mapas impressos ou on-line, geralmente você precisa criar muitos mapas com o mesmo modelo - geralmente um para cada unidade administrativa ou região de interesse. Criar esses mapas manualmente pode levar muito tempo e, se você quiser atualizá-los regularmente, isso pode se tornar uma tarefa árdua. O QGIS tem uma ferramenta chamada Atlas que pode ajudá-lo a criar um modelo de mapa e publicar facilmente um grande número de mapas para diferentes regiões geográficas. Vamos tomar as diferentes províncias das Filipinas como exemplo, aqui estão os limites administrativos para as 81 províncias:
+Se sua organização publica mapas impressos ou on-line, geralmente você precisa criar muitos mapas com o mesmo modelo - geralmente um para cada unidade administrativa ou região de interesse. Criar esses mapas manualmente pode levar muito tempo e, se você quiser atualizá-los regularmente, isso pode se tornar uma tarefa árdua. O QGIS tem uma ferramenta chamada Atlas que pode ajudá-lo a criar um modelo de mapa e publicar facilmente um grande número de mapas para diferentes regiões geográficas. Vamos tomar as diferentes Unidades Federativas do Brasil como exemplo:
 
-![Camada de cobertura](media/atlas-cobertura.png "Camada de cobertura")
+![Camada de cobertura](media/atlas-coverage.png "Camada de cobertura")
 
 Figura 5.12: Camada de cobertura
 
@@ -204,7 +204,7 @@ Figura 5.12: Camada de cobertura
 
 Figura 5.13: Tabela de atributos
 
-1. Esta camada servirá como camada de cobertura externa, o que significa que o Atlas QGIS irá cirar um mapa para cada uma das feições dessa camada de cobertura. Ao todo, serão gerados 81 mapas.
+1. Esta camada servirá como camada de cobertura externa, o que significa que o Atlas QGIS irá cirar um mapa para cada uma das feições dessa camada de cobertura. Ao todo, serão gerados 27 mapas.
 
 2. Abra ou crie um novo Layout de impressão e adicione um mapa.
 
@@ -219,32 +219,32 @@ Figura 5.14: Layout de impressão do Atlas
 
 Figura 5.15: Geração Atlas
 
-3. A próxima etapa é escolher a camada de cobertura; A camada de cobertura é a camada de índice usada para criar cada página. Um mapa/página para o Atlas será gerada para cada feição na camada de cobertura. No nosso caso, usar a camada de cobertura PHL_provinces criará um mapa para cada uma das 81 províncias. O QGIS Atlas altera dinamicamente a extensão da visualização para cada recurso na camada de cobertura. Você pode optar por tornar a camada de cobertura oculta nos mapas que você cria (ou seja, a camada de cobertura não será visível no Layout de Impressão) e selecionar como nomear cada página do Atlas. Você também pode realizar alguma filtragem e classificação da camada de cobertura, se necessário. Para a **Saída**, você pode optar por ter um único arquivo como saída marcando a caixa de seleção **Exportar arquivo único quando possível**. Se desmarcado, você gerará um arquivo diferente por mapa.
+3. A próxima etapa é escolher a camada de cobertura; A camada de cobertura é a camada de índice usada para criar cada página. Um mapa/página para o Atlas será gerada para cada feição na camada de cobertura. No nosso caso, usar a camada de cobertura `br_ufs` criará um mapa para cada uma das 27 UFs. O QGIS Atlas altera dinamicamente a extensão da visualização para cada recurso na camada de cobertura. Você pode optar por tornar a camada de cobertura oculta nos mapas que você cria (ou seja, a camada de cobertura não será visível no Layout de Impressão) e selecionar como nomear cada página do Atlas. Você também pode realizar alguma filtragem e classificação da camada de cobertura, se necessário. Para a **Saída**, você pode optar por ter um único arquivo como saída marcando a caixa de seleção **Exportar arquivo único quando possível**. Se desmarcado, você gerará um arquivo diferente por mapa.
 
-![Selecionar camada de cobertura](media/cobertura-layer.png "Selecionar camada de cobertura")
+![Selecionar camada de cobertura](media/coverage-layer.png "Selecionar camada de cobertura")
 
 Figura 5.16: Selecionar camada de cobertura
 
 4. Agora que definimos a camada de cobertura, devemos dizer ao Layout de impressão para usar o atlas para controlar a extensão dos mapas (área visível no mapa imprimível) que iremos gerar. Na guia **Propriedades do item**, marque a caixa para **Controlado pelo Atlas**
 
-![Controlado pelo Atlas](media/atlas-driven.png "Controlado pelo Atlas")
+![Controlado pelo Atlas](media/atlas-controlled.png "Controlado pelo Atlas")
 
 Figura 5.17: Certifique-se de que a extensão do mapa é controlado pelo Atlas
 
-5. Para visualizar seu Atlas, clique no botão Visualizar Atlas ![Botão Visualizar Atlas](media/atlas-preview-btn.png "botão Visualizar Atlas") na barra de ferramentas Atlas. Isso mostrará os 81 mapas que você gerou. Use a barra de ferramentas do Atlas ![Barra de ferramentas do Atlas](media/atlas-toolbar-nav.png "Barra de ferramentas do Atlas") para navegar pelos mapas do Atlas.
+5. Para visualizar seu Atlas, clique no botão Visualizar Atlas ![Botão Visualizar Atlas](media/atlas-preview-btn.png "botão Visualizar Atlas") na barra de ferramentas Atlas. Isso mostrará os 27 mapas que você gerou. Use a barra de ferramentas do Atlas ![Barra de ferramentas do Atlas](media/atlas-toolbar-nav.png "Barra de ferramentas do Atlas") para navegar pelos mapas do Atlas.
 
 ![Atlas Preview](media/atlas-preview.png "Atlas Preview")
 
 Figura 5.18: Atlas Preview
 
-6. Você pode exportar os mapas do Atlas através do botão **Exportar Atlas** ![Botão Exportar Atlas](media/atlas -export-btn.png "Botão Exportar Atlas") como imagens ou PDFs. Selecione **Exportar Atlas como imagem**. Você deve gerar 81 mapas, e cada mapa mostrará a extensão de uma das províncias.
+6. Você pode exportar os mapas do Atlas através do botão **Exportar Atlas** ![Botão Exportar Atlas](media/atlas-export-btn.png "Botão Exportar Atlas") como imagens ou PDFs. Selecione **Exportar Atlas como imagem**. Você deve gerar 27 mapas, e cada mapa mostrará a extensão de uma das UFs.
 
 
 ![Resultado do Atlas](media/atlas-outputs.png "Resultado do Atlas")
 
 Figura 5.18: Resultado do Atlas
 
-7. **DICA**: Para este exemplo, mapeamos apenas a camada de cobertura. O poder do Atlas é quando mapeamos várias camadas. Por exemplo, temos as clínicas, rede de estradas e dados de densidade populacional para todo o país carregados como camadas no QGIS. Em seguida, gostaríamos de criar um mapa para cada uma das províncias mostrando essas mesmas camadas. Usar o Atlas exigiria que criássemos apenas um modelo de layout e deixássemos o Atlas lidar com a geração dos outros mapas com base na camada de cobertura que usamos.
+7. **DICA**: Para este exemplo, mapeamos apenas a camada de cobertura. O poder do Atlas é quando mapeamos várias camadas. Por exemplo, temos as clínicas, rede de estradas e dados de densidade populacional para todo o país carregados como camadas no QGIS. Em seguida, gostaríamos de criar um mapa para cada uma das UFs mostrando essas mesmas camadas. Usar o Atlas exigiria que criássemos apenas um modelo de layout e deixássemos o Atlas lidar com a geração dos outros mapas com base na camada de cobertura que usamos.
 
 
 8. **DICA**: Você pode usar as expressões QGIS e substituições definidas por dados para definir os outros elementos do mapa em seu Atlas para que eles também mudem dinamicamente, dependendo da feição da camada de cobertura que está sendo mapeado. Por exemplo, você pode usar uma expressão QGIS chamando o valor do campo NAME_1 em seu rótulo para que ele mude dinamicamente para exibir o valor de NAME_1 para a feição atual que está sendo mapeada.
