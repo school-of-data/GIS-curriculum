@@ -2,7 +2,7 @@
  
 **Tác giả**: Ben Hur
 
-**Dịch và bản địa hoá**: Quách Đồng Thắng
+**Biên dịch và bản địa hoá**: Quách Đồng Thắng
 
 ## Giới thệu chung
 

@@ -1,8 +1,8 @@
 # **Module 9 - Raster processing and analysis**
 
-**Author**: Codrina
+**Tác giả**: Codrina
 
-**Translator**: Quach Dong Thang
+**Biên dịch và bản địa hoá**: Quách Đồng Thắng
 
 ## Giới thiệu chung
 

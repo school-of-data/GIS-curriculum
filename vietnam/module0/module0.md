@@ -1,8 +1,8 @@
 # Module 0 – Giới thiệu sơ lược về GIS
 
-**Author**: Ben Hur
+**Tác giả**: Ben Hur
 
-**Người dịch và bản địa hoá**: Quách Đồng Thắng
+**Biên dịch và bản địa hoá**: Quách Đồng Thắng
 
 
 ## Giới thiệu chung

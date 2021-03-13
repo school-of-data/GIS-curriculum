@@ -1,6 +1,8 @@
 # Module 5 - Tạo bản đồ
 
-**Author**: Quách Đồng Thắng
+**Tác giả**: Ketty
+
+**Biên dịch và bản địa hoá**: Quách Đồng Thắng
 
 
 ## Giới thiệu

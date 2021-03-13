@@ -1,6 +1,8 @@
 # Module 10 - QGIS plugins
 
-**Author**: Codrina
+**Tác giả**: Codrina
+
+**Biên dịch và bản địa hoá**: Quách Đồng Thắng
 
 
 ## Giới thiệu chung
