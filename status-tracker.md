@@ -4,7 +4,7 @@
     - Argentina *(module 0-5)*
     - Germany *(module 0-10)*
     - Philippines *(module 0-10)*
-    - Sri Lanka *(module 0-8)*
+    - Sri Lanka *(module 0-10)*
 - **For localisation:** 
     - Australia *(module 0-10)*
     - Argentina *(module 6-7)*
@@ -16,7 +16,6 @@
     - Mexico *(module 0-7)*
     - Nigeria *(module 0-10)*
     - South Africa *(module 0-10)*
-    - Sri Lanka *(module 9-10)*
     - Vietnam *(module 0, 6)*
 - **For translation + localisation:** 
     - Argentina *(module 8-10)*
@@ -52,5 +51,5 @@
 | **Nigeria**      |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Philippines**  |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **South Africa** |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
-| **Sri Lanka**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     L    |     L     |
+| **Sri Lanka**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **Vietnam**     |     L    |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |     L    |   T, L   |   T, L   |   T, L   |    T, L   |

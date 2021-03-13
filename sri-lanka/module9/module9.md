@@ -545,92 +545,93 @@ A raster information HTML file should look like below. A HTML file can be open w
 ```
         Driver: GTiff/GeoTIFF
         Files: /Users/codrinamariailie/Google Drive/02_OK/Gov_Geospatial_Trainings/Data/module9/Reprojected_LandCover2019.tif
-        Size is 678, 570
+        Driver: GTiff/GeoTIFF
+        Size is 425, 295
         Coordinate System is:
-        PROJCRS["PRS92 / Philippines zone 3",
-            BASEGEOGCRS["PRS92",
-                DATUM["Philippine Reference System 1992",
-                    ELLIPSOID["Clarke 1866",6378206.4,294.978698213898,
+        PROJCRS["SLD99 / Sri Lanka Grid 1999",
+            BASEGEOGCRS["SLD99",
+                DATUM["Sri Lanka Datum 1999",
+                    ELLIPSOID["Everest 1830 (1937 Adjustment)",6377276.345,300.8017,
                         LENGTHUNIT["metre",1]]],
                 PRIMEM["Greenwich",0,
                     ANGLEUNIT["degree",0.0174532925199433]],
-                ID["EPSG",4683]],
-            CONVERSION["Philippines zone III",
+                ID["EPSG",5233]],
+            CONVERSION["Sri Lanka Grid 1999",
                 METHOD["Transverse Mercator",
                     ID["EPSG",9807]],
-                PARAMETER["Latitude of natural origin",0,
+                PARAMETER["Latitude of natural origin",7.00047152777778,
                     ANGLEUNIT["degree",0.0174532925199433],
                     ID["EPSG",8801]],
-                PARAMETER["Longitude of natural origin",121,
+                PARAMETER["Longitude of natural origin",80.7717130833333,
                     ANGLEUNIT["degree",0.0174532925199433],
                     ID["EPSG",8802]],
-                PARAMETER["Scale factor at natural origin",0.99995,
+                PARAMETER["Scale factor at natural origin",0.9999238418,
                     SCALEUNIT["unity",1],
                     ID["EPSG",8805]],
                 PARAMETER["False easting",500000,
                     LENGTHUNIT["metre",1],
                     ID["EPSG",8806]],
-                PARAMETER["False northing",0,
+                PARAMETER["False northing",500000,
                     LENGTHUNIT["metre",1],
                     ID["EPSG",8807]]],
             CS[Cartesian,2],
-                AXIS["easting (X)",east,
+                AXIS["(E)",east,
                     ORDER[1],
                     LENGTHUNIT["metre",1]],
-                AXIS["northing (Y)",north,
+                AXIS["(N)",north,
                     ORDER[2],
                     LENGTHUNIT["metre",1]],
             USAGE[
-                SCOPE["unknown"],
-                AREA["Philippines - zone III"],
-                BBOX[3,119.7,21.62,122.21]],
+                SCOPE["Engineering survey, topographic mapping."],
+                AREA["Sri Lanka - onshore."],
+                BBOX[5.86,79.64,9.88,81.95]],
             ID["EPSG",5235]]
         Data axis to CRS axis mapping: 1,2
-        Origin = (430713.282723263022490,1690115.897022359305993)
+        Origin = (396721.989492513879668,497783.553164885030128)
         Pixel Size = (100.000000000000000,-100.000000000000000)
         Metadata:
-          AREA_OR_POINT=Area
+        AREA_OR_POINT=Area
         Image Structure Metadata:
-          INTERLEAVE=PIXEL
+        INTERLEAVE=PIXEL
         Corner Coordinates:
-        Upper Left  (  430713.283, 1690115.897) (120d21'17.68"E, 15d16'55.47"N)
-        Lower Left  (  430713.283, 1633115.897) (120d21'23.24"E, 14d46' 0.88"N)
-        Upper Right (  498513.283, 1690115.897) (120d59'10.17"E, 15d16'58.81"N)
-        Lower Right (  498513.283, 1633115.897) (120d59'10.29"E, 14d46' 4.10"N)
-        Center      (  464613.283, 1661615.897) (120d40'15.34"E, 15d 1'30.61"N)
-        Band 1 Block=678x4 Type=Byte, ColorInterp=Red
-          Description = discrete_classification
-            Computed Min/Max=0.000,200.000
-          Minimum=0.000, Maximum=200.000, Mean=67.557, StdDev=35.613
-          NoData Value=255
-          Metadata:
+        Upper Left  (  396721.989,  497783.553) ( 79d50'12.89"E,  6d58'46.20"N)
+        Lower Left  (  396721.989,  468283.553) ( 79d50'14.76"E,  6d42'45.88"N)
+        Upper Right (  439221.989,  497783.553) ( 80d13'17.68"E,  6d58'48.38"N)
+        Lower Right (  439221.989,  468283.553) ( 80d13'18.78"E,  6d42'47.97"N)
+        Center      (  417971.989,  483033.553) ( 80d 1'46.02"E,  6d50'47.25"N)
+        Band 1 Block=425x6 Type=Byte, ColorInterp=Red
+        Description = discrete_classification
+        Min=20.000 Max=200.000   Computed Min/Max=20.000,200.000
+        Minimum=20.000, Maximum=200.000, Mean=98.192, StdDev=39.805
+        NoData Value=225
+        Metadata:
             STATISTICS_MAXIMUM=200
-            STATISTICS_MEAN=67.556567003835
-            STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=35.612833384649
-            STATISTICS_VALID_PERCENT=99.72
-        Band 2 Block=678x4 Type=Byte, ColorInterp=Green
-          Description = forest_type
-            Computed Min/Max=0.000,2.000
-          Minimum=0.000, Maximum=2.000, Mean=0.473, StdDev=0.850
-          NoData Value=255
-          Metadata:
+            STATISTICS_MEAN=98.19157926688
+            STATISTICS_MINIMUM=20
+            STATISTICS_STDDEV=39.804930203318
+            STATISTICS_VALID_PERCENT=99.85
+        Band 2 Block=425x6 Type=Byte, ColorInterp=Green
+        Description = forest_type
+        Min=0.000 Max=2.000   Computed Min/Max=0.000,2.000
+        Minimum=0.000, Maximum=2.000, Mean=1.242, StdDev=0.970
+        NoData Value=225
+        Metadata:
             STATISTICS_MAXIMUM=2
-            STATISTICS_MEAN=0.47292184572588
+            STATISTICS_MEAN=1.2418224952273
             STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=0.84981681513547
-            STATISTICS_VALID_PERCENT=99.72
-        Band 3 Block=678x4 Type=Byte, ColorInterp=Blue
-          Description = urban-coverfraction
-            Computed Min/Max=0.000,100.000
-          Minimum=0.000, Maximum=100.000, Mean=14.485, StdDev=30.631
-          NoData Value=255
-          Metadata:
+            STATISTICS_STDDEV=0.97031638809586
+            STATISTICS_VALID_PERCENT=99.85
+        Band 3 Block=425x6 Type=Byte, ColorInterp=Blue
+        Description = urban-coverfraction
+        Min=0.000 Max=100.000   Computed Min/Max=0.000,100.000
+        Minimum=0.000, Maximum=100.000, Mean=32.941, StdDev=42.812
+        NoData Value=225
+        Metadata:
             STATISTICS_MAXIMUM=100
-            STATISTICS_MEAN=14.484993486711
+            STATISTICS_MEAN=32.941497391985
             STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=30.631074729814
-            STATISTICS_VALID_PERCENT=99.72
+            STATISTICS_STDDEV=42.811606864828
+            STATISTICS_VALID_PERCENT=99.85
 ```
 
 
