@@ -2,6 +2,8 @@
 
 ## Localisations
 - [**Argentina**](argentina/)
+- [**Germany**](germany/)
+- [**Mexico**](mexico/)
 - [**Philippines**](philippines/)
 - [**Sri Lanka** (in English)](sri-lanka/)
 - [**Vietnam**](vietnam/)
