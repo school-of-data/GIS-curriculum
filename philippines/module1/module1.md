@@ -198,7 +198,7 @@ Figure 1.4. The QGIS Interface with some customizations
 
 ![Observe the Toolbars menu](media/ex01-03.png "Observe the Toolbars menu")
 
-5. Select the **Toolbars** and **Panels** you want to show in the user interface. Some of the useful Panels include the **Layer Styling **and **Processing Toolbox**. 
+5. Select the **Toolbars** and **Panels** you want to show in the user interface. Some of the useful Panels include the **Layer Styling** and **Processing Toolbox**. 
 6. Move the **Toolbars** and **Panels** to the positions that make the most sense for you
 
 **Resetting the QGIS Interface**
@@ -246,7 +246,7 @@ The Manage and Install Plugins Dialog connects to the QGIS Official Plugin repos
 *   **All Tab** – shows ALL the plugins available for your QGIS version including those that are already installed on your machine
 *   **Installed Tab** – shows only the plugins installed on your machine
 *   **Not installed Tab** – shows the plugins that are not installed on your machine
-*   **Install from ZIP **– allows you to install plugins from a ZIP file
+*   **Install from ZIP** – allows you to install plugins from a ZIP file
 *   **Settings Tab** – gives you options on when to check for plugin updates, whether or not to include experimental and deprecated plugins, or add/change the repository to fetch plugins from
 
 If the plugin you are looking for is tagged as experimental or deprecated, you need to check **Show experimental plugins** and **Show deprecated** plugins from the Settings tab.
@@ -267,7 +267,7 @@ Figure 1.6. The Manage and Install Plugins dialog
 
 ![Manage and Install Plugins dialog](media/manage-and-install-plugins-dialog.png "Manage and Install Plugins dialog")
 
-2. Install the following plugins by searching for them in the **All tab **and clicking **Install Plugin** in the bottom right corner of the Manage and Install plugins dialog.
+2. Install the following plugins by searching for them in the **All tab** and clicking **Install Plugin** in the bottom right corner of the Manage and Install plugins dialog.
 
    - Memory Layer Saver
 
