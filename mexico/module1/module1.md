@@ -95,14 +95,12 @@ Al ser multiplataforma, QGIS se ejecuta en GNU / Linux, macOS, Windows e incluso
 Los lanzamientos y el desarrollo de QGIS siguen un calendario / hoja de ruta basados en el tiempo ([https://www.qgis.org/en/site/getinvolved/development/roadmap.html](https://www.qgis.org/en/site/getinvolved/development/roadmap.html)).
 
 
-
 *   Una versión de QGIS se especifica con tres números (X.Y.Z). Por ejemplo, QGIS 3.16.4.
 *   X se refiere a la versión principal. En este caso, QGIS 3.
 *   Y se refiere a la versión de lanzamiento. En este caso, la versión de lanzamiento 16. Las versiones de lanzamiento son siempre números pares, ya que los números impares están reservados para las versiones de desarrollo.
 *   Z se refiere al Lanzamiento Con Cambios Menores (PR) de esa versión. Para 3.16.4, eso significa que es el cuarto lanzamiento de la versión 3.16.
 
 Hay tres ramas principales de QGIS que los usuarios pueden instalar. Estas son la rama **Versión a largo plazo (LTR)**, la rama **Versión más reciente (LR)** y la rama **Desarrollo (nocturno)**.
-
 
 
 *   **Versión a largo plazo (LTR)** se llama así porque se mantiene y recibe correcciones de errores hasta que se publique el siguiente LTR. Actualmente, eso significa un (1) año. A febrero de 2021, el LTR actual es 3.16.4. Está programado que sea reemplazado por QGIS 3.22.4 en febrero de 2022.
@@ -119,7 +117,6 @@ Para más información, visita:	 [https://bnhr.xyz/2020/10/26/about-qgis-version
 
 ![QGIS Map Showcase](media/qgis-map-showcase.png "QGIS Map Showcase")
 
-
 Figura 1. Presentación de mapas de QGIS
 
 Para más mapas creados con QGIS, visita:	 [https://www.flickr.com/groups/2244553@N22/pool/with/50355460063/](https://www.flickr.com/groups/2244553@N22/pool/with/50355460063/)
@@ -131,9 +128,9 @@ QGIS es multiplataforma y funciona en Linux, Windows y macOS. Al ser de código 
 
 Los instaladores y las instrucciones de instalación también están disponibles en [https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html) o [https://qgis.org/en/site/forusers/alldownloads.html](https://qgis.org/en/site/forusers/alldownloads.html).
 
-Para** Linux (o GNU / Linux)**, QGIS generalmente está disponible en el sistema de gestión de paquetes de su distribución. Para los usuarios de Debian / Ubuntu, QGIS tiene repositorios para las ramas LR, LTR y Desarrollo, así como versiones de QGIS con dependencias del PPA ubuntugis-inestable. QGIS también está disponible como paquete Flatpak o en Conda.
+Para **Linux (o GNU / Linux)**, QGIS generalmente está disponible en el sistema de gestión de paquetes de su distribución. Para los usuarios de Debian / Ubuntu, QGIS tiene repositorios para las ramas LR, LTR y Desarrollo, así como versiones de QGIS con dependencias del PPA ubuntugis-inestable. QGIS también está disponible como paquete Flatpak o en Conda.
 
-Para** Windows**, los usuarios pueden elegir entre el instalador de red OSGeo4W o los instaladores independientes. Hay un instalador independiente para la versión LTR y para la LR.
+Para **Windows**, los usuarios pueden elegir entre el instalador de red OSGeo4W o los instaladores independientes. Hay un instalador independiente para la versión LTR y para la LR.
 
 Los instaladores independientes son los más fáciles de instalar y se recomiendan para principiantes. Se pueden instalar múltiples versiones de QGIS en su computadora a la vez. Esto significa que puede tener instaladas las versiones 3.16 y 3.18 de QGIS.
 
@@ -145,7 +142,7 @@ La instalación en Windows también viene con QGIS con GRASS (otro SIG gratuito 
 
 Ten en cuenta que QGIS está [eliminando lentamente el soporte de 32 bits para Windows](https://blog.qgis.org/2020/10/15/phasing-out-32-bit-support-in-qgis/), por lo que es mejor instalar QGIS en una computadora que ejecute un sistema operativo de 64 bits.
 
-Para** macOS**, existen instaladores oficiales Todo-en-uno para macOS High Sierra (10.13) y versiones posteriores. QGIS aún no está certificado como lo requieren las reglas de seguridad de macOS Catalina (10.15). En el primer inicio, haga clic con el botón derecho en el icono de la aplicación QGIS, mantenga presionada la tecla Opción y luego elija Abrir.
+Para **macOS**, existen instaladores oficiales Todo-en-uno para macOS High Sierra (10.13) y versiones posteriores. QGIS aún no está certificado como lo requieren las reglas de seguridad de macOS Catalina (10.15). En el primer inicio, haga clic con el botón derecho en el icono de la aplicación QGIS, mantenga presionada la tecla Opción y luego elija Abrir.
 
 
 #### **Partes de la Interfaz QGIS**
@@ -212,8 +209,8 @@ Figura 4. La interfaz QGIS con algunas personalizaciones
 ![Observe the Toolbars menu](media/ex01-03.png "Observe the Toolbars menu")
 
 
-5. Selecciona las** Barras de Herramientas** y los **paneles** que deseas mostrar en la interfaz de usuario. Algunos de los paneles útiles incluyen las **Cajas  de herramientas (Toolbox) ** de **Estilo de capas (Layer Styling) y Procesamiento (processing)**.
-6. Mueve las** Barras de Herramientas** y los **paneles** a las posiciones que tengan más sentido para tí. 
+5. Selecciona las **Barras de Herramientas** y los **paneles** que deseas mostrar en la interfaz de usuario. Algunos de los paneles útiles incluyen las **Cajas  de herramientas (Toolbox)** de **Estilo de capas (Layer Styling) y Procesamiento (processing)**.
+6. Mueve las **Barras de Herramientas** y los **paneles** a las posiciones que tengan más sentido para tí. 
 
 **Restablecimiento de la interfaz QGIS (Resetting)**
 
@@ -239,7 +236,7 @@ A partir de QGIS 3.16.3, hay más de 700 complementos disponibles para que el us
 Los complementos de QGIS se pueden clasificar como:
 
 *   **Complementos principales:** integrados en su versión de QGIS, no se pueden desinstalar
-*   **Complementos externos: **se instalan manualmente y se obtienen de un repositorio externo (es decir, el repositorio oficial de complementos de QGIS) o mediante el código fuente.
+*   **Complementos externos:** se instalan manualmente y se obtienen de un repositorio externo (es decir, el repositorio oficial de complementos de QGIS) o mediante el código fuente.
 
 Pueden ser instalados de tres (3) formas:
 
@@ -247,8 +244,8 @@ Pueden ser instalados de tres (3) formas:
 2. Instalar desde el ZIP, al que se puede acceder en la pestaña “**Instalar desde ZIP”** en el cuadro de diálogo “**Administrar e Instalar Complementos**”.
 3. Agregar manualmente el código fuente en la carpeta de complementos de su perfil de QGIS. Esta carpeta generalmente se encuentra en: 
     1. **Linux**: .local/share/QGIS/QGIS3/profiles/default/python/complementos
-    2. **Mac OS X**:	 Library/Application/Support/QGIS/QGIS3/profiles/default/python/complementos
-    3. **Windows: **C:\\Users<User>\AppData\Roaming\QGIS\QGIS3\profiles\default\python\complementos
+    2. **Mac OS X**: Library/Application/Support/QGIS/QGIS3/profiles/default/python/complementos
+    3. **Windows:** C:\\Users<User>\AppData\Roaming\QGIS\QGIS3\profiles\default\python\complementos
 
 
 ![Manage and Install Plugins menu](media/plugins-menu.png "Manage and Install Plugins menu")
@@ -260,11 +257,11 @@ Figura 5. Acceder al “Administrar e Instalar Complementos dialog”
 
 El Cuadro de Diálogo “Administrar e Instalar Complementos” se conecta al Repositorio Oficial de Complementos de QGIS (o cualquier otro repositorio que hayas indicado en la Pestaña de Configuraciones) para obtener los complementos disponibles para tu versión de QGIS. Tiene (5) tabs (pestaña):
 
-*   **Pestaña Todos **– muestra TODOS los complementos disponibles para tu versión de QGIS, incluidos los que ya están instalados en su máquina.
-*   **Pestaña Instalados **– muestra solo los complementos instalados en tu computadora.
+*   **Pestaña Todos** – muestra TODOS los complementos disponibles para tu versión de QGIS, incluidos los que ya están instalados en su máquina.
+*   **Pestaña Instalados** – muestra solo los complementos instalados en tu computadora.
 *   **Pestaña No Instalados** – muestra los complementos que NO están instalados en tu computadora.
-*   **Instalar desde ZIP **– te permite instalar complementos desde un archivo ZIP.
-*   **Pestaña Ajustes **– te ofrece opciones sobre cuándo buscar actualizaciones de  complementos, si incluir o no  complementos experimentales y obsoletos, o agregar / cambiar el repositorio para obtener complementos.
+*   **Instalar desde ZIP** – te permite instalar complementos desde un archivo ZIP.
+*   **Pestaña Ajustes** – te ofrece opciones sobre cuándo buscar actualizaciones de  complementos, si incluir o no  complementos experimentales y obsoletos, o agregar / cambiar el repositorio para obtener complementos.
 
 Si el complemento que buscas está etiquetado como experimental u obsoleto, deberías revisar “**Mostrar complementos experimentales”** y “**Mostrar complementos obsoletos”** en la pestaña de configuraciones.
 
@@ -315,9 +312,6 @@ La configuración de QGIS te permite editar y administrar diferentes cosas sobre
 
 
 ![The System Settings](media/settings-1.png "The System Settings")
-
-![alt_text](images/image18.png "image_tooltip")
-
 
 Figura 6. La configuración del sistema
 

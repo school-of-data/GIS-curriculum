@@ -142,7 +142,7 @@ Para aprender más, mira:	 [https://docs.qgis.org/3.16/es/docs/user_manual/intro
 Figura 2. El Navegador
 
 3. Observa cómo las unidades y carpetas se pueden expandir para mostrar las subcarpetas dentro de ellas.
-4. Ubica el **Módulo 2 - Capas **en la carpeta QGIS (Figura 3) en el árbol de archivos (observa dónde guardaste o descargaste el archivo). Deberías poder ver los datos necesarios para este manual. En mi ejemplo de la derecha, vinculé la carpeta mencionada anteriormente como uno de mis favoritos para poder acceder fácilmente a ella desde el Panel del navegador. Puedes agregar un directorio favorito al Navegador haciendo clic con el botón derecho en Favoritos y agregando el directorio.
+4. Ubica el **Módulo 2 - Capas** en la carpeta QGIS (Figura 3) en el árbol de archivos (observa dónde guardaste o descargaste el archivo). Deberías poder ver los datos necesarios para este manual. En mi ejemplo de la derecha, vinculé la carpeta mencionada anteriormente como uno de mis favoritos para poder acceder fácilmente a ella desde el Panel del navegador. Puedes agregar un directorio favorito al Navegador haciendo clic con el botón derecho en Favoritos y agregando el directorio.
 5. Verifica los archivos dentro de la carpeta (Figura 3). Hay muchos de ellos. Desde el árbol de archivos en sí, ya podemos hacernos una idea de los archivos y capas que podemos cargar en QGIS. Los iconos a la izquierda de los nombres indican si los datos son un vector ![Vector symbol](media/symbol-vector.png "Vector symbol"), un ráster ![Raster symbol](media/symbol-raster.png "Raster symbol"), una base de datos ![Database symbol](media/symbol-db.png "Database symbol"), o datos tabulares simples ![Table symbol](media/symbol-table.png "Table symbol"). 
 
 
@@ -170,8 +170,6 @@ Figura 4. Observando Propiedades de la Capa
 
 Figura 5. Propiedades de la Capa en el Navegador
 
-
-
 8. Además de proporcionar metadatos en los capas, también puedes obtener una vista previa de la geometría y los atributos en la ventana de Propiedades de la Capa
 9. Puedes cargar una capa en el Navegador así:
     6. **dando doble clic a la capa**
@@ -181,9 +179,6 @@ Figura 5. Propiedades de la Capa en el Navegador
 
 
 ![The vector layers loaded in QGIS](media/vector-layers-loaded-1.png "The vector layers loaded in QGIS")
-
-![alt_text](images/image10.png "image_tooltip")
-
 
 Figura 6. Los capas de vector cargados en QGIS
 
@@ -199,7 +194,7 @@ Figura 7. Panel de Capas
 
 La visibilidad de una capa se puede controlar marcando o desmarcando la casilla a la izquierda de su nombre. Al arrastrar las capas hacia arriba o hacia abajo en el Panel, se puede cambiar su orden en Z. De manera similar al software de manipulación de imágenes como GIMP o Photoshop, las capas enumeradas cerca de la parte superior se dibujan sobre las capas enumeradas más abajo. Por lo tanto, si dos capas muestran la misma área, el que está más arriba en el Panel se dibuja encima del inferior y es posible que la capa inferior no sea visible en el lienzo del mapa. Vale la pena señalar esto porque puede haber casos en los que pensamos que una capa no aparece en QGIS cuando en realidad está siendo cubierto u oculto por una capa encima.
 
-**NOTA: **El orden en Z de las capas en el Panel de Capas puede ser anulado por el **Panel de Orden de Capas**.
+**NOTA:** El orden en Z de las capas en el Panel de Capas puede ser anulado por el **Panel de Orden de Capas**.
 
 El Panel de Capas también permite al usuario renombrar y remover capas, filtrar la visibilidad de las capas, crear y administrar grupos de capas y mapas. 
 
@@ -214,7 +209,7 @@ Haciendo clic derecho en una capa en Panel de Capas y seleccionando Propiedades 
 
 ![The Layer Properties dialog](media/layer-properties.png "The Layer Properties dialog")
 
-Figura 9. El diálogo Propiedades de la Capa 
+Figura 8. El diálogo Propiedades de la Capa 
 
 Hay varias pestañas en el cuadro de diálogo Propiedades de la Capa que permiten al usuario ver información e incluso editar / modificar propiedades relacionadas con la capa.
 
@@ -251,21 +246,18 @@ Para saber más sobre propiedades de capas ráster, visita: : [https://docs.qgis
 
 Los metadatos son simplemente datos sobre los datos. Responden al quién, qué, cuándo, dónde y cómo del conjunto de datos y viene en todas las formas y tamaños. Para propósitos de SIG, generalmente nos interesan los metadatos geoespaciales. Los metadatos geoespaciales se describen en el Comité Federal de Datos Geográficos de EE. UU. (FGDC) como
 
-_“un archivo de información, generalmente presentado como un documento XML, que captura las características básicas de un recurso de datos o información. Representa el quién, qué, cuándo, dónde, por qué y cómo del recurso. Los metadatos geoespaciales comúnmente documentan datos digitales geográficos como archivos del Sistema de Información Geográfica (GIS), bases de datos geoespaciales e imágenes de la tierra, pero también pueden usarse para documentar recursos geoespaciales, incluidos catálogos de datos, aplicaciones de mapeo, modelos de datos y sitios web relacionados. Los registros de metadatos incluyen elementos básicos del catálogo de la biblioteca, como título, resumen y datos de publicación; elementos geográficos como la extensión geográfica y la información de proyección; y elementos de base de datos como definiciones de etiquetas de atributos y valores de dominio de atributos"._ \
-
+_“un archivo de información, generalmente presentado como un documento XML, que captura las características básicas de un recurso de datos o información. Representa el quién, qué, cuándo, dónde, por qué y cómo del recurso. Los metadatos geoespaciales comúnmente documentan datos digitales geográficos como archivos del Sistema de Información Geográfica (GIS), bases de datos geoespaciales e imágenes de la tierra, pero también pueden usarse para documentar recursos geoespaciales, incluidos catálogos de datos, aplicaciones de mapeo, modelos de datos y sitios web relacionados. Los registros de metadatos incluyen elementos básicos del catálogo de la biblioteca, como título, resumen y datos de publicación; elementos geográficos como la extensión geográfica y la información de proyección; y elementos de base de datos como definiciones de etiquetas de atributos y valores de dominio de atributos"._
 
 La importancia de los metadatos es que no solo promueven la transparencia, sino que también facilitan el intercambio de datos e información. Por eso es importante agregar siempre metadatos a nuestros conjuntos de datos. Al agregar metadatos, es igualmente importante seguir estándares (reglas y prácticas ampliamente promovidas, aceptadas y seguidas) para que los metadatos que creamos sean interoperables. Uno de estos estándares es el ISO 19115: 2014 “Información geográfica - Metadatos” de ISO / TC 211([https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en](https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en))
 
 
 #### **Ejercicio 01.2: Agregando Metadatos**
 
-
-
 1. Abre Propiedades de la Capa de la capa departamentos_mendoza.
 2. Revisa la información que aparece en la pestaña Information. ¿Está completa? ¿Podemos agregar más?
 
-![Information properties of the NCR_admin_boundary layer](media/metadata-1.png "Information properties of the NCR_admin_boundary layer")
 
+![Information properties of the NCR_admin_boundary layer](media/metadata-1.png "Information properties of the NCR_admin_boundary layer")
 
 Figura 9. Propiedades de información de la capa departamentos_mendoza.
 
@@ -406,8 +398,8 @@ Para conectarte a un servidor tile:
 3. Agrega lo siguiente:
 
 ```
-    Nombre: Capa Base Argenmap
-    URL: http://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/%7Bz%7D/%7Bx%7D/%7B-y%7D.png
+    Nombre: F4 Map
+    URL: http://tile1.f4map.com/tiles/f4_2d/{z}/{x}/{y}.png
 ```
 4. Click Aceptar.
 
@@ -416,21 +408,21 @@ Para conectarte a un servidor tile:
 
 Figura 18. Agregando una conexión XYZ en QGIS
 
-5. Esto debería agregar el ítem Capa Base Argenmap debajo de XYZ Tiles en el Navegador.
+5. Esto debería agregar el ítem F4 Map debajo de XYZ Tiles en el Navegador.
 
 
 ![PGP Basemap Tile server added to the Browser Panel](media/xyz-2.png "PGP Basemap Tile server added to the Browser Panel")
 
-Figura 19. Capa Base Argenmap agregado al Navegador
+Figura 19. F4 Map agregado al Navegador
 
 6. Puedes cargar la capa XYZ tile como lo harías con cualquier otra capa del Navegador.
 
 
 ![PGP Basemap layer loaded in QGIS](media/xyz-3.png "PGP Basemap layer loaded in QGIS")
 
-Figura 20. Capa Base Argenmap cargado en QGIS
+Figura 20. F4 Map cargado en QGIS
 
-**BONUS: **Si quieres agregar varios mapas base bajo XYZ Tiles en el Navegador, puedes seguir las instruccones en esta publicación: [https://mappinggis.com/2018/03/como-anadir-mapas-base-en-qgis-3-0-openstreetmap-google-carto-stamen/](https://mappinggis.com/2018/03/como-anadir-mapas-base-en-qgis-3-0-openstreetmap-google-carto-stamen/) 
+**BONUS:** Si quieres agregar varios mapas base bajo XYZ Tiles en el Navegador, puedes seguir las instruccones en esta publicación: [https://mappinggis.com/2018/03/como-anadir-mapas-base-en-qgis-3-0-openstreetmap-google-carto-stamen/](https://mappinggis.com/2018/03/como-anadir-mapas-base-en-qgis-3-0-openstreetmap-google-carto-stamen/) 
 
 **BONUS #2:**
 
@@ -450,8 +442,8 @@ Para conectarse a un WMS:
 3. Agrega lo siguiente:
 
 ```
-    Nombre: Estatus Hídrico Percentil del API semanal
-    URL: https://geoservicios2.conae.gov.ar/geoserver/EstatusHidrico/wms
+    Nombre: Imageness NOAA
+    URL: https://nowcoast.noaa.gov/arcgis/services/nowcoast/sat_meteo_imagery_time/MapServer/WMSServer 
 ```
 3. Haz clic en Añadir
 
@@ -488,7 +480,7 @@ Figura 23. Mapa de Estatus Hídrico de WMS cargado en QGIS
 
 #### **Exportando Capas de QGIS**
 
-Exportar capas (o guardar capas como archivos) es bastante sencillo en QGIS.** Simplemente haz clic derecho en la capa ‣ Exportar** para ver las opciones de exportación.
+Exportar capas (o guardar capas como archivos) es bastante sencillo en QGIS. **Simplemente haz clic derecho en la capa ‣ Exportar** para ver las opciones de exportación.
 
 
 ![Exporting a layer from QGIS](media/exporting-layers.png "Exporting a layer from QGIS")
@@ -500,8 +492,8 @@ Figura 24. Exportando una capa de QGIS
     *   Cuando un **filtro** está activo en la capa vectorial, sólo las características filtradas (aquellas que aparecen en el lienzo del mapa) son exportadas.
     
 *   **Guardar objetos seleccionados como...** es una opción para guardar sólo las características seleccionadas en las capas vectoriales.
-*   **Guardar como archivo de definición de capa… **crea un archivo QLR (ver Módulo 1, Formatos de Archivos QGIS) para la capa
-*   **Guardar como archivo de estilo de capa de QGIS… **guarda un archivo QML (ver Módulo 1, Formatos de Archivos QGIS) para la capa
+*   **Guardar como archivo de definición de capa…** crea un archivo QLR (ver Módulo 1, Formatos de Archivos QGIS) para la capa
+*   **Guardar como archivo de estilo de capa de QGIS…** guarda un archivo QML (ver Módulo 1, Formatos de Archivos QGIS) para la capa
 
 Al exportar una capa, QGIS te da la opción de seleccionar el formato de archivo de salida, los campos a incluir (si es un archivo vectorial), el sistema de referencia de coordenadas de salida y otras opciones. Esto significa que puedes realizar una proyección de coordenadas exportando una capa.
 
@@ -573,8 +565,8 @@ GeoNode ([https://geonode.org/](https://geonode.org/)) es un sistema de gestión
 3. Agrega lo siguiente:
 
 ``` 
-    Name: IDE del Conurbano - UNGS
-    URL: [http://ideconurbano.ungs.edu.ar/](http://ideconurbano.ungs.edu.ar/) 
+    Name: GeoNode Jalisco
+    URL:  https://ideconurbano.ung.edu.ar/ 
 ```
 
 ![Connect to GeoNode](media/connect-geonode.png "Connect to GeoNode")

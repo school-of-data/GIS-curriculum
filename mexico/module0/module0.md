@@ -263,8 +263,9 @@ Los códigos EPSG más comunes son:
 
 *   **EPSG: 4326 -** WGS 84, sistema de coordenadas de latitud / longitud basado en el Sistema de Posicionamiento Global (GPS) entre otros.
 *   **EPSG: 3857 -** Proyección Mercator de Web utilizada para la visualización por muchas herramientas de mapeo basadas en web como OpenStreetMap y Google Maps
-*   **EPSG: 32650 a EPSG 32653 -** Sistema Universal Transversal de Mercator (UTM) Zona 50N a 53N. Zonas UTM utilizadas en Filipinas
-*   **EPSG: 4683** - Sistema de referencia de Filipinas de 1992
+*   **EPSG: 32611 a EPSG 32616 -** Sistema Universal Transversal de Mercator (UTM) Zona 11N a 16N. Zonas UTM utilizadas en México.
+*   **EPSG: 6651 -** Sistema de referencia de México de 1992.
+
 
 
 #### **Preguntas de evaluación**
