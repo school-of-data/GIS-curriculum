@@ -2,6 +2,7 @@
 
 ## Localisations
 - [**Argentina**](argentina/)
+- [**Bangladesh** (in English)](bangladesh/)
 - [**Germany**](germany/)
 - [**India** (in English)](india/)
 - [**Mexico**](mexico/)
