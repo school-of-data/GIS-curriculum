@@ -145,7 +145,7 @@ Para aprender más, mira:	 [https://docs.qgis.org/3.16/es/docs/user_manual/intro
 Figura 2. El Navegador
 
 3. Observa cómo las unidades y carpetas se pueden expandir para mostrar las subcarpetas dentro de ellas.
-4. Ubica el **Módulo 2 - Capas **en la carpeta QGIS (Figura 3) en el árbol de archivos (observa dónde guardaste o descargaste el archivo). Deberías poder ver los datos necesarios para este manual. En mi ejemplo de la derecha, vinculé la carpeta mencionada anteriormente como uno de mis favoritos para poder acceder fácilmente a ella desde el Panel del navegador. Puedes agregar un directorio favorito al Navegador haciendo clic con el botón derecho en Favoritos y agregando el directorio.
+4. Ubica el **Módulo 2 - Capas** en la carpeta QGIS (Figura 3) en el árbol de archivos (observa dónde guardaste o descargaste el archivo). Deberías poder ver los datos necesarios para este manual. En mi ejemplo de la derecha, vinculé la carpeta mencionada anteriormente como uno de mis favoritos para poder acceder fácilmente a ella desde el Panel del navegador. Puedes agregar un directorio favorito al Navegador haciendo clic con el botón derecho en Favoritos y agregando el directorio.
 5. Verifica los archivos dentro de la carpeta (Figura 3). Hay muchos de ellos. Desde el árbol de archivos en sí, ya podemos hacernos una idea de los archivos y capas que podemos cargar en QGIS. Los iconos a la izquierda de los nombres indican si los datos son un vector ![Vector symbol](media/symbol-vector.png "Vector symbol"), un ráster ![Raster symbol](media/symbol-raster.png "Raster symbol"), una base de datos ![Database symbol](media/symbol-db.png "Database symbol"), o datos tabulares simples ![Table symbol](media/symbol-table.png "Table symbol"). 
 
 
@@ -177,16 +177,15 @@ Figura 5. Propiedades de la Capa en el Navegador
 
 8. Además de proporcionar metadatos en los capas, también puedes obtener una vista previa de la geometría y los atributos en la ventana de Propiedades de la Capa
 9. Puedes cargar una capa en el Navegador así:
-    6. **dando doble clic a la capa**
-    7. **clic derecho a la capa ‣ Agregar al Proyecto**
-    8. **arrastrando la capa al lienzo del mapa** 
-10.  Intenta cargar las capas **limite_provincial_mendoza** y **departamentos_mendoza **usando cualquiera de estos métodos.
+
+    1. **dando doble clic a la capa**
+    2. **clic derecho a la capa ‣ Agregar al Proyecto**
+    3. **arrastrando la capa al lienzo del mapa** 
+
+10.  Intenta cargar las capas **limite_provincial_mendoza** y **departamentos_mendoza** usando cualquiera de estos métodos.
 
 
 ![The vector layers loaded in QGIS](media/vector-layers-loaded-1.png "The vector layers loaded in QGIS")
-
-![alt_text](images/image10.png "image_tooltip")
-
 
 Figura 6. Los capas de vector cargados en QGIS
 
@@ -217,7 +216,7 @@ Haciendo clic derecho en una capa en Panel de Capas y seleccionando Propiedades 
 
 ![The Layer Properties dialog](media/layer-properties.png "The Layer Properties dialog")
 
-Figura 9. El diálogo Propiedades de la Capa 
+Figura 8. El diálogo Propiedades de la Capa 
 
 Hay varias pestañas en el cuadro de diálogo Propiedades de la Capa que permiten al usuario ver información e incluso editar / modificar propiedades relacionadas con la capa.
 
@@ -262,13 +261,10 @@ La importancia de los metadatos es que no solo promueven la transparencia, sino 
 
 #### **Ejercicio 01.2: Agregando Metadatos**
 
-
-
 1. Abre Propiedades de la Capa de la capa departamentos_mendoza.
 2. Revisa la información que aparece en la pestaña Information. ¿Está completa? ¿Podemos agregar más?
 
 ![Information properties of the NCR_admin_boundary layer](media/metadata-1.png "Information properties of the NCR_admin_boundary layer")
-
 
 Figura 9. Propiedades de información de la capa departamentos_mendoza.
 
@@ -433,11 +429,9 @@ Figura 19. Capa Base Argenmap agregado al Navegador
 
 Figura 20. Capa Base Argenmap cargado en QGIS
 
-**BONUS: **Si quieres agregar varios mapas base bajo XYZ Tiles en el Navegador, puedes seguir las instruccones en esta publicación: [https://mappinggis.com/2018/03/como-anadir-mapas-base-en-qgis-3-0-openstreetmap-google-carto-stamen/](https://mappinggis.com/2018/03/como-anadir-mapas-base-en-qgis-3-0-openstreetmap-google-carto-stamen/) 
+**BONUS:** Si quieres agregar varios mapas base bajo XYZ Tiles en el Navegador, puedes seguir las instruccones en esta publicación: [https://mappinggis.com/2018/03/como-anadir-mapas-base-en-qgis-3-0-openstreetmap-google-carto-stamen/](https://mappinggis.com/2018/03/como-anadir-mapas-base-en-qgis-3-0-openstreetmap-google-carto-stamen/) 
 
-**BONUS #2:**
-
-Puedes agregar las URLs de los servidores tile que se encuentran en el sitio Leaflet Providers ([https://leaflet-extras.github.io/leaflet-providers/preview/](https://leaflet-extras.github.io/leaflet-providers/preview/)) como XYZ Tiles en el Navegador. 
+**BONUS #2:** Puedes agregar las URLs de los servidores tile que se encuentran en el sitio Leaflet Providers ([https://leaflet-extras.github.io/leaflet-providers/preview/](https://leaflet-extras.github.io/leaflet-providers/preview/)) como XYZ Tiles en el Navegador. 
 
 
 #### **Ejercicio 02.3: Conectando a WMS/WMTS y WFS**
@@ -491,7 +485,7 @@ Figura 23. Mapa de Estatus Hídrico de WMS cargado en QGIS
 
 #### **Exportando Capas de QGIS**
 
-Exportar capas (o guardar capas como archivos) es bastante sencillo en QGIS.** Simplemente haz clic derecho en la capa ‣ Exportar** para ver las opciones de exportación.
+Exportar capas (o guardar capas como archivos) es bastante sencillo en QGIS. **Simplemente haz clic derecho en la capa ‣ Exportar** para ver las opciones de exportación.
 
 
 ![Exporting a layer from QGIS](media/exporting-layers.png "Exporting a layer from QGIS")
@@ -503,8 +497,8 @@ Figura 24. Exportando una capa de QGIS
     *   Cuando un **filtro** está activo en la capa vectorial, sólo las características filtradas (aquellas que aparecen en el lienzo del mapa) son exportadas.
     
 *   **Guardar objetos seleccionados como...** es una opción para guardar sólo las características seleccionadas en las capas vectoriales.
-*   **Guardar como archivo de definición de capa… **crea un archivo QLR (ver Módulo 1, Formatos de Archivos QGIS) para la capa
-*   **Guardar como archivo de estilo de capa de QGIS… **guarda un archivo QML (ver Módulo 1, Formatos de Archivos QGIS) para la capa
+*   **Guardar como archivo de definición de capa…** crea un archivo QLR (ver Módulo 1, Formatos de Archivos QGIS) para la capa
+*   **Guardar como archivo de estilo de capa de QGIS…** guarda un archivo QML (ver Módulo 1, Formatos de Archivos QGIS) para la capa
 
 Al exportar una capa, QGIS te da la opción de seleccionar el formato de archivo de salida, los campos a incluir (si es un archivo vectorial), el sistema de referencia de coordenadas de salida y otras opciones. Esto significa que puedes realizar una proyección de coordenadas exportando una capa.
 
@@ -641,4 +635,4 @@ Lee aquí: [https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin
 
 ### Tips 
 
-1. Si en algún momento necesitas una capa de un mapamundi, intenta escribir **“world” **(mundo) en la Barra de Coordenadas de la Barra de Estado. ¿Qué sucede? Este es solo uno de los easter eggs (sorpresas) que se encuentran en QGIS cuando escribe ciertas palabras en la barra de coordenadas.
+1. Si en algún momento necesitas una capa de un mapamundi, intenta escribir **“world”** (mundo) en la Barra de Coordenadas de la Barra de Estado. ¿Qué sucede? Este es solo uno de los easter eggs (sorpresas) que se encuentran en QGIS cuando escribe ciertas palabras en la barra de coordenadas.
