@@ -292,7 +292,7 @@ Figure 2.11. The Information tab after editing some metadata
 
 If you don’t want to use the Browser Panel to load layers, you can always use the **Data Source Manager**.
 
-The **Data Source Manager** was introduced with the release of QGIS 3. It is a “one-stop-shop” for adding and loading layers from different data sources in QGIS. Prior to its introduction, there were separate windows for loading different data sources (i.e. one for rasters, one for vectors, etc.). It can be accessed via** Layers ‣ Data Source Manager** or **CTRL + L**.
+The **Data Source Manager** was introduced with the release of QGIS 3. It is a “one-stop-shop” for adding and loading layers from different data sources in QGIS. Prior to its introduction, there were separate windows for loading different data sources (i.e. one for rasters, one for vectors, etc.). It can be accessed via **Layers ‣ Data Source Manager** or **CTRL + L**.
 
 ![Data Source Manager](media/data-source-manager-1.png "Data Source Manager")
 

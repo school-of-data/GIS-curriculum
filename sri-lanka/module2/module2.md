@@ -154,7 +154,7 @@ Figure 2.3. The Module files in the Browser Panel
 
 6. There are 5 files under the data folder: 
 
-    1. a GeoPackage (LKA_Colombo.gpkg) which contains a vector (Colomobo_hospitals) and raster file (LKA_Colombo_SRTM_DEM); 
+    1. a GeoPackage (LKA_Colombo.gpkg) which contains a vector (Colombo_hospitals) and raster file (LKA_Colombo_SRTM_DEM); 
     2. a GeoJSON (LKA_districts.geojson); 
     3. a flatgeobuf file (LKA_divisions.fgb);
     4. a shapefile (LKA_admin_boundary.shp); and
@@ -292,7 +292,7 @@ Figure 2.11. The Information tab after editing some metadata
 
 If you don’t want to use the Browser Panel to load layers, you can always use the **Data Source Manager**.
 
-The **Data Source Manager** was introduced with the release of QGIS 3. It is a “one-stop-shop” for adding and loading layers from different data sources in QGIS. Prior to its introduction, there were separate windows for loading different data sources (i.e. one for rasters, one for vectors, etc.). It can be accessed via** Layers ‣ Data Source Manager** or **CTRL + L**.
+The **Data Source Manager** was introduced with the release of QGIS 3. It is a “one-stop-shop” for adding and loading layers from different data sources in QGIS. Prior to its introduction, there were separate windows for loading different data sources (i.e. one for rasters, one for vectors, etc.). It can be accessed via **Layers ‣ Data Source Manager** or **CTRL + L**.
 
 ![Data Source Manager](media/data-source-manager-1.png "Data Source Manager")
 
@@ -435,8 +435,8 @@ To connect to a WMS:
 3. Add the following:
 
 ```
-Name: GeoServer Demo
-URL: https://demo.geo-solutions.it/geoserver/geosolutions/wms
+Name: EOX Sentinel-2
+URL: https://tiles.maps.eox.at/wms
 ```
 4. Click Add
 
@@ -444,11 +444,11 @@ URL: https://demo.geo-solutions.it/geoserver/geosolutions/wms
 
 Figure 2.21. Creating a new WMS/WMTS Connection
 
-5. This should add a GeoServer Demo item under the WMS/WMTS and OWS connections in the Browser Panel.
+5. This should add a EOX Sentinel-2 item under the WMS/WMTS and OWS connections in the Browser Panel.
 
-![The GeoServer Demo WMS added in the Browser Panel](media/wms-2.png "The GeoServer Demo WMS added in the Browser Panel")
+![The EOX Sentinel-2 WMS added in the Browser Panel](media/wms-2.png "The EOX Sentinel-2 WMS added in the Browser Panel")
 
-Figure 2.22. The GeoServer Demo WMS added in the Browser Panel
+Figure 2.22. The EOX Sentinel-2 WMS added in the Browser Panel
 
 6. You can load the WMS layers as you would any other layer from the Browser Panel.
 
