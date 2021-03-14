@@ -48,7 +48,7 @@
 | **Ethiopia**     |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Germany**      |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **Ghana**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
-| **India**        |     **C**    |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
+| **India**        |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Kenya**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Mexico**       |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L    |     L    |     T, L    |     T, L    |     T, L     |
 | **Nigeria**      |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
