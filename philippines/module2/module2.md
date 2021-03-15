@@ -191,7 +191,7 @@ Figure 2.6. The vector layers loaded in QGIS
 The Layers Panel lists all the current layers in the project. It helps manage their visibility, order, and can be used to show Layer Properties. The Layers Panel can be activated from **View ‣ Panels ‣ Layers Panel** or using the shortcut **CTRL+1**. It is also called the Map Legend. If you’ve loaded all the vectors from the previous exercise, your Layers Panel should appear like below:
 
 
-![altThe Layers Panel_text](media/layers-panel-1.png "The Layers Panel")
+![The Layers Panel](media/layers-panel-1.png "The Layers Panel")
 
 Figure 2.7. The Layers Panel
 
@@ -292,7 +292,7 @@ Figure 2.11. The Information tab after editing some metadata
 
 If you don’t want to use the Browser Panel to load layers, you can always use the **Data Source Manager**.
 
-The **Data Source Manager** was introduced with the release of QGIS 3. It is a “one-stop-shop” for adding and loading layers from different data sources in QGIS. Prior to its introduction, there were separate windows for loading different data sources (i.e. one for rasters, one for vectors, etc.). It can be accessed via** Layers ‣ Data Source Manager** or **CTRL + L**.
+The **Data Source Manager** was introduced with the release of QGIS 3. It is a “one-stop-shop” for adding and loading layers from different data sources in QGIS. Prior to its introduction, there were separate windows for loading different data sources (i.e. one for rasters, one for vectors, etc.). It can be accessed via **Layers ‣ Data Source Manager** or **CTRL + L**.
 
 ![Data Source Manager](media/data-source-manager-1.png "Data Source Manager")
 
@@ -364,12 +364,14 @@ Figure 2.15. Loading a CSV file
 
 Once all the layers in the previous exercises are loaded, the Layers Panel should look something like below:
 
+
 ![Layers Panel with all layers loaded](media/layers-panel-2.png "Layers Panel with all layers loaded")
 
 Figure 2.16. Layers Panel with all layers loaded
 
 
 The Map Canvas should look something like:
+
 
 ![QGIS Interface with all layers loaded](media/map-canvas-1.png "QGIS Interface with all layers loaded")
 
@@ -444,6 +446,7 @@ To connect to a WMS:
 1. Go to the **Browser Panel**
 2. **Right-click WMS/WMTS ‣ New Connection** 
 3. Add the following:
+
 ```
 Name: LiPAD 100-year Flood Hazard
 URL: https://api.mapbox.com/styles/v1/osmph/cjqrynb300m522sper0emmgs6/wmts?access_token=sk.eyJ1Ijoib3NtcGgiLCJhIjoiY2pxbjF6czN2MGllbTQ4bXVuOW44ZDlpbSJ9.pUqHal3xOR1yZUaM6LbLkg
@@ -597,8 +600,7 @@ When you are prompted that the file already exists, select Add New Layer.
 
 ![New points (trees) added](media/virtual-4.png "New points (trees) added]")
 
-9. Add a virtual layer by clicking ![Add virtual layer symbol](media/symbol-virtual.png "Add virtual layer symbol")
- in the Data Source Manager toolbar.
+9. Add a virtual layer by clicking ![Add virtual layer symbol](media/symbol-virtual.png "Add virtual layer symbol") in the Data Source Manager toolbar.
 10. Set Layer name to Tree Canopy. Import Trees. Add the following query: 
 ```
 select fid, buffer(geometry, radius), species from Trees

@@ -101,7 +101,6 @@ or this exercise, we will load road network data and locations of fast food chai
 QuickOSM works by querying the tags (keys and values) of the features in OSM. For more information about how to use the key/value in QuickOSM, go to: [https://wiki.openstreetmap.org/wiki/Mapfeatures](https://wiki.openstreetmap.org/wiki/Mapfeatures.).
 
 
-
 1. Load the Pampanga_province and Pampanga_SanFernando vector layers found inside the module3 geopackage.
 
 ![Pampanga layers loaded in QGIS](media/quickosm-1.png "Pampanga layers loaded in QGIS")
@@ -292,4 +291,3 @@ You can also test and create Overpass queries in Overpass turbo ([https://wiki.o
 ### Tips 
 
 If you can’t find the feature you want or need on OpenStreetMap, you can always add or edit features on the map itself. Sign up at [https://www.openstreetmap.org/](https://www.openstreetmap.org/) and start contributing!
-
