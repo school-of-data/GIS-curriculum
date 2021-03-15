@@ -265,8 +265,8 @@ Common EPSG Codes include:
 
 *   **EPSG:4326** - WGS 84, latitude/longitude coordinate system based used by the Global Positioning System (GPS) among others.
 *   **EPSG:3857** - Web Mercator projection used for display by many web-based mapping tools such as OpenStreetMap and Google Maps
-*   **EPSG:32650 to EPSG 32653** - WGS 84 / Universal Transverse Mercator (UTM) Zone 50N to 53N. UTM zones used in the Philippines
-*   **EPSG:4683** - Philippine Reference System of 1992
+*   **EPSG:3106** - Gulshan 303 / Bangladesh Transverse Mercator
+*   **EPSG:32645 to EPSG 32646** - WGS 84 / Universal Transverse Mercator (UTM) Zone 45N to 46N. UTM zones used in the Bangladesh
 
 
 #### **Quiz questions**
