@@ -27,7 +27,7 @@ Các công cụ và tài nguyên cần thiết cho modulue này gồm:
 *   Máy tính
 *   Kết nối Internet
 *   QGIS 3.16 đã được cài đặt trên máy tính  ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
-*   Pampanga_province and Pampanga_SanFernando vector layer (trong [module3.gpkg](module3.gpkg)).
+*   HCMC_border and HCMC_District3 vector layer (trong [module3.gpkg](module3.gpkg)).
 
 
 ## Yêu cầu về kỹ năng
@@ -107,7 +107,7 @@ QuickOSM hoạt động bằng cách truy vấn các tags (keys and values) củ
 
 
 
-1. Tải các lớp dữ liệu vector HCMC_province và HCMC_SanFernando có trong module3 geopackage
+1. Tải các lớp dữ liệu vector HCMC_border và HCMC_District3 có trong module3 geopackage
 ![Các layer HCMC được tải trong QGIS](media/quickosm-1.png "Các layer HCMC được tải trong QGIS")
 
 Hình 3.2. Các layer HCMC được tải trong QGIS
@@ -159,17 +159,17 @@ Hình 3.5. Dữ liệu highway được tải từ OSM
 
 Hình 3.6. Phiên bản Overpass query của Quick query để tải highway
 
-5. Tiếp theo, tải tất cả vị trí các nhà hàng thức ăn nhanh trong phạm vi HCMC_province layer. Mở QuickOSM plugin và nhập các tham số sau vào tab Quick query:
+5. Tiếp theo, tải tất cả vị trí các nhà hàng thức ăn nhanh trong phạm vi HCMC_border layer. Mở QuickOSM plugin và nhập các tham số sau vào tab Quick query:
 
     * Key: amenity
     * Value: fast_food
-    * Layer Extent: HCMC_province
+    * Layer Extent: HCMC_border
     * Advanced:
         * Chọn Node, Way, Relation, Points
 
-![Tải các điểm tiện ích với thẻ fast_food trong phạm vi lớp HCMC_province](media/quickosm-6.png "Tải các điểm tiện ích với thẻ fast_food trong phạm vi lớp HCMC_province")
+![Tải các điểm tiện ích với thẻ fast_food trong phạm vi lớp HCMC_border](media/quickosm-6.png "Tải các điểm tiện ích với thẻ fast_food trong phạm vi lớp HCMC_border")
 
-Figure 3.7: Tải các điểm tiện ích với thẻ fast_food trong phạm vi lớp HCMC_province
+Figure 3.7: Tải các điểm tiện ích với thẻ fast_food trong phạm vi lớp HCMC_border
 
 6. Kết quả như hình sau:
 
@@ -177,7 +177,7 @@ Figure 3.7: Tải các điểm tiện ích với thẻ fast_food trong phạm vi
 
 Hình 3.8: Fast food locations loaded from OSM
 
-7.	Cần chú ý là ngay cả các dữ liệu bên ngoài phạm vi lớp polygon HCMC_province cũng được tải. Điều này là do chúng ta đang sử dụng layer extent dạng bounding box. Nếu chỉ cần các đối tượng nằm trong polygon, chúng ta có thể chọn và clip các đối tượng này (cách làm xem trong các Module kế tiếp).
+7.	Cần chú ý là ngay cả các dữ liệu bên ngoài phạm vi lớp polygon HCMC_border cũng được tải. Điều này là do chúng ta đang sử dụng layer extent dạng bounding box. Nếu chỉ cần các đối tượng nằm trong polygon, chúng ta có thể chọn và clip các đối tượng này (cách làm xem trong các Module kế tiếp).
 
 
 #### **Câu hỏi**
@@ -255,19 +255,19 @@ Hình 3.10: HRSL cho HCMC, Vietnam
 
 Overpass API ([https://wiki.openstreetmap.org/wiki/Overpass_API](https://wiki.openstreetmap.org/wiki/Overpass_API)) trước đây được gọi là OSM Server Side Scripting, hoặc OSM3S trước năm 2011, là một API chỉ đọc (read-only) cho phép tùy chọn từ dữ liệu OSM. Khác với API chính, vốn tối ưu cho việc biên tập, Overpass API tối ưu cho người dùng dữ liệu trích xuất một tập con nhỏ dữ liệu trong khoảng 10 triệu phần tử dữ liệu trong OSM. Các tập con này có thể được chọn bằng các tiêu chí tìm kiếm như vị trí, loại đối tượng, thẻ, thuộc tính, lân cận, hoặc kết hợp các tiêu chí này. Overpass API đóng vai trò là backend cho các dịch vụ dựa trên OSM, như QuickOSM plugin.
 
-Sử dụng một truy vấn Overpass cho phép tạo truy vấn đối tượng phức tạp hơn là sử dụng QuickOSM. Ví dụ, tải tất cả các nhà hàng thức ăn nhanh trong phạm vi HCMC_province nhưng lần này chỉ tải các chi nhánh của jollibee. Nếu bạn nhìn bảng thuộc tính của lớp fast food, bạn sẽ thấy có cột **name**. Các cột trong bảng thuộc tính của dữ liệu OSM tương ứng với các khóa thẻ, nên nếu chúng ta chỉ muốn chọn các chi nhánh Jollibee, cần thêm một bộ lọc (filter) để chọn đối tượng có **key:value** là **name: Jollibee**. Bộ lọc này có thể được thêm vào dễ dàng trong Overpass API.
+Sử dụng một truy vấn Overpass cho phép tạo truy vấn đối tượng phức tạp hơn là sử dụng QuickOSM. Ví dụ, tải tất cả các nhà hàng thức ăn nhanh trong phạm vi HCMC_border nhưng lần này chỉ tải các chi nhánh của jollibee. Nếu bạn nhìn bảng thuộc tính của lớp fast food, bạn sẽ thấy có cột **name**. Các cột trong bảng thuộc tính của dữ liệu OSM tương ứng với các khóa thẻ, nên nếu chúng ta chỉ muốn chọn các chi nhánh Jollibee, cần thêm một bộ lọc (filter) để chọn đối tượng có **key:value** là **name: Jollibee**. Bộ lọc này có thể được thêm vào dễ dàng trong Overpass API.
 
 1. Mở QuickOSM plugin và nhập các tham số mà chúng ta đã nhập bên trên để truy vấn tất cả các nhà hàng thức ăn nhanh.
 
 ![Các tham số QuickOSM để tải các nhà hàng fast food ở HCMC](media/quickosm-5.png "Các tham số QuickOSM để tải các nhà hàng fast food ở HCMC")
 
-Quick query để tải tất cả các điểm tiện ích được gắn thẻ fastfood 
+Quick query để tải tất cả các điểm tiện ích được gắn thẻ fast_food 
 
 2. Chọn Show query.
 
 ![Overpass API của câu truy vấn](media/overpass-1.png "Overpass API của câu truy vấn")
 
-Overpass API tương ứng để tải tất cả các tiện ích được gắn thẻ fastfood
+Overpass API tương ứng để tải tất cả các tiện ích được gắn thẻ fast_food
 
 3. Chỉnh sửa query bằng cách thêm vào dòng **&lt;has-kv k="name" v="Jollibee"/>** sau mỗi dòng &lt;has-kv k="amenity" v="fast_food"/>
 
