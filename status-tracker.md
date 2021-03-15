@@ -4,7 +4,7 @@
     - Argentina *(module 0-5)*
     - Bangladesh *(module 0-1)*
     - Germany *(module 0-10)*
-    - India *(module 0-6)*
+    - India *(module 0-7)*
     - Mexico *(module 0-2)*
     - Philippines *(module 0-10)*
     - Sri Lanka *(module 0-10)*
@@ -14,7 +14,7 @@
     - Bangladesh *(module 2-10)*
     - Ethiopia *(module 0-10)*
     - Ghana *(module 0-10)*
-    - India *(module 7-10)*
+    - India *(module 8-10)*
     - Kenya *(module 0-10)*
     - Mexico *(module 3-7)*
     - Nigeria *(module 0-10)*
@@ -48,7 +48,7 @@
 | **Ethiopia**     |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Germany**      |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **Ghana**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
-| **India**        |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L     |
+| **India**        |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     L    |     L    |     L     |
 | **Kenya**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Mexico**       |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L    |     L    |     T, L    |     T, L    |     T, L     |
 | **Nigeria**      |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
