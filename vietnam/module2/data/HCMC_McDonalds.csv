@@ -1,0 +1,5 @@
+full_id,osm_id,osm_type,addr:housenumber,addr:street,amenity,cuisine,internet_access,name,name:de,opening_hours,brand,brand:wikidata,brand:wikipedia,takeaway
+n2893838373,"2893838373",node,2-2A,Đường Trần Hưng Ðạo,fast_food,ice_cream,wlan,McDonald's,McDonalds,24/7,,,,
+n4069903578,"4069903578",node,,,fast_food,,,McDonald's,,,,,,
+n5280998721,"5280998721",node,,,fast_food,burger,,McDonald's,,,McDonald's,Q38076,en:McDonald's,yes
+n6908027803,"6908027803",node,,,fast_food,burger,,McDonald's,,,McDonald's,Q38076,en:McDonald's,yes

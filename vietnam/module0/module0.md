@@ -263,10 +263,10 @@ Bạn có thể thấy rằng một số CRS được tham chiếu bằng mã EP
 
 Các EPSG code phổ biến:
 
-*   **EPSG:4326** - WGS 84, latitude/longitude coordinate system based used by the Global Positioning System (GPS) among others.
-*   **EPSG:3857** - Web Mercator projection used for display by many web-based mapping tools such as OpenStreetMap and Google Maps
-*   **EPSG:32650 to EPSG 32653** - WGS 84 / Universal Transverse Mercator (UTM) Zone 50N to 53N. UTM zones used in the Philippines
-*   **EPSG:4683** - Philippine Reference System of 1992
+*   **EPSG:4326** - WGS 84, Hệ thống tọa độ kinh vĩ, được sử dụng bởi Hệ thống Định vị Toàn cầu (GPS) cũng như các dịch vụ điều hướng và bản đồ khác.
+*   **EPSG:3857** - Web Mercator projection được sử dụng bởi các dịch vụ bản đồ như OpenStreetMap và Google Maps
+*   **EPSG:3405, EPSG:3406** - WGS 84 / Universal Transverse Mercator (UTM) Zone 48N và 49N, tương ứng múi chiếu 6 độ cho đất liền (48N), khu vực gần biển và hải đảo (49N) của Việt Nam ở Hệ toạ độ Vn-2000.
+*   **EPSG:9205 --> EPSG:9218** - Múi chiếu 3 độ, kinh tuyến trục địa phương các tỉnh thành ở Việt Nam ở Hệ toạ độ Vn-2000.
 
 
 #### **Câu hỏi**
@@ -325,7 +325,7 @@ Vector thường được sử dụng khi cần độ dài, diện tích và kho
 
 ![Mô hình dữ liệu vector](media/vector.png "Mô hình dữ liệu vector")
 
-Hình 0.13. Một vector chứa các đối tượng không gian với thuộc tính tương ứng.
+Hình 0.13. Một vector layer chứa các đối tượng không gian với thuộc tính tương ứng.
 
 So sánh với pixel của raster, một đối tượng vector có thể chứa nhiều giá trị cùng lúc. Các giá trị này được chứa trong các cột trong bảng thuộc tính, và mỗi đối tượng được chứa trên một dòng.
 

@@ -158,13 +158,13 @@ Hình 2.3. Các files của Module 2 trong Browser Panel
 
 6. Có 5 file trong thư mục data: 
 
-    1. GeoPackage (HCMC_NCR.gpkg) chứa một file vector (NCR_Jollibee) và một file raster (NCR_SRTM_DEM); 
-    2. GeoJSON (NCR_districts.geojson); 
-    3. flatgeobuf (NCR_municities.fgb);
-    4. shapefile (NCR_admin_boundary.shp); và
-    5. Comma-Separated Value - CSV (NCR_McDonalds.csv).
+    1. GeoPackage (Vietnam_HCMC.gpkg) chứa một file vector (HCMC_Jollibee) và một file raster (HCMC_SRTM_DEM); 
+    2. GeoJSON (HCMC_districts.geojson); 
+    3. flatgeobuf (HCMC_municities.fgb);
+    4. shapefile (HCMC_admin_boundary.shp); và
+    5. Comma-Separated Value - CSV (HCMC_McDonalds.csv).
 
-7. Kích chuột phải NCR_admin_boundary.shp và chọn Layer Properties (Hình 2.4) để mở ra cửa sổ layer properties (Hình 2.5). Chú ý các thông tin có trong cửa sổ này: Loại đối tượng (geometry) là gì? Hệ quy chiếu tọa độ (CRS) đưỢc sử dụng? Số lượng đối tượng có trong layer?
+7. Kích chuột phải HCMC_admin_boundary.shp và chọn Layer Properties (Hình 2.4) để mở ra cửa sổ layer properties (Hình 2.5). Chú ý các thông tin có trong cửa sổ này: Loại đối tượng (geometry) là gì? Hệ quy chiếu tọa độ (CRS) đưỢc sử dụng? Số lượng đối tượng có trong layer?
 
 
 ![Xem Layer Properties](media/qgis-browser-3.png "Xem Layer Properties")
