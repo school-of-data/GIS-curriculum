@@ -25,10 +25,10 @@ Ngoài ra bạn sẽ học được các kỹ năng;
 *   Máy tính
 *   Kết nối Internet
 *   QGIS 3.16 trở lên
-*   Lớp ranh giới hành chính Tp.HCM (trong [module5.gpkg](data/module5.gpkg))
-*   Cơ sở y tế Tp.HCM (trong [module5.gpkg](data/module5.gpkg))
-*   Vietnam provinces (inside [module5.gpkg](data/module5.gpkg))
-*   [HCM City High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   Lớp ranh giới hành chính Tp.HCM - HCMC_border (trong [module5.gpkg](data/module5.gpkg))
+*   Cơ sở y tế Tp.HCM - HCMC_clinics (trong [module5.gpkg](data/module5.gpkg))
+*   Ranh giới hành chính tỉnh thành Việt Nam - Vietnam_provinces (inside [module5.gpkg](data/module5.gpkg))
+*   [HCM City High Resolution Settlement Layer](data/HRSL_HCMC_Population.tif)
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ Ngoài ra bạn sẽ học được các kỹ năng;
 *   Nắm vững các Module trước
 
 
-## Tài nguyên bổ sung
+## Tài liệu tham khảo
 
 *   QGIS Map LayOut - [https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html](https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html )
 *   Layout Templates - [https://layout-hub.github.io/](https://layout-hub.github.io/)
@@ -48,78 +48,77 @@ Ngoài ra bạn sẽ học được các kỹ năng;
 
 Hãy bắt đầu với một ví dụ: 
 
-Để tạo một bản đồ, bạn cần một chủ đề, chẳng hạn như 'Sự phân bố không gian của các cơ sở y tế ở Tp.HCM'. 
-To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Pampanga province in the Philippines. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
+Để tạo một bản đồ, bạn cần một đề tài mà bạn có thể muốn hiểu rõ hơn, chẳng hạn như 'Sự phân bố không gian của các cơ sở y tế ở Tp.HCM'. Bạn sẽ nhận thấy đề tài này cung cấp cả chủ đề để khám phá và vị trí địa lý. Được trang bị thông tin này và các dữ liệu liên quan cho phép bạn khám phá thêm câu hỏi, bạn có thể tiến hành tạo một bản đồ.
 
-Breakdown of the concepts
 
-This module will focus on the following key map making concepts; map canvas and related layers, the print layout and map elements and properties. First, here are short definitions on each; 
+Phân tích các khái niệm
 
-*   the **map canvas and related layers**: is probably the most important widget within QGIS because it shows the map composed from overlaid map layers and allows interaction with the map and layers. This is covered in the Module 0: Introduction to QGIS
-*   the **print layout and print layout** : The print layout provides growing layout and printing capabilities. It allows you to add elements such as the QGIS map canvas, text labels, images, legends, scale bars, basic shapes, arrows, attribute tables and HTML frames. With the Print layout you can create nice maps and atlases that can be printed or saved as PDF-file, an image or an SVG-file. This is a powerful way to share geographical information produced with QGIS that can be included in reports or published. You can save the layout as a template and load it again in another session. Finally, generating several maps based on a template can be done through the atlas generator. The image below shows the print layout and print layout interface. This interface opens when you open a new print layout.
+Module này sẽ tập trung vào các khái niệm chính để thành lập bản đồ sau đây; map canvas và các layer liên quan, print layout và các thành phần và thuộc tính bản đồ. Đầu tiên là các định nghĩa ngắn gọn cho từng khái niệm;
 
+*   **Map canvas và các layer liên quan**: có lẽ là thành phần quan trọng nhất trong QGIS bởi vì nó hiển thị bản đồ được tạo từ các layer được chồng lớp lên nhau và cho phép tương tác với bản đồ và các layer. Điều này đã được đề cập trong Module 0: Giới thiệu QGIS. 
+*   **Pprint layout** : Print layout cung cấp khả năng dàn trang và in bản đồ. Nó cho phép thêm các thành phần như Map canvas, text labels, images, legends, scale bars, basic shapes, arrows, attribute tables và HTML frames. Với Print layout bạn có thể tạo các bản đồ đẹp mắt và atlas để có thể in và lưu lại thành PDF, image hoặc SVG file. Đây là một cách mạnh mẽ để chia sẻ thông tin địa lý được sản xuất bởi QGIS có thể được đưa vào báo cáo hoặc xuất bản. Bạn có thể lưu layout như là một template và tải lại trong một phiên làm việc khác. Cuối cùng, việc tạo một số bản đồ dựa trên template có thể được thực hiện thông qua atlas generator. Hình sau thể hiện print layout và giao diện khi tạo mới một print layout.
+  
 ![Print layout](media/print_comp2.png "Print layout")
 
-Figure 5.1: Print layout
+Hình 5.1: Print layout
 
-*   **map elements and properties**: Maps contain lots of information. Most maps will have the five following things: a Title, a Legend, a Grid, a Compass Rose to indicate direction, and a Scale. The Title tells you what is being represented on the map
-
-
-## Main content
-
-### Phase 1 title: Exporting the map canvas
-
-In this tutorial, we’ll show two ways to ‘Export the map canvas’ to the QGIS print layout. The first method is straightforward while the second method explores the more advanced capabilities provided by the print layout.
-
-#### **First method: Export the map canvas without the print layout**
-
-1. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data. Add map decorations by clicking **View ‣ Decorations**. Select your preferred map decoration. For example you may add the Title label, Scale bar and Copyright Label. For each decoration you’ll have to specify settings in a dialogue box.
-2. The final step is to export the map to either image or pdf format. To do this, Click **Project ‣ Import/Export** and then select your prefered export format. The export dialogue below should appear.
+*   **Các thành phần và thuộc tính bản đồ**: Các bản đồ chứa rất nhiều thông tin. Hầu hết các bản đồ sẽ có 5 yếu tố: Title, Legend, Grid, Compass Rose để chỉ hướng và thước tỉ lệ. Title cho biết những gì đang được thể hiện
 
 
-![Exporting the map canvas as image](media/export-map-canvas-image.png "Exportzing the map canvas as image")
+## Nội dung chính
 
-![Exporting the map](media/export-map-canvas.png "Exporting the map")
+### Phase 1 : Kết xuất map canvas
 
-Figure 5.2: Exporting the map
+Trong hướng dẫn này, chúng tôi sẽ chỉ ra hai cách để 'Kết xuất map canvas' sang print layout. Cách đầu tiên là đơn giản trong khi cách thứ hai sẽ khám phá các khả năng nâng cao được cung cấp bởi print layout.
 
-3. Click **Save**. The map in the qgis canvas will be saved as a pdf or image document. Browse to the location where the file is saved and you’re now able to print or share the map.
+#### **Ca1h thứ nhất: Kết xuất map canvas không cần print layout**
 
-![Map canvas exported as image](media/exported-map-canvas.png "Map canvas exported as image")
+1. Các layer trước tiên phải được thêm vào map canvas. Các layer có thể được styling để truyền đạt thông tin trong dữ liệu của bạn. Thêm map decoration bằng cách kích chuột vào **View ‣ Decorations**. Chọn các map decoration yêu thích của bạn, vì dụ như bạn có thể thêm Title Label, Scale bar và Copyright Label. Với mỗi decoration bạn phải nhập các thiết lập trong một dialog.
+2. Bước cuối cùng là kết xuất bản đồ sang dạng image hoặc pdf bằng cách kích chuột vào **Project ‣ Import/Export**, sau đó chọn định dạng kết xuất như hình sau
 
-Figure 5.3: Map canvas exported as image
+![Kết xuất map canvas thành một image](media/export-map-canvas-image.png "Kết xuất map canvas thành một image")
 
-#### **Second method: Export the map canvas to the print layout**
+![Kết xuất map canvas](media/export-map-canvas.png "Kết xuất map canvas")
 
-1. In this tutorial, we’ll make a map showing the 1.) location of health centres and 2.) population density of Pampanga Province in the Philippines. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data.
+Hình 5.2: Kết xuất map canvas
 
-![Creating new Print Layout](media/new-print-layout.png "Creating new Print Layout")
+3. Chọn **Save**. Map canvas sẽ được lưu lại thành một file image hoặc pdf. Chọn nơi lưu trữ và bạn có thể in hoặc chia sẻ bản đồ.
 
-Figure 5.4: Creating new Print Layout
+![Kết xuất map canvas thành image](media/exported-map-canvas.png "Kết xuất map canvas thành image")
 
-2. The map canvas can now be exported to the print Layout. Click the ‘new print layout layout button’ ![New Print Layout](media/newprint_composer.png "New Print Layout"). This can be accessed via the tool bar. Alternatively, access using the ‘Projects’ menu bar. A title dialogue will open, prompting you to type the title of the Print Layout. Type ‘Pampanga’ and Click OK.
+Hình 5.3: Kết xuất map canvas thành image
 
-![Naming the Print Layout](media/new-print-layout-name.png "Naming the Print Layout")
+#### **Cách thứ hai: Kết xuất map canvas sang print layout**
 
-Figure 5.5: Naming the Print Layout
+1. Trong hướng dẫn này, chúng ta sẽ tạo một bản đồ hiển thị 1.) Vị trí của các cơ sở y tế và 2.) Mật độ dân số của Tp. Hồ Chí Minh. Các layer này phải được thêm vào map canvas trước khi kết xuất. Các layer sau đó có thể được styling để truyền đạt thông tin của dữ liệu.
 
-3. The print layout will open
+![Tạo mới Print Layout](media/new-print-layout.png "Tạo mới Print Layout")
 
-![The Print Layout window](media/new-print-layout-window.png "The Print Layout window")
+Hình 5.4: Tạo mới Print Layout
 
-Figure 5.6: The Print Layout window
+2. Map canvas bây giờ có thể được kết xuất sang print layout. Kích chọn nút ‘New Print layout’ ![New Print Layout](media/newprint_composer.png "New Print Layout"), có thể được truy cập từ Tool bar hoặc bằng 'Project' menu bar. Một title dialog sẽ mở ra để nhập tiêu đề cho Print Layout, trong trường hợp này là 'Ho Chi Minh City', sau đó chọn OK.
 
-4. You’ll notice the print layout canvas is empty. To add the styled map from the QGIS canvas, Click the ‘Add new map to layout button’ ![alt_text](media/add_new_map_to_layout.png "image_tooltip"), left click your mouse and draw a rectangle in the white space at the center of the print layout. The map should be added. You’ve just exported a map to the print layout. It’s now possible to add all other map elements like the title, legend, grids etc. 
+![Đặt tên Print Layout](media/new-print-layout-name.png "Đặt tên Print Layout")
 
-![Add map to Print Layout](media/print-layout-map.png "Add map to Print Layout")
+Hình 5.5: Đặt tên Print Layout
 
-Figure 5.7: Add map to Print Layout
+3. Giao diện Print Layout
 
-#### **Quiz questions**
+![Giao diện Print Layout](media/new-print-layout-window.png "Giao diện Print Layout")
 
-1. What is the qgis map canvas? (check boxes)
-2. What is the use of the print layout? (check boxes)
-3. Which of the following is not a map element? (radio button)
+Hình 5.6: Giao diện Print Layout
+
+4. Bạn sẽ nhận thấy print layput canvas trống. Để thêm bản đồ từ Map canvas, kích chọn e ‘Add new map to layout button’ ![alt_text](media/add_new_map_to_layout.png "image_tooltip"), kích tr1i chuột và vẽ một hình chữ nhật ở khu vực trung tâm của print layout để chứa map canvas. Tới đây, bạn vừa kết xuất map canvas sang print layout, có thể thêm tất cả các thành phần bản đồ khác như title, legend, grids,...
+
+![Thêm Map vào Print Layout](media/print-layout-map.png "Thêm Map vào Print Layout")
+
+Hình 5.7: Thêm Map vào Print Layout
+
+#### **Câu hỏi**
+
+1. QGIS map canvas là gì? (chọn một hoặc nhiều phương án trả lời)
+2. Print layout là gì? (chọn một hoặc nhiều phương án trả lời)
+3. Thành phần nào sau đây không phải là thành phần bản đồ? (Chỉ chọn một phương án trả lời)
     
 #### **Quiz answers**
 
@@ -137,52 +136,50 @@ Figure 5.7: Add map to Print Layout
    d. Colors and designs
 
 
-### Phase 2 title: Adding and editing map elements to the print layout 
+### Phase 2 : Thêm và chỉnh sửa các thành phần bản đồ trong print layout
 
 
-#### **Content/Tutorial**
+#### **Nội dung/ Hướng dẫn**
 
-Now that the styled map has been added to print layout, it’s now time to add the relevant map elements like the title, scale, legend, grid, metadata etc to the print layout. Most of the buttons are located to the left of the print layout.
+Bây giờ bản đồ đã được thêm vào print laypout, đã đến lúc thêm các thành phần bản đồ liên quan như title, scale, legend, grid, metadata,...vào print layout. Hầu hết các nút thêm vào nằm phía bên trái của print layout.
 
-1. Click the ‘Add label’ ![alt_text](media/add_title.png "image_tooltip")
-button, hold down the left mouse button and draw a rectangle where you’d like to place the title of the map. Type the title under the ‘Main properties’ menu on the right side of the print layout. The font properties can be changed under the ‘Appearance’ menu item.
+1. Chọn nút ‘Add label’ ![alt_text](media/add_title.png "image_tooltip"), giữ chuột trái và vẽ một hình chữ nhật (thông thường là phía trên của print layout) để đặt tiêu đề cho bản đồ. Nhập tiêu đề trong menu ‘Main properties’ ở bên phải của print layout. Các thiết lập font chữ có thể được thay đổi ở mục 'Appearance'.
 
-![Add title of the map](media/print-layout-with-title.png "Add title of the map")
+![Thêm tiêu đề cho bản đồ](media/print-layout-with-title.png "Thêm tiêu đề cho bản đồ")
 
-Figure 5.8: Add title of the map
+Hình 5.8: Thêm tiêu đề cho bản đồ.
 
-2. Next, we’ll add the legend and scale. A data attribution statement can be added using the ‘Add label’ button Hover over the button on the left of the print layout and click the preferred button. Follow the same steps as in 1. Above to add the map element to the print layout. You can add other map elements but be careful that the map doesn’t get too cluttered. 
+2. Tiếp theo, chúng ta sẽ thêm legend và scale. Một tuyên bố bản quyền (data attribution) có thể được thêm vào bằng cách ‘Add label’. Di chuyển con trỏ đến các nút bấm bên trái print layout để chọn. Thực hiện các bước tương tự như bước 1 bên trên đề thêm các thành phần bản đồ vào print layout. Bạn có thể thêm các thành phần bản đồ khác, nhưng hãy cẩn thận để bản đồ không quá lộn xộn.
 
 
 ![Scale bar](media/scale-bar.png "Scale bar")
 
-Figure 5.9: Add scale bar to the map
+Hình 5.9: Thêm thước tỉ lệ - scale bar vào bản đồ
 
 ![Legend](media/legend.png "Legend")
 
-Figure 5.9: Add legend to the map
+Hình 5.9: Thêm chú giải - legend vào bản đồ
 
 ![Attribution](media/attribution.png "Attribution")
 
-Figure 5.10: Add attribution to the map
+Hình 5.10: Thêm thông tin tác giả - attribution vào bản đồ.
 
-3. If the map layout is satisfactory, the map can be exported as a pdf, png, jpeg or svg, ready for printing otherwise save the layout. All saving functionality can be accessed via the ‘layout’ menu.
+3. Nếu map layout đạt yêu cầu, bản đồ có thể được kết xuất  sang pdf, png, jpeg hoặc svg, sẵn sàng cho in ấn hoặc lưu lại. Tất cả các chức năng lưu có thể được truy cập thông qua menu ‘layout’.
 
-4. Save the map as an image using via **Layout ‣ Export as Image...** or by clicking the **Export as Image** button ![Export map to image](media/export-image-btn.png "Export map to image"). QGIS will ask you what file to save the map to as well as the image parameters.
+4. Lưu bản đồ thành image sử dụng **Layout ‣ Export as Image...** hoặc kích chọn nút **Export as Image**  ![Export map to image](media/export-image-btn.png "Export map to image"). QGIS sẽ hỏi nơi lưu trữ bản đồ cũng như các thông số của image.
 
-![Image parameters](media/img-parameters.png "Image parameters")
+![Các thông số của image](media/img-parameters.png "Các thông số của image")
 
-Figure 5.10: Add attribution to the map
+Hình 5.10: Các thông số của image
 
-![Exported map as imgage](media/exported-map.png "Exported map as imgage")
+![Bản đồ được kết xuất thành image](media/exported-map.png "Bản đồ được kết xuất thành image")
 
-Figure 5.11: Exported map as imgage
+Hình 5.11: Bản đồ được kết xuất thành image
 
-#### **Quiz questions**
+#### **Câu hỏi**
 
-1.  Under which of the following tabs can you change the properties of map elements? (radio button)
-2. What’s the difference between the print layout and print layout
-3. How can you add attribution text to the map layout
+1. Ở tab nào sau đây bạn có thể thay đổi properties của các thành phần bản đồ (Chỉ chọn một phương án trả lời)
+2. Bạn có thể thêm thông tin tác giả - attribution vào map layout bằng cách nào
 
 
 #### **Quiz answers**
@@ -190,70 +187,67 @@ Figure 5.11: Exported map as imgage
 1. a. Composition
    b. Item properties
    c. Atlas generation
-2. Print layout allows you to add maps from the map canvas while the print layout allows you to compose your map
-3. Add a title box, then type the attribution text. Note that the title box allows you to add all forms of text to your map.
+2. Thêm một title box, sau đó gõ thông tin tác giả. Chú ý là title box cho phép bạn thêm tất cả các dạng text vào bản đồ.
 
 
-### Phase 3 title : Automating map creation using Atlas capabilities
+### Phase 3: Tạo bản đồ tự động bằng chức năng Atlas
 
-#### **Content/Tutorial**
+#### **Nội dung/ Hướng dẫn**
+Nếu tổ chức của bạn xuất bản các bản đồ in hoặc bản đồ trực tuyến, bạn thường cần tạo nhiều bản đồ với cùng một template - thường là cho từng đơn vị hành chính hoặc một khu vực quan tâm. Tạo các bản đồ này thủ công có thể toe61n nhiều thời gian và nếu bạn muốn cập nhật những bản đồ này mô5t cách thường xuyên, nó có thể trể thành một việc nhàm chán. QGIS có một công cụ gọi là Atlas có thể giúp bạn tạo một map template và dễ dàng xuất bản một số lượng lớn bản đồ cho các khu vực địa lý khác nhau. Chúng ta sẽ lấy các tỉnh thành khác nhau của Việt nam làm ví dụ, với ranh giới hành chính cho 63 tỉnh thành.
 
-If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different provinces of the Philippines as an example, here’s Administrative Boundaries for the 81 provinces;
+![Ranh giới hành chính 63 tỉnh thành](media/atlas-coverage.png "Ranh giới hành chính 63 tỉnh thành")
 
-![Coverage layer](media/atlas-coverage.png "Coverage layer")
+Hình 5.12: Ranh giới hành chính 63 tỉnh thành
 
-Figure 5.12: Coverage layer
+![Bảng thuộc tính](media/atlas-attr.png "Bảng thuộc tính")
 
-![Attribute table](media/atlas-attr.png "Attribute table")
+Hình 5.13: Bảng thuộc tính
 
-Figure 5.13: Attribute table
+1. Layer này sẽ đóng vai trò là coverage layer, nghĩa là Atlas sẽ gồm 63 bản đồ tương ứng với 63 đối tượng của layer - 63 tỉnh thành của Việt Nam.
 
-1. This layer will serve as out coverage layer which means that the QGIS Atlas will 1 map for each of the features in this coverage layer. All in all, 81 maps will be generated.
-
-2. Open or create a new Print Layout and add a map.
+2. Tạo mới Print Layout và thêm vào một bản đồ.
 
 ![Atlas Print Layout](media/atlas-print-layout.png "Atlas Print Layout")
 
-Figure 5.14: Atlas Print Layout
+Hình 5.14: Atlas Print Layout
 
 
-3. In the right pane of the Print Layout, make sure to select the **Atlas** menu and check the **Generate an atlas** box. You can also open the Atlas Settings using the Atlas Settings button ![Atlas Settings](media/atlas-settings-btn.png "Atlas Settings") on the Atlas toolbar.
+3. Ở bên phải của Print Layout, đảm bảo chọn **Atlas** menu và kích chọn **Generate an atlas**. Bạn cũng có thể mở thiết lập Atlas bằng cách kích vào nút Atlas Settings ![Atlas Settings](media/atlas-settings-btn.png "Atlas Settings") trên Atlas toolbar.
 
-![Atlas Generation](media/generate-atlas.png "Atlas Generation")
+![Tạo Atlas](media/generate-atlas.png "Tạo Atlas")
 
-Figure 5.15: Atlas Generation
+Hình 5.15: Tạo Atlas
 
-3. The next step is to choose the coverage layer; The coverage layer is the index layer used to create each page. One map/page for the Atlas will be generated for each feature in the coverage layer. In our case, using the PHL_provinces coverage layer will create a map for each of the 81 provinces. QGIS Atlas dynamically changes the view-extent to each feature in the coverage layer. You can opt to make the coverage layer hidden in the maps that you create (i.e. the coverage layer will not be visible in the Print Layout) and select what to name each page of your Atlas. You can also perform some filtering and sorting of the coverage layer if you need to. For the **Output**, you can opt to have a single file as an output by checking the **Singe file export when possible** checkbox. If unchecked, you will generate 1 file per map.
+3. Bước tiếp theo là chọn coverage layer; Coverage layer là một index layer được dùng để tạo từng trang in. Một bản đồ/ trang in của Atlas sẽ được tạo tương ứng với mỗi đối tượng của coverage layer. Trong trường hợp của chúng ta, sử dụng Vietnam_provinces coverage layer sẽ tạo 63 bản đồ tương ứng với 63 tỉnh thành. QGIS Atlas sẽ tự động thay đổi khung nhìn cho từng đối tượng trong coverage layer. Bạn có thể chọn ẩn coverage layer trong các bản đồ được tạo (nghĩa là) coverage layer sẽ không được hiển thị trong Print Layout) và chọn tên cho từng trang in của Atlas. Bạn cũng có thể thực hiện một số bộ lọc và sắp xếp cho coverage layer nều cần. Đối với **Output**, bạn có thể chọn đầu ra là một file duy nhất bằng các kích chọn **Singe file export when possible**, ngược lại nếu không chọn thì sẽ tạo ra mỗi file riêng cho từng bản đồ.
+   
+![Chọn Coverage Layer](media/coverage-layer.png "Chọn Coverage Layer")
 
-![Select Coverage Layer](media/coverage-layer.png "Select Coverage Layer")
+Hình 5.16: Chọn Coverage Layer
 
-Figure 5.16: Select Coverage Layer
-
-4. Now that we've set the coverage layer, we should tell the Print Layout to use the atlas to control the extent of the maps (area visible on the printable map) that we will generate. In the **Item Properties** tab, check the box for **Controlled By Atlas**
+4. Bây giờ chúng ta đã chọn coverage layer, chúng ta nên yêu cầu Print Layout sử dụng atlas để điều khiển khung nhìn của các bản đồ sẽ được tạo ra. Trong tab **Item Properties**, kích chọn **Controlled By Atlas**
 
 ![Controlled by Atlas](media/atlas-controlled.png "Controlled by Atlas")
 
-Figure 5.17: Make sure that the map extent is controlled by the Atlas
+Hình 5.17: Đảm bảo rằng khung nhìn bản đồ được điều khiển bởi Atlas
 
-5. To preview your Atlas, click on the Preview Atlas button ![Preview Atlas button](media/atlas-preview-btn.png "Preview Atlas button") on the Atlas Toolbar. This will show you the 81 maps that you generated. Use the Atlas toolbar ![Atlas toolbar](media/atlas-toolbar-nav.png "Atlas toolbar") to navigate the Atlas maps. 
+5. Để xem trước Atlas, kích chọn nút Preview Atlas ![Preview Atlas button](media/atlas-preview-btn.png "Preview Atlas button") trên Atlas Toolbar. Nó sẽ hiển thị 63 bản đồ mà bạn đã tạo. Sử dụng Atlas toolbar ![Atlas toolbar](media/atlas-toolbar-nav.png "Atlas toolbar") đề lần lượt xem các bản đồ có trong Atlas.
 
 ![Atlas Preview](media/atlas-preview.png "Atlas Preview")
 
-Figure 5.18: Atlas Preview
+Hình 5.18: Xem trước Atlas
 
-6. You can export the Atlas maps via the **Export Atlas** button ![Export Atlas button](media/atlas-export-btn.png "Export Atlas button") either as images or PDFs. Select **Export Atlas as Image**. You should have 81 maps generated wher each map shows the extent of the province.
+6. Bạn có thể xuất các bản đồ Atals bằng nút **Export Atlas** ![Export Atlas button](media/atlas-export-btn.png "Export Atlas button") sang dạng image hoặc pdf. Chọn **Export Atlas as Image**, bạn sẽ có 63 bản đồ tương ứng với 63 tỉnh thành.
 
 
 ![Atlas Outputs](media/atlas-outputs.png "Atlas Outputs")
 
-Figure 5.18: Atlas Outputs
+Hình 5.18: Kết quả đầu ra của Atlas
 
-7. **TIP**: For this example we only mapped the coverage layer. The power of the Atlas is when we map several layers. For example, we have the clinics, road network, and population density data for the entire country loaded as layers in QGIS. We would then want to create one map for each of the provinces showing these same layers. Using the Atlas would require us to only create one layout template and let the Atlas handle the generation of the other maps based on the coverage layer that we use.
+7. **MẸO**: Đối với ví dụ này chúng ta chỉ tạo bản đồ từ coverage layer. Sức mạnh của Atlas là khi chúng ta có nhiều layer. Ví dụ, lớp cơ sở y tế, giao thông và mật độ dân số của cả nước được tải trong QGIS. Sau đó, chúng ta muốn tạo một bản đồ cho từng tỉnh thành có cùng các layer. Sử dụng Atlas sẽ chỉ yêu cầu chúng ta tạo một layout template và để Atlas quản lý việc tạo các bản đồ khác dựa trên coverage layer được sử dụng. 
 
+9. **MẸO**: Bạn có thể sử dụng QGIS Expressions và Data Defined để ghi đè thiết lập các thành phần bản đồ trong Atlas để chúng có thể thay đổi tự động theo các đối tượng của coverage layer. Ví dụ, bạn có thể sử dụng QGIS expression để gọi giá trị của trường NAME_1 cho label để nó thay đổi tự động giá trị của NAME_1 tương ứng với từng đối tượng của coverage layer
 
-8. **TIP**: You can use QGIS Expressions and Data Defined overrides for setting the other map elements in your Atlas so that they also dynamically change depending on the coverage layer feature being mapped. For example, you can use a QGIS expression calling the value of the NAME_1 field on your label so that it dynamically changes into the value of NAME_1 for the current feature being mapped.
-
-For more information about the QGIS Atlas, see: [https://www.youtube.com/watch?v=tOnMJBUvEjY](https://www.youtube.com/watch?v=tOnMJBUvEjY).
+Để tìm hiểu thêm về QGIS Atlas, tham khảo tại đây  [https://www.youtube.com/watch?v=tOnMJBUvEjY](https://www.youtube.com/watch?v=tOnMJBUvEjY).
 
 
 #### **Quiz questions**
