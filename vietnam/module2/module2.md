@@ -160,7 +160,7 @@ Hình 2.3. Các files của Module 2 trong Browser Panel
 
     1. GeoPackage (Vietnam_HCMC.gpkg) chứa một file vector (HCMC_Jollibee) và một file raster (HCMC_SRTM_DEM); 
     2. GeoJSON (HCMC_districts.geojson); 
-    3. flatgeobuf (HCMC_municities.fgb);
+    3. flatgeobuf (HCMC_wards.fgb);
     4. shapefile (HCMC_admin_boundary.shp); và
     5. Comma-Separated Value - CSV (HCMC_McDonalds.csv).
 
@@ -184,7 +184,7 @@ Hình 2.5. Layer Properties từ Browser Panel
     2. **Kích chuột phải vào layer ‣ Add Layer to Project**
     3. **Kéo thả layer vào Map Canvas** 
 
-10.	Thử tải các lớp **NCR_admin_boundary**, **NCR_districts**, and **NCR_municities** sử dụng bất cứ cách nào ở trên
+10.	Thử tải các lớp **HCMC_admin_boundary**, **HCMC_districts**, and **HCMC_wards** sử dụng bất cứ cách nào ở trên
 
 ![Các vector layer được tải trong QGIS](media/vector-layers-loaded-1.png "Các vector layer được tải trong QGIS")
 
@@ -263,12 +263,12 @@ Tầm quan trọng của metadata là nó không chỉ thúc đẩy tính minh b
 
 #### **Bài tập 01.2: Thêm Metadata**
 
-1. Mở Layer Properties của lớp NCR_admin_boundary.
+1. Mở Layer Properties của lớp HCMC_admin_boundary.
 2. Kiểm tra thông tin trong tab Information và xem thông tin được hiển thị. Thông tin đã đầy đủ chưa? Chúng ta có thể bổ sung thêm thông tin không? 
 
-![Information properties của the NCR_admin_boundary layer](media/metadata-1.png "Information properties của the NCR_admin_boundary layer")
+![Information properties của the HCMC_admin_boundary layer](media/metadata-1.png "Information properties của the HCMC_admin_boundary layer")
 
-Hình 2.9. Information properties của the NCR_admin_boundary layer
+Hình 2.9. Information properties của the HCMC_admin_boundary layer
 
 3. Di chuyển đến tab Metadata và bổ sung thêm thông tin về layer như extent (phạm vi), danh mục dữ liệu (data category), giấy phép (license). Kích chọn OK khi hoàn thành.
 
@@ -417,9 +417,9 @@ Hình 2.19. PGP Basemap Tile server được thêm vào Browser Panel
 
 6. Bạn có thể tải XYZ tile layer theo cách tương tự các layer khác từ Browser Panel.
 
-![PGP Basemap layer được tải trong QGIS](media/xyz-3.png "PGP Basemap layer được tải trong QGIS")
+![Veitbando Map layer được tải trong QGIS](media/xyz-3.png "Veitbando Map layer được tải trong QGIS")
 
-Hình 2.20. PGP Basemap layer được tải trong QGIS
+Hình 2.20. Veitbando Map layer được tải trong QGIS
 
 1. Thử tải thêm ESRI World Imagery layer.
 
