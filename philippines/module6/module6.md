@@ -1,6 +1,6 @@
 # Module 6 - Layer attributes
 
-**Author**: Ketty
+**Author**: Ketty, Ben Hur
 
 ## Pedagogical Introduction
 
@@ -237,8 +237,8 @@ Developing a functional expression starts with understanding your data; for exam
 
 The Expression builder dialog offers access to the:
 
-* Expression tab ([https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions-list](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions-list)) which, thanks to a list of predefined functions, helps to write and check the expression to use;
-* Function Editor tab ([https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor)) which helps to extend the list of functions by creating custom ones.
+* Expression tab ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#functions-list](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#functions-list)) which, thanks to a list of predefined functions, helps to write and check the expression to use;
+* Function Editor tab ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#function-editor](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#function-editor)) which helps to extend the list of functions by creating custom ones.
 
 
 #### **Content/Tutorial**

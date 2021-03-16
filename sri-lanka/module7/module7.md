@@ -1,6 +1,6 @@
 # Module 7 - Creating and Editing Layers
 
-**Author**: Ketty
+**Author**: Ketty, Ben Hur
 
 ## Pedagogical Introduction
 
@@ -8,6 +8,8 @@ This module is designed to teach you how to use QGIS tools to create a new GIS l
 
 *   Digitizing 
 *   Georeferencing
+
+## Required tools and resources
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
@@ -374,3 +376,7 @@ Note: To check that your data is properly georeferenced you can open the topo ma
    b. automates the process
    
    c. captures digitizing errors
+
+
+#### **Sources/References**
+Topogaphic map from https://legacy.lib.utexas.edu/maps/jog/india/

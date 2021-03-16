@@ -1,6 +1,6 @@
 # **Module 9 - Raster processing and analysis**
 
-**Author**: Codrina
+**Author**: Codrina, Ben Hur
 
 ## Pedagogical Introduction
 
@@ -405,7 +405,7 @@ Figure 9.6 - Loaded raster datasets
 
 Next, we will use a series of tools that will allow us to get a sense of the data we are working with. 
 
-After loading all the datasets, we will check the coordinate reference system in which all our datasets are in.  As we know from previous modules, QGIS offers the possibility to reproject all datasets loaded into the project on the fly, however that could lead to geoprocessing issues along the way. Thus, even if all layers are correctly overlaid, as can one say by visual inspection, we will proceed in reprojecting them all in the official coordinate system of our region of interest, Colombo district - EPSG: 3123. 
+After loading all the datasets, we will check the coordinate reference system in which all our datasets are in.  As we know from previous modules, QGIS offers the possibility to reproject all datasets loaded into the project on the fly, however that could lead to geoprocessing issues along the way. Thus, even if all layers are correctly overlaid, as can one say by visual inspection, we will proceed in reprojecting them all in the official coordinate system of our region of interest, Colombo district - EPSG: 5235. 
 
 There are several ways to get information on the loaded layers in QGIS, some providing the user with more details than others. For a quick overview of a dataset’s metadata, **double-click the layer and open Properties ‣ Information**.
 
@@ -418,7 +418,7 @@ Figure 9.7 - Extracting basic metadata from a raster layer
 
 With regard to our first question on what CRS is being used for the datasets we have loaded, we can observe that even if the HRSL is correctly overlaid, the dataset native’s projection is EPSG 4326 - WGS 84 - Geographic, with units measured in degrees. We also identify that this specific raster layer has only one band, yet the pixel size is difficult to read as the measurement is in degrees and not meters, which would make it easier to understand. 
 
-Thus, the first thing to do is to reproject all datasets we will work with in the same coordinate system - EPSG 3123.
+Thus, the first thing to do is to reproject all datasets we will work with in the same coordinate system - EPSG 5235.
 
 Starting with the HRSL datasets, we go to **Raster ‣ Projections ‣ Warp (Reproject)** (see figure 9.8).
 
@@ -473,7 +473,7 @@ We proceed in checking the CRS of the 5 land cover datasets that we have loaded 
 Figure 9.12 - Batch processing tab on a QGIS functionality window
 
 
-For the 5 land cover raster layers, we will use the batch processing and as resample method nearest neighbour. To add a new layer, click on the + pictogram. To automatically fill the CRS and resampling method parameters, click on autofill button on top of the corresponding columns and select `Fill down`. Rename the reprojected rasters by adding the EPSG code at the end of the name, for example LandCover2015, will become landCover2015_3123. Set your parameters as in figure 9.13: source CRS: EPSG: 3857, target CRS EPSG 3123, resampling method to use: nearest neighbour (we explained in the paragraph above why), nodata value for output bands: 255 (from the information window, we see the data type - yte - 8bit unsigned integer - which means that the maximum value can be 255), output resolution:100 m (as the initial land cover rasters). After setting all parameters, check the box in the left corner of the window - **Load layers on completion** and click **Run**. 
+For the 5 land cover raster layers, we will use the batch processing and as resample method nearest neighbour. To add a new layer, click on the + pictogram. To automatically fill the CRS and resampling method parameters, click on autofill button on top of the corresponding columns and select `Fill down`. Rename the reprojected rasters by adding the EPSG code at the end of the name, for example LandCover2015, will become landCover2015_5235. Set your parameters as in figure 9.13: source CRS: EPSG: 3857, target CRS EPSG 5235, resampling method to use: nearest neighbour (we explained in the paragraph above why), nodata value for output bands: 255 (from the information window, we see the data type - yte - 8bit unsigned integer - which means that the maximum value can be 255), output resolution:100 m (as the initial land cover rasters). After setting all parameters, check the box in the left corner of the window - **Load layers on completion** and click **Run**. 
 
 
 ![Batch processing to reproject the land cover rasters](media/fig913_a.png "Batch processing to reproject the land cover rasters")
@@ -520,11 +520,11 @@ Figure 9.15c - Mosaic of all DSM files corresponding to our work region
 Now, we can proceed to reprojecting the mosaic - one file, instead of 6 files. Go to **Raster ‣ projection ‣ Wrap (reproject)** and set the known parameters: 
 
    * Source CRS EPSG 4326
-   * Target CRS: EPSG:3123 
+   * Target CRS: EPSG:5235 
    * Resampling method: Nearest neighbour
    * Output file resolution - 30 m. 
 
-At his point, we should have all layers in the same CRS - EPSG 3123. 
+At his point, we should have all layers in the same CRS - EPSG 5235. 
 
 
 ![Reproject Merged raster](media/fig915_d.png "Reproject Merged raster")
@@ -545,92 +545,93 @@ A raster information HTML file should look like below. A HTML file can be open w
 ```
         Driver: GTiff/GeoTIFF
         Files: /Users/codrinamariailie/Google Drive/02_OK/Gov_Geospatial_Trainings/Data/module9/Reprojected_LandCover2019.tif
-        Size is 678, 570
+        Driver: GTiff/GeoTIFF
+        Size is 425, 295
         Coordinate System is:
-        PROJCRS["PRS92 / Philippines zone 3",
-            BASEGEOGCRS["PRS92",
-                DATUM["Philippine Reference System 1992",
-                    ELLIPSOID["Clarke 1866",6378206.4,294.978698213898,
+        PROJCRS["SLD99 / Sri Lanka Grid 1999",
+            BASEGEOGCRS["SLD99",
+                DATUM["Sri Lanka Datum 1999",
+                    ELLIPSOID["Everest 1830 (1937 Adjustment)",6377276.345,300.8017,
                         LENGTHUNIT["metre",1]]],
                 PRIMEM["Greenwich",0,
                     ANGLEUNIT["degree",0.0174532925199433]],
-                ID["EPSG",4683]],
-            CONVERSION["Philippines zone III",
+                ID["EPSG",5233]],
+            CONVERSION["Sri Lanka Grid 1999",
                 METHOD["Transverse Mercator",
                     ID["EPSG",9807]],
-                PARAMETER["Latitude of natural origin",0,
+                PARAMETER["Latitude of natural origin",7.00047152777778,
                     ANGLEUNIT["degree",0.0174532925199433],
                     ID["EPSG",8801]],
-                PARAMETER["Longitude of natural origin",121,
+                PARAMETER["Longitude of natural origin",80.7717130833333,
                     ANGLEUNIT["degree",0.0174532925199433],
                     ID["EPSG",8802]],
-                PARAMETER["Scale factor at natural origin",0.99995,
+                PARAMETER["Scale factor at natural origin",0.9999238418,
                     SCALEUNIT["unity",1],
                     ID["EPSG",8805]],
                 PARAMETER["False easting",500000,
                     LENGTHUNIT["metre",1],
                     ID["EPSG",8806]],
-                PARAMETER["False northing",0,
+                PARAMETER["False northing",500000,
                     LENGTHUNIT["metre",1],
                     ID["EPSG",8807]]],
             CS[Cartesian,2],
-                AXIS["easting (X)",east,
+                AXIS["(E)",east,
                     ORDER[1],
                     LENGTHUNIT["metre",1]],
-                AXIS["northing (Y)",north,
+                AXIS["(N)",north,
                     ORDER[2],
                     LENGTHUNIT["metre",1]],
             USAGE[
-                SCOPE["unknown"],
-                AREA["Philippines - zone III"],
-                BBOX[3,119.7,21.62,122.21]],
-            ID["EPSG",3123]]
+                SCOPE["Engineering survey, topographic mapping."],
+                AREA["Sri Lanka - onshore."],
+                BBOX[5.86,79.64,9.88,81.95]],
+            ID["EPSG",5235]]
         Data axis to CRS axis mapping: 1,2
-        Origin = (430713.282723263022490,1690115.897022359305993)
+        Origin = (396721.989492513879668,497783.553164885030128)
         Pixel Size = (100.000000000000000,-100.000000000000000)
         Metadata:
-          AREA_OR_POINT=Area
+        AREA_OR_POINT=Area
         Image Structure Metadata:
-          INTERLEAVE=PIXEL
+        INTERLEAVE=PIXEL
         Corner Coordinates:
-        Upper Left  (  430713.283, 1690115.897) (120d21'17.68"E, 15d16'55.47"N)
-        Lower Left  (  430713.283, 1633115.897) (120d21'23.24"E, 14d46' 0.88"N)
-        Upper Right (  498513.283, 1690115.897) (120d59'10.17"E, 15d16'58.81"N)
-        Lower Right (  498513.283, 1633115.897) (120d59'10.29"E, 14d46' 4.10"N)
-        Center      (  464613.283, 1661615.897) (120d40'15.34"E, 15d 1'30.61"N)
-        Band 1 Block=678x4 Type=Byte, ColorInterp=Red
-          Description = discrete_classification
-            Computed Min/Max=0.000,200.000
-          Minimum=0.000, Maximum=200.000, Mean=67.557, StdDev=35.613
-          NoData Value=255
-          Metadata:
+        Upper Left  (  396721.989,  497783.553) ( 79d50'12.89"E,  6d58'46.20"N)
+        Lower Left  (  396721.989,  468283.553) ( 79d50'14.76"E,  6d42'45.88"N)
+        Upper Right (  439221.989,  497783.553) ( 80d13'17.68"E,  6d58'48.38"N)
+        Lower Right (  439221.989,  468283.553) ( 80d13'18.78"E,  6d42'47.97"N)
+        Center      (  417971.989,  483033.553) ( 80d 1'46.02"E,  6d50'47.25"N)
+        Band 1 Block=425x6 Type=Byte, ColorInterp=Red
+        Description = discrete_classification
+        Min=20.000 Max=200.000   Computed Min/Max=20.000,200.000
+        Minimum=20.000, Maximum=200.000, Mean=98.192, StdDev=39.805
+        NoData Value=225
+        Metadata:
             STATISTICS_MAXIMUM=200
-            STATISTICS_MEAN=67.556567003835
-            STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=35.612833384649
-            STATISTICS_VALID_PERCENT=99.72
-        Band 2 Block=678x4 Type=Byte, ColorInterp=Green
-          Description = forest_type
-            Computed Min/Max=0.000,2.000
-          Minimum=0.000, Maximum=2.000, Mean=0.473, StdDev=0.850
-          NoData Value=255
-          Metadata:
+            STATISTICS_MEAN=98.19157926688
+            STATISTICS_MINIMUM=20
+            STATISTICS_STDDEV=39.804930203318
+            STATISTICS_VALID_PERCENT=99.85
+        Band 2 Block=425x6 Type=Byte, ColorInterp=Green
+        Description = forest_type
+        Min=0.000 Max=2.000   Computed Min/Max=0.000,2.000
+        Minimum=0.000, Maximum=2.000, Mean=1.242, StdDev=0.970
+        NoData Value=225
+        Metadata:
             STATISTICS_MAXIMUM=2
-            STATISTICS_MEAN=0.47292184572588
+            STATISTICS_MEAN=1.2418224952273
             STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=0.84981681513547
-            STATISTICS_VALID_PERCENT=99.72
-        Band 3 Block=678x4 Type=Byte, ColorInterp=Blue
-          Description = urban-coverfraction
-            Computed Min/Max=0.000,100.000
-          Minimum=0.000, Maximum=100.000, Mean=14.485, StdDev=30.631
-          NoData Value=255
-          Metadata:
+            STATISTICS_STDDEV=0.97031638809586
+            STATISTICS_VALID_PERCENT=99.85
+        Band 3 Block=425x6 Type=Byte, ColorInterp=Blue
+        Description = urban-coverfraction
+        Min=0.000 Max=100.000   Computed Min/Max=0.000,100.000
+        Minimum=0.000, Maximum=100.000, Mean=32.941, StdDev=42.812
+        NoData Value=225
+        Metadata:
             STATISTICS_MAXIMUM=100
-            STATISTICS_MEAN=14.484993486711
+            STATISTICS_MEAN=32.941497391985
             STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=30.631074729814
-            STATISTICS_VALID_PERCENT=99.72
+            STATISTICS_STDDEV=42.811606864828
+            STATISTICS_VALID_PERCENT=99.85
 ```
 
 
@@ -650,9 +651,9 @@ After computing the histogram, we can see that the mouse turns into a loupe. It 
 To go back to full view, click left. 
 
 
-![Zooming in on the DSM_mosaic_3123 computed histogram](media/fig918.png "Zooming in on the DSM_mosaic_3123 computed histogram")
+![Zooming in on the DSM_mosaic_5235 computed histogram](media/fig918.png "Zooming in on the DSM_mosaic_5235 computed histogram")
 
-Figure 9.18 - Zooming in on the DSM_mosaic_3123 computed histogram
+Figure 9.18 - Zooming in on the DSM_mosaic_5235 computed histogram
 
 More than just seeing the distribution of the numerical values of the pixels, the histogram allows the user to reclassify the values for visualisation of the raster. To do that use the 2 tools to pinpoint on the histogram the new min and max values (see figure 9.19). 
 
@@ -727,7 +728,7 @@ Figure 9.23 - Batch process cliping all required raster layers by Colombo distri
 
 The parameters setup are the following:
 * mask layer: Colombo_admin_boundary
-* both source and target CRS is EPSG 3123
+* both source and target CRS is EPSG 5235
 * select yes to: `match the extent of the clipped raster to the mask layer` and `keep resolution of input layer`. 
 * Be aware, for the DSM_mosaic we will also select yes` to create an output alpha band`. Load layers at completion. 
 
@@ -966,7 +967,7 @@ A difference between the 2 products must be highlighted: the LandCover product c
 
 To resample, go to **Raster ‣ Projections ‣ Wrap (reproject).** In the functionality window set the following parameters: 
 * input layer: Clipped_Reprojected_LandCover 2019, 
-* Source CRS and Target CRS: EPSG: 3123, 
+* Source CRS and Target CRS: EPSG: 5235, 
 * Resampling method: Nearest Neighbour, 
 * No data: 255, output file resolution: 30, 
 * Output data type: use input layer data type, 
@@ -1072,7 +1073,7 @@ Considering the extent of your study area, this operation can be significantly l
 
 Figure 9.54 - Loading point vector data obtained
 
-The number of features is considerably high and without importing it into a database, any kind of processing or visualisation would require too much time. In these types of situations, the reasonable solution is to divide the datasets we have to process into manageable chunks. Therefore, we will consider processing the necessary calculations on smaller well-defined areas. To split the HRSL layer we will use the option to create a VRT. Select the HRSl layer and choose **Export as..** In the new window, tick on the **Create VRT** option and set the following parameters: browse to a folder where the splitted raster will be exported to, CRS: EPSG:3123, VRT tiles: max columns 1000, max rows: 1000 (see figure 9.55).
+The number of features is considerably high and without importing it into a database, any kind of processing or visualisation would require too much time. In these types of situations, the reasonable solution is to divide the datasets we have to process into manageable chunks. Therefore, we will consider processing the necessary calculations on smaller well-defined areas. To split the HRSL layer we will use the option to create a VRT. Select the HRSl layer and choose **Export as..** In the new window, tick on the **Create VRT** option and set the following parameters: browse to a folder where the splitted raster will be exported to, CRS: EPSG:5235, VRT tiles: max columns 1000, max rows: 1000 (see figure 9.55).
 
 
 ![alt_text](media/fig955.png "image_tooltip")
