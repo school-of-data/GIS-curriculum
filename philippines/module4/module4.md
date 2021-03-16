@@ -1,6 +1,6 @@
 # Module 4 - Styling Layers
 
-**Author**: Ketty
+**Author**: Ketty, Ben Hur
 
 ## Pedagogical Introduction
 
@@ -83,7 +83,6 @@ Here, you can specify the band rendering settings like, the render type, band, m
 
 ![alt_text](media/style-raster.png "image_tooltip")
 
-
 Figure 4.2: Symbology tab for vector and raster data, respectively
 
 
@@ -127,8 +126,7 @@ Vector data symbology may vary by transparency, color, rotation, and size.
 #### **Example 1: Vector rendering**
 
 1. To demonstrate this example, we’ll use two example datasets; 1. [Clinics](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing) and 2. [Administrative boundary](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing) of Pampanga province 
-2. Add the two vector layers into qgis; Click the Add vector layer button ![alt_text](media/add-vector.png "image_tooltip")
- or use the browser panel. 
+2. Add the two vector layers into qgis; Click the Add vector layer button ![alt_text](media/add-vector.png "image_tooltip") or use the browser panel. 
 3. This is how they render by default. You’ll notice we have a polygon and point layer. The next step is to change the symbology for each of them. Fill colors may not be the same, but that’s not a problem because QGIS selects colors randomly for different instances of the application.
 
 ![Default render](media/default-vector-render.png "Default render")
@@ -156,8 +154,6 @@ Figure 4.5: Layer Properties dialogue
 ![Final vector render](media/final-vector-render.png "Final vector render")
 
 Figure 4.6: Final vector render
-
-
 
 11.  Remember to arrange the layers in the **Layer Panel** in such a way that the polygon layer is below the point layer. This makes the point layer visible.
 
@@ -304,19 +300,16 @@ Figure 4.17: Centroid operation on administrative boundary layer
 
 Figure 4.18: Point layer
 
-4. Note that an alternative and easier way of writing spatial queries is using the ‘Expressions dialogue’. Click the ![alt_text](media/expression.png "image_tooltip")
- expressions  button to open the 'Expression string builder' dialogue box. Here you’ll have access to an extensive function reference. You can search for a function by name. For example, type centroid in the search bar.
+4. Note that an alternative and easier way of writing spatial queries is using the ‘Expressions dialogue’. Click the ![alt_text](media/expression.png "image_tooltip") expressions  button to open the 'Expression string builder' dialogue box. Here you’ll have access to an extensive function reference. You can search for a function by name. For example, type centroid in the search bar.
 5. With the Geometry generator symbology you can really go over the edge of normal symbology.
 6. If you want to go further, write a spatial query to calculate a buffer zone around the point, line or polygon layer. 
 
 
 #### **Quiz questions**
 
-1.N/A
+1. N/A
 
 
 #### **Quiz answers**
 
-1.N.A
-
-   
+1. N.A   

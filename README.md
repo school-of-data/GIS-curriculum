@@ -1,10 +1,18 @@
 # GIS-curriculum
 
 ## Localisations
+- [**Argentina**](argentina/)
+- [**Bangladesh** (in English)](bangladesh/)
+- [**Germany**](germany/)
+- [**India** (in English)](india/)
+- [**Mexico**](mexico/)
 - [**Philippines**](philippines/)
 - [**Sri Lanka** (in English)](sri-lanka/)
+- [**Vietnam**](vietnam/)
 
 *instructions/list of changes for localisation can be found [here](localisation-changes.md)*
+
+*status of translations/localisations can be found [here](status-tracker.md)*
 
 ## Modules
 - **Module 0**: Gentle Introduction to GIS concepts

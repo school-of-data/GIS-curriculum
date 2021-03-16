@@ -101,8 +101,8 @@ A QGIS release is specified by three numbers (X.Y.Z). For example, QGIS 3.16.4.
 There are three main branches of QGIS that users can install. These are the **Long Term Release (LTR)** branch, **Latest Release (LR)** branch, and the **Development (Nightly)** branch.
 
 *   **Long Term Release (LTR)** is named that way because it is maintained and receives bug fixes until the next LTR is released. Currently, that means one (1) year. As of February 2021, the current LTR is 3.16.4. This is scheduled to be replaced by QGIS 3.22.4 in February 2022.
-*   **Latest Release (LR) **refers to the release version of QGIS that contains the most recent or latest features. A new LR is released every four (4) months. For example, a new 3.18 LR was released this February 2021. The next LR (3.20) will be released 4 months from now which is in June 2021. Currently, every 3rd LR becomes the next LTR. For example, the LTR this February 2021 is the 3.16 release. The 3rd LR from 3.16 is 3.22  therefore the next LTR will be based on the 3.22 release version. 
-*   **Development/Nightly **is based on the most recent version of the QGIS source code but is useful if you want to test, debug, or help in the development of QGIS.
+*   **Latest Release (LR)** refers to the release version of QGIS that contains the most recent or latest features. A new LR is released every four (4) months. For example, a new 3.18 LR was released this February 2021. The next LR (3.20) will be released 4 months from now which is in June 2021. Currently, every 3rd LR becomes the next LTR. For example, the LTR this February 2021 is the 3.16 release. The 3rd LR from 3.16 is 3.22  therefore the next LTR will be based on the 3.22 release version. 
+*   **Development/Nightly** is based on the most recent version of the QGIS source code but is useful if you want to test, debug, or help in the development of QGIS.f the QGIS source code but is useful if you want to test, debug, or help in the development of QGIS.
 
 So which version should you use? It depends. If you need a version that is maintained for a longer time and you don’t necessarily need new features as they are released then the LTR version might be for you. If you need to have the most recent features and don’t mind doing an upgrade every few months, the LR version just might be for you. Sometimes it’s also good to take a look at the development or nightly versions especially if you are curious or excited about the upcoming features in QGIS.
 
@@ -195,7 +195,7 @@ Figure 1.4. The QGIS Interface with some customizations
 
 ![Observe the Toolbars menu](media/ex01-03.png "Observe the Toolbars menu")
 
-5. Select the **Toolbars** and **Panels** you want to show in the user interface. Some of the useful Panels include the **Layer Styling **and **Processing Toolbox**. 
+5. Select the **Toolbars** and **Panels** you want to show in the user interface. Some of the useful Panels include the **Layer Styling** and **Processing Toolbox**. 
 6. Move the **Toolbars** and **Panels** to the positions that make the most sense for you
 
 **Resetting the QGIS Interface**
@@ -239,12 +239,10 @@ Figure 1.5. Accessing the Manage and Install Plugins dialog
 
 The Manage and Install Plugins Dialog connects to the QGIS Official Plugin repository (or any repository that you indicate in the Settings Tab) to fetch plugins available for your version of QGIS. It has five (5) tabs:
 
-
-
-*   **All Tab **– shows ALL the plugins available for your QGIS version including those that are already installed on your machine
-*   **Installed Tab **– shows only the plugins installed on your machine
+*   **All Tab** – shows ALL the plugins available for your QGIS version including those that are already installed on your machine
+*   **Installed Tab** – shows only the plugins installed on your machine
 *   **Not installed Tab** – shows the plugins that are not installed on your machine
-*   **Install from ZIP **– allows you to install plugins from a ZIP file
+*   **Install from ZIP** – allows you to install plugins from a ZIP file
 *   **Settings Tab** – gives you options on when to check for plugin updates, whether or not to include experimental and deprecated plugins, or add/change the repository to fetch plugins from
 
 If the plugin you are looking for is tagged as experimental or deprecated, you need to check **Show experimental plugins** and **Show deprecated** plugins from the Settings tab.
@@ -264,7 +262,7 @@ Figure 1.6. The Manage and Install Plugins dialog
 
 ![Manage and Install Plugins dialog](media/manage-and-install-plugins-dialog.png "Manage and Install Plugins dialog")
 
-2. Install the following plugins by searching for them in the **All tab **and clicking **Install Plugin** in the bottom right corner of the Manage and Install plugins dialog.
+2. Install the following plugins by searching for them in the **All tab** and clicking **Install Plugin** in the bottom right corner of the Manage and Install plugins dialog.
    - Memory Layer Saver
 
 ![Install Memory Layer Saver plugin](media/memory-layer-saver-plugin.png "Install Memory Layer Saver plugin")
