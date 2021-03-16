@@ -7,17 +7,18 @@
 
 ## Giới thiệu chung
 
-Module này được thiết kế để hướng dẫn bản cách sử dụng các công cụ QGIS để tạo một layer mới trong QGIS. Bạn sẽ học các khái niệm như số hoá (digitizing) và đăng ký toạ độ (georeferencing). Ngoài ra, bạn sẽ được học các khái niệm;
-
-*   Digitizing 
-*   Georeferencing
-*   Working computer
-*   Internet access
-*   QGIS 3.16 or later
-*   [Topo Map of Guagua, Pampanga](data/guagua-topo.jpeg)
+Module này được thiết kế để hướng dẫn bản cách sử dụng các công cụ QGIS để tạo một layer mới trong QGIS. Bạn sẽ học các khái niệm như số hoá (digitizing) và đăng ký toạ độ (georeferencing)
 
 
-## Prerequisites
+## Các công cụ và tài nguyên cần thiết
+
+*   Máy tính
+*   Kết nối Internet
+*   QGIS 3.16 trở lên
+*   [Bản đồ Sài Gòn năm 1963](data/saigon_1963.jpg)
+
+
+## Yêu cầu về kỹ năng
 
 *   Nắm được các Module trước
 *   Kiến thức cơ bản về vận hành máy tính
@@ -251,7 +252,7 @@ Nếu bạn mắc lỗi khi số hoá một đối tượng, bạn luôn có th�
 Để đăng ký toạ độ cho bản đồ;
 
 1. Truy cập Georeferencer tool, Raster ► Georeferencer 
-2. Chọn nút Add raster ![Add Raster](media/add-raster.png "Add Raster") để thêm bản đồ dạng ảnh, [Topo Map of HCMC ](data/guagua-topo.jpeg) cần đăng ký toạ độ. Bản đồ địa hình sẽ được thêm vào trong georeferencer canvas. Bây giờ bạn có thể phóng to để xem chi tiết bản đồ bằng cách đọc metadata và thông tin chú giải ở góc dưới bản đồ và liên hệ nó đến các đối tượng trên bản đồ.
+2. Chọn nút Add raster ![Add Raster](media/add-raster.png "Add Raster") để thêm bản đồ dạng ảnh, [Bản đồ Sài Gòn năm 1963](data/saigon_1963.jpg) cần đăng ký toạ độ. Bản đồ địa hình sẽ được thêm vào trong georeferencer canvas. Bây giờ bạn có thể phóng to để xem chi tiết bản đồ bằng cách đọc metadata và thông tin chú giải ở góc dưới bản đồ và liên hệ nó đến các đối tượng trên bản đồ.
     
 ![Bản đồ trong Georeferencer canvas](media/georeferencer.png "Bản đồ trong Georeferencer canvas")
 
@@ -289,7 +290,7 @@ Khi chọn các tham số chuyển đổi, những điều cần xem xét là:
 7. Bản đồ chứa một số dấu thập đánh dấu các toạ độ trên bản đồ, chúng ta sẽ sử dụng chúng để đăng ký toạ độ cho ảnh. Bạn có thê sử dụng các công cụ phóng to/ thu nhỏ, di chuyển bản đồ như bạn hay dùng trong QGIS để kiểm tra ảnh trong cửa sổ Georeferencer.
 8. Phóng to góc dưới bên trái bản đồ và chú ý rằng có một dấu thập với cặp toạ độ (X,Y), như đã đề cập trước đây trong CRS, PRS 19992 cũng được viết là PRS 92, như được tham chiếu trong legend của bản đồ địa hình.
 9. Chọn nút Add point![Add Point](media/add-point.png "Add Point") và nhấp vào giao điểm của dấu chéo (di chuyển và phóng to nếu cần thiết).
-10. Trong hộp thoại Enter map coordinates, nhập các toạ độ xuất hiện trong bản đồ (Y: 14° 45’ 00’’ and X: 120° 30’ 00’’).
+10. Trong hộp thoại Enter map coordinates, nhập các toạ độ xuất hiện trong bản đồ (Y: 10° 43’ 20’’ and X: 106° 37’ 55’’).
 
 ![Chọn các điểm khống chế - GCP](media/georef-1.png "Chọn các điểm khống chế - GCP")
 
