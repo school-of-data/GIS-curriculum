@@ -1,6 +1,10 @@
 # Module 4 - Styling Layers
 
-**Author**: Quách Đồng Thắng
+**Tác giả**: Ketty
+
+**Biên dịch và bản địa hoá**: Quách Đồng Thắng
+
+
 
 ## Giới thiệu chung
 
@@ -17,8 +21,8 @@ Module này sẽ hướng dẫn bạn cách thay đổi hiển thị trực quan
 *   Máy tính
 *   Kết nối Internet
 *   QGIS 3.16 hoặc mới hơn
-*   Ranh giới hành chính của Tp.HCM (trong  [module4.gpkg](data/module4.gpkg)))
-*   Các cơ sở y tế Tp.HCM (trong [module4.gpkg](data/module4.gpkg))
+*   HCMC_border (trong  [module4.gpkg](data/module4.gpkg)))
+*   HCMC_clinics (trong [module4.gpkg](data/module4.gpkg))
 *   [Tp.HCM High Resolution Settlement Layer](data/HRSL_HCMC_Population.tif)
 
 ## Kỹ năng cần có
@@ -130,9 +134,9 @@ Symbology cho dữ liệu vector có thể thay đổi dựa vào độ trong su
 
 #### **Ví dụ 1: Hiển thị Vector**
 
-1. Để minh hoạ cho ví dụ này, chúng ta sẽ sử dụng 02 tập dữ liệu mẫu;1. [Clinics](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing) và 2. [Administrative boundary](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing) của Tp.HCM 
+1. Để minh hoạ cho ví dụ này, chúng ta sẽ sử dụng 02 tập dữ liệu mẫu; HCMC_clinics và HCMC_border (trong module4.gpkg).
 2. Thêm 02 lớp vector này vào QGIS; Kích chọn nút Add vector layer ![alt_text](media/add-vector.png "image_tooltip") hoặc sử dụng Browser Panel. 
-3. Đây là cách chúng hiển thị theo mặc định. Bạn chú ý là chúng ta có một lớp dạng vùng (polygon) và một lóp dạng điểm (point). Bước tiếp theo là thay đổi symbology cho từng lớp này. Fill color có thể không trùng nhau, nhưng không vấn đề gì bởi vì QGIS chọn màu ngẫu nhiên cho các lớp dữ liệu.
+3. Đây là cách chúng hiển thị theo mặc định. Bạn chú ý là chúng ta có một lớp dạng vùng (polygon) và một lớp dạng điểm (point). Bước tiếp theo là thay đổi symbology cho từng lớp này. Fill color có thể không trùng nhau, nhưng không vấn đề gì bởi vì QGIS chọn màu ngẫu nhiên cho các lớp dữ liệu.
 
 ![Default render](media/default-vector-render.png "Default render")
 
@@ -147,8 +151,8 @@ Hình 4.3: Hiển thị mặc định
 
 Hình 4.4: Polygon không có màu nền
 
-8. Bước tiếp theo là định nghĩa symbology cho point layer (lớp cơ sở y tế)
-9. Kích đúp chuột vào lớp **Cơ sở y tế** để mở cửa sổ **Layer Properties** . Đổi kiểu hiển thị Single Symbol thành **Categorized**, chọn  **Value** là amenity. Chọn Symbol và Color ramp, sau đó chọn Classify 
+8. Bước tiếp theo là định nghĩa symbology cho point layer (lớp HCMC_clinics)
+9. Kích đúp chuột vào lớp **HCMC_clinics** để mở cửa sổ **Layer Properties** . Đổi kiểu hiển thị Single Symbol thành **Categorized**, chọn  **Value** là amenity. Chọn Symbol và Color ramp, sau đó chọn Classify 
 
 ![Layer Properties dialogue](media/vector-style.png "Layer Properties dialogue")
 
@@ -175,7 +179,7 @@ Hình 4.6: Kết quả hiển thị vector
 
 Hình 4.7: Symbology menu
 
-4. Chọn phương pháp nội suy (interpolation), color ramp và mode. Chọn classify. Kết quả l2 một choropleth map hiển thị mật độ dân số của Tp.HCM
+4. Chọn phương pháp nội suy (interpolation), color ramp và mode. Chọn classify. Kết quả là một choropleth map hiển thị mật độ dân số của Tp.HCM
 
 ![Mậ độ dân số Tp.HCM](media/hrsl-style.png "Mật độ dân số Tp.HCM")
 
@@ -225,7 +229,7 @@ Hình 4.9: Bản đồ phóng to
 
 #### **Hướng dẫn**
 
-1. Sau khi tải 02 layer vào QgiS, map canvas sẽ như hình bên dưới. Bạn có thể thấy là cả 02 layer đều có style đơn giản. Hướng dẫn này sẽ giải thích cách thay đổi draw effects và blending modes để trực quan hoá tốt hơn 
+1. Sau khi tải 02 layer vào QGIS, map canvas sẽ như hình bên dưới. Bạn có thể thấy là cả 02 layer đều có style đơn giản. Hướng dẫn này sẽ giải thích cách thay đổi draw effects và blending modes để trực quan hoá tốt hơn 
    
 ![Workspace ban đầu](media/initial-workspace.png "Workspace ban đầu")
 
@@ -271,54 +275,52 @@ Hình 4.16: Hiệu ứng Drop shadow
 
 8. Bạn có thể thêm bao nhiêu hiệu ứng tuỳ ý. Ví dụ một **inner glow** trên  **source effect**, với **drop shadow** ở dưới cùng. Hãy làm thử để xem kết quả thế nào!
 
+Nhìn chung, hãy nhớ rằng các hiệu ứng có thể được áp dụng cho toàn bộ layer hoặc cho các symbol riêng lẻ cho các đối tượng trong một layer. Về cơ bản, các khả năng gần như là vô tận! Các Python plugin cũng có thể bổ sung nhiều hiệu ứng khác nữa..
 
-Overall, remember that effects can either be applied to an entire layer, or to the individual symbol layers for features within a layer. Basically, the possibilities are almost endless! Python plugins can also extend this further by implementing additional effects.
-
-For more examples about what you can do with Blending Modes and Draw Effects in QGIS, you can check out:
+Để xem thêm ví dụ về những gì có thể làm với Blending Modes và Draw Effects trong QGIS, bạn có thể tham khảo tại đây:
 *   Hillshade in QGIS -[https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html](https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html)
 *   Mapping Icebergs in QGIS - [https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html](https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html)
 
-### Phase 3: Data defined overrides and geometry generators
+### Phase 3: Data defined overrides và geometry generators
 
-#### **Content**
+#### **Nội dung**
 
-*   Run a spatial operation within the layer symbology
+*   Chạy một tính toán không gian trong layer symbology
 
-#### **Tutorial**
+#### **Hướng dẫn**
 
-A geometry generator is a symbol layer type that lets you use code to create new geometries from existing features, and use the new 'generated' geometries as symbols that can, in turn, have styles applied. This is a powerful feature best explained with an example.
+A geometry generator là một dạng symbol layer cho phép sử dụng mã để tạo các đối tượng hình học mới từ các đối tượng đã có, và sử dụng các đối tượng hình học mới tạo này như các symbol để tạo style cho layer. Đây là một tính năng mạnh mẽ được giải thích tốt nhất bằng một ví dụ.
 
-You can use the geometry generator symbology with all layer types (points, lines and polygons). The resulting symbol depends directly on the layer type.
+Bạn có thể sử dụng geometry generator symbology với tất cả các loại layer (point, line và polygon). Symbol kết quả phụ thuộc trực tiếp vào loại layer.
 
-Very briefly, the geometry generator symbology allows you to run some spatial operations within the symbology itself. For example you can run a real centroid spatial operation on a polygon layer without creating a point layer.
+Rất ngắn gọn, geometry generator symbology cho phép bạn chạy tính toán không gian trong chính symbology. Ví dụ: bạn có thể chạy ra lớp tâm của polygon mà không cần tạo thêm một lớp điểm.
 
-Moreover, you have all the styling options to change the appearance of the resulting symbol. Here’s an example tutorial;
+Hơn nữa, bạn có tất cả các tùy chọn styling để thay đổi hiển thị của symbol kết quả. Đây là một hướng dẫn ví dụ;
 
-1. Double click the administrative boundary layer
-2. Click on Simple fill and change the Symbol layer type to Geometry generator. Before you start writing the spatial query, choose the Geometry Type in output. In this example we are going to create centroids for each feature, so change the Geometry Type to Point / Multipoint.
+1. Kích đúp chuột vào HCMC_border layer
+2. Kích vào Simple fill và đổi Symbol layer type thành Geometry generator. Trước khi bạn bắt đầu viết câu truy vấn không gian, chọn loại đối tượng đầu ra. Trong ví dụ này chúng ta sẽ tạo tâm điểm của mỗi đối tượng polygon, do đó loại đối tượng là Point/ Multipoint.
 
-![Centroid operation on administrative boundary layer](media/centroid.png "Centroid operation on administrative boundary layer")
+![Tính toán tâm của từng polygon trên HCMC_border layer](media/centroid.png "Tính toán tâm của từng polygon trên HCMC_border layer")
 
-Figure 4.17: Centroid operation on administrative boundary layer
+Hình 4.17: Tính toán tâm của từng polygon trên HCMC_border layer
 
-3. When you click on OK you will see that the administrative layer boundary is rendered as a point layer. We have just run a spatial operation within the layer symbology itself.
+3. Khi bạn kích chọn OK, bạn sẽ thấy HCMC_border layer được hiển thị dưới dạng một point layer. Chúng ta vừa chạy một tính toán không gian ngay trong layer symbology.
 
 ![Point layer](media/centroid-result.png "Point layer")
 
-Figure 4.18: Point layer
+Hình 4.18: Point layer
 
-4. Note that an alternative and easier way of writing spatial queries is using the ‘Expressions dialogue’. Click the ![alt_text](media/expression.png "image_tooltip")
- expressions  button to open the 'Expression string builder' dialogue box. Here you’ll have access to an extensive function reference. You can search for a function by name. For example, type centroid in the search bar.
-5. With the Geometry generator symbology you can really go over the edge of normal symbology.
-6. If you want to go further, write a spatial query to calculate a buffer zone around the point, line or polygon layer. 
+4. Chú ý là một cách thay thế và nhanh hơn là viết các truy vấn không gian sử dụng ‘Expressions dialogue’. Kích vào nút bấm ![alt_text](media/expression.png "image_tooltip") để mở hộp thoại 'Expression string builder'. Tại đây bạn sẽ có quyền truy cập vào tham chiếu chức năng mở rộng. Bạn có thể tìm kiếm một hàm bằng tên. Ví dụ, gõ centroid trong thanh tìm kiếm.
+5. Với Geometry generator symbology bạn thực sự có thể vượt qua ranh giới của symbology thông thường.
+6. Nếu bạn muốn thực hành thêm, hãy viết một cây truy vấn không gian để tính buffer zone cho lớp điểm, đượng hoặc vùng.
 
 
-#### **Quiz questions**
+#### **Câu hỏi**
 
 1.N/A
 
 
-#### **Quiz answers**
+#### **Trả lời**
 
 1.N.A
 

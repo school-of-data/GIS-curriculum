@@ -1,8 +1,11 @@
 # Module 6 - Layer attributes
 
-**Author**: Quách Đồng Thắng
+**Tác giả**: Ketty
 
-## Pedagogical Introduction
+**Biên dịch và bản địa hoá**: Quách Đồng Thắng
+
+
+## Giới thiệu chung
 
 Module này sẽ trang bị cho bạn một cái nhìn tổng quan về các bước chung cần thiết để làm việc với bảng thuộc tính - attribute table và thuộc tính của layer trong QGIS. Kết thúc Module, bạn có thể nắm được các khái niệm sau;
 

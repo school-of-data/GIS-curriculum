@@ -1,1 +1,0 @@
-Quách Đồng Thắng
