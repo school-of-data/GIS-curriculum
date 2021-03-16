@@ -40,7 +40,7 @@ và có được các kỹ năng sau
 Là một phần của Module này, bạn sẽ học cách làm việc hiệu quả với dữ liệu vector để từ đó có thể trích xuất thông tin mới. Điều này bao gồm một hiểu biết sâu hơn về dữ liệu vector là gì, các tiêu chuẩn chất lượng nào phải tuân theo để nó thực sự hữu dụng, các phép toán thường dùng nhất nào được thực hiện trên dữ liệu vector (geoprocessing, geostatistics)
 
 
-## Các tài nguyên bổ sung: 
+## Tài liệu tham khảo: 
 
 *   [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/functions_list.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/functions_list.html) 
 *   [http://www.geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm](http://www.geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm)

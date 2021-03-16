@@ -19,186 +19,183 @@ Module này được thiết kế để hướng dẫn bản cách sử dụng c
 
 ## Prerequisites
 
-*   A fair knowledge of all previous modules
-*   Basic knowledge of operating a computer
+*   Nắm được các Module trước
+*   Kiến thức cơ bản về vận hành máy tính
 
 
-## Additional resources
+## Tài liệu tham khảo
 
 *   Creating Layers - [https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_layers.html](https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_layers.html)
 *   Digitizing Forest Stands - [https://docs.qgis.org/3.16/en/docs/training_manual/forestry/stands_digitazing.html?highlight=digitizing](https://docs.qgis.org/3.16/en/docs/training_manual/forestry/stands_digitazing.html?highlight=digitizing)
 *   Further reading: [Georeferencing a Map](https://docs.qgis.org/3.16/en/docs/training_manual/forestry/map_georeferencing.html?highlight=georeferencing)
 
 
-## Thematic introduction
+## Giới thiệu chuyên đề
 
-Let’s start with an example: 
+Hãy bắt đầu bằng một ví dụ: 
+Hãy tưởng tượng cơ quan của bạn đang lên kế hoạch xây dựng các bệnh viện mới tại một tỉnh nào đó. Họ có thể muốn tiến hành một đánh giá tác động môi trường của dự án quy hoạch cơ sở hạ tầng. Đánh giá này có thể bao gồm tiến hành các nghiên cứu dựa trên các dữ liệu sẵn có. Như bạn có thể tưởng tượng, có rất nhiều dữ liệu địa lý có sẵn ở nhiều định dạng khác nhau, không thể tích hợp ngay với các dữ liệu GIS khác. Một số dữ liệu này có thể là các bản đồ cũ, ảnh vệ tinh độ phân giải cao hoặc ảnh viễn thám thường được dùng cho việc tạo các bản đồ số như Google Maps hoặc OpenStreetMap. Tạo và chỉnh sửa là cách tốt cho việc cập nhật các thay đổi cho các layer hoặc database. Một cách để tạo mới dữ liệu trong GIS là số hoá. Các cách khác bao gồm đăng ký ảnh (georeference), quét ảnh và vector hoá, cắt (clipping), chọn và lưu dữ liệu. Điều quan trọng cần nhớ là dữ liệu được tạo ra phụ thuộc vào tính duy nhất của nguồn ban đầu. Ví dụ, hình sau thể hiện mỗi image sẽ tạo ra một tập dữ liệu duy nhất.
 
-Let’s imagine that your department is planning to build new hospitals for the province. They may want to conduct an environmental pre-assessment for the planned infrastructure project. The assessment may involve conducting research on available data. As you might imagine, there is a great deal of geographic data available in formats that can not be immediately integrated with other GIS data. Some of this data may be in the form of old maps, high resolution satellite imagery or remotely sensed imagery which is often used for making digital maps like Google Maps or OpenStreetMap. Creating and Editing is good for updating changes to your layers or database. This is where Creation and Editing of layers comes in. One way in which new data can be created in a GIS is through digitizing. Other methods include georeferencing, scanning and vectorization, clipping, selecting and then saving. It’s important to remember that the created data is dependent on the uniqueness of the original source. For example the image below shows that each image product will produce a unique dataset.
-
-
-![Remotely sensed images of different coastlines](media/rs-images.png "Remotely sensed images of different coastlines")
+![Anh viễn thám của các đường bờ biển khác nhau](media/rs-images.png "Anh viễn thám của các đường bờ biển khác nhau")
 
 
-Figure 7.1: Remotely sensed images of different coastlines. A. Interferometric Synthetic Aperture Radar (IFSAR) data (using microwaves to collect data for creating representative images), B. topographic and bathymetric lidar data (height and elevation data represented by colors), C. hyperspectral imagery (adding color to invisible energy), and D. digital photography (human eye visible colors represented as themselves)
+Hình 7.1: Anh viễn thám của các đường bờ biển khác nhau. A. Interferometric Synthetic Aperture Radar (IFSAR), sử dụng microwave thu thập dữ liệu để tạo bản đồ, B. Dữ liệu LiDAR đo cao và đo sâu (cao độ được thể hiện bằng màu sắc), C. Ảnh đa phổ (thêm các kênh phổ ngoài phổ khả kiến) và D. Ảnh kỹ thuật số (kênh phổ khả kiến).
 
 
-## Breakdown of the concepts
+## Phân tích các khái niệm
 
-Digitizing in GIS is the process of “tracing”, in a geographically correct way, information from media/maps. The process of georeferencing relies on the coordination of points on the scanned image (data to be georeferenced) with points on a geographically referenced data (data to which the image will be georeferenced). By “linking” points on the image with those same locations in the geographically referenced data you will create a transformation that converts the location of the entire image to the correct geographic location.
+Số hoá trong GIS là một quá trình "theo vết - tracing", một cách chính xác về mặt địa lý, thông tin từ các phương tiện/ bản đồ. Quy trình số hoá dựa trên sự phối hợp giữa các điểm trên ảnh quét với các điểm trên dữ liệu tham chiếu địa lý. Bằng cách "kết nối" các điểm trên ảnh quét với các điểm ở cùng vị trí trên dữ liệu tham chiếu địa lý, bạn sẽ tạo một phép chuyển đổi để chuyển vị trí của toàn bộ bản đồ quét sang vị trí địa lý chính xác.
 
+![Các toà nhà được số hoá (theo vết) trên một ảnh hàng không](media/buildings.png "Các toà nhà được số hoá (theo vết) trên một ảnh hàng không")
 
-![Here, buildings have been digitized (traced) on top of an aerial photo](media/buildings.png "Here, buildings have been digitized (traced) on top of an aerial photo")
+Hình 7.2: Các toà nhà được số hoá (theo vết) trên một ảnh hàng không
 
-Figure 7.2: Here, buildings have been digitized (traced) on top of an aerial photo
-
-Georeferencing, on the other hand is the process of taking a digital image, it could be an airphoto, a scanned geologic map, or a picture of a topographic map, and adding geographic information to the image so that GIS or mapping software can 'place' the image in its appropriate real world location.
-
-
-## Main content
-
-QGIS allows you to create new layers in different formats. It provides tools for creating GeoPackage, Shapefile, SpatiaLite, GPX format and Temporary Scratch layers (aka memory layers). Editing allows you to add, delete and modify features in vector data sets. The first step is to put the data set into edit mode. Select the layer in the Layers panel and click Layer | Toggle Editing. Alternatively you can right click on a layer in the Layers panel and choose Toggle Editing from the context menu. Multiple layers can be edited at a time. The layer currently being edited is the one selected in the Layers panel. Once in edit mode the Digitizing Toolbar can be used to add, delete and modify features.
-
-Digitising, as you might have guessed, is the art (or science) of creating digital vector data from another source, such as a raster image. In order to begin digitising, we must first enter edit mode. GIS software commonly requires a separate mode for editing, to prevent users from accidentally editing or deleting important data. Edit mode is switched on or off individually for each layer.
+Mặt khác, đăng ký ảnh là một quá trình chụp một ảnh số, có thể là ảnh hàng không, bản đồ quét hoặc ảnh của bản đồ địa hình, và thêm thông tin địa lý vào ảnh để GIS và các phần mềm bản đồ có thể 'đặt' hình ảnh ở vị trí thích hợp trong thế giới thực.
 
 
-### Phase 1 title: Creating a new GeoPackage layer or Shapefile
+## Nội dung chính
 
-#### **Creating a new GeoPackage layer**
+QGIS cho phép bạn tạo layer mới ở nhiều định dạng khác nhau. Nó cung cấp các công cụ để tạo GeoPackage, Shapefile, SpatiaLite, GPX và Temporary Scratch layer (memory layer). Công cụ Editing cho phép bạn thêm, xoá và chỉnh sửa các đối tượng trong dữ liệu vector. Bước đầu tiên là bật chế độ edit cho dữ liệu. Chọn layer trong Layers Panel và chọn Layer | Toggle Editing. Ngoài ra, bạn có thể kích chuột phải trên layer trong Layers Panel và chọn Toggle Editing từ menu ngữ cảnh. Nhiều layer có thể được chỉnh sửa cùng lúc. Layer hiện đang được chỉnh sửa là layer được chọn trong Layers Panel. Khi bật chế độ chỉnh sửa, Digitizing Toolbar có thể được dùng để thêm, xoá và chỉnh sửa các đối tượng.
 
-1. To create a new GeoPackage layer, press the New GeoPackage Layer button ![alt_text](media/geopackage-button.png "image_tooltip")
- in the Layer ‣ Create Layer menu or from the Datasource Manager toolbar. The New GeoPackage Layer dialog will be displayed as shown in Figure 7.3.
-
-![New GeoPackage Layer dialogue](media/new-geopackage-dialog.png "New GeoPackage Layer dialogue")
-
-Figure 7.3: New GeoPackage Layer dialogue
-
-2. The first step is to indicate the database file location. This can be done by pressing the ![alt_text](media/database-file-location.png "image_tooltip") button to the right of the Database field and select an existing GeoPackage file or create a new one. QGIS will automatically add the right extension to the name you provide.
-3. Type a name for the new layer / table a name (Table name)
-4. Define the Geometry type. If not a geometryless layer, you can specify whether it should Include Z dimension and/or Include M values.
-5. Specify the coordinate reference system using the ![alt_text](media/mActionSetProjection.png "image_tooltip") button
-
-6. To add fields to the layer you are creating:
-
-    1. Enter the Name of the field
-    2. Select the data Type. Supported types are Text data, Whole number (both integer and integer64), Decimal number, Date and Date and time, Binary (BLOB) and Boolean.
-    4. Depending on the selected data format, enter the Maximum length of values.
-    5. Click on the Add to Fields List ![alt_text](media/mActionNewAttribute.png "image_tooltip") button
-
-7. Reproduce the steps above for each field you need to add
-8. Once you are happy with the attributes, click OK. QGIS will add the new layer to the legend, and you can edit it as described in section
+Số hoá, như bạn có thể đoán, là nghệ thuật (hoặc khoa học) để tạo dữ liệu vector số hoá từ nguồn khác, như ảnh raster. Đề bắt đầu số hoá, đầu tiên chúng ta phải bật chế độ chỉnh sửa. Các phần mềm GIS thường yêu cầu chế độ chỉnh sửa riêng để ngăn người dùng vô tình chỉnh sửa hoặc xoá các dữ liệu quan trọng. Chế độ chỉnh sửa được bật hoặc tắt riêng cho từng layer.
 
 
-#### **Creating a new Shapefile**
+### Phase 1 : Tạo mới một GeoPackage layer hoặc Shapefile
 
-1. To create a new ESRI Shapefile format layer, press the ![alt_text](media/mActionNewVectorLayer.png "image_tooltip") New Shapefile Layer… button in the Layer ‣ Create Layer ‣ menu or from the Data Source Manager toolbar. The New Shapefile Layer dialog will be displayed as shown in Figure 7.4.
+#### **Tạo mới một GeoPackage layer**
 
-![alt_text](media/new-shapefile-dialog.png "image_tooltip")
+1. Để tạo mới một GeoPackage layer, chọn nút New GeoPackage Layer ![alt_text](media/geopackage-button.png "image_tooltip") trong Layer ‣ Create Layer menu hoặc từ Datasource Manager toolbar. Giao diện New GeoPackage Layer sẽ được hiển thị như Hình 7.3.
 
-Figure 7.4: New shapefile layer dialogue
+![Giao diện New GeoPackage Layer](media/new-geopackage-dialog.png "Giao diện New GeoPackage Layer")
 
-2. Provide a path and file name using the … button next to the File name field. QGIS will automatically add the right extension to the name you provide.
-3. Next, indicate the File encoding of the data
-4. Choose the Geometry type of the layer: No Geometry (resulting in a .DBF format file), point, multipoint, line or polygon
-5. Specify whether the geometry should have additional dimensions: None, Z (+ M values) or M values
-6. Specify the coordinate reference system using the ![alt_text](media/mActionSetProjection.png "image_tooltip")  button, you may select the universal WGS 84 which is well suited for web mapping projects across the globe
+Hình 7.3: Giao diện New GeoPackage Layer
 
-7. To add fields to the layer you are creating:
-    1. Enter the Name of the field
-    2. Select the data Type. Only Decimal number, Whole number, Text data and Date attributes are supported.
-    3. Depending on the selected data format, enter the Length and Precision.
-    4. Click on the Add to Fields List ![alt_text](media/mActionNewAttribute.png "image_tooltip") button
+2. Bước đầu tiên là xác định vị trí của file bằng cách bấm nút ![Chọn vị trí của file](media/database-file-location.png "Chọn vị trí của file"), sau đó chọn file GeoPackage có sẵn hoặc tạo mới. QGIS sẽ tự động thêm phần mở rộng thích hợp cho tên file được nhập.
+3. Nhập tên cho layer/ table mới
+4. Định nghĩa kiểu dữ liệu. Nếu là một lớp hình học, bạn có thể chỉ định có bao gồm Z dimension và hoặc/ M value hay không.
+5. Chọn CRS sử dụng nút ![alt_text](media/mActionSetProjection.png "image_tooltip")
 
-8. Reproduce the steps above for each field you need to add
-9. Once you are happy with the attributes, click OK. QGIS will add the new layer to the legend, and you can edit it as described in the next Phase, ‘Digitizing an existing layer of this module.
+6. Thêm các trường dữ liệu cho layer:
+
+    1. Nhập tên trường dữ liệu
+    2. Chọn kiểu dữ liệu: Text, Whole number (integer và integer64),  Decimal number, Date và Date and time, Binary (BLOB) và Boolean
+    3. Tuỳ vào kiểu dữ liệu được chọn, nhập Maximum length of values.
+    4. Kích chọn nút Add to Fields List ![alt_text](media/mActionNewAttribute.png "image_tooltip")
+
+7. Lặp lại các bước như trên cho mỗi trường dữ liệu cần thêm vào.
+8. Khi đã nhập đủ các trường dữ liệu, chọn OK. QGIS sẽ thêm một layer mới vào legend (Layers Panel), và bạn có thể chỉnh sửa nó theo hướng dẫn trong Phase 2 ‘Digitizing an existing layer' của Module này.
+
+ 
+
+#### **Tạo một Shapefile mới**
+
+1. Để tạo một layer định dạng ESRI Shapefile, nhấn nút New Shapefile Layer… ![alt_text](media/mActionNewVectorLayer.png "image_tooltip") trong Layer ‣ Create Layer ‣ menu hoặc từ Data Source Manager toolbar. Giao diện New Shapefile Layer sẽ được hiển thị như Hình 7.4.
+
+![Giao diện New shapefile layer](media/new-shapefile-dialog.png "Giao diện New shapefile layer")
+
+Hình 7.4: Giao diện New shapefile layer
+
+2. Nhập đường dẫn và tên file sử dụng nút … cạnh tên file. QGIS sẽ tự động thêm phần mở rộng thích hợp cho tên file được nhập.
+3. Tiếp theo, xác định File encoding (UTF-8, hỗ trợ tiếng Việt Unicode)
+4. Chọn kiểu dữ liệu cho layer: No Geometry (định dạn .DBF), point, multipoint, line hoặc polygon
+5. Xác định có thêm các chiều bổ sung cho kiểu dữ liệu hay không: None, Z (+ M values) hoặc M values.
+6. Xác định CRS sử dụng nút ![alt_text](media/mActionSetProjection.png "image_tooltip"), bạn có thể chọn WGS 84 để phù hợp tốt cho các dự án bản đồ web toàn thế giới.
+
+7. Thêm các trường dữ liệu cho layer:
+    1. Nhập tên trường dữ liệu
+    2. Chọn kiểu dữ liệu. QGIS hỗ trợ các kiểu dữ liệu Decimal number, Whole number, Text và Date 
+    3. Tuỳ vào kiểu dữ liệu được chọn, nhập các thông số cho Length và Precision.
+    5. Kích chọn nút Add to Fields List ![alt_text](media/mActionNewAttribute.png "image_tooltip").
+
+7.  Lặp lại các bước như trên cho mỗi trường dữ liệu cần thêm vào.
+8. Khi đã nhập đủ các trường dữ liệu, chọn OK. QGIS sẽ thêm một layer mới vào legend (Layers Panel), và bạn có thể chỉnh sửa nó theo hướng dẫn trong Phase 2 ‘Digitizing an existing layer' của Module này.
 
 
-### Phase 2 title: Digitizing an existing layer
+### Phase 2: Số hoá layer hiện có
 
-#### **Content/Tutorial**
+#### **Nội dung/ Hướng dẫn**
 
-This tutorial will show how to create a new shapefile using auxiliary data like satellite imagery provided by Google. In practice accurate ground truth data will be available. This would be accurate qualitative data about the topological feature. It’s important to know what feature you’d like to create beforehand, for example is it a point, line or polygon vector layer. When we create the layer, we must define what type of data it will contain. The purpose of this tutorial is to create a data type that can easily be manipulated, analysed and stored using a GIS system, hence the need to create vector files. We’ll create polygon features as an example;
+Hướng dẫn này sẽ chỉ cách tạo một shapefile mới sử dụng dữ liệu phụ trợ như ảnh vệ tinh của Google. Trong thực tế, dữ liệu chính xác sẽ có sẵn. Đây sẽ là dữ liệu định tính chính xác về các đối tượng có tính topology. Điều quan trọng là phải biết trước đối tượng bạn muốn tạo là gì, chẳng hạn như point, line hay polygon layer. Khi tạo layer, chúng ta phải định nghĩa kiểu dữ liệu mà nó sẽ chứa. Mục đích của hướng dẫn này là tạo một kiểu dữ liệu có thể dễ dàng thao tác, phân tích và lưu trữ sử dụng một hệ GIS, nên cần tạo dữ liệu vector. Chúng ta sẽ tạo các đối tượng polygon như là một ví dụ;
 
-1. Before you can add new vector data, you need a vector dataset (a layer) to add it to. In our case, we’ll begin by creating a new data layer, and then we’ll add features to it. First, we must define our dataset.
-2. Create a new project in QGIS by clicking on the _New Project_ ![alt_text](media/new-project.png  "image_tooltip") icon.
-3. Go to _Layer ‣ Create Layer ‣ New GeoPackage Layer_. You’ll be presented with the following dialog:
+1. TrưỚc khi thêm và một dữ liệu vector mới, bạn cần một vector layer để thêm vào. Trong trường hợp này, chúng ta sẽ bắt dầu bằng việc tạo một layer mới, và sau đó chúng ta sẽ thêm các đối tượng vào nó. Đầu tiên, chúng ta cần định nghĩa layer cần tạo.
+2. Tạo một project mới trong QGIS bằng cách kích chọn biểu tượng  _New Project_ ![alt_text](media/new-project.png  "image_tooltip")
+3. Vào _Layer ‣ Create Layer ‣ New GeoPackage Layer_ sẽ xuất hiện giao diện như sau:
 
-![alt_text](media/new-vector.png "image_tooltip")
+![Giao diện New GeoPackage](media/new-vector.png "Giao diện New GeoPackage")
 
-Figure 7.5: New GeoPackage dialogue
+Hình 7.5: Giao diện New GeoPackage
 
-At this point we must decide what kind of dataset we want to create. Remember that a data layer can only contain features of points, lines or polygons - never a mix. When we create the layer, we must define what type of data it will contain.
+Đến đây, chúng ta phải quyết định loại layer cần tạo. Hãy nhớ là layer có thể chứa các đối tượng dạng point, line hoặc polygon - không bao giờ là hỗn hợp của các kiểu dữ liệu này. Khi tạo layer, chúng ta phải định nghĩa kiểu dữ liệu mà nó sẽ chứa.
 
-Since polygons are made up of points and lines, let’s create polygons. Once you’ve mastered this, creating a point or a line layer should be easy!
+Bởi vì polygon được tạo ra từ point và line, hãy tạo polygon. Khi bạn thành thạo điều này, việc tạo point hoặc line layer sẽ trở nên dễ dàng!
 
-Within the dialogue, specify a file name for the new file, file encoding, geometry type, the CRS and add specify data for the New Field. Add other field names. This requires a predesigned data model that properly captures all information about the said feature.
+Trong giao diện New GeoPakage, chọn tên file, file encoding, geometry type, CRS và các trưỜng dữ liệu. Điều này yêu cầu một mô hình dữ liệu được thiết kế trước để có thể nắm nắt tất cả thông tin của đối tượng cần tạo.
 
-4. The second step is to add the ESRI World Imagery satellite layer to QGIS map canvas. We added this in a previous module and should be available to use in the **Browser Panel** under **XYZ Tiles**.
+4. Bước tiếp theo là thêm ESRI World Imagery satellite layer vào map canvas. Chúng ta đã thêm vào trong Module trước nên nó sẽ có sẵn trong  **Browser Panel**, mục **XYZ Tiles**.
 
-![ESRI World Imagery found in Browser Panel](media/xyz-2.png "ESRI World Imagery found in Browser Panel")
+![ESRI World Imagery trong Browser Panel](media/xyz-2.png "ESRI World Imagery trong Browser Panel")
 
-![ESRI World Imagery loaded in QGIS](media/xyz-3.png "ESRI World Imagery loaded in QGIS")
+![ESRI World Imagery được tải trong QGIS](media/xyz-3.png "ESRI World Imagery được tải trong QGIS")
 
-Figure 7.6.1: QGIS canvas after adding ESRI World Imagery layer
+Hình 7.6.1: QGIS canvas sau khi thêm ESRI World Imagery layer
 
-5. Zoom in the image until you can see features such as rooftops, roads, trees, etc. The rooftops can act as a 2D proxy for buildings, thus we’ll digitize the newly created building layer.
+5. Phóng to bản đồ cho đến khi bạn có thể thấy các đối tượng như mái nhà, đường phố, cây xanh,... Các mái nhà có thể được xem như một đại diện 2D cho các toà nhà, do đó chúng ta sẽ số hoá buildings layer mới được tạo.
 
-![ESRI World Imagery layer zoomed in](media/digitize-zoom.png "ESRI World Imagery layer zoomed in")
+![Phóng to ESRI World Imagery layer](media/digitize-zoom.png "Phóng to ESRI World Imagery layer")
 
-Figure 7.6.2: ESRI World Imagery layer zoomed in
+Hình 7.6.2: Phóng to ESRI World Imagery layer
 
-6. Let’s enter edit mode for the _buildings_ layer
-7. Select _buildings_ in the Layers panel
-8. Click on the _Toggle Editing_ ![alt_text](media/edit-layer.png "image_tooltip") button
-9. If you can’t find this button, ensure that the Digitising toolbar is enabled. There should be a check mark next to the _View ‣ Toolbars ‣ Digitizing_ menu entry
-10. Once you are in edit mode, the digitising tools will become active
+6. Bết chế độ chỉnh sửa cho _buildings_ layer
+7. Chọn _buildings_ trong Layers Panel
+8. Kích chọn nút _Toggle Editing_ ![alt_text](media/edit-layer.png "image_tooltip")
+9. Nếu bạn không tìm thấy nút này, hãy đảm bảo rằng Digitising toolbar được bật bằng cách chọn _View ‣ Toolbars ‣ Digitizing Toolbar_
+10. Khi bạn ở chế độ chỉnh sửa, Digitising tools sẽ được kích hoạt
 
 ![Digitizing tools](media/digi-toolbar.png "Digitizing tools")
 
-Figure 7.7: Digitizing tools
+Hình 7.7: Digitizing tools
 
-From left to right on the image above, they are:
+Các chức năng trên Digitizing Toolbar :
 
-*   **Toggle Editing**: activates / deactivates edit mode.
-*   **Save Layer Edits**: saves changes made to the layer.
-*   **Add Feature**: start digitising a new feature.
-*   **Move Feature(s)**: move an entire feature around.
-*   **Node Tool**: move only one part of a feature.
-*   **Delete Selected**: delete the selected feature (only active if a feature is selected).
-*   **Cut Features**: cut the selected feature (only active if a feature is selected).
-*   **Copy Features**: copy the selected feature (only active if a feature is selected).
-*   **Paste Features**: paste a cut or copied feature back into the map (only active if a feature has been cut or copied).
+*   **Toggle Editing**: Bật/ tắt chế độ chỉnh sửa
+*   **Save Layer Edits**: Lưu các thay đổi.
+*   **Add Feature**: Thêm đối tượng mới.
+*   **Move Feature(s)**: Di chuyển một hoặc nhiều đối tượng.
+*   **Node Tool**: Chỉnh sửa các Node của đối tượng.
+*   **Delete Selected**: xoá các đối tượng được chọn (chỉ được kích hoạt nếu có ít nhất một đối tượng được chọn).
+*   **Cut Features**: cut các đối tượng được chọn (chỉ được kích hoạt nếu có ít nhất một đối tượng được chọn).
+*   **Copy Features**: copy đối tượng được chọn (chỉ được kích hoạt nếu có ít nhất một đối tượng được chọn).
+*   **Paste Features**: paste một đối tượng được cut hoặc copy (chỉ được kích hoạt nếu có ít nhất một đối tượng được cut hoặc copy).
 
-We want to add a new feature.
+Chúng ta muốn thêm một đối tượng mới.
 
-11.  Click on the _Add Feature_ ![alt_text](media/add-feature.png "image_tooltip")  button to start digitizing. We’ll digitize the buildings
-12. Start by clicking on a point somewhere along the edge of the building
-13. Place more points by clicking further along the edge, until the shape you’re drawing completely covers the field. This is very similar to drawing a polygon. The beginning vertex and end vertex must touch, otherwise it remains a line.
-14. To place the last point, **right-click where you want it to be**. This will finalise the feature and bring up the Attributes dialog.
-15. Fill in the values as shown here
+11.  Kích chọn nút _Add Feature_ [alt_text](media/add-feature.png "image_tooltip")  button to start digitizing. Chúng ta sẽ số hoá các buildings.
+12. Bắt đầu bằng cách kích vào một điểm nào đó nằm trên biên của building
+13. Thêm nhiều điểm hơn bằng cách kích chọn dọc biên building cho đến khi phủ hoàn toàn building. Điều này rất giống với việc vẽ một polygon. Vertex đầu và cuối phải trùng nhau, nếu không thì nó vẫn chỉ là một line.
+14. Để thêm một điểm cuối, **kích chuột phải ở chỗ mà bạn muốn**. Nó sẽ kết thúc vẽ đối tượng và hiện lên giao diện Attributes.
+15. Nhập các giá trị như hình sau
 
-![ Digitizing new feature](media/digitize-1.png "Digitizing new feature")
+![ Số hoá một đối tượng mới](media/digitize-1.png "Số hoá một đối tượng mới")
 
-Figure 7.8.1: Digitizing new feature
+Hình 7.8.1: Số hoá một đối tượng mới.
 
-![Fill in the attribute values](media/digitize-2.png "Fill in the attribute values")
+![Nhập thuộc tính](media/digitize-2.png "Nhập thuộc tính")
 
-Figure 7.8.2: Adding the attributes
+Hình 7.8.2: Nhập thuộc tính
 
 
-16. Click _OK_. You’ve created a new feature!
+16. Chọn _OK_. Bạn đã tạo một đối tượng mới!
 
-![New feature created](media/digitize-3.png "New feature created")
+![Đối tượng mới được tạo](media/digitize-3.png "Đối tượng mới được tạo")
 
-Figure 7.8.3: New feature created
+Hình 7.8.3: Đối tượng mới được tạo.
 
-If you make a mistake while digitising a feature, you can always edit it later. Simply finish     digitising the feature and then follow these steps:
+Nếu bạn mắc lỗi khi số hoá một đối tượng, bạn luôn có thể chỉnh sửa sau. Chỉ cần kết thúc số hoá đối tượng và làm theo các bước sau: 
 
-* Select the feature with the _Select Feature_ tool
+* Chọn đối tượng bằng công cụ _Select Feature_
 
 ![alt_text](media/select-feature.png "image_tooltip")
 
-*   Then use one of these tools to edit the feature
+*   Sau đó sử dụng một trong các công cụ sau để chỉnh sửa đối tượng
 
 <table>
   <tr>
@@ -208,7 +205,7 @@ If you make a mistake while digitising a feature, you can always edit it later. 
    </td>
    <td>Move feature(s) tools
    </td>
-   <td>Move the entire feature(s)
+   <td>Di chuyển toàn bộ đối tượng
    </td>
   </tr>
   <tr>
@@ -219,7 +216,7 @@ If you make a mistake while digitising a feature, you can always edit it later. 
    </td>
    <td>Node tools
    </td>
-   <td>move only one point where you may have misclicked
+   <td>Chỉ di chuyển node mà bạn có thể đã số hoá lỗi.
    </td>
   </tr>
   <tr>
@@ -230,13 +227,13 @@ If you make a mistake while digitising a feature, you can always edit it later. 
    </td>
    <td>Delete selected
    </td>
-   <td>get rid of the feature entirely so you can try again
+   <td>Xoá các đối tượng được chọn để vẽ lại
    </td>
   </tr>
   <tr>
-   <td>Go to Edit ‣ Undo or press Ctrl+Z on keyboard
+   <td>Vàp Edit ‣ Undo hoặc nhấn tổ hợp phím Ctrl+Z
    </td>
-   <td>Undo mistakes
+   <td>Undo
    </td>
    <td>
    </td>
@@ -244,135 +241,134 @@ If you make a mistake while digitising a feature, you can always edit it later. 
 </table>
 
 
-17. Now try it on your own, digitize all the buildings in the image.
+17. Bây giờ hãy thử làm một mình, số hoá tất cả các building trong ảnh.
 
 
-### Phase 3 title: Georeferencing a Topo map
+### Phase 3 : Đăng ký toạ độ cho bản đồ địa hình
 
-#### **Content/Tutorial**
+#### **Nội dung/ Hướng dẫn**
 
-To georeference the map;
+Để đăng ký toạ độ cho bản đồ;
 
-1. Open the Georeferencer tool, Raster ► Georeferencer 
-2. Click the Add raster button ![Add Raster](media/add-raster.png "Add Raster") to add the map image file, [Topo Map of Pampanga ](data/guagua-topo.jpeg), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
+1. Truy cập Georeferencer tool, Raster ► Georeferencer 
+2. Chọn nút Add raster ![Add Raster](media/add-raster.png "Add Raster") để thêm bản đồ dạng ảnh, [Topo Map of HCMC ](data/guagua-topo.jpeg) cần đăng ký toạ độ. Bản đồ địa hình sẽ được thêm vào trong georeferencer canvas. Bây giờ bạn có thể phóng to để xem chi tiết bản đồ bằng cách đọc metadata và thông tin chú giải ở góc dưới bản đồ và liên hệ nó đến các đối tượng trên bản đồ.
+    
+![Bản đồ trong Georeferencer canvas](media/georeferencer.png "Bản đồ trong Georeferencer canvas")
 
-![Map in Georeferencer canvas](media/georeferencer.png "Map in Georeferencer canvas")
+Hình 7.9: Bản đồ trong Georeferencer canvas
 
-Figure 7.9: Map in Georeferencer canvas
+Tiếp theo bạn sẽ định nghĩa các thiết lập chuyển đổi để đăng ký toạ độ cho bản đồ:
 
-Next you should define the transformation settings for georeferencing the map:
+3. Vào Settings ► Transformation settings hoặc kích chuột vào nút Transformation Settings ![alt_text](media/georef-settings-btn.png "image_tooltip").
+4. Kích chọn biểu tượng ![alt_text](media/dots.png "image_tooltip") cạnh Output raster, tạo thư mục 'pampanga data’ và nhập tên file là HCMC_georef.tif
+5. Nhập các tham số khác như Hình sau:
 
-3. Open Settings ► Transformation settings or click the Transformation Settings button ![alt_text](media/georef-settings-btn.png "image_tooltip").
-4. Click the ![alt_text](media/dots.png "image_tooltip") icon next to the Output raster box, go to the folder and create the folder 'pampanga data’ and name the file as pampanga_georef.tif.
-5. Set the rest of parameters as shown below
+![Các tham số chuyển đổi](media/transformation-settings.png "Các tham số chuyển đổi")
 
-![Transformation parameters](media/transformation-settings.png "Transformation parameters")
+Hình 7.10: Các tham số chuyển đổi
 
-Figure 7.10: Transformation parameters
+Khi chọn các tham số chuyển đổi, những điều cần xem xét là:
+* Độ phức tạp và biến dạng của bản đồ (các bản đồ có hình dạng thông thường thì chỉ cần sử dụng các tham số chuyển đổi đơn giản)
+* Số lượng các điểm khống chế (Ground Control Point - GCP) mà bạn có thể tạo trên bản đồ - loại phép chuyển đổi càng phức tạp thì càng cần nhiều điểm GCP để cho kết quả tốt.
+* Phân bố các điểm GCP trên bản đồ -- Phân bố GCP không tốt se dẫn đến biến dạng nhiều hơn, đặc biệt là đối với các phương trình chuyển đổi có bậc cao hơn.
+* Phép chuyển đổi phức tạp hơn không phải lúc nào cũng tốt hơn.
 
-When selecting the transformation parameters, the things to consider are:
-* the map’s complexity and distortion (regular-shaped maps normally only need to use simple transformation parameters)
-* the number of GCPs that you can get on the map -- the more complex the transformation type, the more GCPs are needed to get good results.
-* the distribution of GCPs on the map -- poor GCP distribution results in more distortion especially in higher order transformation equations.
-* more (or more complex) is not always better.
+| Bậc của phương trình chuyển đổi | Số lượng GCP tối thiểu |
+|:-------------------------------:|:----------------------:|
+|                1                |           3            |
+|                2                |           6            |
+|                3                |           10           |
+|                4                |           15           |
+|                5                |           21           |
+|                6                |           28           |
+|                7                |           36           |
 
-| Order of Transformation | Minimum GCPs Required |
-|:-----------------------:|:---------------------:|
-|            1            |           3           |
-|            2            |           6           |
-|            3            |           10          |
-|            4            |           15          |
-|            5            |           21          |
-|            6            |           28          |
-|            7            |           36          |
+Để cho an toàn, luôn có nhiều hơn ít nhất 1 điểm so với yêu cầu tối thiểu để dự phòng.
 
-Just to be safe, always have at least one more than the minimum to add redundancy.
+6. Chọn OK.
+7. Bản đồ chứa một số dấu thập đánh dấu các toạ độ trên bản đồ, chúng ta sẽ sử dụng chúng để đăng ký toạ độ cho ảnh. Bạn có thê sử dụng các công cụ phóng to/ thu nhỏ, di chuyển bản đồ như bạn hay dùng trong QGIS để kiểm tra ảnh trong cửa sổ Georeferencer.
+8. Phóng to góc dưới bên trái bản đồ và chú ý rằng có một dấu thập với cặp toạ độ (X,Y), như đã đề cập trước đây trong CRS, PRS 19992 cũng được viết là PRS 92, như được tham chiếu trong legend của bản đồ địa hình.
+9. Chọn nút Add point![Add Point](media/add-point.png "Add Point") và nhấp vào giao điểm của dấu chéo (di chuyển và phóng to nếu cần thiết).
+10. Trong hộp thoại Enter map coordinates, nhập các toạ độ xuất hiện trong bản đồ (Y: 14° 45’ 00’’ and X: 120° 30’ 00’’).
 
+![Chọn các điểm khống chế - GCP](media/georef-1.png "Chọn các điểm khống chế - GCP")
 
-6. Click OK.
-7. The map contains several cross-hairs marking the coordinates in the map, we will use those to georeference this image. You can use the zooming and panning tools as you usually do in QGIS to inspect the image in the Georeferencer’s window.
-8. Zoom in to the left lower corner of the map and note that there is a cross-hair with a coordinate pair, X and Y, that as mentioned before are in the CRS, PRS 1992 also written as PRS 92, as referenced in the legend of the topo map.
-9. Click the Add point button ![Add Point](media/add-point.png "Add Point")  and click in the intersection of the cross-hairs (pan and zoom as needed).
-10. In the Enter map coordinates dialogue write the coordinates that appear in the map (Y: 14° 45’ 00’’ and X: 120° 30’ 00’’).
+Hình 7.11.1: Chọn các điểm khống chế - GCP
 
-![Select GCP](media/georef-1.png "Select GCP")
+![Nhập các cặp toạ độ](media/georef-2.png "Nhập các cặp toạ độ")
 
-Figure 7.11.1: Enter map coordinates
+Hình 7.11.2: Nhập các cặp toạ độ
 
-![Enter map coordinates](media/georef-2.png "Enter map coordinates")
+11. Chọn OK.
 
-Figure 7.11.2: Enter map coordinates
+Toạ độ của điểm GCP đầu tiên cho việc đăng ký ảnh đã sẵn sàng như hình sau:
 
-11. Click OK.
+![Toạ độ điểm GCP đầu tiên cho việc đăng ký ảnh](media/georef-3.png "Toạ độ điểm GCP đầu tiên cho việc đăng ký ảnh")
 
-The first coordinate for the georeferencing is now ready. Below is a screenshot of what to expect  at this point
+Hình 7.12: Toạ độ điểm GCP đầu tiên cho việc đăng ký ảnh
 
-![First coordinate for the georeferencing](media/georef-3.png "First coordinate for the georeferencing")
+12. Thu nhỏ bản đồ và di chuyển về bên phải cho đến khi thấy dấu thập khác, và ước tính xem bạn đã di chuyển bao nhiêu km. Cố gắng chọn các GCP càng xa nhau càng tốt. Số hoá ít nhất 3 điểm GCP nữa như cách đã làm cho GCP đầu tiên. Mẹo: Đảm bảo rằng các GCP phân bố tương đối d0o62ng đều trên bản đồ, ví dụ tại 04 góc của bản đồ hoặc có khoảng cách bằng nhau. Điều này ảnh hưởng đến hiệu suất của thuật toán chuyển đổi, có thể dẫn đến tỉ lệ lỗi cao hơn. 
 
-Figure 7.12: First coordinate for the georeferencing
+15. Với 03 điểm GCP được số hoá, bạn có thể sẽ thấy lỗi georeference bằng một đường màu đỏ tại các điểm. Lỗi tính bằng pixel cũng có thể thấy trong GCP table với cột dX[pixels] và dY[pixels]. Các giá trị này không nên cao hơn một ngưỡng đã thiết lập, trong trường hợp cao hơn, bạn nên xem lại các điểm đã được số hoá và các toạ độ đã nhập để tìm hiểu vấn đề là gì. Bạn có thể sử dụng bản đồ bên trên để tham khảo.
 
-12. Zoom out in the image and move to the right until you find other crosshair, and estimate how many kilometres you have moved. Try to get ground control points as far from each other as possible. Digitize at least three more ground control points in the same way you did the first one. Tip: Make sure the points are fairly equally distributed across the image for example in all four corners of the image or at equal distances to each other. This affects the performance of the transformation algorithm. Which in turn results in higher error rates.
+17. Thêm nhiều GCP hơn nữa cho đến khi bạn hài lòng với kết quả mong đợi.
+19. Bạn có thể lưu các GCP bằng cách vào **File ► Save GCP points as…**.
+20. Cuối cùng, thực hiện đặng ký toạ độ cho bản đồ bằng cách vào **File ► Start georeferencing** hoặc kích chọn nút ![Start Georeferencing button](media/georef-start-btn.png "Start Georeferencing button").
 
-13. With already three digitized ground control points you will be able to see the georeferencing error as a red line coming out of the points. The error in pixels can be seen also in the GCP table in the dX[pixels] and dY[pixels] columns. The residuals should not be higher than a threshold that you set, if it is you should review the points you have digitized and the coordinates you have entered to find what the problem is. You can use the image above as a guide.
+![Các GCP được thêm vào](media/georef-4.png "Các GCP được thêm vào")
 
-14. Add more control points until you are happy with the expected results.
-14. You can save the GCPs vial **File ► Save GCP points as…**.
-15. Finally, georeference your map with **File ► Start georeferencing** or the Start Georeferencing button ![Start Georeferencing button](media/georef-start-btn.png "Start Georeferencing button").
+Hình 7.13: Các GCP được thêm vào
 
-![GCPs added](media/georef-4.png "GCPs added")
+![Bản đồ đã được đăng ký toạ độ được tải trong QGIS](media/georef-5.png "Bản đồ đã được đăng ký toạ độ được tải trong QGIS")
 
-Figure 7.13: GCPs added
+Hình 7.14: Bản đồ đã được đăng ký toạ độ được tải trong QGIS
 
-![Georeferenced map loaded in QGIS](media/georef-5.png "Georeferenced map loaded in QGIS")
-
-Figure 7.14: Georeferenced map loaded in QGIS
-
-Note: To check that your data is properly georeferenced you can open the topo map. Your map and this image should match quite well. Set the map transparency to 75% and compare it to the aerial image.
-
-
-#### **Quiz questions**
-
-1.  What is digitizing in GIS? (check-boxes)
-2.  Which of the following auxiliary datasets will support digitizing? (check boxes)
-3.  What factors may affect accuracy of data during digitizing?(radio button)
-4. What may be done to improve accuracy? (check boxes)
-5. Why is a data model important when creating new data? (radio button)
+Chú ý: Để kiểm tra dữ liệu của bạn có được đăng ký toạ độ chính xác không, bạn có thể mở bản đồ địa hình. Bản đồ của bạn và hình ảnh sẽ khá khớp nhau. Chọn độ trong suốt transparency là 75% để so sánh với ảnh hàng không. 
 
 
-#### Quiz answers
+#### **Câu hỏi**
 
-1. a. the process of converting geographic data either from a scanned image or digital image into vector data by tracing the features
+1.  Số hoá trong GIS là gì? (Chọn một hoặc nhiều phương án trả lời đúng).
+2.  Bộ dữ liệu phụ trợ nào sau đây sẽ hỗ trợ số hoá? (Chọn một hoặc nhiều phương án trả lời đúng).
+3.  Các yếu tố nào có thể ảnh hưởng đến độ chính xác của dữ liệu trong tiến trình số hoá? (Chỉ chọn một phương án trả lời đúng).
+4.  Có thể làm gì để cải thiện độ chính xác? (Chọn một hoặc nhiều phương án trả lời đúng).
+5.  Tại sao mô hình dữ liệu là quan trọng khi tạo dữ liệu mới  (Chỉ chọn một phương án trả lời đúng).
+
+
+#### Trả lời
+
+1. a. Quá trình chuyển đổi dữ liệu địa lý từ hình ảnh được quét hoặc hình ảnh kỹ thuật số thành dữ liệu vectơ bằng cách theo vết (tracing) các đối tượng.
+  
+   b. Mô tả  sự chuyển đổi thuần tuý giữa từ tương tự (analog) sang kỹ thuật số của các dữ liệu và tài liệu hiện có.
    
-   b. describes the pure analog-to-digital conversion of existing data and documents
+   c. Quá trình mà theo đó toạ độ từ một bản đồ, hình ảnh, hoặc các nguồn dữ liệu khác được chuyển đổi thành định dạng số trong một hệ _GIS_.
    
-   c. process by which coordinates from a map, image, or other sources of data are converted into a digital format in a _GIS_
-   
-   d. refers to creating a digital representation of physical objects or attributes
+   d. Đề cập đến việc tạo ra một biểu diễn kỹ thuật số của các đối tượng hoặc thuộc tính vật lý.
 
-2. a. GPS data points
+2. a. Các điểm GPS
    
-   b. Topographic maps
+   b. Bản đồ địa hình
    
-   c. Satellite imagery
+   c. Ảnh vệ tinh
    
-   d. Graphs and Tables
+   d. Đồ thị và bảng biểu
 
-3. a.  Resolution of the data (Spatial, Temporal, Radiometric)
+3. a. Độ phân giải của dữ liệu (Không gian, Thời gian, Phổ)
    
-   b. Lighting
+   b. Ánh sáng
    
-   c. Location of the feature
+   c. Vị trí của đối tượng
    
-   d. Type of feature
+   d. Loại đối tượng
 
-4. a. get accurate data sources
+6. a. Chọn các nguồn dữ liệu chính xác
    
-   b. set data quality goals
+   b. Đặt các mục tiêu chất lượng dữ liệu
    
-   c. review the data and re-edit or revert edits
+   c. Xem lại dữ liệu và chỉnh sửa lại hoặc hoàn nguyên các chỉnh sửa
 
-5. a. allows capture comprehensive information about the feature
+7. a. Cho phép nắm bắt thông tin toàn diện về đối tượng
    
-   b. automates the process
+   b. Tự động hoá xử lý
    
-   c. captures digitizing errors
+   c. Nắm bắt các lỗi số hoá

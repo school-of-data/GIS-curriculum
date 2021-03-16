@@ -35,13 +35,13 @@ Bạn sẽ sử dụng field calculator và QGIS expression engine để chạy 
 *   [HCM City High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
 
 
-## Kỹ năng cần thiết
+## Yêu cầu về kỹ năng
 
 *   Nắm được các Module trước
 *   Kiến thức cơ bản về vận hành máy tính
 
 
-## Các tài nguyên bổ sung
+## Tài liệu tham khảo
 
 *   Working with the Attribute Table - [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes)
 *   QGIS Expressions - [https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html)

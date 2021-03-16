@@ -27,7 +27,7 @@ Các công cụ và tài nguyên cần thiết cho module này gồm:
 *   Kết nối Internet
 
 
-## Yêu cầu về kĩ năng
+## Yêu cầu về kỹ năng
 
 *   Kiến thức cơ bản về vận hành máy tính
 

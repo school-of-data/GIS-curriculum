@@ -30,7 +30,7 @@ Kết thúc Module này, người học sẽ có những kiến thức cơ bản
 *   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
 *   CRS sử dụng là VN-2000 / UTM zone 48N, EPSG 3405. 
 
-## Yên cầu kỹ năng: 
+## Yên cầu về kỹ năng: 
 
 *   Kiến thức cơ bản về vận hành máy tính
 *   Nắm vững Module 0, 1, 2, 6 và 8
