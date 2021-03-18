@@ -464,14 +464,14 @@ Phương pháp nội suy song tuyến xác định giá trị mới cho một ce
 
 Chúng ta tiến hành kiểm tra CRS của 5 lớp dữ liệu land cover đã được tải vào QGIS project. Truy cập **Layer properties ‣ information**, chúng ta thấy rằng tất cả 5 lớp land cover có hệ toạ độ là EPSG:3857 - WGS 84 / Pseudo-Mercator. Một giải pháp sẽ sử dụng là dùng công cụ Reproject và cấu hình riêng cho mỗi layer. Tuy nhiên, mô5t cách nhanh hơn cho việc này là chạy reproject với **batch process**
 
-**Batch processing** là khả năng chạc các process lặp lại trên dữ liệu, với tương tác người dùng tối thiểu. Hầu hết các chức năng trong QGIS có tuỳ chọn này và có thể được kích hoạt trong cửa sổ process bằng cách kích chuột **Run Batch Process** ![Run batch processe button](media/batch-btn.png "Run batch processe button") và  chuyển sang tab Run batch process (Hình 9.12)
+**Batch processing** là khả năng chạy các process lặp lại trên dữ liệu, với tương tác người dùng tối thiểu. Hầu hết các chức năng trong QGIS có tuỳ chọn này và có thể được kích hoạt trong cửa sổ process bằng cách kích chuột **Run Batch Process** ![Run batch processe button](media/batch-btn.png "Run batch processe button") và  chuyển sang tab Run batch process (Hình 9.12)
 
 ![Run as Batch Process trong QGIS](media/fig912.png "Run as Batch Process trong QGIS")
 
 Hình 9.12 - Run as Batch Process trong QGIS
 
 
-Đối với 05 lớp raster land cover, chúng ta sẽ sử dụng batch processing và phương pháp resampling là nearest neighbour. Để thêm một layer mới, chọn biểu tượng có dấu +. Để tự động điền CRS và các tham số resampling, chọn nút autofill phía trên mỗi cột và chọn `Fill down`. Đổi tên lớp raster được reproject bằng cách thêm mã EPSG ở cuối tên, ví dụ LandCover2015 sẽ trở thành landCover2015_9210. Nhập các tham số như Hình 9/13: sourcr CRS: EPSG: 3857, target CRS: EPSG 3123, resampling method: nearest neighbour (đã giải thích trong phần trên),  nodata value for output bands: 255 (từ information window, chúng ta thấy kiểu dữ liệu là 8bit unsigned integer - có nghĩa là giá trị lớp nhất là 255), output resolution:100m (giống như lớp land cover raster ban đầu). Sau khi thiết lập xong tất cả các tham số, tích chọn **Load layers on completion** và chọn **Run**.
+Đối với 05 lớp raster land cover, chúng ta sẽ sử dụng batch processing và phương pháp resampling là nearest neighbour. Để thêm một layer mới, chọn biểu tượng có dấu +. Để tự động điền CRS và các tham số resampling, chọn nút autofill phía trên mỗi cột và chọn `Fill down`. Đổi tên lớp raster được reproject bằng cách thêm mã EPSG ở cuối tên, ví dụ LandCover2015 sẽ trở thành landCover2015_9210. Nhập các tham số như Hình 9/13: source CRS: EPSG: 3857, target CRS: EPSG: 9210, resampling method: nearest neighbour (đã giải thích trong phần trên),  nodata value for output bands: 255 (từ information window, chúng ta thấy kiểu dữ liệu là 8bit unsigned integer - có nghĩa là giá trị lớp nhất là 255), output resolution:100m (giống như lớp land cover raster ban đầu). Sau khi thiết lập xong tất cả các tham số, tích chọn **Load layers on completion** và chọn **Run**.
 
 
 ![Reproject land cover rasters sử dụng Batch Processing](media/fig913_a.png "Reproject land cover rasters sử dụng Batch Processing")
@@ -538,93 +538,94 @@ Một HTML về raster information sẽ như bên dưới, có thể mở bằng
 
 ```
         Driver: GTiff/GeoTIFF
-        Files: /Users/codrinamariailie/Google Drive/02_OK/Gov_Geospatial_Trainings/Data/module9/Reprojected_LandCover2019.tif
-        Size is 678, 570
-        Coordinate System is:
-        PROJCRS["PRS92 / Philippines zone 3",
-            BASEGEOGCRS["PRS92",
-                DATUM["Philippine Reference System 1992",
-                    ELLIPSOID["Clarke 1866",6378206.4,294.978698213898,
-                        LENGTHUNIT["metre",1]]],
-                PRIMEM["Greenwich",0,
-                    ANGLEUNIT["degree",0.0174532925199433]],
-                ID["EPSG",4683]],
-            CONVERSION["Philippines zone III",
-                METHOD["Transverse Mercator",
-                    ID["EPSG",9807]],
-                PARAMETER["Latitude of natural origin",0,
-                    ANGLEUNIT["degree",0.0174532925199433],
-                    ID["EPSG",8801]],
-                PARAMETER["Longitude of natural origin",121,
-                    ANGLEUNIT["degree",0.0174532925199433],
-                    ID["EPSG",8802]],
-                PARAMETER["Scale factor at natural origin",0.99995,
-                    SCALEUNIT["unity",1],
-                    ID["EPSG",8805]],
-                PARAMETER["False easting",500000,
-                    LENGTHUNIT["metre",1],
-                    ID["EPSG",8806]],
-                PARAMETER["False northing",0,
-                    LENGTHUNIT["metre",1],
-                    ID["EPSG",8807]]],
-            CS[Cartesian,2],
-                AXIS["easting (X)",east,
-                    ORDER[1],
-                    LENGTHUNIT["metre",1]],
-                AXIS["northing (Y)",north,
-                    ORDER[2],
-                    LENGTHUNIT["metre",1]],
-            USAGE[
-                SCOPE["unknown"],
-                AREA["Philippines - zone III"],
-                BBOX[3,119.7,21.62,122.21]],
-            ID["EPSG",3123]]
-        Data axis to CRS axis mapping: 1,2
-        Origin = (430713.282723263022490,1690115.897022359305993)
-        Pixel Size = (100.000000000000000,-100.000000000000000)
-        Metadata:
-          AREA_OR_POINT=Area
-        Image Structure Metadata:
-          INTERLEAVE=PIXEL
-        Corner Coordinates:
-        Upper Left  (  430713.283, 1690115.897) (120d21'17.68"E, 15d16'55.47"N)
-        Lower Left  (  430713.283, 1633115.897) (120d21'23.24"E, 14d46' 0.88"N)
-        Upper Right (  498513.283, 1690115.897) (120d59'10.17"E, 15d16'58.81"N)
-        Lower Right (  498513.283, 1633115.897) (120d59'10.29"E, 14d46' 4.10"N)
-        Center      (  464613.283, 1661615.897) (120d40'15.34"E, 15d 1'30.61"N)
-        Band 1 Block=678x4 Type=Byte, ColorInterp=Red
-          Description = discrete_classification
-            Computed Min/Max=0.000,200.000
-          Minimum=0.000, Maximum=200.000, Mean=67.557, StdDev=35.613
-          NoData Value=255
-          Metadata:
-            STATISTICS_MAXIMUM=200
-            STATISTICS_MEAN=67.556567003835
-            STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=35.612833384649
-            STATISTICS_VALID_PERCENT=99.72
-        Band 2 Block=678x4 Type=Byte, ColorInterp=Green
-          Description = forest_type
-            Computed Min/Max=0.000,2.000
-          Minimum=0.000, Maximum=2.000, Mean=0.473, StdDev=0.850
-          NoData Value=255
-          Metadata:
-            STATISTICS_MAXIMUM=2
-            STATISTICS_MEAN=0.47292184572588
-            STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=0.84981681513547
-            STATISTICS_VALID_PERCENT=99.72
-        Band 3 Block=678x4 Type=Byte, ColorInterp=Blue
-          Description = urban-coverfraction
-            Computed Min/Max=0.000,100.000
-          Minimum=0.000, Maximum=100.000, Mean=14.485, StdDev=30.631
-          NoData Value=255
-          Metadata:
-            STATISTICS_MAXIMUM=100
-            STATISTICS_MEAN=14.484993486711
-            STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=30.631074729814
-            STATISTICS_VALID_PERCENT=99.72
+Files: D:/Temp/data/Module 9/LandCover_2019_9210.tif
+       D:/Temp/data/Module 9/LandCover_2019_9210.tif.aux.xml
+Size is 808, 916
+Coordinate System is:
+PROJCRS["VN-2000 / TM-3 105-45",
+    BASEGEOGCRS["VN-2000",
+        DATUM["Vietnam 2000",
+            ELLIPSOID["WGS 84",6378137,298.257223563,
+                LENGTHUNIT["metre",1]]],
+        PRIMEM["Greenwich",0,
+            ANGLEUNIT["degree",0.0174532925199433]],
+        ID["EPSG",4756]],
+    CONVERSION["Vietnam TM-3 105-45",
+        METHOD["Transverse Mercator",
+            ID["EPSG",9807]],
+        PARAMETER["Latitude of natural origin",0,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8801]],
+        PARAMETER["Longitude of natural origin",105.75,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8802]],
+        PARAMETER["Scale factor at natural origin",0.9999,
+            SCALEUNIT["unity",1],
+            ID["EPSG",8805]],
+        PARAMETER["False easting",500000,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8806]],
+        PARAMETER["False northing",0,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8807]]],
+    CS[Cartesian,2],
+        AXIS["(E)",east,
+            ORDER[1],
+            LENGTHUNIT["metre",1]],
+        AXIS["(N)",north,
+            ORDER[2],
+            LENGTHUNIT["metre",1]],
+    USAGE[
+        SCOPE["unknown"],
+        AREA["Vietnam - 105°15'E to 107°50'E by province - HCMC"],
+        BBOX[9.75,105.26,23.12,107.8]],
+    ID["EPSG",9210]]
+Data axis to CRS axis mapping: 1,2
+Origin = (563037.188966477988288,1236923.167395059717819)
+Pixel Size = (100.000000000000000,-100.000000000000000)
+Metadata:
+  AREA_OR_POINT=Area
+Image Structure Metadata:
+  INTERLEAVE=PIXEL
+Corner Coordinates:
+Upper Left  (  563037.189, 1236923.167) (106d19'37.97"E, 11d11' 7.80"N)
+Lower Left  (  563037.189, 1145323.167) (106d19'32.30"E, 10d21'26.45"N)
+Upper Right (  643837.189, 1236923.167) (107d 4' 1.12"E, 11d10'59.37"N)
+Lower Right (  643837.189, 1145323.167) (107d 3'48.19"E, 10d21'18.66"N)
+Center      (  603437.189, 1191123.167) (106d41'44.87"E, 10d46'13.88"N)
+Band 1 Block=808x3 Type=Byte, ColorInterp=Red
+  Description = discrete_classification
+  Min=20.000 Max=200.000   Computed Min/Max=20.000,200.000
+  Minimum=20.000, Maximum=200.000, Mean=75.541, StdDev=43.155
+  NoData Value=255
+  Metadata:
+    STATISTICS_MAXIMUM=200
+    STATISTICS_MEAN=75.541454776731
+    STATISTICS_MINIMUM=20
+    STATISTICS_STDDEV=43.154849187933
+    STATISTICS_VALID_PERCENT=99.42
+Band 2 Block=808x3 Type=Byte, ColorInterp=Green
+  Description = forest_type
+  Min=0.000 Max=2.000   Computed Min/Max=0.000,2.000
+  Minimum=0.000, Maximum=2.000, Mean=0.331, StdDev=0.743
+  NoData Value=255
+  Metadata:
+    STATISTICS_MAXIMUM=2
+    STATISTICS_MEAN=0.33059722384547
+    STATISTICS_MINIMUM=0
+    STATISTICS_STDDEV=0.74289784310297
+    STATISTICS_VALID_PERCENT=99.42
+Band 3 Block=808x3 Type=Byte, ColorInterp=Blue
+  Description = urban-coverfraction
+  Min=0.000 Max=100.000   Computed Min/Max=0.000,100.000
+  Minimum=0.000, Maximum=100.000, Mean=21.801, StdDev=36.860
+  NoData Value=255
+  Metadata:
+    STATISTICS_MAXIMUM=100
+    STATISTICS_MEAN=21.801434554888
+    STATISTICS_MINIMUM=0
+    STATISTICS_STDDEV=36.860197736913
+    STATISTICS_VALID_PERCENT=99.42
 ```
 
 Sau khi chuẩn bị các raster bằng cách reproject và đọc metadata để hiểu rõ hơn về dữ liệu, đã đến lúc đi sâu vào dữ liệu thực tế. Để đạt được điều đó, chúng ta sẽ tính toán và giải thích các histogram của các raster này (Chi tiết xem lại mục Phân tích các Khái niệm bên trên).
@@ -660,7 +661,7 @@ Sau khi chọn Apply, raster sẽ hiển thị lại với khoản min-max mới
 
 Mặc dù công cụ kết tiếp chúng ta sử dụng là một plugin (xem Module 1 - giới thiệu Plugin), chúng tôi cho rằng nó rất hữu dụng khi bắt đầu làm việc với raster. Chúng tôi đang đề cập đến **Value Tool**, cho phép xác định tức thời các giá trị cell bằng cách di chuột qua các raster layer.
 
-Vào **Plugin ‣ Manage and Install Plugins**, tìm **Value Tool** plugin và chọn install. Sau đó, kích phải chuột vào thanh cửa sổ chính của QGIS để mở tất cả các Panels và Toobars sẵn dùng trong QGIS và chọn **Value Tool panel**. Kiểm tra lại giao diện QGIS để xem nó đã mở ở đâu.
+Vào **Plugin ‣ Manage and Install Plugins**, tìm **Value Tool** plugin và chọn install. Sau đó, kích phải chuột vào thanh cửa sổ chính của QGIS để mở tất cả các Panels và Toolbars sẵn dùng trong QGIS và chọn **Value Tool panel**. Kiểm tra lại giao diện QGIS để xem nó đã mở ở đâu.
 
 
 ![Value Tool Panel](media/fig920.png "Value Tool Panel")
@@ -710,7 +711,7 @@ Như bạn đã thấy bây giờ, các lớp dữ liệu được tải trong Q
 
 Hình 9.22 - Sử dụng một vector mask để trích lọc dữ liệu raster trong một khu vực cụ thể
 
-Giả sử rằng chúng ta sẽ làm việc với 7 raster layer - 5 Land Cover layer - DSM và HRSLl, chúng ta sẽ sử dụng Batch Processing để clip tất cả các layer cùng lúc. **Hãy lưu ý,** nếu bạn bỏ qua bước reproject các layer, thuật toán này sẽ không thể thực thi hoặc cho ra kết quả không mong muốn.
+Giả sử rằng chúng ta sẽ làm việc với 7 raster layer - 5 Land Cover layer - DSM và HRSL, chúng ta sẽ sử dụng Batch Processing để clip tất cả các layer cùng lúc. **Hãy lưu ý,** nếu bạn bỏ qua bước reproject các layer, thuật toán này sẽ không thể thực thi hoặc cho ra kết quả không mong muốn.
 
 Cửa sổ thiết lập Batch Processing như Hình 9.23
 
@@ -723,7 +724,7 @@ Các tham số được nhập như sau:
 * mask layer: HCMC_admin_boundary
 * source và target CRS: EPSG 9210
 * Chọn yes: `match the extent of the clipped raster to the mask layer` và `keep resolution of input layer`. 
-* Lưu ý, đối với DSM_mosaic chúng ta sẽ chỉ chọn yes ` to create an output alpha band`
+* Lưu ý, đối với DSM_mosaic chúng ta sẽ chỉ chọn yes `to create an output alpha band`
 * Chọn `Load layers at completion`
 
 Nếu mọi thứ diễn ra suôn sẻ, kết quả như Hình 9.24
@@ -733,22 +734,22 @@ Nếu mọi thứ diễn ra suôn sẻ, kết quả như Hình 9.24
 
 Hình 9.24 - Raster layers được clip bởi ranh hành chính Tp.HCM.  
 
-Bây giờ, tưởng tượng bạn phải chuẩn bị một báo cáo những nơi mà hầu hết cư dân đang sinh sống nhưng có xem xét đến cao độ[^4]. Bạn phải biết có bao nhiêu người dân sinh sống trong khoảng cao độ 0 - 20m ở Tp.HCM. Có một số yếu tố cần xem xét. Đầu tiên, các dữ liệu chúng ta sẽ sử dũng là gì và đặc điểm của chúng. Đối với dân số, chúng ta có High Resolution Settlement Layer Data và đối với lớp địa hình, chúng ta có ALOS World 3D - 30m (AW3D30). Cả 2 raster layer này đều có cùng độ phân giải không gian 30m, cho phép chúng ta tiến hành các xem xét khác. Địa hình là một yếu tố liên tục, trong khi phân bố dân số thì rời rạc, nhưng báo cáo sẽ không có ý nghĩa với pixel 30m. Chúng ta cần xác định tất cả các pixel có giá trị trong khoảng 0 - 200. Xem xét histogram của DSM_mosaic, chúng ta đã thấy hầu hết giá trị của các cell nằm trong khoản 0 - 200. Chúng ta có thể xử lý để tạo một bản đồ địa hình cơ bản dựa trên các khoản sau:
+Bây giờ, tưởng tượng bạn phải chuẩn bị một báo cáo những nơi mà hầu hết cư dân đang sinh sống nhưng có xem xét đến cao độ[^4]. Bạn phải biết có bao nhiêu người dân sinh sống trong khoảng cao độ 0 - 20m ở Tp.HCM. Có một số yếu tố cần xem xét. Đầu tiên, các dữ liệu chúng ta sẽ sử dũng là gì và đặc điểm của chúng. Đối với dân số, chúng ta có High Resolution Settlement Layer Data và đối với lớp địa hình, chúng ta có ALOS World 3D - 30m (AW3D30). Cả 2 raster layer này đều có cùng độ phân giải không gian 30m, cho phép chúng ta tiến hành các xem xét khác. Địa hình là một yếu tố liên tục, trong khi phân bố dân số thì rời rạc, nhưng báo cáo sẽ không có ý nghĩa với pixel 30m. Chúng ta cần xác định tất cả các pixel có giá trị trong khoảng -10 -> 20. Xem xét histogram của DSM_mosaic, chúng ta đã thấy hầu hết giá trị của các cell nằm trong khoản -10 -> 20. Chúng ta có thể xử lý để tạo một bản đồ địa hình cơ bản dựa trên các khoản sau:
 
-1. 0 - 50m
-2. 51 - 100m
-3. 101 - 150m
-4. 151 - 200m
-5. 250 - 600m
-6. 600 - 1300m
+1. -5 - 0m
+2. 0  - 5m
+3. 5  - 10m
+4. 10 - 15m
+5. 15 - 20m
+6. 20 - 44m
 
 Sử dụng các kiến thức đã học trong Module 4, chúng ta có thể style DSM layer theo các khoản giá trị này, như Hình 9.25
 
-![DSM_mosaic_clipped](media/fig925.png "DSM_mosaic_clipped")
+![Clipped_SRTM_9210](media/fig925.png "Clipped_SRTM_9210")
 
-Hình 9.25 - DSM_mosaic_clipped
+Hình 9.25 - Clipped_SRTM_9210
 
-Để tính toán số cư dân dựa trên dữ liệu raster HRSL sống ở độ cao 200m ở Tp.HCM, chúng ta phải xem pixel nào thuộc vào từng khoản giá trị này. Để làm điều đó, chúng ta sẽ sử dụng **Raster Calculator**. Chư1c năng này cho phép người dùng thực hiện các tính toán trên cơ sở của các giá trị pix. Các kết quả được lưu thành một raster layer mới ở định dạng hỗ trợ bởi thư viện xử lý dữ liệu rastert GDAL [^5].
+Để tính toán số cư dân dựa trên dữ liệu raster HRSL sống ở độ cao 20m ở Tp.HCM, chúng ta phải xem pixel nào thuộc vào từng khoản giá trị này. Để làm điều đó, chúng ta sẽ sử dụng **Raster Calculator**. Chức năng này cho phép người dùng thực hiện các tính toán trên cơ sở của các giá trị pix. Các kết quả được lưu thành một raster layer mới ở định dạng hỗ trợ bởi thư viện xử lý dữ liệu rastert GDAL [^5].
 
 Có một số cách để gọi raster calculator trong QGIS. bạn có thể truy cập từ Menu bar **Raster ‣ Raster Calculator** hoặc tìm kiếm trong Processing Toolbox hoặc Locator bar. Nếu chúng ta chạy Raster Calculator từ Raster Analysis trong Processing Toolbox, cửa sổ như Hình 9.26b sẽ xuất hiện
 
@@ -762,14 +763,14 @@ Hình 9.26a - Truy cập Raster calculator
 
 Hình 9.26b - Giao diện Raster calculator
 
-Trong cửa sổ này, chúng ta có thể nhận thấy các phép toán đã được trình bày trong phần Khái niệm như cộng, trừ, so sánh,... (xem trang 3). **Clipped_Reprojected_Merged_SRTM@1** là quy ước tên gọi của các raster: phần phía trước @ là tên của raster layer, phía sau @ là số hiệu kênh phổ.
+Trong cửa sổ này, chúng ta có thể nhận thấy các phép toán đã được trình bày trong phần Khái niệm như cộng, trừ, so sánh,... (xem trang 3). **Clipped_SRTM_9210@1** là quy ước tên gọi của các raster: phần phía trước @ là tên của raster layer, phía sau @ là số hiệu kênh phổ.
 
-Tiếp theo, chúng ta sẽ ‘slice’ DSM_mosaic_clipped raster layerd để chỉ trích lọc các pixel có giá trị đến 200m. Chúng ta biết rằng các giá trị cell của DSM-mosaic_clipped represent biểu diễn các dữ liệu số liên tục (không phải là giá trị rời rạc như lớp LandCover). Do đó, phép toán chúng ta cần thực thi trong trường hợp này là phép toán so sánh - cell values <= 200m, với công thức tính toán như sau: 
+Tiếp theo, chúng ta sẽ ‘slice’ Clipped_SRTM_9210 raster layer để chỉ trích lọc các pixel có giá trị đến 20m. Chúng ta biết rằng các giá trị cell của Clipped_SRTM_9210 biểu diễn các dữ liệu số liên tục (không phải là giá trị rời rạc như lớp LandCover). Do đó, phép toán chúng ta cần thực thi trong trường hợp này là phép toán so sánh - cell values <= 20m, với công thức tính toán như sau và lưu lại với tên là DSM_clipped20: 
 
 ```
-"Clipped_Reprojected_Merged_SRTM@1" <= 200
+"Clipped_SRTM_9210@1" <= 20
 ``` 
-Chọn **Reference layer** là **Clipped_Reprojected_Merged_SRTM@1** như Hình 9.27
+Chọn **Reference layer** là **Clipped_SRTM_9210@1** như Hình 9.27
 
 ![Thêm công thức tính toán trong Raster Calculator](media/fig927.png "Thêm công thức tính toán trong Raster Calculator")
 
@@ -778,47 +779,48 @@ Figure 9.27 - Thêm công thức tính toán trong Raster Calculator.
 Kết quả như hình 9.28
 
 
-![Kết quả xác định các pixel có giá trị <= 200m trong Raster Calculator](media/fig928.png "Kết quả xác định các pixel có giá trị <= 200m trong Raster Calculator")
+![Kết quả xác định các pixel có giá trị <= 20m trong Raster Calculator](media/fig928.png "Kết quả xác định các pixel có giá trị <= 20m trong Raster Calculator")
 
-Hình 9.28 - Kết quả xác định các pixel có giá trị <= 200m trong Raster Calculator
+Hình 9.28 - Kết quả xác định các pixel có giá trị <= 20m trong Raster Calculator
 
-Kết quả sẽ được đặt tên là `Output`. Bạn có thể sửa tên thành `< 200`. Như chúng ta có thể thấy trong Layers Panel, raster layer vừa tính toán chỉ có 02 giá trị là 0 và 1. Đó là do chúng ta sử dụng phép toán so sánh, do đó các pixel có giá trị <= 200m sẽ nhận giá trị mới = 1 và ngược lại là = 0. Chúng ta có thể kiểm tra điều này bằng `Value Tool`. Hình 9.29 chỉ hiển thị các pixel có giá trị 1, hay nói cách khác là các pixel chúng ta quan tâm trong bài tập này.
+Kết quả sẽ được đặt tên là `Output`. Bạn có thể sửa tên thành `<= 20m`. Như chúng ta có thể thấy trong Layers Panel, raster layer vừa tính toán chỉ có 02 giá trị là 0 và 1. Đó là do chúng ta sử dụng phép toán so sánh, do đó các pixel có giá trị <= 20m sẽ nhận giá trị mới = 1 và ngược lại là = 0. Chúng ta có thể kiểm tra điều này bằng `Value Tool`. Hình 9.29 chỉ hiển thị các pixel có giá trị 1, hay nói cách khác là các pixel chúng ta quan tâm trong bài tập này.
 
-![Phân bố không gian của tất cả các pixel có giá trị 1, nghĩa là có cao độ <= 200m](media/fig929.png "Phân bố không gian của tất cả các pixel có giá trị 1, nghĩa là có cao độ <= 200m")
+![Phân bố không gian của tất cả các pixel có giá trị 1, nghĩa là có cao độ <= 20m](media/fig929.png "Phân bố không gian của tất cả các pixel có giá trị 1, nghĩa là có cao độ <= 20m")
 
-Hình 9.29 - Phân bố không gian của tất cả các pixel có giá trị 1, nghĩa là có cao độ <= 200m 
+Hình 9.29 - Phân bố không gian của tất cả các pixel có giá trị 1, nghĩa là có cao độ <= 20m 
 
-Đi xa hơn, chúng ta có thể hiển thị phân bố không gian của dân số ở độ phân giải không gian 30m chỉ trong khu vực địa lý cụ thể này - Tp.HCM và có cao độ dưới 200m. Để làm điều này, chúng ta tiếp tục sử dụng Raster Calculator.
+Đi xa hơn, chúng ta có thể hiển thị phân bố không gian của dân số ở độ phân giải không gian 30m chỉ trong khu vực địa lý cụ thể này - Tp.HCM và có cao độ dưới 20m. Để làm điều này, chúng ta tiếp tục sử dụng Raster Calculator.
 
 Công thức khá đơn giản, với tất cả các giá trị DSM cell mà chúng ta quan tâm có giá trị là 1.
 
-Mở Raster Calculator và thêm vào công thức sau:
+Mở Raster Calculator và thêm vào công thức sau, lưu lại Output với tên HRSL_DSM:
 
 ```
-"< 200@1"*"Reprojected_HRSL_Pampanga_Population@1"
+"<= 20m@1"*"Clipped_HRSL_HCMC_Pops_9210@1"
 ```
 
 
-![Sử dụng Raster Calculator để xác định các lớp phân bố dân cư có cao độ <= 200m](media/fig930.png "Sử dụng Raster Calculator để xác định các lớp phân bố dân cư có cao độ <= 200m")
+![Sử dụng Raster Calculator để xác định các lớp phân bố dân cư có cao độ <= 20m](media/fig930.png "Sử dụng Raster Calculator để xác định các lớp phân bố dân cư có cao độ <= 20m")
 
-Hình 9.30 - Sử dụng Raster Calculator để xác định các lớp phân bố dân cư có cao độ <= 200m
+Hình 9.30 - Sử dụng Raster Calculator để xác định các lớp phân bố dân cư có cao độ <= 20m
 
-Khác với công thức Raster Calculator đã dùng ở trên, chúng ta sử dụng 2 raster layer khác nhau để có được kết quả mong muốn, tuy nhiên bạn sẽ thấy rằng ngay cả khi có các pixel nằm ngoài DMS_clipped200.tif trong kết quả, giá trị của chúng là 0. Sử dụng Value Tool để kiểm tra (Hình 9.31)
+Khác với công thức Raster Calculator đã dùng ở trên, chúng ta sử dụng 2 raster layer khác nhau để có được kết quả mong muốn, tuy nhiên bạn sẽ thấy rằng ngay cả khi có các pixel nằm ngoài DSM_clipped20.tif trong kết quả, giá trị của chúng là 0. Sử dụng Value Tool để kiểm tra (Hình 9.31)
+
 
 ![Sử dụng Value Tool để kiểm tra kết quả của Raster Calculator](media/fig931.png "Sử dụng Value Tool để kiểm tra kết quả của Raster Calculator")
 
 Hình 9.31 - Sử dụng Value Tool để kiểm tra kết quả của Raster Calculator
 
-Bạn có thể thầy rằng ngay cả khi Reprojected_HRSL_Pampanga_Population có các giá trị ở các vị trí con trỏ chuột cụ thể này, raster thu được bằng Raster Calculator HRSL_DSM có giá trị 0.
+Bạn có thể thấy rằng ngay cả khi Clipped_HRSL_HCMC_Pops_9210 có giá trị ở vị trí con trỏ này, raster thu được bằng Raster Calculator HRSL_DSM có giá trị 0.
 
-Tiếp theo, chúng ta biểu diễn sự phân bố không gian của dân số sống dưới cao độ 200m ở Tp.HCM. Để chọn phương pháp phân lớp thích hợp, chúng ta tính toán histogram. Chúng ta có thể thấy rằng hầu hết các giá trị nằm trong khoảng 0.1 - 200 người/ 30m, như Hình 9.32
+Tiếp theo, chúng ta biểu diễn sự phân bố không gian của dân số sống dưới cao độ 20m ở Tp.HCM như Hình 9.32
 
 
-![Phân bố của dân số sống dưới cao độ 200m ở Tp.HCM, độ phân giải 30m.](media/fig932.png "Phân bố của dân số sống dưới cao độ 200m ở Tp.HCM, độ phân giải 30m.")
+![Phân bố của dân số sống dưới cao độ 20m ở Tp.HCM, độ phân giải 30m.](media/fig932.png "Phân bố của dân số sống dưới cao độ 20m ở Tp.HCM, độ phân giải 30m.")
 
-Hình 9.32 - Phân bố của dân số sống dưới cao độ 200m ở Tp.HCM, độ phân giải 30m.
+Hình 9.32 - Phân bố của dân số sống dưới cao độ 20m ở Tp.HCM, độ phân giải 30m.
 
-Nếu chúng ta quan tâm đến tổng số dân sống dưới cao độ 200m ở Tp.HCM mà không quan tâm sự phân bố địa lý ở độ phân giải 30m, chúng ta cần tính tổng tất cả các giá trị pixel của raster layer HRSL_DSM. Một cách để có được con số này là chuyển đổi DSM_clipped200 từ raster thành vector [....]
+Nếu chúng ta quan tâm đến tổng số dân sống dưới cao độ 20m ở Tp.HCM mà không quan tâm sự phân bố địa lý ở độ phân giải 30m, chúng ta cần tính tổng tất cả các giá trị pixel của raster layer HRSL_DSM. Một cách để có được con số này là chuyển đổi DSM_clipped20 từ raster thành vector [....]
 
 Truy cập **Raster ‣ Conversion ‣ Polygonize (Raster to Vector)** (Hình 9.33)
 
@@ -832,7 +834,7 @@ Nên nhớ rằng raster layer này chỉ có 2 giá trị - 0 và 1, vì vậy 
 
 ![Các tham số chuyển đổi Raster sang vector](media/fig933_b.png "Các tham số chuyển đổi Raster sang vector")
 
-Hình 9.33a - Các tham số chuyển đổi Raster sang vector
+Hình 9.33b - Các tham số chuyển đổi Raster sang vector
 
 Kết quả như Hình 9.34. 
 
@@ -864,7 +866,7 @@ Kết quả là một vector layer có các thuộc tính thống kê đã đư�
 
 Hình 9.37 - Kết quả của Zonal Statistics
 
-Bước cuối cùng này đã trả lời cho bài tập của chúng ta, có bao nhiêu người (và ở đâu) đang sống dưới cao độ 200m tại Tp.HCM.
+Bước cuối cùng này đã trả lời cho bài tập của chúng ta, có bao nhiêu người (và ở đâu) đang sống dưới cao độ 20m tại Tp.HCM.
 
 
 #### **Câu hỏi**
@@ -882,16 +884,16 @@ Bước cuối cùng này đã trả lời cho bài tập của chúng ta, có b
 
 ### **Phase 3: Làm việc với dữ liệu raster và vector.**
 
-Trong phần trước, chúng ta đã thấy cách xử lý 2 raster để lấy thông tin mới. Chúng ta đã sử dụng DSM và High Resolution Settlement Layer để tìm xem có bao nhiêu người sống dưới cao độ 200m ở Tp.HCM. Trước khi thực hiện bất kì phân tích nào, chúng ta đảm bảo rằng các dữ liệu phải cùng hệ toạ độ, hơn nữa, nếu raster có cùng độ phân giải không gian thì các kết quả nhận được là khả thi. Khi nói đến cùng CRS thì đã rõ, nhưng tại sao lại cùng độ phân giải không gian?
+Trong phần trước, chúng ta đã thấy cách xử lý 2 raster để lấy thông tin mới. Chúng ta đã sử dụng DSM và High Resolution Settlement Layer để tìm xem có bao nhiêu người sống dưới cao độ 20m ở Tp.HCM. Trước khi thực hiện bất kì phân tích nào, chúng ta đảm bảo rằng các dữ liệu phải cùng hệ toạ độ, hơn nữa, nếu raster có cùng độ phân giải không gian thì các kết quả nhận được là khả thi. Khi nói đến cùng CRS thì đã rõ, nhưng tại sao lại cùng độ phân giải không gian?
 
 Hãy nhớ lại độ phân giải không gian là kích thước của bề mặt đất được đo bằng đơn vị chiều dài, hay nói cách khác, kích thưƠ1c của pixel được đo trên mặt đất. Nếu một raster có độ phân giản 30m, điều đó có nghĩa là vật thể tuyến tính nhỏ nhất mà chúng ta có thể phát hiện trên ảnh đó là 30m, nếu nhỏ hơn thì chúng ta không thể phát hiện được. Tương tự, chúng ta có thể so sánh với tỉ lệ bản đồ. Nếu bản đồ có tỉ lệ 1:25000, điều đó có nghĩa là 1 đơn vị chiều dài trên bản đồ tương ứng với 25000 đơn vị chiều dài trên mặt đất, 1cm trên bản đồ bằng 250m ngoài thực địa, Ví dụ, một con đường dài 2km sẽ có chiều dài 8cm trên bản đồ.
 
 Tại sao điều này lại quan trọng khi làm việc với dữ liệu raster? Hình 9.38 có thể đưa ra lời giải thích
 
 
-![Ví dụ về các độ phân giải khác nhau cho các ảnh vệ tinh khác nhau - Landsata và SPOT - cho cùng một khu vực](media/fig938.png "Ví dụ về các độ phân giải khác nhau cho các ảnh vệ tinh khác nhau - Landsata và SPOT - cho cùng một khu vực")
+![Ví dụ về các độ phân giải khác nhau cho các ảnh vệ tinh khác nhau - lansat và SPOT - cho cùng một khu vực](media/fig938.png "Ví dụ về các độ phân giải khác nhau cho các ảnh vệ tinh khác nhau - lansat và SPOT - cho cùng một khu vực")
 
-Hình 9.38 - Ví dụ về các độ phân giải khác nhau cho các ảnh vệ tinh khác nhau - Landsata và SPOT - cho cùng một khu vực
+Hình 9.38 - Ví dụ về các độ phân giải khác nhau cho các ảnh vệ tinh khác nhau - lansat và SPOT - cho cùng một khu vực
 
 _(Photo credit: Congedo,  L.  and  Munafò,  M, (2013) Assessment  of  Land  Cover  Change  Using Remote  Sensing:  Objectives,  Methods  and  Results, Rome:  Sapienza  University.  Available  at:
 http://www.planning4adaptation.eu/_
@@ -918,7 +920,7 @@ Sau khi kết nối đến WMS mới thêm vào, chúng ta sẽ tải Sentinel-2
 
 Hình 9.40  - Sentinel-2 cloudless layer for 2019 by EOX - 4326 Cho Tp.HCM
 
-Mặc dù các sản phẩm LandCover được thu thập sư3 dụng dữ liệu vệ tinh khác (Proba-V), chúng ta hãy so sánh 2 layer để chúng ta có thể hiểu ý nghĩa của việc khác độ phân giải là gì. Nên nhớ rằng dữ liệu LandCover có độ phân giản 100m và ảnh Sentinel 2 có độ phân giải 10m. Để làm điều này, chúng ta sẽ mở Clipped_Reprojected_LandCover 2019 và WMS layer. Để so sánh giữa 02 layer, chúng ta sẽ sử dụng một plugin mới: truy cập **Plugins ‣ manage and install plugins**, tìm kiếm `MapSwipe Tool` và chọn install. Sau khi cài đặt thành công, một biểu tượng mới xuất hiện trên QGIS Toolbar  (![MapSwipe Tool button](media/mapswipe-btn.png "MapSwipe Tool button")). 
+Mặc dù các sản phẩm LandCover được thu thập sử dụng dữ liệu vệ tinh khác (Proba-V), chúng ta hãy so sánh 2 layer để chúng ta có thể hiểu ý nghĩa của việc khác độ phân giải là gì. Nên nhớ rằng dữ liệu LandCover có độ phân giản 100m và ảnh Sentinel 2 có độ phân giải 10m. Để làm điều này, chúng ta sẽ mở Clipped_LandCover_2019_9210 và WMS layer. Để so sánh giữa 02 layer, chúng ta sẽ sử dụng một plugin mới: truy cập **Plugins ‣ manage and install plugins**, tìm kiếm `MapSwipe Tool` và chọn install. Sau khi cài đặt thành công, một biểu tượng mới xuất hiện trên QGIS Toolbar  (![MapSwipe Tool button](media/mapswipe-btn.png "MapSwipe Tool button")). 
 
 
 ![So sánh 2 raster layer sử dụng MapSwipe Tool plugin](media/fig941.png "So sánh 2 raster layer sử dụng MapSwipe Tool plugin")
@@ -935,15 +937,15 @@ Hình 9.42 - LandCover2019 được tạo từ PROBA-V(100m) nằm trên ảnh S
 Thêm layer HRSL vào bản đồ sẽ cho thấy sự phù hợp tốt giữa HRSL và LandCover. Các khu vực đô thị được biểu diễn bằng màu đỏ như bạn thấy trong Hình 9.43, nó hầu như được bao phủ hoàn toàn bởi HRSL layer.
 
 
-![HRSL được thêm vào nằm trên Clipped_Reprojected_LandCover 2019](media/fig943.png "HRSL được thêm vào nằm trên Clipped_Reprojected_LandCover 2019")
+![HRSL được thêm vào nằm trên Clipped_LandCover_2019_9210](media/fig943.png "HRSL được thêm vào nằm trên Clipped_LandCover_2019_9210")
 
-Hình 9.43 - HRSL được thêm vào nằm trên Clipped_Reprojected_LandCover 2019.
+Hình 9.43 - HRSL được thêm vào nằm trên Clipped_LandCover_2019_9210.
 
 Tuy nhiên, khi phóng to bạn có thể thấy sự khác biệt về độ phân giải giữa 2 raster như Hình 9.44
 
-![Sự khác biệt về độ phân giải giữa HRSL (30m - màu hồng nhạt) và Clipped_Reprojected_LandCover 2019  (100m - màu đỏ và màu cánh sen)](media/fig944.png "imagSự khác biệt về độ phân giải giữa HRSL (30m - màu hồng nhạt) và Clipped_Reprojected_LandCover 2019  (100m - màu đỏ và màu cánh sen)e_tooltip")
+![Sự khác biệt về độ phân giải giữa HRSL (30m) và Clipped_LandCover_2019_9210 (100m)](media/fig944.png "Sự khác biệt về độ phân giải giữa HRSL (30m) và Clipped_LandCover_2019_9210 (100m)")
 
-Hình 9.44 - Sự khác biệt về độ phân giải giữa HRSL (30m - màu hồng nhạt) và Clipped_Reprojected_LandCover 2019  (100m - màu đỏ và màu cánh sen)
+Hình 9.44 - Sự khác biệt về độ phân giải giữa HRSL (30m) và Clipped_LandCover_2019_9210 (100m)
 
 Bây giờ, nếu có bất cứ phép phân tích nào được thực hiện trên các raster này, thì kết quả sẽ không khả thi, bởi vì chúng ta phải so sánh các giá trị pixel ở các độ phân giải khác nhau. Ở giai đoạn tiền xử lý, người dùng phải _resample_ để đưa các raster về cùng độ phân giải không gian.
 
@@ -954,12 +956,12 @@ Chúng ta hãy tưởng tượng bài tập sau. Chúng ta cần xác định d�
 Cần nhấn mạnh sự khác biệt giữa 02 sản phẩm: LandCover bao phủ **toàn bộ khu vực** trong phạm vi nghiên cứu, trái với HSRL với raster layer chỉ chứa đúng các cell có giá trị > 0. Tình huống này đặt ra các vấn đề khi nội suy các giá trị cell để resample, bởi vì bất kể phương pháp nội suy nào đưỢc chọn, nó cũng xem xét các pixel xung quanh, tuân theo một thuật toán cụ thể được xác định rõ ràng và trong trường hợp cụ thể này, các pixel biên không nằm trên biên của khu vực nghiên cứu mà nằm bên trong đó. Do đó, trong trường hợp thử nghiệm, chúng ta sẽ xem xét việc upsampling LandCover từ độ phân giải 100m lên 30m để phụ hợp với độ phân giải của LandCover. Phương pháp resampling mà chúng ta chọn là quan trọng vì kết quả có thể thay đổi đáng kể. Với mục đích thử nghiệm, chúng ta sẽ resmaple LandCover sử dụng 02 phương pháp khác nhau - Nearest Neighbour và Mode. 
 
 Để resample, truy cập **Raster ‣ Projections ‣ Wrap (reproject).** và nhập các tham số sau:
-* input layer: Clipped_Reprojected_LandCover 2019, 
+* input layer: Clipped_LandCover_2019_9210, 
 * Source CRS and Target CRS: EPSG: 9210, 
 * Resampling method: Nearest Neighbour, 
 * No data: 255, output file resolution: 30, 
-* Output data type: giống như input layer type, 
-* georeference extent: Clipped_Reprojected_LandCover 2019 layer. 
+* Output data type: Use Input Layer Data Type, 
+* georeference extent: Clipped_LandCover_2019_9210 layer. 
 
 Lưu layer đầu ra là LC2019_NearestNeighbour
 
@@ -979,9 +981,9 @@ Bây giờ, hãy so sánh các kết quả - xem Hình 9.46a và 9.46b
 Hình 9.46a - Resampling Land Cover sử dụng phương pháp Nearest Neighbour
 
 
-![alt_text](media/fig946_b.png "image_tooltip")
+![Resampling Land Cover sử dụng phương pháp Mode](media/fig946_b.png "Resampling Land Cover sử dụng phương pháp Mode")
 
-Hình 9.46b - Resampling Land Cover sử dụng phương pháp Nearest Neighbour
+Hình 9.46b - Resampling Land Cover sử dụng phương pháp Mode
 
 Cả hai raster đều được áp dùng cùng một symbology và chúng ta có thể thấy rằng trong Hình 9.45 có các giá trị không thuộc danh mục nào - pixel không hiển thị. Tuy nhiên, chúng ta biết rằng LandCover là một layer liên tục - không có khoảng cách giữa các danh mục giống nhau được định nghĩa. Chúng ta hãy tìm hiểu sâu hơn và quan sát histogram của 03 layer này. Truy cập **Properties ‣ Histogram** và chọn từ Prefs/Actions để chỉ hiển thị Band 1. Lưu histogram bằng cách kích chuột vào biểu tượng save nằm bên phải cửa sổ (Hình 9.47)
 
@@ -990,16 +992,16 @@ Cả hai raster đều được áp dùng cùng một symbology và chúng ta c�
 
 Hình 9.47 - Chỉ hiển thị các giá trị của band được chọn trong histogram 
 
-Figure 9.48 (a), (b) and (c) trình bày 03 histogram. 
+Hình 9.48 (a), (b) and (c) trình bày 03 histogram. 
 
 
-![Histograms của (a) Clipped_Reprojected_LandCover 2019](media/fig948_a.png "Histograms của (a) Clipped_Reprojected_LandCover 2019")
+![Histograms của (a) Clipped_LandCover_2019_9210](media/fig948_a.png "Histograms của (a) Clipped_LandCover_2019_9210")
 
 ![(b) LC2019_NearestNeighbour](media/fig948_b.png "(b) LC2019_NearestNeighbour")
 
 ![và (c) LC2019_Mode](media/fig948_c.png "và (c) LC2019_Mode")
 
-Hình 9.48 - Histograms của (a) Clipped_Reprojected_LandCover 2019 (100m), (b) LC2019_NearestNeighbour và (c) LC2019_Mode
+Hình 9.48 - Histograms của (a) Clipped_LandCover_2019_9210 (100m), (b) LC2019_NearestNeighbour và (c) LC2019_Mode
 
 Chúng ta có thể thấy sự khác biệt trong phân bố các giá trị của 3 tập dữ liệu, nhấn mạnh vào (b), trong đó chúng ta đã sử dụng phương pháp nearest neighbour resampling, kết quả - như mong đợi - trong các giá trị pixel được tính toán và dẫn đến các giá trị không tương ứng với bất kì giá trị nào của Land Cover (xem Bảng 1, trang 7). Do đó, các khoảng trắng - pixel không được gán màu như trong hình 9.45. Suy ra, phương pháp mode resampling - hoặc gọi là majority resampling - chọn giá trị xuất hiện thường xuyên nhất.
 
@@ -1010,7 +1012,7 @@ Chúng ta có thể thấy sự khác biệt trong phân bố các giá trị c�
 
 Hình 9.49 - Hai lớp raster: Land Cover 2019 và HRSL. 
 
-Trơ3 lại bài tập của chúng ta, yêu cầu là xác định dân số tương ư1ng với từng loại lớp phủ mặt đất mà chúng ta đã xác định ở Tp.HCM. Đến thời điểm này, chúng ta đã tiền xử lý dữ liệu raster, cụ thể là chuyển về cùng hệ toạ độ và cùng độ phân giải không gian. Chúng ta sẽ tiếp tục với thuật toán chuyển đổi - chuyển Land Cover raster sang vector với kiểu là polygon. Điều này sẽ cho phép chúng ta xác định dễ dàng hơn dân số cho mỗi loại đất.
+Trở lại bài tập của chúng ta, yêu cầu là xác định dân số tương ứng với từng loại lớp phủ mặt đất mà chúng ta đã xác định ở Tp.HCM. Đến thời điểm này, chúng ta đã tiền xử lý dữ liệu raster, cụ thể là chuyển về cùng hệ toạ độ và cùng độ phân giải không gian. Chúng ta sẽ tiếp tục với thuật toán chuyển đổi - chuyển Land Cover raster sang vector với kiểu là polygon. Điều này sẽ cho phép chúng ta xác định dễ dàng hơn dân số cho mỗi loại đất.
 
 Để chuyển đổi raster sang polygon, cũng như từ vector sang polygon, truy cập **Raster ‣ Conversion**. Chúng ta sẽ chọn **Polygonize (Raster to vector)..** để chuyển sang vector các raster mới nhất mà chúng ta vừa có: LC2019_Mode. Kết quả như Hình 9.50b
 
@@ -1024,22 +1026,22 @@ Hình 9.50a - Chuyển LC2019_Mode (30m) raster layer sang polygon
 
 Hình 9.50b - Kết quả chuyển LC2019_Mode (30m) sang polygon
 
-Như chúng ta có thể thấy, mỗi pixel - mỗi nhóm các pixel liền kề có cùng mã danh mục (xem bảng 1, trang 7) được chuyển đổi sang polygon. Tuy nhiên, chúng ta không quan tâm đến từng khu vực riêng biệt, mà trong toàn bộ danh mục. Do đó, chúng ta sẽ sử dụng chức năng dissolve vector layer theo thuộc tính mã danh mục (**Vector ‣ Geoprocessing tools ‣ Dissolve** - chi tiết xem Module 8).
+Như chúng ta có thể thấy, mỗi pixel - mỗi nhóm các pixel liền kề có cùng mã danh mục (xem bảng 1, trang 7) được chuyển đổi sang polygon. Tuy nhiên, chúng ta không quan tâm đến từng khu vực riêng biệt, mà trong toàn bộ danh mục. Do đó, chúng ta sẽ sử dụng chức năng dissolve vector layer theo thuộc tính DN (**Vector ‣ Geoprocessing tools ‣ Dissolve** - chi tiết xem Module 8).
 
 
-Áp dụng cùng styling với raster layer và chúng ta có thể thấy kết quả như Hình 9.51
+Áp dụng styling như với raster layer và chúng ta có thể thấy kết quả như Hình 9.51
 
 
 ![LC2019_Mode dạng polygon](media/fig951.png "LC2019_Mode dạng polygon")
 
 Hình 9.51 - LC2019_Mode dạng polygon 
 
-Như chúng ta có thể thấy các pixel của HRSL, như mong đợim không hoàn toàn nằm trong một polygon của Land Civer (Hình 9.52)
+Như chúng ta có thể thấy các pixel của HRSL, như mong đợi, không hoàn toàn nằm trong một polygon của Land Cover (Hình 9.52)
 
 
-![Sự không khớp của pixel HRSl và tập dữ liệu vectơ lớp phủ mặt đất](media/fig952.png "Sự không khớp của pixel HRSl và tập dữ liệu vectơ lớp phủ mặt đất")
+![Sự không khớp giữa pixel HRSL và tập dữ liệu vector Land Cover](media/fig952.png "Sự không khớp giữa pixel HRSL và tập dữ liệu vector Land Covers")
 
-Hình 9.52 - Sự không khớp của pixel HRSl và tập dữ liệu vectơ lớp phủ mặt đất.
+Hình 9.52 - Sự không khớp giữa pixel HRSL và tập dữ liệu vector Land Cover.
 
 Để loại bỏ sự bất tiện này, chúng ta cũng sẽ vector hoá HRSL layer, chỉ là lần này chúng ta sẽ chuyển các giá trị pixel sang dạng điểm - là tâm của mỗi pixel.
 
@@ -1062,12 +1064,12 @@ Do khu vực nghiên cứu khá rộng, thao tác này có thể khá tốn th�
 
 Hình 9.54 - Point vector sau khi chuyển đổi
 
-Số lượng các đối tượng cao đáng kể và nếu không được nhập vào CSDL, bất kì phép xử lý hoặc hiển thị nào cũng đòi hỏi nhiều thời gian. Trong những loại tình huống này, giải pháp hợp lý là chia tập dữ liệu mà chúng ta phải xử lý thành các phần có thể quản lý được. Do đó, chúng ta sẽ xem xét xử lý các tính toán cần thiết trên các khu vực nhỏ hơn được xác định rõ ràng. Để chia HRSL layer, chúng ta sẽ sử dụng tuỳ chọn đê 3ta5o một VRT. Chọn HRSL layer và chọn **Export as..**, chọn **Create VRT** và nhập các tham số sau: thư mục lưu trữ kết quả, CRS: EPSG: 9210, VRT tiles: max columns 1000, max rows: 1000 (Hình 9.55).
+Số lượng các đối tượng nhiều đáng kể và nếu không được nhập vào CSDL, bất kì phép xử lý hoặc hiển thị nào cũng đòi hỏi nhiều thời gian. Trong những tình huống này, giải pháp hợp lý là chia tập dữ liệu mà chúng ta phải xử lý thành các phần có thể quản lý được. Do đó, chúng ta sẽ xem xét xử lý các tính toán cần thiết trên các khu vực nhỏ hơn được xác định rõ ràng. Để chia HRSL layer, chúng ta sẽ sử dụng tuỳ chọn để tạo một VRT. Chọn HRSL layer và chọn **Export as..**, chọn **Create VRT** và nhập các tham số sau: thư mục lưu trữ kết quả, CRS: EPSG: 9210, VRT tiles: max columns 1000, max rows: 1000 (Hình 9.55).
 
 
-![Tạo một VRT file vớ các raster tile cụ thể](media/fig955.png "Tạo một VRT file vớ các raster tile cụ thể")
+![Tạo một VRT file với các raster tile cụ thể](media/fig955.png "Tạo một VRT file với các raster tile cụ thể")
 
-Hình 9.55 - Tạo một VRT file vớ các raster tile cụ thể
+Hình 9.55 - Tạo một VRT file với các raster tile cụ thể
 
 Sau khi kết xuất, tải tất cả các raster tile vào QGIS project. Kết quả như Hình 9.56
 
@@ -1097,12 +1099,12 @@ Xem xét kĩ hơn các kết quả của thuật toán, chúng ta có thể th�
 
 Hình 9.59 - Xác minh các giá trị của point vector so với giá trị pixel của raster.
 
-Để giải bài tập này, tổng của các giá trị của các điểm trích xuất từ HRSL nằm trong mỗi polygon của lớp phủ mặt đất phải được tính toán. Để làm điều này, chúng ta sẽ sử dụng một chức năng có sẵn trong Field Calculator -  `aggregation()`. Chức năng này khá mạnh mẽ bởi vì nó thực hiện spatial join ngay khi tính toán cho phép thực hiện nhiều phép tính khác nhau. Trong trường hợp của chúng ta, chức năng này phải xác định các điểm nằm trong mỗi polygon và sau đó tính tổng các giá trị của các điểm này. Để làm điều này, mở Attribute Table của layer LC2019_Mode và chọn Field Calculator. Tạo một field mới và nhập công thức sau:
+Để giải bài tập này, tổng của các giá trị của các điểm trích xuất từ HRSL nằm trong mỗi polygon của lớp phủ mặt đất phải được tính toán. Để làm điều này, chúng ta sẽ sử dụng một chức năng có sẵn trong Field Calculator -  `aggregation()`. Chức năng này khá mạnh mẽ bởi vì nó thực hiện spatial join ngay khi tính toán cho phép thực hiện nhiều phép tính khác nhau. Trong trường hợp của chúng ta, chức năng này phải xác định các điểm nằm trong mỗi polygon và sau đó tính tổng các giá trị của các điểm này. Để làm điều này, mở Attribute Table của layer LC2019_Mode_Vector và chọn Field Calculator. Tạo một field mới và nhập công thức sau:
 
 
 ```
 aggregate(
-    layer:= 'HRSL_vectors1',
+    layer:= 'hrsl_point1',
     aggregate:='sum',
     expression:=VALUE,
     filter:=intersects($geometry, geometry(@parent))
