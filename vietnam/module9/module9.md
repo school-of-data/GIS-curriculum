@@ -1145,7 +1145,7 @@ Các giải pháp cho các bài tập trong Module này, cũng như trong Module
 1. Tên gọi của process mà độ phân giải của raster có thể được nâng cao hoặc hạ thấp?
 *   _<span style="text-decoration:underline;">Resampling.</span>_ 
 2. Một biểu đồ histogram cho chúng ta thấy điều gì? 
-*   <span style="text-decoration:underline;">Tần suát của các giá trị pixel, được sắp xếp trong các khoản giá trị liền kề nhau.</span>
+*   <span style="text-decoration:underline;">Tần suất của các giá trị pixel, được sắp xếp trong các khoản giá trị liền kề nhau.</span>
 3. Có thể chuyển đổi raster sang polygon hay không? Và ngược lại có được không?
 *   <span style="text-decoration:underline;">Yes and yes. </span>
 
