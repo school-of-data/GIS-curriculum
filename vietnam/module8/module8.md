@@ -1,6 +1,9 @@
 # **Module 8 - Xử lý và phân tích dữ liệu Vector**
 
-**Author**: Quách Đồng Thắng
+**Tác giả**: Codrina
+
+**Biên dịch và bản địa hoá**: Quách Đồng Thắng
+
 
 ## Giới thiệu
 

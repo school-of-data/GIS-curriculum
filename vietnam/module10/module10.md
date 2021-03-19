@@ -1,6 +1,8 @@
 # Module 10 - QGIS plugins
 
-**Author**: Codrina
+**Tác giả**: Codrina
+
+**Biên dịch và bản địa hoá**: Quách Đồng Thắng
 
 
 ## Giới thiệu chung
@@ -393,179 +395,176 @@ Plugin này là một công cụ tuyệt vời để giúp bạn chuẩn bị b�
 
 Hình 10.14a - DataPlotly plugin
 
-DataPlotly plugin được phát triển đặc biệt để hỗ trợ các hiển thị 
+DataPlotly plugin được phát triển đặc biệt để hỗ trợ các hiển thị các biểu đồ/ đồ thị tương tác của các lớp vector trong QGIS. Plugin được phát triển dựa trên thư viện Python Plotly, đây là thư viện khá mạnh trong việc tạo các biểu đồ tương tác và chất lượng: ine plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, multiple-axes, polar charts và bubble charts. Để biết thêm thông tin, vui lòng truy cập [website](https://plotly.com/python/)
 
-The DataPlotly plugin was specifically developed to support interactive plot type visualizations of the loaded vector data in QGIS. The plugin is based on a Python library named Plotly, that is quite powerful providing the possibility to create multitude of interactive, publication-quality graphs: line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, multiple-axes, polar charts, and bubble charts. More information on this specific py library is available on the official [website](https://plotly.com/python/). 
-
-Install the plugin using the Plugin Manager and load some vector layers to visualize: 
+Cài đặt plugin sử dụng Plugin Manager và tải một số lớp vector để hiển thị:
 
 *   Waterways_3123 (line type);
 *   Populated places (point type);
 
-Let us prepare an interactive chart showing how many rivers vs. channels vs. streams vs. drains segments we have in our dataset.
+Chúng ta hãy chuẩn bị một biểu đồ cho thấy có bao nhiêu con sông so với kênh, suối và cống thoát nước có trong dữ liệu của chúng ta.
 
+Kích chọn vào biểu tượng DataPlotly để mở một cửa sổ mới như Hình 10.24
 By clicking on the specific pictogram a new window will open, see figure 10.24. 
 
 
-![alt_text](media/fig1015_b.png "image_tooltip")
+![DataPlotly window/panel](media/fig1015_b.png "DataPlotly window/panel")
 
-Figure 10.15b - DataPlotly window/panel.
+Hình 10.15b - DataPlotly window/panel.
 
-Next, set up the parameters, like in figure 10.15c. 
-
-
-![alt_text](media/fig1015_c.png "image_tooltip")
-
-Figure 10.15c - Setting up the parameters for the pie chart representing types of water lines
-
-Choose waterways_3123 as the vector layer from which to extract the data plotted, grouping field - fclass, Y field - length. If length needs to be calculated, go to the attribute table of the vector layer and write in the field calculator `round($length)`. For more details, see module 8.  Afterwards, select ‘single plot’ at the ploty type and click on the Create plot button, in the lower right-hand side. Your result should look like in figure 10.15d. 
+Tiếp theo, nhập các tham số như hình 10.15c.
 
 
-![alt_text](media/fig1015_d.png "image_tooltip")
+![Nhập các tham số cho pie chart biểu diễn các loại sông suối](media/fig1015_c.png "Nhập các tham số cho pie chart biểu diễn các loại sông suối")
 
-Figure 10.15d - Waterways types by length pie chart.
+Hình 10.15c - Nhập các tham số cho pie chart biểu diễn các loại sông suối 
 
-When hovering with the mouse over each pie chart segment, a pop-up appears showing the name (taken from fclass column), lengths sum and percentage out of the total. 
-
-One significant functionality of DataPlotly is the connection with the QGIS map canvas. To understand what that is, click on one of the sections of the pie chart. You should see that some features are **automatically** selected in your map canvas (see figure 10.15e). 
+Chọn waterways_3123 là vector layer để từ đó trích lọc dữ liệu để vẽ, grouping field - fclasss, Y field - length. Nếu length cần được tính toán, vào attribute table của vector layer và sư3 dụng field calculator với công thức `round($length)`. Để biết thêm chi tiết, xem Module 8. Sau đó, chọn ploty type là ‘single plot’ và kích chọn Cretat plot ở phía góc dưới bên phải. Kết quả như hình 10.15d
 
 
-![alt_text](media/fig1015_e.png "image_tooltip")
+![Pie chart các loại sông suối theo chiều dài](media/fig1015_d.png "Pie chart các loại sông suối theo chiều dài")
 
-Figure 10.15e - DataPlotly and QGIS map canvas interactive connection testing
+Hình 10.15d - Pie chart các loại sông suối theo chiều dài 
 
-That also means that you can interactively update your plot, for example, to show only the selected features. To test, select only a part of the waterways in your map canvas, then go to the DataPlotly, first tab and at plot parameters, tick the ‘only selected features’ option (see figure 10.15f). 
+Khi di chuột trên mỗi phần của pie chart, một pop-up xuất hiện hiển thị tên (từ cột fclass), tổng chiều dài và tỉ lệ của từng loại sông suối trên tổng số.
 
-
-![alt_text](media/fig1015_f.png "image_tooltip")
-
-Figure 10.15f - Interactively update the plot to show only selected features.   
-
-Afterwards, click on the Update plot button at the bottom right-hand side of the DataPlotly window. Results should look approximately as in figure 10.29 (just approximately, because your selection mostly probably differs from the one shown in figure 10.15g). 
+Một chức năng quan trọng của DataPlotly là sự kết nối với QGIS map canvas. ích chuột vào một trong những phần trên pie chart, bạn sẽ thấy một số đối tượng **tự động** được chọn (Hình 10.15e)
 
 
-![alt_text](media/fig1015_g.png "image_tooltip")
+![Kết nối tương tác giữa DataPlotly và QGIS map canvas](media/fig1015_e.png "Kết nối tương tác giữa DataPlotly và QGIS map canvas")
 
-Figure 10.15g - Update the plot to show only the selected features on the map canvas. 
+Hình 10.15e - Kết nối tương tác giữa DataPlotly và QGIS map canvas 
 
-Furthermore, DataPlotly provides the user with an export function - either in a .pdf file or an .html file. The corresponding buttons are in the very low, right-hand side of the DataPlotly window, see figure 10.15h. 
-
-
-![alt_text](media/fig1015_h.png "image_tooltip")
-
-Figure 10.15h - Export capabilities of DataPlotly
+Điều này cũng có nghĩa là bạn có thể cập nhật biểu đồ một cách tương tác, ví dụ, để chỉ hiển thị các đối tượng được chọn. Để thử nghiệm, chỉ chọn một số đối tượng sông suối trên map canvas, và tại plot parameters trong DataPlotly, trong tab đầu tiên, chọn ‘only selected features’ (Hình 10.15f). 
 
 
-Exporting as HTML file allows the user to prepare a wide variety of data plots ready for web publication (see figure 10.15i).
+![Tự động cập nhật biểu đồ chỉ hiển thị các đối tượng được chọn](media/fig1015_f.png "Tự động cập nhật biểu đồ chỉ hiển thị các đối tượng được chọn")
+
+Hình 10.15f - Tự động cập nhật biểu đồ chỉ hiển thị các đối tượng được chọn
+
+Sau đó, chọn Update plot, kết quả sẽ gần giống như hình 10.29
 
 
-![alt_text](media/fig1015_i.png "image_tooltip")
+![Update plot để chỉ hiển thị các đối tượng được chọn trên map canvas](media/fig1015_g.png "Update plot để chỉ hiển thị các đối tượng được chọn trên map canvas")
 
-Figure 10.15i - Using a browser to open the HTML file exported by DataPlotly.  
+Hình 10.15g - Update plot để chỉ hiển thị các đối tượng được chọn trên map canvas
 
-The plugin is also very well documented, for the users they provide a help menu for each plot type. You can access it by clicking on the fourth tab on the DataPlotly (see figure 10.15j).
-
-
-![alt_text](media/fig1015_j.png "image_tooltip")
-
-Figure 10.15j - Help menu for each plot type accessible through the plugin window. 
-
-Due to the direct, interactive link with the QGIS loaded datasets, expressions can also be used when preparing a plot. To test this capability,  we will create a plot base on the Populated places vector layer. Set the following parameters: type: bar plot, layer: populated places, X_field: is_in, Y_field - open the field calculator and insert  `"population" is not null `(see figure 10.15k and figure 10.15l). 
+Hơn nữa, DataPlotly cung cấp cho người dùng chức năng kết xuất biểu đồ sang file pdf hoặc html (các nút ở góc dưới bên phải), xem Hình 10.15h
 
 
-![alt_text](media/fig1015_k.png "image_tooltip")
+![Export biểu đồ trong DataPlotly](media/fig1015_h.png "Export biểu đồ trong DataPlotly")
 
-Figure 10.15k - Opening the field editor in DataPlotly based on attributes of the selected QGIS layer in order to apply an expression for filtering what the plot will display
-
-
-![alt_text](media/fig1015_l.png "image_tooltip")
-
-Figure 10.15l - Inserting an expression in the field calculator 
-
-The result should look like in figure 10.35. . 
+Hình 10.15h - Export biểu đồ trong DataPlotly
 
 
-![alt_text](media/fig1015_m.png "image_tooltip")
-
-Figure 10.15m - DataPlotly result of filtering by expression
-
-If we are to interpret this plot, it shows us that among all the provinces where populated places have been registered, the population attribute is different from 0 în only 3 regions, Alaminos, Sual, Pangasian and Bagac. One can easily test this conclusion by looking in the attribute table.
-
-DataPlotly also provides the user with the possibility of creating subplots, which means that multiple plots can be displayed in a single figure. 
-
-To test this functionality, we will use the Population places vector layer. We have the following attributes of interest: `place` = type of place (city, town, village, etc.,` is_in `=  name of province to which it belongs (if known), `population` = (population numbers) and `name `= the name of the place (if known). We will integrate in the same figure, 2 data plots: one to show us how many of the populated places fall into each category of `place `and the second one, how is the population divided by the 4 types of` places. `
+HTML file cho phép người dùng xuất biểu đồ dạng web
 
 
-![alt_text](media/fig1015_n.png "image_tooltip")
+![Mở file HTML kết xuất từ DataPlotly trong trình duyệt](media/fig1015_i.png "Mở file HTML kết xuất từ DataPlotly trong trình duyệt")
 
-Figure 10.15n - Setting up the parameters for the first plot  - types of settlements by their numbers
+Hình 10.15i - Mở file HTML kết xuất từ DataPlotly trong trình duyệt
 
-
-![alt_text](media/fig1015_o.png "image_tooltip")
-
-Figure 10.15o - Setting up the parameters for the second plot - types of settlements by population  numbers.
+Plugin được tổ chức tài liệu rất tốt với nội dung trợ giúp cho từng loại biểu đồ. Người dùng có thể truy cập bằng cách kích chuột vào tab thứ 4 của DataPlotly (Hình 10.15j)
 
 
-![alt_text](media/fig1015_p.png "image_tooltip")
+![Nội dung trợ giúp cho từng loạt biểu đồ ](media/fig1015_j.png "Nội dung trợ giúp cho từng loạt biểu đồ ")
 
-Figure 10.15p - Subplots in a row
+Hình 10.15j - Nội dung trợ giúp cho từng loạt biểu đồ 
 
-For a detailed description of the plugin capabilities, together with a more comprehensive tutorial, check the DataPlotly [webpage](https://github.com/ghtmtt/DataPlotly). 
+Do kết nối trực tiếp và tương tác với các lớp dữ liệu trong QGIS, các biểu thức tính toán cũng có thể được dùng khi chuẩn bị vẽ biểu đồ. Để kiểm tra khả năng này, chúng ta sẽ tạo một điểu đồ dựa trên lớp Populated places. Nhập các tham số sau: type: bar plot, layer: populated places, X_field: is_in, Y_field - mở field calculator và nhập  `"population" is not null ` (Hình 10.15k và Hình 10.15l)
+
+
+![Hình 10.15k - Mở field calculator trong DataPlotly cho thuộc tính của layer được chọn trong QGIS để nhập biểu thức lọc các đối tượng hiển thị trong biểu đồ](media/fig1015_k.png "Hình 10.15k - Mở field calculator trong DataPlotly cho thuộc tính của layer được chọn trong QGIS để nhập biểu thức lọc các đối tượng hiển thị trong biểu đồ")
+
+Hình 10.15k - Mở field calculator trong DataPlotly cho thuộc tính của layer được chọn trong QGIS để nhập biểu thức lọc các đối tượng hiển thị trong biểu đồ
+
+
+![Nhập biểu thức lọc vào field calculator](media/fig1015_l.png "Nhập biểu thức lọc vào field calculator")
+
+Hình 10.15l - Nhập biểu thức lọc vào field calculator
+
+Kết quả như hình 10.15m
+
+
+![Biểu đồ sau khi lọc đối tượng](media/fig1015_m.png "Biểu đồ sau khi lọc đối tượng")
+
+Hình 10.15m - Biểu đồ sau khi lọc đối tượng
+
+DataPlotly cũng cung cấp cho người dùng khả năng tạo các biểu đồ phụ subplot, nghĩa là có thể có nhiều biểu đồ cùng hiển thị trong một hình duy nhất.
+
+Để kiểm tra chức năng này, chúng ta sẽ sử dụng lớp poplulated places. Chúng ta có các thuộc tính quan tâm sau: `place` = loại (city, town, village,...),` is_in `=  tên tỉnh (nếu có), `population` = (dân số) và `name `= tên (nếu có). Chúng ta sẽ tích hợp 2 biểu đồ trong cùng một hình: một biểu đồ thể hiện số lượng các địa điểm đông dân cư theo từng loại `place `, và biểu đồ thứ hai hiển thị sự phân bố dân số của 4 loại ` places. ` 
+
+
+![Nhập các tham số cho biểu đồ thứ nhất - số lượng các loại place ](media/fig1015_n.png "Nhập các tham số cho biểu đồ thứ nhất - số lượng các loại place")
+
+Hình 10.15n - Nhập các tham số cho biểu đồ thứ nhất - số lượng các loại place 
+
+
+![Nhập các tham số cho biểu đồ thứ nhất - dân số theo từng loại place](media/fig1015_o.png "Nhập các tham số cho biểu đồ thứ nhất - dân số theo từng loại place") 
+
+Hình 10.15o - Nhập các tham số cho biểu đồ thứ nhất - dân số theo từng loại place.
+
+![Kết quả](media/fig1015_p.png "Kết quả")
+
+Figure 10.15p - Kết quả 
+
+Để tìm hiểu kỹ hơn về các chức năng của plugin, cùng với hướng dẫn toàn diện hơn, truy cập Potly [webpage](https://github.com/ghtmtt/DataPlotly). 
 
 
 #### **QuickMapServices / OpenLayers plugin**
 
 
-![alt_text](media/fig1016_a1.png "image_tooltip")
+![QuickMapServices plugin](media/fig1016_a1.png "QuickMapServices plugin")
 
 
-![alt_text](media/fig1016_a2.png "image_tooltip")
+![OpenLayers plugin](media/fig1016_a2.png "OpenLayers plugin")
 
-Figure 10.16a - QuickMapServices plugin; 10.16b - OpenLayers plugin
+Hình 10.16a - QuickMapServices plugin; 10.16b - OpenLayers plugin
 
-These 2 plugins are exceptionally useful when a user needs to add basemaps to her/his QGIS project. For example, one wants to see in context the positioning of a new vector layer received, or maybe just to prepare a more attractive cartographic representation for a report. Either the scope, QuickMapServices allows the use to load into their desktop client with only 2 clicks, basemap layers from different provides, such as OpenStreetMap, NASA, Bing or Google Maps. 
+Cả 02 plugin này cự kì hữu ích khi người dùng cần thêm bản đồ nền - basemap vào QGIS project. Ví dụ, người dùng muốn xem vị trí của một lớp vector mới nhận được, hoặc có thể là chỉ chuẩn bị một biểu diễn bản đồ hấp dẫn hơn cho báo cáo. Dù trường hợp nào, QuickMapServices cho phép người dùng chỉ với 2 thao tác kích chuột, có thể thêm basemap vào QGIS từ nhiều dịch vụ khác nhau như OpenStreetMap, NASA, Bing hoặc Google Maps.
 
-Install both plugins using Plugin Manager. In this case, you will notice that they will appear under the Web tab (see figure 10.16b). 
-
-
-![alt_text](media/fig1016_b.png "image_tooltip")
-
-Figure 10.16b - Location of the QuickMapServices and OpenLayers plugins.
-
-Using them is pretty straight forward, you just click on the layer you want to bring in your map canvas and the plugin will do all the work. Needless to say, that the use of this plugin requires good internet connection, as it uses data served by its providers through standardized web mapping services. 
-
-Figure 10.16c presents the OSM Humanitarian Data Model brought as a basemap for the region of interest used in module 8 and 9, province Pampanga in Philippines. 
+Cài đặt cả hai plugin trên sử dụng Plugin Manager. Trong trường hợp này, chúng sẽ xuất hiện ở menu Web (Hình 10.16b) 
 
 
-![alt_text](media/fig1016_c.png "image_tooltip")
+![QuickMapServices và OpenLayers plugins](media/fig1016_b.png "QuickMapServices và OpenLayers plugins")
 
-Figure 10.16c - Using OpenLayers plugin. 
+Hình 10.16b - QuickMapServices và OpenLayers plugins.
 
-Figure 10.16d illustrates the perfect alignment of the basemap loaded in the QGIS map canvas using the OpenLayers plugin. Even though the 2 layers are not in the same projection, QGIS allows projection on-the-fly, so overlay is possible. 
+Việc sử dụng chúng khá đơn giản, chỉ cần kích vào layer muốn thêm vào map canvas và plugin sẽ làm tất cả mọi thứ. Tất nhiên, sử dụng plugin này yêu cầu phải có kết nối Internet tốt, vì chúng sử dụng dữ liệu từ các nhà cung cấp thông qua các dịch vụ web chuẩn hoá.
+
+Hình 10.16c cho thấy lớp basemap OSM Humanitarian Data Model ở khu vực quan tâm được sử dụng trong Module 9 và 9 - Tp.HCM
 
 
-![alt_text](media/fig1016_d.png "image_tooltip")
+![Sử dụng OpenLayers plugin](media/fig1016_c.png "Sử dụng OpenLayers plugin")
 
-Figure 10.16d - Loaded vector data (roads) overlaid on to the OSM Humanitarian Data model 
+Hình 10.16c - Sử dụng OpenLayers plugin. 
 
-For a detailed description of the plugins capabilities, together with a more comprehensive tutorial, check their webpage: [QuickMapServices](https://nextgis.com/blog/quickmapservices/) and [OpenLayer Plugin](https://github.com/sourcepole/qgis-openlayers-plugin). 
+Hình 10.16d minh hoạ sự chồng khớp hoàn hảo giữa basemap được tải vào QGIS map canvas sử dụng OpenLayers Plugin. Mặc dù 2 layer không cùng hệ toạ độ, QGIS cho phép chuyển đổi hệ toạ độ ngay khi tải (on-the-fly projection) để chồng khớp các layer. 
+
+
+![Lớp vector (roads) chồng khớp với OSM Humanitarian Data model ](media/fig1016_d.png "Lớp vector (roads) chồng khớp với OSM Humanitarian Data model ")
+
+Hình 10.16d - Lớp vector (roads) chồng khớp với OSM Humanitarian Data model  
+Loaded vector data (roads) overlaid on to the OSM Humanitarian Data model 
+
+Để tìm hiểu kỹ hơn về các chức năng của plugin, cùng với hướng dẫn toàn diện hơn, truy cập  [QuickMapServices](https://nextgis.com/blog/quickmapservices/) và [OpenLayer Plugin](https://github.com/sourcepole/qgis-openlayers-plugin). 
 
 
 #### **Table2Style**
 
 
-![alt_text](media/fig1017_a.png "image_tooltip")
+![Table to Style plugin](media/fig1017_a.png "Table to Style plugin")
 
-Figure 10.17a - The Table to Style plugin
+Hình 10.17a - Table to Style plugin
 
-This plugin is useful for situations where there are specific values for pixels within a raster layer that correspond perfectly to a specific color. In this curriculum, we have encountered  such an example, when working with the land cover data (see figure 10.17b). 
+Plugin này hữu ích trong các tình huống có các giá trị pixel trong một raster layer hoàn toàn tương ứng với một màu cụ thể. Trong giáo trình này, chúng ta đã gặp một ví dụ như vậy khi làm việc với lớp dữ liệu lớp phủ mặt đất (Hình 10.17b)
 
 
-![alt_text](media/fig1017_b.png "image_tooltip")
+![Các tình huống ví dụ khi các giá trị pixel tương ứng với một màu chính xác](media/fig1017_b.png "Các tình huống ví dụ khi các giá trị pixel tương ứng với một màu chính xác")
 
-Figure 10.17b - Exemplifying situations where pixel values correspond to an exact colour 
+Figure 10.17b - Các tình huống ví dụ khi các giá trị pixel tương ứng với một màu chính xác
 
-From the provider of this product based on satellite imagery, the pixel values and the associated colours are also made available: 
+Từ nhà cung cấp dữ liệu này dựa trên ảnh vệ tinh, các giá trị pixel và các màu tương ứng được mô tả trong bảng sau:
 
 
 <table>
@@ -764,139 +763,140 @@ From the provider of this product based on satellite imagery, the pixel values a
 </table>
 
 
-When a new dataset - raster or vector - is loaded, QGIS is randomly assigning it a visual representation. It is the user that must define appropriate colours and schemas of the representations. For more information on layers styling, go to module 4. 
+Khi một tập dữ liệu mới - raster hoặc vector - được tải, QGIS sẽ gán ngẫu nhiên style hiển thị. Người dùng phải tự định nghĩa style để biên tập hiển thị nếu muốn (xem lại Module 4)
 
-To test the table2style plugin, we will use the LandCover2019 raster dataset, used also in module nr.9. By loading the raster into QGIS you should have a restul similar with the one in figure 10.17c.
-
-
-![alt_text](media/fig1017_c.png "image_tooltip")
-
-Figure 10.17c - QGIS randomly assigns colours to pixel values
-
-As per the data provider, we know that for each pixel value there is a clearly assigned colour  and in the land cover domain, these colours already represent conventions, just as in classic cartography. Forests are represented with a specific kind of green, pastures with another, ocean is depicted with a different kind of blue than inland surface water and so forth. Worst case would be to manually assign all these colours to their respective values. However, the table2style plugin solves this issue automatically, in a matter of seconds. 
-
-Go to Manager plugin and install the table2style plugin. A new icon will appear on your toolbar. Open it by double clicking it. A setting up window should appear, like in figure 10.17d. 
+Để thử nghiệm table2style plugin, chúng ta sẽ sử dụng dữ liệu raster LandCover2019, cũng được sử dụng trong Module 9 (Hình 10.17c)
 
 
-![alt_text](media/fig1017_d.png "image_tooltip")
+![QGIS gán màu ngẫu nhiên cho các giá trị pixel](media/fig1017_c.png "QGIS gán màu ngẫu nhiên cho các giá trị pixel")
 
-Figure 10.17d - Table2style window
+Hình 10.17c - QGIS gán màu ngẫu nhiên cho các giá trị pixel
 
-The plugin requires 2 parameters - a raster layer and an attribute table with pixel values, description label and color codes in one of the three systems: RGB, HSV or Hex. As per our table above, we have Hex codes for the assigned colors. Thus, load the table into QGIS (`Layer - Add layer - Add delimited text layer… `). Of course, it has no geometry. The LandCover values table should look like in figure 10.17e. 
+Theo mỗi nhà cung cấp dữ liệu, chúng ta biết rằng mỗi giá trị pixel có một màu được gán rõ ràng và trong lĩnh vực lớp phủ mặt đất, các màu này mang tính quy ước, nhưu trong các bản đồ cổ điểm. Rừng được thể hiện với một màu xanh cụ thể, đồng cỏ có màu khác, đại dương được mô tả bởi một màu xanh lam khác so với nước mặt trong đất liền,... Trường hợp tệ nhất là chúng ta phải gán tất cả các màu này vào các giá trị tương ứng. Tuy nhiên, table2style plugin giải quyết vấn đề này một cách tự động, chỉ trong vài giây. 
+
+Cài đặt table2style plugin trong Plugin Manager. Một biểu tượng mới sẽ xuất hiện trên QGIS toolbar. Kích đúp chuột để mở cửa sổ như hình 10.17d
 
 
-![alt_text](media/fig1017_e.png "image_tooltip")
+![Table2style window](media/fig1017_d.png "Table2style window")
 
-Figure 10.17e - Attribute table with pixel values, color codes and description for Land Cover
+Hình 10.17d - Table2style window
 
-Now, let us take a look at the raster dataset. The table2style works only on a 1-band raster, as it is a one to one connection: pixel value - color code. If more bands are available, judging after the plugin setup window, it would not know which one to choose. However, checking the LandCover2019 layer properties, we notice that there are 3 bands (`Properties - Information - scroll down to Bands`). As we need only Band 1 - discrete classification, we will employ the raster calculator to extract it (`Raster - Raster calculator` and insert in the expression field only "LandCover2019_1band@1" - save the result). For more details on how to work with rasters, check module 9. 
+Plugin yêu cầu 2 tham số - một raster layer với thuộc tính thể hiện giá trị pixel, mô tả và mã màu thuộc một trong các hệ màu RGB, HSV hoặc Hex. Theo bảng bên trên, chúng ta có màu theo hệ màu Hex. Do đó, tải table và QGIS (`Layer - Add layer - Add delimited text layer… `). Tất nhiên, nó không chứa yếu tố hình học. Các giá trị của table LandCover như hình 10.17e
 
+
+![Bảng thuộc tính với giá trị pixel, mã màu và mô tả của lớp Land Cover](media/fig1017_e.png "Bảng thuộc tính với giá trị pixel, mã màu và mô tả của lớp Land Cover")
+
+Figure 10.17e - Bảng thuộc tính với giá trị pixel, mã màu và mô tả của lớp Land Cover
+
+Bây giờ, chúng ta hãy xem xét lớp raster. Tablestyle chỉ hỗ trợ raster có 1 kênh ảnh, vì nó là kết nối 1 - 1: giá trị pixel - mã màu. Nếu raster có nhiều kênh ảnh, plugin sẽ không biết chọn kênh ảnh nào. Tuy nhiên, kiểm tra LandCover2019 layer properties, chúng ta thấy rằng có 3 kênh ảnh (`Properties - Information -  Bands`). Vì chúng ta chỉ cần Band 1, chúng ta sẽ sử dụng raster calculator để trích lọc nó (`Raster - Raster calculator`, nhập biểu thức tính toán "LandCover2019_1band@1" và lưu lại kết quả. Tham khảo chi tiết cách làm việc với raster ở Module 9.
+
+Bây giờ, chúng ta đã có tất cả những thứ cần thiết để thử nghiệm plugin. Nhập các tham số như hinh 10.17f
 Now, we have all we need to test the plugin. Set up the parameters as in figure 10.17f. 
 
 
-![alt_text](media/fig1017_f.png "image_tooltip")
+![Nhập các tham số cho table2style plugin](media/fig1017_f.png "Nhập các tham số cho table2style plugin")
 
-Figure 10.17f - Setting up table2style plugin parameters for the Land Cover dataset
+Hình 10.17f - Nhập các tham số cho table2style plugin 
 
-The result should look like in figure 10.17g. 
+Kết quả như hình 10.17g
 
 
-![alt_text](media/fig1017_g.png "image_tooltip")
+![Tự động tạo style cho raster sử dụng table2style plugin](media/fig1017_g.png "Tự động tạo style cho raster sử dụng table2style plugin")
 
-Figure 10.17g - Automatically styled raster dataset using table2style plugin
+Hình 10.17g - Tự động tạo style cho raster sử dụng table2style plugin
 
-For a detailed description of the plugin capab[https://github.com/ptarroso/table2style](https://github.com/ptarroso/table2style)ilities, together with a more comprehensive tutorial, check the Table 2 Style plugin webpage. 
+Để tìm hiểu kỹ hơn về các chức năng của plugin, cùng với hướng dẫn toàn diện hơn, truy cập [webpage](https://github.com/ptarroso/table2style). 
 
 
 #### **ORS Tools**
 
 
-![alt_text](media/fig1018_a.png "image_tooltip")
+![ORS Tools plugin](media/fig1018_a.png "ORS Tools plugin")
 
-Figure 10.48a - The ORS Tools plugin
+Hình 10.48a - ORS Tools plugin
 
-For our last presented plugin, we have prepared one to show you the amazing capabilities of the interconnected world of GIS data, tools and services. We have seen previously that there are plugins that can assist us in loading in our QGIS data from other providers without any hassle related to downloading, storing and knowing how to open it (OpenLayers plugin , Active Fire). Yet, the ORS Tools plugin is built to provide access to an outside routing service - the openrouteservice.org, based on OpenStreetMap. 
+Đối với plugin được giới thiệu cuối cùng, chúng tôi đã chuẩn bị để cho bạn thấy những khả năng tuyệt với của thế giới kết nối dữ liê5u, công cụ và dịch vụ GIS. Trước đây chúng ta đã thấy có nhiều plugin có thể hỗ trợ chúng ta trong việc tải dữ liệu vào QGIS từ các nhà cung cấp dịch vụ dữ liệu mà không gặp bất kỳ rắc rối nào liên quan đến việc tải xuống, lưu trữ và biết cách mở nó (OpenLayers Plugin, Active Fire). Tuy nhiên ORS Tools plugin được xây dựng để cung cấp truy cập đến một dịch vụ tìm đường bên ngoài -  openrouteservice.org, dựa trên OpenStreetMap.
 
-**Routing** is the process of selecting a path for traffic in a network or between or across multiple selected points. 
+**Routing** là quá trình chọn một đường cho giao thông trong một mạng giữa hoặc qua nhiều điểm đã chọn.
 
-The tool set includes routing, isochrones and matrix calculations, either interactive in the map canvas or from point files within the processing framework. 
+Công cụ bao gồm routing (định tuyến), isochrone (đường đẳng thời) và ma trận, có thể tương tác trong map canvas hoặc từ file điểm trong một processing framework.
 
-Using Plugin Manager, install the ORS Tools plugin. A new pictogram will appear on your toolbar. Double click to open (see figure 10.18b). 
-
-
-![alt_text](media/fig1018_b.png "image_tooltip")
-
-Figure 10.18b - Open ORS Tools window. 
-
-As mentioned, this plugin is using an external database - OpenStreetMap - and external algorithms that are packaged up in service - openrouteservice. In order to be able to connect to this external service, we will need to make an account on their web page and ask for an **API key. **
-
-An API key is a unique identifier used to authenticate a user, developer, or calling program to an API. The API is like a gateway to the insides of a software, a programmatic access to its processes and algorithms. Thus, to use the openrouteservice through QGIS, we will ask for a _key_. 
-
-Proceed with the following steps: 
+Sử dụng Plugin Manager, cài đặt ORS Tools plugin. Một biểu tượng mới sẽ xuất hiện trên toolbar. Kích đúp chuột để mở (Hình 10.18b)
 
 
+![ORS Tools window](media/fig1018_b.png "ORS Tools window")
 
-1. Click on the Sign Up button on the ORS Tools window (figure 10.49). 
+Hình 10.18b - ORS Tools window. 
 
+Như đã đề cập, plugin này sử dụng CSDL bên ngoài - OpenStreetMap - và các thuật toán được đóng gói trong một dịch vụ - openrouteservice. Để có thể kết nối đến các dịch vụ bên ngoài, chúng ta sẽ cần tạo một tài khoản trên trang web và một **API key.**
 
-![alt_text](media/fig1018_c.png "image_tooltip")
+Một API key là một mã định danh duy nhất được sử dụng để xác thực người dùng, nhà phát triển hặc chương trình gọi đến API. API giống như một cổng để vào bên trong của một phần mềm, một truy cập lập trình vào các process và thuật toán của nó. Do đó, để sử dụng openrouteservice trong QGIS, chúng ta sẽ yêu cầu một _key_.
 
-Figure 10.18c - Sign in button
-
-2. Make a free account on the website on the openrouteservice website that opened. 
-
-
-![alt_text](media/fig1018_d.png "image_tooltip")
-
-Figure 10.18d - Openrouteservice account page 
+Tiến hành các bước sau: 
 
 
-3. After making the account, you will receive an email informing you of what  you have just gained free access. 
+
+1. Chọn chức năng Sign Up trên cửa sổ ORS Tools (Hình 10.49)
 
 
-![alt_text](media/fig1018_e.png "image_tooltip")
+![Chức năng Sign in](media/fig1018_c.png "Chức năng Sign in")
 
-Figure 10.18e - Email received from openrouteservice
+Hình 10.18c - Chức năng Sign in
 
-4. Login to your newly made account and request a token. 
-
-
-![alt_text](media/fig1018_f.png "image_tooltip")
-
-Figure 10.18f - Request openrouteservice token
-
-5. After your token has been created, click on the long alphanumeric string below the name key. A message informing you that it has been copied will appear. 
-6. Return to QGIS and insert the copied API key.
+2. Tạo một tài khoản miễn phí trên trang web openrouteservice
 
 
-![alt_text](media/fig1018_g.png "image_tooltip")
+![Tạo tài khoản trên Openrouteservice](media/fig1018_d.png "Tạo tài khoản trên Openrouteservice")
 
-Figure 10.18g - Insert openrouteserviceAPI key into your QGIS
-
-At this point, your QGIS should be ready to calculate routes using openrouteservice and OpenStreetMap. To test its basic capabilities, load into QGIS the Pampanga building layers. Make sure you are working in EPSG 3857 or EPSG:4326. After loading the layer, start inserting the routing points. Open the ORS Tools, and press the green + button (see figure 10.18h). 
+Hình 10.18d - Tạo tài khoản trên Openrouteservice
 
 
-![alt_text](media/fig1018_h.png "image_tooltip")
-
-Figure 10.18h - Inserting the routing points using ORS Tools. 
-
-Choose Traveling Salesman routing algorithm and click on apply. After a few moments, a new vector layer has been created: Routes_ORS. 
+3. Sau khi tạo tài khoản, bạn sẽ nhận một email thông báo xác nhận đăng ký
 
 
-![alt_text](media/fig1018_i.png "image_tooltip")
+![Email xác nhận tài khoản từ openrouteservice](media/fig1018_e.png "Email xác nhận tài khoản từ openrouteservice")
 
-Figure 10.18i - Result of running ORS Tools. 
+Hình 10.18e - Email xác nhận tài khoản từ openrouteservice
 
-Opening OpenStreetMap, we will notice that  ORS Tools has tried to build a route to touch all points given by clicking on the map. **Please take note! **QGIS has only one layer loaded and that was the building layer and yet now, a new layer has been calculated and automatically added to your map canvas! 
+4. Đăng nhập bằng tài khoản mới đăng ký và yêu cầu một token.
 
 
-![alt_text](media/fig1018_j.png "image_tooltip")
+![Yêu cầu openrouteservice token](media/fig1018_f.png "Yêu cầu openrouteservice token")
 
-Figure 10.18j - The calculated route overlaid on top of OpenStreetMap.
+Hình 10.18f - Yêu cầu openrouteservice token
 
-The results of ORS Tools highly depend on the quality of the databases used, in this case - the OpenStreetMap. 
+5. Sau khi token được tạo, kích chọn API key là chuỗi bao gồm chữ và số. Một thông báo hiện ra cho biết chuỗi API đã được sao chép.
+6. Trở lại QGIS và thêm vào API key vừa sao chép
 
-The plugin, as well as the openroutingservice, has more to offer but we leave you to discover that in your GIS journey. 
+
+![ Thêm openrouteservice API key vào QGIS](media/fig1018_g.png " Thêm openrouteservice API key vào QGIS")
+
+Figure 10.18g - Thêm openrouteservice API key vào QGIS
+
+Lúc này, QGIS đã sẵn sàng  tính toán đường đi sử dụng openrouteservice và OpenStreetMap. Để kiểm tra các chức năng cơ bản, tải lớp building vào QGIS. Đảm bảo rằng bạn đang làm việc với EPSG:3857 hoặc EPSG:4326. Sau khi tải layer, bắt đầu thêm các điểm để tìm đường đi. Mở ORS Tools, chọn nút thêm điểm (Hình 10.18h)
+
+
+![Thêm các điểm trong lộ trình sử dụng ORS Tools](media/fig1018_h.png "Thêm các điểm trong lộ trình sử dụng ORS Tools")
+
+Hình 10.18h - Thêm các điểm trong lộ trình sử dụng ORS Tools
+
+Chọn thuật toán Traveling Salesman (bài toán người bán hàng) và chọn Apply. Sau đó, một vector layer mới được tạo ra: Routes_ORS.
+
+
+![Kết quả sau khi chạy ORS Tools](media/fig1018_i.png "Kết quả sau khi chạy ORS Tools")
+
+Hình 10.18i - Kết quả sau khi chạy ORS Tools
+
+Mở OpenStreetMap, chúng ta sẽ thấy rằng ORS Tools đã cố gắng xây dựng một lộ trình đi qua tất cả các điểm. **Cần chú ý!**  QGIS chỉ có một layer được tải là lớp buiding và sau khi chạy, một layer mới đã được tính toán và tự động thêm vào map canvas!
+
+
+![Lộ trình được tính toán nằm trên OpenStreetMap](media/fig1018_j.png "Lộ trình được tính toán nằm trên OpenStreetMap")
+
+Hình 10.18j - Lộ trình được tính toán nằm trên OpenStreetMap
+
+Các kết quả của ORS Tools phụ thuộc phần lớn và chất lượng của dữ liệu được sử dụng, trong trường hợp này là OpenStreetMap.
+
+Các plugin này, bao gồm openroutingservice cung cấp cho bạn nhiều thứ hơn nữa nhưng chúng tôi để bạn tự khám phá trong hành trình GIS của mình. 
 
 
 ***Philippine-specific***
@@ -917,12 +917,12 @@ The plugin, as well as the openroutingservice, has more to offer but we leave yo
 
 #### **Quiz questions**
 
-1. Can QGIS plugins be run outside the QGIS platform? 
+1. Các QGIS Plugin có thể chạy bên ngoài QGIS platform?
 *   _<span style="text-decoration:underline;">No</span>. _
 *   _Yes. _
-2. In order to use a QGIS plugin one needs to learn how to code. 
+2. Để sử dụng một QGIS plugin, người dùng cần học lập trình?
 *   _<span style="text-decoration:underline;">No.</span>_
 *   _Yes. _
-3. It is highly recommended that all plugins be installed through the Plugin Manager, even if they could be installed by downloading the zip file and putting it into the right QGIS folder. 
+3. Bạn nên cài đặt tất cả các plugin quan Plugin Manager, thậm chí nếu chúng có thể được cài đặt bằng cách download zip file và bỏ vào đúng thư mục QGIS
 *   _No._
 *   _<span style="text-decoration:underline;">Yes. </span>_
