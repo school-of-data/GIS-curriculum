@@ -86,7 +86,7 @@ Das Vektordatenmodell wird zur Darstellung von Flächen, Linien und Punkten verw
 
 ![Vektordaten mit Attributtabelle](media/fig83.png "Vektordaten mit Attributtabelle")
 
-Bild 8.3 - Vektordaten mit Attributtabelle
+Abbildung 8.3 - Vektordaten mit Attributtabelle
 
 
 ### Metadaten
@@ -260,7 +260,7 @@ Um die Topologie-Prüfung anzuzeigen, aktivieren Sie sie als Bedienfeld unter **
 
 ![Topologie-Prüfungsfenster](media/fig89_c.png "Topologie-Prüfungsfenster")
 
-Bild 8.9.c - Topologie-Prüfungsfenster
+Abbildung 8.9.c - Topologie-Prüfungsfenster
 
 
 Um die Topologieregeln zu definieren, klicken Sie auf das dritte Symbol ![](media/fig810_btn.png), wodurch sich ein Fenster wie in Abbildung 8.10 öffnet. 
@@ -268,7 +268,7 @@ Um die Topologieregeln zu definieren, klicken Sie auf das dritte Symbol ![](medi
 
 ![Topologieregeleinstellungen](media/fig810.png)
 
-Bild 8.10 - Fenster "Topologieregeleinstellungen"
+Abbildung 8.10 - Fenster "Topologieregeleinstellungen"
 
 
 Wir werden eine Reihe von Regeln für die Layer setzen, die wir in unser QGIS-Projekt geladen haben, unter Berücksichtigung der Objekte der realen Welt, die sie darstellen - Straßen, Gebäude, Wasserwege. 
@@ -285,7 +285,7 @@ Wählen Sie die Topologieregeln wie in Abbildung 8.12 dargestellt.
 
 ![Zu setzende Topologieregeln](media/fig812.png "Zu setzende Topologieregeln")
 
-Bild 8.12 - Einzustellende Topologieregeln 
+Abbildung 8.12 - Einzustellende Topologieregeln 
 
 Klicken Sie auf das erste Symbol ![Alle prüfen Button](media/fig813_btn.png "Alle prüfen Button") im Fenster des Topologieprüfers, um die Prüfung auszuführen, und warten Sie auf die Ergebnisse. Nach dem Ausführen der Topologieprüfung sollte Ihr Kartenfenster wie in Abbildung 8.13 aussehen. 
 
@@ -375,7 +375,7 @@ Gehen Sie dazu auf **Vektor ‣ Analyse-Werkzeuge ‣ Eindeutige Werte auflisten
 
 ![Eindeutige Werte in einem Vektor Layer auflisten Funktionalität](media/fig819_a.png "Eindeutige Werte in einem Vektor Layer auflisten Funktionalität")
 
-Bild 8.19a - Eindeutige Werte in einer Vektor-Layer-Funktionalität auflisten
+Abbildung 8.19a - Eindeutige Werte in einer Vektor-Layer-Funktionalität auflisten
 
 Klicken Sie in dem sich öffnenden Fenster unten auf "Als Batchprozess starten" und geben Sie den Namen und das Attribut jedes Layers ein, das Sie interessiert, wie in der obigen Liste aufgezählt, und Sie sollten die folgenden Ergebnisse erhalten: 
 
@@ -578,7 +578,7 @@ Alternativ können Sie auch einen Filter anstelle einer Auswahl verwenden.
 
 ![Auswahl der Grünflächen](media/fig834_a.png "Auswahl der Grünflächen")
 
-Bild 8.34a - Auswählen der Grünflächen.
+Abbildung 8.34a - Auswählen der Grünflächen.
 
 
 ![Ausgewählte Grünflächen](media/fig834_b.png "Ausgewählte Grünflächen")

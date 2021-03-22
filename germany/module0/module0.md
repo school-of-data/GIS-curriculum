@@ -208,14 +208,14 @@ Abbildung 0.3. Winkeltreue Kartenprojektion mit ihrer Tissotischen Indikatrix. D
 Abbildung 0.4. Flächengleiche Kartenprojektion mit ihrer Tissotischen Indikatrix. Kreise werden zu Ellipsen, aber ihre Flächen bleiben gleich.
 
 
-![Äquidistante Kartenprojektion](media/equidistant.png "Äquidistante Kartenprojektion")
+![Längentreue Kartenprojektion](media/equidistant.png "Längentreue Kartenprojektion")
 
-Abbildung 0.5. Äquidistante Kartenprojektion mit ihrer Tissotischen Indikatrix. Beachten Sie, dass die Höhen der Kreise gleich sind, was bedeutet, dass der Maßstab/Abstand entlang der Meridiane erhalten bleibt.
+Abbildung 0.5. Längentreue Kartenprojektion mit ihrer Tissotischen Indikatrix. Beachten Sie, dass die Höhen der Kreise gleich sind, was bedeutet, dass der Maßstab/Abstand entlang der Meridiane erhalten bleibt.
 
 
-![Azimutal äquidistante Kartenprojektion](media/az-equidistant.png "Azimutal äquidistante Kartenprojektion")
+![Azimutal-längentreue Kartenprojektion](media/az-equidistant.png "Azimutal-längentreue Kartenprojektion")
 
-Abbildung 0.6. Azimutal-äquidistante Projektion mit ihrer Tissotischen Indikatrix. Beachten Sie, dass die Kreise alle auf den Kartenmittelpunkt zeigen und die Höhen der Kreise alle gleich sind.
+Abbildung 0.6. Azimutal-längentreue Projektion mit ihrer Tissotischen Indikatrix. Beachten Sie, dass die Kreise alle auf den Kartenmittelpunkt zeigen und die Höhen der Kreise alle gleich sind.
 
 Eine weitere Möglichkeit, Kartenprojektionen zu klassifizieren, ist die **entwickelbare Fläche**, die zur Erstellung der Karte verwendet wird. Eine Fläche ist entwicklungsfähig, wenn sie abgeflacht werden kann, ohne Verzerrungen zu verursachen. Die am häufigsten verwendeten Flächen sind: Zylinder (Abbildung 0.7), Kegel (Abbildung 0.8) und Ebenen (Abbildung 0.9).
 
@@ -240,12 +240,12 @@ Eine Kartenprojektion kann auch nach ihrem **Aspekt** (Abbildung 0.10) klassifiz
 
 ![Aspekte einer Kartenprojektion](media/aspects.png "Aspekete einer Kartenprojektion")
 
-Figure 0.10. Aspekte einer Kartenprojektion
+Abbildung 0.10. Aspekte einer Kartenprojektion
 
 
 #### **Koordinatenreferenzsysteme**
 
-Ein **Koordinatenreferenzsystem** (im englischen Coordinate Reference System oder kurz **CRS**) wird verwendet, um die Position eines Objekts auf der Erdoberfläche durch die Verwendung von Koordinaten anzugeben. Koordinatenreferenzsysteme können in zwei Arten klassifiziert werden:
+Ein **Koordinatenreferenzsystem/Koordinatenbezugssystem** (KBS) (im englischen Coordinate Reference System oder kurz **CRS**) wird verwendet, um die Position eines Objekts auf der Erdoberfläche durch die Verwendung von Koordinaten anzugeben. Koordinatenreferenzsysteme können in zwei Arten klassifiziert werden:
 
 * **Geografische Koordinatenreferenzsysteme** verwenden Breiten- und Längengrade als Koordinaten, um die Position zu bestimmen.
 * **Projektierte Koordinatenreferenzsysteme** verwenden lineare Einheiten (z. B. Meter, Fuß, Kilometer) von Ost- und Nordrichtungen als Koordinaten.
@@ -263,7 +263,7 @@ Gängige EPSG-Codes sind:
 * **EPSG:4326** - WGS 84, Breiten-/Längenkoordinatensystem, das unter anderem vom Global Positioning System (GPS) verwendet wird.
 * **EPSG:3857** - Web-Mercator-Projektion, die von vielen webbasierten Kartentools wie OpenStreetMap und Google Maps für die Anzeige verwendet wird
 * **EPSG:25833 und EPSG 5650** - ETRS 89 / Universal Transverse Mercator (UTM) Zone 33N. Übliche Referenzsystem für den Osten Deutschlands. Einmal mit und einmal ohne den 33. Prefix in den Koordinaten.
-* **EPSG:3398 und EPSG:3399** - RD/83 / 3-degree Gauss-Krüger zone 4 - ehemals vielverwendete Bezugssystem in Deutschland
+* **EPSG:3398 und EPSG:3399** - RD/83 / 3-degree Gauss-Krüger zone 4 - ehemals verbreitetes Bezugssystem in Deutschland
 
 Da wir uns in diesem Curriculum primär mit der Region Mittelsachsen beschäftigen werden, empfiehlt sich ein Blick auf [dieses PDF mit üblichen EPSG-Codes vom Staatsbetrieb Geobasisinformation und Vermessung Sachsen](https://www.landesvermessung.sachsen.de/prod_fest_raum_fest/EPSG-Code-Tabelle.pdf).
 
