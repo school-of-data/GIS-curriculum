@@ -468,7 +468,7 @@ Wir fahren fort mit der Überprüfung des CRS der 5 Landbedeckungsdatensätze, d
 
 ![Stapelverarbeitung in einem QGIS-Fenster](media/fig912.png)
 
-Figure 9.12 - Stapelverarbeitung in einem QGIS-Fenster
+Abbildung 9.12 - Stapelverarbeitung in einem QGIS-Fenster
 
 
 Abbildung 9.12 - Stapelverarbeitung in einem QGIS-Fenster
@@ -510,7 +510,7 @@ Abbildung 9.15a - Auswahl der zusammenzuführenden SRTM-Layer
 
 ![Parameter des Merge-Verarbeitungsalgorithmus](media/fig915_b.png "Parameter des Merge-Verarbeitungsalgorithmus")
 
-Bild 9.15b - Parameter des Merge-Verarbeitungsalgorithmus
+Abbildung 9.15b - Parameter des Merge-Verarbeitungsalgorithmus
 
 
 ![Zusammengeführte DSM-Daten](media/fig915_c.png)
@@ -530,7 +530,7 @@ An diesem Punkt sollten wir alle Ebenen im gleichen CRS haben - EPSG 25833.
 
 ![Transformieren-Parameter](media/fig915_d.png)
 
-Figure 9.15d - Transformieren-Parameter
+Abbildung 9.15d - Transformieren-Parameter
 
 
 Wir können eine weitere Prüfung durchführen, um sicherzustellen, dass alle Raster, mit denen wir arbeiten, projiziert werden, und um zusätzliche Informationen zu den Daten zu erhalten, indem wir einen Stapelprozess von Rasterinformationen für alle ausführen. Um das Funktionsfenster zu öffnen, gehen Sie zu **Raster ‣ Sonstiges ‣ Rasterinformationen**. Ihr Fenster für die Stapelverarbeitung von Rasterinformationen sollte wie in Abbildung 9.16 aussehen. 
@@ -642,7 +642,7 @@ Um ein Histogramm zu berechnen, wählen Sie den gewünschten Raster-Layer aus, �
 
 ![Histogrammfenster](media/fig917.png)
 
-Bild 9.17 - Histogramm-Fenster
+Abbildung 9.17 - Histogramm-Fenster
 
 Klicken Sie auf die Schaltfläche `Histogramm berechnen` und QQGIS berechnet es automatisch. 
 
@@ -676,7 +676,7 @@ Das Value Tool hat 3 Registerkarten: Table, Graph, Options (siehe Abbildung 9.21
 
 ![Aktiviertes Value Tool - Hervorhebung im ersten Reiter - Tabelle](media/fig921.png )
 
-Bild 9.21 - Aktiviertes Value Tool - Hervorhebung im ersten Reiter - Tabelle
+Abbildung 9.21 - Aktiviertes Value Tool - Hervorhebung im ersten Reiter - Tabelle
 
 Die erste Registerkarte - Tabelle - zeigt eine Liste aller geladenen Raster-Layer und die Werte der Zellen, über denne sich der Mauszeiger befindet. Es besteht auch die Möglichkeit zu wählen, mit wie vielen Nachkommastellen die Werte angezeigt werden sollen. Wenn der Mauszeiger außerhalb des Bereichs eines Raster-Layers bewegt wird, wird anstelle eines Wertes eine Meldung angezeigt: "out of extent". 
 
@@ -747,7 +747,7 @@ Es gibt mehrere Möglichkeiten, den Rasterkalklulator in QGIS zu öffnen. Sie k�
 
 ![Der Rasterrechner](media/fig926.png)
 
-Bild 9.26 - Der Rasterrechner
+Abbildung 9.26 - Der Rasterrechner
 
 In diesem Fenster können wir die im Abschnitt _Konzepte_ beschriebenen Operationen, Subtraktionen, Additionen, Vergleiche und alle anderen wiederfinden. Die Namenskonvention für die Raster ist dabei wie folgt: was vor dem @ kommt, ist der Name des Raster-Layers, was nach dem @ kommt, ist die Nummer des Kanals.
 
@@ -913,7 +913,7 @@ Obwohl die LandCover-Produkte mit anderen Satellitendaten (Proba-V) gewonnen wur
 
 ![](media/fig941.png)
 
-Bild 9.41 - Vergleich von 2 Raster-Layern mit dem MapSwipe Tool-Plugin 
+Abbildung 9.41 - Vergleich von 2 Raster-Layern mit dem MapSwipe Tool-Plugin 
 
 Um das MapSwipe-Werkzeug zu aktivieren, klicken Sie es an, während der zu überlagernde Raster-Layer im Bedienfeld "Layer" ausgewählt ist. Die Auflösungsunterschiede sind offensichtlich, ebenso wie die Tatsache, dass das Satellitenprodukt (Land Cover) aus einem Satellitenbild (PROBA-V) mit einer gröberen Auflösung entwickelt wurde. Die allgemeinen größeren Klassen sind jedoch gut erkennbar (die Beschreibungen der Klassen wurden hier aus der Tabelle vom Anfang dieses Moduls manuell übernommen), wie in Abbildung 9.42 zu sehen ist. 
 
@@ -1018,7 +1018,7 @@ Wenn Sie das gleiche Styling wie für das Raster anbringen, werden Sie feststell
 
 Abbildung 9.51 - LC2019_Modus Vektorlayer 
 
-Wie wir beobachten können, sind die Pixel der HRSL erwartungsgemäß nicht perfekt in einem Polygon des Landbedeckungsprodukts enthalten (siehe Bild 9.52).
+Wie wir beobachten können, sind die Pixel der HRSL erwartungsgemäß nicht perfekt in einem Polygon des Landbedeckungsprodukts enthalten (siehe Abbildung 9.52).
 
 
 ![](media/fig952.png)
@@ -1051,7 +1051,7 @@ Die Anzahl der Merkmale ist beträchtlich hoch und ohne den Import in eine Daten
 
 ![](media/fig955.png)
 
-Bild 9.55 - Erstellen einer VRT-Datei mit bestimmten Rasterkacheln
+Abbildung 9.55 - Erstellen einer VRT-Datei mit bestimmten Rasterkacheln
 
 Nach dem Exportieren laden Sie alle Rasterkacheln in Ihr QGIS-Projekt. Das Ergebnis sollte wie in Abbildung 9.56 aussehen. 
 

@@ -45,7 +45,7 @@ Digitalisierung im GIS ist der Prozess des "Nachzeichnens" von Informationen aus
 
 ![Hier wurden Gebäude auf einem Luftbild digitalisiert (nachgezeichnet)](media/buildings.png "Hier wurden Gebäude auf einem Luftbild digitalisiert (nachgezeichnet)")
 
-Bild 7.2: Hier wurden Gebäude auf einem Luftbild digitalisiert (nachgezeichnet)
+Abbildung 7.2: Hier wurden Gebäude auf einem Luftbild digitalisiert (nachgezeichnet)
 
 Bei der Georeferenzierung hingegen wird ein digitales Bild (z. B. ein Luftbild, eine gescannte geologische Karte oder ein Bild einer topografischen Karte) mit geografischen Informationen versehen, so dass eine GIS- oder Kartierungssoftware das Bild an der entsprechenden Stelle in der realen Welt "platzieren" kann.
 
@@ -66,7 +66,7 @@ Wie Sie sich sicher schon denken können, ist das Digitalisieren die Kunst (oder
 
 ![Dialog Neues GeoPaket Layer](media/new-geopackage-dialog.png "Dialog Neues GeoPaket Layer")
 
-Bild 7.3: Dialog Neues GeoPackage Layer
+Abbildung 7.3: Dialog Neues GeoPackage Layer
 
 2. Der erste Schritt besteht darin, den Speicherort der Datenbankdatei anzugeben. Dazu drücken Sie den ![](media/database-file-location.png) Button rechts neben dem Feld Database und wählen eine bestehende GeoPackage Datei aus oder erstellen eine neue. QGIS fügt automatisch die richtige Erweiterung an den von Ihnen angegebenen Namen an.
 3. Geben Sie einen Namen für den neuen Layer / die neue Tabelle ein (Tabellenname)
@@ -90,7 +90,7 @@ Bild 7.3: Dialog Neues GeoPackage Layer
 
 ![](media/new-shapefile-dialog.png)
 
-Bild 7.4: Dialog Neuer Shapedatei Layer
+Abbildung 7.4: Dialog Neuer Shapedatei Layer
 
 2. Geben Sie einen Pfad und einen Dateinamen an, indem Sie die Schaltfläche ... neben dem Feld Dateiname verwenden. QGIS fügt automatisch die richtige Erweiterung an den von Ihnen angegebenen Namen an.
 3. Geben Sie als nächstes die Dateikodierung der Daten an
@@ -150,7 +150,7 @@ Abbildung 7.6.2: Details im ESRI World Imagery Layer
 
 ![Digitalisierwerkzeuge](media/digi-toolbar.png "Digitalisierwerkzeuge")
 
-Bild 7.7: Digitalisierwerkzeuge
+Abbildung 7.7: Digitalisierwerkzeuge
 
 Von links nach rechts auf dem Bild oben sind dies:
 
@@ -175,18 +175,18 @@ Wir wollen ein neues Feature hinzufügen.
 
 ![ Neues Feature digitalisieren](media/digitize-1.png)
 
-Bild 7.8.1: Neues Feature digitalisieren
+Abbildung 7.8.1: Neues Feature digitalisieren
 
 ![Ausfüllen der Attributwerte](media/digitize-2.png)
 
-Bild 7.8.2: Ausfüllen der Attributwerte
+Abbildung 7.8.2: Ausfüllen der Attributwerte
 
 
 6. Klicken Sie auf _OK_. Sie haben ein neues Feature erstellt!
 
 ![Neues Objekt](media/digitize-3.png "Neues Objekt")
 
-Bild 7.8.3: Neues Objekt
+Abbildung 7.8.3: Neues Objekt
 
 Wenn Sie beim Digitalisieren eines Objekts einen Fehler machen, können Sie es später immer noch bearbeiten. Beenden Sie einfach die Digitalisierung des Objekts und führen Sie dann die folgenden Schritte aus:
 
@@ -266,7 +266,7 @@ Als nächstes sollten Sie die Transformationseinstellungen für die Georeferenzi
 
 ![Transformationsparameter](media/transformation-settings.png "Transformationsparameter")
 
-Bild 7.10: Transformationsparameter
+Abbildung 7.10: Transformationsparameter
 
 Bei der Auswahl der Transformationsparameter sind folgende Dinge zu berücksichtigen:
 * die Komplexität und Verzerrung der Karte (bei regelmäßig geformten Karten sind normalerweise nur einfache Transformationsparameter erforderlich)
@@ -298,7 +298,7 @@ Abbildung 7.11.1: Kartenkoordinaten eingeben
 
 ![Kartenkoordinaten eingeben](media/georef-2.png "Kartenkoordinaten eingeben")
 
-Bild 7.11.2: Kartenkoordinaten eingeben
+Abbildung 7.11.2: Kartenkoordinaten eingeben
 
 11. Klicken Sie auf OK.
 
@@ -306,7 +306,7 @@ Die erste Koordinate für die Georeferenzierung ist nun fertig. Nachfolgend ein 
 
 ![Erste Koordinate für die Georeferenzierung](media/georef-3.png "Erste Koordinate für die Georeferenzierung")
 
-Bild 7.12: Erste Koordinate für die Georeferenzierung
+Abbildung 7.12: Erste Koordinate für die Georeferenzierung
 
 12. Zoomen Sie im Bild heraus und bewegen Sie sich umher, bis Sie ein anderes Fadenkreuz finden,und fügen Sie auch für dieses einen Passpunkt hinzu. Versuchen Sie, die Passpunkte so weit wie möglich voneinander zu entfernen. Digitalisieren Sie mindestens drei weitere Passpunkte auf die gleiche Weise wie den ersten. Tipp: Achten Sie darauf, dass die Punkte einigermaßen gleichmäßig über das Bild verteilt sind, zum Beispiel in allen vier Ecken des Bildes oder in gleichen Abständen zueinander. Dies wirkt sich auf die Leistung des Transformationsalgorithmus aus.
 
