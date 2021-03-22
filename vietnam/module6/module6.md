@@ -29,19 +29,19 @@ Bạn sẽ sử dụng field calculator và QGIS expression engine để chạy 
 *   Máy tính
 *   Kết nối Internet
 *   QGIS 3.16 trở lên
-*   Lớp ranh giới hành chính Tp.HCM (trong [module5.gpkg](data/module5.gpkg))
-*   Cơ sở y tế Tp.HCM (trong [module5.gpkg](data/module5.gpkg))
-*   Vietnam provinces (trong [module5.gpkg](data/module5.gpkg))
-*   [HCM City High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   Lớp ranh giới hành chính Tp.HCM (trong [module6.gpkg](data/module6.gpkg))
+*   Cơ sở y tế Tp.HCM (trong [module6.gpkg](data/module6.gpkg))
+*   Vietnam provinces (trong [module6.gpkg](data/module6.gpkg))
+*   [HCM City High Resolution Settlement Layer](data/HRSL_HCMC_Population.tif)
 
 
-## Kỹ năng cần thiết
+## Yêu cầu về kỹ năng
 
 *   Nắm được các Module trước
 *   Kiến thức cơ bản về vận hành máy tính
 
 
-## Các tài nguyên bổ sung
+## Tài liệu tham khảo
 
 *   Working with the Attribute Table - [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes)
 *   QGIS Expressions - [https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html)
@@ -140,7 +140,7 @@ Hình 6.4: General settings
 5. Tiếp theo, kích chọn **Open field calculator** ![alt_text](media/field_calculator.png "image_tooltip") trên Attibute Toolbar để mở cửa sổ field calculator; điền các tham số như ouput field name, trong trường hợp này là ‘AREA (SQ KM)’. Chọn Output field type là Decimal number (double), với precision là 2 decimal places. Để tính toán diện tích, nhập vào biểu thức sau:
 
 ```
-$area / 1000000
+AREA (SQ KM)
 ```
 
  Tham số $area nằm trong mục **Geometry**. Chọn OK để tính toán tự động diện tích của từng polygon. Cần chú ý là việc tính toán diện tính tuỳ thuộc vào CRS mà chúng ta sử dụng, nên có thể có nhiều kết quả tính toán khác nhau tuỳ vào CRS. Bạn cũng có thể tìm kiếm thông tin về các biểu thức ở phía bên phải của Field Calculator hoặc sử dụng Expression Builder
@@ -180,22 +180,22 @@ Bạn có thể thấy rằng bảng thuộc tính chứa dữ liệu không gia
 
 1. Thêm các dữ liệu sau của Việt Nam vào QGIS map canvas;
 
-*   Ranh giới hành chính Tp.HCM (trong [module6.gpkg](data/module6.gpkg))
-*   Cơ sở Y tế Tp.HCM (trong [module6.gpkg](data/module6.gpkg))
-*   Ranh giới hành chính các tỉnh thành Việt Namp (trong [module6.gpkg](data/module6.gpkg))
-*   [HCM City High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   Ranh giới hành chính Tp.HCM - HCMC_border (trong [module6.gpkg](data/module6.gpkg))
+*   Cơ sở Y tế Tp.HCM - HCMC_clinics (trong [module6.gpkg](data/module6.gpkg))
+*   Ranh giới hành chính các tỉnh thành Việt Namp - Vietnam_provinces (trong [module6.gpkg](data/module6.gpkg))
+*   [HCM City High Resolution Settlement Layer](data/HRSL_HCMC_Population.tif)
 
 ![Thêm các layer vào QGIS](media/add-layers.png "Thêm các layer vào QGIS")
 
 Hình 6.7: Thêm các layer vào QGIS
 
-2. Phép chọn được áp dụng trên lớp cơ sở y tến, do đó mở bảng thuộc tính của lớp cơ sở y tến. Kích chọn  select features using expression ![alt_text](media/select_features_button.png "image_tooltip") và nhập vào biểu thức sau trong expression builder
+2. Phép chọn được áp dụng trên lớp cơ sở y tế, do đó mở bảng thuộc tính của lớp cơ sở y tế. Kích chọn  select features using expression ![alt_text](media/select_features_button.png "image_tooltip") và nhập vào biểu thức sau trong expression builder
 
 ```
-"amenity" = 'clinic' AND "emergency" = 'yes'
+"amenity" = 'clinic' AND "wheelchair" = 'yes'
 ```
 
-Bạn có thể thấy rằng biểu thức có một số toán tử như so sánh (=), toán tử logic (AND) và một chuỗi nằm trong dấu nháy đơn (‘ ‘). Ngoài ra còn có 02 thuộc tính (amenity, emergency) và giá trị thuộc tính tương ứng (clinic,yes). 
+Bạn có thể thấy rằng biểu thức có một số toán tử như so sánh (=), toán tử logic (AND) và một chuỗi nằm trong dấu nháy đơn (‘ ‘). Ngoài ra còn có 02 thuộc tính (amenity, wheelchair) và giá trị thuộc tính tương ứng (clinic,yes). 
 
 ![alt_text](media/select.png "image_tooltip")
 

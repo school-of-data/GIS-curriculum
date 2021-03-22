@@ -30,7 +30,7 @@ và có được các kỹ năng sau
 
 *   Module này được thiết kế sử dụng [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
 *   Dữ liệu được sử dụng trong các bài tập cụ thể của Module này được trình bày trong bảng bên dưới:
-*   CRS được sử dụng là VN-2000 / UTM zone 48N, EPSG:3405. Bởi vì đây là hệ toạ độ phẳng, cho phép thực hiện các tính toán hình học.
+*   CRS được sử dụng là VN-2000 / TM-3 105-45 (Múi chiếu 3 độ, kinh tuyến trục địa phương cho Tp.HCM), EPSG:9210. Bởi vì đây là hệ toạ độ phẳng, cho phép thực hiện các tính toán hình học.
 
 ## Yêu cầu về kỹ năng
 
@@ -40,7 +40,7 @@ và có được các kỹ năng sau
 Là một phần của Module này, bạn sẽ học cách làm việc hiệu quả với dữ liệu vector để từ đó có thể trích xuất thông tin mới. Điều này bao gồm một hiểu biết sâu hơn về dữ liệu vector là gì, các tiêu chuẩn chất lượng nào phải tuân theo để nó thực sự hữu dụng, các phép toán thường dùng nhất nào được thực hiện trên dữ liệu vector (geoprocessing, geostatistics)
 
 
-## Các tài nguyên bổ sung: 
+## Tài liệu tham khảo: 
 
 *   [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/functions_list.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/functions_list.html) 
 *   [http://www.geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm](http://www.geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm)
@@ -123,19 +123,19 @@ Có nhiều phép toán geoprocessing có thể thực hiện trên vector data,
 
 #### **Bước 1. Chuẩn bị môi trường làm việc.**
 
-Mở QGIS, thiết lập CRS mà bạn sẽ làm việc - EPSG 3405 - và thêm các layer sau:
+Mở QGIS, thiết lập CRS mà bạn sẽ làm việc - EPSG: 9210 - và thêm các layer sau:
 
-*   Polygons - ranh giới hành chính; nhà; sử dụng đất
-*   Lines - giao thông, thuỷ hệ
-*   Points - cơ sở tôn giáo, địa điểm tham quan
+*   Polygons - ranh giới hành chính Tp.HCM- HCMC_admin_boundary; nhà - buildings; sử dụng đất - landuse
+*   Lines - giao thông - road, thuỷ hệ - waterways
+*   Points - cơ sở tôn giáo - pofw, địa điểm tham quan - pois
 
 Kết quả sau khi thêm vào QGIS như hình 8.5 (tất nhiên có thể QGIS tô màu khác nhau cho các layer) 
 
-![Các lớp dữ liệu vector được tải: points, line và polygons](media/fig85.png "Các lớp dữ liệu vector được tải: points, line và polygons")
+![Các lớp dữ liệu vector được tải: points, lines và polygons](media/fig85.png "Các lớp dữ liệu vector được tải: points, lines và polygons")
 
-Hình 8.5 - Các lớp dữ liệu vector được tải: points, line và polygons
+Hình 8.5 - Các lớp dữ liệu vector được tải: points, lines và polygons
 
-**Kiểm tra!** Tất cả các layer ở cùng CRS (EPSG 3405) bằng cách quan sát góc phải bên dưới trong giao diện QGIS. 
+**Kiểm tra!** Tất cả các layer ở cùng CRS (EPSG: 9210) bằng cách quan sát góc phải bên dưới trong giao diện QGIS. 
 
 #### **Bước 2. Hiểu những gì bạn đang nhìn thấy.** 
 
@@ -150,12 +150,12 @@ Mở bảng thuộc tính và nhìn vào phía trên của bảng thuộc tính
 
 Trước khi chạy một số thống kê cơ bản, chúng ta hãy hoàn chỉnh bảng thuộc tính với một số thuộc tính hình học (xem lại Module 6)
 
-*   Lớp giao thông - tính toán chiều dài của từng đường giao thông bổ sung vào bảng thuộc tính: output field name - length `round($length, 2)`
-*   Lớp nhà - tính toán diện tích của từng căn nhà và bổ sung vào bảng thuộc tính; output field name - area `round($area, 2)`
+*   Lớp giao thông - tính toán chiều dài của từng đường giao thông bổ sung vào bảng thuộc tính lớp road: output field name - length `round($length, 2)`
+*   Lớp nhà - tính toán diện tích của từng căn nhà và bổ sung vào bảng thuộc tính lớp buildings: output field name - area `round($area, 2)`
 
 Bây giờ bảng thuộc tính đã đầy đủ, nếu bạn chưa chắc chắn đơn vị tính QGIS sử dụng để tính toán chiều dài đường giao thông và diện tích của căn nhà, hãy kiểm tra lại CRS (CRS ở dạng Projected - hệ toạ độ phẳng) 
 
-Kích chuột vào góc phải bên dưới của QGIS, EPSG 3405 để mở cửa sổ như hình 8.6
+Kích chuột vào góc phải bên dưới của QGIS, EPSG: 9210 để mở cửa sổ như hình 8.6
 
 ![Các thông số của CRS](media/fig86.png "Các thông số của CRS")
 
@@ -163,7 +163,7 @@ Hình 8.6 - Các thông số của CRS
 
 Theo đó, chúng ta thấy rằng đơn vị đo lường là mét, nên chiều dài tính toán là mét và diện tích là mét vuông.
 
-*   Chạy một số thống kê cơ bản trên các layer để hiểu hơn về dữ liệu của bạn (Hình 8.7)
+*   Chạy một số thống kê cơ bản - Basic statistics for fields cho các layer để hiểu hơn về dữ liệu của bạn (Hình 8.7)
 
 ```
 Vector menu ‣ Analysis Tools ‣ Basic statistics for fields
@@ -172,7 +172,7 @@ Processing toolbox window ‣ tìm 'stats'
 
 ![Các thống kê cơ bản cho thuộc tính](media/fig87.png "Các thống kê cơ bản cho thuộc tính")
 
-Hình 8.7 - Các thống kê cơ bản cho thuộc tính
+Hình 8.7 - Các thống kê cơ bản cho thuộc tính 
 
 Kết quả thống kê tuỳ thuộc vào loại trường dữ liệu chúng ta chọn và được tạo dưới dạng HTML file
 
@@ -186,43 +186,42 @@ File đầi ra ở dạng HTML, có thể mở bằng các trình duyệt như F
 
 ```
 Analyzed field: length
-Count: 64473
-Unique values: 33106
+Count: 112539
+Unique values: 34302
 NULL (missing) values: 0
-Minimum value: 0.04
-Maximum value: 19690.45
-Range: 19690.41
-Sum: 13927358.250000086
-Mean value: 216.01846121632445
-Median value: 111.18
-Standard deviation: 372.48583667812585
-Coefficient of Variation: 1.724324090546652
-Minority (rarest occurring value): 0.04
-Majority (most frequently occurring value): 0.55
-First quartile: 51.03
-Third quartile: 239.99
-Interquartile Range (IQR): 188.96
+Minimum value: 0.12
+Maximum value: 12042.59
+Range: 12042.47
+Sum: 16329154.959999874
+Mean value: 145.09774353779466
+Median value: 75.39
+Standard deviation: 276.77048244197874
+Coefficient of Variation: 1.9074761308737123
+Minority (rarest occurring value): 0.12
+Majority (most frequently occurring value): 37.63
+First quartile: 41.845
+Third quartile: 147.71499999999997
+Interquartile Range (IQR): 105.86999999999998
 ```
 
 
-Từ các thống kê cơ bản này, chúng ta thấy rằng có 64473 đường giao thông trong lớp giao thông, với đường ngắn nhất là 0.04m và đường dài nhất là longest 19690.45m. Chúng ta thấy rằng tổng số lượng đường giao thông tại Tp.HCM là khoảng ...km. Giả sử giá trị trung bình mean lớn hơn trung vị median, nó cho chúng ta thấy rằng nửa trên của tập dữ liệu chứa các đoạn đường dài hơn và lớn hơn các đoạn đường ở nửa đầu. Tuy nhiên, giá trị trung vị median cho thấy hầu hết các đoạn đường có độ dài khoảng ....m
+Từ các thống kê cơ bản này, chúng ta thấy rằng có 112539 đường giao thông trong lớp giao thông, với đường ngắn nhất là 0.12 m và đường dài nhất là longest 12042.59 m. Chúng ta thấy rằng tổng số lượng đường giao thông tại Tp.HCM là khoảng 16329,155 km. Giả sử giá trị trung bình mean lớn hơn trung vị median, nó cho chúng ta thấy rằng nửa sau của tập dữ liệu chứa các đoạn đường dài hơn và lớn hơn các đoạn đường ở nửa đầu. 
 
-Chạy các thống kê cơ bản cho lớp nhà cho trường type, chúng ta có kết quả như sau:
+Chạy các thống kê cơ bản cho lớp nhà cho trường type của lớp buildings, chúng ta có kết quả như sau:
 
 ```
-Analyzed field: type
-Count: 827657
-Unique values: 74
-NULL (missing) values: 773210
-Minimum value: Brgy. San Vicente
-Maximum value: yes;house
+Count: 53888
+Unique values: 54
+NULL (missing) values: 48764
+Minimum value: 3
+Maximum value: Đội cảnh sát G
 Minimum length: 0
 Maximum length: 20
+Mean length: 0.7534516033254157
 ```
 
-Mean length: 0.3669563599413767
 
-Kết quả trông không giống bên trên, chúng ta không có mean, median hoặc standard deviation. Điều này là do trường thuộc tính mà chúng ta chạy thuật toán khác nhau - kiểu chuỗi so với kiểu số - trong trường hợp này là loại nhà. Chúng ta thấy rằng có ..... căn nhà ở Tp.HCM, trong đó có ..... căn nhà không có thông tin loại nhà, đồng thời có .... loại nhà khác nhau. 
+Kết quả trông không giống bên trên, chúng ta không có mean, median hoặc standard deviation. Điều này là do trường thuộc tính mà chúng ta chạy thuật toán khác nhau - kiểu chuỗi so với kiểu số - trong trường hợp này là loại nhà. Chúng ta thấy rằng có 53888 căn nhà ở Tp.HCM, trong đó có 48764 căn nhà không có thông tin loại nhà, đồng thời có 54 loại nhà khác nhau. 
 
 #### **Bước 3. Các kiểm tra cơ bản để tìm nhanh các lỗi trong dữ liệu.**
 
@@ -285,7 +284,7 @@ Hình 8.13 - Kết quả kiểm tra Topology
 
 Ở phía góc dưới bên phải, cửa sổ topology checker liệt kê tất cả các lỗi được xác định dựa trên các luật mà chúng ta đã định nghĩa ở bước trên. Nếu chọn "Show errors", các lỗi sẽ được tô màu đỏ trong map canvas. Kích đúp chuột vào một lỗi để di chuyển nhanh đến vị trí lỗi trên bản đồ.
 
-Quy trính để chỉnh sửa các lỗi dữ liệu, có thể là lỗi hình học (duplicates, gaps,...) hoặc lỗi thuộc tính (nhập thiếu, lỗi chính tả,...) được gọi là làm sạch dữ liệu - rất cần thiết nhưng cũng mất thời gian. Mặc dù có các chức năng hỗ trợ làm sạch bán tự động, thường cần phải có sự can thiệp của người dùng. Ví dụ, trong Hình 8.14, chúng ta đã zoom tới một lỗi trong lớp POI (Điểm tham quan), một điểm bị trùng lặp (duplicated). Có thể thấy rằng, có 02 điểm đều là một quán cafe, sự khác biệt nằm trong bảng thuộc tính - có 01 điểm thực sự là quán cafe và một là “doityourself”.
+Quy trính để chỉnh sửa các lỗi dữ liệu, có thể là lỗi hình học (duplicates, gaps,...) hoặc lỗi thuộc tính (nhập thiếu, lỗi chính tả,...) được gọi là làm sạch dữ liệu - rất cần thiết nhưng cũng mất thời gian. Mặc dù có các chức năng hỗ trợ làm sạch bán tự động, thường cần phải có sự can thiệp của người dùng. Ví dụ, trong Hình 8.14, chúng ta đã zoom tới một lỗi trong lớp POI (Điểm tham quan), một điểm bị trùng lặp (duplicated). Có thể thấy rằng, có 02 điểm đều cùng thể hiện một quán cafe, sự khác biệt nằm trong bảng thuộc tính - có 01 điểm thực sự là quán cafe và một là “monument”.
 
 ![Lỗi duplicated của lớp POI](media/fig814.png "Lỗi duplicated của lớp POI")
 
@@ -300,7 +299,8 @@ Do đó, chúng ta sẽ xử lý các điểm trùng lặp này một cách tự
 
 Hình 8.15 - Delete duplicate geometries cho lớp POI
 
-Sau khi chạy thuật toán, cửa sổ hiển thị kết quả, nó chỉ ra ....điểm trùng lặp, giống như công cụ topology checker, và nó thông báo đến người dùng là đã xoá tất cả các điểm trùng lặp, do đó lớp POI lúc này chỉ còn .... đối tượng
+Sau khi chạy thuật toán, cửa sổ hiển thị kết quả, nó chỉ ra 23 điểm trùng lặp, giống như công cụ topology checker, và nó thông báo đến người dùng là đã xoá tất cả các điểm trùng lặp, do đó lớp POI lúc này chỉ còn 20769 đối tượng. Sửa tên layer thành **pois_cleaned**. Lưu ý đây chỉ là lớp tạm, bạn có thể lưu thành file trong máy tính.
+
 
 
 ![Kết quả delete duplicate geometries](media/fig816.png "Kết quả delete duplicate geometries")
@@ -316,40 +316,62 @@ Chúng ta hãy chạy một topology check khác cho lớp nhà. Cấu hình cá
 *   No duplicate
 *   No invalid geometries
 
+![Các rule trong Topology checker của lớp buildings](media/fig817_a.png "Các rule trong Topology checker của lớp buildings")
+
+Hình 8.17a - Các rule trong Topology checker của lớp buildings
+
+
 Chạy thuật toán. 
 
-Kết quả như Hình 8.17. 
+Kết quả như Hình 8.17b. 
 
-![Kết quả topology check cho lớp nhà](media/fig817.png "Kết quả topology check cho lớp nhà")
 
-Hình 8.17 - Kết quả topology check cho lớp nhà
+![Kết quả topology check của lớp buildings](media/fig817_b.png "Kết quả topology check của lớp buildings")
 
-Xoá các đối tượng trùng lặp theo cách đã làm bên trên (Hình 8.18)
+Figure 8.17b - Kết quả topology check của lớp buildings
 
-![Kết quả Delete duplicate geometries](media/fig818.png "Kết quả Delete duplicate geometries")
 
-Hình 8.18 - Kết quả Delete duplicate geometries
+Xoá các đối tượng trùng lắp tương tự như trên (Hình 8.18a)
+
+
+![Xoá các đối tượng trùng lắp của lớp buildings](media/fig818_a.png "Xoá các đối tượng trùng lắp của lớp buildings")
+
+Hình 8.18a - Xoá các đối tượng trùng lắp của lớp buildings
+
+![Hoàn thành xoá các đối tượng trùng lắp của lớp buildings](media/fig818_b.png "Hoàn thành xoá các đối tượng trùng lắp của lớp buildings")
+
+Hình 8.18b - Hoàn thành xoá các đối tượng trùng lắp của lớp buildings
+
+
+![Lớp buildings_cleaned sau khi xoá các đối tượng trùng lắp của lớp buildings](media/fig818_c.png "Lớp buildings_cleaned sau khi xoá các đối tượng trùng lắp của lớp buildings")
+
+Hình 8.18c - Lớp buildings_cleaned sau khi xoá các đối tượng trùng lắp của lớp buildings
 
 
 #### **Bước 4. Xem kĩ hơn thông tin đính kèm với các lớp point, line và polygon.**
 
 Hãy chạy thêm một thuật toán để cho biết các thuộc tính của các lớp dữ liệu là gì. Sau khi chúng ta xác định số lượng đối tượng trong từng layer, hãy xem có bao nhiêu giá trị duy nhất ứng với các thuộc tính sau:
 
-*   layer buildings_a_3405_cleaned - attribute type;
-*   layer Pois_3405_cleaned - attribute fclass;
-*   layer waterways_3405 - attribute fclass;
-*   layer pofw_3405 - attribute fclass;
-*   layer roads_3405 -attribute fclass;
-*   layer landuse_a_3405 - attribute fclass;
+*   layer buildings_cleaned - attribute type;
+*   layer pois_cleaned - attribute fclass;
+*   layer waterways - attribute fclass;
+*   layer pofw - attribute fclass;
+*   layer roads -attribute fclass;
+*   layer landuse - attribute fclass;
 
-Truy cập `Vector ‣ Analysis Tools ‣ List unique values (Hình 8.19)`
+Truy cập **Vector ‣ Analysis Tools ‣ List unique values** (Hình 8.19_a)
 
 
-![Liệt kê các giá trị duy nhất trong vector layer ](media/fig819.png "Liệt kê các giá trị duy nhất trong vector layer")
+![Chức năng List unique values cho vector layer](media/fig819_a.png "Chức năng List unique values cho vector layer")
 
-Hình 8.19 - Liệt kê các giá trị duy nhất trong vector layer
+Hình 8.19a - Chức năng List unique values cho vector layer
 
-Lần lượt thêm vào các layer và thuộc tính theo danh sách bên trên, kết quả như sau:
+Trong cửa sổ giao diện, thêm các layer và thuộc tính theo danh sách bên trên như Hình 8.19b
+
+
+![List unique values in a vector layer functionality (Batch Processing)](media/fig819_b.png "List unique values in a vector layer functionality (Batch Processing)")
+
+Figure 8.19b - List unique values in a vector layer functionality (Batch Processing)
 
 <table>
   <tr>
@@ -361,87 +383,84 @@ Lần lượt thêm vào các layer và thuộc tính theo danh sách bên trên
    </td>
   </tr>
   <tr>
-   <td>buildings_a_3123_cleaned
+   <td>buildings_cleaned
    </td>
-   <td>74
+   <td>54
    </td>
-   <td>'military;parking;gymnasium;mosque;yes;house;NULL;track;college;Idelfonso '
-<p>
-'Tuazon Str;terrace;with '
-<p>
-'roof;construction;veterinary;gazebo;hut;connector_bridge_sky;barn;roof;Yakult;kindergarten;hospital;pharmacy;laboratory;apartments;multipurpose;public;warehouse;farm;quarry;school;footway;Not_sure.;temple;service;garage;office;allotment_house;train_station;commercial;transportation;industrial;storage_tank;hotel;marketplace;farm_auxiliary;university;Unsure_-_please_chec;power_substation;clinic;hall;hangar;greenhouse;gawad '
-<p>
-'kaling phase 1;tennis;church;Brgy. San '
-<p>
-'Vicente;fire_station;toilets;civic;pumping_station;retail;residential;shed;chapel;supermarket;clubhouse;dormitory;Pineda '
-<p>
-'Residence;government;carport;manufacture;garages;motorway;house
+   <td>villas;garage;NULL;Nhà_B1;public;church;shed;house;hangar;religious;3;stadium;gasometer;service;commercial;school;a\;mosque;office;manufacture;kindergarten;train_station;hotel;No;transportation;Pastoral_Center_of D;no;construction;retail;Đội cảnh sát G;industrial;hospital;college;warehouse;Sunrise_Riverside;clinic;roof;Đình Minh Phụng;pavilion;residential;university;terrace;civic;ACV Tower;storage_tank;dormitory;gazeebo;temple;market;tower;government;apartments;detached;chapel
    </td>
   </tr>
   <tr>
-   <td>pois_3123_cleaned
+   <td>pois_cleaned
    </td>
-   <td>105
+   <td>115
    </td>
-   <td>alpine_hut;artwork;bicycle_shop;comms_tower;college;chalet;beverages;tourist_info;veterinary;hunting_stand;greengrocer;gift_shop;food_court;restaurant;ruins;pharmacy;bank;fountain;convenience;monument;clothes;caravan_site;cafe;camera_surveillance;recycling;atm;furniture_shop;sports_shop;post_office;hospital;viewpoint;guesthouse;kindergarten;cinema;biergarten;garden_centre;doityourself;florist;lighthouse;fast_food;butcher;mobile_phone_shop;sports_centre;nightclub;motel;department_store;graveyard;fire_station;bar;car_rental;shoe_shop;stationery;golf_course;picnic_site;post_box;pitch;theatre;recycling_metal;playground;school;shelter;stadium;computer_shop;toy_shop;doctors;beauty_shop;bakery;kiosk;hostel;recycling_glass;laundry;pub;bicycle_rental;water_well;archaeological;nursing_home;swimming_pool;camp_site;town_hall;supermarket;toilet;bookshop;water_tower;park;courthouse;telephone;attraction;memorial;library;optician;mall;hotel;travel_agent;car_dealership;observation_tower;video_shop;tower;water_works;dentist;police;community_centre;car_wash;bench;hairdresser;museum
+   <td>restaurant;water_tower;stadium;furniture_shop;telephone;motel;kindergarten;swimming_pool;fountain;drinking_water;camera_surveillance;nightclub;bakery;public_building;jeweller;post_office;bicycle_shop;chemist;pitch;travel_agent;caravan_site;lighthouse;library;zoo;kiosk;pub;waste_basket;graveyard;clothes;memorial;community_centre;shelter;hairdresser;laundry;dentist;school;police;bicycle_rental;chalet;ruins;attraction;cinema;biergarten;convenience;guesthouse;beverages;post_box;computer_shop;town_hall;car_wash;food_court;veterinary;gift_shop;playground;sports_centre;fast_food;bank;garden_centre;stationery;sports_shop;viewpoint;toy_shop;car_dealership;museum;bookshop;supermarket;theatre;wayside_cross;greengrocer;hotel;department_store;camp_site;courthouse;artwork;hunting_stand;college;butcher;water_well;cafe;bar;pharmacy;monument;tourist_info;theme_park;doctors;comms_tower;optician;mobile_phone_shop;park;shoe_shop;doityourself;bench;observation_tower;wastewater_plant;outdoor_shop;picnic_site;beauty_shop;atm;arts_centre;newsagent;hospital;ice_rink;mall;recycling;hostel;florist;vending_any;embassy;fire_station;university;toilet;castle;car_rental;tower;alpine_hut
    </td>
   </tr>
   <tr>
-   <td>waterways_3123
+   <td>waterways
    </td>
    <td>4
    </td>
-   <td>'river;canal;drain;stream'
+   <td>canal;stream;drain;river
    </td>
   </tr>
   <tr>
-   <td>pofw_3123
+   <td>pofw
    </td>
-   <td>5
+   <td>7
    </td>
-   <td>'christian_evangelical;christian_methodist;buddhist;christian_catholic;christian'
-   </td>
-  </tr>
-  <tr>
-   <td> roads_3123 
-   </td>
-   <td>25
-   </td>
-   <td>'secondary;trunk;track;bridleway;primary;tertiary;path;track_grade2;steps;footway;cycleway;trunk_link;track_grade4;unclassified;service;primary_link;pedestrian;unknown;tertiary_link;secondary_link;living_street;track_grade5;residential;motorway_link;motorway'
+   <td>taoist;muslim_sunni;buddhist;christian;christian_methodist;christian_catholic;christian_evangelical
    </td>
   </tr>
   <tr>
-   <td>landuse_a_3123
+   <td> roads 
    </td>
-   <td>19
+   <td>23
    </td>
-   <td>'military;park;forest;cemetery;recreation_ground;nature_reserve;heath;farmland;quarry;commercial;vineyard;industrial;scrub;orchard;grass;farmyard;meadow;retail;residential'
+   <td>path;tertiary_link;primary_link;track_grade1;pedestrian;track;service;motorway_link;unknown;footway;track_grade2;living_street;tertiary;steps;secondary;cycleway;secondary_link;residential;motorway;primary;trunk;trunk_link;unclassified
+   </td>
+  </tr>
+  <tr>
+   <td>landuse
+   </td>
+   <td>16
+   </td>
+   <td>residential;commercial;orchard;industrial;farmyard;allotments;forest;cemetery;meadow;retail;park;farmland;grass;recreation_ground;military;scrub
    </td>
   </tr>
 </table>
 
 
-Bảng 8.1 - Bảng liệt kê số lượng của từng giá trị duy nhất ứng với từng thuộc tính được chọn
-
-Để phân tích sâu hơn các thuộc tính của vector layer, chúng ta sẽ sử dụng GroupStats plugin. Nó được phát triển để hỗ trợ các tính toán thống kê cho các nhóm đối tượng trong một vector layer, rất hữu dụng để hiểu thêm về dữ liệu cũng như phát hiện các lỗi có thể có trong các thuộc tính
-
-Vào  `Vector ‣ GroupStats ‣ GroupStats`. 
-
-Một cửa sổ mới được mở ra như Hình 8.20
+Bảng 8.1 - Bảng liệt kê số lượng của từng giá trị duy nhất ứng với thuộc tính được chọn
 
 
-![GroupStats window](media/fig820.png "GroupStats window")
+Để phân tích sâu hơn các thuộc tính của vector layer, chúng ta sẽ sử dụng Group Stats plugin. Nó được phát triển để hỗ trợ các tính toán thống kê cho các nhóm đối tượng trong một vector layer, rất hữu dụng để hiểu thêm về dữ liệu cũng như phát hiện các lỗi có thể có trong các thuộc tính
 
-Hình 8.20 - GroupStats window
+Đầu tiên, đảm bảo rằng bạn đã cài đặt và kích hoạt Group Stats plugin. Sau đó, truy cập `Vector ‣ Group Stats ‣ GroupStats`. 
 
-Đối với mỗi phân tích đã thực hiện trước đây, chúng ta thấy rằng đối với lớp nhà, chúng ta có .... loại (type), nhưng mỗi loại có bao nhiêu đối tượng và diện tích xây dựng cho mỗi loại? Có bao nhiêu không gian cho trường học, chợ, nhà ở? GroupStats có thể giúp chúng ta trả lời câu hỏi này. Ở bên phải cửa sổ, có một control panel để chọn các thông tin cần tính toán cũng như cách sắp xếp dữ liệu. Sử dụng kéo - thả, theo sự sắp xếp trong Hình 8.21, và chọn calculate
+![Group Stats plugin](media/fig820_a.png "GroupStats plugin")
+
+Hình 8.20a - Group Stats plugin
+
+Cửa sổ Group Stats xuất hiện như Hình 8.20b.
 
 
-![Chạy GroupStats cho lớp nhà](media/fig821.png "Chạy GroupStats cho lớp nhà")
+![Cửa sổ Group Stats](media/fig820_b.png "Cửa sổ Group Stats")
 
-Hình 8.21 - Chạy GroupStats cho lớp nhà. 
+Hình 8.20b - Cửa sổ Group Stats
 
-Nhìn vào kết quả, chúng ta có thể trích lọc các thông tin quan trọng từ dữ liệu. Ví dụ, cho mục đích đất ở, chúng ta có ....toà nhà với tổng diện tích xây dựng là.... m2, khoảng....ha. Chúng ta cũng thấy rằng toà nhà lớn nhất có diện tích ....m2, toà nhà nhỏ nhất có diện tích ...m2. Và chúng ta có thể tiếp tục phân tích cho các thông tin giá trị hơn nữa.
+
+Đối với mỗi phân tích đã thực hiện trước đây, chúng ta thấy rằng đối với lớp buildings, chúng ta có 54 loại (type), nhưng mỗi loại có bao nhiêu đối tượng và diện tích xây dựng cho mỗi loại? Có bao nhiêu không gian cho trường học, chợ, nhà ở? Group Stats có thể giúp chúng ta trả lời câu hỏi này. Ở bên phải cửa sổ, có một control panel để chọn các thông tin cần tính toán cũng như cách sắp xếp dữ liệu. Sử dụng kéo - thả, theo sự sắp xếp trong Hình 8.21, và chọn calculate
+
+
+
+![Chạy GroupStats cho lớp buildings](media/fig821.png "CChạy GroupStats cho lớp buildings")
+
+Hình 8.21 - Chạy GroupStats cho lớp buildings. 
+
+Nhìn vào kết quả, chúng ta có thể trích lọc các thông tin quan trọng từ dữ liệu. Ví dụ, cho mục đích đất ở - residential, chúng ta có 973 toà nhà với tổng diện tích xây dựng là 204860 m2, khoảng 20.5 ha. Chúng ta cũng thấy rằng toà nhà lớn nhất có diện tích 8018.32 m2, toà nhà nhỏ nhất có diện tích 18.3886 m2. Và chúng ta có thể tiếp tục phân tích cho các thông tin giá trị hơn nữa.
 
 Một phân tích thú vị khác có thể chạy trên lớp giao thông. Hình 8.22 cho thấy cách tính toán chiều dài của các đường giao thông theo từng loại đường khác nhau (primary, residential, motorway,...) và tốc độ tối đa cho phép.
 
@@ -477,7 +496,7 @@ Có nhiều phép toán có thể thực hiện trên một hoặc nhiều tập
 
 ![Nhập thông số 30m buffer xung quanh cơ sở tôn giáo](media/fig823.png "Nhập thông số 30m buffer xung quanh cơ sở tôn giáo")
 
-Hình 8.23 - Nhập thông số 30m buffer xung quanh cơ sở tôn giáo
+Hình 8.23 - Nhập thông số 30m buffer xung quanh cơ sở tôn giáo - pofw
 
 Chi tiết kết quả trong hình 8.24:
 
@@ -493,206 +512,353 @@ Hình 8.24 - Chạy buffer trên một lớp điểm
 
 Hình 8.25 - Tính diện tích cho lớp buffer vừa tạo, sau đó sử dụng GroupStats để tính tổng diện tích.
 
-**Clip.** Hãy tưởng tượng bạn muốn biết tất cảc các khu công nghiệp trong khu vực và bao nhiêu toà nhà trong phạm vi đó. Kiểm tra trực quan dữ liệu vector, bạn thấy rằng có một số khu công nghiệp chứa một số toà nhà. Bạn muốn tách các toà nhà và sử dụng chúng sau này. Đầu tiên là chọn tất cả các đối tượng trong lớp landuse_a_3405 có thuộc tính industrial (Xem lại Module 6). Sau đó, vào `Vector ‣ Geoprocessing tools ‣ Clip ` và chọn layer được clip là buildings_a_3405_cleaned. Kết quả như Hình 8.26
+**Clip.** Hãy tưởng tượng bạn muốn biết tất cảc các khu công nghiệp trong khu vực và bao nhiêu toà nhà trong phạm vi đó. Kiểm tra trực quan dữ liệu vector, bạn thấy rằng có một số khu công nghiệp chứa một số toà nhà. Bạn muốn tách các toà nhà và sử dụng chúng sau này. Đầu tiên là chọn tất cả các đối tượng trong lớp landuse có thuộc tính industrial (Xem lại Module 6). Sau đó, vào `Vector ‣ Geoprocessing tools ‣ Clip ` và chọn layer được clip là buildings_cleaned. Kết quả như Hình 8.27_b
 
 
-![Reduced selection of a few buildings and industrial landuse, so the computation can finish faster](media/fig825.png "Reduced selection of a few buildings and industrial landuse, so the computation can finish faster")
+![Hình 8.26a - Chọn landuse với fclass = industrial](media/fig826_a.png "Hình 8.26a - Chọn landuse với fclass = industrial")
 
-Figure 8.26 - Reduced selection of a few buildings and industrial landuse, so the computation can finish faster. 
+Hình 8.26a - Chọn landuse với fclass = industrial. 
 
-Sau khi chạy thuật toán, kê1t quả sẽ như hình 8.27. Các toà nhà được clip có màu hồng. Trong phạm vi, chúng ta đã chọn có ... toà nhà chiếm diện tích khoảng ...ha. Vậy có bao nhiêu toà nhà công nghiệp bạn đã clip?
 
+![Kết quả chọn landuse với fclass = industrial.](media/fig826_b.png "Kết quả chọn landuse với fclass = industrial.")
 
-![Kết quả của chứng năng clip](media/fig826.png "Kết quả của chức năng clip")
+Hình 8.26b - Kết quả chọn landuse với fclass = industrial. 
 
+Chạy công cụ Clip với tuỳ chọn **Selected features only** cho Overlay layer (landuse), để đảm bảo chỉ thực hiện clip trên các đối tượng được chọn, và làm cho thời gian tính toán nhanh hơn.
 
-Hình 8.27 - Kết quả của chức năng clip
 
-**Thiessen (Voronoi) polygons.** Hãy tưởng tượng bạn phải đưa ra một loạt các quyết định hành chính dựa trên số lượng trường học và phạm vi đáp ứng của chúng trong khu vực. Phân tích không gian có thể hỗ trợ điều này. Bạn có thể bắt đầu bằng việc tính toán Thiessen polygon. Dựa trên một khu vư5c chứa ít nhất 2 điểm, một Thiessen Polygon là một đối tượng hình học 2 chiều có ranh giới chứa tất cả các 
-Imagine you have to make a series of administrative decisions in your district based on how many schools there are and what specific areas they serve. Geospatial analysis can be of assistance. You can start by calculating the Thiessen polygons. Based on an area containing at least two points, a Thiessen Polygon is a 2-dimensional shape which boundaries contain all space which is closer to a point within the area than any other point without the area. A good use example is in meteorology, where weather stations are discrete points, yet the information collected is considered to be measured out on the surface based on the thiessen polygons. 
+![Chạy chức năng Clip](media/fig827_a.png "Chạy chức năng Clip")
 
-To respond to the above question, we will run the algorithm only for points that have the attribute school at type. Thus, make the selection as instructed in module 6. You should have 88 features selected on layer pois_3123_cleaned. Go to `Vector ‣ Geometry Tools ‣ Voronoi Polygons..` After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Pampanga province is contained, you should see a result like in figure 8.28. 
+Hình 8.27a - Chạy chức năng Clip
 
+Kết quả như Hình 8.27b. Các buildings được clup có màu xanh. Có bao nhiêu industrial buildings đã được clip và tổng diện tích của chúng là bao nhiêu?
 
-![Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer](media/fig827.png "Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer")
+![Kết quả sau khi clip](media/fig827_b.png "Kết quả sau khi clip")
 
-Figure 8.28 - Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer
+Figure 8.27b - Kết quả sau khi clip
 
-Sometimes, the necessities impose the requirement of having information in smaller, clearly defined and equal areas and not for an entire large region, such as a country or a big city. Therefore, the data needs to be analysed and visualised in a sliced, well-defined way, allowing comparison that otherwise could prove difficult without a ground common reference. 
+**Thiessen (Voronoi) polygons.** Hãy tưởng tượng bạn phải đưa ra một loạt các quyết định hành chính dựa trên số lượng trường học và phạm vi đáp ứng của chúng trong khu vực. Phân tích không gian có thể hỗ trợ điều này. Bạn có thể bắt đầu bằng việc tính toán Thiessen polygon. Thiessen (Voronoi) là một phân hoạch của tập điểm P thành n vùng. Mỗi vùng ứng với một và chỉ một điểm thuộc P sao cho nếu điểm q thuộc vùng ứng với p thì khoảng cách từ q đến p là nhỏ nhất so với các điểm khác thuộc P. Một ứng dụng của Thiessen polygon là trong ngành khí tượng: có thể tính lượng mưa cho một khu vực với hữu hạn các trạm đo mưa rời rạc bằng cách sử dụng Thiessen polygon. 
 
-Let us assume that you have to present a report that will allow comparisons done for units of 10X10 km over the administrative unit, including: 
+Để trả lời câu hỏi trên, chúng ta sẽ chỉ chạy thuật toán cho các điểm POI có thuộc tính fclass là school bằng cách chọn đã được hướng dẫn trong Module 6. Trong trường hợp lớp pois_cleaned chúng ta sẽ chọn được 418 trường học. Sau đó, truy cập **Vector ‣ Geometry Tools ‣ Voronoi Polygons..**. Sau khi thiết lập các tham số - chọn point layer cần tạo Voronoi polygons, Buffer region là 30%, kết quả sẽ như Hình 8.28d. 
 
-1. density of green spaces (parks, forests) in report to the built-up space per unit;
-2. total length of streets for each unit;
-3. total length of waterways for each unit;
-4. total number of public buildings for each unit (schools, kindergartens, hospitals , town halls etc.).
 
-We’ve seen that there are tools that can assist us in calculating the total surface occupied by a certain type of feature, however the first step is to create our 10X10 units - cell grids. To do that, go to: `Vector ‣ Research Tools ‣ Create grid.. `Set the parameters to: grid type - Rectangle (polygon), Horizontal spacing - 10 km, Vertical spacing - 10 km and you should get a result like in figure 8.29. 
+![Lọc/ chọn các POI là trường học](media/fig828_a.png "Lọc/ chọn các POI là trường học")
 
+Hình 8.28a - Lọc/ chọn các POI là trường học
 
-![Creating a 10X10km vector grid for the Pampanga province](media/fig829.png "Creating a 10X10km vector grid for the Pampanga province")
 
-Figure 8.29 - Creating a 10X10km vector grid for the Pampanga province
+![Các trường học được lọc/ chọn từ POI layer](media/fig828_b.png "Các trường học được lọc/ chọn từ POI layer")
 
-Going further in answering the questions in our exercise, we need to do the following:
+Hình 8.28b - Các trường học được lọc/ chọn từ POI layer
 
-1. green spaces (parks, forests) built-up space per unit ratio:
 
-Green spaces and built-up spaces is data contained by the landuse_a_3121 vector layer, polygon type. To know exactly what are the ‘green spaces’ we need to see what are the categories enclosed in the dataset. For that, we run `List unique values` algorithm on the `fclass` attribute and find out that we have the following ‘green’ classes: meadow, grass, nature_reserve, park, forest and the following ‘built-up space’ classes: retail, commercial, industrial,  residential.  Figure 8.30 presents a visualisation of our selections: 
+![Nhập các tham số tạo Voronoi polygon](media/fig828_c.png "Nhập các tham số tạo Voronoi polygon")
 
+Hình 8.28c - Nhập các tham số tạo Voronoi polygon
 
-![Spatial distribution of the green areas and built-up space in Pampanga](media/fig830.png "Spatial distribution of the green areas and built-up space in Pampanga")
 
-Figure 8.30 - Spatial distribution of the green areas and built-up space in Pampanga 
+![Kết quả sau khi tạo Voronoi polygon](media/fig828_d.png "Kết quả sau khi tạo Voronoi polygon")
 
-The second step to answer the requirement, is to identify how much green space and how much built-up space there is in each 10X10 km. To obtain that we will **intersect** the 2 overlaid polygon vector layers. The algorithm extracts the overlapping portions of features in the Input - the landuse layer and Overlay layer - the grid layer. Go to `Vector - Geoprocessing Tools - Intersect.. `Set the algorithm parameters as in figure 8.31.
+Hình 8.28d - Kết quả sau khi tạo Voronoi polygon
 
+Đôi khi, nhu cầu thiết yếu đặt ra yêu cầu phải có thông tin trong các khu vực nhỏ hơn, được xác định rõ ràng và bằng nhau chứ không phải cho toàn bộ một khu vực rộng lớn, chẳng hạn như một quốc gia hoặc một thành phố lớn. Do đó, dữ liệu cần được phân tích và trực quan hóa bằng cách cắt nhỏ, được xác định rõ ràng, cho phép so sánh với nhau mà nếu không có một tham chiếu chung có thể sẽ khó khăn.
 
-![Parameters for the intersect algorithm](media/fig831.png "Parameters for the intersect algorithm")
+Giả định rằng chúng ta phải trình bày một báo cáo cho phép so sánh từng kích thước 10X10 km trên mỗi đơn vị hành chính, bao gồm:
 
-Figure 8.31 - Parameters for the intersect algorithm
+1. Mật độ mảng xanh (công viên, rừng);
+2. Tổng chiều dài  đường giao thông;
+3. Tổng chiều dài sông suối;
+4. Tổng số công trình công cộng (trường học, nhà trẻ, bệnh viện, cơ quan hành chính,...)
 
-The result should look like in figure 8.32. Please, take note that the intersection algorithm was applied to the entire landuse_a_3123 layer, which contains more features than just the ones we selected for our exercise. 
+Chúng ta thấy rằng có những công cụ có thể hỗ trợ chún ta trong việc tính toán tổng diện tích bề mặt của một loại đối tượng nhất định, tuy nhiên trước tiên là tạo các cell grid kích thước 10x10 km bằng cách vào  **Vector ‣ Research Tools ‣ Create grid..** và nhập các tham số như sau:
 
+- Grid type - Rectangle (polygon)
+- Grid extent - HCMC_admin_boundary layer
+- Horizontal spacing - 10 km
+- Vertical spacing - 10 km 
 
-![Result of running the intersection algorithm to clip the landuse vector polygons to the grid layer](media/fig832.png "Result of running the intersection algorithm to clip the landuse vector polygons to the grid layer")
 
-Figure 8.32 - Result of running the intersection algorithm to clip the landuse vector polygons to the grid layer. 
+![Tạo grid 10kmx10km cho Tp. Hồ Chí Minh](media/fig829_a.png "Tạo grid 10kmx10km cho Tp. Hồ Chí Minh")
 
-Now for each 10X10 km unit, we have the landuse features that we can work with. The attribute table also stores this information, as each grid cell - unit - has a unique id, see figure 8.33. 
+Hình 8.29a - Tạo grid 10kmx10km cho Tp. Hồ Chí Minh
 
+Kết quả tạo grid như Hình 8.29b 
 
-![Landuse features clipped per each grid cell and it's associated attribute table](media/fig833.png "Landuse features clipped per each grid cell and it's associated attribute table")
 
-Figure 8.33 - Landuse features clipped per each grid cell and it's associated attribute table. 
+![Grid kích thước 10X10km cho Tp.HCM](media/fig829_b.png "Grid kích thước 10X10km cho Tp.HCM")
 
-Now, that we have all landuse features per 10X10 km unit, we will continue with separating the geometries of the ones that make up the green space and built-up space as defined earlier - for each grid cell.  Thus, for green space, we will select all features that have the attribute value for `fclass: `meadow, grass, nature_reserve, park, forest. In attribute table, in the expression filed write down: ` "fclass" =  'meadow' or  "fclass" =  'grass' or  "fclass" =  'nature_reserve' or  "fclass" =  'park' or  "fclass"  =  'forest'` and export selected features as green_spaces_gridded  (see module 6 for more details). Your new output should have 820 features. Do the same for the built-up space. Select the features in landuse_a_3123 that have the attribute value for `fclass` the following: retail, commercial, industrial,  residential, by writing the following expression in the Expression based filter window: `"fclass" =  'retail' or  "fclass" =  'commercial' or  "fclass" =  'industrial' or  "fclass" =  'residential'. `Select the filtered geometries and export as builtup_spaces_gridded. Your new output should have 3849 features. Next, calculate the area occupied by each feature of the 2 layers. Go to the attribute table of each layer and then add the geometric column area by inserting the expression `round($area,2) `in the field calculator.  (see module 6 for details, if needed). However, the 10X10km grid of the Pampanga province has a known number of grid cells, and that is 42. Therefore, we need to summarise the areas for all types of green spaces (forests, parks etc.) an built-up spaces (commercial, residential etc.) and join it accordingly to all of the 42 grid cells. To do this, we will use the **GroupStats** plugin to sum up for each grid_id all the green categories, respectively all the built-up categories. For the green_spaced_gridded vector layer, set the parameters as in figure 8.34. 
+Hình 8.29b - Grid kích thước 10X10km cho Tp.HCM
 
+Để trả lời các câu hỏi trong bài tập này, chúng ta cần thực hiện những việc sau:
 
-![GroupStat parameters setup to sum up the green areas per each 10X10km grid cell](media/fig834.png "GroupStat parameters setup to sum up the green areas per each 10X10km grid cell")
+1. Mảng xanh (công viên, rừng) và đất xây dựng
+2. green spaces (parks, forests) built-up space per unit ratio:
 
-Figure 8.34 - GroupStat parameters setup to sum up the green areas per each 10X10km grid cell.
+Mảng xanh và đất xây dựng là dữ liệu được chứa trong landuse layer (polygon). Để biết chính xác các 'mảng xanh', chúng ta cần biết các loại hình sử dụng đất trong lớp landuse bằng công cụ **List unique values** với trường `fclass` và tìm ra các loại hình sử dụng đất là mảnh xanh: meadow, grass, nature_reserve, park, forest, tương tự cho các ‘đất xây dựng’ như: retail, commercial, industrial,  residential. Hình 8.30b
 
-Afterwards, save the results as a .csv file named green_spaces_gridded. Go to `Data - Save all to CSV file. `
+Green spaces and built-up spaces is data contained by the landuse vector layer, polygon type. To know exactly what are the ‘green spaces’ we need to see what are the categories enclosed in the dataset. For that, we run **List unique values** algorithm on the `fclass` attribute and find out that we have the following ‘green’ classes: meadow, grass, nature_reserve, park, forest and the following ‘built-up space’ classes: retail, commercial, industrial, residential. Hình 8.30b biểu diễn trực quan các lựa chọn này: 
 
-Run GroupStats for the built-up space in the same manner and then save it as a csv file named builtup_spaces_gridded. 
+![Lọc các mảng xanh và đất xây dựng ở Tp.HCM](media/fig830_a.png "Lọc các mảng xanh và đất xây dựng ở Tp.HCM")
 
-Next, we will bring the 2 csv files calculated with GroupStat into QGIS  (`Layer - Add layer - Add delimited text layer` - see more details in module 2).  Moving forward, we need to join the calculated spaces - green and built-up - to each 10X10 km cell grid. For that, select the grid10km vector layer in the TOC, open the properties window and go to `Joins. `This functionality allows you to join by a common attribute field, others. In our case, using the common grid_id value we will join, the sum of the built-up areas and green spaces fro the 2 csv files obtained in the previous stage.
+Hình 8.30a - Lọc các mảng xanh và đất xây dựng ở Tp.HCM 
 
-In the **Join** window, push on the green plus button below and set the parameters like in figure 8.35, for green spaces. Then repeat for built-up spaces. 
 
+![Phân bố không gian của mảng xanh và đất xây dựng của Tp.HCM](media/fig830_b.png "Phân bố không gian của mảng xanh và đất xây dựng của Tp.HCM")
 
-![Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit](media/fig835.png "Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit")
+Hình 8.30b - Phân bố không gian của mảng xanh và đất xây dựng của Tp.HCM
 
-Figure 8.35 - Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit.
+Bước tiếp theo là x1c định có bao nhiêu mảng xanh và đất xây dựng cho mỗi ô có kích thước 10x10 km. Để có được điều này, chúng ta sẽ **intersect** 2 lớp polygon. Công cụ này sẽ trích lọc những phần chồng lắp cúa các đối tượng trong Input layer - lớp landuse và Overlay layer - lớp grid. Truy cập **Vector - Geoprocessing Tools - Intersection** hoặc tìm kiếm từ khoá **Intersection trong Processing Toolbox hoặc Locator Bar**. Thiết lập các tham số như Hình 8.31
 
-The results of the two joins are visible in the attribute table, as can be seen in figure 8.36. We have kept the grid_id in both joins, to be sure no mistakes occurred. We can visually quickly check to make sure the 3 attribute fields: id, builtupgrid_id and greengrid_id are exactly the same. 
 
+![Các tham số cho Intersect](media/fig831.png "Các tham số cho Intersect")
 
-![Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces](media/fig836.png "Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces")
+Hình 8.31 - Các tham số cho Intersect
 
-Figure 8.36 - Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces. 
+Kết quả như Hình 8.32.
 
+![Kết quả Intersection giữa landuse và grid layer](media/fig832.png "Kết quả Intersection giữa landuse và grid layer")
 
-As we have gathered all the needed information for green and built-up spaces in the attribute table of the grid layer, all we need to do is calculate the percentage of these spaces within the 10X10 km grid cell. We will calculate it using the field calculator, using the following expression: `round(100*green_None/100000000,5)` and `round(100*builtupNone/100000000,5).` Next, we add a new field in which we calculate the report of the GreenPre/BuilupPer, and thus reaching the answer to our request: green spaces (parks, forests) built-up space per unit ratio: `round( "greenPer" / "builtupPer" , 5).` To have a clear overview of our dataset, in cases where there is no built-up space in the grid cell - we insert the value 1000 in the attribute table, in cases where there is no green space, we will insert value 999. The final result would look like in figure 8.37. 
+Hình 8.32 - Kết quả Intersection giữa landuse và grid layer
 
+Bây giờ, ứng với mỗi ô 10X10 km, chúng ta có các loại hình sử dụng đất tương ứng. Bảng thuộc tính cũng lưu trữ thông tin này vì mỗi ô grid có một mã định danh duy nhất như Hình 8.33. 
 
-![Spatial distribution of the green vs built-up spaces ration per 10X10 km in Pampanga](media/fig837.png "Spatial distribution of the green vs built-up spaces ration per 10X10 km in Pampanga")
 
-Figure 8.37 - Spatial distribution of the green vs built-up spaces ration per 10X10 km in Pampanga
+![Các loại hình sử dụng đất tương ứng với từng ô grid và bảng thuộc tính đi kèm](media/fig833.png "Các loại hình sử dụng đất tương ứng với từng ô grid và bảng thuộc tính đi kèm.")
 
-2. total length of streets and waterways for each unit;
+Hình 8.33 - Các loại hình sử dụng đất tương ứng với từng ô grid và bảng thuộc tính đi kèm.
 
-To accomplish this task, QGIS offers an algorithm that takes a polygon layer and a line layer and measures the total length of lines and the total number of them that cross each polygon. The resulting layer has the same features as the input polygon layer, but with two additional attributes containing the length and count of the lines across each polygon. Go to `Analysis Tools - Sum Line Lengths` and set the parameters as follows: polygons - grid10km, lines - roads_3123, lines length field name - roadsL, lines count field name - roadsC. You can create a temporary layer or save it as a file on your computer. If for representation, you use natural breaks, your map should look like în figure 8.38. 
+Bây giờ, chúng ta đã có các loại hình sử dụng đất trên mỗi ô 10x10 km, chúng ta sẽ tiếp tục tách các đối tượng của thuộc mảng xanh và thuộc đất xây dựng như đã xác định ở trên tương ứng với từng ô grid. Theo đó, đối với mảng xanh, chúng ta sẽ chọn tất cả các đối tượng có thuộc tính `fclass` là meadow, grass, nature_reserve, park, forest. Nhập công thức sau vào Select by Attribute Table: ` "fclass" =  'meadow' or  "fclass" =  'grass' or  "fclass" =  'nature_reserve' or  "fclass" =  'park' or  "fclass"  =  'forest'`, hoặc đơn giản hơn là: `"fclass" in ('meadow', 'grass', 'nature_reserve', 'park', 'forest')`. Kết xuất các đối tượng được chọn với tên lớp là green_spaces_gridded (Xem lại Module 6). Đừng quên chọn **Save only selected features**. Layer green_spaces_gridded sẽ có 935 đối tượng. Thực hiện tương tự cho đất xây dựng. Chọn các đối tượng trong landuse có thuộc tính `fclass` là retail, commercial, industrial, residential. Nhập công thức sau vào Select by Attribute Table: `"fclass" =  'retail' or  "fclass" =  'commercial' or  "fclass" =  'industrial' or  "fclass" =  'residential'.`, sau đó kết xuất các đối tượng được chọn sang lớp builtup_spaces_gridded (trong trường hợp này có 629 đối tượng).
 
+Thay vì sử dụng Select By Attribute, bạn có thể dùng bộ lọc - filter.
 
-![Spatial distribution of 10X10km units with most roads](media/fig838.png "Spatial distribution of 10X10km units with most roads")
 
-Figure 8.38 - Spatial distribution of 10X10km units with most roads
+![Chọn các mảng xanh](media/fig834_a.png "Chọn các mảng xanh")
 
-Now, repeat the same processing for waterways lengths in each grid cell. Running the process on the grid file obtained earlier will help you in having all information obtained so far attached to the same geometry. We advise you save this file on your computer with line_lengths_gridded.  If for representation, you use natural breaks, your map should look like în figure 8.39.
+Hình 8.34a - Chọn các mảng xanh.
 
 
-![Spatial distribution of 10X10km units with most waterways](media/fig839.png "Spatial distribution of 10X10km units with most waterway")
+![Kết quả chọn các mảng xanh](media/fig834_b.png "Kết quả chọn các mảng xanh")
 
-Figure 8.39 -  Spatial distribution of 10X10km units with most waterways 
+Hình 8.34b - Kết quả chọn các mảng xanh.
 
-3. total number of public buildings for each unit (schools, kindergartens, hospitals , town halls etc.).
 
-To count the total number of public buildings in the 10X10 unit, we will use the pois_3123_cleaned. First, we run` List unique values.. (Analysis Tools)` and decide which building we consider public.  We will select from our vector point data layer the following features: `"fclass" = 'town_hall' or "fclass" = 'kindergarten' or "fclass" = 'hospital' or "fclass" = 'doctors' or "fclass" = 'fire_station' or "fclass" = 'community_centre' or "fclass" = 'stadium' or "fclass" = 'museum' or "fclass" = 'school' or "fclass" = 'theatre'. `Your selection should have 246 features in total. To answer our request, we will use `Count point in polygon `algorithm, available under `Analysis Tools`. This algorithm takes a points layer and a polygon layer and counts the number of points from the first one in each polygons of the second one. A new polygons layer is generated, with the exact same content as the input polygons layer, but containing an additional field with the points count corresponding to each polygon. Set the point layer to pois_3123_cleand and the polygon layer the grid layer with the calculated information in the previous round. For the points, check the `Selected features only` checkbox, so the algorithm calculates only the selected points - the public buildings. Save the output file as grid_info. 
+![Kết quả chọn các mảng xanh và đất xây dựng](media/fig834_c.png "Kết quả chọn các mảng xanh và đất xây dựng")
 
+Hình 8.34c - Kết quả chọn các mảng xanh và đất xây dựng.
 
-![Spatial distribution of public buildings density per unit 10X10km](media/fig840.png "Spatial distribution of public buildings density per unit 10X10km")
+Tiếp theo, tính toán diện tích của từng đối tượng trong 2 layer này. Mở Attribute table của từng layer và thêm vào một cột diện tích - area với công thức `round($area,2)` trong Field Calculator (Xem lại Module 6). Tuy nhiên, grid 10x10 km của Tp.HCM có số lượng cell là 72, do đó chúng ta cần tóm tắt diện tích của tất cả các loại mảng xanh (forests, parks,...) và đất xây dựng (commercial, residential,...) và kết nối tương ứng với tất cả 72 grid cell này. Để làm điều này, chúng ta sử dụng **GroupStats** plugin để tính tổng theo từng grid_id cho từng loại mảng xanh cũng như đất xây dựng. Đối với green_spaced_gridded layer, nhập các tham số như Hình 8.34e
 
 
-Figure 8.40 - Spatial distribution of public buildings density per unit 10X10km
+![Tính diện tích cho từng đối tượng](media/fig834_d.png "Tính diện tích cho từng đối tượng")
 
+Hình 8.34d - Tính diện tích cho từng đối tượng.
 
-#### **Quiz questions**
+![Các tham số GroupStat parameters để tính tổng diện tích mảng xanh cho từng ô 10x10 km](media/fig834_e.png "Các tham số GroupStat parameters để tính tổng diện tích mảng xanh cho từng ô 10x10 km")
 
-Q: If I have 2 vector layers - one represents the extent of the city where I am working and the second, the built roads in the entire country - what processing tool would I use to extract only the roads in my city: buffer or clip? 
+Hình 8.34e - Các tham số GroupStat parameters để tính tổng diện tích mảng xanh cho từng ô 10x10 km.
+
+Sau đó, lưu kết quả thành .csv file với tên `green_spaces_gridded` bằng cách truy cập **Data ‣ Save all to CSV file.** 
+
+Chạy GroupStats cho đất xây dựng theo cách tương tự và lưu kết quả thành .csv file với tên `builtup_spaces_gridded`.
+
+Tiếp theo, chúng ta sẽ tính toán thống kê 2 csv file này bằng GroupStats Plugin (**Layer ‣ Add layer ‣ Add delimited text layer** - xem lại Module 2). 
+
+
+![Tải green_spaces_gridded.csv](media/fig835_a.png "Tải green_spaces_gridded.csv")
+
+Hình 8.35a - Tải green_spaces_gridded.csv
+
+
+![Bảng thuộc tính của green_spaces_gridded](media/fig835_b.png "Bảng thuộc tính của green_spaces_gridded")
+
+Hình 8.35b - Bảng thuộc tính của green_spaces_gridded
+
+Tiếp theo, chúng ta cần join lớp green_spaces_gridded và built-up_spaces_gridded với mỗi ô 10x10 km. Để làm điều đó, chọn grid layer trong Layers Panel, mở cửa sổ Porperties và chọn **Joins**. Chức năng này cho phép join với layer/ table khác thông qua một thuộc tính chung. Trong trường hợp của chúng ta, sử dụng thuộc tính grid_id để join, tổng diện tích mảng xanh và diện tích xây dựng cho 2 csv file ở bước trên.
+
+Trong cửa sổ **Join**, kích chọn nút ![Add join layer button](media/add_join_btn.png "Add join layer button"), nhập các tham số như Hình 8.35_c cho green_spaces_gridded.
+
+
+![Nhập các tham số để join thông qua thuộc tính chung grid_id tổng diện tích mảng xanh và diện tích xây dựng cho mỗi ô 10x10 km](media/fig835_c.png "Nhập các tham số để join thông qua thuộc tính chung grid_id tổng diện tích mảng xanh và diện tích xây dựng cho mỗi ô 10x10 km")
+
+Hình 8.35c - Nhập các tham số để join thông qua thuộc tính chung grid_id tổng diện tích mảng xanh và diện tích đất xây dựng cho mỗi ô 10x10 km
+
+Làm tương tự cho buitup_spaces_gridded.
+
+Kết quả của hai phép join được thể hiện trong bảng thuộc tính như Hình 8.36_b. Chúng ta sử dụng grid_id là thuộc tính chung cho cả hai phép join, và có thể kiểm tra để đảm bảo rằng các trường id, builtupgrid_id và greengrid_id có giá trị như nhau.
+
+
+![green_spaces_gridded.csv và buitup_spaces_gridded.csv được join và Grid](media/fig836_a.png "green_spaces_gridded.csv và buitup_spaces_gridded.csv được join và Grid")
+
+Hình 8.36a - green_spaces_gridded.csv và buitup_spaces_gridded.csv được join và Grid. 
+
+
+![Bảng thuộc tính của Grid với tổng diện tích mảng xanh và diện tích xây dựng trên mỗi ô 10x10 km.](media/fig836_b.png "Bảng thuộc tính của Grid với tổng diện tích mảng xanh và diện tích xây dựng trên mỗi ô 10x10 km.")
+
+Hình 8.36b - Bảng thuộc tính của Grid với tổng diện tích mảng xanh và diện tích xây dựng trên mỗi ô 10x10 km.Chúng ta sẽ tính toán bằng Field Calculator với công thức như sau: `round(100*green_None/100000000, 5)` and `round(100*builtup_None/100000000, 5)`. Tiếp theo, chúng ta thêm một thuộc tính mới để tính toán GreenPre/BuiltupPer, từ đó trả lời cho câu hỏi: tỉ lệ mảng xanh/ đất xây dựng cho mỗi ô 10x10 km. Để có cái nhìn tổng quan rõ ràng hơn về dữ liệu, trong trường hợp không có diện tích đất xây dựng trong một ô nào đó - chúng ta sẽ thay giá trị 1000 vào bảng thuộc tính; trong trường hợp không có diện tích mảng xanh trong ô, chúng ta sẽ thay giá trị 999; trong trường hợp cả hai giá trị đều NULL thì giá trị là 1001. Chúng ta tính toán cho thuộc tính mới là `ratio` với công thức sau trong Field Calculator:
+
+```
+CASE 
+WHEN (greenPer is NULL) and (builtupPer is not NULL) then 999
+WHEN (builtupPer is NULL) and (greenPer is not NULL) then 1000
+WHEN (greenPer is NULL) and (builtupPer is NULL) then 1001
+ELSE round(greenPer / builtupPer, 5)
+END
+```
+
+Kết quả cuối cùng như Hình 8.37e. 
+
+
+![Tỉ lệ mảng xanh trong mỗi ô 10x10 km](media/fig837_a.png "Tỉ lệ mảng xanh trong mỗi ô 10x10 km")
+
+Hình 8.37a - Tính tỉ lệ mảng xanh trong mỗi ô 10x10 km
+
+
+![Tỉ lệ mảng xanh và đất xây dựng đã được tính toán](media/fig837_b.png "Tỉ lệ mảng xanh và đất xây dựng đã được tính toán")
+
+Hình 8.37b - Tỉ lệ mảng xanh và đất xây dựng đã được tính toán.
+
+
+![Tính toán tỉ lệ mảng xanh và đất xây dựng](media/fig837_c.png "Tính toán tỉ lệ mảng xanh và đất xây dựng")
+
+Hình 8.37c - Tính toán tỉ lệ mảng xanh và đất xây dựng
+
+
+![Tỉ lệ mảng xanh và đất xây dựng đã được tính toán](media/fig837_d.png "Tỉ lệ mảng xanh và đất xây dựng đã được tính toán")
+
+Hình 8.37d - Tỉ lệ mảng xanh và đất xây dựng đã được tính toán.
+
+
+![Tỉ lệ của mảng xanh/ đất xây dựng trong mỗi ô 10x10 km](media/fig837_e.png "Tỉ lệ của mảng xanh/ đất xây dựng trong mỗi ô 10x10 km")
+
+Hình 8.37e - Tỉ lệ của mảng xanh/ đất xây dựng trong mỗi ô 10x10 km.
+
+
+2. Tổng chiều dài của đường giao thông và sông kênh cho mỗi ô lưới 10x10 km;
+
+Để làm bài tập này, QGIS cung cấp một công cụ tính toán số line và tổng chiều dài của chúng trong mỗi đối tượng của polygon layer. Kết quả đầu ra có cùng số đối tượng với polygon layer nhưng có thêm 02 thuộc tính tổng chiều dài và số lượng line trong mỗi đối tượng polygon. Truy cập **Analysis Tools - Sum Line Lengths** và nhập các tham số như sau:
+
+- polygons - Grid
+- lines - roads
+- lines length field name - roadsL
+- lines count field name - roadsC
+
+Bạn có thể tạo một temporary layer hoặc lưu lại thành dạng file trên máy tính. Kết quả như Hình 8.38c.
+
+
+![Nhập các tham số cho Sum Line Lengths](media/fig838_a.png "Nhập các tham số cho Sum Line Lengths")
+
+Hình 8.38a - Nhập các tham số cho Sum Line Lengths
+
+
+![Tổng chiều dài và số lượng đường giao thông trên mỗi ô](media/fig838_b.png "Tổng chiều dài và số lượng đường giao thông trên mỗi ô")
+
+Hình 8.38b - Tổng chiều dài và số lượng đường giao thông trên mỗi ô
+
+
+![Phân bố không gian của các ô 10x10 km theo tổng chiều dài đường giao thông](media/fig838_c.png "Phân bố không gian của các ô 10x10 km theo tổng chiều dài đường giao thông")
+
+Hình 8.38c - Phân bố không gian của các ô 10x10 km theo tổng chiều dài đường giao thông 
+
+Bây giờ, hãy làm tương tự cho lớp sông - waterways, sau đó lưu layer lại với tên là line_lengths_gridded. Kết quả như Hình 8.39.
+
+
+![Phân bố không gian của các ô 10x10 km theo tổng chiều dài sông](media/fig839.png "Phân bố không gian của các ô 10x10 km theo tổng chiều dài sông")
+
+Hình 8.39 -  Phân bố không gian của các ô 10x10 km theo tổng chiều dài sông
+
+
+3. Tổng số công trình công cộng (schools, kindergartens, hospitals , town halls,...) ứng với mỗi ô
+
+Để biết tổng số công trình công cộng trong mỗi ô 10x10 km, chúng ta sẽ sử dụng pois_cleaned layer. Đầu tiên, truy cập **Vector ‣ Analysis Tools ‣ List unique values..** và xác định toà nhà nào là công trình công cộng. Chúng ta sẽ chọn các đối tượng sau từ lớp pois_cleaned:  `"fclass" = 'town_hall' or "fclass" = 'kindergarten' or "fclass" = 'hospital' or "fclass" = 'doctors' or "fclass" = 'fire_station' or "fclass" = 'community_centre' or "fclass" = 'stadium' or "fclass" = 'museum' or "fclass" = 'school' or "fclass" = 'theatre'`. Đơn giản hơn, chỉ cần gõ  `"fclass" in ('town_hall', 'kindegarten', 'hospital', 'doctors', 'fire_station', 'community_centre', 'stadium', 'museum', 'school', 'theatre')`. Kết quả là có 624 đối tượng thoả điều kiện chọn.
+
+
+![Chọn các công trình công cộng từ lớp POI](media/fig840_a.png "Chọn các công trình công cộng từ lớp POI")
+
+Hình 8.40a - Chọn các công trình công cộng từ lớp POI
+
+
+![Các công trình công cộng được chọn](media/fig840_b.png "Các công trình công cộng được chọn")
+
+Hình 8.40b - Các công trình công cộng được chọn
+
+Để trả lời cho câu hỏi, chúng ta sẽ dùng công cụ **Vector ‣ Analysis Tools ‣ Count points in polygon** để đếm số lương các điểm nằm trong từng đối tượng của polygon layer. Kết quả là có một polygon layer mới được tạo ra giống như polygon layer đầu vào nhưng có thêm thuộc tính là tổng số điểm trong mỗi đối tượng. Chọn poing layer là pois_cleanded với tuỳ chọn **Selected features only** và polygon là Grid layer. Lưu kết quả thành file với tên grid_info.
+
+
+![Đếm số lượng công trình công cộng cho mỗi ô 10x10 km](media/fig840_c.png "Đếm số lượng công trình công cộng cho mỗi ô 10x10 km")
+
+Hình 8.40c - Đếm số lượng công trình công cộng cho mỗi ô 10x10 km
+
+
+![Phân bố không gian của mật độ các công trình công cộng trong mỗi ô 10x10 km](media/fig840_d.png "Phân bố không gian của mật độ các công trình công cộng trong mỗi ô 10x10 km")
+
+
+Hình 8.40d - Phân bố không gian của mật độ các công trình công cộng trong mỗi ô 10x10 km.
+
+
+#### **Câu hỏi**
+
+Q: Nếu bạn có 2 vector layer - một layer là ranh giới hành chính của tỉnh/ thành phố bạn đang làm việc, và layer thứ hai là mạng lưới giao thông toàn quốc. Bạn sẽ dùng công cụ xử lý nào để trích lọc các đường giao thông trong phạm vi hành chính của tỉnh/ thành phố: buffer hay clip?
 
 A: Clip. 
 
-Q. Is the buffer tool useful in the following case: I have a polygon vector layer with historic monuments in my region and I want to draw a 50m protection area around them? 
+Q. Công cụ buffer có hữu ích trong trường hợp sau hay không: Bạn có một polygon layer là các di tích lịch sử ở địa phương của bạn, và bạn muốn vẽ một khu vực bảo vệ xung quanh mỗi di tích có bán kính 50m?
 
 A: Yes
 
-Q: Which one of the three geoprocessing tools would you use to merge two similar vector layers ? Voronoi polygons, dissolve, intersection? 
+Q: Bạn sẽ sử dụng một trong ba công cụ xử lý nào sau đây để merge 2 vector layer có cùng loại đối tượng (point, line hoặc polygon) ? Voronoi polygons, dissolve hay intersection?
 
 A: Dissolve. 
 
 
-### Phase 3: Thống kê không gian. Nội suy - ước tính dữ liệu bị thiếu
+### Phase 3: Thống kê không gian (Geostatistics). Nội suy (Interpolation) - ước tính dữ liệu bị thiếu 
 
-Phần cuối này giới thiệu khái niệm về ước tính dữ liệu. Chúng ta đã quen với việc ước tính hầu như hàng ngày về các chủ đề khác nhau, ví dụ như tốn bao nhiêu thời gian để đi từ nhà đến cơ quan trong một số điều kiện nhất định. Chúng ta cũng quen với việc đưa ra các dự đoán tốt nhất dựa trên kinh nghiệm trước kia và linh cảm.
-The last phase of the vector data module introduces the concept of data estimation. We are used to estimating almost daily on various topics, for example how much time it will take to get from home to work in certain conditions. We are used to giving our best guess,  based on previous experience and hunches. However, in estimating missing data the best guess is replaced by very well defined mathematical equations with well known limitations. 
+Phần cuối của Module này giới thiệu khái niệm về ước lượng dữ liệu. Chúng ta đã quen với việc ước lượng gần như mỗi ngày ở nhiều chủ đề khác nhau, ví dụ như mất bao nhiêu thời gian để đi từ nhà đến cơ quan trong một số điều kiện nhất định. Chúng ta cũng quen với việc đưa ra các dự đoán tốt nhất dựa trên kinh nghiệm và dự cảm. Tuy nhiên, trong việc ước lượng dữ liệu bị thiếu, dự đoán tốt nhất được thay thế bằng các phương trình toán học được xác định rất rõ ràng với những hạn chế đã biết.
 
-The subject requires significant knowledge in statistics and results should always be regarding through the light of their limitations. 
+Chủ đề này đòi hỏi kiến ​​thức đáng kể về thống kê và kết quả phải luôn xem xét đến những hạn chế của chúng.
 
-That being said, we will introduce a short example of data estimation that will make the transition to the next module - raster data processing. 
+Chúng tôi sẽ giới thiệu một ví dụ ngắn về ước lượng dữ liệu như là một bước chuyển cho Module tiếp theo - Raster Data Processing.
 
-**Interpolation** is a mathematical process through which one can estimate the values that are missing based on a limited number of values that do exist. And those situations are common - imagine meteorological information. Data on surface temperatures and of how much rain has fallen can be measured only in specific points at calibrated meteo stations, and not on the entirety of a surface. However, we don’t have “blind spots'' of no temperatures on the maps we see in the meteo section. Thus, the rest of the values - as to construct the seamless phenomena - are obtained by interpolation. 
-The assumption on which interpolation is based is that spatially distributed objects are spatially correlated; in other words, things that are close together tend to have similar characteristics. 
+**Nội suy - Interpolation** là một xử lý toán học mà qua đó có thể ước tính các giá trị bị thiếu dựa trên một số hữu hạn các giá trị đã có. Ví dụ trong lĩnh vực quan trắc khí tượng, dữ liệu về nhiệt độ bề mặt và lượng mưa chỉ có thể được đo tại các trạm quan trắc khí tượng rời rạc và hữu hạn chứ không phải trên toàn bộ bề mặt. Tuy nhiên, nhiệt độ hay lượng mưa là những hiện tượng liên tục nên phải ước tính các giá trị cho toàn bộ bề mặt bằng phương pháp nội suy.
 
-There are many interpolation methods implemented in GIS software packages, deciding which one is the best in each particular case depends on the specificity of the data, what it represents and the geostatistics understanding of the user doing the interpolation. 
+Cơ sở của phép nội suy dựa trên giả thiết là các đối tượng phân bố có sự tương quan về mặt không gian; Nói cách khác, những sự vật/ hiện tượng gần nhau có xu hướng có những đặc điểm giống nhau.
 
-To make a quick check on what interpolation methods are available in QGIS, go to the Processing Toolbox and write in the search bar the keyword interpolation. The result should look like in figure 8.41. 
+Có nhiều phương pháp nội suy được hỗ trợ trong các phần mềm GIS, việc lựa chọn phương pháp nội suy tốt nhất trong từng trường hợp cụ thể tuỳ thuộc vào tính cụ thể của dữ liệu, sự vật/ hiện tượng mà nó biểu diễn và hiểu biết về thống kê không gian của người dùng khi sử dụng phép nội suy.
 
-
-![Interpolation methods available in QGIS](media/fig841.png "Interpolation methods available in QGIS")
-
-Figure 8.41 - Interpolation methods available in QGIS
+Để kiểm tra nhanh về các phương pháp nội suy có sẵn trong QGIS, vào Processing Toolbox và tìm kiếm với từ khoá `interpolation` như Hình 8.41
 
 
-As can be observed, through QGIS the user has access to other algorithms, implemented in GRASS or SAGA, as a result of the integration into QGIS of these (and other) very powerful software solutions. 
+![Các phương pháp nội suy có sẵn trong QGIS](media/fig841.png "Các phương pháp nội suy có sẵn trong QGIS")
 
-Diving into the math behind each interpolation algorithm is beyond the scope of this module. However, for demonstration purposes, we will simulate precipitation data interpolation to obtain a seamless dataset on the quantity of precipitations fallen in our area of interest, Pampanga province. 
+Hình 8.41 - Các phương pháp nội suy có sẵn trong QGIS
 
-As the exercise is purely for showing purposes, we will create our own set of point data - to represent the meteo stations where precipitation values have been registered for the course of one week. 
 
-Thus, the first step is creating a new vector layer - point type - with points randomly assigned inside the extent of the Pampanga province. There are several ways to do that, either with the algorithm of **Random points in polygons..** or with the algorithm **Random points in layer bounds..**. Go to **Vector ‣ Research Tools ‣ Random points in polygons…**. You may also search for the algorithm in the Processing Toolbox or Locator bar. Choose as parameters: 
+Như hình trên chp thấy, trong QGIS người dùng cũng có thể truy cập đến các công cụ nội suy khác từ GRASS hoặc SAGA - các phần mềm rất mạnh mẽ được tích hợp vào QGIS.
+
+Đi sâu vào khía cạnh toán học của mỗi phương pháp nội suy nằm ngoài phạm vi của Module này. Tuy nhiên, với mục đích thực hành, chúng ta sẽ mô phỏng phép nội suy dữ liệu lượng mưa để có được một tập dữ liệu liền mạch về lượng mưa ở khu vực quan tâm là Tp.HCM.
+
+Vì đây là bài tập mang tính trình diễn, chúng ta sẽ tạo một lớp điểm riêng để biểu diễn các trạm đo mưa với dữ liệu được thu thập trong một tuần. 
+
+Bước đầu tiên là tạo một vector layer mới có kiểu là point, với các điểm được tạo ngẫu nhiên đại diện cho các trạm đo mưa trong phạm vi Tp.HCM. Có nhiều cách để thực hiện điều này: sử dụng **Random points in polygons..** hoặc  **Random points in layer bounds..**. Truy cập **Vector ‣ Research Tools ‣ Random points in polygons…**. Bạn cũng có thể tìm kiếm trong Processing Toolbox hoặc Locator Bar. Nhập các tham số sau (Hình 8.42):
+
 * 93 points
 * minimum 5 km.
 
-The result should look like in figure 8.42. 
+
+![Tạo 93 điểm trạm đo mưa ngẫu nhiên trong lớp polygon ranh giới hành chính Tp.HCM](media/fig842.png "Tạo 93 điểm trạm đo mưa ngẫu nhiên trong lớp polygon ranh giới hành chính Tp.HCM")
+
+Hình 8.42 - Tạo 93 điểm trạm đo mưa ngẫu nhiên trong lớp polygon ranh giới hành chính Tp.HCM
 
 
-![Creating random points inside a polygon layer](media/fig842.png "Creating random points inside a polygon layer")
-
-Figure 8.42 - Creating random points inside a polygon layer
+Kết quả như Hình 8.43.
 
 
-The resulting point layer will look approximately like in figure 8.43.
+![Kết quả tạo 93 điểm trạm đo mưa ngẫu nhiên trong lớp polygon ranh giới hành chính Tp.HCM](media/fig843.png "Kết quả tạo 93 điểm trạm đo mưa ngẫu nhiên trong lớp polygon ranh giới hành chính Tp.HCM")
 
+Hình 8.43 - Kết quả tạo 93 điểm trạm đo mưa ngẫu nhiên trong lớp polygon ranh giới hành chính Tp.HCM
 
-![Point data layer - randomly created within specified polygons](media/fig843.png "Point data layer - randomly created within specified polygons")
+Bây giờ chúng ta đã có các trạm đo mưa giả định cho Tp.HCM. chúng ta sẽ tiếp tục thêm các số liệu đo giả định trong vòng 7 ngày.
 
-Figure 8.43 - Point data layer - randomly created within specified polygons.
-
-Now that we have our imaginary meteo stations that measure precipitations in Pampanga province, we will continue by adding fictitious measurements on the course of 7 days. 
-
-To do that, we can use the random function provided by QGIS. Open the attribute table of the point data layer created and open field calculator. In a newly created field (Whole number integer), insert the following formula rand(min, max), where min and max will be replaced by the following pair of numbers for the corresponding 7 days (see figure 8.44):
+Để làm điều này, chúng ta có thể sử dụng hàm random trong QGIS. Mở bảng thuộc tính của Point layer vừa tạo và truy cập Field Calculator. Tạo một thuộc tính mới với kiểu dữ liệu là `Whole number (integer)`, nhập vào hàm rand (min, max), trong đó (min, max) là 7 cặp giá trị tương ứng với 7 ngày như Hình 8.44:
 
 1. 0 - 59;
 2. 2 - 35;
@@ -703,84 +869,81 @@ To do that, we can use the random function provided by QGIS. Open the attribute 
 7. 0 - 21. 
 
 
-![Creating random values within specified limits](media/fig844.png "Creating random values within specified limits")
+![Tạo các giá trị ngẫu nhiên trong một khoảng xác định.](media/fig844.png "Tạo các giá trị ngẫu nhiên trong một khoảng xác định.")
 
-Figure 8.44 - Creating random values within specified limits
+Hình 8.44 - Tạo các giá trị ngẫu nhiên trong một khoảng xác định.
 
-After adding all 7 columns, your attribute table should look like in figure 8.45. 
+Sau khi thêm và tính toán cho 7 cột, bảng thuộc tính sẽ giống như Hình 8.45
 
 
-![Fictitious precipitation data for the 93 fictitious meteo stations in Pampanga province](media/fig845.png "Fictitious precipitation data for the 93 fictitious meteo stations in Pampanga province")
+![Dữ liệu giả định cho 93 trạm đo mưa giả định ở Tp.HCM](media/fig845.png "Dữ liệu giả định cho 93 trạm đo mưa giả định ở Tp.HCM")
 
-Figure 8.45 - Fictitious precipitation data for the 93 fictitious meteo stations in Pampanga province.
+Hình 8.45 - Dữ liệu giả định cho 93 trạm đo mưa giả định ở Tp.HCM.
 
-Next, we will interpolate these values for each of the 7 days  to obtain a seamless layer that covers the entire territory of the province. Given that the operation is repetitive, we will use batch processing. The selected interpolation method selected - strictly for demonstration purposes! - is IDW - inverse distance weighted. 
+Tiếp theo, chúng ta sẽ nội suy các giá trị này cho từng ngày trong thời gian một tuần để tạo một layer liên tục phủ toàn bộ phạm vi hành chính Tp.HCM. Chúng ta sẽ sử dụng batch processing để thực hiện đồng loạt. Phương pháp nội suy được chọn cho ví dụ này là IDW - Inverse Distance Weighted. 
 
-Set the following parameters: 
+Nhập các tham số sau: 
 * distance coefficient: 2
-* extent: Pampanga_admin_boundary
+* extent:HCMC_admin_boundary
 * output raster size: 50. 
 
-Your parameters should look like in the following figure 8.46.
+Các tham số được thiết lập như Hình 8.46.
 
 
-![Setting up the batch processing window to interpolate the precipitation values for all 7 days](media/fig846.png "Setting up the batch processing window to interpolate the precipitation values for all 7 days")
+![Nhập các tham số batch processing cho nội suy giá trị lượng mưa trong 07 ngày](media/fig846.png "Nhập các tham số batch processing cho nội suy giá trị lượng mưa trong 07 ngày")
 
-Figure 8.46 - Setting up the batch processing window to interpolate the precipitation values for all 7 days
+Hình 8.46 - Nhập các tham số batch processing cho nội suy giá trị lượng mưa trong 07 ngày
 
-The interpolation result will look approximately like in figure 8.47. 
-
-
-![Interpolated datasets](media/fig847.png "Interpolated datasets")
-
-Figure 8.47 - Interpolated datasets
-
-The meteo stations are visible on the map canvas and in the TOC you can see all the 7 newly created raster datasets that represent precipitation values for each day in the Pampanga province. 
-
-Next, let’s change the symbology of the 7 layers to a more colourful one (**Properties ‣ Symbology ‣ Singleband pseudocolour ‣ Magma**). 
-
-Looking at the point data and the raster datasets created based on them, we can notice that now we have values for the entire region and not only in the measured location. There are many processing algorithms that can be applied to these rasters in order to extract information, but more on that in the next module - processing and visualisation of raster data.  
-
-However, as we have interpolated values for 7 days, let us prepare a short animation on how precipitation values have evolved for the Pampanga province. 
-
-To do that, open the **Properties dialog of test_meteo_stations_1 raster ‣ click on the Temporal tab ‣ tick the Temporal option ‣ select start and end date**, like in figure 8.48. Do the same for all 7 raster layers. 
+Kết quả nội suy như Hình 8.47
 
 
-![Setting temporal information to the raster dataset (1)](media/fig848_a.png "Setting temporal information to the raster dataset (1)")
+![Kết quả nội suy](media/fig847.png "Kết quả nội suy")
+
+Hình 8.47 - Kết quả nội suy
+
+Các trạm đo mưa hiển thị trên map cavas và trong Layers Panel bạn có thể thấy 07 raster vừa được tạo biểu diễn cho giá trị lượng mưa mỗi ngày của Tp.HCM
+
+Tiếp theo, hãy thay đổi symbology của 7 raster layer để nhìn có màu sắc sơn (**Properties ‣ Symbology ‣ Singleband pseudocolour ‣ Magma**)
+
+Nhìn vào lớp điểm trạm đo mưa và các raster nội suy, chúng ta thấy rằng bây giờ chúng ta đã có các giá trị cho toàn bộ khu vực Tp.HCM thay vì chỉ tại vị trí các trạm đo mưa. Có nhiều công cụ xử lý có thể áp dụng trên các raster này để trích lọc thông tin, sẽ được giới thiệu kĩ hơn ở Module tiếp theo - Xử lý và phân tích dữ liệu raster. 
+
+Tuy nhiên, vì chúng ta đã nội suy các trị đo mưa trong 07 ngày, chúng ta hãy chuẩn bị một đoạn hoạt hình - animation ngắn về diễn biến lượng mưa ở Tp.HCM.
+
+Đề làm điều này, truy cập **Properties của IDW1 raster ‣ Chọn tab Temporal ‣ Kích chọn Temporal ‣ Nhập start date và end date** như hình 8.48. Làm lần lượt cho tất cả 07 raster.
 
 
-![Setting temporal information to the raster dataset (2)](media/fig848_b.png "Setting temporal information to the raster dataset (2)")
+![Nhập thông tin temporal cho IDW1](media/fig848_a.png "Nhập thông tin temporal cho IDW1")
 
 
-![Setting temporal information to the raster dataset (7)](media/fig848_c.png "Setting temporal information to the raster dataset (7)")
-
-Figure 8.48 - Setting temporal information to the raster dataset (1, 2, 7).
+![Nhập thông tin temporal cho IDW2](media/fig848_b.png "Nhập thông tin temporal cho IDW2")
 
 
-Open Temporal Controller Panel (can be found in **View ‣ Panels ‣ Temporal Controller Panel**) and set the parameters as in figure 8.49. 
+![Nhập thông tin temporal cho IDW7](media/fig848_c.png "Nhập thông tin temporal cho IDW7")
+
+Hình 8.48_c - Nhập thông tin temporal cho IDW1, 2 và 7.
 
 
-![Set the parameters of the Time Controller Panel](media/fig849.png "Set the parameters of the Time Controller Panel")
-
-Figure 8.49 - Set the parameters of the Time Controller Panel. 
-
-Click on the play button ![Play button](media/play-btn.png "Play button") and see how the values change. You can choose what other layers to be visible. In figure 8.50, we added the buildings vector layer. 
+Truy cập Temporal Controller Panel (**View ‣ Panels ‣ Temporal Controller Panel**) và nhập các tham số như Hình 8.49
 
 
-![Selecting other layers to be visible in the temporal animation](media/fig850.png "Selecting other layers to be visible in the temporal animation")
+![Nhập các tham số cho Time Controller Panel](media/fig849.png "Nhập các tham số cho Time Controller Panel")
 
-Figure 8.50 - Selecting other layers to be visible in the temporal animation.
+Hình 8.49 - Nhập các tham số cho Time Controller Panel. 
 
-
-Quiz questions
-
-1. Is there one algorithm to interpolate data in QGIS or more?
-
-*There are more algorithms implemented.*
-
-2. What is interpolation useful for?
-
-*Interpolation is useful to estimate data based on known data.*
+Kích chọn nút Play ![Play button](media/play-btn.png "Play button") để thấy các giá trị thay đổi như thế nào. Bạn có thể chọn hiển thị những lớp khác. Trong hình 8.50, lớp buildings được thêm vào.
 
 
+![Chọn hiển thị những lớp khác trong temporal animation](media/fig850.png "Chọn hiển thị những lớp khác trong temporal animation")
 
+Hình 8.50 - Chọn hiển thị những lớp khác trong temporal animation.
+
+
+Câu hỏi
+
+1. Có một hay nhiều thuật toán nội suy trong QGIS?
+
+*Có nhiều thuật toá nội suy trong QGIS.*
+
+2. Phép nội suy hữu ích cho việc gì?
+
+*Phép nội suy hữu ích trong việc ước lượng dữ liệu dựa trên dữ liệu đã biết.*

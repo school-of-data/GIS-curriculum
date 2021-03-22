@@ -10,7 +10,7 @@
 Module này sẽ giới thiệu một số plugin thú vị và hữu dụng nhất mà cộng đồng QGIS đã phát triển và sẵn dùng cho mọi người.
 
 
-## và học được các kỹ năng sau:**
+## Và học được các kỹ năng sau:
 
 *   Cách tìm kiếm và cài đặt plugin mới
 *   Cách chuyển giữa các plugin repository khác nhau.
@@ -18,7 +18,7 @@ Module này sẽ giới thiệu một số plugin thú vị và hữu dụng nh�
 *   Chi tiết một số chức năng của các plugin thông dụng nhất.
 
 
-## Các công cụ và tài nguyên cần thiết**
+## Các công cụ và tài nguyên cần thiết:
 
 *   [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
 
@@ -32,7 +32,7 @@ Module này sẽ giới thiệu một số plugin thú vị và hữu dụng nh�
 ## Nội dung chính 
 
 
-### Phase 1: Giới thiệu plugin**
+### Phase 1: Giới thiệu plugin
 
 Một trong nhiều lợi thế của cộng đồng mã nguồn mở - nhà phát triển phần mềm cũng như người dùng - là tốc độ đáng kinh ngạc của sự phát triển và cải tiến, cách mà các ý tưởng mới phát xuất và đưa vào thực tế. 
 
@@ -43,7 +43,7 @@ Tất nhiên, với các nguyên tắc mã nguồn mở, cùng với các tài l
 Trong phase 1 này, chúng ta sẽ khám phá cách cài đặt QGIS plugin - cách tìm một plugin để giải quyết một yêu cầu cụ thể, cách đọc hiểu các tài liệu và cách báo cho nhà phát triển nếu có lỗi xảy ra trong quá trình sử dụng plugin.
 
 
-### Plugin manager**
+### Plugin manager
 
 QGIS cung cấp một core plugin cho phép người dùng quản lý, cài đặt, cập nhật và gỡ cài đặt các external plugin. Chức năng này khá trực quan, cung cấp truy cập đầy đủ đến các kho plugin công khai chính thức.
 
@@ -149,7 +149,7 @@ Chi tiết cách báo cáo một sự cố phần mềm trên Github nằm ngoà
 *   Tên và mô tả, số lượt download, trang chủ, code repository, tên của nhà phát triển, tóm tắt mô tả.
 
 
-### Phase 2:  Một số Plugin thú vị của QGIS **
+### Phase 2:  Một số Plugin thú vị của QGIS
 
 Plugin có thể được chia thành nhiều loại khác nhau, tuỳ thuộc vào những gì được coi là quan trọng. Sau đây, chúng tôi xác định 02 cách phân loại:
 
