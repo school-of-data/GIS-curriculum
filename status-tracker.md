@@ -5,7 +5,11 @@
     - Bangladesh *(module 0-2)*
     - Brazil *(module 0-7)*
     - Germany *(module 0-10)*
+<<<<<<< HEAD
     - India *(module 0-10)*
+=======
+    - India *(module 0-8, 10)*
+>>>>>>> upstream/main
     - Mexico *(module 0-2)*
     - Philippines *(module 0-10)*
     - Sri Lanka *(module 0-10)*
