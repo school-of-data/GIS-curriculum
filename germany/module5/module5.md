@@ -57,7 +57,7 @@ Dieses Modul konzentriert sich auf die folgenden Schlüsselkonzepte der Kartener
 
 ![Drucklayout](media/print_comp2.png "Drucklayout")
 
-Bild 5.1: Drucklayout
+Abbildung 5.1: Drucklayout
 
 * **Kartenelemente und Eigenschaften**: Karten enthalten eine Vielzahl von Informationen. Die meisten Karten haben die folgenden fünf Dinge: einen Titel, eine Legende, ein Raster, eine Kompassrose zur Richtungsangabe und einen Maßstab. 
 
@@ -76,7 +76,7 @@ In diesem Tutorial zeigen wir zwei Möglichkeiten, die Kartenansicht in das QGIS
 
 ![Karte als Bild speichern](media/export-map-canvas.png "Karte als Bild speichern")
 
-Bild 5.2: Exportieren der Karte
+Abbildung 5.2: Exportieren der Karte
 
 3. Klicken Sie auf **Speichern**. Die Karte in der wird als PDF- oder Bilddokument gespeichert.
 
@@ -103,7 +103,7 @@ Abbildung 5.5: Benennung des Drucklayouts
 
 ![Das Drucklayoutfenster](media/new-print-layout-window.png "Das Drucklayoutfenster")
 
-Bild 5.6: Das Drucklayoutfenster
+Abbildung 5.6: Das Drucklayoutfenster
 
 4. Sie werden feststellen, dass die Drucklayout-Leinwand leer ist. Um die gestylte Karte aus der QGIS-Leinwand hinzuzufügen, klicken Sie auf die Schaltfläche "Karte hinzufügen" ![](media/add_new_map_to_layout.png), klicken Sie mit der linken Maustaste und zeichnen Sie ein Rechteck in den weißen Bereich in der Mitte des Drucklayouts. Die Karte sollte nun hinzugefügt werden. Nun können Sie alle anderen Kartenelemente wie Titel, Legende, Raster usw. hinzufügen.
 
@@ -147,21 +147,21 @@ Nachdem die gestylte Karte zum Drucklayout hinzugefügt wurde, ist es nun an der
 
 ![Kartentitel hinzufügen](media/print-layout-with-title.png "Kartentitel hinzufügen")
 
-Bild 5.8: Kartentitel hinzufügen
+Abbildung 5.8: Kartentitel hinzufügen
 
 2. Als nächstes fügen wir die Legende und den Maßstab hinzu. Mit der Schaltfläche "Beschriftung hinzufügen" können Sie außerdem auch eine Übersicht über die Datenquellen hinzufügen. Bewegen Sie den Mauszeiger über die Schaltfläche auf der linken Seite des Drucklayouts und klicken Sie auf die gewünschte Schaltfläche. Führen Sie die gleichen Schritte wie in oben aus, um das Kartenelement zum Drucklayout hinzuzufügen. Sie können weitere Kartenelemente hinzufügen, aber achten Sie darauf, dass die Karte nicht zu unübersichtlich wird.
 
 ![Maßstab](media/scale-bar.png "Maßstab")
 
-Bild 5.9: Maßstab zur Karte hinzufügen
+Abbildung 5.9: Maßstab zur Karte hinzufügen
 
 ![Legende](media/legend.png "Legende")
 
-Bild 5.9: Legende zur Karte einfügen
+Abbildung 5.9: Legende zur Karte einfügen
 
 ![Datenquellen](media/attribution.png)
 
-Bild 5.10: Datenquellen zur Karte einfügen
+Abbildung 5.10: Datenquellen zur Karte einfügen
 
 3. Wenn das Kartenlayout zufriedenstellend ist, kann die Karte als pdf, png, jpeg oder svg exportiert werden. Alle Speicherfunktionen können über das Menü "Layout" aufgerufen werden.
 
@@ -173,7 +173,7 @@ Abbildung 5.10: Exportparameter
 
 ![Exportierte Karte als Bild](media/exported-map.png "Exportierte Karte als Bild")
 
-Bild 5.11: Exportierte Karte als Bild
+Abbildung 5.11: Exportierte Karte als Bild
 
 #### **Quizfragen**
 
@@ -197,11 +197,11 @@ Wenn Ihre Organisation gedruckte oder Online-Karten veröffentlicht, müssen Sie
 
 ![Abdeckungslayer](media/atlas-coverage.png "Abdeckungslayer")
 
-Bild 5.12: Abdeckungslayer
+Abbildung 5.12: Abdeckungslayer
 
 ![Attributtabelle](media/atlas-attr.png "Attributtabelle")
 
-Bild 5.13: Attributtabelle
+Abbildung 5.13: Attributtabelle
 
 1. Dieser Layer dient als Abdeckungslayer, was bedeutet, dass der QGIS-Atlas für jedes der Features in diesem Layer eine Karte erstellt. Insgesamt werden also 13 Karten erzeugt.
 
@@ -215,13 +215,13 @@ Abbildung 5.14: Atlas-Drucklayout
 
 ![Atlas-Generierung](media/generate-atlas.png "Atlas-Generierung")
 
-Bild 5.15: Atlas-Generierung
+Abbildung 5.15: Atlas-Generierung
 
 3. Der nächste Schritt ist die Auswahl des Abdeckungslayers; der Abdeckungslayer ist der Indexlayer, der zur Erstellung jeder Seite verwendet wird. Für jedes Merkmal im Abdeckungslayer wird eine Karte/Seite für den Atlas erzeugt. In unserem Fall wird bei Verwendung des Layers Landkreise_Sachsen eine Karte für jeden der 13 Landkreise erstellt. QGIS Atlas ändert dynamisch den Ansichtsausschnitt für jedes Feature im Abdeckungslayer. Sie können den Abdeckungslayer in den von Ihnen erstellten Karten ausblenden (d.h. der Abdeckungslayer wird im Drucklayout nicht sichtbar sein) und auswählen, wie die einzelnen Seiten Ihres Atlas benannt werden sollen. Sie können auch einige Filterungen und Sortierungen des Abdeckungslayers vornehmen, wenn Sie dies benötigen. Für das **Ergebnis** können Sie sich für eine einzelne Datei als Ausgabe entscheiden, indem Sie das Kontrollkästchen **Einzeldatei wenn möglich** aktivieren. Wenn das Häkchen nicht gesetzt ist, wird eine Datei pro Karte erzeugt.
 
 ![Abdeckungslayer auswählen](media/coverage-layer.png "Abdeckungslayer auswählen")
 
-Bild 5.16: Abdeckungslayer auswählen
+Abbildung 5.16: Abdeckungslayer auswählen
 
 4. Nachdem wir nun den Abdeckungslayer festgelegt haben, sollten wir dem Drucklayout mitteilen, dass es den Atlas verwenden soll, um den Umfang der Karten (auf der druckbaren Karte sichtbarer Bereich) zu steuern. Aktivieren Sie auf der Registerkarte **Elementeigenschaften** das Kontrollkästchen für **Gesteuert durch Atlas**.
 
