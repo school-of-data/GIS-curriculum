@@ -5,7 +5,7 @@
     - Bangladesh *(module 0-2)*
     - Brazil *(module 0-7)*
     - Germany *(module 0-10)*
-    - India *(module 0-7)*
+    - India *(module 0-10)*
     - Mexico *(module 0-2)*
     - Philippines *(module 0-10)*
     - Sri Lanka *(module 0-10)*
@@ -16,7 +16,6 @@
     - Bangladesh *(module 3-10)*
     - Ethiopia *(module 0-10)*
     - Ghana *(module 0-10)*
-    - India *(module 8-10)*
     - Kenya *(module 0-10)*
     - Mexico *(module 3-7)*
     - Nigeria *(module 0-10)*
@@ -39,9 +38,9 @@
 
 **T: For translation** - translation (and localisation) still needed
 
-**COMPLETE: 66/176, 37.5%**
+**COMPLETE: 68/176, 38.6%**
 
-**LOCALISATION: 91/176, 51.7%**
+**LOCALISATION: 89/176, 50.6%**
 
 **TRANSLATION + LOCALISATION: 19/176, 10.8%**
 
@@ -55,7 +54,7 @@
 | **Ethiopia**     |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Germany**      |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **Ghana**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
-| **India**        |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     L    |     L    |     L     |
+| **India**        |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **Kenya**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Mexico**       |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L    |     L    |     T, L    |     T, L    |     T, L     |
 | **Nigeria**      |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
