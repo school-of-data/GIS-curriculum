@@ -4,6 +4,7 @@
 - [**Argentina**](argentina/)
 - [**Bangladesh** (in English)](bangladesh/)
 - [**Brazil**](brazil/)
+- [**Egypt**](egypt/)
 - [**Germany**](germany/)
 - [**India** (in English)](india/)
 - [**Mexico**](mexico/)
