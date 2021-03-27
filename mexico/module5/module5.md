@@ -2,8 +2,6 @@
 
 **Autor:** Ketty, Ben Hur
 
-**Traductora**: Malena
-
 ## Introducción Pedagógica
 
 Este módulo le proporcionará una descripción general de los pasos comunes necesarios para completar un mapa en QGIS. Al final del módulo, los participantes conocerán los siguientes conceptos;
@@ -23,10 +21,11 @@ Además, habrá aprendido las siguientes habilidades;
 *   Computadora de trabajo
 *   Acceso a Internet
 *   QGIS 3.16 o posterior
-*   Capa límite administrativa de Santa Fe, Argentina (dentro del modulo5.gpkg)
-*   Clínicas de Santa Fe, Argentina (dentro del modulo5.gpkg)
-*   Provincias de Argentina (dentro del modulo5.gpkg)
-*   Capa de asentamiento de alta resolución de Santa Fe, Argentina
+*   Capa límite administrativa de Jalisco, México (dentro del modulo5.gpkg)
+*   Clínicas de Jalisco, México (dentro del modulo5.gpkg)
+*   Provincias de México (dentro del modulo5.gpkg)
+*   Capa de asentamiento de alta resolución de Jalisco, México
+
 
 ## Prerrequisitos
 
@@ -45,7 +44,11 @@ Además, habrá aprendido las siguientes habilidades;
 
 Comencemos con un ejemplo:
 
-Para hacer un mapa, necesitará un tema que tal vez desee comprender mejor, por ejemplo, 'Distribución espacial de hospitales en la provincia de Santa Fe, Argentina. Notará que el tema proporciona tanto un tema para explorar como la ubicación geográfica. Armado con esta información y los datos relevantes que le permiten explorar más la pregunta, puede proceder a hacer un mapa.
+Para hacer un mapa, necesitará un tema que tal vez desee comprender mejor, por ejemplo, 'Distribución espacial de hospitales en la Estado de Jalisco, México. Notará que el tema proporciona tanto un tema para explorar como la ubicación geográfica. Armado con esta información y los datos relevantes que le permiten explorar más la pregunta, puede proceder a hacer un mapa.
+
+Comencemos con un ejemplo:
+Para hacer un mapa, necesitará un tema que tal vez desee comprender mejor, por ejemplo, 'Distribución espacial de clínicas en el Estado de Jalisco, México. Notará que el tema proporciona tanto un tema para explorar como la ubicación geográfica. Armado con esta información y los datos relevantes que le permiten explorar más la pregunta, puede proceder a hacer un mapa.
+
 
 ### Desglose de los conceptos
 
@@ -87,13 +90,13 @@ Figura 5.3: Lienzo del mapa exportado como imagen
 
 #### **Segundo método: Exportar el lienzo del mapa al diseño de impresión**
 
-1. En este tutorial, crearemos un mapa que muestre 1.) la ubicación de los centros de salud y 2.) la densidad de población de la provincia de Santa Fe, Argentina. Las capas de datos ya deberían estar agregadas al lienzo de QGIS. A continuación, se pueden aplicar estilos a las capas para comunicar información en sus datos.
+1. En este tutorial, crearemos un mapa que muestre 1.) la ubicación de los centros de salud y 2.) la densidad de población de la Estado de Jalisco, México. Las capas de datos ya deberían estar agregadas al lienzo de QGIS. A continuación, se pueden aplicar estilos a las capas para comunicar información en sus datos.
 
 ![Creating new Print Layout](media/new-print-layout.png "Creating new Print Layout")
 
 Figura 5.4: Creación de un nuevo diseño de impresión
 
-2. El lienzo del mapa ahora se puede exportar al diseño de impresión. Haga clic en el "botón de nuevo diseño de diseño de impresión" ![New Print Layout](media/newprint_composer.png "New Print Layout"). Se puede acceder a esto a través de la barra de herramientas. Alternativamente, acceda usando la barra de menú 'Proyectos'. Se abrirá un cuadro de diálogo de título que le pedirá que escriba el título del Diseño de impresión. Escriba 'Santa Fe' y haga clic en Aceptar.
+2. El lienzo del mapa ahora se puede exportar al diseño de impresión. Haga clic en el "botón de nuevo diseño de diseño de impresión" ![New Print Layout](media/newprint_composer.png "New Print Layout"). Se puede acceder a esto a través de la barra de herramientas. Alternativamente, acceda usando la barra de menú 'Proyectos'. Se abrirá un cuadro de diálogo de título que le pedirá que escriba el título del Diseño de impresión. Escriba 'Jalisco' y haga clic en Aceptar.
 
 ![Naming the Print Layout](media/new-print-layout-name.png "Naming the Print Layout")
 
@@ -200,7 +203,7 @@ Figura 5.11: Mapa exportado como imagen
 
 #### **Contenido / Tutorial**
 
-Si su organización publica mapas impresos o en línea, a menudo necesitará crear muchos mapas con la misma plantilla, generalmente uno para cada unidad administrativa o región de interés. La creación manual de estos mapas puede llevar mucho tiempo y si desea actualizarlos de forma regular, puede convertirse en una tarea ardua. QGIS tiene una herramienta llamada Atlas que puede ayudarle a crear una plantilla de mapa y publicar fácilmente una gran cantidad de mapas para diferentes regiones geográficas. Tomaremos las diferentes provincias de Argentina como ejemplo, aquí están los límites administrativos para las 24 provincias;
+Si su organización publica mapas impresos o en línea, a menudo necesitará crear muchos mapas con la misma plantilla, generalmente uno para cada unidad administrativa o región de interés. La creación manual de estos mapas puede llevar mucho tiempo y si desea actualizarlos de forma regular, puede convertirse en una tarea ardua. QGIS tiene una herramienta llamada Atlas que puede ayudarle a crear una plantilla de mapa y publicar fácilmente una gran cantidad de mapas para diferentes regiones geográficas. Tomaremos las diferentes Estados de México como ejemplo, aquí están los límites administrativos para las 32 Estados;
 
 ![Coverage layer](media/atlas-coverage.png "Coverage layer")
 
@@ -210,7 +213,7 @@ Figura 5.12: Capa de cobertura
 
 Figura 5.13: Tabla de atributos
 
-1. Esta capa servirá como capa de cobertura, lo que significa que QGIS Atlas hará 1 mapa para cada una de las características en esta capa de cobertura. En total, se generarán 24 mapas.
+1. Esta capa servirá como capa de cobertura, lo que significa que QGIS Atlas hará 1 mapa para cada una de las características en esta capa de cobertura. En total, se generarán 32 mapas.
 
 2. Abra o cree un nuevo diseño de impresión y agregue un mapa.
 
@@ -225,7 +228,7 @@ Figura 5.14: Diseño de impresión Atlas
 
 Figura 5.15: Generación de Atlas
 
-4. El siguiente paso es elegir la capa de cobertura; La capa de cobertura es la capa de índice utilizada para crear cada página. Se generará un mapa / página para el Atlas para cada característica en la capa de cobertura. En nuestro caso, el uso de la capa de cobertura provincias_argentinas creará un mapa para cada una de las 81 provincias. QGIS Atlas cambia dinámicamente la extensión de la vista de cada característica en la capa de cobertura. Puede optar por ocultar la capa de cobertura en los mapas que cree (es decir, la capa de cobertura no será visible en el Diseño de impresión) y seleccionar el nombre de cada página de su Atlas. También puede realizar algún filtrado y clasificación de la capa de cobertura si es necesario. Para la Salida, puede optar por tener un solo archivo como salida marcando la casilla de verificación Exportar archivo Singe cuando sea posible. Si no está marcado, generará 1 archivo por mapa.
+4. El siguiente paso es elegir la capa de cobertura; La capa de cobertura es la capa de índice utilizada para crear cada página. Se generará un mapa / página para el Atlas para cada característica en la capa de cobertura. En nuestro caso, el uso de la capa de cobertura Estados_argentinas creará un mapa para cada una de las 32 Estados. QGIS Atlas cambia dinámicamente la extensión de la vista de cada característica en la capa de cobertura. Puede optar por ocultar la capa de cobertura en los mapas que cree (es decir, la capa de cobertura no será visible en el Diseño de impresión) y seleccionar el nombre de cada página de su Atlas. También puede realizar algún filtrado y clasificación de la capa de cobertura si es necesario. Para la Salida, puede optar por tener un solo archivo como salida marcando la casilla de verificación Exportar archivo Singe cuando sea posible. Si no está marcado, generará 1 archivo por mapa.
 
 ![Select Coverage Layer](media/coverage-layer.png "Select Coverage Layer")
 
@@ -244,13 +247,13 @@ Figura 5.17: Asegúrese de que la extensión del mapa esté controlada por el At
 
 Figura 5.18: Vista previa de Atlas
 
-7. Puede exportar los mapas de Atlas mediante el botón Exportar Atlas, ![Export Atlas button](media/atlas-export-btn.png "Export Atlas button") ya sea como imágenes o PDF. Seleccione Exportar Atlas como imagen. Debería tener 24 mapas generados donde cada mapa muestra la extensión de la provincia.
+7. Puede exportar los mapas de Atlas mediante el botón Exportar Atlas, ![Export Atlas button](media/atlas-export-btn.png "Export Atlas button") ya sea como imágenes o PDF. Seleccione Exportar Atlas como imagen. Debería tener 32 mapas generados donde cada mapa muestra la extensión de la Estado.
 
 ![Atlas Outputs](media/atlas-outputs.png "Atlas Outputs")
 
 Figura 5.18: Resultados de Atlas
 
-8. **SUGERENCIA**: Para este ejemplo, solo mapeamos la capa de cobertura. El poder del Atlas es cuando mapeamos varias capas. Por ejemplo, tenemos las clínicas, la red de carreteras y los datos de densidad de población de todo el país cargados como capas en QGIS. Luego, querríamos crear un mapa para cada una de las provincias que muestre estas mismas capas. El uso del Atlas nos obligaría a crear solo una plantilla de diseño y dejar que Atlas maneje la generación de los otros mapas en función de la capa de cobertura que utilicemos.
+8. **SUGERENCIA**: Para este ejemplo, solo mapeamos la capa de cobertura. El poder del Atlas es cuando mapeamos varias capas. Por ejemplo, tenemos las clínicas, la red de carreteras y los datos de densidad de población de todo el país cargados como capas en QGIS. Luego, querríamos crear un mapa para cada una de las Estados que muestre estas mismas capas. El uso del Atlas nos obligaría a crear solo una plantilla de diseño y dejar que Atlas maneje la generación de los otros mapas en función de la capa de cobertura que utilicemos.
 
 9. **SUGERENCIA**: Puede usar las expresiones QGIS y las anulaciones definidas por datos para configurar los otros elementos del mapa en su Atlas para que también cambien dinámicamente según la característica de la capa de cobertura que se está mapeando. Por ejemplo, puede usar una expresión QGIS que llame al valor del campo nam en su etiqueta para que cambie dinámicamente al valor de nam para la característica actual que se está mapeando.
 

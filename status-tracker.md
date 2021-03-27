@@ -42,16 +42,16 @@
 
 **T: For translation** - translation (and localisation) still needed
 
-**COMPLETE: 68/176, 38.6%**
+**COMPLETE: 69/176, 39.2%**
 
-**LOCALISATION: 89/176, 50.6%**
+**LOCALISATION: 88/176, 50.0%**
 
 **TRANSLATION + LOCALISATION: 19/176, 10.8%**
 
 |        | Module 0 | Module 1 | Module 2 | Module 3 | Module 4 | Module 5 | Module 6 | Module 7 | Module 8 | Module 9 | Module 10 |
 |--------------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:---------:|
 | **Australia**    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
-| **Argentina**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     L    |     L    |     T, L    |     T, L    |     T, L     |
+| **Argentina**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     T, L    |     T, L    |     T, L     |
 | **Bangladesh**   |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Brazil**       |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |   L   |   T, L   |    T, L   |
 | **Egypt**        |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |    T, L   |
@@ -60,7 +60,7 @@
 | **Ghana**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **India**        |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **Kenya**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
-| **Mexico**       |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L    |     L    |     T, L    |     T, L    |     T, L     |
+| **Mexico**       |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     T, L    |     T, L    |     T, L     |
 | **Nigeria**      |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Philippines**  |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **South Africa** |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
