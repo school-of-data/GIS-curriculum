@@ -26,10 +26,10 @@ Utilizará la calculadora de campo y el motor de expresión qgis para ejecutar o
 *   Computadora de trabajo
 *   Conexión a Internet
 *   QGIS 3.16 y superior
-*   Capa límite administrativa de Pampanga (dentro del [módulo6.gpkg](https://github.com/school-of-data/GIS-curriculum/blob/main/philippines/module6/data/module6.gpkg))
-*   Clínicas de Pampanga (dentro del [módulo6.gpkg](https://github.com/school-of-data/GIS-curriculum/blob/main/philippines/module6/data/module6.gpkg))
-*   Provincias de PHL (dentro del [módulo6.gpkg](https://github.com/school-of-data/GIS-curriculum/blob/main/philippines/module6/data/module6.gpkg))
-*   [Capa de asentamiento de alta resolución de Pampanga](https://github.com/school-of-data/GIS-curriculum/blob/main/philippines/module6/data/HRSL_Pampanga_Population.tif)
+*   Capa límite administrativa de Santa Fe, Argentina (dentro del modulo6.gpkg)
+*   Hospitales de Santa Fe, Argentina (dentro del modulo6.gpkg)
+*   Provincias de Argentina (dentro del modulo6.gpkg)
+*   Capa de asentamiento de alta resolución de Santa Fe, Argentina
 
 
 ## Prerrequisitos
@@ -127,7 +127,7 @@ Si no desea que la tabla de atributos sea una ventana flotante, sino que se acop
 
 Figura 6.3: Tabla de atributos acoplados
 
-3. Para los cálculos de área, el Sistema de referencia de coordenadas debe ser proyectado. Esto le permite calcular las distancias correctamente. Recuerde, nuestro interés es calcular automáticamente el área para cada una de las 81 provincias. Verifique el Sistema de referencia de coordenadas de la capa vectorial. Si se trata de un sistema de referencia de coordenadas geográficas, vuelva a proyectar la capa a un sistema de coordenadas proyectadas. Consulte las diferentes proyecciones en el [EPSG](https://epsg.io/?q=Philippines%20kind%3APROJCRS) sitio web de. Esto es Filipinas, usaremos [PRS92 / Filipinas Zona 3](https://epsg.io/3123), EPSG: 3123. De los módulos anteriores donde las proyecciones de mapas se discuten ampliamente, es posible que ya sepa que las proyecciones de mapas se aplican en relación con una ubicación determinada en la tierra.
+3.  Para los cálculos de área, el Sistema de referencia de coordenadas debe ser proyectado. Esto le permite calcular las distancias correctamente. Recuerde, nuestro interés es calcular automáticamente el área para cada una de las 24 provincias. Verifique el Sistema de referencia de coordenadas de la capa vectorial. Si se trata de un sistema de referencia de coordenadas geográficas, vuelva a proyectar la capa a un sistema de coordenadas proyectadas. Consulte las diferentes proyecciones en el sitio web de [EPSG](https://epsg.io). Esto es Argentina, usaremos POSGAR 2007 / Argentina[ Zona 3](https://epsg.io/5345), EPSG: 5345. De los módulos anteriores donde las proyecciones de mapas se discuten ampliamente, es posible que ya sepa que las proyecciones de mapas se aplican en relación con una ubicación determinada en la tierra.
 
 4. Verifique la configuración del proyecto; Vaya a: **Proyecto ‣ Propiedades Propiedades ‣ General**.
 
@@ -138,7 +138,7 @@ Figura 6.4: Configuración general
 5. A continuación, haga clic en el  botón![alt_text](media/field_calculator.png "image_tooltip") Abrir calculadora de campo en la barra de herramientas de atributos para abrir la calculadora de campo. Se abrirá el diálogo de la calculadora de campo; complete el nombre del campo de salida, en este caso será 'AREA (SQ KM)'. Elija el número decimal (doble) en el tipo de campo de salida. Cambie la precisión a 2 lugares decimales. Para calcular el área, use la siguiente expresión:
 
 ```
-$ área / 1000000
+$area / 1000000
 ```
 
 Puede encontrar esta expresión en **Geometría**. Haga clic en Aceptar y calculará automáticamente el área de cada polígono. Tenga en cuenta que el cálculo del área depende del sistema de referencia de coordenadas utilizado, por lo que puede obtener resultados diferentes según el CRS que utilizó. También puede buscar y encontrar información sobre expresiones en el lado derecho de la Calculadora de campo o el Generador de expresiones.
@@ -233,8 +233,8 @@ El desarrollo de una expresión funcional comienza con la comprensión de sus da
 
 El diálogo Generador de expresiones ofrece acceso a la:
 
-*   Pestaña Expresión	 ([https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions- list](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions-list)) que, gracias a una lista de funciones predefinidas, ayuda a escribir y comprobar la expresión a utilizar;
-*   Pestaña Editor de funciones	 ([https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor)) que ayuda a ampliar la lista de funciones mediante la creación de funciones personalizadas.
+*   Pestaña Expresión	 ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#functions- list](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#functions-list)) que, gracias a una lista de funciones predefinidas, ayuda a escribir y comprobar la expresión a utilizar;
+*   Pestaña Editor de funciones	 ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#function-editor](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#function-editor)) que ayuda a ampliar la lista de funciones mediante la creación de funciones personalizadas.
 
 #### **Contenido / Tutorial**
 
