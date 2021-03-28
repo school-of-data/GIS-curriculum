@@ -48,7 +48,7 @@ Let’s start with an example:
 
 To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Colombo district in Sri Lanka. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
 
-Breakdown of the concepts
+## Breakdown of the concepts
 
 This module will focus on the following key map making concepts; map canvas and related layers, the print layout and map elements and properties. First, here are short definitions on each; 
 
@@ -153,15 +153,15 @@ Figure 5.8: Add title of the map
 
 ![Scale bar](media/scale-bar.png "Scale bar")
 
-Figure 5.9: Add scale bar to the map
+Figure 5.9a: Add scale bar to the map
 
 ![Legend](media/legend.png "Legend")
 
-Figure 5.9: Add legend to the map
+Figure 5.9b: Add legend to the map
 
 ![Attribution](media/attribution.png "Attribution")
 
-Figure 5.10: Add attribution to the map
+Figure 5.9c: Add attribution to the map
 
 3. If the map layout is satisfactory, the map can be exported as a pdf, png, jpeg or svg, ready for printing otherwise save the layout. All saving functionality can be accessed via the ‘layout’ menu.
 
@@ -180,7 +180,6 @@ Figure 5.11: Exported map as imgage
 1.  Under which of the following tabs can you change the properties of map elements? (radio button)
 2. What’s the difference between the print layout and print layout
 3. How can you add attribution text to the map layout
-
 
 #### **Quiz answers**
 
