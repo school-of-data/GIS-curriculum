@@ -42,11 +42,11 @@
 
 **T: For translation** - translation (and localisation) still needed
 
-**COMPLETE: 69/176, 39.2%**
+**COMPLETE: 78/176, 44%**
 
-**LOCALISATION: 88/176, 50.0%**
+**LOCALISATION: 80/176, 46%**
 
-**TRANSLATION + LOCALISATION: 19/176, 10.8%**
+**TRANSLATION + LOCALISATION: 18/176, 10%**
 
 |        | Module 0 | Module 1 | Module 2 | Module 3 | Module 4 | Module 5 | Module 6 | Module 7 | Module 8 | Module 9 | Module 10 |
 |--------------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:---------:|
@@ -54,7 +54,7 @@
 | **Argentina**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     T, L    |     T, L    |     T, L     |
 | **Bangladesh**   |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Brazil**       |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |   L   |   T, L   |    T, L   |
-| **Egypt**        |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |   T, L   |    T, L   |
+| **Egypt**        |   **C**   |   **C**   |   **C**   |   **C**   |   L   |   L   |   L   |   L   |   L   |   L   |    L   |
 | **Ethiopia**     |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Germany**      |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **Ghana**        |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |

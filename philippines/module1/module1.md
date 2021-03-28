@@ -228,7 +228,7 @@ QGIS plugins can be classified as:
 Plugins can be installed in three (3) ways:
 
 1. Via the Manage and Install Plugins Dialog (**Plugins ‣ Manage and Install Plugins**)
-2. Installing from ZIP which can be accessed under the** Install from ZIP** tab in the Manage and Install Plugins dialog.
+2. Installing from ZIP which can be accessed under the **Install from ZIP** tab in the Manage and Install Plugins dialog.
 3. Manually adding the source code in your QGIS profile’s plugins folder. This folder can usually be found at: 
     1. **Linux**: .local/share/QGIS/QGIS3/profiles/default/python/plugins
     2. **Mac OS X**: Library/Application/Support/QGIS/QGIS3/profiles/default/python/plugins

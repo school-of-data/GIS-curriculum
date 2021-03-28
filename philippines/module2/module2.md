@@ -144,8 +144,7 @@ Figure 2.2. The Browser Panel
 
 3. Notice how the drives and folders can be expanded to show the subfolders inside them.
 4. Locate the **Module 2 - Layers in QGIS** folder (Figure 2.3) in the file tree (note where you saved or downloaded the file). You should be able to see the necessary data for this workbook. In my example on the right, I linked the aforementioned folder as one of my Favorites so I can easily go to it from the Browser Panel. You can add a favorite directory to the Browser Panel by right-clicking on Favorites and adding the directory.
-5. Check the files inside the folder (Figure 2.3). There are several of them. From the file tree itself, we can already get an idea of the files and layers that we can load in QGIS. The icons on the left of the names indicate whether the data is a vector ![Vector symbol](media/symbol-vector.png "Vector symbol")
-, a raster ![Raster symbol](media/symbol-raster.png "Raster symbol"), a database ![Database symbol](media/symbol-db.png "Database symbol"), or simple tabular data ![Table symbol](media/symbol-table.png "Table symbol"). 
+5. Check the files inside the folder (Figure 2.3). There are several of them. From the file tree itself, we can already get an idea of the files and layers that we can load in QGIS. The icons on the left of the names indicate whether the data is a vector ![Vector symbol](media/symbol-vector.png "Vector symbol"), a raster ![Raster symbol](media/symbol-raster.png "Raster symbol"), a database ![Database symbol](media/symbol-db.png "Database symbol"), or simple tabular data ![Table symbol](media/symbol-table.png "Table symbol"). 
 
 
 ![Module 2 files in the Browser Panel](media/qgis-browser-2.png "Module 2 files in the Browser Panel")
