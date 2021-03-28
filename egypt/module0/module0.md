@@ -249,7 +249,7 @@ Figure 3.   Tissot’s indicatrix  إسقاط خرائطي مطابق باستخ
 
 ![Equal-area map projection](media/authalic.png "Equal-area map projection")
 
-Figure 4. Tissot’s indicatrixإسقاط خرائطي ذو مساحة متساوية مع مؤشر  
+Figure 4. Tissot’s indicatrix إسقاط خرائطي ذو مساحة متساوية مع مؤشر  
 
 .تصبح الدوائر أشكال بيضاوية ولكن مساحتها تظل كما هي.
 
