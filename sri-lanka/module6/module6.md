@@ -57,7 +57,6 @@ Much of the work you do when making a map involves working with layer attributes
 
 The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.Specifically, there are two new field properties that describe the values contained in a field;
 
-
 *   **Field description** –  a few words, a sentence, or a paragraph of text that describes the values in the field. 
 *   **Field value type** – a keyword that categorizes the type of values contained in the field. The keyword helps people understand how to use the values and allows QGIS and other client applications to make smarter suggestions for working with them, for example, the values types in the field may be integer, string, boolean, double or floating point
 
@@ -116,7 +115,6 @@ The attribute table displays information on features of a selected layer. Each r
 
 Figure 6.1: Several polygons
 
-
 2. The next step is to explore the attribute table interface. Open the attribute table by **Right-clicking on the layer on the Layers Panel ‣ Open Attribute Table**. You can also click the **Open Attribute Table button** ![Open attribute table button](media/open-attribute-btn.png "Open attribute table button") from the Attributes Toolbar. This is what the attribute table looks like. The tool bar has a range of buttons, hover over each button to see the embedded functionality.
 
 ![Open attribute table](media/attribute-tab.png "Open attribute table")
@@ -144,7 +142,7 @@ Figure 6.4: General settings
 $area / 1000000
 ```
 
- You can find this expression under **Geometry**. Click OK and it will automatically calculate the area for each polygon. Take note that the area computation is dependent on the coordinate reference system used so you may have different results depending on what CRS you used. You can also search and find information about expressions on the right side of the Field Calculator or Expression Builder.
+You can find this expression under **Geometry**. Click OK and it will automatically calculate the area for each polygon. Take note that the area computation is dependent on the coordinate reference system used so you may have different results depending on what CRS you used. You can also search and find information about expressions on the right side of the Field Calculator or Expression Builder.
 
 ![Field calculator dialogue](media/fieldcalc.png "Field calculator dialogue")
 
@@ -212,7 +210,6 @@ Figure 6.9: Selected clinic/feature is highlighted (yellow)
 ![alt_text](media/selected-attr.png "image_tooltip")
 
 Figure 6.10: Selected clinic/feature is highlighted (blue)
-
 
 It’s also possible to make selections by clicking a feature  within the map canvas. 
 
