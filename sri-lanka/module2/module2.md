@@ -589,6 +589,7 @@ When you are prompted that the file already exists, select Add New Layer.
 
 9. Add a virtual layer by clicking ![Add virtual layer symbol](media/symbol-virtual.png "Add virtual layer symbol") in the Data Source Manager toolbar.
 10. Set Layer name to Tree Canopy. Import Trees. Add the following query: 
+
 ```
 select fid, buffer(geometry, radius), species from Trees
 ```
