@@ -3,7 +3,7 @@
 الوحدة 6 - سمات الطبقة
 </h1>
 
-المؤلفة: Ketty, Ben Hur
+المؤلفة: Ketty, Ben Hur, Ali, Samah
 
 <h2>
 مقدمة تعليمية
