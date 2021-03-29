@@ -113,7 +113,7 @@ Bảng thuộc tính hiển thị thông tin của các đối tượng của la
 
 1. Tải lớp ranh giới hành chính Việt Nam trong QGIS (trong [module6.gpkg](data/module6.gpkg)). Bạn có thể xem số lượng đối tượng của layer bằng cách **Kích chuột phải vào layer trong Layers Panel - Show Feature Count**. Bạn có thể thấy trong hình bên dưới, vector layer có nhiều đối tượng, Tổng cộng có 63 đối tượng tương ứng với 63 tỉnh thành.
 
-![Several polygons](media/many-polygons.png "Several polygons")
+![Số lượng polygon của vector layer](media/many-polygons.png "Số lượng polygon của vector layer")
 
 Hình 6.1: Số lượng polygon của vector layer
 
