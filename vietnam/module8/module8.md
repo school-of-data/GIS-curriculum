@@ -767,9 +767,9 @@ Bây giờ, hãy làm tương tự cho lớp sông - waterways, sau đó lưu la
 Hình 8.39 -  Phân bố không gian của các ô 10x10 km theo tổng chiều dài sông
 
 
-3. Tổng số công trình công cộng (schools, kindergartens, hospitals , town halls,...) ứng với mỗi ô
+3. Tổng số công trình công cộng (schools, kindergartens, hospitals, town halls,...) ứng với mỗi ô
 
-Để biết tổng số công trình công cộng trong mỗi ô 10x10 km, chúng ta sẽ sử dụng pois_cleaned layer. Đầu tiên, truy cập **Vector ‣ Analysis Tools ‣ List unique values..** và xác định toà nhà nào là công trình công cộng. Chúng ta sẽ chọn các đối tượng sau từ lớp pois_cleaned:  `"fclass" = 'town_hall' or "fclass" = 'kindergarten' or "fclass" = 'hospital' or "fclass" = 'doctors' or "fclass" = 'fire_station' or "fclass" = 'community_centre' or "fclass" = 'stadium' or "fclass" = 'museum' or "fclass" = 'school' or "fclass" = 'theatre'`. Đơn giản hơn, chỉ cần gõ  `"fclass" in ('town_hall', 'kindegarten', 'hospital', 'doctors', 'fire_station', 'community_centre', 'stadium', 'museum', 'school', 'theatre')`. Kết quả là có 624 đối tượng thoả điều kiện chọn.
+Để biết tổng số công trình công cộng trong mỗi ô 10x10 km, chúng ta sẽ sử dụng pois_cleaned layer. Đầu tiên, sử dụng **Select by Expression** để xác định toà nhà nào là công trình công cộng. Chúng ta sẽ chọn các đối tượng sau từ lớp pois_cleaned:  `"fclass" = 'town_hall' or "fclass" = 'kindergarten' or "fclass" = 'hospital' or "fclass" = 'doctors' or "fclass" = 'fire_station' or "fclass" = 'community_centre' or "fclass" = 'stadium' or "fclass" = 'museum' or "fclass" = 'school' or "fclass" = 'theatre'`. Đơn giản hơn, chỉ cần gõ  `"fclass" in ('town_hall', 'kindegarten', 'hospital', 'doctors', 'fire_station', 'community_centre', 'stadium', 'museum', 'school', 'theatre')`. Kết quả là có 624 đối tượng thoả điều kiện chọn.
 
 
 ![Chọn các công trình công cộng từ lớp POI](media/fig840_a.png "Chọn các công trình công cộng từ lớp POI")

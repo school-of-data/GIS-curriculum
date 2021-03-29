@@ -7,7 +7,6 @@
 
 ## Giới thiệu chung
 
-This module will teach you the basic concepts of layers in QGIS and how to load them. At the end of this module, learners should be familiar with:
 Modulue này sẽ hướng dẫn các khái niệm cơ bản của các lớp dữ liệu trong QGIS và cách tải các lớp dữ liệu này. Kết thúc Module này, người học sẽ làm quen với:
 
 *   Các nguồn dữ liệu và định dạng dữ liệu khác nhau có thể tải trong QGIS.
@@ -18,7 +17,7 @@ Modulue này sẽ hướng dẫn các khái niệm cơ bản của các lớp d�
 Người học cũng có thể:
 
 *   Tải các lớp dữ liệu (cả vector và raster) sử dụng Browser Panel và Data Source Manager.
-*   connect QGIS to remote services
+*   Kết nối các dịch vụ dữ liệu từ xa
 *   Làm việc với lớp dữ liệu tạm (temporary layer) và lớp dữ liệu ảo (virtual layer).
 *   Cài đặt một số plugin để tải các tập dữ liệu khác trong QGIS.
 *   Hiển thị các thuộc tính của lớp như thông tin siêu dữ liệu (metadata).
@@ -37,7 +36,7 @@ Các công cụ và tài nguyên cần thiết cho module này gồm:
 ## Yêu cầu về kỹ năng
 
 *   Kiến thức cơ bản về vận hành máy tính.
-*   Quen thuộc với các khuôn dạng dữ liệu không gian và giao diện QGIS (hoàn thành Module 0 và 1).*   
+*   Quen thuộc với các khuôn dạng dữ liệu không gian và giao diện QGIS (hoàn thành Module 0 và 1)   
 
 
 ## Tài liệu tham khảo
@@ -75,7 +74,7 @@ Ngoài các mô hình dữ liệu không gian (raster và vector) đã được 
 
 Hầu hết những người mới tiếp cận GIS thường được giới thiệu về dữ liệu không gian thông qua shapefile. Hầu hết mọi người không bao giờ vượt quá điều này và sử dụng shapefile cho tất cả các loại và dạng của dữ liệu vector. Điều này tương tự như cách một thương hiệu như Coca Cola dần dần được sử dụng làm thuật ngữ chung cho nước ngọt. Điều này không hẳn là sai nhưng hơi đáng tiếc vì shapefile chỉ là một trong nhiều loại định dạng dữ liệu vector. Thực tế, trong một số trường hợp, có nhiều định dạng vector khác như geopackage, geojson, topojson và flatgeobuf. Định dạng shapefile, mặc dù phổ biến, nhưng có một số hạn chế đáng kể như:
 
-*   Nó không chỉ là 1 file. Một shapefile thực tế bao gồm một số file, trong đó có 3 file bắt buộc: .shp, .shx, .dbf. Các file khác là các file phụ.
+*   Shape file không chỉ là 1 file mà thực tế bao gồm nhiều file, trong đó có 3 file bắt buộc: .shp, .shx, .dbf. Các file khác là các file phụ.
 *   Giới hạn lưu trữ 2GB.
 *   Tên trường (cột) giới hạn trong 10 ký tự
 *   Số trường (cột) giới hạn trong 255 cột.
@@ -400,8 +399,8 @@ Các kết nối đến một tile server::
 3. Nhập các tham số kết nối:
 
 ```
-    Name: PGP Basemap
-    URL: https://basemapserver.geoportal.gov.ph/tiles/v2/PGP/{z}/{x}/{y}.png
+    Name: Map4D
+    URL: http://rtile.map4d.vn/all/2d/{z}/{x}/{y}.png
 ```
 4. Chọn OK.
 
@@ -409,17 +408,17 @@ Các kết nối đến một tile server::
 
 Hình 2.18. Thêm kết nối XYZ tile trong QGIS
 
-5. Kết quả sau khi PGP Basemap đã được thêm vào dưới mục XYZ Tiles trong Browser Panel.
+5. Kết quả sau khi Map4D đã được thêm vào dưới mục XYZ Tiles trong Browser Panel.
 
-![PGP Basemap Tile server được thêm vào Browser Panel](media/xyz-2.png "PGP Basemap Tile server được thêm vào Browser Panel")
+![Map4D được thêm vào Browser Panel](media/xyz-2.png "Map4D được thêm vào Browser Panel")
 
-Hình 2.19. PGP Basemap Tile server được thêm vào Browser Panel
+Hình 2.19. Map4D được thêm vào Browser Panel
 
 6. Bạn có thể tải XYZ tile layer theo cách tương tự các layer khác từ Browser Panel.
 
-![Veitbando Map layer được tải trong QGIS](media/xyz-3.png "Veitbando Map layer được tải trong QGIS")
+![Map4D được tải trong QGIS](media/xyz-3.png "Map4D được tải trong QGIS")
 
-Hình 2.20. Veitbando Map layer được tải trong QGIS
+Hình 2.20. Map4D được tải trong QGIS
 
 1. Thử tải thêm ESRI World Imagery layer.
 
