@@ -377,7 +377,7 @@ Figure 13. GeoPackage تحميل متجه داخل
 3. تحميل البيانات النقطية
     1. لتحميل البيانات النقطية، انتقل إلى علامة التبويب النقطية. يمكن تحميل الملفات والملفات البعيدة عبر بروتوكول مثل HTTP والسحابة وما إلى ذلك. هناك خطوط نقطية (SRTM) داخل حزمة geopackage Cairo. هذه البيانات النقطية هي نموذج ارتفاع رقمي لمنطقة القاهرة. لتحميله:
         1. نوع المصدر: ملف
-        2. المصدر: حدد حدد حزمة geopackage Cairo باستخدام الزر ![Search button](media/data-source-manager-search.png "Search button")
+        2. المصدر: حدد حزمة geopackage Cairo باستخدام الزر ![Search button](media/data-source-manager-search.png "Search button")
         3. انقر فوق إضافة
         4. إذا كان هناك أكثر من ملف نقطي داخل حزمة geopackage، فسوف يطلب منك QGIS تحديد الملفات المراد تحميلها
 
