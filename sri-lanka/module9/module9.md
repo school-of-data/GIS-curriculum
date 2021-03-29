@@ -42,13 +42,11 @@ By the end of this module, learners will have the basic understanding of the fol
 
 A raster is a regular matrix of values, as in figure 9.1.
 
-
 ![A matrix of values](media/fig91.png "A matrix of values")
 
 Figure 9.1 - A matrix of values
 
 Values can be assigned either to** grid points**, mostly to the centroids, and in this case the raster can be referred to as a lattice. The second option is for the values to be assigned to the whole of the **grid cell **- called pixels (see figure 9.2). For the first case, the raster usually represents a continuous field, such as elevation, temperature, precipitations, chemical concentrations etc. For the second case, when the values are assigned to the entire area of the pixel, the raster usually represents an image - a satellite image, a scanned map, converted vector maps (see Phase 2). It must be noted that this data model is not particularly efficient for networks and other types of data heavily dependent on lines, such as property boundaries. 
-
 
 ![On the left side, the values are assigned to centroids. On the right, values are assigned to the grid cell area - the pixel.](media/fig92.png "On the left side, the values are assigned to centroids. On the right, values are assigned to the grid cell area - the pixel.")
 
@@ -85,7 +83,6 @@ Remembering what are the 4 types of resolutions of a satellite imagery (raster w
 
 3. **Spectral resolution** - the sensors onboard of satellites or airplanes capture electromagnetic radiance coming from all objects on Earth - water, settlements, forests, roads, buildings, bare land etc. - and the sensors are specifically built to capture it at a given known spectral band (or wavelength). The human eye can see a very small part of the electromagnetic spectrum - the visible light (red, green and blue), but sensors can ‘see’ much more! (see figure 9.4)
 
-
 ![Electromagnetic spectrum (photo credit [NASA Science](https://science.nasa.gov/ems/01_intro))](media/fig94.png "Electromagnetic spectrum (photo credit [NASA Science](https://science.nasa.gov/ems/01_intro))")
 
 Figure 9.4 - Electromagnetic spectrum (photo credit NASA Science - [https://science.nasa.gov/ems/01_intro](https://science.nasa.gov/ems/01_intro))
@@ -97,7 +94,6 @@ Figure 9.4 - Electromagnetic spectrum (photo credit NASA Science - [https://scie
 A raster dataset contains one or more layers called bands. Each band stores another set of information on the area the raster covers. Each band has the exact same extent and coordinates, but not necessarily the same spatial resolution. Also, aside from the values stored, there are other key properties contained, such as: maximum, minimum and mean cell values and _histogram_ of cell values. 
 
 A **histogram** is an approximate representation of the distribution of numerical data (see figure 9.5), in other ways is a manner in which one can get a sense of the data at hand.
-
 
 ![Example of a histogram, where x is a raster layer](media/fig95.png "Example of a histogram, where x is a raster layer")
 
@@ -324,8 +320,6 @@ Tabel 1 Discrete_classification band value table
   </tr>
 </table>
 
-
-
 Tabel 2 forest_type band value table
 
 <table>
@@ -387,14 +381,11 @@ Tabel 2 forest_type band value table
   </tr>
 </table>
 
-
-
 To organize your layers better, group them by category, as follows: for the land cover 5 raster layers, make one group named Land Cover (in the Layers Panel, click on the Add Group button ![Add Group Button](media/add-group-btn.png "Add Group Button")). For the digital surface model, make one group named SRTM DEM. 
 
 Don’t forget to also add the boundary of the working area, district of Colombo, which is a vector dataset. 
 
 Your QGIS map window should look like in figure 9.6, maybe in slightly different colors. 
-
 
 ![Loaded raster datasets](media/fig96.png "Loaded raster datasets")
 
@@ -411,7 +402,6 @@ There are several ways to get information on the loaded layers in QGIS, some pro
 
 For layer HRSL_Colombo_Population, the information window would look like in figure 9.7. 
 
-
 ![Extracting basic metadata from a raster layer](media/fig97.png "Extracting basic metadata from a raster layer")
 
 Figure 9.7 - Extracting basic metadata from a raster layer
@@ -422,20 +412,17 @@ Thus, the first thing to do is to reproject all datasets we will work with in th
 
 Starting with the HRSL datasets, we go to **Raster ‣ Projections ‣ Warp (Reproject)** (see figure 9.8).
 
-
 ![Reproject functionality in QGIS](media/fig98.png "Reproject functionality in QGIS")
 
 Figure 9.8 - Reproject functionality in QGIS
 
 After selecting the Warp functionality, a new window will appear allowing the user to set the correct parameters (see figure 9.9a). 
 
-
 ![Warp (reproject) QGIS window](media/fig99_a.png "Warp (reproject) QGIS window")
 
 Figure 9.9a - Warp (reproject) QGIS window
 
 If you selected the output to be **[Save to temporary file]** then there will be a raster layer named `Reprojected` in the Layers Panel. This is a memory layer and you can rename this layer to Reprojected_HRSL_Colombo_Population and save it to make it persistent.
-
 
 ![Reprojected HRSL](media/fig99_b.png "Reprojected HRSL")
 
@@ -447,7 +434,6 @@ You will notice that unlike when you reprojected vector datasets, there is a new
 
 In this particular case, we want to reproject population data - numerical values and based on the selected resampling method (nearest neighbour),  the coordinate of each output pixel will be used to calculate a new value from close-by pixel values in the input layer (see figure 9.10). 
 
-
 ![Resample method - nearest neighbour](media/fig910.png "Resample method - nearest neighbour")
 
 Figure 9.10 - Resample method - nearest neighbour (photo credit: ILWIS documentation - [(http://spatial-analyst.net/ILWIS/htm/ilwisapp/resample_functionality.htm](http://spatial-analyst.net/ILWIS/htm/ilwisapp/resample_functionality.htm))
@@ -455,7 +441,6 @@ Figure 9.10 - Resample method - nearest neighbour (photo credit: ILWIS documenta
 Input pixels are represented by dashed black lines, coordinates of input pixels by black dots; output pixels are represented by red solid lines, coordinates of output pixels by red plus signs. The grey arrows indicate how output values are determined. It can be seen in figure 9.10, some values of the input map may be used twice in the output map, while other input values may not be used at all. That is why, although one of the fastest methods to resample,  it is not appropriate in our case, as we are working with numerical data - population data. This resampling method is suitable for categorical data - such as land cover values. 
 
 To reproject our population raster dataset, we will use the bilinear interpolation method to resample the pixel values (see figure 9.11).
-
 
 ![Resample method - bilinear](media/fig911.png "Resample method - bilinear")
 
@@ -467,24 +452,19 @@ We proceed in checking the CRS of the 5 land cover datasets that we have loaded 
 
 **Batch processing** is the ability of running repetitive processes on data, with minimum user interaction. Most QGIS functionalities have this option available and it can be activated in the process window by clicking the **Run Batch Process** button ![Run batch processe button](media/batch-btn.png "Run batch processe button") and switching to the Run batch process tab (see figure 9.12). 
 
-
 ![Batch processing tab on a QGIS functionality window](media/fig912.png "Batch processing tab on a QGIS functionality window")
 
 Figure 9.12 - Batch processing tab on a QGIS functionality window
 
-
 For the 5 land cover raster layers, we will use the batch processing and as resample method nearest neighbour. To add a new layer, click on the + pictogram. To automatically fill the CRS and resampling method parameters, click on autofill button on top of the corresponding columns and select `Fill down`. Rename the reprojected rasters by adding the EPSG code at the end of the name, for example LandCover2015, will become landCover2015_5235. Set your parameters as in figure 9.13: source CRS: EPSG: 3857, target CRS EPSG 5235, resampling method to use: nearest neighbour (we explained in the paragraph above why), nodata value for output bands: 255 (from the information window, we see the data type - yte - 8bit unsigned integer - which means that the maximum value can be 255), output resolution:100 m (as the initial land cover rasters). After setting all parameters, check the box in the left corner of the window - **Load layers on completion** and click **Run**. 
-
 
 ![Batch processing to reproject the land cover rasters](media/fig913_a.png "Batch processing to reproject the land cover rasters")
 
 Figure 9.13a - Batch processing to reproject the land cover rasters
 
-
 ![Autofill output names](media/fig913_b.png "Autofill output names")
 
 Figure 9.13b - Autofill output names
-
 
 ![Reprojected land cover rasters](media/fig913_c.png "Reprojected land cover rasters")
 
@@ -494,28 +474,23 @@ Next comes the digital surface model rasters. As one can observe, to cover our r
 
 Although we could use the wrap tool in batch mode to reproject all the DSM raster files, at a visual inspection, one can also notice that the delimitations between each tile is fairly visible, making it, at least, visually unattractive. What would be useful is to have a complete overview of the terrain, as a continuous phenomena - as it is, in fact - without artificial disruptions. To obtain that, we will use the GDAL merge tool, available in the Processing toolbar to merge all DSM rasters together. To open it, go to **Processing ‣ Toolbox** and in the search bar write **Merge** (see figure 9.14). Alternatively, you can search for Merge in the Locator Bar.
 
-
 ![Finding the GDAL merge tool in the Processing Toolbox](media/fig914.png "Finding the GDAL merge tool in the Processing Toolbox")
 
 Figure 9.14 - Finding the GDAL merge tool in the Processing Toolbox 
 
 In the merge window that opens, select the DSM raster files that we want to mosaic and click run. The result should look like in figure 9.15c. 
 
-
 ![Selecting the SRTM layers to merge](media/fig915_a.png "Selecting the SRTM layers to merge")
 
 Figure 9.15a - Selecting the SRTM layers to merge
-
 
 ![Parameters of the Merge processing algorithm](media/fig915_b.png "Parameters of the Merge processing algorithm")
 
 Figure 9.15b - Parameters of the Merge processing algorithm
 
-
 ![Mosaic of all DSM files corresponding to our work region](media/fig915_c.png "Mosaic of all DSM files corresponding to our work region")
 
 Figure 9.15c - Mosaic of all DSM files corresponding to our work region
-
 
 Now, we can proceed to reprojecting the mosaic - one file, instead of 6 files. Go to **Raster ‣ projection ‣ Wrap (reproject)** and set the known parameters: 
 
@@ -526,7 +501,6 @@ Now, we can proceed to reprojecting the mosaic - one file, instead of 6 files. G
 
 At his point, we should have all layers in the same CRS - EPSG 5235. 
 
-
 ![Reproject Merged raster](media/fig915_d.png "Reproject Merged raster")
 
 Figure 9.15d - Reproject Merged raster
@@ -534,13 +508,11 @@ Figure 9.15d - Reproject Merged raster
 
 We can do another check to make sure that all rasters we are working with are projected as well as getting any additional information on the data by running a batch process of Raster Information on all. To open the functionality window, go to **Raster ‣ Miscellaneous ‣ Raster Information**. Your batch processing raster information window should look as in figure 9.16. 
 
-
 ![Batch process to extract information in a separate HTML file for multiple raster layers](media/fig916.png "Batch process to extract information in a separate HTML file for multiple raster layers")
 
 Figure 9.16 - Batch process to extract information in a separate HTML file for multiple raster layers
 
 A raster information HTML file should look like below. A HTML file can be open with any text editor or web browser of your choice. 
-
 
 ```
         Driver: GTiff/GeoTIFF
@@ -634,11 +606,9 @@ A raster information HTML file should look like below. A HTML file can be open w
             STATISTICS_VALID_PERCENT=99.85
 ```
 
-
 After preparing the rasters by reprojecting them into the CRS we are working with and reading their metadata to better understand the files, it is time to delve in the actual data. To achieve that, we will calculate and interpret the histograms (see Breakdown of concepts section for details) of our rasters. 
 
 To calculate a histogram, select the raster layer you are interested in, open by double clicking the `Properties` dialog window and go to `Histogram` (see figure 9.17). 
-
 
 ![Histogram window](media/fig917.png "Histogram window")
 
@@ -650,13 +620,11 @@ After computing the histogram, we can see that the mouse turns into a loupe. It 
 
 To go back to full view, click left. 
 
-
 ![Zooming in on the DSM_mosaic_5235 computed histogram](media/fig918.png "Zooming in on the DSM_mosaic_5235 computed histogram")
 
 Figure 9.18 - Zooming in on the DSM_mosaic_5235 computed histogram
 
 More than just seeing the distribution of the numerical values of the pixels, the histogram allows the user to reclassify the values for visualisation of the raster. To do that use the 2 tools to pinpoint on the histogram the new min and max values (see figure 9.19). 
-
 
 ![Selecting min and max values to reclassify the raster](media/fig919.png "Selecting min and max values to reclassify the raster")
 
@@ -668,7 +636,6 @@ Even though the next tool we use is a plugin (see module 1 for plugin details), 
 
 Go to **Plugin ‣ Manage and Install Plugins** and search for the **Value Tool** plugin and click install. Afterwards, right click on the QGIS main window bar to open all available Panels and Toolbars in your QGIS installation and select the **Value Tool panel**. Check your QGIS interface to see where it opened.
 
-
 ![The Value Tool Panel](media/fig920.png "The Value Tool Panel")
 
 Figure 9.20 - The Value Tool Panel
@@ -676,7 +643,6 @@ Figure 9.20 - The Value Tool Panel
 The practicality of this tool resides in its simplicity of use, with just a few clicks, one can very easily extract value cells in the exact areas of interest. Furthermore, it allows this for all loaded raster layers. 
 
 The Value Tool has 3 tabs: Table, Graph, Options (see figure 9.21).
-
 
 ![Loaded value tool - highlight on first tab - Table](media/fig921.png "Loaded value tool - highlight on first tab - Table")
 
@@ -712,7 +678,6 @@ As you have noticed by now, the datasets we load into a GIS - in our case into Q
 
 To work only with raster layers that are relevant to our Colombo district, we will use the vector extent layer (Colombo_admin_boundary) to cut/clip all relevant raster layers. Go to **Raster ‣ Extraction ‣ Clip Raster by Mask Layer** (see figure 9.22). Similarly, you can search for Clip in the Processing Toolbar or the Locator bar.
 
-
 ![Using a vector mask to extract the raster data on a specific region](media/fig922.png "Using a vector mask to extract the raster data on a specific region")
 
 Figure 9.22 - Using a vector mask to extract the raster data on a specific region
@@ -734,7 +699,6 @@ The parameters setup are the following:
 
 If everything went smoothly, your QGIS main window should look like in figure 9.24. 
 
-
 ![Raster layers clipped by Colombo district contour](media/fig924.png "Raster layers clipped by Colombo district contour")
 
 Figure 9.24 - Raster layers clipped by Colombo district contour.  
@@ -750,7 +714,6 @@ Now, imagine that you have to present a report on where most people are living b
 
 Using your knowledge acquired in module 4, you can style the DSM layer by these categories. Your map should look like in figure 9.25.
 
-
 ![DSM_mosaic_clipped representation](media/fig925.png "DSM_mosaic_clipped representation")
 
 Figure 9.25 - DSM_mosaic_clipped representation
@@ -759,11 +722,9 @@ In order to calculate the number of people based on the raster data HRSL that li
 
 There are several ways to open the raster calclulator in QGIS. You can do so from the Menu bar **Raster ‣ Raster Calculator** or by searching raster calculator on the Processing Toolbox or Locator bar. If we run the Raster Calculator under Raster analysis in the Processing Toolbox, the window in Figure 9.26b should appear. 
 
-
 ![Opening the Raster calculator](media/fig926_a.png "Opening the Raster calculator")
 
 Figure 9.26a - Opening the Raster calculator
-
 
 ![Raster calculator](media/fig926_b.png "Raster calculator")
 
@@ -786,13 +747,11 @@ Figure 9.27 - Inserting a formula into the Raster Calculator.
 
 Your result should look like in figure 9.28. 
 
-
 ![Result of identify all pixel values that are below 200 meters using the Raster Calculator](media/fig928.png "Result of identify all pixel values that are below 200 meters using the Raster Calculator")
 
 Figure 9.28 - Result of identify all pixel values that are below 200 meters using the Raster Calculator
 
 The result will be named `Output`. You can rename this to `< 200`. As we can see in the Layers Panel, the raster layer we have obtained has only 2 values 0 and 1. That is because we have used a rational operation, a comparison, therefore every pixel that is below 200 meters received value = 1 and all above, value = 0. We can test this by using the `Value Tool`. Figure 9.29 presents only pixels of value 1, in other words the pixels we are interested in for our exercise. 
-
 
 ![Spatial distribution of all pixels of value 1, meaning with altitude lower than 200 meters](media/fig929.png "Spatial distribution of all pixels of value 1, meaning with altitude lower than 200 meters")
 
@@ -808,13 +767,11 @@ Open the Calculator and insert the following formula:
 "< 200@1"*"Reprojected_HRSL_Colombo_Population@1"
 ```
 
-
 ![Using raster calculator to identify population distribution classes based on altitude of up to 200m](media/fig930.png "Using raster calculator to identify population distribution classes based on altitude of up to 200m")
 
 Figure 9.30 - Using raster calculator to identify population distribution classes based on altitude of up to 200m
 
 As opposed to previous raster calculator use, we have used 2 different raster datasets to obtain the desired result, yet you will observe that even if there are pixels that fall outside the DMS_clipped200.tif in the result, their value is 0. Use Value Tool to check (see figure 9.31). 
-
 
 ![Using Value Tool to check results of Raster Calculator](media/fig931.png "Using Value Tool to check results of Raster Calculator")
 
@@ -824,7 +781,6 @@ You can see that even if Reprojected_HRSL_Colombo_Population has values in this 
 
 Next, we present the spatial distribution of the population that lives below 200m in Colombo district. To choose an appropriate classification, we calculate the histogram. We can notice that most values are between 0.1 and 200 people per 30m. The classification we’ve chosen is visible in figure 9.32. 
 
-
 ![Distribution of population that lives below 200m in Colombo district, represented at a 30m resolution](media/fig932.png "Distribution of population that lives below 200m in Colombo district, represented at a 30m resolution")
 
 Figure 9.32 - Distribution of population that lives below 200m in Colombo district, represented at a 30m resolution. 
@@ -833,20 +789,17 @@ If we are interested in the total number of people living below 200m in Colombo 
 
 To do that go to **Raster ‣ Conversion ‣ Polygonize (Raster to Vector)** (see figure 9.33). 
 
-
 ![Raster to vector conversion](media/fig933_a.png "Raster to vector conversion")
 
 Figure 9.33a - Raster to vector conversion
 
 Remember that this raster layer had only 2 values - 0 and 1, so choose as the parameter by which to construct the vector the DN (digital number). 
 
-
 ![Raster to vector conversion parameters](media/fig933_b.png "Raster to vector conversion parameters")
 
-Figure 9.33a - Raster to vector conversion parameters
+Figure 9.33b - Raster to vector conversion parameters
 
 Your result should look like in figure 9.34. 
-
 
 ![Result of converting a raster dataset to a vector dataset](media/fig934.png "Result of converting a raster dataset to a vector dataset")
 
@@ -856,20 +809,17 @@ Delete the geometry of value 0.
 
 To find our answer we will use **Zonal Statistics**. To quickly find this functionality, open the Processing Toolbox and type in the search box “zonal” (see figure 9.35).
 
-
 ![Identifying Zonal Statistics in the Processing Toolbox](media/fig935.png "Identifying Zonal Statistics in the Processing Toolbox")
 
 Figure 9.35 - Identifying Zonal Statistics in the Processing Toolbox
 
 In the window that has opened, select the parameters like in figure 9.36. As statistics calculated, select: count, sum, min and max. 
 
-
 ![Setting the parameters for Zonal Statistics](media/fig936.png "Setting the parameters for Zonal Statistics")
 
 Figure 9.36 - Setting the parameters for Zonal Statistics
 
 The resulting layer is a vector layer that has as attributes the statistics that we have selected (see figure 9.37). 
-
 
 ![Resulting vector layer of Zonal Statistics](media/fig937.png "Resulting vector layer of Zonal Statistics")
 
@@ -899,7 +849,6 @@ Remembering spatial resolution, it is the size of the ground surface measured in
 
 Why is that important when working with raster datasets? Figure 9.38 might offer an explanation.
 
-
 ![alt_text](media/fig938.png "image_tooltip")
 
 Figure 9.38 - Example of different resolutions specific to different satellite imagery - Landsat and SPOT -  for the same area 
@@ -912,6 +861,7 @@ Figure 9.38 details the relation between the resolution of the satellite imagery
 Coming back to our region of interest - Colombo district - we can test these differences with the data that we have at hand. We have loaded into our QGIS project the 5 raster layers of LandCover for 5 years: 2015, 2016, 2017, 2018 and 2019. Next, we will load a mosaic of Sentinel-2[^6] imagery. We will load the WMS layer EOX Sentinel-2 cloudless, available [here](https://s2maps.eu/). Remembering from module 2, to add a WMS layer, go to **Layer ‣ Add layer ‣ Add WM/WMTS Layer..**
 
 When the add window opens, use the following parameters:
+
 ```
 Name: EOX Sentinel-2
 URL: https://tiles.maps.eox.at/wms?service=wms&request=getcapabilities
