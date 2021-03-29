@@ -3,7 +3,7 @@
 الوحدة 2 - الطّبقات في QGIS
 </h1>
 
-المؤلف: بن هور- Ben Hur, Ali, Samah
+المؤلف: بن هور- Ben Hur, Ali Rebaie, Samah Hijazi
 
 
 <h2>
