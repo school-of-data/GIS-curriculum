@@ -867,13 +867,11 @@ Name: EOX Sentinel-2
 URL: https://tiles.maps.eox.at/wms?service=wms&request=getcapabilities
 ```
 
-
 ![alt_text](media/fig939.png "image_tooltip")
 
 Figure 9.39 - Adding a WMS layer to QGIS 
 
 After connecting to the newly WMS layer added, we will load the layer named Sentinel-2 cloudless layer for 2019 by EOX - 4326 into QGIS. After zooming to the region of interest extent, your map window should look like in figure 9.40. 
-
 
 ![alt_text](media/fig940.png "image_tooltip")
 
@@ -881,13 +879,11 @@ Figure 9.40  - Sentinel-2 cloudless layer for 2019 by EOX - 4326 for Colombo dis
 
 Although the LandCover products have been obtained using other satellite data (Proba-V), let us compare the 2 layers so we can get a sense of what different resolutions mean. Remember that the LandCover product is at 100m and Sentinel 2 imagery is at 10m. To accomplish that, we will open the Clipped_Reprojected_LandCover 2019 and the WMS layer. To make comparisons between 2 layers, we will use a new plugin that you must install. Therefore, go to **Plugins ‣ manage and install plugins** and write in the search box `MapSwipe Tool`. Once you install it, it should appear as a new pictogram in your toolbar (![MapSwipe Tool button](media/mapswipe-btn.png "MapSwipe Tool button")). 
 
-
 ![alt_text](media/fig941.png "image_tooltip")
 
 Figure 9.41 - Comparing 2 raster layers using MapSwipe Tool plugin 
 
 To activate the MapSwipe tool, click on it while the raster layer you want to drape is selected in the Layers Panel. The resolution differences are obvious, as well as the fact that the satellite product (Land Cover) has been developed using a satellite image (PROBA-V) of a coarser resolution. However, the general larger classes are well identified, as can be seen in figure 9.42. 
-
 
 ![alt_text](media/fig942.png "image_tooltip")
 
@@ -895,13 +891,11 @@ Figure 9.42 - LandCover2019 obtained from PROBA-V(100m) on top of Sentinel 2 mos
 
 Adding the HRSL to the map, will show a good match between HRSL and the LandCover. The urban space is depicted in red and, as you can see in figure 9.43, it is almost completely covered by the HRSL layer. 
 
-
 ![alt_text](media/fig943.png "image_tooltip")
 
 Figure 9.43 - HRSL added on top of the Clipped_Reprojected_LandCover 2019.
 
 However, zooming in you can see the difference in resolution between the 2 raster products, as in figure 9.44. 
-
 
 ![alt_text](media/fig944.png "image_tooltip")
 
@@ -925,21 +919,17 @@ To resample, go to **Raster ‣ Projections ‣ Wrap (reproject).** In the funct
 
 Save the output layer as LC2019_NearestNeighbour. 
 
-
 ![alt_text](media/fig945.png "image_tooltip")
 
 Figure 9.45 - Resampling the Land Cover layer
-
 
 Follow the exact steps, except that for resample method parameter choose Mode. Save the output layer as LC2019_Mode.  
 
 Now, let’s compare results - see figure 9.45 and 9.46. 
 
-
 ![alt_text](media/fig946_a.png "image_tooltip")
 
 Figure 9.46a - Resampling Land Cover product using the Nearest Neighbour resampling method
-
 
 ![alt_text](media/fig946_b.png "image_tooltip")
 
@@ -947,13 +937,11 @@ Figure 9.46b - Resampling Land Cover product using the Mode resampling method
 
 Both rasters have the same symbology applied and we can observe that in figure 9.45 there are values that don’t fall in either category - pixels are not showing. However, we know that the Land Cover product is a seamless layer - it has no gaps between the same categories defined. Let us dig deeper and look at the histograms for all three layers. For that go to **Properties ‣ Histogram** and choose from Prefs/Actions to show only Band 1. Save the histogram by clicking on the save icon on the right side of the window (see figure 9.47).
 
-
 ![alt_text](media/fig947.png "image_tooltip")
 
 Figure 9.47 - Show values only for one selected band in the histogram.
 
 Figure 9.48 (a), (b) and (c) present the 3 histograms of interest. 
-
 
 ![alt_text](media/fig948_a.png "image_tooltip")
 
@@ -967,7 +955,6 @@ We can observe the differences in the distribution of values for the 3 datasets,
 
 At this point, your map windows should look like in figure 9.49. 
 
-
 ![alt_text](media/fig949.png "image_tooltip")
 
 Figure 9.49 - The 2 raster products: Land Cover 2019 and HRSL overlaid. 
@@ -976,11 +963,9 @@ Going back to our exercise, the requirements was to identify the population numb
 
 For conversions, from raster to polygon, as well as from vector to polygon, go to **Raster ‣ Conversion** and here we have more options. We will choose **Polygonize (Raster to vector)..** We will convert to vector the latest raster dataset that we have obtained: LC2019_Mode. Your result should look like in figure 9.50b. 
 
-
 ![alt_text](media/fig950_a.png "image_tooltip")
 
 Figure 9.50a - Polygonizing the LC2019_Mode (30m) raster layer
-
 
 ![alt_text](media/fig950_b.png "image_tooltip")
 
@@ -990,13 +975,11 @@ As we can observe, each pixel - each group of adjacent pixels with the same cate
 
 Attaching the same styling as for the raster and we will notice the same vector classes correspond to the raster ones (see figure 9.51). 
 
-
 ![alt_text](media/fig951.png "image_tooltip")
 
 Figure 9.51 - LC2019_Mode polygonez 
 
 As we can observe, the HRSL’s pixels are, as expected, not perfectly contained in a polygon of the land cover product (see picture 9.52).
-
 
 ![alt_text](media/fig952.png "image_tooltip")
 
@@ -1006,11 +989,9 @@ To eliminate this inconvenience, we will vectorize the HRSL layer as well, just 
 
 Go to **Processing ‣ Toolbox**. In the search bar write the keywords `raster point` and choose the `Raster pixels to points` algorithm (see figure 9.53a). Save the output as HRSL_points. 
 
-
 ![alt_text](media/fig953_a.png "image_tooltip")
 
 Figure 9.53a - Raster pixels to points
-
 
 ![alt_text](media/fig953_b.png "image_tooltip")
 
@@ -1018,13 +999,11 @@ Figure 9.53b - Running Raster pixels to points algorithm
 
 Considering the extent of your study area, this operation can be significantly lengthy in time. Figure 9.54 shows how many points we have obtained for Colombo district.
 
-
 ![alt_text](media/fig954.png "image_tooltip")
 
 Figure 9.54 - Loading point vector data obtained
 
 The number of features is considerably high and without importing it into a database, any kind of processing or visualisation would require too much time. In these types of situations, the reasonable solution is to divide the datasets we have to process into manageable chunks. Therefore, we will consider processing the necessary calculations on smaller well-defined areas. To split the HRSL layer we will use the option to create a VRT. Select the HRSl layer and choose **Export as..** In the new window, tick on the **Create VRT** option and set the following parameters: browse to a folder where the splitted raster will be exported to, CRS: EPSG:5235, VRT tiles: max columns 1000, max rows: 1000 (see figure 9.55).
-
 
 ![alt_text](media/fig955.png "image_tooltip")
 
@@ -1032,13 +1011,11 @@ Figure 9.55 - Creating a VRT file with specific raster tiles
 
 After exporting, load all the raster tiles into your QGIS project. The result should look like in figure 9.56. 
 
-
 ![alt_text](media/fig956.png "image_tooltip")
 
 Figure 9.56 - Raster tiles for the Colombo district HRSL 
 
 Next, we will re-run the **Raster pixels to points** algorithm for each of the raster tiles. Because we have several tiles, we will use the batch processing function (see figure 9.57).
-
 
 ![alt_text](media/fig957.png "image_tooltip")
 
@@ -1046,20 +1023,17 @@ Figure 9.57 - Running raster to points for all raster tiles
 
 The resultant vector points should look like in figure 9.58. 
 
-
 ![alt_text](media/fig958.png "image_tooltip")
 
 Figure 9.58 - Point vector dataset for the HRSL layer with pixel values stored in the VALUE column
 
 Taking a closer look at the results of the algorithm, we can see that the vector points fall exactly in the center of the pixel they extract the value from (see figure 9.59.).
 
-
 ![alt_text](media/fig959.png "image_tooltip")
 
 Figure 9.59 - Verifying the values of the point vector data vs. raster pixel values
 
 To resolve the exercise, the sum of the values of points extracted from the HRSL product that fall within each polygon of the land cover product must be calculated. To do that, we will use a function that is available in Field Calculator - `aggregation()`. This function is quite powerful as it does spatial joins on the fly allowing various calculations. In our case, the function must identify the points that fall into each polygon and then sum up the values of those points. To do that, go the attribute table of the LC2019_Mode vector dataset and open the field calculator. Creating a new field, introduce the following expression:
-
 
 ```
 aggregate(
@@ -1070,9 +1044,7 @@ aggregate(
 )
 ```
 
-
 Where, <code>layer<em> </em></code>is the name of the dataset from which we want to extract information (in our case, the point dataset that holds the pixel values of the HRSL raster layer), <code>aggregate</code> - indicates the action to be performed once the spatial join is confirmed (sum, count, mean, median, concatenate etc.), <code>expression - </code>indicates the what column we want to extract data from, <code>filter - </code>indicates<code> </code>the geometry function (intersect, within etc.) (see figure 9.60).
-
 
 ![alt_text](media/fig960.png "image_tooltip")
 
@@ -1084,11 +1056,9 @@ The results are, as expected, saved in the attribute table of the LC2019_Mode. A
 
 If using the Field Calculator and the aggregate function doesn't work, we can also use the **Join attributes by location (summary)** algorithm to compute for the sum of the values of the points inside the LC_Mode_vector features.
 
-
 ![alt_text](media/fig961.png "image_tooltip")
 
 Figure 9.61 - Parameters of the Join attributes by location (summary) algorithm
-
 
 ![alt_text](media/fig962.png "image_tooltip")
 

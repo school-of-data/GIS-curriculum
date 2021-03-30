@@ -53,23 +53,19 @@ Of course, in order to see the experimental plugins, the user must allow it, Thu
 
 The two types are well differentiated in Plugin Manager (see figures 10.1 and 10.2b). 
 
-
 ![alt_text](media/fig101.png "image_tooltip")
 
 Figure 10.1 - Manager plugin official plugin
 
-
 ![alt_text](media/fig102_a.png "image_tooltip")
 
 Figure 10.2a - Display experimental plugins
-
 
 ![alt_text](media/fig102_b.png "image_tooltip")
 
 Figure 10.2b - Manager plugin experimental plugin
 
 Another aspect worth mentioning is that the Manager plugin is quite a versatile functionality that allows developers to add they’re private repositories (see figure 10.3). 
-
 
 ![alt_text](media/fig103.png "image_tooltip")
 
@@ -85,7 +81,6 @@ After deciding which types of plugins to list in your manager, one can switch to
 
 As you have noticed, the Plugin Manager has a search bar available - here is where one can type one or more keywords suitable for a specific requirement. In our case, the keyword is ‘cartographic/cartography’. 
 
-
 ![alt_text](media/fig104.png "image_tooltip")
 
 Figure 10.4 - Searching for a specific plugin in the Plugin Manager
@@ -93,7 +88,6 @@ Figure 10.4 - Searching for a specific plugin in the Plugin Manager
 As can be noticed, on the right-hand side there is a window presenting a set of documentation elements. You will notice that these are standardised and each plugin should have the same information made available, in the same way. 
 
 The metadata display for each plugin is as follows: 
-
 
 1. Name of plugin and subtitle depicting its capabilities;
 2. Description section - depending on the developer, this section can be more or less detailed;
@@ -106,7 +100,6 @@ The metadata display for each plugin is as follows:
 
 In figure 10.5, all mentioned metadata elements are identified. 
 
-
 ![alt_text](media/fig105.png "image_tooltip")
 
 Figure 10.5 - Documentation of a plugin
@@ -115,18 +108,15 @@ On the lower left side, the` Install plugin` button is available. By activating 
 
 It is important to mention that usually, due to space limitations, the description available in Plugin Manager is not extensive. So, to best understand if the chosen plugin answers the requirements, one must go to the home page. In our case, we observe that the home page is identical with the code repository - on Gitlab, but this is not always the case (see figure 10.6). 
 
-
 ![alt_text](media/fig106_a.png "image_tooltip")
 
 Figure 10.6a - Homepage of selected plugin
-
 
 ![alt_text](media/fig106_b.png "image_tooltip")
 
 Figure 10.6b - Detailed metadata on the plugin homepage
 
 Another very important aspect to highlight regarding a plugin documentation is the web indication of the **bug tracker**. A bug tracker system is a software application that keeps track of all reported software issues (aka bugs). In our case the bug tracker is supported by the dedicated code repository Github (see figure 10.7).
-
 
 ![alt_text](media/fig107.png "image_tooltip")
 
@@ -136,7 +126,6 @@ Detailing on how to report a software issue on Github exceeds the scope of this 
 
 
 #### **Quiz questions**
-
 
 1. Do you need the complete name of the plugin in order to find it in the Plugin Manager? 
 *   <span style="text-decoration:underline;">No, a keyword is sufficient. </span>
@@ -165,7 +154,6 @@ Plugins can be classified in multiple categories, depending on what one is consi
 
 It must be noted that some external plugins act like bridges allowing access through QGIS to external databases, clouds,  services in which case, additional elements can be required - such as a paid account to the external service, cloud, or an API key. An example to illustrate this is the Planet Explorer plugin from Planet Inc. (see figure 10.8).
 
-
 ![alt_text](media/fig108.png "image_tooltip")
 
 Figure 10.8 - Example of a plugin that requires external subscription in order for it to function in QGIS to its full capacity
@@ -177,7 +165,6 @@ In the following pages, we will identify and provide short examples for a few pl
 
 #### **Discovery**
 
-
 ![alt_text](media/fig109_a.png "image_tooltip")
 
 Figure 10.9a - The Discovery plugin
@@ -188,20 +175,17 @@ To test it, we will use a geopackage file prepared by The Humanitarian Data Exch
 
 After using Plugin Manager, to install Discovery, a new toolbar should be visible on your QGIS. Let us set up the parameters: Data source type: Geopackage, name: Philippines, choose the file accordingly and the layer will be Populated Places, the search column: name. We’ll also request for additional information to be displayed in the search bar: is_in and population. In our situation, if there are more villages with the same name but in different provinces, we will be able to differentiate between them. Your Discovery setup should look like in figure 10.9b. 
 
-
 ![alt_text](media/fig109_b.png "image_tooltip")
 
 Figure 10.9b - Setting the Discovery plugin
 
 Click OK and let us search for “San Roque” in the search bar (see figure 10.9c). 
 
-
 ![alt_text](media/fig109_c.png "image_tooltip")
 
 Figure 10.9c - Using Discovery to search fast through the attributes of the vector layers.  
 
 In our example, we can see that there are many San Roque populated places in the Philippines, choosing one entry in this list and QGIS will zoom in on it (see figure 10.9d).
-
 
 ![alt_text](media/fig109_d.png "image_tooltip")
 
@@ -213,7 +197,6 @@ For a detailed description of the plugin capabilities, together with a more comp
 
 
 #### **Polygon Divider**
-
 
 ![alt_text](media/fig1010_a.png "image_tooltip")
 
@@ -227,13 +210,11 @@ Let us use this tool on the Pampanga province dataset and see what results we ge
 
 Using Plugin Manager, instal the Polygon Divider. After completion, a new pictogram will appear on your QGIS toolbar and a new window will open (see figure 10.10b). 
 
-
 ![alt_text](media/fig1010_b.png "image_tooltip")
 
 Figure 10.10b - Polygon Divider plugin window
 
 Choose as input layer the Pampanga province polygon layer, save the output file as Pampanga_polygonDivider, choose 1000000 (meaning all divisions will have about 100 hectare), choose left to right as the cut direction and tolerance 1. The result should look like in figure 10.10c. 
-
 
 ![alt_text](media/fig1010_c.png "image_tooltip")
 
@@ -245,7 +226,6 @@ For a detailed description of the plugin capabilities, together with a more comp
 
 #### **Load Them All**
 
-
 ![alt_text](media/fig1011_a.png "image_tooltip")
 
 Figure 10.11a - The Load Them All plugin
@@ -253,7 +233,6 @@ Figure 10.11a - The Load Them All plugin
 This is a useful plugin when you have multiple layers (vectors and rasters) that you need to load into QGIS. The plugin allows you to automatically load all, at once, but the big advantage is that it provides you with a multitude of filters, such as alphanumeric (by name), data modified, bounding box (coordinates inserted by hand), type of geometry and others. 
 
 To test it, we will load files from previous module 8. For vector, we will choose the shapefiles that have been processed before a selected date, for raster we will choose an alphanumeric filter - the name of the raster loaded should start with LandCover (see figure 10.11_b). 
-
 
 ![alt_text](media/fig1011_b.png "image_tooltip")
 
@@ -265,11 +244,9 @@ Note that after completing the
 
 The results of running Load them All plugin with the above parameters are presented in figure 10.11c (vectors) and 10.11d (rasters). 
 
-
 ![alt_text](media/fig1011_c.png "image_tooltip")
 
 Figure 10.11c - Using Load them All plugin to load multiple vectors
-
 
 ![alt_text](media/fig1011_d.png "image_tooltip")
 
@@ -279,7 +256,6 @@ For a detailed description of the plugin capabilities, together with a more comp
 
 
 #### **Raster tracer**
-
 
 ![alt_text](media/fig1012_a.png "image_tooltip")
 
@@ -299,13 +275,11 @@ Next, we will create a MultiString vector layer where all the linear objects we 
 
 Click on the RasterTracer pictogram and set up the parameters, like in figure 10.12b. Choose the colour of the contour lines by using the color picker that will open when clicking on the Trace color option. 
 
-
 ![alt_text](media/fig1012_b.png "image_tooltip")
 
 Figure 10.12b - Setting up the RasterTracer parameters
 
 Now, all it is left to do is start digitising. After making sure your vector raster is editable and that the plugin is activated by clicking once more on it, click on the inflection points of the contour line we will extract (see figure 10.112c). 
-
 
 ![alt_text](media/fig1012_c.png "image_tooltip")
 
@@ -313,14 +287,12 @@ Figure 10.12c -  Clicking on the inflection points to draw the line using Raster
 
 Figure 10.12d presents the result. 
 
-
 ![alt_text](media/fig1012_d.png "image_tooltip")
 
 Figure 10.12d - Semi-automatically drawn line by following the indicated colour. 
 
 
 #### **Active Fire**
-
 
 ![alt_text](media/fig1013_a.png "image_tooltip")
 
@@ -332,7 +304,6 @@ One good example is the Active Fire plugin. This has been developed to allow QGI
 
 To find it, open Plugin Manager and write fire. After installation a new red pictogram will appear in your QGIS toolbar. When clicking on it, a new window appears where it lets you select from which sensor you want the fire pixels identified in the last 24 hours (see figure 10.13b).
 
-
 ![alt_text](media/fig1013_b.png "image_tooltip")
 
 Figure 10.13b - Using Active Fire plugin to load NASA fire products in QGIS 
@@ -341,7 +312,6 @@ The plugin also calculates the number of fire pixels registered.
 
 
 #### **[Qgis2web](https://github.com/tomchadwin/qgis2web)**
-
 
 ![alt_text](media/fig1014_a.png "image_tooltip")
 
@@ -355,20 +325,17 @@ This plugin gives one the possibility to very fast prepare and export a map that
 
 After the installation of the qgis2web plugin, a new icon appears to the QGIS toolbar, the same as depicted in the Plugin Manager. Clicking on it will open a window, such as the one in figure 10.14b.
 
-
 ![alt_text](media/fig1014_b.png "image_tooltip")
 
 Figure 10.14b - Choosing what your map will show in the browser. 
 
 The interface is intuitive, but keep in mind the heavier the datasets, longer it will take to prepare and export. After choosing where to export, click on the export button to finalise (see figure 10.14c).
 
-
 ![alt_text](media/fig1014_c.png "image_tooltip")
 
 Figure 10.14c - QGIS2web preparing the necessary files and folders for the OpenLayer 3 web technology
 
 The folder exported contains several files, depending on what web mapping technology was selected - Leaflet or Openlayers3. In case of OpenLayer3, the folder chosen for the export contains the following files and folders: `images, index.html, layers, resources, styles, webfonts. `Double click on the index.html file and your exported map will open in  your browser, where you can toggle what layers to be visible (see figure 10.14d). 
-
 
 ![alt_text](media/fig1014_d.png "image_tooltip")
 
@@ -382,7 +349,6 @@ For a detailed description of the plugin capabilities, together with a more comp
 
 
 #### **DataPlotly**
-
 
 ![alt_text](media/fig1015_a.png "image_tooltip")
 
@@ -399,20 +365,17 @@ Let us prepare an interactive chart showing how many rivers vs. channels vs. str
 
 By clicking on the specific pictogram a new window will open, see figure 10.24. 
 
-
 ![alt_text](media/fig1015_b.png "image_tooltip")
 
 Figure 10.15b - DataPlotly window/panel.
 
 Next, set up the parameters, like in figure 10.15c. 
 
-
 ![alt_text](media/fig1015_c.png "image_tooltip")
 
 Figure 10.15c - Setting up the parameters for the pie chart representing types of water lines
 
 Choose waterways_3123 as the vector layer from which to extract the data plotted, grouping field - fclass, Y field - length. If length needs to be calculated, go to the attribute table of the vector layer and write in the field calculator `round($length)`. For more details, see module 8.  Afterwards, select ‘single plot’ at the ploty type and click on the Create plot button, in the lower right-hand side. Your result should look like in figure 10.15d. 
-
 
 ![alt_text](media/fig1015_d.png "image_tooltip")
 
@@ -422,13 +385,11 @@ When hovering with the mouse over each pie chart segment, a pop-up appears showi
 
 One significant functionality of DataPlotly is the connection with the QGIS map canvas. To understand what that is, click on one of the sections of the pie chart. You should see that some features are **automatically** selected in your map canvas (see figure 10.15e). 
 
-
 ![alt_text](media/fig1015_e.png "image_tooltip")
 
 Figure 10.15e - DataPlotly and QGIS map canvas interactive connection testing
 
 That also means that you can interactively update your plot, for example, to show only the selected features. To test, select only a part of the waterways in your map canvas, then go to the DataPlotly, first tab and at plot parameters, tick the ‘only selected features’ option (see figure 10.15f). 
-
 
 ![alt_text](media/fig1015_f.png "image_tooltip")
 
@@ -436,21 +397,17 @@ Figure 10.15f - Interactively update the plot to show only selected features.
 
 Afterwards, click on the Update plot button at the bottom right-hand side of the DataPlotly window. Results should look approximately as in figure 10.29 (just approximately, because your selection mostly probably differs from the one shown in figure 10.15g). 
 
-
 ![alt_text](media/fig1015_g.png "image_tooltip")
 
 Figure 10.15g - Update the plot to show only the selected features on the map canvas. 
 
 Furthermore, DataPlotly provides the user with an export function - either in a .pdf file or an .html file. The corresponding buttons are in the very low, right-hand side of the DataPlotly window, see figure 10.15h. 
 
-
 ![alt_text](media/fig1015_h.png "image_tooltip")
 
 Figure 10.15h - Export capabilities of DataPlotly
 
-
 Exporting as HTML file allows the user to prepare a wide variety of data plots ready for web publication (see figure 10.15i).
-
 
 ![alt_text](media/fig1015_i.png "image_tooltip")
 
@@ -458,18 +415,15 @@ Figure 10.15i - Using a browser to open the HTML file exported by DataPlotly.
 
 The plugin is also very well documented, for the users they provide a help menu for each plot type. You can access it by clicking on the fourth tab on the DataPlotly (see figure 10.15j).
 
-
 ![alt_text](media/fig1015_j.png "image_tooltip")
 
 Figure 10.15j - Help menu for each plot type accessible through the plugin window. 
 
 Due to the direct, interactive link with the QGIS loaded datasets, expressions can also be used when preparing a plot. To test this capability,  we will create a plot base on the Populated places vector layer. Set the following parameters: type: bar plot, layer: populated places, X_field: is_in, Y_field - open the field calculator and insert  `"population" is not null `(see figure 10.15k and figure 10.15l). 
 
-
 ![alt_text](media/fig1015_k.png "image_tooltip")
 
 Figure 10.15k - Opening the field editor in DataPlotly based on attributes of the selected QGIS layer in order to apply an expression for filtering what the plot will display
-
 
 ![alt_text](media/fig1015_l.png "image_tooltip")
 
@@ -488,16 +442,13 @@ DataPlotly also provides the user with the possibility of creating subplots, whi
 
 To test this functionality, we will use the Population places vector layer. We have the following attributes of interest: `place` = type of place (city, town, village, etc.,` is_in `=  name of province to which it belongs (if known), `population` = (population numbers) and `name `= the name of the place (if known). We will integrate in the same figure, 2 data plots: one to show us how many of the populated places fall into each category of `place `and the second one, how is the population divided by the 4 types of` places. `
 
-
 ![alt_text](media/fig1015_n.png "image_tooltip")
 
 Figure 10.15n - Setting up the parameters for the first plot  - types of settlements by their numbers
 
-
 ![alt_text](media/fig1015_o.png "image_tooltip")
 
 Figure 10.15o - Setting up the parameters for the second plot - types of settlements by population  numbers.
-
 
 ![alt_text](media/fig1015_p.png "image_tooltip")
 
@@ -508,9 +459,7 @@ For a detailed description of the plugin capabilities, together with a more comp
 
 #### **QuickMapServices / OpenLayers plugin**
 
-
 ![alt_text](media/fig1016_a1.png "image_tooltip")
-
 
 ![alt_text](media/fig1016_a2.png "image_tooltip")
 
@@ -520,7 +469,6 @@ These 2 plugins are exceptionally useful when a user needs to add basemaps to he
 
 Install both plugins using Plugin Manager. In this case, you will notice that they will appear under the Web tab (see figure 10.16b). 
 
-
 ![alt_text](media/fig1016_b.png "image_tooltip")
 
 Figure 10.16b - Location of the QuickMapServices and OpenLayers plugins.
@@ -529,13 +477,11 @@ Using them is pretty straight forward, you just click on the layer you want to b
 
 Figure 10.16c presents the OSM Humanitarian Data Model brought as a basemap for the region of interest used in module 8 and 9, province Pampanga in Philippines. 
 
-
 ![alt_text](media/fig1016_c.png "image_tooltip")
 
 Figure 10.16c - Using OpenLayers plugin. 
 
 Figure 10.16d illustrates the perfect alignment of the basemap loaded in the QGIS map canvas using the OpenLayers plugin. Even though the 2 layers are not in the same projection, QGIS allows projection on-the-fly, so overlay is possible. 
-
 
 ![alt_text](media/fig1016_d.png "image_tooltip")
 
@@ -546,20 +492,17 @@ For a detailed description of the plugins capabilities, together with a more com
 
 #### **Table2Style**
 
-
 ![alt_text](media/fig1017_a.png "image_tooltip")
 
 Figure 10.17a - The Table to Style plugin
 
 This plugin is useful for situations where there are specific values for pixels within a raster layer that correspond perfectly to a specific color. In this curriculum, we have encountered  such an example, when working with the land cover data (see figure 10.17b). 
 
-
 ![alt_text](media/fig1017_b.png "image_tooltip")
 
 Figure 10.17b - Exemplifying situations where pixel values correspond to an exact colour 
 
 From the provider of this product based on satellite imagery, the pixel values and the associated colours are also made available: 
-
 
 <table>
   <tr>
@@ -756,11 +699,9 @@ From the provider of this product based on satellite imagery, the pixel values a
   </tr>
 </table>
 
-
 When a new dataset - raster or vector - is loaded, QGIS is randomly assigning it a visual representation. It is the user that must define appropriate colours and schemas of the representations. For more information on layers styling, go to module 4. 
 
 To test the table2style plugin, we will use the LandCover2019 raster dataset, used also in module nr.9. By loading the raster into QGIS you should have a restul similar with the one in figure 10.17c.
-
 
 ![alt_text](media/fig1017_c.png "image_tooltip")
 
@@ -770,13 +711,11 @@ As per the data provider, we know that for each pixel value there is a clearly a
 
 Go to Manager plugin and install the table2style plugin. A new icon will appear on your toolbar. Open it by double clicking it. A setting up window should appear, like in figure 10.17d. 
 
-
 ![alt_text](media/fig1017_d.png "image_tooltip")
 
 Figure 10.17d - Table2style window
 
 The plugin requires 2 parameters - a raster layer and an attribute table with pixel values, description label and color codes in one of the three systems: RGB, HSV or Hex. As per our table above, we have Hex codes for the assigned colors. Thus, load the table into QGIS (`Layer - Add layer - Add delimited text layer… `). Of course, it has no geometry. The LandCover values table should look like in figure 10.17e. 
-
 
 ![alt_text](media/fig1017_e.png "image_tooltip")
 
@@ -792,7 +731,6 @@ Now, we have all we need to test the plugin. Set up the parameters as in figure 
 Figure 10.17f - Setting up table2style plugin parameters for the Land Cover dataset
 
 The result should look like in figure 10.17g. 
-
 
 ![alt_text](media/fig1017_g.png "image_tooltip")
 
