@@ -741,7 +741,6 @@ For a detailed description of the plugin capab[https://github.com/ptarroso/table
 
 #### **ORS Tools**
 
-
 ![alt_text](media/fig1018_a.png "image_tooltip")
 
 Figure 10.48a - The ORS Tools plugin
@@ -754,7 +753,6 @@ The tool set includes routing, isochrones and matrix calculations, either intera
 
 Using Plugin Manager, install the ORS Tools plugin. A new pictogram will appear on your toolbar. Double click to open (see figure 10.18b). 
 
-
 ![alt_text](media/fig1018_b.png "image_tooltip")
 
 Figure 10.18b - Open ORS Tools window. 
@@ -765,10 +763,7 @@ An API key is a unique identifier used to authenticate a user, developer, or cal
 
 Proceed with the following steps: 
 
-
-
 1. Click on the Sign Up button on the ORS Tools window (figure 10.49). 
-
 
 ![alt_text](media/fig1018_c.png "image_tooltip")
 
@@ -776,21 +771,17 @@ Figure 10.18c - Sign in button
 
 2. Make a free account on the website on the openrouteservice website that opened. 
 
-
 ![alt_text](media/fig1018_d.png "image_tooltip")
 
 Figure 10.18d - Openrouteservice account page 
 
-
 3. After making the account, you will receive an email informing you of what  you have just gained free access. 
-
 
 ![alt_text](media/fig1018_e.png "image_tooltip")
 
 Figure 10.18e - Email received from openrouteservice
 
 4. Login to your newly made account and request a token. 
-
 
 ![alt_text](media/fig1018_f.png "image_tooltip")
 
@@ -799,13 +790,11 @@ Figure 10.18f - Request openrouteservice token
 5. After your token has been created, click on the long alphanumeric string below the name key. A message informing you that it has been copied will appear. 
 6. Return to QGIS and insert the copied API key.
 
-
 ![alt_text](media/fig1018_g.png "image_tooltip")
 
 Figure 10.18g - Insert openrouteserviceAPI key into your QGIS
 
 At this point, your QGIS should be ready to calculate routes using openrouteservice and OpenStreetMap. To test its basic capabilities, load into QGIS the Pampanga building layers. Make sure you are working in EPSG 3857 or EPSG:4326. After loading the layer, start inserting the routing points. Open the ORS Tools, and press the green + button (see figure 10.18h). 
-
 
 ![alt_text](media/fig1018_h.png "image_tooltip")
 
@@ -813,13 +802,11 @@ Figure 10.18h - Inserting the routing points using ORS Tools.
 
 Choose Traveling Salesman routing algorithm and click on apply. After a few moments, a new vector layer has been created: Routes_ORS. 
 
-
 ![alt_text](media/fig1018_i.png "image_tooltip")
 
 Figure 10.18i - Result of running ORS Tools. 
 
 Opening OpenStreetMap, we will notice that  ORS Tools has tried to build a route to touch all points given by clicking on the map. **Please take note! **QGIS has only one layer loaded and that was the building layer and yet now, a new layer has been calculated and automatically added to your map canvas! 
-
 
 ![alt_text](media/fig1018_j.png "image_tooltip")
 
