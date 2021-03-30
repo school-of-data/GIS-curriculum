@@ -255,7 +255,7 @@ Using an Overpass query allows you to create more complex feature selection in Q
 
 1. Open the QuickOSM plugin and input the parameters we used for querying all fast foods.
 
-![QuickOSM parameters for loading fast foods in Colombo](media/quickosm-5.png "QuickOSM parameters for loading fast foods in Colombo")
+![QuickOSM parameters for loading fast foods in Colombo](media/quickosm-6.png "QuickOSM parameters for loading fast foods in Colombo")
 
 Quick query to load all amenities tagged as fast food
 
