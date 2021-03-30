@@ -23,7 +23,7 @@ _*_ For checking / pushing to repo
 | **Bangladesh**   |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L    |     L     |
 | **Brazil**       |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |   **C**   |   **C**   |    **C**   |
 | **Egypt**        |   **C**   |   **C**   |   **C**   |   **C**   |   **C**   |   **C**   |   **C**   |   **C**   |   C*   |   C*   |    C*   |
-| **Ethiopia**     |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
+| **Ethiopia**     |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L    |     L    |     L    |     L    |     L     |
 | **Germany**      |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **Ghana**        |     C*    |     C*    |     C*    |     C*    |     C*    |     C*    |     C*    |     L    |     L    |     L    |     L     |
 | **India**        |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |

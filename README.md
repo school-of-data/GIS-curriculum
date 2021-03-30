@@ -6,6 +6,7 @@
 - [**Brazil**](brazil/)
 - [**Egypt**](egypt/)
 - [**Germany**](germany/)
+- [**Ethiopia** (in English)](ethiopia/)
 - [**India** (in English)](india/)
 - [**Mexico**](mexico/)
 - [**Philippines**](philippines/)
