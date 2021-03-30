@@ -83,7 +83,7 @@
 * **line 321, 324** -> replace name of files
 * **line 342, 345** -> replace name of files
 * **line 398-399, 407, 411, 417** -> replace with sample of local tile server (XYZ), if not available, use ESRI World Imagery (see [Sri Lanka example](sri-lanka/module2/module2.md), lines 398-417)
-* **line 449-450, 458, 460, 462, 466, 468** -> replace with sample of local WMS server, if not available, use GeoServer Demo (see [Sri Lanka example](sri-lanka/module2/module2.md), lines 438-459)
+* **line 449-450, 458, 460, 462, 466, 468** -> replace with sample of local WMS server, if not available, use EOS Sentinel 2 (see [Sri Lanka example](sri-lanka/module2/module2.md), lines 438-459)
 
 
 # Module 3
