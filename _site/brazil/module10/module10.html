@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Módulo 10 - Plugins QGIS | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Módulo 10 - Plugins QGIS page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Módulo 10 - Plugins QGIS">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Módulo 10 - Plugins QGIS</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/brazil/module10/module10.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="módulo-10---plugins-qgis">Módulo 10 - Plugins QGIS</h1>
+
+<p><strong>Autores</strong>: Codrina, Ben Hur</p>
+
+<h2 id="introdução-pedagógica">Introdução Pedagógica</h2>
+
+<p>Este módulo irá destacar alguns dos plugins mais interessantes e úteis que a comunidade internacional QGIS desenvolveu e disponibilizou para todos usarem. Neste módulo, você irá:</p>
+
+<h2 id="adquirir-as-seguintes-habilidades">Adquirir as seguintes habilidades:</h2>
+
+<ul>
+  <li>Como pesquisar e instalar um novo plugin</li>
+  <li>Como alternar entre os diferentes repositórios de plugins</li>
+  <li>Como ler a documentação de um plugin e como pesquisar.</li>
+  <li>Detalhes sobre algumas das funcionalidades de plugins mais populares.</li>
+</ul>
+
+<h2 id="ferramentas-e-recursos-necessários">Ferramentas e recursos necessários</h2>
+
+<ul>
+  <li>Este módulo foi preparado usando <a href="https://qgis.org/en/site/forusers/download.html">QGIS versão 3.16.1 - Hannover</a></li>
+</ul>
+
+<h2 id="pré-requisitos">Pré-requisitos:</h2>
+
+<ul>
+  <li>Conhecimento básico de operação um computador</li>
+  <li>Uma compreensão robusta de todos os módulos, pois os plugins que apresentaremos se aplicam a várias noções / elementos que você aprendeu ao longo deste currículo, como vetores, rasters, tabelas de atributos, regras cartográficas e muitos outros.</li>
+</ul>
+
+<h2 id="conteúdo-principal">Conteúdo principal</h2>
+
+<h3 id="fase-1-introdução-à-mentalidade-do-plugin">Fase 1: Introdução à mentalidade do plugin</h3>
+
+<p>Uma das muitas vantagens da comunidade de código aberto - composta por desenvolvedores e usuários - é a incrível velocidade com que os desenvolvimentos e melhorias acontecem, e a maneira como novas ideias surgem e são colocadas em prática.</p>
+
+<p>Como você viu no módulo 1, o QGIS é projetado com uma arquitetura de ‘plugin’ (ou complemento), permitindo que ele seja facilmente personalizado para as necessidades do usuário adicionando plugins externos. Na verdade, QGIS é a combinação de plugins <strong>principais (core)</strong> e <strong>externos</strong>. Os plugins principais - como o nome sugere - formam a estrutura principal, são mantidos pela Equipe de Desenvolvimento do QGIS e estão sempre incluídos na instalação, como por exemplo o plugin de núcleo de processamento, as estatísticas de zona ou o gerenciador de plugins. Com o tempo, devido à sua relevância, diferentes plugins externos passaram a ser principais.</p>
+
+<p>É claro que, dados os princípios do código aberto, juntamente com a grande e muito detalhada documentação disponível e os muitos canais de comunicação e eventos dedicados, é possível aprender a construir um plugin que atenda aos seus requisitos. E esse seria um um <strong>plugin externo</strong>. Nesta <a href="https://plugins.qgis.org/">página da web</a>, você pode encontrar toda a documentação necessária. A maioria dos plugins externos são escritos em Python, mas também podem ser escritos em C ++.</p>
+
+<p>Nesta primeira fase, vamos explorar a configuração dos plugins QGIS - como procurar um plugin para resolver um requisito específico que alguém possa ter, como interpretar sua documentação e como relatar ao desenvolvedor se você encontrar um problema.</p>
+
+<h3 id="o-gerenciador-de-plugins">O gerenciador de plugins</h3>
+
+<p>O QGIS oferece um plugin principal para permitir aos usuários gerenciar, instalar, atualizar e desinstalar plugins externos. A funcionalidade é intuitiva, fornecendo acesso total ao repositório público oficial de plugins.</p>
+
+<p>Deve ser destacado que os plugins externos - sejam oficiais ou experimentais - são o trabalho de desenvolvedores individuais ou organizações e a organização QGIS não se responsabiliza por eles. Dito isso, existem algumas regras que os desenvolvedores que desejam compartilhar seu trabalho através do repositório oficial devem cumprir, bem como uma série de recomendações para uma rápida aceitação. Os requisitos incluem elementos como licença compatível, documentação mínima, identificação clara de dependências e outros. As recomendações incluem verificar se o plugin não duplica funcionalidades existentes, bom formato do repositório fonte, compatível com todas as plataformas (Windows, Linux, macOS) e muitas outras.</p>
+
+<p>Plug-ins experimentais - que são rotulados como tal no gerenciador de plugins - são plugins que estão em estágios iniciais de desenvolvimento, que não são adequados para uso operacional. Eles são considerados como testes de “prova de conceito” e os usuários não são aconselhados a instalá-los, a menos que pretendam usá-los para fins de teste.</p>
+
+<p>Para ver os plugins experimentais, o usuário deve habilitá-los. Assim, nas configurações do gerenciador de plugins, marque a opção <code class="language-plaintext highlighter-rouge">Mostrar também plugins experimentais</code> (Figura 10.2a). Também existe a possibilidade de listar os plugins obsoletos. Eles não são recomendados porque não são mais mantidos.</p>
+
+<p>Os dois tipos são bem diferenciados no gerenciador de plugins (consulte as figuras 10.1 e 10.2b).</p>
+
+<p><img src="media/fig101.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.1 - Plugin oficial do gerenciador</p>
+
+<p><img src="media/fig102_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.2a - Exibir plugins experimentais</p>
+
+<p><img src="media/fig102_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.2b - Plugin experimental do plugin Manager</p>
+
+<p>Outro aspecto que vale a pena mencionar é que o gerenciador de plugins é uma funcionalidade bastante versátil que permite aos desenvolvedores adicionar seus repositórios privados (veja a figura 10.3).</p>
+
+<p><img src="media/fig103.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.3 - Adicionar repositório de plugins privado ao seu QGIS</p>
+
+<p>Isso é útil, se por exemplo, dentro de sua organização há necessidade de mais plugins, mas que não estão em conformidade com QGIS requisitos para hospedagem pública em seu repositório oficial. Um recurso útil sobre como configurar seu próprio repositório de plugins está disponível em <a href="https://gis-ops.com/qgis-3-plugin-tutorial-set-up-a-plugin-repository-explained/">GIS OPS</a></p>
+
+<p>O método mais simples é preparar um pacote zip contendo um plugin e que pode ser compartilhado por meios tradicionais. No entanto, esse método não é recomendado.</p>
+
+<p>Além de Configurações, pode-se ter notado que existem várias outras guias do lado esquerdo, com nomes que são autoexplicativos: <code class="language-plaintext highlighter-rouge">Todos, Instalado, Não instalado, Novo, Inválido, Instalar do ZIP</code> e, como mencionado, <code class="language-plaintext highlighter-rouge">Configurações</code>.</p>
+
+<p>Depois de decidir quais tipos de plugins listar em seu gerenciador, pode-se alternar para a guia <code class="language-plaintext highlighter-rouge">Todos</code> e vamos investigar como um plugin aparece no Gerenciador de plugins. Para fins de demonstração, pesquise o plugin <code class="language-plaintext highlighter-rouge">Cartographic Line Generalization</code>.</p>
+
+<p>Como você notou, o Gerenciador de Plug-ins possui uma barra de pesquisa disponível - aqui é onde se pode digitar uma ou mais palavras-chave adequadas para um requisito específico. No nosso caso, a palavra-chave é ‘cartographic’.</p>
+
+<p><img src="media/fig104.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.4 - Buscando um plugin específico no Gerenciador de Plugins</p>
+
+<p>Como se pode notar, do lado direito há uma janela apresentando um conjunto de elementos de documentação. Você perceberá que estes são padronizados e cada plugin deve ter as mesmas informações disponibilizadas, da mesma forma.</p>
+
+<p>A exibição de metadados para cada plugin é a seguinte:</p>
+
+<ol>
+  <li>Nome do plugin e subtítulo descrevendo suas capacidades;</li>
+  <li>Seção de descrição - dependendo do desenvolvedor, esta seção pode ser mais ou menos detalhada;</li>
+  <li>O número de downloads e quantas estrelas o plugin recebeu da comunidade;</li>
+  <li>As palavras-chave escolhidas pelo desenvolvedor;</li>
+  <li>Uma série de links muito importantes: a página web do plugin, o <strong>bug tracker</strong> e o repositório de código</li>
+  <li>O nome do(s) desenvolvedor(es), bem como a organização afiliada. Às vezes, o nome do projeto no qual o plugin foi desenvolvido também é listado;</li>
+  <li>O número da versão, com a menção <em>estável</em> ou <em>experimental</em>, conforme o caso;</li>
+  <li>O ícone do plugin.</li>
+</ol>
+
+<p>Na figura 10.5, todos os elementos de metadados mencionados são identificados.</p>
+
+<p><img src="media/fig105.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.5 - Documentação de um plugin</p>
+
+<p>No canto inferior esquerdo está disponível o botão <code class="language-plaintext highlighter-rouge">Instalar plugin</code>. Ao ativá-lo, o plugin escolhido será instalado em seu QGIS e um novo ícone ou menu será adicionado à sua interface QGIS.</p>
+
+<p>É importante mencionar que normalmente, devido a limitações de espaço, a descrição disponível no gerenciador de plugins não é extensa. Assim, para melhor entender se o plugin escolhido atende aos requisitos, é necessário acessar a sua página inicial. No nosso caso, observamos que a página inicial é idêntica ao repositório de código - no Gitlab, - mas isso nem sempre é o caso (veja a figura 10.6).</p>
+
+<p><img src="media/fig106_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.6a - Página inicial do plugin selecionado</p>
+
+<p><img src="media/fig106_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.6b - Metadados detalhados na página inicial do plugin</p>
+
+<p>Outro aspecto muito importante a destacar em relação à documentação de um plugin é o link web do <strong>bug tracker</strong>. Um sistema rastreador de bugs é um aplicativo de software que rastreia todos os problemas de software relatados (também conhecidos como bugs). Em nosso caso, o bug tracker é suportado pelo repositório de código dedicado Github (veja a figura 10.7).</p>
+
+<p><img src="media/fig107.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.7 - Sistema de rastreamento de bug no Github para um plugin QGIS</p>
+
+<p>Detalhar como relatar um problema de software no Github excede o escopo deste módulo, no entanto, é importante destacar um alguns aspectos. Em primeiro lugar, o ecossistema de código aberto - seja geoespacial ou não - funciona melhor quando todas as partes envolvidas estão ativas, ou seja, os desenvolvedores programando e os usuários testando e relatando os problemas identificados. Se alguém fizer uma pesquisa rápida nos diferentes rastreadores de bug para <a href="https://github.com/qgis/QGIS/issues">QGIS</a> ou <a href="https://github.com/OSGeo/grass/issues">GRASS</a> ou outra solução de código aberto, notará uma atividade intensa. E isso é bom, mostra que a comunidade está viva, que a interação entre desenvolvedores e usuários funciona normalmente. Em segundo lugar, antes de abrir um relatório de bug através de muitos canais diferentes, certifique-se de ter pesquisado exaustivamente online por uma solução para o seu problema. Caso contrário, você corre o risco de não ser atendido por não dedicar tempo para fazer seu dever de casa.</p>
+
+<h4 id="perguntas-do-questionário"><strong>Perguntas do questionário</strong></h4>
+
+<ol>
+  <li>Você precisa do nome completo do plugin para encontrá-lo no Gerenciador de plugins?
+    <ul>
+      <li><span style="text-decoration: underline;"> Não, uma palavra-chave é suficiente. </span></li>
+      <li>Sim.</li>
+    </ul>
+  </li>
+  <li>Os plugins oficiais e experimentais estão disponíveis no mesmo repositório?
+    <ul>
+      <li><span style="text-decoration: underline;"> Sim, desde que a opção ‘Mostrar os plugins experimentais’ no Plug-in do gerenciador esteja selecionada. </span></li>
+      <li>Não, para experimental existem outros repositórios.</li>
+    </ul>
+  </li>
+  <li>Cite 2 ou 3 informações que um usuário pode encontrar na documentação de um plugin:
+    <ul>
+      <li>Título e descrição, número de downloads, página inicial, links do repositório de código, nome do desenvolvedor, uma descrição resumida.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="fase-2-alguns-plugins-interresantes">Fase 2: Alguns plugins interresantes</h3>
+
+<p>Plugins podem ser classificados em várias categorias, dependendo do que se considera importante. A seguir, identificamos os 2:</p>
+
+<ul>
+  <li>Pelo nível de desenvolvimento:
+    <ul>
+      <li>Oficial - o plugin é considerado estável, bem documentado e pode ser usado em produção;</li>
+      <li>Experimental - o plugin está em estágio inicial de desenvolvimento, é recomendado apenas para fins de teste;</li>
+      <li>Obsoleto - o plugin não é mais mantido, ou seja, não será atualizado para versões mais recentes, o desenvolvedor pode não responder ao relatório de bug, para ser usado apenas se não houver outra maneira de resolver o problema em questão.</li>
+    </ul>
+  </li>
+  <li>Por tipo de categoria:
+    <ul>
+      <li>Vetor;</li>
+      <li>Raster;</li>
+      <li>Rede;</li>
+      <li>Base de dados;</li>
+      <li>Cartografia.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Deve-se notar que alguns plugins externos agem como pontes que permitem o acesso através do QGIS a bancos de dados externos, nuvens, serviços, nesse caso, elementos adicionais podem ser necessários - como uma conta paga para o serviço externo, nuvem ou uma chave de API. Um exemplo para ilustrar isso é o plugin Planet Explorer da Planet Inc. (veja a figura 10.8).</p>
+
+<p><img src="media/fig108.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.8 - Exemplo de um plugin que requer assinatura externa para funcionar no QGIS em sua capacidade total</p>
+
+<p>Embora na descrição não haja nenhuma menção sobre isso, vá para a página inicial do plugin e veja os requisitos para seu funcionamento: “Assinatura ou teste do Planet para acessar e baixar imagens do Planet. Não tem uma assinatura? Entre em contato com nossa <a href="https://www.planet.com/contact/">equipe</a> para saber mais.”</p>
+
+<p>Nas páginas a seguir, identificaremos e forneceremos exemplos curto de alguns plugins que consideramos úteis. Por favor, tenha em mente que esta é uma pequena lista do extenso universo de plugins, então fique à vontade para explorar mais.</p>
+
+<h4 id="discovery"><strong>Discovery</strong></h4>
+
+<p><img src="media/fig109_a.png" alt="Alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.9a - O plugin</p>
+
+<p>Discovery é um plugin muito útil que permite pesquisar texto armazenado nos atributos de seus vetores. O plugin se conecta a um banco de dados PostgreSQL / PostGIS, MS SQL Server, ou um arquivo de geopackage e procura por texto nas colunas indicadas. Ele permite auto-completar e também oferece suporte para escalas com base em expressões flexíveis.</p>
+
+<p>Para testá-lo, usaremos um arquivo de geopackage preparado por The Humanitarian Data Exchange e disponível para <a href="https://data.humdata.org/dataset/hotosm_phl_north_populated_places">download</a>. É um arquivo vetorial contendo os lugares povoados das Filipinas, junto com os nomes e número de pessoas. Os dados brutos foram baixados do OpenStreetMap.</p>
+
+<p>Depois de usar o gerenciador de plugins para instalar o Discovery, uma nova barra de ferramentas deve estar visível em seu QGIS. Vamos configurar os parâmetros: Tipo de fonte de dados: geopackage, nome: Filipinas, escolha o arquivo de acordo e a camada será <code class="language-plaintext highlighter-rouge">Populated Places</code> (Locais Povoados), a coluna de pesquisa: nome. Também solicitaremos informações adicionais a serem exibidas na barra de pesquisa: <code class="language-plaintext highlighter-rouge">is_in</code> e <code class="language-plaintext highlighter-rouge">population</code>. Na nossa situação, se houver mais povoados com o mesmo nome, mas em províncias diferentes, seremos capazes de diferenciá-las. Sua configuração do Discovery deve ser semelhante à figura 10.9b.</p>
+
+<p><img src="media/fig109_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.9b - Configurando o plugin Discovery</p>
+
+<p>Clique em OK e vamos procurar por “San Roque” na barra de pesquisa (ver figura 10.9c).</p>
+
+<p><img src="media/fig109_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.9c - Usando o Discovery para pesquisar rapidamente os atributos das camadas vetoriais.</p>
+
+<p>Em nosso exemplo, podemos ver que há muitos lugares povoados de San Roque nas Filipinas, escolhendo uma entrada nesta lista e o QGIS irá ampliá-la (consulte a figura 10.9d).</p>
+
+<p><img src="media/fig109_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.9d - Ampliação da geometria do elemento selecionado na barra de pesquisa.</p>
+
+<p>O plugin oferece a possibilidade de encontrar vetores por pesquisa de texto juntamente com vários filtros, como uma caixa delimitadora ou várias consultas SQL.</p>
+
+<p>Para uma descrição detalhada dos recursos do plugin, junto com um tutorial mais abrangente, verifique o plugin Discovery <a href="https://www.lutraconsulting.co.uk/projects/discovery/">página da web</a>.</p>
+
+<h4 id="polygon-divider"><strong>Polygon Divider</strong></h4>
+
+<p><img src="media/fig1010_a.png" alt="Alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.10a - O plugin</p>
+
+<p>Polygon Divider Polygon Divider é outro plugin QGIS útil que ajuda o usuário a dividir de forma eficiente polígonos em ‘aproximadamente quadrados’ de um tamanho definido, a partir de uma camada vetorial do tipo polígono.</p>
+
+<p>Essa ferramenta pode ser útil para uma infinidade de aplicações, como parcelamento de terras, amostragem ambiental e assim por diante.</p>
+
+<p>Vamos usar esta ferramenta no conjunto de dados dos limites do Rio de Janeiro e ver quais resultados obtemos.</p>
+
+<p>Usando o gerenciador de plugins, instale o Polygon Divider. Após a conclusão, um novo ícone aparecerá na barra de ferramentas QGIS e uma nova janela será aberta (consulte a figura 10.10b).</p>
+
+<p><img src="media/fig1010_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.10b - Janela do plugin do divisor de polígono</p>
+
+<p>Escolha como camada de entrada a camada de polígono do Rio de Janeiro, salve o arquivo de saída como <code class="language-plaintext highlighter-rouge">rj_polygonDivider</code>, escolha <code class="language-plaintext highlighter-rouge">1000000</code> (significando que todas as divisões terão cerca de 100 hectares), escolha <code class="language-plaintext highlighter-rouge">left to right</code> (da esquerda para a direita) como direção de corte e tolerância <code class="language-plaintext highlighter-rouge">1</code>. O resultado deve ser semelhante à figura 10.10c.</p>
+
+<p><img src="media/fig1010_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.10c - Resultado da execução do plugin Polygon Divider na camada vetorial do Rio</p>
+
+<p>Para uma descrição detalhada dos recursos do plugin, junto com um tutorial mais abrangente, verifique o Polygon Divisor <a href="https://github.com/jonnyhuck/RFCL-PolygonDivider">página da web</a>.</p>
+
+<h4 id="load-them-all"><strong>Load Them All</strong></h4>
+
+<p><img src="media/fig1011_a.png" alt="Alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.11a - O plugin Load Them All</p>
+
+<p>Este é um plugin útil quando você tem múltiplas camadas (vetores e rasters) que você precisa carregar no QGIS. O plugin permite que você carregue tudo automaticamente, de uma vez. Mas a grande vantagem é que ele fornece uma infinidade de filtros, como alfanuméricos (por nome), data de modificação, bounding box (extensão, a partir de coordenadas inseridas manualmente), tipo de geometria e outros.</p>
+
+<p>Para testá-lo, carregaremos os arquivos do módulo anterior 8. Para o vetor, escolheremos os shapefiles que foram processados ​​antes de uma data selecionada, para o raster escolheremos um filtro alfanumérico - o nome do raster carregado deve começar com LandCover (veja a figura 10.11_b).</p>
+
+<p><img src="media/fig1011_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.11b - Configurando os parâmetros do plugin Load Them All (vetores e rasters)</p>
+
+<p>Os parâmetros identificados acima representam um exemplo baseado na estrutura disponível. Você pode alterá-lo da maneira que achar melhor, com base nos arquivos do computador.</p>
+
+<p>Os resultados da execução de Load Them All com os parâmetros acima são apresentados na figura 10.11c (vetores) e 10.11d (rasters).</p>
+
+<p><img src="media/fig1011_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.11c - Usando o plugin Load Them All para carregar vários vetores</p>
+
+<p><img src="media/fig1011_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.11d - Usando o plugin Load Them All para carregar vários rasters</p>
+
+<p>Para obter uma descrição detalhada dos recursos do plugin, junto com um tutorial mais abrangente, verifique a <a href="https://github.com/gacarrillor/loadthemall">página da web do plugin</a>.</p>
+
+<h4 id="raster-tracer"><strong>Raster tracer</strong></h4>
+
+<p><img src="media/fig1012_a.png" alt="Alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.12a - O plugin Raster tracer</p>
+
+<p>O Raster Tracer pode ser um plugin muito útil quando se digitaliza por sobre um mapa, em outras palavras, extraindo dados na forma de vetores. Esta atividade é geralmente realizada em mapas topográficos antigos digitalizados, dos quais queremos extrair várias informações para armazenar, processar e visualizá-las em um SIG/GIS. Um bom exemplo é a digitalização feita sobre mapas topográficos para extrair curvas de nível para construir em SIG um modelo 3D do relevo.</p>
+
+<p>Embora hoje, com o surgimento de modelos digitais de terreno obtidos a partir de imagens de satélite, isso possa não ser mais um problema, a digitalização ainda é amplamente empregada. O uso mais proeminente é para extrair informações de mapas antigos. Mapas históricos nos oferecem uma janela para o passado, antes de termos satélites para monitorar nossas florestas e mudanças na cobertura do solo. Como esses documentos cartográficos eram originalmente em papel, para poder usar a informação com tecnologia moderna é preciso digitalizá-los.</p>
+
+<p>Usando o Gerenciador de plugins, pesquise e instale o Raster Tracer. Este plugin adiciona ao QGIS uma capacidade semi-automática de traçar características lineares do mapa raster subjacente, clicando em seus pontos de inflexão no mapa raster. Uma vez instalado, um novo ícone deve aparecer na sua barra de ferramentas.</p>
+
+<p>Para usá-lo, precisamos de pelo menos 2 camadas - uma é a camada raster e a outra é a camada vetorial que irá capturar os dados. Identificamos para a província de Pampanga um mapa topográfico, 1: 50k no site oficial da Autoridade Nacional de Mapeamento e Informação de Recursos. Infelizmente, embora eles tenham fornecido acesso ao <a href="http://www.namria.gov.ph/3131-IIIAngelesCity.html">mapa</a>, ele não é georreferenciado. Para fins de demonstração, continuaremos sem corrigir esse problema, no entanto, observe! Antes de fazer a digitação de vetores de um mapa raster, é fundamental que o último seja georreferenciado corretamente. Caso contrário, o trabalho - que consome muito tempo - será inútil.</p>
+
+<p>Dito isso, traga o mapa topográfico da cidade de Angeles (<code class="language-plaintext highlighter-rouge">Camada - Adicionar camada - Adicionar camada raster ..</code>).</p>
+
+<p>A seguir, criaremos uma camada vetorial MultiString onde todos os objetos de linha que extraímos do mapa topográfico serão armazenados (Camada - Criar Camada - Nova camada GeoPackage ..). Crie um vetor MultiLine e salve-o com o nome tracer_lines. Escolha a projeção EPSG: 3123 - a projeção oficial da região. Inicie o modo de edição nele (<code class="language-plaintext highlighter-rouge">Clique com o botão direito - Alternar edição</code>).</p>
+
+<p>Clique no ícone Raster Tracer e configure os parâmetros, como na figura 10.12b. Escolha a cor das linhas de contorno usando o seletor de cores que se abre ao clicar na opção Trace color.</p>
+
+<p><img src="media/fig1012_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.12b - Configurando os parâmetros do Raster Tracer</p>
+
+<p>Agora, tudo o que resta fazer é iniciar a digitalização. Depois de verificar se o raster do vetor é editável e se o plugin está ativado clicando mais uma vez sobre ele, clique nos pontos de inflexão da linha de contorno que iremos extrair (ver figura 10.112c).</p>
+
+<p><img src="media/fig1012_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.12c - Clique nos pontos de inflexão para traçar a linha usando Raster Tracer</p>
+
+<p>A figura 10.12d apresenta o resultado.</p>
+
+<p><img src="media/fig1012_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.12d - Linha desenhada semiautomática seguindo a cor indicada.</p>
+
+<h4 id="active-fire"><strong>Active Fire</strong></h4>
+
+<p><img src="media/fig1013_a.png" alt="ALT_TEXT" title="image_tooltip" /></p>
+
+<p>Figura 10.13a  O plugin Active Fire</p>
+
+<p>Plugins não são apenas projetados para trabalhar com dados que você tem, mas são construídos para também trazer para o QGIS conjuntos de dados que são produzidos por outras instituições, agências, organizações ou qualquer pessoa que os compartilhe por meio de serviços padronizados de mapeamento da web.</p>
+
+<p>Um bom exemplo é o plugin Active Fire. Este foi desenvolvido para permitir que os usuários do QGIS exibam de forma rápida, intuitiva e sem nenhum esforço, os incêndios nas últimas 24h em qualquer região de interesse. Os produtos de incêndio são produzidos pela NASA e disponibilizados gratuitamente para todos. Os dados brutos vêm de 2 satélites: o espectrorradiômetro de imagem de resolução moderada (<a href="https://modis.gsfc.nasa.gov/">MODIS</a>) (<a href="https://earthdata.nasa.gov/earth-observation-data/near-real-time/firm/c6-mcd14dl">MCD14DL</a>) e Visible Infrared Imaging Radiometer Suite (<a href="https://www.jpss.noaa.gov/viirs.html">VIIRS</a>) 375 m (<a href="https://earthdata.nasa.gov/earth-observation-data/near-real-time/firms/v1-vnp14imgt">VNP14IMGTDL_NRT</a> e <a href="https://earthdata.nasa.gov/earth-observation-data/near-real-time/firms/vj114imgtdl-nrt">VJ114IMGTDL_NRT</a>) para as últimas 24h.</p>
+
+<p>Para encontrá-lo, abra o Gerenciador de plugins escreva <code class="language-plaintext highlighter-rouge">fire</code>. Após a instalação, um novo ícone vermelho aparecerá na barra de ferramentas QGIS. Ao clicar sobre ele, aparece uma nova janela onde permite selecionar em qual sensor deseja que os pixels de incêndio sejam identificados nas últimas 24 horas (ver figura 10.13b).</p>
+
+<p><img src="media/fig1013_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.13b - Usando o plugin Active Fire para carregar produtos de incêndio da NASA no QGIS</p>
+
+<p>O plugin também calcula o número de pixels de incêndio registrados.</p>
+
+<h4 id="qgis2web"><strong><a href="https://github.com/tomchadwin/qgis2web">Qgis2web</a></strong></h4>
+
+<p><img src="media/fig1014_a.png" alt="Alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.14a - O plugin qgis2web</p>
+
+<p>Este é um plugin que permite ao usuário exportar rapidamente seu projeto QGIS para um <strong>mapa web</strong>.</p>
+
+<p>Um mapa web é uma exibição interativa de informações geográficas que pode ser aberta em navegadores (browsers). Interagimos diariamente com essas representações; basta pensar em OpenStreetMap, Google Maps, Waze, Pokémon Go.</p>
+
+<p>Este plugin permite preparar e exportar rapidamente um mapa para a Internet, através das tecnologias web de <a href="https://openlayers.org/">OpenLayer3</a> ou <a href="https://leafletjs.com/">Leaflet</a>. Qgis2web faz o seu melhor para interpretar um projeto QGIS e exportar HTML, Javascript e CSS para criar um mapa web o mais próximo possível do projeto QGIS.</p>
+
+<p>Após a instalação do plugin qgis2web, um novo ícone aparece na barra de ferramentas QGIS, o mesmo representado no Gerenciador de Plugins. Clique nele para abrir uma janela, como a da figura 10.14b.</p>
+
+<p><img src="media/fig1014_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.14b - Escolhendo o que seu mapa irá mostrar no navegador.</p>
+
+<p>A interface é intuitiva, mas lembre-se de que quanto mais pesados ​​os conjuntos de dados, mais tempo demorará para ser preparado e exportado. Após escolher para onde exportar, clique no botão exportar para finalizar (ver figura 10.14c).</p>
+
+<p><img src="media/fig1014_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.14c - QGIS2web preparando os arquivos e pastas necessários para a tecnologia da web OpenLayer 3</p>
+
+<p>A pasta exportada contém vários arquivos, dependendo de qual tecnologia de mapeamento da web foi selecionada - Leaflet ou Openlayers3 . No caso do OpenLayer3, a pasta escolhida para a exportação contém os seguintes arquivos e pastas: <code class="language-plaintext highlighter-rouge">images, index.html, layers, resources, styles, webfonts</code>. Clique duas vezes no arquivo <code class="language-plaintext highlighter-rouge">index.html</code> e seu mapa exportado será aberto em seu navegador, onde você pode alternar quais camadas ficarão visíveis (consulte a figura 10.14d).</p>
+
+<p><img src="media/fig1014_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.14d - Abrindo o arquivo index.html em seu navegador</p>
+
+<p>Como você notou, o navegador abre este mapa de sua pasta local (onde você disse ao qgis2web para exportar).</p>
+
+<p>Este plugin QGIS é uma ótima ferramenta para ajudá-lo a preparar seus mapas para a web.</p>
+
+<p>Para uma descrição detalhada dos recursos do plugin, junto com um tutorial mais abrangente, verifique a qgis2web <a href="https://github.com/tomchadwin/qgis2web">página da web</a>.</p>
+
+<h4 id="dataplotly"><strong>DataPlotly</strong></h4>
+
+<p><img src="media/fig1015_a.png" alt="Alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.14a - O plugin DataPlotly</p>
+
+<p>O plugin DataPlotly foi desenvolvido especificamente para suportar visualizações interativas de gráficos dos dados vetoriais carregados no QGIS. O plugin é baseado em uma biblioteca Python chamada Plotly, que é bastante poderosa, fornecendo a possibilidade de criar vários gráficos interativos com qualidade para publicação: gráficos de linha, gráficos de dispersão, gráficos de área, gráficos de barras, barras de erro, gráficos boxplot, histogramas, mapas de calor, subplots, eixos múltiplos, gráficos polares e gráficos de bolhas. Mais informações sobre esta biblioteca Python estão disponíveis no <a href="https://plotly.com/python/">site oficial</a>.</p>
+
+<p>Instale o plugin usando o gerenciador de plugins e carregue algumas camadas vetoriais para visualizar:</p>
+
+<ul>
+  <li>Waterways_3123 (tipo de linha);</li>
+  <li>Locais povoados (tipo de ponto);</li>
+</ul>
+
+<p>Vamos preparar um gráfico interativo mostrando quantos rios vs. canais vs. riachos vs. segmentos de drenagem que temos em nosso conjunto de dados.</p>
+
+<p>Ao clicar no ícone específico, uma nova janela será aberta, consulte a figura 10.24.</p>
+
+<p><img src="media/fig1015_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15b - Janela / painel do DataPlotly.</p>
+
+<p>A seguir, configure os parâmetros, como na figura 10.15c.</p>
+
+<p><img src="media/fig1015_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15c - Configurando os parâmetros para o gráfico de pizza que representa os tipos de linhas de água</p>
+
+<p>Escolha waterways_3123 como a camada vetorial da qual extrair os dados plotados, campo de agrupamento - fclass, Campo Y - comprimento. Se o comprimento precisar ser calculado, vá para a tabela de atributos da camada vetorial e escreva no campo calculadora <code class="language-plaintext highlighter-rouge">round($length)</code>. Para mais detalhes, consulte o módulo 8. Em seguida, selecione ‘single plot’ no tipo ploty e clique no botão Criar plotagem, no lado inferior direito. Seu resultado deve ser semelhante à figura 10.15d.</p>
+
+<p><img src="media/fig1015_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15d - Tipos de vias navegáveis ​​por gráfico circular de comprimento.</p>
+
+<p>Ao passar o mouse sobre cada segmento do gráfico de pizza, um pop-up aparece mostrando o nome (retirado da coluna fclass), a soma dos comprimentos e a porcentagem do total.</p>
+
+<p>Uma funcionalidade significativa do DataPlotly é a conexão com a tela do mapa QGIS. Para entender o que é isso, clique em uma das seções do gráfico de pizza. Você deve ver que alguns recursos são selecionados <strong>automaticamente</strong> na tela do mapa (consulte a figura 10.15e).</p>
+
+<p><img src="media/fig1015_e.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15e - Teste de conexão interativa da tela do mapa DataPlotly e QGIS</p>
+
+<p>Isso também significa que você pode atualizar interativamente seu gráfico, por exemplo, para mostrar apenas os recursos selecionados. Para testar, selecione apenas uma parte dos cursos d’água na tela do mapa, vá para o DataPlotly, primeira guia e nos parâmetros do gráfico, marque a opção ‘only selected features’ (consulte a figura 10.15f).</p>
+
+<p><img src="media/fig1015_f.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15f - Atualizar interativamente o gráfico para mostrar apenas os recursos selecionados.</p>
+
+<p>Em seguida, clique no botão Atualizar gráfico no canto inferior direito da janela DataPlotly. Os resultados devem ser semelhantes aos da figura 10.29 (apenas aproximadamente, porque sua seleção provavelmente difere daquela mostrada na figura 10.15g).</p>
+
+<p><img src="media/fig1015_g.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15g - Atualize o gráfico para mostrar apenas os recursos selecionados na tela do mapa.</p>
+
+<p>Além disso, o DataPlotly fornece ao usuário uma função de exportação - em um arquivo .pdf ou .html. Os botões correspondentes estão na parte inferior direita da janela DataPlotly, consulte a figura 10.15h.</p>
+
+<p><img src="media/fig1015_h.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15h - Recursos de exportação do DataPlotly</p>
+
+<p>Exportar como arquivo HTML permite ao usuário preparar uma ampla variedade de gráficos de dados prontos para publicação na web (consulte a figura 10.15i).</p>
+
+<p><img src="media/fig1015_i.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15i - Usando um navegador para abrir o arquivo HTML exportado pelo DataPlotly.</p>
+
+<p>O plugin também é muito bem documentado. Ele fornece um menu de ajuda para cada tipo de plotagem. Você pode acessá-lo clicando na quarta aba do DataPlotly (veja a figura 10.15j).</p>
+
+<p><img src="media/fig1015_j.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15j - Menu de ajuda para cada tipo de plotagem acessível através da janela do plugin.</p>
+
+<p>Devido ao link direto e interativo com os conjuntos de dados carregados do QGIS, as expressões também podem ser usadas ao preparar um gráfico. Para testar essa capacidade, criaremos uma base de plotagem na camada vetorial Locais povoados. Defina os seguintes parâmetros: tipo: gráfico de barras, camada: locais povoados, X_field: is_in, Y_field - abra a calculadora de campo e insira <code class="language-plaintext highlighter-rouge">"population" is not null</code> (consulte a figura 10.15k e a figura 10.15l).</p>
+
+<p><img src="media/fig1015_k.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15k - Abrindo o editor de campo no DataPlotly com base nos atributos da camada QGIS selecionada para aplicar uma expressão para filtrar o que o gráfico exibirá</p>
+
+<p><img src="media/fig1015_l.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15l - Inserindo uma expressão na calculadora de campo</p>
+
+<p>O resultado deve ser semelhante ao da figura 10.35.</p>
+
+<p><img src="media/fig1015_m.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15m - Resultado do DataPlotly da filtragem por expressão</p>
+
+<p>Se formos interpretar este gráfico, ele nos mostra que entre todas as províncias onde existem lugares povoados, o atributo população é diferente de 0 em apenas 3 regiões, Alaminos, Sual, Pangasian e Bagac. Pode-se testar facilmente essa conclusão examinando a tabela de atributos.</p>
+
+<p>O DataPlotly também oferece ao usuário a possibilidade de criar subplots, o que significa que vários gráficos podem ser exibidas em uma única figura.</p>
+
+<p>Para testar essa funcionalidade, usaremos a camada vetorial de locais de população. Temos os seguintes atributos de interesse: <code class="language-plaintext highlighter-rouge">place</code> = tipo de lugar (cidade, vila, vila, etc., <code class="language-plaintext highlighter-rouge">is_in </code>= nome da província a que pertence (se conhecido), <code class="language-plaintext highlighter-rouge">population</code> = (números da população) e <code class="language-plaintext highlighter-rouge">name</code> = o nome do lugar (se conhecido). Vamos integrar na mesma figura, 2 gráficos de dados: um para nos mostrar quantos dos lugares povoados se enquadram em cada categoria de <code class="language-plaintext highlighter-rouge">place</code> e o segundo, como é a população dividida pelos 4 tipos de <code class="language-plaintext highlighter-rouge">places</code>.</p>
+
+<p>![alt_text](media/fig1015_n.png” image_tooltip “)</p>
+
+<p>Figura 10.15n - Configurando os parâmetros para o primeiro lote - tipos de assentamentos por seus números.</p>
+
+<p><img src="media/fig1015_o.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15o - Configuração dos parâmetros para a segunda parcela - tipos de assentamentos por número de população.</p>
+
+<p><img src="media/fig1015_p.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.15p - Subplots em uma linha</p>
+
+<p>Para uma descrição detalhada dos recursos do plugin, junto com um tutorial mais abrangente, verifique o DataPlotly <a href="https: // github .com / ghtmtt / DataPlotly">webpage</a>.</p>
+
+<h4 id="plugin-quickmapservices--openlayers"><strong>Plugin QuickMapServices / OpenLayers</strong></h4>
+
+<p><img src="media/fig1016_a1.png" alt="Alt_text" title="image_tooltip" /></p>
+
+<p><img src="media/fig1016_a2.png" alt="Alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.16a - plugin QuickMapServices; 10.16b - Plug-in OpenLayers</p>
+
+<p>Estes 2 plugins são excepcionalmente úteis quando um usuário precisa adicionar mapas base ao seu projeto QGIS. Por exemplo, deseja-se ver no contexto o posicionamento de uma nova camada vetorial recebida, ou talvez apenas preparar uma representação cartográfica mais atrativa para um relatório. Para qualquer um desses objetivos, os QuickMapServices permite carregar camadas de mapa base de diferentes fornecedores, como OpenStreetMap, NASA, Bing ou Google Maps, em apenas 2 cliques.</p>
+
+<p>Instale os dois plugins usando o Gerenciador de plugins. Nesse caso, você notará que eles aparecerão na guia Web (consulte a figura 10.16b).</p>
+
+<p><img src="media/fig1016_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.16b - Localização dos plugins QuickMapServices e OpenLayers.</p>
+
+<p>Usá-los é bastante simples, basta clicar na camada que deseja trazer para a tela do mapa e o plugin fará todo o trabalho. Este plugin requer uma boa ligação à Internet, uma vez que utiliza dados disponibilizados pelos seus fornecedores através de serviços de mapeamento web.</p>
+
+<p>A Figura 10.16c apresenta o OSM Standard trazido como um mapa base para o Rio de Janeiro.</p>
+
+<p><img src="media/fig1016_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.16c - Usando o plugin OpenLayers.</p>
+
+<p>A Figura 10.16d ilustra o alinhamento perfeito do mapa base carregado na tela do mapa QGIS usando o plugin OpenLayers. Mesmo que as 2 camadas não estejam na mesma projeção, o QGIS permite a projeção em tempo real, portanto, a sobreposição é possível.</p>
+
+<p><img src="media/fig1016_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.16d - Dados vetoriais carregados (estradas) sobrepostos ao mapa OSM Standard</p>
+
+<p>Para uma descrição detalhada dos recursos dos plugins, juntamente com um tutorial mais abrangente, verifique seus página da web: <a href="https://nextgis.com/blog/quickmapservices/">QuickMapServices</a> e <a href="https://github.com/sourcepole/qgis-openlayers-plugin">OpenLayer Plugin</a>.</p>
+
+<h4 id="table2style"><strong>Table2Style</strong></h4>
+
+<p><img src="media/fig1017_a.png" alt="Alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.17a - O plugin Table to Style</p>
+
+<p>Este plugin é útil para situações onde existem valores específicos para pixels dentro de uma camada raster que correspondem perfeitamente a uma cor específica. Neste currículo, encontramos esse exemplo, ao trabalhar com os dados de cobertura da terra (ver figura 10.17b).</p>
+
+<p><img src="media/fig1017_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 10.17b - Exemplos de situações em que os valores dos pixels correspondem a uma cor exata</p>
+
+<p>Do fornecedor deste produto com base em imagens de satélite, os valores dos pixels e as cores associadas também são disponibilizados :</p>
+
+<table>
+  <tr>
+   <td> <strong> Valor </strong>
+   </td>
+   <td> <strong> Cor </strong>
+   </td>
+   <td> <strong> Descrição </strong>
+   &lt;/ td&gt;
+  &lt;/tr&gt;
+  <tr>
+   <td> 0
+   </td>
+   <td> # 282828
+   </td>
+   <td> Desconhecido. Nenhum ou nenhum dado de satélite disponível.
+   </td>
+  </tr>
+  <tr>
+   <td> 20
+   </td>
+   <td> # FFBB22
+   </td>
+   <td> Arbustos. Plantas lenhosas perenes com caules persistentes e lenhosos e sem caule principal definido com menos de 5 m de altura. A folhagem do arbusto pode ser perene ou caduca.
+   </td>
+  </tr>
+  <tr>
+   <td> 30
+   </td>
+   <td> # FFFF4C
+   </td>
+   <td> Vegetação herbácea. Plantas sem caule persistente ou brotos acima do solo e sem estrutura firme definida. A cobertura de árvores e arbustos é inferior a 10%.
+   </td>
+  </tr>
+  <tr>
+   <td> 40
+   </td>
+   <td> # F096FF
+   </td>
+   <td> Vegetação / agricultura cultivada e manejada. Terras cobertas com culturas temporárias seguidas de colheita e um período de solo nu (por exemplo, sistemas de cultivo único e múltiplo) Observe que as culturas lenhosas perenes serão classificadas como o tipo apropriado de cobertura de terra de floresta ou arbusto.
+   </td>
+  </tr>
+  <tr>
+   <td> 50
+   </td>
+   <td> # FA0000
+   </td>
+   <td> Urbano / edificado. Terreno coberto por edifícios e outras estruturas feitas pelo homem.
+   </td>
+  </tr>
+  <tr>
+   <td> 60
+   </td>
+   <td> # B4B4B4
+   </td>
+   <td> Vegetação nua / esparsa. Terras com solo, areia ou rochas expostas e nunca apresentam mais de 10% de cobertura vegetal em qualquer época do ano.
+   </td>
+  </tr>
+  <tr>
+   <td> 70
+   </td>
+   <td> # F0F0F0
+   </td>
+   <td> Neve e gelo. Terras cobertas de neve ou gelo ao longo do ano.
+   </td>
+  </tr>
+  <tr>
+   <td> 80
+   </td>
+   <td> # 0032C8
+   </td>
+   <td> Corpos d'água permanentes. Lagos, reservatórios e rios. Podem ser corpos de água doce ou salgada.
+   </td>
+  </tr>
+  <tr>
+   <td> 90
+   </td>
+   <td> # 0096A0Pantanal
+   </td>
+   <td>herbáceo. Terras com mistura permanente de água e vegetação herbácea ou lenhosa. A vegetação pode estar presente em água salgada, salobra ou doce.
+   </td>
+  </tr>
+  <tr>
+   <td> 100
+   </td>
+   <td> # FAE6A0
+   </td>
+   <td> Musgo e líquen.
+   </td>
+  </tr>
+  <tr>
+   <td> 111
+   </td>
+   <td> # 58481F
+   </td>
+   <td> Floresta fechada, folha de agulha perene. Copa das árvores&gt; 70%, quase todas as árvores de folhas agulhas permanecem verdes o ano todo. O dossel nunca está sem folhagem verde.
+   </td>
+  </tr>
+  <tr>
+   <td> 112
+   </td>
+   <td> # 009900
+   </td>
+   <td> Floresta fechada, folha larga perene. Copa das árvores&gt; 70%, quase todas as árvores de folha larga permanecem verdes durante todo o ano. O dossel nunca está sem folhagem verde.
+   </td>
+  </tr>
+  <tr>
+   <td> 113
+   </td>
+   <td> # 70663E
+   </td>
+   <td> Floresta fechada, folha de agulha decídua. O dossel das árvores&gt; 70% consiste em comunidades de árvores de folhas agulhas sazonais com um ciclo anual de períodos de folhagem e folhagem.
+   </td>
+  </tr>
+  <tr>
+   <td> 114
+   </td>
+   <td> # 00CC00
+   </td>
+   <td> Floresta fechada, folha larga decídua. O dossel das árvores&gt; 70% consiste em comunidades sazonais de folhas largas com um ciclo anual de períodos de folhagem e folhagem.
+   </td>
+  </tr>
+  <tr>
+   <td> 115
+   </td>
+   <td> # 4E751F
+   </td>
+   <td> Floresta fechada, mista.
+   </td>
+  </tr>
+  <tr>
+   <td> 116
+   </td>
+   <td> # 007800
+   </td>
+   <td> Floresta fechada, não correspondendo a nenhuma das outras definições.
+   </td>
+  </tr>
+  <tr>
+   <td> 121
+   </td>
+   <td> # 666000
+   </td>
+   <td> Floresta aberta, folha de agulha perene. Camada superior - árvores 15-70% e segunda camada - mistura de arbustos e pastagens, quase todas as árvores de folhas agulhas permanecem verdes durante todo o ano. O dossel nunca está sem folhagem verde.
+   </td>
+  </tr>
+  <tr>
+   <td> 122
+   </td>
+   <td> # 8DB400
+   </td>
+   <td> Floresta aberta, folha larga perene. Camada superior - árvores 15-70% e segunda camada - mistura de arbustos e pastagens, quase todas as árvores de folha larga permanecem verdes durante todo o ano. O dossel nunca está sem folhagem verde.
+   </td>
+  </tr>
+  <tr>
+   <td> 123
+   </td>
+   <td> # 8D7400
+   </td>
+   <td> Floresta aberta, folha de agulha decídua. Camada superior - árvores 15-70% e segunda camada - mista de arbustos e pastagens, consiste em comunidades sazonais de árvores de folhas agulhas com um ciclo anual de períodos de folhagem e folhagem.
+   </td>
+  </tr>
+  <tr>
+   <td> 124
+   </td>
+   <td> # A0DC00
+   </td>
+   <td> Floresta aberta, folha caduca de folha larga. Camada superior - árvores 15-70% e segunda camada - mistura de arbustos e pastagens, consiste em comunidades sazonais de árvores de folha larga com um ciclo anual de períodos de folhagem e folhagem.
+   </td>
+  </tr>
+  <tr>
+   <td> 125
+   </td>
+   <td> # 929900
+   </td>
+   <td> Floresta aberta, mista.
+   </td>
+  </tr>
+  <tr>
+   <td> 126
+   </td>
+   <td> # 648C00
+   </td>
+   <td> Floresta aberta, não correspondendo a nenhuma das outras definições.
+   </td>
+  </tr>
+  <tr>
+   <td> 200
+   </td>
+   <td> # 000080
+   </td>
+   <td> Oceanos, mares. Podem ser corpos de água doce ou salgada.
+   </td>
+  </tr>
+&lt;/table&gt;
+
+
+Quando um novo conjunto de dados - raster ou vetor - é carregado, o QGIS atribui a ele uma representação visual aleatória. É o usuário que deve definir cores e esquemas apropriados para as representações. Para obter mais informações sobre o estilo das camadas, vá para o módulo 4.
+
+Para testar o plugin table2style, usaremos o conjunto de dados raster LandCover2019, usado também no módulo nº 9. Ao carregar o raster no QGIS, você deve ter um resultado semelhante ao da figura 10.17c.
+
+
+![alt_text](media/fig1017_c.png "image_tooltip")
+
+Figura 10.17c - QGIS atribui cores aleatoriamente aos valores de pixel
+
+De acordo com o provedor de dados, sabemos que para cada valor de pixel há uma cor claramente atribuída e no domínio da cobertura da terra, e essas cores já representam convenções, assim como na cartografia clássica. As florestas são representadas com um tipo específico de verde, as pastagens com outro, o oceano é representado com um tipo diferente de azul do que a água superficial interior e assim por diante. O pior caso seria atribuir manualmente todas essas cores aos seus respectivos valores. No entanto, o plugin table2style resolve esse problema automaticamente, em questão de segundos.
+
+Vá para o plugin Manager e instale o plugin table2style. Um novo ícone aparecerá na sua barra de ferramentas. Abra-o clicando duas vezes nele. Uma janela de configuração deve aparecer, como na figura 10.17d.
+
+
+![alt_text](media/fig1017_d.png "image_tooltip")
+
+Figura 10.17d - Janela Table2style
+
+O plugin requer 2 parâmetros - uma camada raster e uma tabela de atributos com valores de pixel, rótulo de descrição e códigos de cores em um dos três sistemas: RGB , HSV ou Hex. De acordo com nossa tabela acima, temos códigos hexadecimais para as cores atribuídas. Portanto, carregue a tabela no QGIS (`Camada - Adicionar camada - Adicionar camada de texto delimitado…`), sem geometria. A tabela de valores LandCover deve ser semelhante à figura 10.17e.
+
+
+![alt_text](media/fig1017_e.png "image_tooltip")
+
+Figura 10.17e - Tabela de atributos com valores de pixel, códigos de cores e descrição para Land Cover
+
+Agora, vamos dar uma olhada no conjunto de dados raster. O table2style funciona apenas em um raster de 1 banda, pois conecta um valor de pixel com um código de cor. Se houver mais bandas disponíveis, ele não saberia qual escolher. No entanto, verificando as propriedades da camada LandCover2019, notamos que existem 3 bandas (`Propriedades - Informações - role para baixo até Bandas`). Como precisamos apenas da Banda 1 - classificação discreta, usaremos a calculadora raster para extraí-la (`Raster - Calculadora raster` e inserimos no campo de expressão apenas `"LandCover_2019@1"` - salvar o resultado). Para obter mais detalhes sobre como trabalhar com rasters, verifique o módulo 9.
+
+Agora, temos tudo o que precisamos para testar o plugin. Configure os parâmetros como na figura 10.17f.
+
+
+![alt_text](media/fig1017_f.png "image_tooltip")
+
+Figura 10.17f - Configurando os parâmetros do plugin table2style para o conjunto de dados Land Cover
+
+O resultado deve ser semelhante ao da figura 10.17g.
+
+
+![alt_text](media/fig1017_g.png "image_tooltip")
+
+Figura 10.17g - Conjunto de dados raster estilizado automaticamente usando o plugin table2style
+
+Para uma descrição detalhada do plugin veja [https://github.com/ptarroso/table2style](https://github.com/ptarroso/table2style).
+
+
+#### **ORS Tools**
+
+
+![Alt_text](media/fig1018_a.png "image_tooltip")
+
+Figura 10.48a - O plugin ORS Tools
+
+Para nosso último plugin a ser apresentado, iremos mostrar os incríveis recursos do mundo interconectado de dados, ferramentas e serviços GIS. Vimos anteriormente que existem plugins que podem nos ajudar a carregar nossos dados QGIS de outros provedores sem qualquer incômodo relacionado a baixar, armazenar e saber como abri-lo (plugin OpenLayers, Active Fire). Ainda, o plugin ORS Tools é construído para fornecer acesso a um serviço de roteamento externo - o openrouteservice.org, baseado no OpenStreetMap.
+
+**Roteamento** é o processo de seleção de um caminho para o tráfego em uma rede ou entre ou através de vários pontos selecionados.
+
+O conjunto de ferramentas inclui roteamento, isócronas e cálculos de matriz, tanto interativos na tela do mapa quanto de arquivos de pontos dentro da estrutura de processamento.
+
+Usando o gerenciador de plugins, instale o plugin ORS Tools. Um novo ícone aparecerá na sua barra de ferramentas. Clique duas vezes para abrir (veja a figura 10.18b).
+
+
+![alt_text](media/fig1018_b.png "image_tooltip")
+
+Figura 10.18b - Abra a janela de ferramentas ORS.
+
+Conforme mencionado, este plugin está usando um banco de dados externo - OpenStreetMap - e algoritmos externos que fazem parte do serviço - openrouteservice. Para podermos nos conectar a este serviço externo, precisaremos fazer uma conta em sua página web e pedir uma **chave API.**
+
+Uma chave de API é um identificador exclusivo usado para autenticar um usuário, desenvolvedor ou programa de chamada para uma API. A API é como um portal para o interior de um software, um acesso programático a seus processos e algoritmos. Assim, para usar o openrouteservice através do QGIS, vamos pedir uma _chave_.
+
+Prossiga com os seguintes passos:
+
+
+1. Clique no botão Sign Up na janela ORS Tools (figura 10.49).
+
+
+![alt_text](media/fig1018_c.png "image_tooltip")
+
+Figura 10.18c - Botão de login
+
+2. Faça uma conta gratuita no site no site openrouteservice que foi aberto.
+
+
+![alt_text](media/fig1018_d.png "image_tooltip")
+
+Figura 10.18d - Página da conta do Openrouteservice
+
+
+3. Após fazer a conta, você receberá um e-mail informando sobre o que acabou de obter acesso gratuito.
+
+
+![alt_text](media/fig1018_e.png "image_tooltip")
+
+Figura 10.18e - E-mail recebido de openrouteservice
+
+4. Faça login em sua conta recém-criada e solicite um token.
+
+
+![alt_text](media/fig1018_f.png "image_tooltip")
+
+Figura 10.18f - Solicitar token openrouteservice
+
+5. Depois que seu token for criado, clique no longo texto para copiá-lo.
+6. Retorne ao QGIS e insira a chave API copiada.
+
+
+![alt_text](media/fig1018_g.png "image_tooltip")
+
+Figura 10.18g - Insira a chave openrouteserviceAPI em seu QGIS
+
+Neste ponto, seu QGIS deve estar pronto para calcular rotas usando openrouteservice e OpenStreetMap. Para testar seus recursos básicos, carregue no QGIS as camadas de construção de Pampanga. Certifique-se de estar trabalhando em EPSG 3857 ou EPSG: 4326. Depois de carregar a camada, comece a inserir os pontos de roteamento. Abra as Ferramentas ORS e pressione o botão verde + (veja a figura 10.18h).
+
+
+![alt_text](media/fig1018_h.png "image_tooltip")
+
+Figura 10.18h - Inserindo os pontos de roteamento usando ferramentas ORS.
+
+Escolha o algoritmo de roteamento do caixeiro viajante (traveling salesman) e clique em aplicar. Após alguns momentos, uma nova camada vetorial foi criada: Routes_ORS.
+
+
+![alt_text](media/fig1018_i.png "image_tooltip")
+
+Figura 10.18i - Resultado da execução de ferramentas ORS.
+
+Abrindo o OpenStreetMap, notaremos que o ORS Tools tentou construir uma rota para tocar todos os pontos dados clicando no mapa. **Atenção!** O QGIS tinha apenas uma camada carregada e essa era a camada de construções e agora, uma nova camada foi calculada e adicionada automaticamente à tela do mapa!
+
+
+![alt_text](media/fig1018_j.png "image_tooltip")
+
+Figura 10.18j - A rota calculada sobreposta no OpenStreetMap.
+
+Os resultados das Ferramentas ORS dependem muito da qualidade das bases de dados utilizadas, neste caso - o OpenStreetMap.
+
+O plugin, assim como o openroutingservice, tem mais a oferecer, mas deixamos você descobrir isso em sua jornada GIS.
+
+
+#### **Perguntas do questionário**
+
+1. Os plugins QGIS podem ser executados fora da plataforma QGIS?
+* _ <span style="text-decoration: underline;"> Não </span>. _
+* _Sim. _
+2. Para usar um plugin QGIS, é necessário aprender a programar.
+* _ <span style="text-decoration: underline;"> Não. </span> _
+* _Sim. _
+3. É altamente recomendável que todos os plugins sejam instalados através do Gerenciador de Plug-ins, mesmo se eles pudessem ser instalados baixando o arquivo zip e colocando-o na pasta QGIS correta.
+* _Não._
+* _ <span style="text-decoration: underline;"> Sim. </span> _
+</td></tr></table>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

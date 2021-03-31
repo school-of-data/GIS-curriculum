@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title> | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the  page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main"></h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/egypt/module3/module3.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <div dir="rtl">
+<h1>
+الوحدة 3 - خريطة الشارع المفتوحة وطبقة التسوية عالية الدقة
+</h1>
+
+المؤلف: بن هور- Ben Hur, Ali, Samah
+
+
+<h2>
+مقدمة تعليمية
+</h2>
+
+ستقدم هذه الوحدة خريطة الشارع المفتوحة (OpenStreetMap OSM) وطبقة التسوية عالية الدقة (HRSL High Resolution Settlement Layer). مع نهاية هذه الوحدة، يجب أن يكون المتعلم قد اكتسب المفاهيم التالية:
+
+*   مبادئ خريطة الشارع المفتوحة 
+*   بيانات خريطة الشارع المفتوحة وحالات الاستخدام
+*   بيانات طبقة التسوية عالية الدقة وحالات الاستخدام
+
+يجب أيضاً أن يكون المتعلم قد اكتسب المفاهيم التالية:
+
+*   تحميل بيانات OSM كنواقل وبلاط في QGIS
+*   تحميل البيانات النقطية HRSL في QGIS
+
+
+<h2>
+الأدوات والموارد المطلوبة
+</h2>
+
+الأدوات والموارد المطلوبة لهذه الوحدة هي:
+
+*    حاسوب
+*   اتصال بالإنترنت
+*   QGIS 3.16 مثبّت على الحاسوب ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
+*   طبقات المتّجه الاسكندرية و قسم المنتزه (داخل [module3.gpkg](https://drive.google.com/file/d/1TNofhPLBmck2k77E-0drfrlRy8dAKZ8X/view?usp=sharing)). يجدر الاشارة ان ملف الاسكندرية يضم الحدود الادارية.
+
+
+<h2>
+مصادر إضافية
+</h2>
+
+*    المشروع التعاوني لإنشاء خريطة مجانية قابلة للتعديل للعالم خريطة الشارع المفتوحة [https://www.openstreetmap.org](https://www.openstreetmap.org/)
+*    ويكي خريطة الشارع المفتوحة [https://wiki.openstreetmap.org/](https://wiki.openstreetmap.org/)
+*   دليل مستخدم [https://dev.overpass-api.de/overpass-doc/en/](https://dev.overpass-api.de/overpass-doc/en/) Overpass API  
+*   فيسبوك - طبقة تسوية عالية الدقة -  [High Resolution Settlement Layer (HRSL)](https://research.fb.com/downloads/high-resolution-settlement-layer-hrsl/)
+*   CEISIN - طبقة التسوية عالية الدقة - [https://ciesin.columbia.edu/data/hrsl/](https://ciesin.columbia.edu/data/hrsl/)
+*   تبادل البيانات الإنسانية HDX - طبقة التسوية عالية الدقة - [Humanitarian Data Exchange](https://data.humdata.org/search?organization=facebook&amp;q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22)
+
+
+<h2>
+مقدمة موضوعية
+</h2>
+
+أصبحت الخرائط موجودة في كل مكان في حياتنا اليومية. يمكننا فقط سحب هواتفنا وفتح التطبيقات التي تستخدم الخرائط وبيانات الموقع. هناك تطبيقات نستخدمها لتوجيه أنفسنا وتحديد مواقعنا، للتنقل والانتقال من مكان إلى آخر، وتظهر الخرائط حتّى عندما نطلب الطعام من خدمة التوصيل المفضلة لدينا، وما إلى ذلك. فقد أصبحت الخرائط جزءًا لا يتجزأ من أنشطتنا اليومية لدرجة أننا نميل إلى نسيان أن هناك أماكن في العالم لا تزال غير محددة أو غير موجودة في الخرائط الرقمية التي نستخدمها.
+
+
+<h2>
+تفصيل المفاهيم
+</h2>
+
+إن انتشار الخرائط في كل مكان في حياتنا هو نتيجة ثانوية للكم الهائل من المواقع والبيانات المكانية التي نجمعها. إن الفرص والإمكانات لإنشاء شيء جيد من البيانات الجغرافية المكانية المتاحة لنا رائعة ولكن هذا لن يكون ممكنًا إلا إذا كانت مجموعات البيانات الجغرافية المكانية مجانية ومفتوحة المصدر.
+
+
+<h2>
+المحتوى الرّئيسى
+</h2>
+
+<h3>
+عنوان المرحلة 1: بيانات خريطة الشارع المفتوحة ((OpenStreetMap (OSM)
+</h3>
+
+
+<h4><strong>
+ما هي خريطة الشارع المفتوحة ؟
+</strong></h4>
+
+
+خريطة الشارع المفتوحة OpenStreetMap (OSM) <a href="https://www.openstreetmap.org">https://www.openstreetmap.org</a> هي خريطة مجانية قابلة للتحرير للعالم بأسره، تم إنشاؤها من قبل متطوعين من جميع أنحاء العالم وتم إصدارها بترخيص محتوى مفتوح. فهي مشروع ينشئ ويوزع بيانات جغرافية مجانية للعالم - خريطة للعالم من قبل الناس وللناس. إذا لاحظت أنّ شيئاً ما مفقود في OSM، فأنت حرّ في إضافته. وإذا وجدت خطأ ما في OSM، فأنت حرّ في تصحيحه. OSM هي سلعة رقمية مشتركة تقوم بتضخيم قيمة المعلومات المضافة إليها بشكل كبير.
+
+
+![OpenStreetMap website](media/osm.png "OpenStreetMap website")
+
+Figure 1. OpenStreetMap خريطة الشارع المفتوحة
+
+للمزيد من المعلومات حول سبب وجود OpenStreetMap وأهميتها ، يمكنك زيارة الرابط التالي: <a href="https://wiki.openstreetmap.org/wiki/FAQ#Why_OpenStreetMap.3F">https://wiki.openstreetmap.org/wiki/FAQ#Why_OpenStreetMap.3F</a>
+
+يمكنك أيضًا زيارة الرابط التالي: <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</a>
+
+وفقًا لـ OpenStreetMap، فهي "بيانات مفتوحة ، ومرخصة بموجب ترخيص Open Data Commons Open Database ODbL)  (<a href="https://opendatacommons.org/licenses/odbl">https://opendatacommons.org/licenses/odbl</a>) وذلك من قِبل مؤسسة (OpenStreetMap <a href="https://osmfoundation.org/">OSMF</a>) 
+
+ووفقاً لهذا الترخيص فقد تمّ التصريح "أنّك" حرّ في نسخ بياناتنا وتوزيعها ونقلها وتكييفها، طالما أنك تنسب حساب OpenStreetMap والمساهمين فيه. إذا قمت بتغيير بياناتنا أو البناء عليها، فلا يجوز لك توزيع النتيجة إلا بموجب الترخيص نفسه". عند إنشاء خريطة تستخدم بيانات OSM، يجب أن تنسب "© OpenStreetMap المساهمون". يمكنك قراءة المزيد حول حقوق الطبع والنشر وخريطة OpenStreetMap هنا: <a href="https://www.openstreetmap.org/copyright">https://www.openstreetmap.org/copyright</a>
+
+
+<h4><strong>
+أين يتم استخدام OpenStreetMap؟
+</strong></h4>
+
+تتمثل إحدى أهم خصائص OpenStreetMap الأساسية في القدرة على جمع بيانات الخرائط وتحريرها ومشاركتها واستخدامها للعديد من الأغراض المختلفة. هذه هي الحرية التي يوفرها <a href="https://opendatacommons.org/licenses/odbl">ObDL</a>. نظرًا لأن OpenStreetMap تسمح للمستخدمين باستخدام بياناتها مع قيود قليلة جدًا، فهناك مجموعة متنوعة من التطبيقات والخدمات وحالات الاستخدام التي تم إنشاؤها أو بناؤها أو يمكن إنشاؤها باستخدام OpenStreetMap. يتم استخدام OpenStreetMap لإنشاء الخرائط وخدمات التوجيه والتعليم وحتى الأغراض الإنسانية.
+
+في الواقع ، يوجد <a href="https://www.hotosm.org">HOT</a> أو فريق OpenStreetMap الإنساني وهو فريق دولي مكرّس للعمل الإنساني وتنمية المجتمع من خلال رسم الخرائط المفتوحة.
+
+يمكن العثور على قائمة بالخدمات المستندة إلى OpenStreetMap على <a href="https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services">https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services</a>.
+
+
+<h4><strong>
+كيف يمكن استخدام OpenStreetMap في QGIS؟
+</strong></h4>
+
+يمكن استخدام بيانات OSM في QGIS بعدة طرق. الطريقة الأولى هي استخدام طبقات البلاط المشتقة من OSM كخرائط أساس. في الواقع، لدى QGIS اتصال بطبقة بلاط OpenStreetMap افتراضيًا. يمكنك العثور على هذه الطبقة المسماة "OpenStreetMap" ضمن قائمة XYZ Tiles في لوحة المتصفّح.
+
+يمكنك إضافة مربعات أخرى مشتقة من OSM في QGIS مثل تلك الموجودة في قائمة مزودي النشرات Leaflet Providers list <a href="https://leaflet-extras.github.io/leaflet-providers/preview">https://leaflet-extras.github.io/leaflet-providers/preview</a>. توفر المربعات المشتقة من OSM للمستخدمين وصولاً مجانيًا ومفتوحًا إلى خريطة أساس محدّثة نظرًا لأن هذه المربعات يتم تحديثها بانتظام لتتوافق مع الحالة الحالية (مثل الميزات) لـ OSM.
+
+يمكنك أيضًا تحميل الميزات من OSM كبيانات متّجه في QGIS وذلك عن طريق تنزيل بيانات OSM من مواقع مثل GEOFABRIK <a href="https://www.geofabrik.de/data/download.html">https://www.geofabrik.de/data/download.html</a>.
+
+يمكن أيضًا تحميل بيانات إحدى ميزات OSM مباشرة في QGIS باستخدام البرنامج المساعد أو ملحق QuickOSM. يقوم هذا الملحق بالإستفادة من واجهة برمجة تطبيقات Overpass التي تتيح للمستخدمين تحديد مجموعة جزئية من بيانات OSM بسرعة وذلك باستخدام الاستعلامات <a href="https://wiki.openstreetmap.org/wiki/Overpass_API)">https://wiki.openstreetmap.org/wiki/Overpass_API</a>. وقد أصبح هذا ممكنًا لأن الميزات الموجودة في OSM <a href="https://wiki.openstreetmap.org/wiki/Mapfeatures">https://wiki.openstreetmap.org/wiki/Mapfeatures</a> يتم تمييزها باستخدام نظام وضع علامات مجاني free tagging system <a href="https://wiki.openstreetmap.org/wiki/Tags">https://wiki.openstreetmap.org/wiki/Tags</a> يسمح للخريطة بأن تتضمن عددًا غير محدود من السّمات لوصف كل ميزة. يمكن بعد ذلك استخدام هذه العلامات للاستعلام عن ميزات معينة بناءً على سماتها / علاماتها.
+
+قد جرت العادة أن يقوم مجتمع OSM والمجتمعات المحليّة بالإتفاق على مجموعة مفاتيح وتركيبات قيم معينة مناسبة للعلامات الأكثر استخدامًا والتي تعمل كمعيار غير رسمي. وهذا يضمن لمستخدمي البيانات الاتساق في وضع العلامات للعناصر الأكثر شيوعاً مثل الطرقات والمباني وما إلى ذلك. ومع ذلك. يمكن للمستخدمين دائمًا إنشاء علامات جديدة لتحسين نمط الخريطة أو دعم التحليلات التي تعتمد على سمات أو علامات الميزات التي لم يتم تعيينها مسبقًا.
+
+
+<h4><strong>
+التمرين 1: تحميل بيانات OSM في QGIS باستخدام ملحق QuickOSM 
+</strong></h4>
+
+في هذا التمرين، سنقوم بتحميل بيانات شبكة الطّرق ومواقع سلاسل الوجبات السريعة من OSM التي يمكن العثور عليها في مقاطعة  الاسكندرية باستخدام البرنامج المساعد QuickOSM.
+
+يعمل QuickOSM عن طريق الاستعلام عن العلامات (المفاتيح والقيم) للميزات في OSM. للمزيد من المعلومات حول كيفية استخدام المفتاح / القيمة في QuickOSM، يمكنك زيارة الرّابط التالي: <a href="https://wiki.openstreetmap.org/wiki/Mapfeatures">https://wiki.openstreetmap.org/wiki/Mapfeatures</a>.
+
+
+1. قم بتحميل طبقات المتّجه الاسكندرية و قسم المنتزه الموجودة داخل الحزمة الجيولوجية للوحدة 3.
+
+
+![Colombo layers loaded in QGIS](media/quickosm-1.png "Colombo layers loaded in QGIS")
+
+Figure 2.QGIS تحميل طبقات     
+
+2. تأكد من تثبيت البرنامج المساعد QuickOSM وتنشيطه. يجب أن يظهر تحت **Vector ‣ QuickOSM** في شريط القائمة. إذا لم يكن كذلك، فقم بتثبيت الملحق وتنشيطه أولاً باستخدام مربع حوار إدارة الملحقات وتثبيتها.
+3. افتح الملحق QuickOSM عبر الذّهاب إلى **Vector ‣ QuickOSM ‣ QuickOSM**. يجب أن يتم فتح مربع حوار بخمس علامات تبويب:
+
+    1. استعلام سريع - Quick Query
+        *   يسمح للمستخدم بإنشاء وتشغيل استعلام بسيط مع تركيبة مفتاح-قيمة واحدة لتحميل مجموعة جزئية من بيانات ميزة OSM والتي تلبي متطلبات الاستعلام.
+
+    2. استعلام - Query 
+        *   يسمح للمستخدم بتشغيل استعلامات معقدة باستخدام واجهة برمجة تطبيق API Overpass.
+        *   يتضمن رابط لتطبيق الويب Overpass Turbo.
+
+    3. ملف OSM:
+        *   يسمح للمستخدم بتحميل البيانات من ملفات OSM الأولية (مثل .pbf).
+
+    4. المعايير - Parameters:
+        *   يسمح للمستخدم بتحديد واجهة برمجة تطبيق Overpass التي ستستخدم.
+
+    5. حول - About:
+        *   يظهر معلومات حول البرنامج المساعد أو الملحق.
+
+
+![QuickOSM plugin](media/quickosm-2.png "QuickOSM plugin")
+
+Figure 3. QuickOSM ملحق
+
+
+4. قم بتحميل جميع الطرق السريعة في نطاق طبقة قسم المنتزه.
+
+*   Key - المفتاح: الطريق السريع
+*   Value - القيمة: &lt;فارغة&gt; (فارغ يعني الكل)
+*   Layer Extent - مدى الطبقة : قسم المنتزه
+*   Advanced - متقدم: 
+    *   تحقق من العقدة Node، الطريقة Way، العلاقة Relation، الخطوط Lines، والـ Multiline strings  
+
+
+![Load all highways in the admin_boundary layer extent](media/quickosm-3.png "Load all highways in the admin_boundary layer extent")
+
+Figure 4. قم بتحميل جميع الطرق السريعة في نطاق طبقة قسم المنتزه  
+
+
+5. انقر على تشغيل الاستعلام. بموجب هذا الإستعلام نحن نطلب من QuickOSM الحصول على جميع الميزات الخطية all line أو المتعددة السلاسل multilinestring التي تم وضع علامة عليها باستخدام مفتاح الطريق السريع وتحميله في QGIS. عند انتهاء ملحق QuickOSM من تحميل الطبقة، يجب أن تبدو خريطتك كما يلي:
+
+
+![Highway data loaded from OSM](media/quickosm-4.png "Highway data loaded from OSM")
+
+Figure 5.OSM بيانات الطريق السريع المحمّلة من 
+
+
+
+6. لاحظ أن الطبقات التي تم تحميلها بواسطة QuickOSM هي طبقات مؤقتة. يجب عليك حفظها كملفات أو جعلها ثابتة إذا كنت بحاجة إلى استخدامها لاحقًا.
+7. إذا كنت ترغب في رؤية إصدار استعلام تجاوز Overpass query من الاستعلام السريع الخاص بك، فانقر فوق إظهار الاستعلام Show query وسيفتح الاستعلام في علامة التبويب الاستعلام. يمكنك بعد ذلك تحرير استعلامك لجعله أكثر تعقيدًا.
+
+
+![The Overpass query version of the Quick query to load highways](media/quickosm-5.png "The Overpass query version of the Quick query to load highways")
+
+Figure 6. الخاص بالاستعلام السريع لتحميل الطرق السريعة Overpass إصدار استعلام 
+
+8. الآن، سنقوم بتحميل جميع مواقع مطاعم الوجبات السريعة في نطاق طبقة الاسكندرية. افتح الملحق QuickOSM وضع المعلّمات (tags) التالية في علامة تبويب الاستعلام السريع:
+
+    6. Key - المفتاح: الراحة
+    7. Value - القيمة: طعام سريع
+    8. Layer Extent - مدى الطبقة: الاسكندرية
+    9. Advanced - متقدم:
+        *   تحقق من العقدة Node والطريقة Way والعلاقة Relation والنقاط Points
+
+
+![Load amenities (points) tagged as fast_food in the Colombo_admin_boundary layer extent](media/quickosm-6.png "Load amenities (points) tagged as fast_food in the Colombo_admin_boundary layer extent")
+
+Figure 7: تحميل وسائل الراحة (النقاط) التي تم وضع علامة عليها على أنها طعام سريع في نطاق طبقة الاسكندرية 
+
+9. يجب أن يبدو الناتج كما يلي:
+
+
+![Fast food locations loaded from OSM](media/quickosm-7.png "Fast food locations loaded from OSM")
+
+Figure 8:OSM مواقع الوجبات السريعة المحملة من 
+
+10. لاحظ أنه يتم تحميل حتى البيانات الموجودة خارج المضلّعات. هذا لأننا نستخدم مدى الطبقة كمربع إحاطة. إذا احتجنا فقط إلى الميزات الموجودة داخل المضلّع، فيمكننا تحديد هذه الميزات أو قصّها. ستتم مناقشة عملية كيفية القيام بذلك في الوحدات النمطية المستقبلية.
+
+
+<h4><strong>
+أسئلة الاختبار
+</strong></h4>
+
+1. صح أم خطأ:
+    1. يمكن أن تحتوي الميزة في OpenStreetMap على علامة أو سمة واحدة فقط
+    2. يمكنك فقط إضافة نقاط في OpenStreetMap
+    3. لا يمكن استخدام OpenStreetMap إلا كخريطة على الإنترنت.
+
+
+<h3>
+عنوان المرحلة 2: بيانات طبقة التسوية عالية الدقة (HRSL)
+</h3>
+
+<h4><strong>
+ما هي طبقة التسوية عالية الدقة (HRSL)؟
+</strong></h4>
+
+وفقًا لفيسبوك ولمركز شبكة معلومات علوم الأرض الدولية (CIESIN) في جامعة كولومبيا، توفّر طبقة التسوية عالية الدقة (HRSL) تقديرات لتوزيع السكان بدقة تبلغ ثانية قوسية (1 arc-second) (حوالي 30 مترًا)".
+
+لقد تم تطوير شبكات السكان لـ 140 دولة ويمكن الوصول إليها من خلال تبادل البيانات الإنسانية Humanitarian Data Exchange (<a href="https://data.humdata.org/search?organization=facebook&amp;q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22">https://data.humdata.org/search?organization=facebook&amp;q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22</a>).
+
+تستند التقديرات السكانية إلى بيانات التعداد وصور القمر الصناعي عالية الدقة (0.5) من DigitalGlobe. يتم تحديد المستوطنات والهياكل التي بناها الإنسان في الصّور من خلال تطبيق تقنيات الرؤية الحاسوبية computer vision techniques. ثم يتم استخدام هذه المواقع كبديل للأماكن التي يعيش فيها الناس. بعد ذلك، استخدم مركز شبكة معلومات علوم الأرض الدولي التخصيص النسبي لتوزيع بيانات السكان من بيانات التعداد إلى نطاقات المستوطنات.
+
+في الدّورة الحالية لـ HRSL، تتوفر سبع خرائط / مجموعات بيانات لتوزيع المجموعات السكانية مختلفة:
+
+1. الكثافة السكانية الإجمالية
+2. النساء
+3. الرجال
+4. الأطفال (0-5)
+5. الشباب (15-24)
+6. كبار السن (60 سنة و ما فوق)
+7. النساء في سن الإنجاب (15-49 سنة)
+
+
+![HRSL data on HDX](media/hdx.png "HRSL data on HDX")
+
+Figure 9:  HDX  على تبادل البيانات الإنسانية HRSL بيانات    
+
+
+<h4><strong>
+حالات استخدام HRSL
+</strong></h4>
+
+توفر الشبكات السكانية معلومات عالية الاستبانة والدقّة حول ترسيم المستوطنات في المناطق الحضرية والريفية وكذلك عدد الأشخاص الذين يعيشون فيها. هذه المعلومات مفيدة للعديد من مجالات البحث مثل الكوارث والاستجابة الإنسانية والتخطيط وتطوير البنية التحتية.
+
+لقراءة المزيد عن HSRL ، يمكنك زيارة:
+
+*   كيفية العمل مع بيانات الكثافة السكانية على Facebook - [http://www.statsmapsnpix.com/2021/01/how-to-work-with-facebook-population.html](http://www.statsmapsnpix.com/2021/01/how-to-work-with-facebook-population.html)
+*    عَدَد السُّكان المفتوح والتحديات المفتوحة - [https://engineering.fb.com/2016/11/15/core-data/open-population-datasets-and-open-challenges/](https://engineering.fb.com/2016/11/15/core-data/open-population-datasets-and-open-challenges/)
+*   ربط العالم مع بعضه البعض بخرائط أفضل - [https://engineering.fb.com/2016/02/21/core-data/connecting-the-world-with-better-maps/](https://engineering.fb.com/2016/02/21/core-data/connecting-the-world-with-better-maps/)
+*   رسم خرائط لسكان العالم مبنى واحدًا في كل مرة - [https://arxiv.org/abs/1712.05839](https://arxiv.org/abs/1712.05839)
+
+
+<h4><strong>
+التمرين 2: تحميل بيانات HRSL في QGIS 
+</strong></h4>
+
+تأتي بيانات HRSL الموجودة على HDX بصيغة GeoTIFF (نقطي) و CSV (متّجه). CSV هي مواقع نقطية مع قيم السكان المرتبطة بها. بالنسبة لهذا التمرين، قد تم بالفعل إعداد مجموعة جزئية من البيانات الخاصة ببلدك ولكن يمكنك دائمًا تنزيل مجموعة البيانات الكاملة أو حتى مجموعات بيانات أخرى لتجربتها.
+
+1. قم بتحميل ملف البيانات النقطية HRSL_سكان الاسكندرية.tif في QGIS.
+
+
+![The HRSL](media/hrsl-1.png "The HRSL")
+
+Figure 10: في الإسكندرية ، مصر HRSL الـ         
+
+2. تحقق من خصائص الطبقة.
+3. يمكنك أيضًا تعديل رموز وأسلوب البيانات النقطية (ستتم مناقشتها في وحدة مستقبلية)
+
+
+<h4><strong>
+أسئلة الاختبار
+</strong></h4>
+
+1. ما هي مجموعات البيانات التي تم استخدامها للحصول على مواقع المستوطنات وتخصيص السكان لهذه المستوطنات؟
+2. كيف حصل HRSL على مواقع المستوطنات؟
+3. كيف تم تخصيص السكان في منطقة ما للمستوطنات؟
+
+
+<h3>
+إذا كنت تريد أن تعرف المزيد:
+</h3>
+
+<h4><strong>
+استخدام Overpass API لإنشاء استعلام في OSM
+</strong></h4>
+
+الـ  <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API</a>، المعروفة سابقًا باسم OSM Server Side Scripting ، أو OSM3S قبل عام 2011، هي واجهة برمجة تطبيقات للقراءة فقط تقدم أجزاء مخصصة ومحددة من بيانات خريطة OSM. على عكس واجهة برمجة التطبيقات الرئيسية التي تم تحسينها للتحرير، فقد تم تحسين Overpass API لمساعدة مستهلكي البيانات للحصول على مجموعة جزئية صغيرة من حوالي 10 ملايين عنصر في OpenStreetMap. يمكن تحديد هذه المجموعات الجزئية من خلال معايير البحث مثل الموقع أو نوع العناصر أو خصائص العلامات أو التقارب أو مجموعات منها. تعمل واجهة برمجة تطبيقات Overpass كخلفية للخدمات الأخرى المستندة إلى OSM مثل QuickOSM plugin.
+
+يتيح لك استخدام استعلام Overpass إنشاء تحديد ميزات أكثر تعقيدًا في QuickOSM. على سبيل المثال، لنقم بتحميل جميع الوجبات السريعة مرة أخرى داخل نطاق الاسكندرية ولكن هذه المرة دعنا نحصل على فروع KFC. إذا نظرت إلى جدول البيانات الخاص بطبقة الوجبات السريعة، ستلاحظ أنها تحتوي على حقل ** name **. تتوافق الحقول الموجودة في جدول السّمات للبيانات المحمّلة من OSM مع مفاتيح العلامات، لذلك إذا أردنا تحديد جميع فروع KFC للوجبات السريعة، فنحن بحاجة إلى إضافة عامل تصفية يقوم بتحديد ميزة ما إذا كانت تحتوي على "مفتاح: قيمة" المرتبطة باسم: KFC. يمكن إضافة هذا الـ filter بسهولة في واجهة برمجة تطبيقات Overpass.
+
+1. افتح البرنامج المساعد QuickOSM وأدخل المعلّمات التي استخدمناها للاستعلام عن جميع الأطعمة السريعة.
+
+
+![QuickOSM parameters for loading fast foods](media/quickosm-5.png "QuickOSM parameters for loading fast foods")
+
+استعلام سريع لتحميل جميع وسائل الراحة تم وضع علامة عليها كوجبات سريعة
+
+2. انقر فوق إظهار الاستعلام.
+
+
+![Overpass version of the query](media/overpass-1.png "Overpass version of the query")
+
+Overpass لتحميل جميع وسائل الراحة تم وضع علامة عليها كوجبات سريعة
+
+
+3. قم بتحرير الاستعلام وإضافة السطر التالي
+
+<p style="text-align: right">
+&lt;has-kv k="name" v="KFC"/&gt;
+
+بعد كل سطر &lt;" /has-kv k = "amenity" v = "fast_food&gt;.
+
+
+![Overpass query to load only fast foods named KFC](media/overpass-2.png "Overpass query to load only fast foods named KFC")
+
+استعلام Overpass لتحميل جميع وسائل الراحة التي تم وضع علامة عليها كوجبات سريعة واسمها KFC
+
+4. انقر فوق تشغيل الاستعلام. يجب أن يؤدي هذا إلى تحميل وسائل الراحة التي تم وضع علامة عليها على أنها وجبات 
+ سريعة بالاسم KFC. سيكون اسم الطبقة هو OsmQuery.
+
+
+![Amenities tagged as fast food whose name is KFC loaded from OSM](media/overpass-3.png "Amenities tagged as fast food whose name is KFC loaded from OSM")
+
+وسائل الراحة التي تم وضع علامة عليها كوجبات سريعة تحمل اسم KFC من OSM
+
+5. جربه مع سلسلات الوجبات السريعة الأخرى.
+
+يمكنك أيضًا اختبار وإنشاء استعلامات Overpass في Overpass turbo <a href="https://wiki.openstreetmap.org/wiki/Overpass_turbo">https://wiki.openstreetmap.org/wiki/Overpass_turbo</a> وهي أداة للتنقيب عن البيانات data mining tool على شبكة الإنترنت لـ OpenStreetMap.
+
+
+<h3>
+للتدرب على مهاراتك الجديدة ، جرّب الأشياء التالية:
+</h3>
+
+<h4><strong>
+قم بتحميل المزيد من الميزات من OSM باستخدام الملحق QuickOSM
+</strong></h4>
+
+حاول تحميل ميزات أخرى (نقاط وخطوط ومضلعات) مثل المستشفيات والمدارس وما إلى ذلك باستخدام المكون الإضافي QuickOSM.
+
+
+<h4><strong>
+نصائح
+</strong></h4>
+
+إذا لم تتمكن من العثور على العنصر الذي تريده أو تحتاجه في OpenStreetMap، فيمكنك دائمًا إضافة أو تعديل الميزات على الخريطة نفسها. اشترك على <a href="https://www.openstreetmap.org">https://www.openstreetmap.org</a> وابدأ في المساهمة!
+
+&lt;/div&gt;
+</p></div>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

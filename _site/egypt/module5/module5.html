@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title> | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the  page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main"></h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/egypt/module5/module5.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <div dir="rtl">
+<h1>
+الوحدة 5 - صنع الخرائط
+</h1>
+
+المؤلفة: Ketty, Ben Hur, Ali, Samah
+
+
+<h2>
+مقدمة تعليمية
+</h2>
+
+ستزودك هذه الوحدة بنظرة عامة على الخطوات الشائعة اللازمة لإكمال الخريطة في QGIS. مع نهاية الوحدة، يجب أن يكون المشاركون قد اكتسبوا المفاهيم والمهارات التالية؛
+
+*   لوحة الخريطة والطبقات ذات الصّلة
+*   مخطط الطباعة (<span style="text-decoration:underline;">The</span> print layout) وتخطيط الطباعة (print layout)
+*   عناصر الخريطة وخصائصها
+
+بالإضافة إلى ذلك، سيتعلمون المهارات التالية؛
+
+*   استخدام تخطيط الطباعة لعمل خريطة
+*   إضافة عناصر الخريطة إلى الخريطة
+*   إدارة تصاميم الطباعة المختلفة
+
+
+<h2>
+الأدوات والموارد المطلوبة لهذه الوحدة هي:
+</h2>
+
+*    حاسوب
+*   اتصال بالإنترنت
+*   QGIS 3.16 مثبّت على الحاسوب
+*   طبقة الاسكندرية (داخل module5.gpkg. يجدر الاشارة ان ملف الاسكندرية يضم الحدود الادارية.
+*   مستوصفات الاسكندرية (داخل module5.gpkg.
+*   مناطق الاسكندرية (داخل module5.gpkg.
+*   طبقة تسوية مصر عالية الدقة Egypt High Resolution Settlement Layer 
+
+
+<h2>
+المؤهلات المطلوبة
+</h2>
+
+*   المعرفة الأساسية لتشغيل حاسوب
+*   فهم مقبول جميع الوحدات السابقة
+
+<h2>
+مصادر إضافية
+</h2>
+
+*   تخطيط خريطة QGIS 
+    *   [https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html](https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html)
+*   نماذج التصاميم 
+    *   [https://layout-hub.github.io/](https://layout-hub.github.io/)
+*   مدير النّمط 
+    * [https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html](https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html)
+*   مكتبة النّمط 
+    * [https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html](https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html)
+
+
+<h2>
+مقدمة موضوعية
+</h2>
+
+لنبدأ بمثال:
+
+لرسم خريطة، ستحتاج أوّلاً إلى موضوع ترغب في فهمه بشكل أفضل، على سبيل المثال "التوزيع المكاني للعيادات عبر مقاطعة الاسكندرية بمصر". ستلاحظ أن الموضوع يوفر كلاً من المَسْأَلَة التي سيتم استكشافها والموقع الجغرافي. الآن يمكنك المتابعة لإنشاء خريطة، مستفيداً من هذه المعلومات والبيانات ذات الصلة التي ستتيح لك استكشاف السؤال بشكل أدقّ. 
+
+
+<h2>
+تفصيل المفاهيم
+</h2>
+
+ستركز هذه الوحدة على المفاهيم الرئيسية التالية لرسم الخرائط: لوحة الخريطة والطبقات ذات الصلة وتخطيط الطباعة وعناصر وخصائص الخريطة. أولاً، في ما يلي تعريفات مختصرة لكل منها؛
+
+*   لوحة الخريطة والطبقات ذات الصلة: قد تكون أهم عنصرفي واجهة المستخدم داخل QGIS لأنها تعرض الخريطة المكوّنة من طبقات خريطة متراكبة وتسمح بالتفاعل مع الخريطة والطبقات. تم تناول هذا الموضوع في الوحدة 0: مقدمة إلى QGIS
+*   مخطط الطباعة وتخطيط الطباعة: يوفر مخطط الطباعة إمكانيات متزايدة للتخطيط والطباعة. يتيح لك إضافة عناصر مثل لوحة خريطة QGIS، والتسميات النصيّة ، والصور، ومفاتيح الرسم البياني، وأشرطة المقياس، والأشكال الأساسية، والسّهام، وجداول السمات، وإطارات HTML. باستخدام تخطيط الطباعة، يمكنك إنشاء خرائط وأطالس جميلة يمكن طباعتها أو حفظها كملف PDF أو صورة أو ملف SVG. هذه طريقة فعالة لمشاركة المعلومات الجغرافية التي يتم إنتاجها باستخدام QGIS والتي يمكن تضمينها في التقارير أو نشرها. يمكنك حفظ التخطيط كقالب أو نموذج وتحميله مرة أخرى في جلسة أخرى. أخيرًا، يمكن إنشاء عدة خرائط بناءً على قالب من خلال مولّد الأطلس. توضح الصورة أدناه مخطط الطباعة وواجهة تخطيط الطباعة. تفتح هذه الواجهة عند فتح تخطيط طباعة جديد.
+
+
+![Print layout](media/print_comp2.png "Print layout")
+
+Figure 5.1: تخطيط الطّباعة
+
+*   عناصر الخريطة وخصائصها: تحتوي الخرائط على الكثير من المعلومات ولكن معظما يحتوي على الأشياء الخمسة التالية: العنوان، والمفتاح، والشبكة، والبوصلة للإشارة إلى الاتجاه، والمقياس. ويخبرك العنوان بما يتم تمثيله على الخريطة.
+
+
+<h2>
+المحتوى الرئيسي
+</h2>
+
+<h3>
+عنوان المرحلة 1: تصدير لوحة الخريطة
+</h3>
+
+في هذا البرنامج التعليمي، سنعرض طريقتين "لتصدير لوحة الخريطة" إلى تخطيط طباعة QGIS. الطريقة الأولى واضحة ومباشرة بينما تستكشف الطريقة الثانية الإمكانات الأكثر تقدمًا التي يوفرها تخطيط الطباعة.
+
+<h4><strong>
+الطريقة الأولى: تصدير لوحة الخريطة بدون تخطيط الطباعة
+</strong>&lt;/strong&gt;</h4>
+
+1. يجب إضافة طبقات البيانات إلى لوحة QGIS. يمكن بعد ذلك تصميم الطبقات بحيث يتم توضيح و إيصال المعلومات الكامنة في بياناتك. أضف زخرفات الخريطة بالنقر فوق عرض -&gt; زخرفات (View ‣ Decorations). حدد زخرفة الخريطة المفضلة لديك. على سبيل المثال، يمكنك إضافة تسمية العنوان وشريط المقياس وتسمية حقوق النشر. لكل زخرفة يجب عليك تحديد الإعدادات في مربع الحوار.
+2. الخطوة الأخيرة هي تصدير الخريطة إما إلى صيغة صورة أو صيغة pdf. للقيام بذلك، انقر فوق مشروع ‣ استيراد / تصدير ثم حدد صيغة التصدير المفضلة لديك. يجب أن يظهر مربع حوار التصدير أدناه.
+
+
+![Exporting the map canvas as image](media/export-map-canvas-image.png "Exportzing the map canvas as image")
+
+![Exporting the map](media/export-map-canvas.png "Exporting the map")
+
+Figure 5.2: تصدير الخريطة
+
+3. انقر فوق حفظ. سيتم حفظ الخريطة الموجودة في لوحة qgis بصيغة pdf أو مستند صورة. تصفح حتى تصل إلى الموقع حيث تم حفظ الملف وستتمكن الآن من طباعة الخريطة أو مشاركتها.
+
+
+![Map canvas exported as image](media/exported-map-canvas.png "Map canvas exported as image")
+
+Figure 5.3: تصدير لوحة الخريطة بصيغة صور
+
+
+<h4><strong>
+الطريقة الثانية: تصدير لوحة الخريطة إلى تخطيط الطباعة
+</strong></h4>
+
+1. في هذا البرنامج التعليمي، سننشئ خريطة توضح 1) موقع المراكز الصحية و 2) الكثافة السكانية لمنطقة الاسكندرية في مصر. يجب أن تكون طبقات البيانات قد أضيفت إلى لوحة QGIS مسبقاً.  يمكن بعد ذلك تصميم الطبقات بحيث يتم توضيح و إيصال المعلومات الكامنة في بياناتك.
+
+
+![Creating new Print Layout](media/new-print-layout.png "Creating new Print Layout")
+
+Figure 5.4: إنشاء تخطيط طباعة جديد
+
+2. يمكن الآن تصدير لوحة الخريطة إلى تخطيط الطباعة. انقر على "زر تخطيط طباعة جديد" ![New Print Layout](media/newprint_composer.png "New Print Layout") new print layout layout button. يمكن الوصول إلى هذا عبر شريط الأدوات . يمكنك الوصول أيضاً باستخدام شريط قائمة "المشاريع" (Projects menu bar). سيفتح حوار عنوان يطالبك بكتابة عنوان تخطيط الطباعة. اكتب "الاسكندرية" وانقر فوق موافق.
+
+
+![Naming the Print Layout](media/new-print-layout-name.png "Naming the Print Layout")
+
+Figure 5.5: تسمية تخطيط الطباعة
+
+3. سيتم فتح تخطيط الطباعة
+
+
+![The Print Layout window](media/new-print-layout-window.png "The Print Layout window")
+
+Figure 5.6: نافذة تخطيط الطباعة
+
+4. ستلاحظ أن لوحة تخطيط الطباعة فارغة. لإضافة خريطة مصممة من لوحة QGIS، انقر على زر "إضافة خريطة جديدة إلى التخطيط" ![alt_text](media/add_new_map_to_layout.png "image_tooltip") ، وانقر بزر الماوس الأيسر على الماوس وارسم مستطيلًا في المساحة البيضاء في وسط تخطيط الطباعة. يجب أن يتم إضافة الخريطة. لقد قمت للتو بتصدير الخريطة إلى تخطيط الطباعة. أصبح من الممكن الآن إضافة جميع عناصر الخريطة الأخرى مثل العنوان، والمفتاح، الشبكات ، إلخ.
+
+
+![Add map to Print Layout](media/print-layout-map.png "Add map to Print Layout")
+
+Figure 5.7: أضف الخريطة إلى تخطيط الطباعة
+
+
+<h4><strong>
+أسئلة الاختبار
+</strong></h4>
+
+1. ما هي لوحة خريطة QGIS ؟ (مربعات اختيار)
+2. بماذا يستخدم تخطيط الطباعة ؟ (مربعات اختيار)
+3. أي مما يلي ليس عنصر خريطة ؟ (زر الراديو)
+
+
+<h4><strong>
+إجابات الاختبار
+</strong></h4>
+
+1. أ. تُظهر الخريطة المكونة من طبقات الخريطة المتراكبة	 ب. يسمح بالتفاعل مع الخريطة والطبقات	 ج. أداة لصنع الخرائط
+2. أ. يوفر تخطيطًا وقدرات طباعة متزايدة 	ب. يسمح لك بإضافة عناصر الخريطة            ج. التعامل مع كل من تصدير وطباعة الخرائط
+3. أ. العنوان 		ب. مقياس 		ج. مفتاح الخريطة	 د. الألوان والتصاميم
+
+
+<h3>
+عنوان المرحلة 2: إضافة عناصر الخريطة إلى تخطيط الطباعة وتحريرها
+</h3>
+
+الآن وقد تمت إضافة الخريطة المصمّمة إلى تخطيط الطباعة، فقد حان الوقت لإضافة عناصر الخريطة ذات الصلة مثل العنوان والمقياس والمفتاح والشبكة والبيانات الوصفية وما إلى ذلك إلى تخطيط الطباعة. توجد معظم الأزرار على يسار تخطيط الطباعة.
+
+
+1. انقر فوق الزر ![alt_text](media/add_title.png "image_tooltip") "إضافة تسمية" (Add label)، واضغط باستمرار على زر الماوس الأيسر وارسم مستطيلاً حيث تريد وضع عنوان الخريطة. اكتب العنوان ضمن قائمة "الخصائص الرئيسية" (Main properties) على الجانب الأيمن من تخطيط الطباعة. يمكن تغيير خصائص الخط ضمن عنصر القائمة "المظهر" (Appearance).
+
+
+![Add title of the map](media/print-layout-with-title.png "Add title of the map")
+
+Figure 5.8: أضف عنوان الخريطة
+
+2. بعد ذلك، سنضيف مفتاح الخريطة والمقياس. يمكن إضافة بيان إحالة البيانات باستخدام الزر "إضافة تسمية" مرر الماوس فوق الزر الموجود على يسار تخطيط الطباعة وانقر فوق الزر المفضل. اتبع نفس الخطوات الموضحة في 1. أعلاه لإضافة عنصر الخريطة إلى تخطيط الطباعة. يمكنك إضافة عناصر أخرى للخريطة، لكن كن حذرًا حتى لا تزدحم الخريطة كثيرًا.
+
+
+![Scale bar](media/scale-bar.png "Scale bar")
+
+Figure 5.9a: أضف شريط مقياس إلى الخريطة
+
+![Legend](media/legend.png "Legend")
+
+Figure 5.9b: أضف مفتاح خريطة إلى الخريطة
+
+![Attribution](media/attribution.png "Attribution")
+
+Figure 5.9c: أضف الإسناد إلى الخريطة
+
+3. إذا كان تخطيط الخريطة مُناسباً لك، فيمكن تصدير الخريطة بصيغة pdf أو png أو jpeg أو svg، وتكون جاهزة للطباعة وإلا احفظ التخطيط. يمكن الوصول إلى جميع وظائف الحفظ عبر قائمة "التخطيط" (layout).
+4. احفظ الخريطة كصورة عبر التخطيط ‣ تصدير كصورة … (Layout ‣ Export as Image) أو بالنقر فوق الزر تصدير كصورة ![Export map to image](media/export-image-btn.png "Export map to image") (Export as Image) . سيسألك QGIS عن الملف الذي تريد حفظ الخريطة به بالإضافة إلى معاييرالصورة.
+
+![Image parameters](media/img-parameters.png "Image parameters")
+
+Figure 5.10: خيارات حفظ الخريطة كصورة
+
+![Exported map as imgage](media/exported-map.png "Exported map as imgage")
+
+Figure 5.11:الخريطة المصدّرة بصيغة صورة
+
+<h4><strong>
+أسئلة الاختبار
+</strong></h4>
+
+1. ضمن أي من علامات التبويب التالية يمكنك تغيير خصائص عناصر الخريطة؟ (زر الراديو)
+2. ما هو الفرق بين مخطط الطباعة وتخطيط الطباعة
+3. كيف يمكنك إضافة نص الإسناد إلى تخطيط الخريطة
+
+<h4><strong>
+إجابات الاختبار
+</strong></h4>
+
+1. أ. التكوين Composition  	ب. خصائص العنصر Item properties  	ج. جيل أطلس Atlas generation
+2. يتيح لك تخطيط الطباعة إضافة خرائط من لوحة الخريطة بينما يسمح لك مخطط الطباعة بتكوين خريطتك
+3. أضف مربع عنوان، ثم اكتب نص الإسناد. لاحظ أن مربع العنوان يسمح لك بإضافة جميع أشكال النص إلى خريطتك.
+
+
+<h3>
+عنوان المرحلة 3: التشغيل الآلي لإنشاء الخريطة باستخدام إمكانيات أطلس
+</h3>
+
+إذا كانت مؤسستك تنشر خرائط مطبوعة أو عبر الإنترنت، فغالبًا ما تحتاج إلى إنشاء العديد من الخرائط بنفس القالب أو النموذج - عادةً واحد لكل وحدة إدارية أو منطقة اهتمام. يمكن أن يستغرق إنشاء هذه الخرائط يدويًا وقتًا طويلاً وإذا كنت ترغب في تحديثها بشكل منتظم، فقد يتحول إلى عمل روتيني. لدى QGIS أداة تسمى أطلس يمكنها مساعدتك في إنشاء قالب خريطة ونشر عدد كبير من الخرائط لمناطق جغرافية مختلفة بسهولة. سنأخذ مقاطعات مصر المختلفة كمثال، وهنا الحدود الإدارية للـ19 مقاطعة؛
+
+![Coverage layer](media/atlas-coverage.png "Coverage layer")
+
+Figure 5.12: Coverage layer
+
+![Attribute table](media/atlas-attr.png "Attribute table")
+
+Figure 5.13: جدول السمات
+
+1. ستعمل هذه الطبقة كطبقة تغطية خارجية (coverage layer) مما يعني أن QGIS Atlas سيحدد خريطة واحدة لكل معلم في طبقة التغطية هذه. في النتيجة، سيتم إنشاء 19 خريطة.
+
+2. افتح أو أنشئ تخطيط طباعة جديدًا وأضف خريطة.
+
+![Atlas Print Layout](media/atlas-print-layout.png "Atlas Print Layout")
+
+Figure 5.14: تخطيط طباعة أطلس
+
+3. في الجزء الأيمن من تخطيط الطباعة، تأكد من تحديد قائمة أطلس Atlas وتحديد مربع إنشاء أطلس Generate an atlas. يمكنك أيضًا فتح إعدادات أطلس باستخدام زر إعدادات أطلس  ![Atlas Settings](media/atlas-settings-btn.png "Atlas Settings")  على شريط أدوات أطلس Atlas toolbar.
+
+![Atlas Generation](media/generate-atlas.png "Atlas Generation")
+
+Figure 5.15:  إنشاء أطلس
+
+4. الخطوة التالية هي اختيار طبقة التغطية؛ طبقة التغطية هي طبقة الفهرس (index layer) المستخدمة لإنشاء كل صفحة. سيتم إنشاء خريطة / صفحة واحدة للأطلس لكل معلم في طبقة التغطية. في حالتنا، سيؤدي استخدام طبقة تغطية "مقاطعات الاسكندرية" إلى إنشاء خريطة لكل مقاطعة من الـ19 مقاطعة. يغير QGIS Atlas نطاق العرض ديناميكيًا لكل معلم في طبقة التغطية. يمكنك اختيار جعل طبقة التغطية مخفية في الخرائط التي تقوم بإنشائها (أي أن طبقة التغطية لن تكون مرئية في تخطيط الطباعة) وتحديد اسم كل صفحة من صفحات أطلس الخاصة بك. يمكنك أيضًا إجراء بعض التصفية والفرز لطبقة التغطية إذا كنت بحاجة إلى ذلك. بالنسبة للإخراج (Output)، يمكنك اختيار الحصول على ملف واحد كمخرج عن طريق تحديد خانة الاختيار "تصدير ملف Single عند الإمكان" (Singe file export when possible). إذا لم يتم تحديد هذه الخانة، فسوف تقوم بإنشاء ملف واحد لكل خريطة.
+
+![Select Coverage Layer](media/coverage-layer.png "Select Coverage Layer")
+
+Figure 5.16: حدد طبقة التغطية
+
+5. الآن بعد أن قمنا بتعيين طبقة التغطية، يجب أن نخبر مخطط الطباعة أن يقوم باستخدام الأطلس للتحكم في مدى الخرائط (المنطقة المرئية على الخريطة القابلة للطباعة) التي سننشئها. في علامة التبويب خصائص العنصر (Item Properties)، حدد مربع التحكم بواسطة أطلس (Controlled By Atlas).
+
+![Controlled by Atlas](media/atlas-controlled.png "Controlled by Atlas")
+
+Figure 5.17: تأكد من أن نطاق الخريطة يتحكم فيه الأطلس
+
+6. لمعاينة Atlas الخاص بك، انقر فوق الزر Preview Atlas  ![Preview Atlas button](media/atlas-preview-btn.png "Preview Atlas button") على شريط أدوات Atlas. سيُظهر لك هذا الـ19 خريطة التي قمت بإنشائها. استخدم شريط أدوات Atlas ![Atlas toolbar](media/atlas-toolbar-nav.png "Atlas toolbar") للتنقل في خرائط Atlas.
+
+![Atlas Preview](media/atlas-preview.png "Atlas Preview")
+
+معاينة أطلس -  Figure 5.18: Atlas Preview
+
+7. يمكنك تصدير خرائط أطلس عبر زر تصدير أطلس (Export Atlas) ![Export Atlas button](media/atlas-export-btn.png "Export Atlas button") إما كصور أو ملفات PDF. حدد تصدير أطلس كصورة (Export Atlas as Image). يجب أن يكون لديك 19 خريطة تم إنشاؤها بحيث تُظهر كل خريطة مدى المقاطعة.
+
+![Atlas Outputs](media/atlas-outputs.png "Atlas Outputs")
+
+Figure 5.19: Atlas Outputs - مخرجات أطلس
+
+8. نصيحة: في هذا المثال، قمنا فقط بتعيين طبقة التغطية. تكمن قوة الأطلس عند رسم خرائط لعدة طبقات. على سبيل المثال، لدينا بيانات العيادات وشبكة الطرق والكثافة السكانية للبلد بأكمله والتي تم تحميلها كطبقات في QGIS. ونرغب في إنشاء خريطة واحدة لكل مقاطعة تظهر هذه الطبقات نفسها. يتطلب استخدام Atlas منا إنشاء نموذج تخطيط واحد فقط والسماح لـ Atlas بمعالجة إنشاء الخرائط الأخرى بناءً على طبقة التغطية التي نستخدمها.
+
+9. نصيحة: يمكنك استخدام تعبيرات QGIS وتجاوزات تعريف البيانات (Data Defined overrides) لتعيين عناصر الخريطة الأخرى في Atlas الخاص بك بحيث تتغيرهذه العناصر أيضًا وبشكل ديناميكي بالإعتمادًا على معلم طبقة التغطية التي يتم تعيينها. على سبيل المثال، يمكنك استخدام تعبير QGIS الذي يستدعي قيمة الحقل NAME_1 على الملصق الخاص بك بحيث يتغير ديناميكيًا إلى قيمة NAME_1 للميزة الحالية التي يتم تعيينها.
+
+لمزيد من المعلومات حول QGIS Atlas ، راجع: <a href="https://www.youtube.com/watch?v=tOnMJBUvEjY">https://www.youtube.com/watch?v=tOnMJBUvEjY</a>.
+
+</div>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>
