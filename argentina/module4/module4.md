@@ -17,7 +17,7 @@ Este módulo está diseñado para enseñarle cómo cambiar la apariencia visual 
 *   Computadora de trabajo
 *   conexión a Internet
 *   QGIS 3.16 o posterior
-*   Capa de la Provincia de Sanata Fe, Argentina (dentro del modulo4_santafe.gpkg )
+*   Capa de la Provincia de Santa Fe, Argentina (dentro del modulo4_santafe.gpkg )
 *   Hospitales de Santa Fe (dentro del modulo4_santafe.gpkg )
 *   Capa de Alta Resolución de Asentamientos de Santa Fe
 

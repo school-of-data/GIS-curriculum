@@ -96,7 +96,7 @@ Usually, the OSM community and local communities agree on certain key and value 
 
 #### **Exercise 1: Loading OSM data in QGIS using the QuickOSM plugin**
 
-or this exercise, we will load road network data and locations of fast food chains from OSM that can be found in the province of Pampanga using the QuickOSM plugin.
+or this exercise, we will load road network data and locations of fast food chains from OSM that can be found in the province of Colombo using the QuickOSM plugin.
 
 QuickOSM works by querying the tags (keys and values) of the features in OSM. For more information about how to use the key/value in QuickOSM, go to: [https://wiki.openstreetmap.org/wiki/Mapfeatures](https://wiki.openstreetmap.org/wiki/Mapfeatures.).
 
@@ -255,7 +255,7 @@ Using an Overpass query allows you to create more complex feature selection in Q
 
 1. Open the QuickOSM plugin and input the parameters we used for querying all fast foods.
 
-![QuickOSM parameters for loading fast foods in Pampanga](media/quickosm-5.png "QuickOSM parameters for loading fast foods in Pampanga")
+![QuickOSM parameters for loading fast foods in Colombo](media/quickosm-5.png "QuickOSM parameters for loading fast foods in Colombo")
 
 Quick query to load all amenities tagged as fast food
 

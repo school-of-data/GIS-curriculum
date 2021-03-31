@@ -11,7 +11,7 @@ Este módulo está diseñado para enseñarle cómo usar las herramientas QGIS pa
 *   Computadora de trabajo
 *   Acceso a Internet
 *   QGIS 3.16 o posterior
-*   Mapa topográfico de Guagua, Pampanga
+*   Mapa topográfico de Santa Fe
 
 
 ## Prerrequisitos
@@ -245,7 +245,7 @@ Si comete un error al digitalizar una función, siempre puede editarla más tard
 Para georreferenciar el mapa;
 
 1. Abra la herramienta Georreferenciador, Ráster ► Georreferenciador
-2. Haga clic en el botón Agregar ráster ![Add Raster](media/add-raster.png "Add Raster") para agregar el archivo de imagen del mapa,topográfico [Mapade Pampanga ](https://github.com/school-of-data/GIS-curriculum/blob/main/philippines/module7/data/guagua-topo.jpeg), como imagen a georreferenciar. El mapa topográfico se agregará al lienzo del georreferenciador. Ahora puede acercar la imagen para leer los detalles del mapa. Una forma de hacerlo es leyendo los metadatos y la información de la leyenda en la parte inferior y luego relacionándolos con las características en el mapa.
+2. Haga clic en el botón Agregar ráster ![Add Raster](media/add-raster.png "Add Raster") para agregar el archivo de imagen del mapa topográfico cartas_250k__3160-III.jpg, como imagen a georreferenciar. El mapa topográfico se agregará al lienzo del georreferenciador. Ahora puede acercar la imagen para leer los detalles del mapa. Una forma de hacerlo es leyendo los metadatos y la información de la leyenda en la parte inferior y luego relacionándolos con las características en el mapa.
 
 ![Map in Georeferencer canvas](media/georeferencer.png "Map in Georeferencer canvas")
 
@@ -254,7 +254,7 @@ Figura 7.9: Mapa en el lienzo Georreferenciador
 A continuación, debe definir la configuración de transformación para georreferenciar el mapa:
 
 3. Abra Configuración ► Configuración de transformación o haga clic en el botón Configuración de transformación ![alt_text](media/georef-settings-btn.png "image_tooltip").
-4. Haga clic en el ![alt_text](media/dots.png "image_tooltip") icono junto al cuadro Ráster de salida, vaya a la carpeta y cree la carpeta 'datos pampanga' y nombre el archivo como pampanga_georef.tif.
+4. Haga clic en el ![alt_text](media/dots.png "image_tooltip") icono junto al cuadro Ráster de salida, vaya a la carpeta y cree la carpeta 'datos pampanga' y nombre el archivo como santafe_georef.tif.
 5. Establezca el resto de parámetros como se muestra a continuación
 
 ![Transformation parameters](media/transformation-settings.png "Transformation parameters")

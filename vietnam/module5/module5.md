@@ -30,7 +30,7 @@ Ngoài ra bạn sẽ học được các kỹ năng;
 *   Ranh giới hành chính tỉnh thành Việt Nam - Vietnam_provinces (inside [module5.gpkg](data/module5.gpkg))
 *   [HCM City High Resolution Settlement Layer](data/HRSL_HCMC_Population.tif)
 
-## Prerequisites
+## Yêu cầu về kỹ năng
 
 *   Kiến thức cơ bản về vận hành máy tính
 *   Nắm vững các Module trước
@@ -193,7 +193,7 @@ Hình 5.11: Bản đồ được kết xuất thành image
 ### Phase 3: Tạo bản đồ tự động bằng chức năng Atlas
 
 #### **Nội dung/ Hướng dẫn**
-Nếu tổ chức của bạn xuất bản các bản đồ in hoặc bản đồ trực tuyến, bạn thường cần tạo nhiều bản đồ với cùng một template - thường là cho từng đơn vị hành chính hoặc một khu vực quan tâm. Tạo các bản đồ này thủ công có thể toe61n nhiều thời gian và nếu bạn muốn cập nhật những bản đồ này mô5t cách thường xuyên, nó có thể trể thành một việc nhàm chán. QGIS có một công cụ gọi là Atlas có thể giúp bạn tạo một map template và dễ dàng xuất bản một số lượng lớn bản đồ cho các khu vực địa lý khác nhau. Chúng ta sẽ lấy các tỉnh thành khác nhau của Việt nam làm ví dụ, với ranh giới hành chính cho 63 tỉnh thành.
+Nếu tổ chức của bạn xuất bản các bản đồ in hoặc bản đồ trực tuyến, bạn thường cần tạo nhiều bản đồ với cùng một template - thường là cho từng đơn vị hành chính hoặc một khu vực quan tâm. Tạo các bản đồ này thủ công có thể tốn nhiều thời gian và nếu bạn muốn cập nhật những bản đồ này mô5t cách thường xuyên, nó có thể trể thành một việc nhàm chán. QGIS có một công cụ gọi là Atlas có thể giúp bạn tạo một map template và dễ dàng xuất bản một số lượng lớn bản đồ cho các khu vực địa lý khác nhau. Chúng ta sẽ lấy các tỉnh thành khác nhau của Việt nam làm ví dụ, với ranh giới hành chính cho 63 tỉnh thành.
 
 ![Ranh giới hành chính 63 tỉnh thành](media/atlas-coverage.png "Ranh giới hành chính 63 tỉnh thành")
 

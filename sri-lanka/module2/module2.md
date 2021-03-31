@@ -452,9 +452,9 @@ Figure 2.22. The EOX Sentinel-2 WMS added in the Browser Panel
 
 6. You can load the WMS layers as you would any other layer from the Browser Panel.
 
-![Natural Earth Land Cover map from WMS loaded in QGIS](media/wms-3.png "Natural Earth Land Cover map from WMS loaded in QGIS")
+![Sentinel-2 cloudless layer map from WMS loaded in QGIS](media/wms-3.png "Sentinel-2 cloudless layer map from WMS loaded in QGIS")
 
-Figure 2.23. Natural Earth Land Cover map from WMS loaded in QGIS
+Figure 2.23. Sentinel-2 cloudless layer map from WMS loaded in QGIS
 
 7. Connecting to WFS follows the same procedure.
 
@@ -587,9 +587,9 @@ When you are prompted that the file already exists, select Add New Layer.
 
 ![New points (trees) added](media/virtual-4.png "New points (trees) added]")
 
-9. Add a virtual layer by clicking ![Add virtual layer symbol](media/symbol-virtual.png "Add virtual layer symbol")
- in the Data Source Manager toolbar.
+9. Add a virtual layer by clicking ![Add virtual layer symbol](media/symbol-virtual.png "Add virtual layer symbol") in the Data Source Manager toolbar.
 10. Set Layer name to Tree Canopy. Import Trees. Add the following query: 
+
 ```
 select fid, buffer(geometry, radius), species from Trees
 ```

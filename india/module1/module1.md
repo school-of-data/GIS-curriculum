@@ -351,7 +351,7 @@ User profiles are saved in a directory on your computer which can be accessed by
 
 #### **QGIS Project File (QGS/QGZ)**
 
-QGIS Projects are to QGIS as .mxd files are to ArcMap. These files come either as **QGS (*.qgs) **or **QGZ (*.qgz)**. The main difference between the two is that the QGZ format is a compressed (zip) archive containing a QGS file and a QGD file. The QGS format is an XML format for storing QGIS projects. The QGD file is the associated sqlite database of the qgis project that contains auxiliary data for the project. If there are no auxiliary data, the QGD file will be empty.
+QGIS Projects are to QGIS as .mxd files are to ArcMap. These files come either as **QGS (.qgs)** or **QGZ (*.qgz)**. The main difference between the two is that the QGZ format is a compressed (zip) archive containing a QGS file and a QGD file. The QGS format is an XML format for storing QGIS projects. The QGD file is the associated sqlite database of the qgis project that contains auxiliary data for the project. If there are no auxiliary data, the QGD file will be empty.
 
 A QGIS Project File contains everything that is needed for storing a QGIS project, including:
 
@@ -394,7 +394,7 @@ When using GeoPackages (.gpkg), a .qml file is oftentimes not needed since you c
 
 You can try to create your own QGIS plugin.  If there’s no plugin that does what you want then you can always make one yourself.
 
-The **Plugin Builder **is a plugin that creates a template that can serve as the starting point for QGIS plugin development so you won’t have to create one from scratch. You can install it from the Manage and Install Plugins Dialog.
+The **Plugin Builder**is a plugin that creates a template that can serve as the starting point for QGIS plugin development so you won’t have to create one from scratch. You can install it from the Manage and Install Plugins Dialog.
 
 Of course, you can always create a plugin from scratch. If you are interested in creating your own plugin, you can check the Official QGIS documentation ([https://documentation.qgis.org/](https://documentation.qgis.org/)). For Python plugins, it’s a good idea to check out the PyQGIS Developer Cookbook ([https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/)).
 

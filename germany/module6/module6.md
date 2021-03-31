@@ -118,13 +118,13 @@ Abbildung 6.1: Mehrere Polygone
 
 ![Attributtabelle öffnen](media/attribute-tab.png "Attributtabelle öffnen")
 
-Bild 6.2: Attributtabelle öffnen
+Abbildung 6.2: Attributtabelle öffnen
 
 Wenn Sie die Attributtabelle nicht als schwebendes Fenster, sondern an die QGIS-Oberfläche andocken möchten, können Sie auf die Schaltfläche **Attributtabelle andocken** !["Attributtabelle andocken"](media/dock-attr-btn.png "Attributtabelle andocken") klicken. Im angedockten Zustand erscheint die Attributtabellen als Registerkarten anstelle einzelner Fenster.
 
 ![Gedockte Attributtabelle](media/docked-attribute-tab.png "Gedockte Attributtabelle")
 
-Bild 6.3: Gedockte Attributtabelle
+Abbildung 6.3: Gedockte Attributtabelle
 
 
 3. Für Flächenberechnungen sollte das Koordinatenreferenzsystem ein projiziertes sein. So können Sie Abstände korrekt berechnen. Denken Sie daran, dass unser Interesse darin besteht, automatisch die Fläche für jeden der 13 Landkreise zu berechnen. Überprüfen Sie das Koordinatenreferenzsystem des Vektor-Layers. Wenn es ein geographisches Koordinatenreferenzsystem ist, dann projizieren Sie den Layer auf ein projiziertes Koordinatensystem um. Überprüfen Sie die verschiedenen Projektionen auf der [EPSG](https://epsg.io/?q=Germany%20kind%3APROJCRS) Website. Da wir uns im östlichen Deutschland befinden, werden wir [ETRS89 / UTM zone 33N](https://epsg.io/25833), EPSG:25833 verwenden. Aus früheren Modulen, in denen Kartenprojektionen ausführlich besprochen wurden, wissen Sie vielleicht schon, dass Kartenprojektionen relativ zu einem bestimmten Ort auf der Erde angewendet werden.
@@ -145,13 +145,13 @@ $area / (1000 * 1000)
 
 ![Feldrechner-Dialog](media/fieldcalc.png "Feldrechner-Dialog")
 
-Bild 6.5: Feldrechner
+Abbildung 6.5: Feldrechner
 
 6. Öffnen Sie die Attributtabelle, um das Ergebnis zu sehen. Sie haben soeben den Inhalt der Attributtabelle bearbeitet, und zwar auf automatisierte Weise, anstatt die Werte in jede Zelle einzeln einzutippen.
 
 ![Attributtabelle mit neuer Spalte](media/area.png "Attributtabelle mit neuer Spalte")
 
-Bild 6.6: Attributtabelle mit neuer Spalte
+Abbildung 6.6: Attributtabelle mit neuer Spalte
 
 
 #### **Quizfragen**
@@ -194,7 +194,7 @@ Sie werden feststellen, dass der Ausdruck eine Reihe von Prädikaten enthält, w
 
 ![Dialog "Mit Ausdruck wählen"](media/select.png)
 
-Bild 6.8: Dialog "Mit Ausdruck wählen"
+Abbildung 6.8: Dialog "Mit Ausdruck wählen"
 
 3. 19 Schulen sind jetzt ausgewählt. Sie sehen die Auswahl gelb hinterlegt. Die ausgewählten Schulen werden auch in der Attributtabelle hervorgehoben. Jetzt wissen wir, dass es laut den Daten, die bisher von der OpenStreetMap Community gepflegt wurden, 19 Schulen im Landkreis Mittelsachsen gibt, die rollstuhlgeeignet sind.
 
@@ -205,7 +205,7 @@ Abbildung 6.9: Ausgewählte Schulen werden hervorgehoben (gelb)
 
 ![Ausgewählte Schulen in Attributtabelle](media/selected-attr.png "image_tooltip")
 
-Bild 6.10: Ausgewählte Schulen werden hervorgehoben (blau)
+Abbildung 6.10: Ausgewählte Schulen werden hervorgehoben (blau)
 
 
 Es ist auch möglich, eine Auswahl zu treffen, indem Sie auf ein Merkmal in der Kartenansicht klicken.

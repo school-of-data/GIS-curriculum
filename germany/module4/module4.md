@@ -81,7 +81,7 @@ Hier können Sie die diverse Einstellungen machen um zu beeinflussen, wie Ihre D
 ![alt_text](media/style-raster.png "image_tooltip")
 
 
-Figure 4.2: Symbolisierung für Vektor- und Rasterlayer
+Abbildung 4.2: Symbolisierung für Vektor- und Rasterlayer
 
 
 #### **Raster-Rendering: Kanal-Rendering**
@@ -140,20 +140,20 @@ Abbildung 4.3: Standard-Darstellung
 
 ![Transparente Füllung für das Polygon](media/no-fill-render.png "Transparente Füllung für das Polygon")
 
-Bild 4.4: Transparente Füllung für das Polygon
+Abbildung 4.4: Transparente Füllung für das Polygon
 
 8. Der nächste Schritt ist die Symbolisierung des Punkt-Layers - den Schulen.
 9. Doppelklicken Sie auf den Layer **Schulen-Mittelsachsen**, um den Dialog **Layereigenschaften** zu öffnen. Ändern Sie den Rendertyp von Einzelsymbol auf **Kategorisiert**, wählen Sie als Eigenschaft den **Wert**. Der Wert stellt den Bereich von Interesse dar. Legen Sie das Symbol und die Farbrampe fest. Klicken Sie dann auf Klassifizieren. In unserem Beispiel werden wir die Schulen wieder nach ihrer barrierefreiheit für Rollstühle klassifizieren.
 
 ![Der Layereigenschaften Dialog für den Schullayer](media/vector-style.png "Der Layereigenschaften Dialog für den Schullayer")
 
-Bild 4.5: Der Layereigenschaften Dialog für den Schullayer
+Abbildung 4.5: Der Layereigenschaften Dialog für den Schullayer
 
 10. Die resultierende Karte sollte wie folgt aussehen
 
 ![Kartendarstellung der Schulen](media/final-vector-render.png "Kartendarstellung der Schulen")
 
-Bild 4.6: Kartendarstellung der Schulen
+Abbildung 4.6: Kartendarstellung der Schulen
 
 
 11.  Denken Sie daran, die Layer im **Layer-Bedienfeld** so anzuordnen, dass der Polygon-Layer unterhalb des Punkt-Layers liegt. Dadurch wird die Punktebene sichtbar.
@@ -168,7 +168,7 @@ Bild 4.6: Kartendarstellung der Schulen
 
 ![Symbolisierung-Menü](media/qgis9.png "Symbolisierung-Menü")
 
-Bild 4.7: Symbolisierung-Menü
+Abbildung 4.7: Symbolisierung-Menü
 
 4. Legen Sie die Interpolation, den Farbverlauf und den Modus fest. Klicken Sie auf Klassifizieren. Das Ergebnis ist eine Choroplethenkarte, die die Bevölkerungsdichte zeigt.
 
@@ -199,37 +199,37 @@ Unten im Menü befindet sich ein Kontrollkästchen für Zeicheneffekte. Aktivier
 
 ![Layereigenschaften-Fenster und Symbologie-Menü](media/draw-effects.png "Layereigenschaften-Fenster und Symbologie-Menü")
 
-Bild 4.11: Fenster "Layereigenschaften" und Menü "Symbolisierung"
+Abbildung 4.11: Fenster "Layereigenschaften" und Menü "Symbolisierung"
 
 3. Es öffnet sich ein neuer Effekteigenschaften-Dialog
 
 ![Effekteigenschaften-Dialog](media/new-effects-dialog.png "Effekteigenschaften-Dialog")
 
-Bild 4.12: Effekteigenschaften-Dialog
+Abbildung 4.12: Effekteigenschaften-Dialog
 
 4. Sie können sehen, dass der einzige aufgelistete Effekt derzeit ein Quelleffekt ist. Quelleffekte sind nicht besonders aufregend - alles, was sie tun, ist, die ursprüngliche Ebene unverändert zu zeichnen. Ändern Sie dies in einen Weichzeichner-Effekt, indem Sie **auf das Kombinationsfeld Effekttyp klicken und Verwischen auswählen**. Sie können dann mit den Parametern herumspielen.
 
 ![Effekttyp Verwischen auswählen](media/blur-effect.png "Effekttyp Verwischen auswählen")
 
-Bild 4.13: Effekttyp Verwischen auswählen
+Abbildung 4.13: Effekttyp Verwischen auswählen
 
 5. Wenden Sie nun die Einstellungen an, Sie werden sehen, dass die Polygonebene nun unscharf ist. Jetzt geht's voran!
 
 ![Unscharfe Ebene](media/blurry-result.png "Unscharfe Ebene")
 
-Bild 4.14: Unscharfe Ebene
+Abbildung 4.14: Unscharfe Ebene
 
 6. Öffenen Sie den **Effekteigenschaften-Dialog** erneut. Lassen Sie uns etwas Fortgeschritteneres ausprobieren. Anstatt nur einen einzigen Effekt zu verwenden, können Sie mehrere Effekte miteinander verknüpfen, um verschiedene Ergebnisse zu erzielen. Lassen Sie uns einen traditionellen Schlagschatten erzeugen, indem wir einen **Schattenwurf**-Effekt unter dem **Quellen**- und dem **Verwischen**-Effekt hinzufügen. Sollten Sie noch die transparente Füllung des Layers aus dem letzten Schritt ausgewählt haben, sollten Sie diese nun zu einer Farbe ändern um ein schöneres Resultat zu erhalten.
 
 ![Dialog Effekteigenschaften](media/drop-shadow.png "Dialog Effekteigenschaften")
 
-Bild 4.15: Dialog Effekteigenschaften
+Abbildung 4.15: Dialog Effekteigenschaften
 
 7. Effekte werden von oben nach unten gezeichnet, so dass der Schlagschatten unter den Quellpolygonen erscheint
 
 ![Schlagschatten-Effekt](media/drop-shadow-result.png "Schlagschatten-Effekt")
 
-Bild 4.16: Schlagschatteneffekt
+Abbildung 4.16: Schlagschatteneffekt
 
 8. Sie können so viele Effekte stapeln, wie Sie möchten. Zum Beispiel ein **inneres Glühen** über einem **Quelleneffekt**, mit einem **Schattenwurf** unter allem. Probieren Sie es aus!
 
@@ -262,7 +262,7 @@ Außerdem haben Sie alle Darstellungsoptionen, um das Aussehen des resultierende
 
 ![Zentroid-Operation auf Sachsen-Layer](media/centroid.png "Zentroid-Operation auf Sachsen-Layer")
 
-Bild 4.17: Zentroid-Operation auf Sachsen-Layer
+Abbildung 4.17: Zentroid-Operation auf Sachsen-Layer
 
 3. Wenn Sie auf OK klicken, sehen Sie, dass der administrative Layer als Punkt-Layer gerendert wird. Wir haben gerade eine räumliche Operation innerhalb der Layer-Symbologie selbst ausgeführt.
 

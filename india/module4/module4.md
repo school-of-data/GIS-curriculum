@@ -57,14 +57,14 @@ Besides avoiding you dealing with the modal and blocking dialog of the layer pro
 From a drop-down list of current layers in the layer panel, select an item and:
 
 *   set its symbology, transparency, and histogram in the case of a raster layer. These options are the same available in Raster Properties Dialog ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog)). 
-    * Access the Raster Properties Dialogue by Double Clicking the Raster Layer->General 
+    * Access the Raster Properties Dialogue by Double Clicking the Raster Layer ‣ General 
 *   set its symbology, and labels. These options are the same available in The Vector Properties Dialog ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog)). 
-    * Access the Vector Properties Dialogue by Double Clicking the Vector Layer->General 
+    * Access the Vector Properties Dialogue by Double Clicking the Vector Layer ‣ General 
 *   follow the whole history of changes you applied to the layer style in the current project; you can therefore cancel or restore to any state by selecting it in the list and Click Apply.
 
 Another powerful feature of this panel is the Live update checkbox. Tick it and your changes are automatically rendered in the map canvas as you go on. You no longer need to Click the Apply button.
 
-To activate the panel, Click View->Panels, then tick Layer styling.
+To activate the panel, Click View ‣ Panels, then tick Layer styling.
 
 
 ![alt_text](media/layer-styling.png "image_tooltip")
@@ -74,7 +74,7 @@ Figure 4.1: Layer Styling Panel
 
 #### **Symbology Tab in the Layers Properties**
 
-To access the Symbology Tab, Double Click the Layer to Open the Layer Properties-> Click Symbology
+To access the Symbology Tab, Double Click the Layer to Open the Layer Properties ‣ Click Symbology
 
 Here, you can specify the band rendering settings like, the render type, band, mix/max values, color rendering and resampling. In the screenshots below, you can see the symbology tabs for vector and raster datasets, respectively;
 
@@ -99,7 +99,7 @@ QGIS offers four different Render types. The choice of renderer depends on the d
 
 #### **Vector rendering**
 
-When you load spatial data layers into QGIS Desktop, they are styled with a random Single Symbol rendering. To change this click on Layer->Properties->Style.
+When you load spatial data layers into QGIS Desktop, they are styled with a random Single Symbol rendering. To change this click on Layer ‣ Properties ‣ Style.
 
 There are several rendering choices available from the menu in the upper left corner:
 
@@ -225,7 +225,7 @@ Figure 4.9: Zoomed-in map
 
 Figure 4.10: The expected initial workspace
 
-2. Open the Layer Properties window, then click the Symbology menu item for the administrative boundaries layer. Tip: Do this by double clicking the layer or use the layer styling panel. Enable the layer styling panel by clicking: View -> Panels -> Layer Styling. 
+2. Open the Layer Properties window, then click the Symbology menu item for the administrative boundaries layer. Tip: Do this by double clicking the layer or use the layer styling panel. Enable the layer styling panel by clicking: View ‣ Panels ‣ Layer Styling. 
 
 At the bottom of the Symbology menu, there’s a checkbox for Draw effects. Let’s enable that, and then click the customise effects button ![alt_text](media/customise-effects-button.png "image_tooltip") to its right:
 
