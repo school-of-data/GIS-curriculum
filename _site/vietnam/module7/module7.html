@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Module 7 - Tạo và chỉnh sửa Layers | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Module 7 - Tạo và chỉnh sửa Layers page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Module 7 - Tạo và chỉnh sửa Layers">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Module 7 - Tạo và chỉnh sửa Layers</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/module7/module7.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="module-7---tạo-và-chỉnh-sửa-layers">Module 7 - Tạo và chỉnh sửa Layers</h1>
+
+<p><strong>Tác giả</strong>: Ketty</p>
+
+<p><strong>Biên dịch và bản địa hoá</strong>: Quách Đồng Thắng</p>
+
+<h2 id="giới-thiệu-chung">Giới thiệu chung</h2>
+
+<p>Module này được thiết kế để hướng dẫn bản cách sử dụng các công cụ QGIS để tạo một layer mới trong QGIS. Bạn sẽ học các khái niệm như số hoá (digitizing) và đăng ký toạ độ (georeferencing)</p>
+
+<h2 id="các-công-cụ-và-tài-nguyên-cần-thiết">Các công cụ và tài nguyên cần thiết</h2>
+
+<ul>
+  <li>Máy tính</li>
+  <li>Kết nối Internet</li>
+  <li>QGIS 3.16 trở lên</li>
+  <li><a href="data/saigon_1963.jpg">Bản đồ Sài Gòn năm 1963</a></li>
+</ul>
+
+<h2 id="yêu-cầu-về-kỹ-năng">Yêu cầu về kỹ năng</h2>
+
+<ul>
+  <li>Nắm được các Module trước</li>
+  <li>Kiến thức cơ bản về vận hành máy tính</li>
+</ul>
+
+<h2 id="tài-liệu-tham-khảo">Tài liệu tham khảo</h2>
+
+<ul>
+  <li>Creating Layers - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_layers.html">https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_layers.html</a></li>
+  <li>Digitizing Forest Stands - <a href="https://docs.qgis.org/3.16/en/docs/training_manual/forestry/stands_digitazing.html?highlight=digitizing">https://docs.qgis.org/3.16/en/docs/training_manual/forestry/stands_digitazing.html?highlight=digitizing</a></li>
+  <li>Further reading: <a href="https://docs.qgis.org/3.16/en/docs/training_manual/forestry/map_georeferencing.html?highlight=georeferencing">Georeferencing a Map</a></li>
+</ul>
+
+<h2 id="giới-thiệu-chuyên-đề">Giới thiệu chuyên đề</h2>
+
+<p>Hãy bắt đầu bằng một ví dụ: 
+Hãy tưởng tượng cơ quan của bạn đang lên kế hoạch xây dựng các bệnh viện mới tại một tỉnh nào đó. Họ có thể muốn tiến hành một đánh giá tác động môi trường của dự án quy hoạch cơ sở hạ tầng. Đánh giá này có thể bao gồm tiến hành các nghiên cứu dựa trên các dữ liệu sẵn có. Như bạn có thể tưởng tượng, có rất nhiều dữ liệu địa lý có sẵn ở nhiều định dạng khác nhau, không thể tích hợp ngay với các dữ liệu GIS khác. Một số dữ liệu này có thể là các bản đồ cũ, ảnh vệ tinh độ phân giải cao hoặc ảnh viễn thám thường được dùng cho việc tạo các bản đồ số như Google Maps hoặc OpenStreetMap. Tạo và chỉnh sửa là cách tốt cho việc cập nhật các thay đổi cho các layer hoặc database. Một cách để tạo mới dữ liệu trong GIS là số hoá. Các cách khác bao gồm đăng ký ảnh (georeference), quét ảnh và vector hoá, cắt (clipping), chọn và lưu dữ liệu. Điều quan trọng cần nhớ là dữ liệu được tạo ra phụ thuộc vào tính duy nhất của nguồn ban đầu. Ví dụ, hình sau thể hiện mỗi image sẽ tạo ra một tập dữ liệu duy nhất.</p>
+
+<p><img src="media/rs-images.png" alt="Anh viễn thám của các đường bờ biển khác nhau" title="Anh viễn thám của các đường bờ biển khác nhau" /></p>
+
+<p>Hình 7.1: Anh viễn thám của các đường bờ biển khác nhau. A. Interferometric Synthetic Aperture Radar (IFSAR), sử dụng microwave thu thập dữ liệu để tạo bản đồ, B. Dữ liệu LiDAR đo cao và đo sâu (cao độ được thể hiện bằng màu sắc), C. Ảnh đa phổ (thêm các kênh phổ ngoài phổ khả kiến) và D. Ảnh kỹ thuật số (kênh phổ khả kiến).</p>
+
+<h2 id="phân-tích-các-khái-niệm">Phân tích các khái niệm</h2>
+
+<p>Số hoá trong GIS là một quá trình “theo vết - tracing”, một cách chính xác về mặt địa lý, thông tin từ các phương tiện/ bản đồ. Quy trình số hoá dựa trên sự phối hợp giữa các điểm trên ảnh quét với các điểm trên dữ liệu tham chiếu địa lý. Bằng cách “kết nối” các điểm trên ảnh quét với các điểm ở cùng vị trí trên dữ liệu tham chiếu địa lý, bạn sẽ tạo một phép chuyển đổi để chuyển vị trí của toàn bộ bản đồ quét sang vị trí địa lý chính xác.</p>
+
+<p><img src="media/buildings.png" alt="Các toà nhà được số hoá (theo vết) trên một ảnh hàng không" title="Các toà nhà được số hoá (theo vết) trên một ảnh hàng không" /></p>
+
+<p>Hình 7.2: Các toà nhà được số hoá (theo vết) trên một ảnh hàng không</p>
+
+<p>Mặt khác, đăng ký ảnh là một quá trình chụp một ảnh số, có thể là ảnh hàng không, bản đồ quét hoặc ảnh của bản đồ địa hình, và thêm thông tin địa lý vào ảnh để GIS và các phần mềm bản đồ có thể ‘đặt’ hình ảnh ở vị trí thích hợp trong thế giới thực.</p>
+
+<h2 id="nội-dung-chính">Nội dung chính</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>QGIS cho phép bạn tạo layer mới ở nhiều định dạng khác nhau. Nó cung cấp các công cụ để tạo GeoPackage, Shapefile, SpatiaLite, GPX và Temporary Scratch layer (memory layer). Công cụ Editing cho phép bạn thêm, xoá và chỉnh sửa các đối tượng trong dữ liệu vector. Bước đầu tiên là bật chế độ edit cho dữ liệu. Chọn layer trong Layers Panel và chọn Layer</td>
+      <td>Toggle Editing. Ngoài ra, bạn có thể kích chuột phải trên layer trong Layers Panel và chọn Toggle Editing từ menu ngữ cảnh. Nhiều layer có thể được chỉnh sửa cùng lúc. Layer hiện đang được chỉnh sửa là layer được chọn trong Layers Panel. Khi bật chế độ chỉnh sửa, Digitizing Toolbar có thể được dùng để thêm, xoá và chỉnh sửa các đối tượng.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Số hoá, như bạn có thể đoán, là nghệ thuật (hoặc khoa học) để tạo dữ liệu vector số hoá từ nguồn khác, như ảnh raster. Đề bắt đầu số hoá, đầu tiên chúng ta phải bật chế độ chỉnh sửa. Các phần mềm GIS thường yêu cầu chế độ chỉnh sửa riêng để ngăn người dùng vô tình chỉnh sửa hoặc xoá các dữ liệu quan trọng. Chế độ chỉnh sửa được bật hoặc tắt riêng cho từng layer.</p>
+
+<h3 id="phase-1--tạo-mới-một-geopackage-layer-hoặc-shapefile">Phase 1 : Tạo mới một GeoPackage layer hoặc Shapefile</h3>
+
+<h4 id="tạo-mới-một-geopackage-layer"><strong>Tạo mới một GeoPackage layer</strong></h4>
+
+<ol>
+  <li>Để tạo mới một GeoPackage layer, chọn nút New GeoPackage Layer <img src="media/geopackage-button.png" alt="alt_text" title="image_tooltip" /> trong Layer ‣ Create Layer menu hoặc từ Datasource Manager toolbar. Giao diện New GeoPackage Layer sẽ được hiển thị như Hình 7.3.</li>
+</ol>
+
+<p><img src="media/new-geopackage-dialog.png" alt="Giao diện New GeoPackage Layer" title="Giao diện New GeoPackage Layer" /></p>
+
+<p>Hình 7.3: Giao diện New GeoPackage Layer</p>
+
+<ol>
+  <li>Bước đầu tiên là xác định vị trí của file bằng cách bấm nút <img src="media/database-file-location.png" alt="Chọn vị trí của file" title="Chọn vị trí của file" />, sau đó chọn file GeoPackage có sẵn hoặc tạo mới. QGIS sẽ tự động thêm phần mở rộng thích hợp cho tên file được nhập.</li>
+  <li>Nhập tên cho layer/ table mới</li>
+  <li>Định nghĩa kiểu dữ liệu. Nếu là một lớp hình học, bạn có thể chỉ định có bao gồm Z dimension và hoặc/ M value hay không.</li>
+  <li>
+    <p>Chọn CRS sử dụng nút <img src="media/mActionSetProjection.png" alt="alt_text" title="image_tooltip" /></p>
+  </li>
+  <li>
+    <p>Thêm các trường dữ liệu cho layer:</p>
+
+    <ol>
+      <li>Nhập tên trường dữ liệu</li>
+      <li>Chọn kiểu dữ liệu: Text, Whole number (integer và integer64),  Decimal number, Date và Date and time, Binary (BLOB) và Boolean</li>
+      <li>Tuỳ vào kiểu dữ liệu được chọn, nhập Maximum length of values.</li>
+      <li>Kích chọn nút Add to Fields List <img src="media/mActionNewAttribute.png" alt="alt_text" title="image_tooltip" /></li>
+    </ol>
+  </li>
+  <li>Lặp lại các bước như trên cho mỗi trường dữ liệu cần thêm vào.</li>
+  <li>Khi đã nhập đủ các trường dữ liệu, chọn OK. QGIS sẽ thêm một layer mới vào legend (Layers Panel), và bạn có thể chỉnh sửa nó theo hướng dẫn trong Phase 2 ‘Digitizing an existing layer’ của Module này.</li>
+</ol>
+
+<h4 id="tạo-một-shapefile-mới"><strong>Tạo một Shapefile mới</strong></h4>
+
+<ol>
+  <li>Để tạo một layer định dạng ESRI Shapefile, nhấn nút New Shapefile Layer… <img src="media/mActionNewVectorLayer.png" alt="alt_text" title="image_tooltip" /> trong Layer ‣ Create Layer ‣ menu hoặc từ Data Source Manager toolbar. Giao diện New Shapefile Layer sẽ được hiển thị như Hình 7.4.</li>
+</ol>
+
+<p><img src="media/new-shapefile-dialog.png" alt="Giao diện New shapefile layer" title="Giao diện New shapefile layer" /></p>
+
+<p>Hình 7.4: Giao diện New shapefile layer</p>
+
+<ol>
+  <li>Nhập đường dẫn và tên file sử dụng nút … cạnh tên file. QGIS sẽ tự động thêm phần mở rộng thích hợp cho tên file được nhập.</li>
+  <li>Tiếp theo, xác định File encoding (UTF-8, hỗ trợ tiếng Việt Unicode)</li>
+  <li>Chọn kiểu dữ liệu cho layer: No Geometry (định dạn .DBF), point, multipoint, line hoặc polygon</li>
+  <li>Xác định có thêm các chiều bổ sung cho kiểu dữ liệu hay không: None, Z (+ M values) hoặc M values.</li>
+  <li>
+    <p>Xác định CRS sử dụng nút <img src="media/mActionSetProjection.png" alt="alt_text" title="image_tooltip" />, bạn có thể chọn WGS 84 để phù hợp tốt cho các dự án bản đồ web toàn thế giới.</p>
+  </li>
+  <li>Thêm các trường dữ liệu cho layer:
+    <ol>
+      <li>Nhập tên trường dữ liệu</li>
+      <li>Chọn kiểu dữ liệu. QGIS hỗ trợ các kiểu dữ liệu Decimal number, Whole number, Text và Date</li>
+      <li>Tuỳ vào kiểu dữ liệu được chọn, nhập các thông số cho Length và Precision.</li>
+      <li>Kích chọn nút Add to Fields List <img src="media/mActionNewAttribute.png" alt="alt_text" title="image_tooltip" />.</li>
+    </ol>
+  </li>
+  <li>Lặp lại các bước như trên cho mỗi trường dữ liệu cần thêm vào.</li>
+  <li>Khi đã nhập đủ các trường dữ liệu, chọn OK. QGIS sẽ thêm một layer mới vào legend (Layers Panel), và bạn có thể chỉnh sửa nó theo hướng dẫn trong Phase 2 ‘Digitizing an existing layer’ của Module này.</li>
+</ol>
+
+<h3 id="phase-2-số-hoá-layer-hiện-có">Phase 2: Số hoá layer hiện có</h3>
+
+<h4 id="nội-dung-hướng-dẫn"><strong>Nội dung/ Hướng dẫn</strong></h4>
+
+<p>Hướng dẫn này sẽ chỉ cách tạo một shapefile mới sử dụng dữ liệu phụ trợ như ảnh vệ tinh của Google. Trong thực tế, dữ liệu chính xác sẽ có sẵn. Đây sẽ là dữ liệu định tính chính xác về các đối tượng có tính topology. Điều quan trọng là phải biết trước đối tượng bạn muốn tạo là gì, chẳng hạn như point, line hay polygon layer. Khi tạo layer, chúng ta phải định nghĩa kiểu dữ liệu mà nó sẽ chứa. Mục đích của hướng dẫn này là tạo một kiểu dữ liệu có thể dễ dàng thao tác, phân tích và lưu trữ sử dụng một hệ GIS, nên cần tạo dữ liệu vector. Chúng ta sẽ tạo các đối tượng polygon như là một ví dụ;</p>
+
+<ol>
+  <li>TrưỚc khi thêm và một dữ liệu vector mới, bạn cần một vector layer để thêm vào. Trong trường hợp này, chúng ta sẽ bắt dầu bằng việc tạo một layer mới, và sau đó chúng ta sẽ thêm các đối tượng vào nó. Đầu tiên, chúng ta cần định nghĩa layer cần tạo.</li>
+  <li>Tạo một project mới trong QGIS bằng cách kích chọn biểu tượng  <em>New Project</em> <img src="media/new-project.png" alt="alt_text" title="image_tooltip" /></li>
+  <li>Vào <em>Layer ‣ Create Layer ‣ New GeoPackage Layer</em> sẽ xuất hiện giao diện như sau:</li>
+</ol>
+
+<p><img src="media/new-vector.png" alt="Giao diện New GeoPackage" title="Giao diện New GeoPackage" /></p>
+
+<p>Hình 7.5: Giao diện New GeoPackage</p>
+
+<p>Đến đây, chúng ta phải quyết định loại layer cần tạo. Hãy nhớ là layer có thể chứa các đối tượng dạng point, line hoặc polygon - không bao giờ là hỗn hợp của các kiểu dữ liệu này. Khi tạo layer, chúng ta phải định nghĩa kiểu dữ liệu mà nó sẽ chứa.</p>
+
+<p>Bởi vì polygon được tạo ra từ point và line, hãy tạo polygon. Khi bạn thành thạo điều này, việc tạo point hoặc line layer sẽ trở nên dễ dàng!</p>
+
+<p>Trong giao diện New GeoPakage, chọn tên file, file encoding, geometry type, CRS và các trưỜng dữ liệu. Điều này yêu cầu một mô hình dữ liệu được thiết kế trước để có thể nắm nắt tất cả thông tin của đối tượng cần tạo.</p>
+
+<ol>
+  <li>Bước tiếp theo là thêm ESRI World Imagery satellite layer vào map canvas. Chúng ta đã thêm vào trong Module trước nên nó sẽ có sẵn trong  <strong>Browser Panel</strong>, mục <strong>XYZ Tiles</strong>.</li>
+</ol>
+
+<p><img src="media/xyz-2.png" alt="ESRI World Imagery trong Browser Panel" title="ESRI World Imagery trong Browser Panel" /></p>
+
+<p><img src="media/xyz-3.png" alt="ESRI World Imagery được tải trong QGIS" title="ESRI World Imagery được tải trong QGIS" /></p>
+
+<p>Hình 7.6.1: QGIS canvas sau khi thêm ESRI World Imagery layer</p>
+
+<ol>
+  <li>Phóng to bản đồ cho đến khi bạn có thể thấy các đối tượng như mái nhà, đường phố, cây xanh,… Các mái nhà có thể được xem như một đại diện 2D cho các toà nhà, do đó chúng ta sẽ số hoá buildings layer mới được tạo.</li>
+</ol>
+
+<p><img src="media/digitize-zoom.png" alt="Phóng to ESRI World Imagery layer" title="Phóng to ESRI World Imagery layer" /></p>
+
+<p>Hình 7.6.2: Phóng to ESRI World Imagery layer</p>
+
+<ol>
+  <li>Bết chế độ chỉnh sửa cho <em>buildings</em> layer</li>
+  <li>Chọn <em>buildings</em> trong Layers Panel</li>
+  <li>Kích chọn nút <em>Toggle Editing</em> <img src="media/edit-layer.png" alt="alt_text" title="image_tooltip" /></li>
+  <li>Nếu bạn không tìm thấy nút này, hãy đảm bảo rằng Digitising toolbar được bật bằng cách chọn <em>View ‣ Toolbars ‣ Digitizing Toolbar</em></li>
+  <li>Khi bạn ở chế độ chỉnh sửa, Digitising tools sẽ được kích hoạt</li>
+</ol>
+
+<p><img src="media/digi-toolbar.png" alt="Digitizing tools" title="Digitizing tools" /></p>
+
+<p>Hình 7.7: Digitizing tools</p>
+
+<p>Các chức năng trên Digitizing Toolbar :</p>
+
+<ul>
+  <li><strong>Toggle Editing</strong>: Bật/ tắt chế độ chỉnh sửa</li>
+  <li><strong>Save Layer Edits</strong>: Lưu các thay đổi.</li>
+  <li><strong>Add Feature</strong>: Thêm đối tượng mới.</li>
+  <li><strong>Move Feature(s)</strong>: Di chuyển một hoặc nhiều đối tượng.</li>
+  <li><strong>Node Tool</strong>: Chỉnh sửa các Node của đối tượng.</li>
+  <li><strong>Delete Selected</strong>: xoá các đối tượng được chọn (chỉ được kích hoạt nếu có ít nhất một đối tượng được chọn).</li>
+  <li><strong>Cut Features</strong>: cut các đối tượng được chọn (chỉ được kích hoạt nếu có ít nhất một đối tượng được chọn).</li>
+  <li><strong>Copy Features</strong>: copy đối tượng được chọn (chỉ được kích hoạt nếu có ít nhất một đối tượng được chọn).</li>
+  <li><strong>Paste Features</strong>: paste một đối tượng được cut hoặc copy (chỉ được kích hoạt nếu có ít nhất một đối tượng được cut hoặc copy).</li>
+</ul>
+
+<p>Chúng ta muốn thêm một đối tượng mới.</p>
+
+<ol>
+  <li>Kích chọn nút <em>Add Feature</em> <a href="media/add-feature.png" title="image_tooltip">alt_text</a>  button to start digitizing. Chúng ta sẽ số hoá các buildings.</li>
+  <li>Bắt đầu bằng cách kích vào một điểm nào đó nằm trên biên của building</li>
+  <li>Thêm nhiều điểm hơn bằng cách kích chọn dọc biên building cho đến khi phủ hoàn toàn building. Điều này rất giống với việc vẽ một polygon. Vertex đầu và cuối phải trùng nhau, nếu không thì nó vẫn chỉ là một line.</li>
+  <li>Để thêm một điểm cuối, <strong>kích chuột phải ở chỗ mà bạn muốn</strong>. Nó sẽ kết thúc vẽ đối tượng và hiện lên giao diện Attributes.</li>
+  <li>Nhập các giá trị như hình sau</li>
+</ol>
+
+<p><img src="media/digitize-1.png" alt=" Số hoá một đối tượng mới" title="Số hoá một đối tượng mới" /></p>
+
+<p>Hình 7.8.1: Số hoá một đối tượng mới.</p>
+
+<p><img src="media/digitize-2.png" alt="Nhập thuộc tính" title="Nhập thuộc tính" /></p>
+
+<p>Hình 7.8.2: Nhập thuộc tính</p>
+
+<ol>
+  <li>Chọn <em>OK</em>. Bạn đã tạo một đối tượng mới!</li>
+</ol>
+
+<p><img src="media/digitize-3.png" alt="Đối tượng mới được tạo" title="Đối tượng mới được tạo" /></p>
+
+<p>Hình 7.8.3: Đối tượng mới được tạo.</p>
+
+<p>Nếu bạn mắc lỗi khi số hoá một đối tượng, bạn luôn có thể chỉnh sửa sau. Chỉ cần kết thúc số hoá đối tượng và làm theo các bước sau:</p>
+
+<ul>
+  <li>Chọn đối tượng bằng công cụ <em>Select Feature</em></li>
+</ul>
+
+<p><img src="media/select-feature.png" alt="alt_text" title="image_tooltip" /></p>
+
+<ul>
+  <li>Sau đó sử dụng một trong các công cụ sau để chỉnh sửa đối tượng</li>
+</ul>
+
+<table>
+  <tr>
+   <td>
+<img src="media/image186.png" width="" alt="alt_text" title="image_tooltip" />
+
+   </td>
+   <td>Move feature(s) tools
+   </td>
+   <td>Di chuyển toàn bộ đối tượng
+   </td>
+  </tr>
+  <tr>
+   <td>
+
+<img src="media/image187.png" width="" alt="alt_text" title="image_tooltip" />
+
+   </td>
+   <td>Node tools
+   </td>
+   <td>Chỉ di chuyển node mà bạn có thể đã số hoá lỗi.
+   </td>
+  </tr>
+  <tr>
+   <td>
+
+<img src="media/image188.png" width="" alt="alt_text" title="image_tooltip" />
+
+   </td>
+   <td>Delete selected
+   </td>
+   <td>Xoá các đối tượng được chọn để vẽ lại
+   </td>
+  </tr>
+  <tr>
+   <td>Vàp Edit ‣ Undo hoặc nhấn tổ hợp phím Ctrl+Z
+   </td>
+   <td>Undo
+   </td>
+   <td>
+   </td>
+  </tr>
+</table>
+
+<ol>
+  <li>Bây giờ hãy thử làm một mình, số hoá tất cả các building trong ảnh.</li>
+</ol>
+
+<h3 id="phase-3--đăng-ký-toạ-độ-cho-bản-đồ-địa-hình">Phase 3 : Đăng ký toạ độ cho bản đồ địa hình</h3>
+
+<h4 id="nội-dung-hướng-dẫn-1"><strong>Nội dung/ Hướng dẫn</strong></h4>
+
+<p>Để đăng ký toạ độ cho bản đồ;</p>
+
+<ol>
+  <li>Truy cập Georeferencer tool, Raster ► Georeferencer</li>
+  <li>Chọn nút Add raster <img src="media/add-raster.png" alt="Add Raster" title="Add Raster" /> để thêm bản đồ dạng ảnh, <a href="data/saigon_1963.jpg">Bản đồ Sài Gòn năm 1963</a> cần đăng ký toạ độ. Bản đồ địa hình sẽ được thêm vào trong georeferencer canvas. Bây giờ bạn có thể phóng to để xem chi tiết bản đồ bằng cách đọc metadata và thông tin chú giải ở góc dưới bản đồ và liên hệ nó đến các đối tượng trên bản đồ.</li>
+</ol>
+
+<p><img src="media/georeferencer.png" alt="Bản đồ trong Georeferencer canvas" title="Bản đồ trong Georeferencer canvas" /></p>
+
+<p>Hình 7.9: Bản đồ trong Georeferencer canvas</p>
+
+<p>Tiếp theo bạn sẽ định nghĩa các thiết lập chuyển đổi để đăng ký toạ độ cho bản đồ:</p>
+
+<ol>
+  <li>Vào Settings ► Transformation settings hoặc kích chuột vào nút Transformation Settings <img src="media/georef-settings-btn.png" alt="alt_text" title="image_tooltip" />.</li>
+  <li>Kích chọn biểu tượng <img src="media/dots.png" alt="alt_text" title="image_tooltip" /> cạnh Output raster, tạo thư mục ‘pampanga data’ và nhập tên file là HCMC_georef.tif</li>
+  <li>Nhập các tham số khác như Hình sau:</li>
+</ol>
+
+<p><img src="media/transformation-settings.png" alt="Các tham số chuyển đổi" title="Các tham số chuyển đổi" /></p>
+
+<p>Hình 7.10: Các tham số chuyển đổi</p>
+
+<p>Khi chọn các tham số chuyển đổi, những điều cần xem xét là:</p>
+<ul>
+  <li>Độ phức tạp và biến dạng của bản đồ (các bản đồ có hình dạng thông thường thì chỉ cần sử dụng các tham số chuyển đổi đơn giản)</li>
+  <li>Số lượng các điểm khống chế (Ground Control Point - GCP) mà bạn có thể tạo trên bản đồ - loại phép chuyển đổi càng phức tạp thì càng cần nhiều điểm GCP để cho kết quả tốt.</li>
+  <li>Phân bố các điểm GCP trên bản đồ – Phân bố GCP không tốt se dẫn đến biến dạng nhiều hơn, đặc biệt là đối với các phương trình chuyển đổi có bậc cao hơn.</li>
+  <li>Phép chuyển đổi phức tạp hơn không phải lúc nào cũng tốt hơn.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Bậc của phương trình chuyển đổi</th>
+      <th style="text-align: center">Số lượng GCP tối thiểu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">21</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">28</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">36</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Để cho an toàn, luôn có nhiều hơn ít nhất 1 điểm so với yêu cầu tối thiểu để dự phòng.</p>
+
+<ol>
+  <li>Chọn OK.</li>
+  <li>Bản đồ chứa một số dấu thập đánh dấu các toạ độ trên bản đồ, chúng ta sẽ sử dụng chúng để đăng ký toạ độ cho ảnh. Bạn có thê sử dụng các công cụ phóng to/ thu nhỏ, di chuyển bản đồ như bạn hay dùng trong QGIS để kiểm tra ảnh trong cửa sổ Georeferencer.</li>
+  <li>Phóng to góc dưới bên trái bản đồ và chú ý rằng có một dấu thập với cặp toạ độ (X,Y), như đã đề cập trước đây trong CRS, PRS 19992 cũng được viết là PRS 92, như được tham chiếu trong legend của bản đồ địa hình.</li>
+  <li>Chọn nút Add point<img src="media/add-point.png" alt="Add Point" title="Add Point" /> và nhấp vào giao điểm của dấu chéo (di chuyển và phóng to nếu cần thiết).</li>
+  <li>Trong hộp thoại Enter map coordinates, nhập các toạ độ xuất hiện trong bản đồ (Y: 10° 43’ 20’’ and X: 106° 37’ 55’’).</li>
+</ol>
+
+<p><img src="media/georef-1.png" alt="Chọn các điểm khống chế - GCP" title="Chọn các điểm khống chế - GCP" /></p>
+
+<p>Hình 7.11.1: Chọn các điểm khống chế - GCP</p>
+
+<p><img src="media/georef-2.png" alt="Nhập các cặp toạ độ" title="Nhập các cặp toạ độ" /></p>
+
+<p>Hình 7.11.2: Nhập các cặp toạ độ</p>
+
+<ol>
+  <li>Chọn OK.</li>
+</ol>
+
+<p>Toạ độ của điểm GCP đầu tiên cho việc đăng ký ảnh đã sẵn sàng như hình sau:</p>
+
+<p><img src="media/georef-3.png" alt="Toạ độ điểm GCP đầu tiên cho việc đăng ký ảnh" title="Toạ độ điểm GCP đầu tiên cho việc đăng ký ảnh" /></p>
+
+<p>Hình 7.12: Toạ độ điểm GCP đầu tiên cho việc đăng ký ảnh</p>
+
+<ol>
+  <li>
+    <p>Thu nhỏ bản đồ và di chuyển về bên phải cho đến khi thấy dấu thập khác, và ước tính xem bạn đã di chuyển bao nhiêu km. Cố gắng chọn các GCP càng xa nhau càng tốt. Số hoá ít nhất 3 điểm GCP nữa như cách đã làm cho GCP đầu tiên. Mẹo: Đảm bảo rằng các GCP phân bố tương đối d0o62ng đều trên bản đồ, ví dụ tại 04 góc của bản đồ hoặc có khoảng cách bằng nhau. Điều này ảnh hưởng đến hiệu suất của thuật toán chuyển đổi, có thể dẫn đến tỉ lệ lỗi cao hơn.</p>
+  </li>
+  <li>
+    <p>Với 03 điểm GCP được số hoá, bạn có thể sẽ thấy lỗi georeference bằng một đường màu đỏ tại các điểm. Lỗi tính bằng pixel cũng có thể thấy trong GCP table với cột dX[pixels] và dY[pixels]. Các giá trị này không nên cao hơn một ngưỡng đã thiết lập, trong trường hợp cao hơn, bạn nên xem lại các điểm đã được số hoá và các toạ độ đã nhập để tìm hiểu vấn đề là gì. Bạn có thể sử dụng bản đồ bên trên để tham khảo.</p>
+  </li>
+  <li>Thêm nhiều GCP hơn nữa cho đến khi bạn hài lòng với kết quả mong đợi.</li>
+  <li>Bạn có thể lưu các GCP bằng cách vào <strong>File ► Save GCP points as…</strong>.</li>
+  <li>Cuối cùng, thực hiện đặng ký toạ độ cho bản đồ bằng cách vào <strong>File ► Start georeferencing</strong> hoặc kích chọn nút <img src="media/georef-start-btn.png" alt="Start Georeferencing button" title="Start Georeferencing button" />.</li>
+</ol>
+
+<p><img src="media/georef-4.png" alt="Các GCP được thêm vào" title="Các GCP được thêm vào" /></p>
+
+<p>Hình 7.13: Các GCP được thêm vào</p>
+
+<p><img src="media/georef-5.png" alt="Bản đồ đã được đăng ký toạ độ được tải trong QGIS" title="Bản đồ đã được đăng ký toạ độ được tải trong QGIS" /></p>
+
+<p>Hình 7.14: Bản đồ đã được đăng ký toạ độ được tải trong QGIS</p>
+
+<p>Chú ý: Để kiểm tra dữ liệu của bạn có được đăng ký toạ độ chính xác không, bạn có thể mở bản đồ địa hình. Bản đồ của bạn và hình ảnh sẽ khá khớp nhau. Chọn độ trong suốt transparency là 75% để so sánh với ảnh hàng không.</p>
+
+<h4 id="câu-hỏi"><strong>Câu hỏi</strong></h4>
+
+<ol>
+  <li>Số hoá trong GIS là gì? (Chọn một hoặc nhiều phương án trả lời đúng).</li>
+  <li>Bộ dữ liệu phụ trợ nào sau đây sẽ hỗ trợ số hoá? (Chọn một hoặc nhiều phương án trả lời đúng).</li>
+  <li>Các yếu tố nào có thể ảnh hưởng đến độ chính xác của dữ liệu trong tiến trình số hoá? (Chỉ chọn một phương án trả lời đúng).</li>
+  <li>Có thể làm gì để cải thiện độ chính xác? (Chọn một hoặc nhiều phương án trả lời đúng).</li>
+  <li>Tại sao mô hình dữ liệu là quan trọng khi tạo dữ liệu mới  (Chỉ chọn một phương án trả lời đúng).</li>
+</ol>
+
+<h4 id="trả-lời">Trả lời</h4>
+
+<ol>
+  <li>
+    <p>a. Quá trình chuyển đổi dữ liệu địa lý từ hình ảnh được quét hoặc hình ảnh kỹ thuật số thành dữ liệu vectơ bằng cách theo vết (tracing) các đối tượng.</p>
+
+    <p>b. Mô tả  sự chuyển đổi thuần tuý giữa từ tương tự (analog) sang kỹ thuật số của các dữ liệu và tài liệu hiện có.</p>
+
+    <p>c. Quá trình mà theo đó toạ độ từ một bản đồ, hình ảnh, hoặc các nguồn dữ liệu khác được chuyển đổi thành định dạng số trong một hệ <em>GIS</em>.</p>
+
+    <p>d. Đề cập đến việc tạo ra một biểu diễn kỹ thuật số của các đối tượng hoặc thuộc tính vật lý.</p>
+  </li>
+  <li>
+    <p>a. Các điểm GPS</p>
+
+    <p>b. Bản đồ địa hình</p>
+
+    <p>c. Ảnh vệ tinh</p>
+
+    <p>d. Đồ thị và bảng biểu</p>
+  </li>
+  <li>
+    <p>a. Độ phân giải của dữ liệu (Không gian, Thời gian, Phổ)</p>
+
+    <p>b. Ánh sáng</p>
+
+    <p>c. Vị trí của đối tượng</p>
+
+    <p>d. Loại đối tượng</p>
+  </li>
+  <li>
+    <p>a. Chọn các nguồn dữ liệu chính xác</p>
+
+    <p>b. Đặt các mục tiêu chất lượng dữ liệu</p>
+
+    <p>c. Xem lại dữ liệu và chỉnh sửa lại hoặc hoàn nguyên các chỉnh sửa</p>
+  </li>
+  <li>
+    <p>a. Cho phép nắm bắt thông tin toàn diện về đối tượng</p>
+
+    <p>b. Tự động hoá xử lý</p>
+
+    <p>c. Nắm bắt các lỗi số hoá</p>
+  </li>
+</ol>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Module 5 - Tạo bản đồ | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Module 5 - Tạo bản đồ page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Module 5 - Tạo bản đồ">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Module 5 - Tạo bản đồ</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/module5/module5.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="module-5---tạo-bản-đồ">Module 5 - Tạo bản đồ</h1>
+
+<p><strong>Tác giả</strong>: Ketty</p>
+
+<p><strong>Biên dịch và bản địa hoá</strong>: Quách Đồng Thắng</p>
+
+<h2 id="giới-thiệu">Giới thiệu</h2>
+
+<p>Module này sẽ cung cấp cho bạn cái nhìn tổng quan về các bước phổ biến cần thiết để hoàn tất một bản đồ trong QGIS. Kết thúc module, người học sẽ nắm được các khái niệm;</p>
+
+<ul>
+  <li>Map canvas và các layer liên quan</li>
+  <li>Bản in - Print layout</li>
+  <li>Các yếu tố và thuộc tính của bản đồ</li>
+</ul>
+
+<p>Ngoài ra bạn sẽ học được các kỹ năng;</p>
+
+<ul>
+  <li>Sử dụng print layout để tạo bản đồ</li>
+  <li>Thêm các yếu tố bản đồ vào bản đồ</li>
+  <li>Quản lý nhiều print layout khác nhau</li>
+</ul>
+
+<h2 id="các-công-cụ-và-tài-nguyên-cần-thiết">Các công cụ và tài nguyên cần thiết</h2>
+
+<ul>
+  <li>Máy tính</li>
+  <li>Kết nối Internet</li>
+  <li>QGIS 3.16 trở lên</li>
+  <li>Lớp ranh giới hành chính Tp.HCM - HCMC_border (trong <a href="/vietnam/module5/data/module5.gpkg">module5.gpkg</a>)</li>
+  <li>Cơ sở y tế Tp.HCM - HCMC_clinics (trong <a href="/vietnam/module5/data/module5.gpkg">module5.gpkg</a>)</li>
+  <li>Ranh giới hành chính tỉnh thành Việt Nam - Vietnam_provinces (inside <a href="/vietnam/module5/data/module5.gpkg">module5.gpkg</a>)</li>
+  <li><a href="/vietnam/module5/data/HRSL_HCMC_Population.tif">HCM City High Resolution Settlement Layer</a></li>
+</ul>
+
+<h2 id="yêu-cầu-về-kỹ-năng">Yêu cầu về kỹ năng</h2>
+
+<ul>
+  <li>Kiến thức cơ bản về vận hành máy tính</li>
+  <li>Nắm vững các Module trước</li>
+</ul>
+
+<h2 id="tài-liệu-tham-khảo">Tài liệu tham khảo</h2>
+
+<ul>
+  <li>QGIS Map LayOut - <a href="https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html">https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html</a></li>
+  <li>Layout Templates - <a href="https://layout-hub.github.io/">https://layout-hub.github.io/</a></li>
+  <li>Style Manager - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html">https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html</a></li>
+  <li>Style Library - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html">https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html</a></li>
+</ul>
+
+<h2 id="giới-thiệu-chuyên-đề">Giới thiệu chuyên đề</h2>
+
+<p>Hãy bắt đầu với một ví dụ:</p>
+
+<p>Để tạo một bản đồ, bạn cần một đề tài mà bạn có thể muốn hiểu rõ hơn, chẳng hạn như ‘Sự phân bố không gian của các cơ sở y tế ở Tp.HCM’. Bạn sẽ nhận thấy đề tài này cung cấp cả chủ đề để khám phá và vị trí địa lý. Được trang bị thông tin này và các dữ liệu liên quan cho phép bạn khám phá thêm câu hỏi, bạn có thể tiến hành tạo một bản đồ.</p>
+
+<p>Phân tích các khái niệm</p>
+
+<p>Module này sẽ tập trung vào các khái niệm chính để thành lập bản đồ sau đây; map canvas và các layer liên quan, print layout và các thành phần và thuộc tính bản đồ. Đầu tiên là các định nghĩa ngắn gọn cho từng khái niệm;</p>
+
+<ul>
+  <li><strong>Map canvas và các layer liên quan</strong>: có lẽ là thành phần quan trọng nhất trong QGIS bởi vì nó hiển thị bản đồ được tạo từ các layer được chồng lớp lên nhau và cho phép tương tác với bản đồ và các layer. Điều này đã được đề cập trong Module 0: Giới thiệu QGIS.</li>
+  <li><strong>Pprint layout</strong> : Print layout cung cấp khả năng dàn trang và in bản đồ. Nó cho phép thêm các thành phần như Map canvas, text labels, images, legends, scale bars, basic shapes, arrows, attribute tables và HTML frames. Với Print layout bạn có thể tạo các bản đồ đẹp mắt và atlas để có thể in và lưu lại thành PDF, image hoặc SVG file. Đây là một cách mạnh mẽ để chia sẻ thông tin địa lý được sản xuất bởi QGIS có thể được đưa vào báo cáo hoặc xuất bản. Bạn có thể lưu layout như là một template và tải lại trong một phiên làm việc khác. Cuối cùng, việc tạo một số bản đồ dựa trên template có thể được thực hiện thông qua atlas generator. Hình sau thể hiện print layout và giao diện khi tạo mới một print layout.</li>
+</ul>
+
+<p><img src="media/print_comp2.png" alt="Print layout" title="Print layout" /></p>
+
+<p>Hình 5.1: Print layout</p>
+
+<ul>
+  <li><strong>Các thành phần và thuộc tính bản đồ</strong>: Các bản đồ chứa rất nhiều thông tin. Hầu hết các bản đồ sẽ có 5 yếu tố: Title, Legend, Grid, Compass Rose để chỉ hướng và thước tỉ lệ. Title cho biết những gì đang được thể hiện</li>
+</ul>
+
+<h2 id="nội-dung-chính">Nội dung chính</h2>
+
+<h3 id="phase-1--kết-xuất-map-canvas">Phase 1 : Kết xuất map canvas</h3>
+
+<p>Trong hướng dẫn này, chúng tôi sẽ chỉ ra hai cách để ‘Kết xuất map canvas’ sang print layout. Cách đầu tiên là đơn giản trong khi cách thứ hai sẽ khám phá các khả năng nâng cao được cung cấp bởi print layout.</p>
+
+<h4 id="ca1h-thứ-nhất-kết-xuất-map-canvas-không-cần-print-layout"><strong>Ca1h thứ nhất: Kết xuất map canvas không cần print layout</strong></h4>
+
+<ol>
+  <li>Các layer trước tiên phải được thêm vào map canvas. Các layer có thể được styling để truyền đạt thông tin trong dữ liệu của bạn. Thêm map decoration bằng cách kích chuột vào <strong>View ‣ Decorations</strong>. Chọn các map decoration yêu thích của bạn, vì dụ như bạn có thể thêm Title Label, Scale bar và Copyright Label. Với mỗi decoration bạn phải nhập các thiết lập trong một dialog.</li>
+  <li>Bước cuối cùng là kết xuất bản đồ sang dạng image hoặc pdf bằng cách kích chuột vào <strong>Project ‣ Import/Export</strong>, sau đó chọn định dạng kết xuất như hình sau</li>
+</ol>
+
+<p><img src="media/export-map-canvas-image.png" alt="Kết xuất map canvas thành một image" title="Kết xuất map canvas thành một image" /></p>
+
+<p><img src="media/export-map-canvas.png" alt="Kết xuất map canvas" title="Kết xuất map canvas" /></p>
+
+<p>Hình 5.2: Kết xuất map canvas</p>
+
+<ol>
+  <li>Chọn <strong>Save</strong>. Map canvas sẽ được lưu lại thành một file image hoặc pdf. Chọn nơi lưu trữ và bạn có thể in hoặc chia sẻ bản đồ.</li>
+</ol>
+
+<p><img src="media/exported-map-canvas.png" alt="Kết xuất map canvas thành image" title="Kết xuất map canvas thành image" /></p>
+
+<p>Hình 5.3: Kết xuất map canvas thành image</p>
+
+<h4 id="cách-thứ-hai-kết-xuất-map-canvas-sang-print-layout"><strong>Cách thứ hai: Kết xuất map canvas sang print layout</strong></h4>
+
+<ol>
+  <li>Trong hướng dẫn này, chúng ta sẽ tạo một bản đồ hiển thị 1.) Vị trí của các cơ sở y tế và 2.) Mật độ dân số của Tp. Hồ Chí Minh. Các layer này phải được thêm vào map canvas trước khi kết xuất. Các layer sau đó có thể được styling để truyền đạt thông tin của dữ liệu.</li>
+</ol>
+
+<p><img src="media/new-print-layout.png" alt="Tạo mới Print Layout" title="Tạo mới Print Layout" /></p>
+
+<p>Hình 5.4: Tạo mới Print Layout</p>
+
+<ol>
+  <li>Map canvas bây giờ có thể được kết xuất sang print layout. Kích chọn nút ‘New Print layout’ <img src="media/newprint_composer.png" alt="New Print Layout" title="New Print Layout" />, có thể được truy cập từ Tool bar hoặc bằng ‘Project’ menu bar. Một title dialog sẽ mở ra để nhập tiêu đề cho Print Layout, trong trường hợp này là ‘Ho Chi Minh City’, sau đó chọn OK.</li>
+</ol>
+
+<p><img src="media/new-print-layout-name.png" alt="Đặt tên Print Layout" title="Đặt tên Print Layout" /></p>
+
+<p>Hình 5.5: Đặt tên Print Layout</p>
+
+<ol>
+  <li>Giao diện Print Layout</li>
+</ol>
+
+<p><img src="media/new-print-layout-window.png" alt="Giao diện Print Layout" title="Giao diện Print Layout" /></p>
+
+<p>Hình 5.6: Giao diện Print Layout</p>
+
+<ol>
+  <li>Bạn sẽ nhận thấy print layput canvas trống. Để thêm bản đồ từ Map canvas, kích chọn e ‘Add new map to layout button’ <img src="media/add_new_map_to_layout.png" alt="alt_text" title="image_tooltip" />, kích tr1i chuột và vẽ một hình chữ nhật ở khu vực trung tâm của print layout để chứa map canvas. Tới đây, bạn vừa kết xuất map canvas sang print layout, có thể thêm tất cả các thành phần bản đồ khác như title, legend, grids,…</li>
+</ol>
+
+<p><img src="media/print-layout-map.png" alt="Thêm Map vào Print Layout" title="Thêm Map vào Print Layout" /></p>
+
+<p>Hình 5.7: Thêm Map vào Print Layout</p>
+
+<h4 id="câu-hỏi"><strong>Câu hỏi</strong></h4>
+
+<ol>
+  <li>QGIS map canvas là gì? (chọn một hoặc nhiều phương án trả lời)</li>
+  <li>Print layout là gì? (chọn một hoặc nhiều phương án trả lời)</li>
+  <li>Thành phần nào sau đây không phải là thành phần bản đồ? (Chỉ chọn một phương án trả lời)</li>
+</ol>
+
+<h4 id="quiz-answers"><strong>Quiz answers</strong></h4>
+
+<ol>
+  <li>
+    <p>a. shows the map composed from overlaid map layers
+b. allows interaction with the map and layers
+c. a widget for making maps</p>
+  </li>
+  <li>
+    <p>a. provides growing layout and printing capabilities
+b. allows you to add map elements
+c. handle both exporting and printing of maps</p>
+  </li>
+  <li>
+    <p>a. Title
+b. Scale
+c. Legend
+d. Colors and designs</p>
+  </li>
+</ol>
+
+<h3 id="phase-2--thêm-và-chỉnh-sửa-các-thành-phần-bản-đồ-trong-print-layout">Phase 2 : Thêm và chỉnh sửa các thành phần bản đồ trong print layout</h3>
+
+<h4 id="nội-dung-hướng-dẫn"><strong>Nội dung/ Hướng dẫn</strong></h4>
+
+<p>Bây giờ bản đồ đã được thêm vào print laypout, đã đến lúc thêm các thành phần bản đồ liên quan như title, scale, legend, grid, metadata,…vào print layout. Hầu hết các nút thêm vào nằm phía bên trái của print layout.</p>
+
+<ol>
+  <li>Chọn nút ‘Add label’ <img src="media/add_title.png" alt="alt_text" title="image_tooltip" />, giữ chuột trái và vẽ một hình chữ nhật (thông thường là phía trên của print layout) để đặt tiêu đề cho bản đồ. Nhập tiêu đề trong menu ‘Main properties’ ở bên phải của print layout. Các thiết lập font chữ có thể được thay đổi ở mục ‘Appearance’.</li>
+</ol>
+
+<p><img src="media/print-layout-with-title.png" alt="Thêm tiêu đề cho bản đồ" title="Thêm tiêu đề cho bản đồ" /></p>
+
+<p>Hình 5.8: Thêm tiêu đề cho bản đồ.</p>
+
+<ol>
+  <li>Tiếp theo, chúng ta sẽ thêm legend và scale. Một tuyên bố bản quyền (data attribution) có thể được thêm vào bằng cách ‘Add label’. Di chuyển con trỏ đến các nút bấm bên trái print layout để chọn. Thực hiện các bước tương tự như bước 1 bên trên đề thêm các thành phần bản đồ vào print layout. Bạn có thể thêm các thành phần bản đồ khác, nhưng hãy cẩn thận để bản đồ không quá lộn xộn.</li>
+</ol>
+
+<p><img src="media/scale-bar.png" alt="Scale bar" title="Scale bar" /></p>
+
+<p>Hình 5.9: Thêm thước tỉ lệ - scale bar vào bản đồ</p>
+
+<p><img src="media/legend.png" alt="Legend" title="Legend" /></p>
+
+<p>Hình 5.9: Thêm chú giải - legend vào bản đồ</p>
+
+<p><img src="media/attribution.png" alt="Attribution" title="Attribution" /></p>
+
+<p>Hình 5.10: Thêm thông tin tác giả - attribution vào bản đồ.</p>
+
+<ol>
+  <li>
+    <p>Nếu map layout đạt yêu cầu, bản đồ có thể được kết xuất  sang pdf, png, jpeg hoặc svg, sẵn sàng cho in ấn hoặc lưu lại. Tất cả các chức năng lưu có thể được truy cập thông qua menu ‘layout’.</p>
+  </li>
+  <li>
+    <p>Lưu bản đồ thành image sử dụng <strong>Layout ‣ Export as Image…</strong> hoặc kích chọn nút <strong>Export as Image</strong>  <img src="media/export-image-btn.png" alt="Export map to image" title="Export map to image" />. QGIS sẽ hỏi nơi lưu trữ bản đồ cũng như các thông số của image.</p>
+  </li>
+</ol>
+
+<p><img src="media/img-parameters.png" alt="Các thông số của image" title="Các thông số của image" /></p>
+
+<p>Hình 5.10: Các thông số của image</p>
+
+<p><img src="media/exported-map.png" alt="Bản đồ được kết xuất thành image" title="Bản đồ được kết xuất thành image" /></p>
+
+<p>Hình 5.11: Bản đồ được kết xuất thành image</p>
+
+<h4 id="câu-hỏi-1"><strong>Câu hỏi</strong></h4>
+
+<ol>
+  <li>Ở tab nào sau đây bạn có thể thay đổi properties của các thành phần bản đồ (Chỉ chọn một phương án trả lời)</li>
+  <li>Bạn có thể thêm thông tin tác giả - attribution vào map layout bằng cách nào</li>
+</ol>
+
+<h4 id="quiz-answers-1"><strong>Quiz answers</strong></h4>
+
+<ol>
+  <li>a. Composition
+b. Item properties
+c. Atlas generation</li>
+  <li>Thêm một title box, sau đó gõ thông tin tác giả. Chú ý là title box cho phép bạn thêm tất cả các dạng text vào bản đồ.</li>
+</ol>
+
+<h3 id="phase-3-tạo-bản-đồ-tự-động-bằng-chức-năng-atlas">Phase 3: Tạo bản đồ tự động bằng chức năng Atlas</h3>
+
+<h4 id="nội-dung-hướng-dẫn-1"><strong>Nội dung/ Hướng dẫn</strong></h4>
+<p>Nếu tổ chức của bạn xuất bản các bản đồ in hoặc bản đồ trực tuyến, bạn thường cần tạo nhiều bản đồ với cùng một template - thường là cho từng đơn vị hành chính hoặc một khu vực quan tâm. Tạo các bản đồ này thủ công có thể tốn nhiều thời gian và nếu bạn muốn cập nhật những bản đồ này mô5t cách thường xuyên, nó có thể trể thành một việc nhàm chán. QGIS có một công cụ gọi là Atlas có thể giúp bạn tạo một map template và dễ dàng xuất bản một số lượng lớn bản đồ cho các khu vực địa lý khác nhau. Chúng ta sẽ lấy các tỉnh thành khác nhau của Việt nam làm ví dụ, với ranh giới hành chính cho 63 tỉnh thành.</p>
+
+<p><img src="media/atlas-coverage.png" alt="Ranh giới hành chính 63 tỉnh thành" title="Ranh giới hành chính 63 tỉnh thành" /></p>
+
+<p>Hình 5.12: Ranh giới hành chính 63 tỉnh thành</p>
+
+<p><img src="media/atlas-attr.png" alt="Bảng thuộc tính" title="Bảng thuộc tính" /></p>
+
+<p>Hình 5.13: Bảng thuộc tính</p>
+
+<ol>
+  <li>
+    <p>Layer này sẽ đóng vai trò là coverage layer, nghĩa là Atlas sẽ gồm 63 bản đồ tương ứng với 63 đối tượng của layer - 63 tỉnh thành của Việt Nam.</p>
+  </li>
+  <li>
+    <p>Tạo mới Print Layout và thêm vào một bản đồ.</p>
+  </li>
+</ol>
+
+<p><img src="media/atlas-print-layout.png" alt="Atlas Print Layout" title="Atlas Print Layout" /></p>
+
+<p>Hình 5.14: Atlas Print Layout</p>
+
+<ol>
+  <li>Ở bên phải của Print Layout, đảm bảo chọn <strong>Atlas</strong> menu và kích chọn <strong>Generate an atlas</strong>. Bạn cũng có thể mở thiết lập Atlas bằng cách kích vào nút Atlas Settings <img src="media/atlas-settings-btn.png" alt="Atlas Settings" title="Atlas Settings" /> trên Atlas toolbar.</li>
+</ol>
+
+<p><img src="media/generate-atlas.png" alt="Tạo Atlas" title="Tạo Atlas" /></p>
+
+<p>Hình 5.15: Tạo Atlas</p>
+
+<ol>
+  <li>Bước tiếp theo là chọn coverage layer; Coverage layer là một index layer được dùng để tạo từng trang in. Một bản đồ/ trang in của Atlas sẽ được tạo tương ứng với mỗi đối tượng của coverage layer. Trong trường hợp của chúng ta, sử dụng Vietnam_provinces coverage layer sẽ tạo 63 bản đồ tương ứng với 63 tỉnh thành. QGIS Atlas sẽ tự động thay đổi khung nhìn cho từng đối tượng trong coverage layer. Bạn có thể chọn ẩn coverage layer trong các bản đồ được tạo (nghĩa là) coverage layer sẽ không được hiển thị trong Print Layout) và chọn tên cho từng trang in của Atlas. Bạn cũng có thể thực hiện một số bộ lọc và sắp xếp cho coverage layer nều cần. Đối với <strong>Output</strong>, bạn có thể chọn đầu ra là một file duy nhất bằng các kích chọn <strong>Singe file export when possible</strong>, ngược lại nếu không chọn thì sẽ tạo ra mỗi file riêng cho từng bản đồ.</li>
+</ol>
+
+<p><img src="media/coverage-layer.png" alt="Chọn Coverage Layer" title="Chọn Coverage Layer" /></p>
+
+<p>Hình 5.16: Chọn Coverage Layer</p>
+
+<ol>
+  <li>Bây giờ chúng ta đã chọn coverage layer, chúng ta nên yêu cầu Print Layout sử dụng atlas để điều khiển khung nhìn của các bản đồ sẽ được tạo ra. Trong tab <strong>Item Properties</strong>, kích chọn <strong>Controlled By Atlas</strong></li>
+</ol>
+
+<p><img src="media/atlas-controlled.png" alt="Controlled by Atlas" title="Controlled by Atlas" /></p>
+
+<p>Hình 5.17: Đảm bảo rằng khung nhìn bản đồ được điều khiển bởi Atlas</p>
+
+<ol>
+  <li>Để xem trước Atlas, kích chọn nút Preview Atlas <img src="media/atlas-preview-btn.png" alt="Preview Atlas button" title="Preview Atlas button" /> trên Atlas Toolbar. Nó sẽ hiển thị 63 bản đồ mà bạn đã tạo. Sử dụng Atlas toolbar <img src="media/atlas-toolbar-nav.png" alt="Atlas toolbar" title="Atlas toolbar" /> đề lần lượt xem các bản đồ có trong Atlas.</li>
+</ol>
+
+<p><img src="media/atlas-preview.png" alt="Atlas Preview" title="Atlas Preview" /></p>
+
+<p>Hình 5.18: Xem trước Atlas</p>
+
+<ol>
+  <li>Bạn có thể xuất các bản đồ Atals bằng nút <strong>Export Atlas</strong> <img src="media/atlas-export-btn.png" alt="Export Atlas button" title="Export Atlas button" /> sang dạng image hoặc pdf. Chọn <strong>Export Atlas as Image</strong>, bạn sẽ có 63 bản đồ tương ứng với 63 tỉnh thành.</li>
+</ol>
+
+<p><img src="media/atlas-outputs.png" alt="Atlas Outputs" title="Atlas Outputs" /></p>
+
+<p>Hình 5.18: Kết quả đầu ra của Atlas</p>
+
+<ol>
+  <li>
+    <p><strong>MẸO</strong>: Đối với ví dụ này chúng ta chỉ tạo bản đồ từ coverage layer. Sức mạnh của Atlas là khi chúng ta có nhiều layer. Ví dụ, lớp cơ sở y tế, giao thông và mật độ dân số của cả nước được tải trong QGIS. Sau đó, chúng ta muốn tạo một bản đồ cho từng tỉnh thành có cùng các layer. Sử dụng Atlas sẽ chỉ yêu cầu chúng ta tạo một layout template và để Atlas quản lý việc tạo các bản đồ khác dựa trên coverage layer được sử dụng.</p>
+  </li>
+  <li>
+    <p><strong>MẸO</strong>: Bạn có thể sử dụng QGIS Expressions và Data Defined để ghi đè thiết lập các thành phần bản đồ trong Atlas để chúng có thể thay đổi tự động theo các đối tượng của coverage layer. Ví dụ, bạn có thể sử dụng QGIS expression để gọi giá trị của trường NAME_1 cho label để nó thay đổi tự động giá trị của NAME_1 tương ứng với từng đối tượng của coverage layer</p>
+  </li>
+</ol>
+
+<p>Để tìm hiểu thêm về QGIS Atlas, tham khảo tại đây  <a href="https://www.youtube.com/watch?v=tOnMJBUvEjY">https://www.youtube.com/watch?v=tOnMJBUvEjY</a>.</p>
+
+<h4 id="quiz-questions"><strong>Quiz questions</strong></h4>
+
+<p>n/a</p>
+
+<h4 id="quiz-answers-2"><strong>Quiz answers</strong></h4>
+
+<p>n/a</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

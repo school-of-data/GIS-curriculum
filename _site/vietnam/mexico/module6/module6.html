@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Módulo 6 - Atributos de capa | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Módulo 6 - Atributos de capa page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Módulo 6 - Atributos de capa">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Módulo 6 - Atributos de capa</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/mexico/module6/module6.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="módulo-6---atributos-de-capa">Módulo 6 - Atributos de capa</h1>
+
+<p><strong>Autor:</strong> Ketty, Ben Hur</p>
+
+<p><strong>Traductora</strong>: Malena</p>
+
+<h2 id="introducción-pedagógica">Introducción Pedagógica</h2>
+
+<p>Este módulo le proporcionará una descripción general de los pasos comunes necesarios para trabajar con la tabla de atributos y los atributos de capa en QGIS. Al final del módulo, podrá comprender los siguientes conceptos;</p>
+
+<ul>
+  <li>Trabajar con la tabla de atributos</li>
+  <li>Usar la calculadora de campo</li>
+  <li>Motor de expresión QGIS</li>
+  <li>Refactorizar campos</li>
+</ul>
+
+<p>Además, aprenderá las siguientes habilidades;</p>
+
+<ul>
+  <li>Presentación de la interfaz de la tabla de atributos</li>
+  <li>Interactuar con entidades en una tabla de atributos</li>
+  <li>Guardar entidad seleccionada como nueva capa</li>
+  <li>Editar campos de capa</li>
+</ul>
+
+<p>Utilizará la calculadora de campo y el motor de expresión qgis para ejecutar operaciones y funciones matemáticas en QGIS.</p>
+
+<h2 id="herramientas-y-recursos-necesarios">Herramientas y recursos necesarios</h2>
+
+<ul>
+  <li>Computadora de trabajo</li>
+  <li>Conexión a Internet</li>
+  <li>QGIS 3.16 y superior</li>
+  <li>Capa límite administrativa de Pampanga (dentro del <a href="https://github.com/school-of-data/GIS-curriculum/blob/main/philippines/module6/data/module6.gpkg">módulo6.gpkg</a>)</li>
+  <li>Clínicas de Pampanga (dentro del <a href="https://github.com/school-of-data/GIS-curriculum/blob/main/philippines/module6/data/module6.gpkg">módulo6.gpkg</a>)</li>
+  <li>Provincias de PHL (dentro del <a href="https://github.com/school-of-data/GIS-curriculum/blob/main/philippines/module6/data/module6.gpkg">módulo6.gpkg</a>)</li>
+  <li><a href="https://github.com/school-of-data/GIS-curriculum/blob/main/philippines/module6/data/HRSL_Pampanga_Population.tif">Capa de asentamiento de alta resolución de Pampanga</a></li>
+</ul>
+
+<h2 id="prerrequisitos">Prerrequisitos</h2>
+
+<ul>
+  <li>Comprensión de todos los módulos anteriores</li>
+  <li>Conocimientos básicos sobre el funcionamiento de una computadora</li>
+</ul>
+
+<h2 id="recursos-adicionales">Recursos adicionales</h2>
+
+<ul>
+  <li>Trabajo con la tabla de atributos - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes</a></li>
+  <li>Expresiones QGIS - <a href="https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html">https: / /docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html</a></li>
+</ul>
+
+<h2 id="introducción-temática">Introducción temática</h2>
+
+<p>Comencemos con un ejemplo:</p>
+
+<p>En algunos casos, por ejemplo, para fines de planificación de infraestructura, es posible que desee conocer el área de los polígonos en una capa . Si tiene un polígono, esto no sería un problema. Pero, ¿qué pasa si tiene muchos polígonos / áreas en la capa? Calcular cada área una por una es casi imposible. La capa de vector de límite administrativo de Filipinas tiene muchos polígonos, lo que significa que sería un buen conjunto de datos para este tutorial. Vamos a calcular el área de cada polígono de forma automática. En total, se calculará el área de 81 provincias.</p>
+
+<h2 id="desglose-de-los-conceptos">Desglose de los conceptos</h2>
+
+<p>Gran parte del trabajo que realiza al crear un mapa implica trabajar con atributos de capa. Ya sea que esté dibujando la capa, configurando una ventana emergente, realizando análisis o visualizando, necesita cierto nivel de conocimiento de los campos de la capa y los valores que contienen. Si es su propia capa, conoce y comprende sus atributos. Pero si no es así, ¿cómo se obtiene ese conocimiento? Lo más probable es que inspeccione los nombres de los campos y examine los valores de los campos en busca de algunas pistas. Y si tiene suerte, encontrará documentación que describe los atributos de la capa.</p>
+
+<p>La tabla de atributos muestra información sobre las características de una capa seleccionada. Cada fila de la tabla representa una característica (con o sin geometría) y cada columna contiene un dato particular sobre la característica. Las características de la tabla se pueden buscar, seleccionar, mover o incluso editar. Específicamente, hay dos nuevas propiedades de campo que describen los valores contenidos en un campo;</p>
+
+<ul>
+  <li>Descripción del campo: unas pocas palabras, una oración o un párrafo de texto que describe los valores del campo.</li>
+  <li>Tipo de valor de campo: una palabra clave que categoriza el tipo de valores contenidos en el campo. La palabra clave ayuda a las personas a entender cómo usar los valores y permite que QGIS y otras aplicaciones cliente hagan sugerencias más inteligentes para trabajar con ellos, por ejemplo, los tipos de valores en el campo pueden ser enteros, cadenas, booleanos, dobles o de coma flotante.</li>
+</ul>
+
+<p>Aquí hay un ejemplo ; Suponga que tiene una capa de parcela de tierra que tiene estos campos:</p>
+
+<ul>
+  <li>ID de parcela - entero</li>
+  <li>Propietario - cadena</li>
+  <li>Dirección de la calle - cadena</li>
+  <li>Descripción de la propiedad - cadena</li>
+  <li>Edificios - entero</li>
+  <li>Área de terreno - doble</li>
+  <li>Valor tasado - doble</li>
+  <li>Fecha de tasación - Fecha</li>
+</ul>
+
+<p>Si tuviera que describir estos valores de campo , puede escribir algo como esto:</p>
+
+<ul>
+  <li>ID de parcela - el identificador único de la parcela</li>
+  <li>Propietario- el nombre del dueño de la propiedad</li>
+  <li>Dirección de la calle - la ubicación de la parcela</li>
+  <li>Descripción de la propiedad - la descripción legal de la propiedad</li>
+  <li>Edificios - el número de edificios en la parcela</li>
+  <li>Área del terreno: el tamaño de la parcela en acres</li>
+  <li>Valor tasado: el valor de la parcela y los edificios en dólares</li>
+  <li>Fecha de tasación: la fecha de la última tasación</li>
+</ul>
+
+<p>Al observar estas descripciones, se destacan algunas palabras, como: identificador, nombre, ubicación , descripción, número, tamaño, valor y fecha. Estas son las <em>palabras clave</em> (keywords) que describen los valores del campo. Las palabras clave de tipo de valor de campo se construyen a partir de este tipo de palabras. Son:</p>
+
+<ul>
+  <li>Nombre o Título</li>
+  <li>Descripción</li>
+  <li>Tipo o Categoría</li>
+  <li>Recuento o Cantidad</li>
+  <li>Porcentaje o Relación</li>
+  <li>Medición</li>
+  <li>Identificador único</li>
+  <li>Ordenado o clasificado</li>
+  <li>Binario</li>
+  <li>Ubicación o Nombre de lugar</li>
+  <li>Coordenada</li>
+  <li>Fecha y hora</li>
+</ul>
+
+<p>En el ejemplo de capa de parcela anterior, el campo ID de parcela es un campo entero. Si el tipo de valor de campo indica que los valores de campo representan un identificador único en lugar de un recuento, QGIS no sugeriría dibujar este atributo de campo usando colores o símbolos graduados.</p>
+
+<p>Además, otros conceptos como la función de calculadora de campo en la tabla de atributos permiten realizar cálculos sobre la base de valores de atributos existentes o funciones definidas, por ejemplo, para calcular la longitud, el área o la densidad de población. Tenga en cuenta que los posibles cálculos están determinados por los atributos o la composición de sus datos. Por ejemplo, solo es posible calcular la densidad de población si hay un campo con recuentos de población. Usando el motor de expresión y la calculadora de campo, luego continuaría construyendo una expresión o fórmula para calcular la densidad de población. En este caso la fórmula sería; población total como número de personas / área de tierra cubierta por esa población. Notará que es importante saber qué representa cada uno de los campos en la tabla de atributos de capa. Esto significa que necesita conocer y comprender sus datos a fondo. Esto hace que sea más fácil aplicar funciones y expresiones y, por lo tanto, generar análisis y visualizaciones / productos de mapas significativos.</p>
+
+<h3 id="título-de-la-fase-1-edición-de-atributos-de-capa">Título de la fase 1: Edición de atributos de capa</h3>
+
+<h4 id="contenido--tutorial"><strong>Contenido / Tutorial</strong></h4>
+
+<p>La tabla de atributos muestra información sobre las características de una capa seleccionada. Cada fila de la tabla representa una característica (con o sin geometría) y cada columna contiene un dato particular sobre la característica. Las características de la tabla se pueden buscar, seleccionar, mover o incluso editar.</p>
+
+<ol>
+  <li>Cargue la capa vectorial de provincias PHL (que se encuentra dentro de modulo6) en QGIS. Puede saber cuántas entidades hay en la entidad actual haciendo clic con el botón derecho en la capa en el Panel de capas ‣ Mostrar recuento de entidades. Como puede ver a continuación, la capa vectorial tiene muchas características. En total, hay 81 características correspondientes a 81 provincias.</li>
+</ol>
+
+<p><img src="media/many-polygons.png" alt="Several polygons" title="Several polygons" /></p>
+
+<p>Figura 6.1: Varios polígonos</p>
+
+<ol>
+  <li>El siguiente paso es explorar la interfaz de la tabla de atributos. Abra la tabla de atributos haciendo clic derecho en la capa en el Panel de capas ‣  Abrir tabla de atributos. También puede hacer clic en el botón <img src="media/open-attribute-btn.png" alt="Open attribute table button" title="Open attribute table button" /> Abrir tabla  de atributos de la barra de herramientas de atributos. Así es como se ve la tabla de atributos. La barra de herramientas tiene una variedad de botones, coloque el cursor sobre cada botón para ver la funcionalidad incorporada.</li>
+</ol>
+
+<p><img src="media/attribute-tab.png" alt="Open attribute table" title="Open attribute table" /></p>
+
+<p>Figura 6.2: Abrir tabla de atributos</p>
+
+<p>Si no desea que la tabla de atributos sea una ventana flotante, sino que se acople en la interfaz QGIS, puede hacer clic en el botón <img src="media/dock-attr-btn.png" alt="&quot;Dock attribute table&quot;" title="Dock attribute table" /> Acoplar tabla de atributos . Cuando están acopladas, las tablas de atributos aparecerán como pestañas en lugar de ventanas individuales.</p>
+
+<p><img src="media/docked-attribute-tab.png" alt="Docked attribute table" title="Docked attribute table" /></p>
+
+<p>Figura 6.3: Tabla de atributos acoplados</p>
+
+<ol>
+  <li>
+    <p>Para los cálculos de área, el Sistema de referencia de coordenadas debe ser proyectado. Esto le permite calcular las distancias correctamente. Recuerde, nuestro interés es calcular automáticamente el área para cada una de las 81 provincias. Verifique el Sistema de referencia de coordenadas de la capa vectorial. Si se trata de un sistema de referencia de coordenadas geográficas, vuelva a proyectar la capa a un sistema de coordenadas proyectadas. Consulte las diferentes proyecciones en el <a href="https://epsg.io/?q=Philippines%20kind%3APROJCRS">EPSG</a> sitio web de. Esto es Filipinas, usaremos <a href="https://epsg.io/3123">PRS92 / Filipinas Zona 3</a>, EPSG: 3123. De los módulos anteriores donde las proyecciones de mapas se discuten ampliamente, es posible que ya sepa que las proyecciones de mapas se aplican en relación con una ubicación determinada en la tierra.</p>
+  </li>
+  <li>
+    <p>Verifique la configuración del proyecto; Vaya a: <strong>Proyecto ‣ Propiedades Propiedades ‣ General</strong>.</p>
+  </li>
+</ol>
+
+<p><img src="media/gen-settings.png" alt="Planimetric" title="Planimetric" /></p>
+
+<p>Figura 6.4: Configuración general</p>
+
+<ol>
+  <li>A continuación, haga clic en el  botón<img src="media/field_calculator.png" alt="alt_text" title="image_tooltip" /> Abrir calculadora de campo en la barra de herramientas de atributos para abrir la calculadora de campo. Se abrirá el diálogo de la calculadora de campo; complete el nombre del campo de salida, en este caso será ‘AREA (SQ KM)’. Elija el número decimal (doble) en el tipo de campo de salida. Cambie la precisión a 2 lugares decimales. Para calcular el área, use la siguiente expresión:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ área / 1000000
+</code></pre></div></div>
+
+<p>Puede encontrar esta expresión en <strong>Geometría</strong>. Haga clic en Aceptar y calculará automáticamente el área de cada polígono. Tenga en cuenta que el cálculo del área depende del sistema de referencia de coordenadas utilizado, por lo que puede obtener resultados diferentes según el CRS que utilizó. También puede buscar y encontrar información sobre expresiones en el lado derecho de la Calculadora de campo o el Generador de expresiones.</p>
+
+<p><img src="media/fieldcalc.png" alt="Field calculator dialogue" title="Field calculator dialogue" /></p>
+
+<p>Figura 6.5: Cuadro de diálogo de la calculadora de campo</p>
+
+<ol>
+  <li>Abra la tabla de atributos para ver el resultado. Acaba de editar el contenido de la tabla de atributos, de forma automatizada en lugar de escribir los valores en cada celda uno por uno.</li>
+</ol>
+
+<p><img src="media/area.png" alt="New attribute table with new field and attributes" title="New attribute table with new field and attributes" /></p>
+
+<p>Figura 6.6: Nueva tabla de atributos con el nuevo campo y atributos</p>
+
+<h4 id="preguntas-de-evaluación"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>
+    <p>Una tabla de atributos es una base de datos o un archivo de tabla que contiene información sobre un conjunto de características geográficas.</p>
+  </li>
+  <li>
+    <p>Las características geográficas están generalmente dispuestas de modo que cada fila representa una característica y cada columna representa un atributo de entidad.</p>
+  </li>
+  <li>
+    <p>Es necesario volver a proyectar capas antes de los cálculos de área cuando la capa tiene un sistema de referencia de coordenadas geográficas.</p>
+  </li>
+</ol>
+
+<h4 id="respuestas"><strong>Respuestas</strong></h4>
+
+<ol>
+  <li>Verdadero</li>
+  <li>Verdadero</li>
+  <li>Verdadero</li>
+</ol>
+
+<h3 id="fase-2-comprender-y-trabajar-con-datos-de-atributos-consultas-y-análisis">Fase 2: Comprender y trabajar con datos de atributos, consultas y análisis</h3>
+
+<h4 id="contenido--tutorial-1"><strong>Contenido / Tutorial</strong></h4>
+
+<p>En este punto, es posible que observe que la tabla de atributos almacena datos espaciales y no espaciales. En este tutorial, descubrirá formas de trabajar con datos de tablas de atributos. Por ejemplo, usando expresiones, seleccione Clínicas en Pampanga con un centro de emergencia, todas usando datos de la tabla de atributos.</p>
+
+<ol>
+  <li>Agregue los siguientes conjuntos de datos de Filipinas al lienzo del mapa de QGIS;
+    <ul>
+      <li>Capa de límite administrativo de Pampanga (dentro de module6.gpkg)</li>
+      <li>Clínicas de Pampanga (dentro de module6.gpkg)</li>
+      <li>Provincias de PHL (dentro de module6.gpkg)</li>
+      <li>Capa de asentamiento de alta resolución de Pampanga</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="media/add-layers.png" alt="Add different layers" title="Add different layers" /></p>
+
+<p>Figura 6.7: Agregar diferentes capas</p>
+
+<ol>
+  <li>La selección se aplicará a la capa de Clínicas, por lo tanto, abra la tabla de atributos para la capa Clínica. Haga clic en seleccionar entidades usando el botón expresión <img src="media/select_features_button.png" alt="alt_text" title="image_tooltip" /> y escriba la siguiente expresión en el generador de expresiones;</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"amenidad" = 'clínica' AND "Emergencia" = 'Yes'
+</code></pre></div></div>
+
+<p>Notarás que la expresión tiene varios predicados como el signo de comparación (=), el predicado lógico (Y) y una cadena que está entre comillas simples (‘’). También hay dos nombres de atributos (amenidad, emergencia) y sus valores (clínica, sí).</p>
+
+<p><img src="media/select.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 6.8: Diálogo del constructor Seleccionar por expresión</p>
+
+<ol>
+  <li>Se selecciona una clínica. Puede ver la selección resaltada en amarillo. La clínica seleccionada también se resalta en la tabla de atributos. Ahora sabemos que solo hay una clínica con un centro de emergencia en la provincia de Pampanga.</li>
+</ol>
+
+<p><img src="media/selected-canvas.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 6.9: La clínica / característica seleccionada está resaltada (amarillo)</p>
+
+<p><img src="media/selected-attr.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 6.10: La clínica / característica seleccionada está resaltada (azul)</p>
+
+<p>También es posible hacer selecciones haciendo clic en una característica dentro del lienzo del mapa.</p>
+
+<p>El desarrollo de una expresión funcional comienza con la comprensión de sus datos; por ejemplo, los atributos y los valores que contienen. Luego haciendo las preguntas correctas y finalmente, desarrollando la expresión correcta, considerando todas las reglas matemáticas que hacen que un error sea libre de expresión.</p>
+
+<h4 id="preguntas-de-evaluación-1"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>Estos operadores los proporciona el constructor de expresiones. {+, -, *}</li>
+  <li>Las comillas simples deben incluir una cadena.</li>
+  <li>La tabla de atributos almacena solo datos no espaciales.</li>
+</ol>
+
+<h4 id="respuestas-del-cuestionario"><strong>Respuestas del cuestionario</strong></h4>
+
+<ol>
+  <li>Verdadero</li>
+  <li>Verdadero</li>
+  <li>Falso</li>
+</ol>
+
+<h3 id="título-de-la-fase-3-expresiones-avanzadas-de-qgis">Título de la fase 3: Expresiones avanzadas de QGIS</h3>
+
+<p>El diálogo Generador de expresiones ofrece acceso a la:</p>
+
+<ul>
+  <li>Pestaña Expresión	 (<a href="https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions-list">https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions- list</a>) que, gracias a una lista de funciones predefinidas, ayuda a escribir y comprobar la expresión a utilizar;</li>
+  <li>Pestaña Editor de funciones	 (<a href="https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor">https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor</a>) que ayuda a ampliar la lista de funciones mediante la creación de funciones personalizadas.</li>
+</ul>
+
+<h4 id="contenido--tutorial-2"><strong>Contenido / Tutorial</strong></h4>
+
+<p>Hay muchos casos de uso de expresiones, aquí hay algunos ejemplos. Observe cómo se desarrollan las expresiones y qué operadores o predicados se utilizan. También es importante el hecho de que todas estas expresiones se desarrollan en función del contenido del conjunto de datos. Puede adaptar esto a su conjunto de datos de elección.</p>
+
+<ol>
+  <li>Desde la Calculadora de campo, calcule un campo “pop_density” utilizando los campos “total_pop” y “area_km2” existentes:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"total_pop" / "area_km2"
+
+</code></pre></div></div>
+
+<ol>
+  <li>Actualice el campo “density_level” con categorías de acuerdo con los valores de “pop_density”:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CASE WHEN "pop_density" &lt; 50 THEN 'Low population density'
+     WHEN "pop_density" &gt;= 50 AND  "pop_density" &lt; 150 THEN 'Medium population density'
+     WHEN "pop_density" &gt; 150 THEN 'High population density'
+END
+
+</code></pre></div></div>
+
+<ol>
+  <li>Aplicar un estilo categorizado a todas las características según si el precio medio de la vivienda es inferior o superior a 10000 chelines por metro cuadrado:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"precio_m2"&gt; 10000
+
+</code></pre></div></div>
+
+<ol>
+  <li>Con la herramienta “Seleccionar por expresión …”, seleccione todas las entidades que representan áreas de “Alta densidad de población” y cuyo precio medio de la vivienda es superior a 10000 pesos por metro cuadrado:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"nivel de densidad" = 'Alta densidad poblacional' y "precio_m2"&gt; 10000
+
+</code></pre></div></div>
+
+<ol>
+  <li>Asimismo, la expresión anterior también podría usarse para definir qué características deben ser etiquetadas o mostradas en el mapa.</li>
+</ol>
+
+<h4 id="preguntas-de-evaluación-2"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>Tanto la calculadora de campo como el diálogo Seleccionar por expresión se pueden usar para desarrollar expresiones - <em>Verdadero</em></li>
+  <li>Expresiones se puede usar para actualizar un nuevo campo - <em>Verdadero</em></li>
+  <li>Expresiones se puede usar para aplicar un estilo - <em>Verdadero</em></li>
+</ol>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

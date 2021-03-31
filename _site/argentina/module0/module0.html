@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Módulo 0: Introducción suave a los conceptos de SIG (Sistema de Información Geográfica) | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Módulo 0: Introducción suave a los conceptos de SIG (Sistema de Información Geográfica) page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Módulo 0: Introducción suave a los conceptos de SIG (Sistema de Información Geográfica)">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Módulo 0: Introducción suave a los conceptos de SIG (Sistema de Información Geográfica)</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/argentina/module0/module0.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="módulo-0-introducción-suave-a-los-conceptos-de-sig-sistema-de-información-geográfica">Módulo 0: Introducción suave a los conceptos de SIG (Sistema de Información Geográfica)</h1>
+
+<p><strong>Autor</strong>: Ben Hur</p>
+
+<p><strong>Traductora</strong>: Malena</p>
+
+<h2 id="introducción-pedagógica">Introducción Pedagógica</h2>
+
+<p>Este módulo sirve como una introducción suave a los conceptos geográficos necesarios para trabajar con sistemas de información geográfica (SIG). Al final de este módulo, los estudiantes deberán comprender los siguientes conceptos:</p>
+
+<ul>
+  <li>proyecciones cartográficas</li>
+  <li>sistemas de referencia de coordenadas</li>
+  <li>formatos de datos espaciales (por ejemplo, vectores y rásteres)</li>
+  <li>partes y características de un SIG</li>
+  <li>usos de un SIG</li>
+  <li>ejemplos de SIG y otras aplicaciones geoespaciales</li>
+</ul>
+
+<p>Además, este módulo también presentará algunos conceptos clave de software libre y de código abierto (FOSS) y software libre y de código abierto para aplicaciones geoespaciales (FOSS4G).</p>
+
+<h2 id="herramientas-y-recursos-necesarios">Herramientas y recursos necesarios</h2>
+
+<p>Las herramientas y los recursos necesarios para este módulo son:</p>
+
+<ul>
+  <li>computadora de trabajo</li>
+  <li>conexión a Internet</li>
+</ul>
+
+<h2 id="prerrequisitos">Prerrequisitos</h2>
+
+<ul>
+  <li>Conocimientos básicos sobre cómo operar una computadora</li>
+</ul>
+
+<h2 id="recursos-adicionales">Recursos adicionales</h2>
+
+<ul>
+  <li>Una introducción suave a los conceptos de SIG - <a href="https://docs.qgis.org/3.16/en/docs/gentle_gis_introduction/index.html">https://docs.qgis.org/3.16/en/docs/gentle_gis_introduction/index.html</a></li>
+  <li>Guía del Usuario de QGIS- <a href="https://docs.qgis.org/3.16/en/docs/user_manual/">https://docs.qgis.org/3.16/en/docs/user_manual/</a></li>
+  <li>QGIS - <a href="https://docs.qgis.org/3.16/en/docs/training_manual/index.html">https://docs.qgis.org/3.16/en/docs/training_manual/index.html</a></li>
+  <li>Sitio web de QGIS - <a href="https://qgis.org/en/site/">https://qgis.org/en/site/</a></li>
+  <li>Sitio web de OSGeo - <a href="https://www.osgeo.org/">https://www.osgeo.org/</a></li>
+  <li>Sitio web de OSGeoLive - <a href="https://live.osgeo.org/en/index.html">https://live.osgeo.org/en/index.html</a></li>
+  <li>¿Qué es el software libre? - <a href="https://www.gnu.org/philosophy/free-sw.en.html">https://www.gnu.org/philosophy/free-sw.en.html</a></li>
+</ul>
+
+<p>Definición de código abierto - <a href="https://opensource.org/osd">https://opensource.org/osd</a></p>
+
+<h2 id="introducción-temática">Introducción temática</h2>
+
+<p>Comencemos con un ejemplo:</p>
+
+<p>Es posible que hayas escuchado la frase “todos los mapas mienten”. O que hayas visto una publicación en las redes sociales diciendo: “¡El mapa del mundo que ha conocido toda su vida está equivocado!”. Bueno, no es que los mapas elijan activamente mentirte, es solo que los mapas nunca pueden mostrarte toda la verdad. Un ejemplo de ello son los tamaños relativos de los países.</p>
+
+<p>“The True Size Of” (<a href="https://thetruesize.com/">https://thetruesize.com/</a>) (El Verdadero Tamaño De) es una aplicación web de mapas genial que muestra cómo los tamaños relativos de los países están distorsionados en uno de los mapas más comunes que usamos (uno que usa la proyección Mercator). También muestra algunos ejemplos de tipos de datos espaciales sobre los que aprenderemos más en este módulo. Intenta utilizar la aplicación web para comparar el tamaño de tu país con el de otros.</p>
+
+<h3 id="desglose-de-los-conceptos">Desglose de los conceptos</h3>
+
+<p>Entonces, ¿por qué es esto así? Como aprenderás en este módulo, es difícil representar la forma tridimensional de la tierra en una hoja de papel plana. Para hacerlo, los cartógrafos usan lo que se llama una <strong>proyección cartográfica ** para proyectar los puntos en la superficie tridimensional de la tierra en una superficie plana. Sin embargo, al hacerlo, se produce una **distorsión</strong>.</p>
+
+<p>Esta distorsión puede estar en la forma, tamaño, dirección y distancias de los objetos en el mapa. Todos los mapas tienen al menos una de estas distorsiones. Debido a esta distorsión, un mapa nunca puede mostrar toda la verdad sobre la Tierra.</p>
+
+<p>En la aplicación web que usamos, el mapa de fondo que no cambia de tamaño (el grisáceo) es un ejemplo de <strong>datos ráster</strong>. Los datos ráster son representaciones del mundo basadas en píxeles similares a las fotografías, mientras que la forma de los países por los que podemos movernos son ejemplos de <strong>datos vectoriales</strong>. Los datos vectoriales, a diferencia de los rásteres, representan el mundo utilizando objetos discretos como puntos, líneas y polígonos.</p>
+
+<p><img src="media/true-size-of.png" alt="True Size Of" title="True Size of Countries" /></p>
+
+<h2 id="contenido-principal">Contenido Principal</h2>
+
+<h3 id="título-de-la-fase-1-mapas-y-coordenadas">Título de la Fase 1: Mapas y Coordenadas</h3>
+
+<p>Cuando la gente piensa en la Tierra hoy en día, generalmente se imagina una masa esférica de azul, verde, blanco y marrón flotando en el espacio. Es por eso que la forma tradicional de modelar la tierra es mediante el uso de globos terráqueos.</p>
+
+<table>
+  <tr>
+   <td>     
+   <img src="media/blue-marble.jpg" />
+   Figura 1. La Canica Azul (<a href="https://commons.wikimedia.org/wiki/Earth#/media/File:The_Blue_Marble.jpg">https://commons.wikimedia.org/wiki/Earth#/media/File:The_Blue_Marble.jpg</a>)
+   </td>
+   <td>
+   <img src="media/globe.jpg" />  
+   Figura 2.  Globo terráqueo de l'Isle (1765) (<a href="https://commons.wikimedia.org/wiki/Globe#/media/File:3quarter_globe.jpg">https://commons.wikimedia.org/wiki/Globe#/media/File:3quarter_globe.jpg</a>)
+   </td>
+  </tr>
+</table>
+
+<p>Sin embargo, aunque el globo terráqueo es capaz de capturar la mayoría de las características de la Tierra, tiene dos inconvenientes principales:</p>
+
+<ul>
+  <li>Los globos terráqueos son incómodos y difíciles de llevar.</li>
+  <li>Los globos terráqueos solo se pueden utilizar a pequeña escala (por ejemplo, para encontrar ubicaciones de países, las posiciones relativas de ciudades, etc.). Son casi inútiles para actividades que requieren grandes escalas o detalles finos (por ejemplo, navegación por la ciudad).</li>
+</ul>
+
+<p>Aquí es donde entran en juego los mapas. Los mapas solucionan estos dos inconvenientes de los globos terráqueos al representar la tierra como una superficie plana. Al hacerlo, los mapas se vuelven portátiles y adecuados para una multitud de usos. Dicho esto, los mapas también presentan sus propios inconvenientes. A través del proceso de convertir un objeto tridimensional (globo) en uno bidimensional (mapa), se introducen distorsiones de tal manera que es imposible que un mapa capture perfectamente las diferentes características de la Tierra (es decir, formas, áreas, direcciones).</p>
+
+<h4 id="proyecciones-cartográficas"><strong>Proyecciones cartográficas</strong></h4>
+
+<p>Se utiliza una proyección cartográfica para aplanar la superficie de la tierra (o del globo) en un plano con el fin de crear un mapa. Este proceso de transformación genera distorsión.</p>
+
+<p><img src="media/dalandan.png" alt="The earth as an orange" title="The earth as an orange" /></p>
+
+<p>Puedes pensar en la Tierra como una naranja. Si la pelas, puedes colocar su cáscara de forma plana, pero nunca la podrás alisar perfectamente. Siempre encontrarás uno de los siguientes problemas:</p>
+
+<ul>
+  <li><strong>Estiramiento: el alargamiento de la piel (o superficie) en una o más direcciones.</strong></li>
+  <li><strong>Desgarro: la división o ruptura de la piel (o superficie)</strong></li>
+  <li><strong>Compresión: acortamiento o encogimiento de la piel (o superficie)</strong></li>
+</ul>
+
+<p>Es por esto que cada mapa contiene distorsiones en una o más de las siguientes características:</p>
+
+<ul>
+  <li><strong>Forma</strong></li>
+  <li><strong>Área</strong></li>
+  <li><strong>Distancia</strong></li>
+  <li><strong>Dirección</strong></li>
+</ul>
+
+<p>Las proyecciones cartográficas pueden preservar (sin distorsión) una o más características, pero nunca todas al mismo tiempo. Alternativamente, pueden llegar a un arreglo donde las distorsiones se equilibran y minimizan para todas las características. Esto se debe a la naturaleza de las características mismas.</p>
+
+<p>Las características principales, como la** Forma** y el <strong>Área</strong>, se excluyen mutuamente y no se pueden conservar simultáneamente. Mientras tanto, las características menores, la <strong>Distancia</strong> y la <strong>Dirección no pueden ser correctas en todas las partes del mapa.</strong></p>
+
+<p>Al elegir qué proyección cartográfica usar, es importante que tenga en cuenta el propósito del mapa. Por ejemplo, si desea realizar análisis basados en áreas, es mejor utilizar una proyección que preserve el área.</p>
+
+<p>Hay varias clasificaciones de proyecciones cartográficas. La primera se basa en <strong>la(s) característica(s) que preserva.</strong></p>
+
+<ul>
+  <li><strong>Proyecciones Conformes</strong> u <strong>Ortomórficas:</strong> son aquellas que conservan la forma o la conformidad angular. Se utilizan comúnmente con fines de navegación o meteorológicos. Las formas se conservan pero las áreas se distorsionan. Cuanto mayor sea el área, mayor será la distorsión.</li>
+  <li>**Proyecciones de Áreas Iguales o Autálicas: **son aquellas que conservan la proporción o áreas relativas de los objetos en el mapa. En este tipo de proyección de mapa, cuanto mayor sea el área que se está mapeando, más precisa es.</li>
+  <li><strong>Proyecciones Equidistantes:</strong> preservan la distancia de las líneas que se originan en uno o dos puntos del mapa o tienen la escala adecuada a lo largo de una o más líneas.</li>
+  <li><strong>Proyecciones Acimutales o Cenitales:</strong> preservan la dirección desde uno o dos puntos en el mapa.  Son útiles para mapear rutas de aeronaves y embarcaciones marítimas entre puertos.</li>
+</ul>
+
+<p>Una sola proyección cartográfica puede conservar más de una característica, por ejemplo, una proyección Equidistante Acimutal que conserva la dirección y las distancias desde uno o dos puntos en el mapa pero no todos como se muestra en la tabla siguiente.</p>
+
+<table>
+  <tr>
+   <td>
+   </td>
+   <td><strong>Conforme</strong>
+   </td>
+   <td><strong>Autálica</strong>
+   </td>
+   <td><strong>Equidistante</strong>
+   </td>
+   <td><strong>Acimutal</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Conforme</strong>
+   </td>
+   <td>-
+   </td>
+   <td>No
+   </td>
+   <td>No
+   </td>
+   <td>Sí
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Autálica</strong>
+   </td>
+   <td>No
+   </td>
+   <td>-
+   </td>
+   <td>No
+   </td>
+   <td>Sí
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Equidistante</strong></p>
+
+   </td>
+   <td>No
+   </td>
+   <td>No
+   </td>
+   <td>-
+   </td>
+   <td>Sí
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Acimutal</strong>
+   </td>
+   <td>Sí
+   </td>
+   <td>Sí
+   </td>
+   <td>Sí
+   </td>
+   <td>-
+   </td>
+  </tr>
+</table>
+
+<p><em>Tabla: ¿Pueden ambas características ser conservadas por un mapa al mismo tiempo?</em></p>
+
+<p>Existe otra clasificación de proyecciones cartográficas que no conserva ninguna de las características del mapa, pero trata de minimizar todas las distorsiones en el mapa. Estas se denominan proyecciones cartográficas de** Compromiso** o <strong>Error Mínimo</strong> (las proyecciones que no conservan la forma ni el área se denominan <strong>Afilácticas</strong>).</p>
+
+<p>Una forma de mostrar y ver la distorsión es utilizando lo que se llama la <strong>indicatriz de Tissot</strong>. Este indicador caracteriza las distorsiones locales mediante el uso de círculos y mostrando cómo estos círculos se transforman en el mapa.</p>
+
+<p><img src="media/conformal.png" alt="Conformal map projection" title="Conformal map projection" /></p>
+
+<p>Figura 3. Proyección cartográfica conforme con su indicatriz de Tissot. Los círculos permanecen como círculos en todo el mapa, pero sus áreas aumentan a medida que los círculos se mueven desde el ecuador hacia los polos.</p>
+
+<p><img src="media/authalic.png" alt="Equal-area map projection" title="Equal-area map projection" /></p>
+
+<p>Figura 4. Proyección de mapa de áreas iguales con su indicatriz de Tissot. Los círculos se convierten en elipses pero sus áreas siguen siendo las mismas.</p>
+
+<p><img src="media/equidistant.png" alt="Equidistant map projection" title="Equidistant map projection" /></p>
+
+<p>Figura 5. Proyección de mapa equidistante con su indicatriz de Tissot. Se puede notar que las alturas de los círculos son iguales, lo que significa que se conservan la escala / distancias a lo largo de los meridianos.</p>
+
+<p><img src="media/az-equidistant.png" alt="Azimuthal equidistant map projection" title="Azimuthal equidistant map projection" /></p>
+
+<p>Figura 6. Proyección equidistante acimutal con su indicatriz de Tissot. Puedes observar que todos los círculos apuntan hacia el centro del mapa y que las alturas de los círculos son todas iguales.</p>
+
+<p>Otra forma de clasificar las proyecciones cartográficas es por la <strong>superficie desarrollable</strong> utilizada para crear el mapa. Una superficie se puede desarrollar si se puede aplanar sin producir distorsiones. Las superficies más utilizadas son: cilindros (figura 7), conos (figura 8) y planos (figura 9).</p>
+
+<p><img src="media/cylinder.png" alt="Cylinder as a developable surface" title="Cylinder as a developable surface" /></p>
+
+<p>Figura 7. Las proyecciones cilíndricas tienen meridianos (longitud) y paralelos (latitud) que se encuentran en ángulos rectos, siendo iguales las distancias entre los meridianos.</p>
+
+<p><img src="media/cone.png" alt="Cone as a developable surface" title="Cone as a developable surface" /></p>
+
+<p>Figura 8. Las proyecciones cónicas tienen meridianos rectos que van a un punto en los polos. Los paralelos son arcos.</p>
+
+<p><img src="media/plane.png" alt="Plane as a developable surface" title="Plane as a developable surface" /></p>
+
+<p>Figura 9. Las proyecciones planas (comúnmente utilizadas en proyecciones acimutales) tienen meridianos rectos similares a las proyecciones cónicas, pero sus paralelos son círculos en lugar de arcos.</p>
+
+<p>Existen innumerables superficies desarrollables que se pueden utilizar para transformar un globo terráqueo en un mapa. Pueden ser una variación de las superficies comunes como en el caso de proyecciones pseudocilíndricas y pseudocónicas o pueden ser superficies únicas y completamente diferentes como en el mapa Dymaxion, que usa un icosaedro (poliedro con 20 caras), o la Proyección de Cahill-Keyes que utiliza un octaedro (poliedro con 8 caras).</p>
+
+<p>Una proyección cartográfica también se puede clasificar según su <strong>aspecto</strong> (figura 10) o cómo se coloca la superficie desarrollable en el globo: Normal, Transversal u Oblicua.</p>
+
+<p><img src="media/aspects.png" alt="Aspects of a map projection" title="Aspects of a map projection" /></p>
+
+<p>Figura 10. Aspectos de una proyección cartográfica</p>
+
+<p><strong>Sistema de Referencia de Coordenadas</strong></p>
+
+<p>Se utiliza un <strong>Sistema de Referencia de Coordenadas (SRC)</strong> para especificar la ubicación de un objeto en la superficie de la Tierra mediante el uso de coordenadas. Hay dos tipos:</p>
+
+<ul>
+  <li><strong>Sistema de Referencia de Coordenadas Geográficas: **utiliza grados de latitud y longitud como coordenadas para referirse a la posición.</strong> **</li>
+  <li>**Sistema de Referencia de Coordenadas Proyectadas: **usa unidades lineales (por ejemplo, metros, pies, kilómetros) de este y norte como coordenadas</li>
+</ul>
+
+<p>El conocimiento de los sistemas de referencia de coordenadas es importante porque incluso si dos mapas (o capas) muestran la misma área, las coordenadas de las ubicaciones en estos mapas serán diferentes si el SRC que utilizan es diferente.</p>
+
+<p>Por ejemplo: el mapa A y el mapa B muestran la misma área y extensión. Básicamente son el mismo mapa. La única diferencia es el sistema de referencia de coordenadas que utilizan. El mapa A usa SRC X y el mapa B usa SRC Y. Digamos que obtenemos la coordenada del Punto 1, que es (10, 10), del Mapa A. Si miramos la coordenada (10,10) en el Mapa B, es posible que el Punto 1 no esté allí ya que el Mapa B usa un SRC diferente. Por otro lado, si superpones los mapas entre sí utilizando una referencia común, las características de los dos mapas no coincidirán. Este conocimiento de los sistemas de referencia de coordenadas es importante en cualquier SIG.</p>
+
+<p>Antes de QGIS 3.X, QGIS tenía una opción para activar lo que se llama “OTF” o <em>“On-The-Fly Transformation”</em> (Transformación Sobre la Marcha). Esto permite proyectar capas con diferentes SRC en el lienzo del mapa como si estuvieran en el mismo SRC. Con QGIS 3.X en adelante, esta opción es el comportamiento predeterminado de QGIS. QGIS también realiza esta acción automáticamente para procesar tareas. Esto es muy importante porque si las capas no están en el mismo SRC, los resultados de las consultas espaciales y el procesamiento como combinaciones espaciales, clips, etc. podrían verse comprometidos.</p>
+
+<p>Puedes notar que algunos sistemas de referencia de coordenadas se denominan por su código EPSG. Este código se refiere al código de SRC en el conjunto de datos de parámetros geodésicos EPSG, que es un registro de datos geodésicos, sistemas de referencia espacial, elipsoides terrestres, transformaciones de coordenadas y unidades de medida relacionadas. La mayoría de los SIG, incluido QGIS, se refieren al código EPSG para identificar sistemas de referencia de coordenadas, proyecciones y realizar transformaciones entre estos sistemas.</p>
+
+<p>Los códigos EPSG más comunes son:</p>
+
+<ul>
+  <li><strong>EPSG: 4326 -</strong> WGS 84, sistema de coordenadas de latitud / longitud basado en el Sistema de Posicionamiento Global (GPS) entre otros.</li>
+  <li><strong>EPSG: 3857 -</strong> Proyección Mercator de Web utilizada para la visualización por muchas herramientas de mapeo basadas en web como OpenStreetMap y Google Maps</li>
+  <li><strong>EPSG: 32650 a EPSG 32653 -</strong> Sistema Universal Transversal de Mercator (UTM) Zona 50N a 53N. Zonas UTM utilizadas en Filipinas</li>
+  <li><strong>EPSG: 4683</strong> - Sistema de referencia de Filipinas de 1992</li>
+</ul>
+
+<h4 id="preguntas-de-evaluación"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>¿Qué tipo de proyección de mapa es mejor para los siguientes casos de uso?
+    <ol>
+      <li>Un mapa de propósito general que debe verse agradable.</li>
+      <li>Un mapa que muestra un análisis de área por unidad entre diferentes ubicaciones.</li>
+      <li>Un mapa que muestra una comparación de una zona de amortiguamiento de 10 km desde diferentes ubicaciones.</li>
+    </ol>
+  </li>
+  <li>¿Qué tipo (geográfico o proyectado) de sistema de referencia de coordenadas es mejor utilizar para los siguientes casos de uso?
+    <ol>
+      <li>Mostrar la ubicación de puntos usando GPS</li>
+      <li>calcular la distancia entre dos puntos</li>
+    </ol>
+  </li>
+  <li>Verdadero o falso: es posible conservar las siguientes características del mapa juntas en un solo mapa:
+    <ol>
+      <li>Área y forma</li>
+      <li>Distancia y dirección</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="título-de-la-fase-2-tipos-de-datos-espaciales">Título de la fase 2: Tipos de datos espaciales</h3>
+
+<p>En esencia, un Sistema de Información Geográfica (SIG) debe ser capaz de modelar objetos, información y fenómenos del mundo real como límites de lotes, ríos, carreteras, temperatura, etc. Lo hace a través de modelos de datos espaciales.</p>
+
+<p>Los modelos de datos espaciales tienen dos componentes principales que, cuando se combinan, modelan la realidad. Estos son:</p>
+
+<ul>
+  <li><strong>Características espaciales (o geometría)</strong></li>
+  <li><strong>Atributos</strong></li>
+</ul>
+
+<p><img src="media/spatial-model.png" alt="Spatial data model" title="Spatial data modelling reality" /></p>
+
+<p>EJEMPLO</p>
+
+<p>Hay dos modelos principales de datos espaciales: <strong>ráster **y</strong> vectorial**. Aunque los objetos del mundo real se pueden representar con cualquiera de los modelos de datos, suele haber uno mejor que el otro para representar ciertos objetos del mundo real.</p>
+
+<h4 id="datos-ráster"><strong>Datos Ráster</strong></h4>
+
+<p>Los datos ráster son los mejores para representar fenómenos continuos como la elevación o la temperatura.</p>
+
+<p>Un ráster es una representación basada en celdas o píxeles de objetos del mundo real compuestos por filas y columnas de celdas o píxeles donde cada celda o píxel representa un área geográfica (piensa en una fotografía o una imagen). El valor de la celda representa el valor de un atributo en dicha área geográfica. El tamaño del área depende de la resolución espacial del ráster.</p>
+
+<p>Los rásteres son bastante útiles para el modelado de idoneidad del sitio, ya que puedes combinar rásteres mediante operaciones matemáticas (álgebra de ráster).</p>
+
+<p><img src="media/raster.png" alt="Raster data model" title="Raster data model" /></p>
+
+<p>Figura 12. Un ráster consta de píxeles del mismo tamaño en filas y columnas.</p>
+
+<p>Un píxel sólo puede contener un valor a la vez. Por lo tanto, un ráster sólo puede modelar un objeto o fenómeno a la vez.</p>
+
+<h4 id="datos-vectoriales"><strong>Datos Vectoriales</strong></h4>
+
+<p>Los datos vectoriales son los mejores para representar objetos discretos.</p>
+
+<p>Los datos vectoriales se presentan en tres formas principales: punto, línea y polígono. Son más precisos que los rásteres porque los puntos, líneas y polígonos se modelan utilizando coordenadas bien definidas, lo que los hace mejores para representar objetos discretos que los rásteres.</p>
+
+<p>Los vectores se utilizan comúnmente cuando se necesitan longitudes, áreas y distancias precisas. También son útiles al realizar análisis de red (por ejemplo, encontrar el camino más corto de la carretera de un punto a otro).</p>
+
+<p><img src="media/vector.png" alt="Vector data model" title="Vector data model" /></p>
+
+<p>Figura 13. Un vector consta de características con sus atributos correspondientes.</p>
+
+<p>En comparación con los píxeles ráster, una característica vectorial puede contener más de un valor a la vez. Estos valores se almacenan como columnas en la tabla de atributos. Cada característica, por otro lado, se almacena como una fila.</p>
+
+<h4 id="preguntas-de-evaluación-1"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>Qué tipo de datos puede representar mejor los siguientes objetos / fenómenos:
+    <ol>
+      <li>carreteras</li>
+      <li>casas</li>
+      <li>densidad poblacional</li>
+      <li>peligro de inundación</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="título-de-la-fase-3-sistema-de-información-geográfica-sig">Título de la fase 3: Sistema de información geográfica (SIG)</h3>
+
+<p>La información geográfica y de ubicación se ha vuelto omnipresente en el siglo XXI en todos los niveles de granularidad. Tenemos satélites, aviones e incluso drones comerciales que pueden capturar grandes cantidades de datos sin procesar en grandes áreas durante largos períodos de tiempo. También hay sensores que recopilan información de ubicación, como el GPS y otras aplicaciones en nuestros teléfonos y dispositivos.</p>
+
+<p>Con todos estos datos a nuestra disposición, es imprescindible saber gestionarlos, analizarlos y presentarlos correctamente. Aquí es donde entran en juego los Sistemas de Información Geográfica, o más comúnmente conocidos como SIG.</p>
+
+<p>GIS es una herramienta / marco / sistema que nos permite trabajar con información geográfica (o espacial) y su correspondiente atributo (no espacial). En particular, un SIG debería poder:</p>
+
+<ul>
+  <li><strong>Recopilar, almacenar, editar, manipular</strong> o, en general, <strong>administrar</strong> datos espaciales.</li>
+  <li><strong>Analizar</strong> los datos usando su componente espacial (donde están los datos) o su atributo (el valor de los datos).</li>
+  <li><strong>Presentar</strong> los datos y análisis como información significativa a través de mapas, gráficos, diagramas y otras visualizaciones.</li>
+</ul>
+
+<p>SIG_ no es solo mapeo._ Aunque la elaboración de mapas es uno de los aspectos más importantes y comúnmente conocidos de los SIG, sigue siendo solo una de sus muchas partes y características. Podemos ver el marco SIG moderno como compuesto por:</p>
+
+<ul>
+  <li><strong>Datos:</strong> se refieren a las piezas de información utilizadas por SIG que pueden tener o no información de ubicación (por ejemplo, nombres de tiendas, ubicaciones de tiendas).</li>
+  <li><strong>Tecnología:</strong> estos incluyen los componentes de hardware y software de un SIG, las máquinas, instrumentos y computadoras con las aplicaciones de software que se utilizan para realizar el trabajo geoespacial.</li>
+  <li><strong>Métodos y análisis:</strong> se refieren a la ciencia y las matemáticas en SIG, lo que le permite realizar consultas y cálculos tanto espaciales como no espaciales (atributos).</li>
+  <li><strong>Visualización:</strong> aunque similar a los métodos y análisis, la visualización se puede considerar como un componente separado, ya que se refiere específicamente a los medios por los cuales un SIG representa los datos gráficamente. Esto incluye no sólo mapas, aunque ese es el caso más común, sino también tablas, cuadros, gráficos, etc.</li>
+  <li><strong>Personas:</strong> son las personas y / o grupos de personas que participan en el uso, desarrollo, enseñanza y mantenimiento de SIG.</li>
+</ul>
+
+<p>Todas las partes del marco SIG moderno, desde los datos hasta las personas, son fundamentales para garantizar su éxito.</p>
+
+<h4 id="preguntas-de-evaluación-2"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>Verdadero o falso:
+    <ol>
+      <li>SIG sólo puede utilizarse con datos geoespaciales</li>
+      <li>Cuando se utiliza SIG, el resultado es siempre un mapa</li>
+      <li>Aprender SIG es difícil y costoso.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="título-de-la-fase-4-adicional-software-libre-y-de-código-abierto-para-aplicaciones-geoespaciales-foss4g">Título de la fase 4 (adicional): Software libre y de código abierto para aplicaciones geoespaciales (FOSS4G)</h3>
+
+<p>QGIS es solo un ejemplo de Software Libre y de Código Abierto para Aplicaciones Geoespaciales (FOSS4G). Otros ejemplos de FOSS4G son GRASS, PostGIS, GeoServer, GeoNode, etc. Estas aplicaciones FOSS4G son excelentes herramientas para trabajar no solo porque son confiables sino también porque, al ser libres y de código abierto, tienen una barrera de entrada más baja y son altamente adaptables a cualquier necesidad. Puedes encontrar una variedad de aplicaciones geoespaciales libres y de código abierto para cada necesidad y para cada parte de la pila geoespacial.</p>
+
+<p><img src="media/foss4g-stack.jpeg" alt="Free and Open Source Software for Geospatial (FOSS4G) applications stack" title="Free and Open Source Software for Geospatial (FOSS4G) applications stack" /></p>
+
+<p>Figura 14. Un ejemplo de pila geoespacial de código abierto (o FOSS4G) (de Simon Nitz (<a href="https://twitter.com/si_nitz?lang=en">https://twitter.com/si_nitz?lang=en</a>))</p>
+
+<h4 id="software-libre"><strong>Software Libre</strong></h4>
+
+<p><em>“Free as in freedom not just free food”</em><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<p>El Software Libre es Software que se adhiere a las cuatro libertades esenciales del Software Libre, que son:</p>
+
+<ol>
+  <li>La libertad de ejecutar el programa como desees, para cualquier propósito. (libertad 0).</li>
+  <li>La libertad de estudiar cómo funciona el programa y cambiarlo para que puedas utilizarlo como desees (libertad 1). El acceso al código fuente es una condición previa para ello.</li>
+  <li>La libertad de redistribuir copias para poder ayudar a otros (libertad 2).</li>
+  <li>La libertad de distribuir copias de sus versiones modificadas a otros (libertad 3). Al hacer esto, puedes darle a toda la comunidad la oportunidad de beneficiarse de tus cambios. El acceso al código fuente es una condición previa para ello.</li>
+</ol>
+
+<h4 id="código-abierto"><strong>Código abierto</strong></h4>
+
+<p>Los software de código abierto son aquellos que tienen licencias que permiten el uso y la reutilización libres de regalías del software junto con el acceso abierto al código fuente. Por convención, estas licencias de código abierto son aquellas que cumplen con la Definición de Código Abierto según lo dispuesto por la Iniciativa de Código Abierto. El código abierto no solo garantiza el acceso gratuito al software y al código fuente, sino también la capacidad de redistribuir el software sin costos adicionales.</p>
+
+<p>Debido a la naturaleza abierta del software de código abierto, también es un gran modelo de desarrollo de software en el que todos pueden actualizarlo y mejorarlo modificar y compartir sus modificaciones con la comunidad.</p>
+
+<h4 id="osgeo"><strong>OSGeo</strong></h4>
+
+<p>Hay muchas aplicaciones geoespaciales de código abierto y, a veces, la parte más difícil es saber dónde y cómo empezar a trabajar con estas aplicaciones. Afortunadamente, la Fundación de Código Abierto Geoespacial <em>-Open Source Geospatial Foundation-</em> (OSGeo) (<a href="https://www.osgeo.org">https://www.osgeo.org</a>/) está ahí para ayudar a fomentar la adopción global de la tecnología geoespacial abierta y apoyar el desarrollo de estas tecnologías.</p>
+
+<h4 id="preguntas-de-evaluación-3"><strong>Preguntas de Evaluación</strong></h4>
+
+<p>N/A</p>
+
+<h3 id="si-quieres-ir-más-lejos">Si quieres ir más lejos</h3>
+
+<p>Si deseas probar rápidamente el uso de aplicaciones FOSS4G, puedes probar OSGeoLive (<a href="https://live.osgeo.org/en/index.html">https://live.osgeo.org/en/index.html</a>), que es una distribución de Linux (sistema operativo) que viene preinstalado con QGIS, GRASS, y otras aplicaciones de FOSS4G.</p>
+
+<h3 id="para-practicar-tus-nuevas-habilidades-intenta">Para practicar tus nuevas habilidades, intenta…</h3>
+
+<p>N/A</p>
+
+<h3 id="consejos">Consejos</h3>
+
+<p>N/A</p>
+
+<!-- Footnotes themselves at the bottom. -->
+<h3 id="notes">Notes</h3>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+
+      <p>N de T: en Inglés, “free” puede significar “libre” o “gratuito”. Esta frase quiere decir <em>“Libre como la libertad, no comida gratis”</em>. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

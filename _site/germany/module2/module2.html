@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Modul 2 - Ebenen in QGIS | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Modul 2 - Ebenen in QGIS page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Modul 2 - Ebenen in QGIS">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Modul 2 - Ebenen in QGIS</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/germany/module2/module2.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="modul-2---ebenen-in-qgis">Modul 2 - Ebenen in QGIS</h1>
+
+<p><strong>Autor:in</strong>: Ben Hur</p>
+
+<h2 id="pädagogische-einführung">Pädagogische Einführung</h2>
+
+<p>In diesem Modul lernen Sie die grundlegenden Konzepte von Layern in QGIS und wie man sie lädt. Am Ende dieses Moduls sollten die Lernenden vertraut sein mit:</p>
+
+<ul>
+  <li>den verschiedenen Datenquellen und Dateiformaten, die in QGIS geladen werden können</li>
+  <li>den verschiedenen Arten, wie Daten in QGIS geladen werden können</li>
+  <li>einigen gängige Datenformaten</li>
+</ul>
+
+<p>Sie sollten außerdem in der Lage sein:</p>
+
+<ul>
+  <li>Layer (sowohl Vektoren als auch Raster) mit Hilfe des Browser-Bedienfelds und des Datenquellen-Managers zu laden</li>
+  <li>QGIS mit entfernten Diensten zu verbinden</li>
+  <li>mit temporären und virtuellen Layern zu arbeiten</li>
+  <li>Erweiterungen zu installieren, um andere Datensätze in QGIS laden</li>
+  <li>Ebeneneigenschaften wie Metadateninformationen anzeigen</li>
+  <li>Layer speichern und exportieren</li>
+</ul>
+
+<h2 id="erforderliche-werkzeuge-und-ressourcen">Erforderliche Werkzeuge und Ressourcen</h2>
+
+<p>Die benötigten Werkzeuge und Ressourcen für dieses Modul sind:</p>
+
+<ul>
+  <li>Computer</li>
+  <li>Internetverbindung</li>
+  <li>QGIS 3.16 auf dem Computer installiert (<a href="https://qgis.org/de/site/forusers/download.html">https://qgis.org/de/site/forusers/download.html</a>)</li>
+</ul>
+
+<h2 id="voraussetzungen">Voraussetzungen</h2>
+
+<ul>
+  <li>Grundkenntnisse in der Bedienung eines Computers</li>
+  <li>Vertrautheit mit räumlichen Datenformaten und der QGIS-Oberfläche (Abschluss der Module 0 und 1)</li>
+</ul>
+
+<h2 id="zusätzliche-ressourcen">Zusätzliche Ressourcen</h2>
+
+<ul>
+  <li>QGIS Benutzerhandbuch - <a href="https://docs.qgis.org/3.16/de/docs/user_manual/">https://docs.qgis.org/3.16/de/docs/user_manual/</a></li>
+  <li>QGIS Schulungshandbuch - <a href="https://docs.qgis.org/3.16/de/docs/training_manual/index.html">https://docs.qgis.org/3.16/de/docs/training_manual/index.html</a></li>
+  <li>Basiskarten in QGIS (englischsprachig) - <a href="https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html">https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html</a></li>
+  <li>Verbindung von QGIS mit Remote Services (englischsprachig) - <a href="https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html">https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html</a></li>
+  <li>Spreadsheet Layers Plugin  (englischsprachig)- <a href="https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html">https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html</a></li>
+</ul>
+
+<h2 id="thematische-einführung">Thematische Einführung</h2>
+
+<p><img src="media/spatial-layers.jpg" alt="Mehrschichtige Analyse im GIS" title="Mehrschichtige Analyse im GIS" /></p>
+
+<p>Abbildung 2.1. Ein Karten-Overlay mit verschiedenen Layern und Datentypen (<a href="https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s11-02-multiple-layer-analysis.html">https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s11-02-multiple-layer-analysis.html</a>)</p>
+
+<p>Wir haben in den vorangegangenen Modulen gelernt, dass räumliche Datenmodelle wie Vektoren und Raster eine Modellierung von Objekten und Phänomenen der realen Welt sind.
+Um in der Praxis nützliche Analysen durchzuführen, reicht es nicht, einen einzelnen Layer zu benutzen. Wir müssen häufig mehrerer Datensätze (z.B. Höhe, Temperatur, Bevölkerungsverteilung, Zoneneinteilungs usw). miteinander kombinieren. Das Übereinanderlegen mehrerer thematischer Karten desselben Gebiets ist eine der ältesten und gängigsten geografischen Analysetechniken.</p>
+
+<h2 id="aufschlüsselung-der-konzepte">Aufschlüsselung der Konzepte</h2>
+
+<p>Das Bild oben gibt uns ein einfaches und konkretes Beispiel dafür. Stellen Sie sich vor, Sie wären ein:e GIS-Berater:in mit der Aufgabe, den besten Standort für ein neues Franchise-Restaurant (z. B. Starbucks oder McDonalds) zu finden. Dazu müssten Sie die relevanten Informationen sammeln, die Ihnen bei der Entscheidung helfen würden. Dies könnten Informationen über die Straßen der Stadt, die Grundstücke, die Lage und Verteilung möglicher Kunden, die Topographie des Gebiets, die Landnutzung usw. sind.</p>
+
+<p>Diese Datensätze können in verschiedenen Typen und Formaten vorliegen. Einige können Vektordateien sein, während andere Raster sein können. Einige können im gleichen Koordinatenreferenzsystem sein, während andere in verschiedenen Koordinatenreferenzsystemen vorliegen können. Einige können lokale Dateien sein, die sich auf Ihrem Computer befinden, während andere nur über das Internet geladen werden können. Aufgrund der vielen Möglichkeiten, welche Art von Daten Sie für Ihre räumliche Analyse benötigen, sollte ein gutes GIS in der Lage sein, eine Vielzahl von Datenquellen zu verarbeiten und zu verwalten.</p>
+
+<h2 id="main-content">Main content</h2>
+
+<h3 id="teil-1-datentypen-dateiformate-das-browser--und-das-layerbedienfeld">Teil 1: Datentypen, Dateiformate, das Browser- und das Layerbedienfeld</h3>
+
+<h4 id="gängige-datentypen-und-dateiformate"><strong>Gängige Datentypen und Dateiformate</strong></h4>
+
+<p>Abgesehen von den räumlichen Datenmodellen (Raster und Vektoren), die im ersten Modul besprochen wurden, ist die Vertrautheit mit räumlichen Dateiformaten und ihren Vor- und Nachteilen ebenfalls wichtig für jeden, der räumliche Analysen durchführt.</p>
+
+<p>Die meisten GIS-Neulinge werden in der Regel über Shapefiles an räumliche Daten herangeführt. Die meisten Leute wachsen nie darüber hinaus und verwenden Shapefile für alle Arten und Formen von Vektordaten. Dies ist vergleichbar damit, wie eine bestimmte Marke wie Coca Cola als allgemeiner Begriff für Softdrinks verwendet wird. Das ist nicht unbedingt falsch, aber eher unglücklich, da Shapefiles nur eine der vielen Arten von Vektordatenformaten sind. Tatsächlich gibt es auch viele andere Vektorformate wie z.B. geopackage, geojson, topojson, und flatgeobuf. Das Shapefile-Format ist zwar allgegenwärtig, hat aber einige wesentliche Einschränkungen, wie z. B.:</p>
+
+<ul>
+  <li>Es ist nicht nur 1 Datei. Ein Shapefile besteht eigentlich aus mehreren Dateien, von denen 3 obligatorisch sind: .shp, .shx, .dbf. Alle anderen Dateien werden Sidecar-Dateien genannt.</li>
+  <li>Die Größe jeder einzelnen Datei ist auf 2 GB begrenzt.</li>
+  <li>Feldnamen sind auf 10 Zeichen begrenzt.</li>
+  <li>Attributspalten sind auf 255 Spalten begrenzt.</li>
+  <li>Einige Datentypen, wie z. B. Zeit, werden nicht unterstützt.</li>
+  <li>Es speichert nicht explizit die Topologie.</li>
+</ul>
+
+<p>Andere Datenformate wie GeoPackage, GeoJSON, TopoJSON und flatgeobuff beheben diese Einschränkungen von Shapefiles. Tatsächlich sind QGIS und GRASS GIS auf GeoPackage als Standard-Vektordateiformat umgestiegen, wenn es um den Import oder Export von Layern geht. Obwohl GeoPackage auch einige Einschränkungen hat, erlaubt es der Gemeinschaft, die Zukunft des Formats mitzugestalten, da es ein völlig offenes Format ist.</p>
+
+<p>Wenn also nicht Shapefiles, was sollten Sie dann verwenden?</p>
+
+<p>Es ist nichts falsch daran, Shapefiles zu verwenden, vor allem, wenn es zu Ihrem Anwendungsfall passt. Wenn Sie keinen Datensatz benötigen, der über 2 GB hinausgeht, wenn Sie mit einer Begrenzung der Feldnamen auf 10 Zeichen einverstanden sind oder wenn Sie lokal mit einer kleinen Anzahl von Dateien arbeiten, ist ein Shapefile völlig in Ordnung.</p>
+
+<p>Wenn Sie jedoch Ihr QGIS-Projekt mit allen Layern (Vektoren, Raster), Styling und Modellen zusammenpacken wollen; oder wenn Sie mehrere Typen von Layern und räumlichen Daten in einer einzigen Datei gemeinsam nutzen wollen, ist ein GeoPackage einen Blick wert. GeoPackages und GeoJSONs sind auch web-freundlich und können direkt von Web-Mapping-Bibliotheken wie Mapbox und Leaflet verwendet werden.</p>
+
+<p>Mehr dazu können Sie unter dem folgenden englischsprachigen Link lesen: <a href="https://bnhr.xyz/2018/12/12/i-choose-geopackage.html">https://bnhr.xyz/2018/12/12/i-choose-geopackage.html</a></p>
+
+<p>In der Zwischenzeit kann jedes Format, das als Gitter aus Pixeln oder Zellen dargestellt werden kann, von QGIS als Rasterdaten gelesen werden. Dazu gehören Bildformate wie PNG (.png) und JPEG (.jpg). Es ist erwähnenswert, dass, obwohl alle Bilddateiformate als Raster gelesen werden können, nicht alle von ihnen georeferenziert sind oder geospatiale Informationen enthalten, die es uns erlauben, sie richtig auf der Erde zu lokalisieren. Für solche Fälle können wir eine so genannte Weltdatei (<a href="https://en.wikipedia.org/wiki/World_file">https://en.wikipedia.org/wiki/World_file</a>) verwenden. . Eine Weltdatei ist eine separate Klartext-Datendatei, deren Name derselbe ist wie der der Rasterdatei, zu der sie gehört, und an deren Dateierweiterung der Buchstabe w angehängt ist. Die Weltdatei für <strong>world.png</strong> wird beispielsweise <strong>world.pngw **oder **world.pgw</strong> genannt.</p>
+
+<p>Einige Bilddateiformate enthalten explizite Georeferenzierung und Informationen und benötigen keine Weltdatei. Einige Beispiele sind GeoTIFFs (.tif oder tiff) und das ERDAS Imagine-Dateiformat (.img).</p>
+
+<p>Für weitere Informationen über Dateiformate können Sie auch nachsehen: <a href="https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html">https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html</a></p>
+
+<p>Geodaten können auch in Form von Geodatenbanken vorliegen. Dies können Datenbanken auf Unternehmensebene sein, wie das freie und quelloffene Postgres mit PostGIS-Erweiterung (<a href="https://postgis.net/">https://postgis.net/</a>) oder das proprietäre ArcSDE von ESRI. Es gibt auch Dateigeodatenbanken, in denen verschiedene Datentypen (z. B. Vektoren und Raster) gespeichert werden können. Einige Beispiele sind das freie und offene OGC GeoPackage (.gpkg) (<a href="https://www.geopackage.org/">https://www.geopackage.org/</a>) und das proprietäre File Geodatabase Format von ESRI (.gdb).</p>
+
+<h4 id="arten-von-datenquellen"><strong>Arten von Datenquellen</strong></h4>
+
+<p>Eine der leistungsfähigsten Funktionen von QGIS ist die Fähigkeit, verschiedene räumliche und nicht-räumliche Daten aus unterschiedlichen Quellen zu verbinden, zu laden und zu verwenden. QGIS kann folgende Formate öffnen:</p>
+
+<ul>
+  <li>lokale Raster- und Vektordateien</li>
+  <li>lokale Datenbanken</li>
+  <li>Dateien und Datenbanken im Internet über deren Uniform Resource Identifier (URI) oder Uniform Resource Locator (URL),</li>
+  <li>Webservices (OSGeo Webservices und ArcGIS Webservices), Kacheldienste und Datenportale wie GeoNode</li>
+  <li>und viele mehr…</li>
+</ul>
+
+<p>QGIS kann außerdem durch Erweiterungen auch Daten von Diensten wie NASAs SRTM, Planet Imagery, SentinelHub, Google Earth Engine und OpenStreetMap laden.</p>
+
+<p>Dies macht QGIS zu einer integralen Komponente für jede Geodateninfrastruktur und jeden Arbeitsablauf.</p>
+
+<h4 id="laden-von-layern-in-qgis"><strong>Laden von Layern in QGIS</strong></h4>
+
+<p>Es gibt mehrere Möglichkeiten, Layer in QGIS zu laden. Diese beinhalten:</p>
+
+<ol>
+  <li><strong>Drag-and-drop</strong> des Layers in die QGIS Kartenansicht oder das Layer Bedienfeld. Dies ist zwar der einfachste Weg, einen Layer in QGIS zu laden, aber nicht die empfohlene Vorgehensweise, da es bei dieser Methode Probleme gibt, z.B. beim Laden von nicht-räumlichen tabellarischen Daten wie CSVs.</li>
+  <li>Verwendung des <strong>Browser Bedienfelds</strong>.</li>
+  <li>Verwendung des <strong>Datenquellen-Managers</strong>.</li>
+  <li>Verwenden der Symbolleiste <strong>Datenquellenverwaltung</strong> und der Symbolleiste <strong>Ebenen verwalten</strong>.</li>
+</ol>
+
+<p><strong>HINWEIS:</strong> <strong>Beim Laden von Ebenen können die Standardfarben Ihrer Ebenen von den in diesem Modul gezeigten Standardfarben abweichen.</strong></p>
+
+<h4 id="das-browser-bedienfeld"><strong>Das Browser-Bedienfeld</strong></h4>
+
+<p>Das <strong>Browser-Bedienfeld</strong> zeigt einen Dateibaum an, der die Dateien und Ordner Ihres Computers sowie Verbindungen zu Datenbanken und Webservern anzeigt. Standardmäßig ist es an der linken Seite der QGIS-Benutzeroberfläche zusammen mit dem Layer-Bedienfeld angedockt.</p>
+
+<p>Das Browser-Bedienfeld bietet eine Vielzahl von Funktionen zum Verbinden, Laden und Anzeigen von Informationen über Layer. Sie können im Browserbedienfeld auch Verbindungen zu Favoritenverzeichnissen und räumlichen Lesezeichen erstellen.</p>
+
+<p>Um mehr über das Browser-Bedienfeld zu erfahren, gehen Sie zu: <a href="https://docs.qgis.org/3.16/de/docs/user_manual/introduction/browser.html">https://docs.qgis.org/3.16/de/docs/user_manual/introduction/browser.html</a></p>
+
+<h4 id="übung-011-das-browser-bedienfeld"><strong>Übung 01.1: Das Browser-Bedienfeld</strong></h4>
+
+<ol>
+  <li>Öffnen Sie QGIS.</li>
+  <li>Prüfen Sie das Browser-Fenster (Abbildung 2.2). Wenn Sie das Browser-Bedienfeld nicht finden können, können Sie es unter <strong>Ansicht ‣ Bedienfelder ‣ Browser</strong> in der Menüleiste sichtbar machen.</li>
+</ol>
+
+<p><img src="media/qgis-browser-1.png" alt="Das QGIS Browser Bedienfeld" title="Das QGIS Browser Bedienfeld" /></p>
+
+<p>Abbildung 2.2. Das Browser-Bedienfeld</p>
+
+<ol>
+  <li>Beachten Sie, wie die Laufwerke und Ordner aufgeklappt werden können, um die Unterordner darin anzuzeigen.</li>
+  <li>Suchen Sie den Ordner <strong>Module 2 - Layers in QGIS</strong> (Abbildung 2.3) im Dateibaum (beachten Sie, wo Sie die Datei gespeichert oder heruntergeladen haben). Sie sollten die notwendigen Daten für diese Arbeitsmappe sehen können. In meinem Beispiel auf der rechten Seite habe ich den oben genannten Ordner als einen meiner Favoriten verknüpft, so dass ich vom Browser-Bedienfeld aus leicht dorthin wechseln kann. Sie können ein Favoritenverzeichnis zum Browser-Bedienfeld hinzufügen, indem Sie mit der rechten Maustaste auf Favoriten klicken und das Verzeichnis hinzufügen.</li>
+  <li>Überprüfen Sie die Dateien im Ordner (Abbildung 2.3). Es gibt mehrere von ihnen. Aus dem Dateibaum selbst können wir bereits eine Vorstellung von den Dateien und Layern gewinnen, die wir in QGIS laden können. Die Icons links neben den Namen zeigen an, ob es sich um einen Vektor <img src="media/symbol-vector.png" alt="Vektorsymbol" title="Vector symbol" />
+, ein Raster <img src="media/symbol-raster.png" alt="Raster-Symbol" title="Raster-Symbol" />, eine Datenbank <img src="media/symbol-db.png" alt="Datenbank-Symbol" title="Datenbank-Symbol" />, oder einfache tabellarische Daten <img src="media/symbol-table.png" alt="Tabellen-Symbol" title="Tabellen-Symbol" />.</li>
+</ol>
+
+<p><img src="media/qgis-browser-2.png" alt="Modul-2-Dateien im Browser-Bedienfeld" title="Modul-2-Dateien im Browser-Bedienfeld" /></p>
+
+<p>Abbildung 2.3. Die Moduldateien im Browser-Bedienfeld</p>
+
+<ol>
+  <li>
+    <p>Es befinden sich 5 Dateien unter dem Ordner data:</p>
+
+    <ol>
+      <li>ein GeoPackage (Sachsen.gpkg), das eine Vektor- (McDonalds) und eine Rasterdatei (Sachsen_SRTM_DEM) enthält;</li>
+      <li>ein GeoJSON (Sachsen_Landkreise.geojson);</li>
+      <li>eine Flatgeobuf-Datei (Sachsen_Gemeinden.fgb);</li>
+      <li>ein Shapefile (Sachsen_Landesgrenze.shp); und</li>
+      <li>eine Datei mit kommagetrennten Werten (CSV) (Sachsen_Burger-King.csv).</li>
+    </ol>
+  </li>
+  <li>
+    <p>Klicken Sie mit der rechten Maustaste auf Sachsen_Landesgrenze.shp und klicken Sie auf Layereigenschaften (Abbildung 2.4). Dadurch wird das Fenster mit den Layereigenschaften geöffnet (Abbildung 2.5). Beachten Sie die Informationen, die im Fenster angezeigt werden. Wie ist die Geometrie des Layers? Welches CRS wird verwendet? Wie viele Features befinden sich auf dem Layer?</p>
+  </li>
+</ol>
+
+<p><img src="media/qgis-browser-3.png" alt="Layereigenschaften anzeigen" title="Layereigenschaften anzeigen" /></p>
+
+<p>Abbildung 2.4.Layereigenschaften anzeigen</p>
+
+<p><img src="media/qgis-browser-layer-properties.png" alt="Layereigenschaften Fenster" title="Layereigenschaften Fenster" /></p>
+
+<p>Abbildung 2.5. Layereigenschaften Fenster</p>
+
+<ol>
+  <li>Neben der Bereitstellung von Metadaten zu den Layern können Sie im Layer-Eigenschaften-Fenster auch eine Vorschau der Geometrie und der Attribute des Layers anzeigen.</li>
+  <li>
+    <p>Sie können eine Ebene aus dem Browser-Bedienfeld laden, indem Sie:</p>
+
+    <ol>
+      <li><strong>Doppelklick auf den Layer</strong></li>
+      <li><strong>Rechtsklick auf den Layer ‣ Layer zu Projekt hinzufügen</strong>.</li>
+      <li><strong>Layer auf die Kartenansicht ziehen</strong>.</li>
+    </ol>
+  </li>
+  <li>Versuchen Sie, die Layer <strong>Sachsen_Landesgrenze</strong>, <strong>Sachsen_Landkreise</strong> und <strong>Sachsen_Gemeinden</strong> mit einer der oben genannten Methoden zu laden.</li>
+</ol>
+
+<p><img src="media/vector-layers-loaded-1.png" alt="Die in QGIS geladenen Vektorebenen" title="Die in QGIS geladenen Vektorebenen" /></p>
+
+<p>Abbildung 2.6. Die in QGIS geladenen Vektorlayer</p>
+
+<h4 id="das-layer-bedienfeld"><strong>Das Layer-Bedienfeld</strong></h4>
+
+<p>Im Layer-Bedienfeld werden alle aktuellen Layer im Projekt aufgelistet. Er hilft bei der Verwaltung ihrer Sichtbarkeit und Reihenfolge und kann verwendet werden, um die Ebeneneigenschaften anzuzeigen. Das Layer-Bedienfeld kann über <strong>Ansicht ‣ Bedienfelder ‣ Layer</strong> oder über die Tastenkombination <strong>CTRL+1</strong> aktiviert werden. Es wird auch als Kartenlegende bezeichnet. Wenn Sie alle Vektoren aus der vorherigen Übung geladen haben, sollte Ihr Ebenenbedienfeld wie unten dargestellt aussehen:</p>
+
+<p><img src="media/layers-panel-1.png" alt="Das Layer-Bedienfeld" title="Das Layer-Bedienfeld" /></p>
+
+<p>Abbildung 2.7. Das Layer-Bedienfeld</p>
+
+<p>Die Sichtbarkeit eines Layers kann durch Aktivieren oder Deaktivieren des Kästchens links neben dem Layernamen gesteuert werden. Indem Sie die Layer im Ebenen-Bedienfeld nach oben oder unten ziehen, können Sie ihre Z-Reihenfolge ändern. Ähnlich wie bei Bildbearbeitungsprogrammen wie GIMP oder Photoshop werden die ganz oben aufgeführten Layer über die weiter unten aufgeführten Layer gezogen. Wenn also zwei Ebenen denselben Bereich zeigen, wird die Ebene, die im Ebenenbedienfeld weiter oben steht, über die darunter liegende Ebene gezeichnet und macht die darunter liegende Ebene möglicherweise nicht in der Kartenansicht sichtbar. Dies ist wichtig zu wissen, denn es kann vorkommen, dass ein Layer in QGIS nicht angezeigt wird, obwohl er in Wirklichkeit von einem darüber liegenden Layer verdeckt wird.</p>
+
+<p><strong>HINWEIS:</strong> Die Z-Reihenfolge der Ebenen im Ebenenbedienfeld kann durch das <strong>Ebenenreihenfolge-Panel</strong> außer Kraft gesetzt werden.</p>
+
+<p>Das Ebenenbedienfeld ermöglicht auch das Umbenennen und Entfernen von Ebenen, das Filtern der Ebenensichtbarkeit, das Erstellen und Verwalten von Ebenengruppen und Kartenansichten.</p>
+
+<p>Die Attributtabelle eines Vektorlayers kann auch aus dem Ebenenbedienfeld heraus geöffnet werden, indem Sie <strong>mit der rechten Maustaste auf den Layer klicken ‣ Attributtabelle öffnen</strong>.</p>
+
+<p>Weitere Informationen über das Ebenenbedienfeld finden Sie unter: <a href="https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel">https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel</a></p>
+
+<h4 id="layer-eigenschaften"><strong>Layer-Eigenschaften</strong></h4>
+
+<p>Wenn Sie mit der rechten Maustaste auf eine Ebene im Ebenen-Bedienfeld klicken und “Eigenschaften” wählen, wird der Dialog “LayerEigenschaften” geöffnet.</p>
+
+<p><img src="media/layer-properties.png" alt="Der Dialog &quot;Layereigenschaften&quot;" title="Der Dialog &quot;Layereigenschaften&quot;" /></p>
+
+<p>Abbildung 2.8. Das Dialogfeld “Layereigenschaften</p>
+
+<p>Im Dialogfeld “Layereigenschaften” gibt es mehrere Registerkarten, auf denen Informationen angezeigt und Eigenschaften des Layers bearbeiten/verändern werden können.</p>
+
+<p>Die Registerkarte “Information” zeigt eine schreibgeschützte Darstellung der zusammengefassten Informationen und Metadaten des aktuellen Layers, darunter:</p>
+
+<ul>
+  <li>Datenanbieter</li>
+  <li>Metadaten</li>
+  <li>Geometrie- oder Feldinformationen</li>
+</ul>
+
+<p>Die Registerkarte Quelle zeigt allgemeine Einstellungen für einen Vektorlayer.</p>
+
+<p>Unter den Registerkarten wie “Symbolisierung”, “Beschriftungen”, “Masken” und “3D-Ansicht” können Symbologie und der Stil des Layers geändert werden.</p>
+
+<p>Andere Registerkarten ermöglichen es, Verknüpfungen mit dem Layer durchzuführen (Verkünpfungen), Informationen über die Attributfelder zu erhalten (Felder), benutzerdefinierte Formulare zum Hinzufügen neuer Daten hinzuzufügen (Attributformular) und vieles mehr.</p>
+
+<p>Eine weitere erwähnenswerte Registerkarte ist die Registerkarte “Metadaten”, die dem/der Benutzer:in die Möglichkeit bietet, einen Metadatenbericht über den Layer zu erstellen und zu bearbeiten. Dieser enthält Informationen über:</p>
+
+<ul>
+  <li>Datenidentifikation: grundlegende Zuordnung des Datensatzes (Elternkennung, Kennung, Titel, Zusammenfassung, Sprache…);</li>
+  <li>Kategorien, zu denen die Daten gehören, wie z. B. ISO-Kategorien und benutzerdefinierte Kategorien;</li>
+  <li>Schlüsselworte zum Auffinden der Daten und zugehöriger Konzepte nach einem standardbasierten Vokabular;</li>
+  <li>Zugriff auf den Datensatz (Lizenzen, Rechte, Gebühren und Beschränkungen);</li>
+  <li>Umfang des Datensatzes, entweder räumlich (CRS, Kartenausdehnung, Höhen) oder zeitlich;</li>
+  <li>Kontakt des/der Eigentümer:in des Datensatzes;</li>
+  <li>Links zu ergänzenden Ressourcen und verwandten Informationen; und</li>
+  <li>Historie des Datensatzes.</li>
+</ul>
+
+<p>Eine Zusammenfassung der ausgefüllten Informationen wird auf der Registerkarte “Validierung” bereitgestellt und hilft dabei, potenzielle Probleme im Zusammenhang mit dem Metadaten zu identifizieren. Derzeit werden Metadaten in der Projektdatei gespeichert, sie können aber auch in einer separaten .qmd-Datei neben den dateibasierten Layern oder in einer lokalen .sqlite-Datenbank für entfernte Layer gespeichert werden.</p>
+
+<p>Weitere Informationen zu den Eigenschaften von Vektorlayern finden Sie unter: <a href="https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/vector_properties.html">https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/vector_properties.html</a></p>
+
+<p>Weitere Informationen zu den Eigenschaften von Rasterlayern finden Sie unter: <a href="https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html">https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html</a></p>
+
+<h4 id="geospatiale-metadaten"><strong>Geospatiale Metadaten</strong></h4>
+
+<p>Metadaten sind Daten über Daten. Sie beantworten das Wer, Was, Wann, Wo und Wie des Datensatzes und kommen in allen Formen und Größen vor. Für GIS-Zwecke befassen wir uns in der Regel mit georäumlichen Metadaten. Geografische Metadaten werden vom U.S. Federal Geographic Data Committee (FGDC) beschrieben als:</p>
+
+<p><em>“eine Datei mit Informationen, in der Regel als XML-Dokument, das die grundlegenden Eigenschaften einer Daten- oder Informationsressource erfasst. Sie stellen das Wer, Was, Wann, Wo, Warum und Wie der Ressource dar. Geodaten-Metadaten dokumentieren in der Regel geografische digitale Daten wie GIS-Dateien (Geographic Information System), Geodatenbanken und Erdbilder, können aber auch zur Dokumentation von Georessourcen wie Datenkatalogen, Mapping-Anwendungen, Datenmodellen und zugehörigen Websites verwendet werden. Metadatensätze umfassen zentrale Bibliothekselemente wie Titel, Zusammenfassung und Publikationsdaten, geografische Elemente wie geografische Ausdehnung und Projektionsinformationen sowie Datenbankelemente wie Attribut-Label-Definitionen und Attribut-Domänenwerte.”</em></p>
+
+<p>Die Bedeutung von Metadaten liegt darin, dass sie nicht nur die Transparenz fördern, sondern auch den Austausch von Daten und Informationen erleichtern. Aus diesem Grund ist es wichtig, unseren Datensätzen immer Metadaten hinzuzufügen. Beim Hinzufügen von Metadaten ist es ebenso wichtig, Standards zu befolgen, damit die von uns erstellten Metadaten interoperabel sind. Ein solcher Standard ist die ISO 19115:2014 “Geographic Information – Metadata” von ISO/TC 211 (<a href="https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en">https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en</a>) (englischsprachig).</p>
+
+<h4 id="übung-012-hinzufügen-von-metadaten"><strong>Übung 01.2: Hinzufügen von Metadaten</strong></h4>
+
+<ol>
+  <li>Öffnen Sie die Layer-Eigenschaften des Layers “Sachsen_Landesgrenze”.</li>
+  <li>Prüfen Sie die Angaben auf der Registerkarte Information und schauen Sie sich die angezeigten Informationen an. Sind sie vollständig? Können wir weitere Informationen hinzufügen?</li>
+</ol>
+
+<p><img src="media/metadata-1.png" alt="Informationseigenschaften des Layers Sachsen_Landesgrenze" title="Informationseigenschaften des Layers Sachsen_Landesgrenze" /></p>
+
+<p>Abbildung 2.9. Informationseigenschaften des Sachsen_Landesgrenze Layers</p>
+
+<ol>
+  <li>Wechseln Sie zur Registerkarte “Metadaten” und versuchen Sie, weitere Informationen über den Layer hinzuzufügen, wie z. B. den Umfang, die Datenkategorie, die Lizenz usw. Klicken Sie auf OK, wenn Sie fertig sind.</li>
+</ol>
+
+<p><img src="media/metadata-2.png" alt="Bearbeiten einiger Metadaten" title="Editieren einiger Metadaten" /></p>
+
+<p>Abbildung 2.10. Bearbeiten einiger Metadaten</p>
+
+<ol>
+  <li>Wechseln Sie erneut zur Registerkarte “Information” und prüfen Sie, ob sich etwas geändert hat.</li>
+</ol>
+
+<p><img src="media/metadata-3.png" alt="Die Registerkarte Information nach dem Bearbeiten einiger Metadaten" title="Die Registerkarte Information nach dem Bearbeiten einiger Metadaten" /></p>
+
+<p>Abbildung 2.11. Die Registerkarte “Information” nach dem Bearbeiten einiger Metadaten</p>
+
+<h4 id="quizfragen">Quizfragen</h4>
+
+<ol>
+  <li>
+    <p>Richtig oder Falsch:</p>
+
+    <ol>
+      <li>Alle Vektordateien sind Shapefiles. – <strong><em>Falsch (ein Shapefile ist ein Dateiformat einer Vektordatei. Andere Vektordatendateiformate sind geopackage, geojson und flatgeobuf)</em></strong></li>
+      <li>Beim Rendern auf der Kartenansicht überdeckt ein Layer, der im Ebenenbedienfeld höher ist, immer einen Layer, der im Ebenenbedienfeld niedriger ist, oder erscheint darüber. – <strong><em>Falsch (wenn aktiviert, überschreibt die Anordnung im Layerreihenfolge-Bedienfeld die Anordnung im Layer-Bedienfeld)</em></strong></li>
+      <li>Sie können Metadaten-Informationen zu einem Layer im Layer-Bedienfeld und im Browser-Bedienfeld überprüfen. – <strong><em>Richtig</em></strong></li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="phase-2-titel-der-datenquellen-manager-und-die-verbindung-zu-remote-diensten">Phase 2 Titel: Der Datenquellen-Manager und die Verbindung zu Remote-Diensten</h3>
+
+<h4 id="die-datenquellenverwaltung"><strong>Die Datenquellenverwaltung</strong></h4>
+
+<p>Wenn Sie das Browser-Bedienfeld nicht zum Laden von Layern verwenden möchten, können Sie auch die <strong>Datenquellenverwaltung</strong> verwenden.</p>
+
+<p>Die <strong>Datenquellenverwaltung</strong> wurde mit der Veröffentlichung von QGIS 3 eingeführt und ist ein “One-Stop-Shop” für das Hinzufügen und Laden von Layern aus verschiedenen Datenquellen in QGIS. Vor ihrer Einführung gab es separate Fenster zum Laden verschiedener Datenquellen (z.B. eines für Raster, eines für Vektoren, etc.). Es kann über <strong>Layer ‣ Datenquellenverwaltung</strong> oder <strong>CTRL + L</strong> erreicht werden.</p>
+
+<p><img src="media/data-source-manager-1.png" alt="Datenquellenverwaltung" title="Datenquellenverwaltung" /></p>
+
+<p>Abbildung 2.12. Die Datenquellenverwaltung</p>
+
+<h4 id="übung-021-die-datenquellenverwaltung"><strong>Übung 02.1: Die Datenquellenverwaltung</strong></h4>
+
+<ol>
+  <li>Öffnen Sie die <strong>Datenquellenverwaltung</strong>. Sie enthält auf der linken Seite Registerkarten, die sich auf die Art der Datenquelle beziehen, die Sie laden oder mit der Sie eine Verbindung herstellen möchten. Ähnlich wie im Browser können Sie auch in der Datenquellenverwaltung verschiedene Arten von Daten laden und verbinden.</li>
+  <li>
+    <p><strong>Laden von Vektordaten</strong></p>
+
+    <ol>
+      <li>Um Vektordaten zu laden, gehen Sie auf die Registerkarte “Vektor”. Es können Dateien, Datenbanken und sogar Remote-Dateien über Protokolle wie HTTP, Cloud usw. geladen werden.</li>
+      <li>
+        <p>Lassen Sie uns die Vektordatei (McDonalds) laden, die sich im Geopaket Sachsen.gpkg befindet. Dieser Layer ist ein Punkt-Layer mit den Standorten der McDonalds Filialen in Sachsen.</p>
+
+        <ol>
+          <li>Quelltyp: Datei</li>
+          <li>Quelle: Wählen Sie das Geopaket Sachsen über die Schaltfläche <img src="media/data-source-manager-search.png" alt="Suchbutton" title="Suchbutton" /></li>
+          <li>Klicken Sie auf Hinzufügen</li>
+          <li>Wenn mehr als eine Vektordatei im Geopaket enthalten ist, fragt QGIS Sie, welche geladen werden soll.</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p><img src="media/data-source-manager-vector.png" alt="Laden von Vektordaten aus einem Geopackage" title="Laden von Vektordaten aus einem Geopackage" /></p>
+
+<p>Abbildung 2.13. Laden von Vektordaten aus ein GeoPackage</p>
+
+<ol>
+  <li>
+    <p><strong>Laden von Rasterdaten</strong></p>
+
+    <ol>
+      <li>
+        <p>Um Rasterdaten zu laden, gehen Sie auf die Registerkarte “Raster”. Es können Dateien und Remote-Dateien über ein Protokoll wie HTTP, Cloud, etc. geladen werden. Es gibt ein Raster (Sachsen_SRTM_DEM) innerhalb des Geopakets Sachsen.gpkg. Dieses Raster ist ein digitales Höhenmodell für Sachsen. So laden Sie es:</p>
+
+        <ol>
+          <li>Quelltyp: Datei</li>
+          <li>Quelle: Wählen Sie das Geopaket Sachsen über die Schaltfläche <img src="media/data-source-manager-search.png" alt="Suchbutton" title="Suchbutton" /></li>
+          <li>Klicken Sie auf Hinzufügen</li>
+          <li>Wenn mehr als eine Rasterdatei im Geopaket enthalten ist, fragt QGIS Sie, welche geladen werden soll</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p><img src="media/data-source-manager-raster.png" alt="Laden von Rasterdaten aus einem GeoPackage" title="Laden von Rasterdaten aus einem GeoPackage" /></p>
+
+<p>Abbildung 2.14. Laden von Rasterdaten aus einem GeoPackage</p>
+
+<ol>
+  <li>
+    <p><strong>Laden von CSV- und anders separierten Textdateien</strong></p>
+
+    <ol>
+      <li>Neben Vektoren und Rastern sind CSVs und Tabellenkalkulationen eine weitere häufig verwendete Datei für GIS-Anwender:innen. Glücklicherweise ist es relativ einfach, diese Dateien in QGIS zu laden.</li>
+      <li>
+        <p>CSVs und anders separierte Textdateien können über die Registerkarte “Getrennte Texte” in der Datenquellenverwaltung geladen werden, sie können aus dem Browser-Bedienfeld hinzugefügt werden und sogar einfach in die Kartenansicht gezogen werden. Es sollten jedoch einige Dinge beachtet werden, wenn die vorliegende CSV-Datei Geometrieinformationen (d. h. Punktpositionen) enthält. Als Faustregel gilt Folgendes:</p>
+
+        <ol>
+          <li>Verwenden Sie die Datenquellenverwaltung zum Laden von CSV-Dateien, unabhängig davon, ob sie Geometrieinformationen enthalten oder nicht.</li>
+          <li>Wenn CSVs über das Browser-Bedienfeld oder durch Ziehen geladen werden, stellen Sie sicher, dass eine entsprechende CSVT-Datei vorhanden ist, damit die Felddatentypen erhalten bleiben.</li>
+          <li>Wenn Sie Probleme mit der Erhaltung der Datentypen für Ihre CSVs haben, können Sie eine so genannte CSVT-Datei verwenden. Sie können mehr über das Laden von CSVs in QGIS unter folgendem englischsprachigen Link lesen: <a href="https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html">https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html </a></li>
+        </ol>
+      </li>
+      <li>CSVs und Tabellenkalkulationen können in QGIS mit oder ohne räumliche oder geometrische Informationen geladen werden. Wenn sie mit räumlichen Informationen geladen werden, werden sie als Vektordaten behandelt. Wenn sie ohne geladen werden, werden sie als normale tabellarische Daten behandelt.</li>
+      <li>
+        <p>Im Datenordner befindet sich eine CSV-Datei mit dem Namen Sachsen_Burger-King.csv, die Punktstandorte von Burger-King-Filialen in Sachsen enthält. Um sie zu laden:</p>
+
+        <ol>
+          <li>Wechseln Sie auf die Registerkarte “Getrennte Texte”</li>
+          <li>Dateiname: Wählen Sie die Sachsen_Burger-King CSV über die Schaltfläche <img src="media/data-source-manager-search.png" alt="Suchbutton" title="Suchbutton" /></li>
+          <li>Dateiformat: CSV</li>
+          <li>Datensatz- und Feldoptionen: Standard beibehalten</li>
+          <li>
+            <p>Geometriedefinition:</p>
+
+            <ul>
+              <li>Punktkoordinaten</li>
+              <li>X-Feld: x</li>
+              <li>Y-Feld: y</li>
+              <li>Geometrie-KBS: EPSG: 4326 - WGS 84</li>
+            </ul>
+          </li>
+          <li>
+            <p>Layer-Einstellungen: Wählen sie Datei überwachen und Räumlichen Index benutzen aus</p>
+
+            <ul>
+              <li>Wenn “Datei überwachen” aktiviert ist, werden Aktualisierungen der lokalen CSV-Datei automatisch in den in QGIS geladenen Layer übernommen.</li>
+              <li>“Räumlichen Index benutzen” fügt dem geladenen Layer einen räumlichen Index hinzu, was die Vektorverarbeitung beschleunigt.</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p><img src="media/data-source-manager-csv.png" alt="Laden einer CSV-Datei" title="Laden einer CSV-Datei" /></p>
+
+<p>Abbildung 2.15. Laden einer CSV-Datei</p>
+
+<p>Wenn alle Layer aus den vorangegangenen Übungen geladen sind, sollte das Layer-Bedienfeld in etwa wie folgt aussehen:</p>
+
+<p><img src="media/layers-panel-2.png" alt="Layer-Bedienfeld mit allen geladenen Layern" title="Layer-Bedienfeld mit allen geladenen Layern" /></p>
+
+<p>Abbildung 2.16. Layer-Bedienfeld mit allen geladenen Layern</p>
+
+<p>Die Kartenansicht sollte in etwa so aussehen:</p>
+
+<p><img src="media/map-canvas-1.png" alt="QGIS-Oberfläche mit allen geladenen Layern" title="QGIS-Oberfläche mit allen geladenen Layern" /></p>
+
+<p>Abbildung 2.17. QGIS-Oberfläche mit allen geladenen Layern</p>
+
+<p>Sie können die Layer im Layer-Bedienfeld beliebig neu anordnen.</p>
+
+<h4 id="verbinden-von-qgis-mit-remote-services"><strong>Verbinden von QGIS mit Remote Services</strong></h4>
+
+<p>Neben Vektor- und Rasterdateien kann sich QGIS auch mit entfernten Diensten wie Kachelservices, OGC Web Services (WMS, WFS) und sogar ESRI ArcGIS Web Services verbinden. Diese Verbindung kann über das Browser-Panel oder die Datenquellenverwaltung hergestellt werden.</p>
+
+<h4 id="übung-022-verbinden-mit-xyz-tiles"><strong>Übung 02.2: Verbinden mit XYZ-Tiles</strong></h4>
+
+<p>XYZ-Tiles werden in der Regel als Basiskarten verwendet und kommen nicht nur in Desktop-Anwendungen, sondern auch in Web-Anwendungen zum Einsatz.</p>
+
+<p>So stellen Sie eine Verbindung zu einem Kachelserver her:</p>
+
+<ol>
+  <li>Wechseln Sie zum <strong>Browser-Bedienfeld</strong>.</li>
+  <li><strong>Klicken Sie mit der rechten Maustaste auf XYZ-Tiles ‣ Neue Verbindung</strong>.</li>
+  <li>Fügen Sie Folgendes hinzu:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Name: Stamen Watercolor
+    URL: http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg
+</code></pre></div></div>
+<ol>
+  <li>Klicken Sie auf OK.</li>
+</ol>
+
+<p><img src="media/xyz-1.png" alt="Hinzufügen einer XYZ-Verbindung in QGIS" title="Hinzufügen einer XYZ-Verbindung in QGIS" /></p>
+
+<p>Abbildung 2.18. Hinzufügen einer XYZ-Verbindung in QGIS</p>
+
+<ol>
+  <li>Dies sollte ein PGP Basemap Element unter XYZ Kacheln im Browser Panel hinzufügen.</li>
+</ol>
+
+<p><img src="media/xyz-2.png" alt="Stamen Watercolor-Kachelserver dem Browser-Bedienfeld hinzugefügt" title="Stamen Watercolor-Kachelserver dem Browser-Bedienfeld hinzugefügt" /></p>
+
+<p>Abbildung 2.19. Stamen Watercolor-Kachelserver dem Browser-Bedienfeld hinzugefügt</p>
+
+<ol>
+  <li>Sie können den XYZ-Kachellayer wie jeden anderen Layer aus dem Browser-Bedienfeld laden.</li>
+</ol>
+
+<p><img src="media/xyz-3.png" alt="PGP Basemap Layer geladen in QGIS" title="PGP Basemap Layer geladen in QGIS" /></p>
+
+<p>Abbildung 2.20. PGP Basemap Layer in QGIS geladen</p>
+
+<ol>
+  <li>Versuchen Sie auch, den ESRI World Imagery Layer hinzuzufügen.</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Name: ESRI World Imagery
+    URL: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
+</code></pre></div></div>
+
+<p><img src="media/xyz2-1.png" alt="Adding ESRI World Imagery as XYZ Tiles" title="Adding ESRI World Imagery as XYZ Tiles" /></p>
+
+<p><strong>BONUS:</strong> Wenn Sie mehrere Grundkarten unter XYZ-Kacheln im Bedienfeld des Browsers hinzufügen möchten, können Sie die Anweisungen in diesem englischsprachigen Beitrag befolgen: <a href="https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html">https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html</a></p>
+
+<p><strong>BONUS #2:</strong> Sie können die URLs der Tileserver, die Sie auf der Website der Leaflet-Provider (<a href="https://leaflet-extras.github.io/leaflet-providers/preview/">https://leaflet-extras.github.io/leaflet-providers/preview/</a>) finden, als XYZ-Kacheln im Bedienfeld hinzufügen.</p>
+
+<h4 id="übung-023-verbinden-mit-wmswmts-und-wfs"><strong>Übung 02.3: Verbinden mit WMS/WMTS und WFS</strong></h4>
+
+<p>WMS oder Web Map Service ist ein vom Open Geospatial Consortium (OGC) (<a href="https://www.ogc.org/">https://www.ogc.org/</a>) definierter Webservice-Standard zur Bereitstellung von Bildern (Rasterkacheln) über das Internet. Wenn Daten über WMS bereitgestellt werden, kann der/die Benutzer:in die darunter liegenden Informationen weder direkt bearbeiten noch eine eigene Darstellung für sie wählen.</p>
+
+<p>WFS oder Web Feature Services ist ein weiterer OGC-konformer Webdienst für die Bereitstellung von Features (Vektoren) über das Internet. Wenn Daten über WFS bereitgestellt werden, hat der/die Benutzer:in Zugriff auf die darunter liegenden Attribute und die Geometrie, so dass er/sie den Layer gestalten, bearbeiten und für die Vektoranalyse verwenden kann.</p>
+
+<p>So stellen Sie eine Verbindung zu einem WFS her:</p>
+
+<ol>
+  <li>Rufen Sie das <strong>Browserbedienfeld</strong> auf</li>
+  <li><strong>Rechtsklick auf WMS/WMTS ‣ Neue Verbindung</strong></li>
+  <li>Fügen Sie Folgendes hinzu:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name: Sachsen Ortophotos
+URL: https://geoportal.sachsen.de/portal/arcgis_wmts_capabilities/wmts_geosn_dop-rgb.xml  
+</code></pre></div>    </div>
+  </li>
+  <li>Klicken Sie auf Hinzufügen</li>
+</ol>
+
+<p><img src="media/wms-1.png" alt="Erstellen einer neuen WMS/WMTS-Verbindung" title="Erstellen einer neuen WMS/WMTS-Verbindung" /></p>
+
+<p>Abbildung 2.21. Erstellen einer neuen WMS/WMTS Verbindung</p>
+
+<ol>
+  <li>Dies sollte ein SN DOP 020 Element unter den WMS/WMTS im Bedienfeld des Browsers hinzufügen.</li>
+</ol>
+
+<p><img src="media/wms-2.png" alt="Die Ortophotos im Browser Bedienfeld" title="Die Ortophotos im Browser Bedienfeld" /></p>
+
+<p>Abbildung 2.22. Die Ortophotos im Browser Bedienfeld</p>
+
+<ol>
+  <li>Sie können die WMS-Layer wie jeden anderen Layer aus dem Bedienfeld des Browsers laden.</li>
+</ol>
+
+<p><img src="media/wms-3.png" alt="Ortophotos aus WMS in QGIS geladen" title="Ortophotos aus WMS in QGIS geladen" /></p>
+
+<p>Abbildung 2.23. Ortophotos aus WMS in QGIS geladen</p>
+
+<ol>
+  <li>Das Verbinden mit WFS erfolgt auf die gleiche Weise.</li>
+</ol>
+
+<h4 id="quizfragen-1"><strong>Quizfragen</strong></h4>
+
+<ol>
+  <li>
+    <p>Richtig oder Falsch:</p>
+
+    <ol>
+      <li>Sie können in QGIS nur lokale Dateien laden – <strong><em>Falsch (Sie können auch entfernte Dateien laden, z.B. solche, die online gespeichert sind oder von Webservices bereitgestellt werden)</em></strong></li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="phase-3-exportieren-von-layern-layern-im-speicher-temporär-und-virtuellen-layern">Phase 3: Exportieren von Layern, Layern im Speicher (temporär) und virtuellen Layern</h3>
+
+<h4 id="exportieren-von-layern-aus-qgis"><strong>Exportieren von Layern aus QGIS</strong></h4>
+
+<p>Das Exportieren von Layern (oder das Speichern von Layern in Dateien) ist in QGIS ganz einfach. Klicken Sie einfach <strong>mit der rechten Maustaste auf den Layer ‣ Exportieren</strong>, um die Exportoptionen für den Layer anzuzeigen.</p>
+
+<p><img src="media/exporting-layers.png" alt="Exportieren eines Layers aus QGIS" title="Exportieren eines Layers aus QGIS" /></p>
+
+<p>Abbildung 2.24. Exportieren eines Layers aus QGIS</p>
+
+<ul>
+  <li>
+    <p>Mit <strong>Objekt speichern als…</strong> können Sie den Raster- oder Vektorlayer speichern.</p>
+
+    <ul>
+      <li>Wenn ein <strong>Filter</strong> auf dem Vektor-Layer aktiv ist, werden nur die gefilterten Features (die auf der Kartenansicht erscheinen) exportiert.</li>
+    </ul>
+  </li>
+  <li><strong>Gewählte Objekte speichern als…</strong> ist eine Option für Vektorlayer, mit der Sie nur die aktuell ausgewählten Features speichern können.</li>
+  <li><strong>Als Layerdefinitionsdatei speichern…</strong> erzeugt eine QLR-Datei (siehe Modul 1, QGIS-Dateiformate) für den Layer</li>
+  <li><strong>Als QGIS-Layerstildatei speichern…</strong> speichert eine QML-Datei (siehe Modul 1, QGIS-Dateiformate) für den Layer</li>
+</ul>
+
+<p>Wenn Sie einen Layer exportieren, gibt Ihnen QGIS die Möglichkeit, das Format der Ausgabedatei, die einzuschließenden Felder (falls es sich um eine Vektordatei handelt), das Ausgabekoordinaten-Referenzsystem und andere Optionen zu wählen. Das bedeutet, dass Sie durch den Export eines Layers eine Koordinatenprojektion durchführen können.</p>
+
+<p><img src="media/save-vector.png" alt="Dialogfeld &quot;Vektorlayer speichern&quot;" title="Dialogfeld &quot;Vektorlayer speichern&quot;" /></p>
+
+<p>Abbildung 2.25. Dialogfeld Vekorlayer speichern</p>
+
+<p>Weitere Informationen über das Speichern eines Layers aus einer bestehenden Datei finden Sie unter: <a href="https://docs.qgis.org/3.16/de/docs/user_manual/managing_data_source/create_layers.html#save-layer-from-an-existing-file">https://docs.qgis.org/3.16/de/docs/user_manual/managing_data_source/create_layers.html#save-layer-from-an-existing-file</a></p>
+
+<h4 id="layer-im-speicher"><strong>Layer im Speicher</strong></h4>
+
+<p>Manchmal müssen oder wollen wir die Layer, die wir in unserer Analyse verwenden, nicht physisch in unserem Computer speichern, besonders wenn sie nur temporär sind.</p>
+
+<p>QGIS versteht dies und erlaubt es dem Benutzer, <strong>temporäre</strong> Layer zu erstellen. Diese Layer können ähnlich wie reguläre Vektorlayer verwendet werden, müssen aber nicht dauerhaft in einer Datei in unseren Speicherlaufwerken gespeichert werden, da QGIS sie im Speicher oder RAM ablegt. Temporäre Layer werden im Layer-Bedienfeld mit diesem Symbol angezeigt <img src="media/symbol-temp.png" alt="Symbol für temporäre Layer" title="Symbol für temporäre Layer" />.</p>
+
+<p>Die Ausgaben von Verarbeitungsalgorithmen werden standardmäßig als temporäre Layer gespeichert.</p>
+
+<p>Der Nachteil von temporären Layern ist, dass QGIS diese “<strong>Layer im Speicher</strong>” “vergisst”, wenn es geschlossen wird. Um hier Abhilfe zu schaffen, können wir das <strong>Memory Layer Saver Plugin</strong> verwenden, um unsere temporären Layer persistent zu machen. Wenn Sie ein QGIS-Projekt speichern, das temporäre Layer verwendet, ist es eine gute Praxis, zuerst das Plugin “Memory Layer Saver” zu starten/aktivieren. Um das Plugin “Memory Layer Saver” zu verwenden, gehen Sie einfach zu <strong>Plugins ‣ Memory Layer Saver</strong>, bevor Sie Ihr QGIS-Projekt speichern und schließen. Wenn Sie Ihr QGIS-Projekt das nächste Mal öffnen, sollten die temporären Layer (oder Layer im Speicher) noch vorhanden sein.</p>
+
+<p>Natürlich können Sie den temporären Layer auch einfach dauerhaft machen, indem Sie den Layer in eine Datei exportieren. Ein Klick auf das Symbol <img src="media/symbol-temp.png" alt="Temporäres Layersymbol" title="Temporäres Layersymbol" /> öffnet automatisch einen Dialog zum Exportieren von Layern.</p>
+
+<h4 id="virtuelle-layer"><strong>Virtuelle Layer</strong></h4>
+
+<p>Ein virtueller Layer ist ein spezieller Typ eines Vektor-Layers, der “on the fly” als Ergebnis einer Abfrage oder von Daten eines anderen Layers erstellt wird.</p>
+
+<p>Zum Beispiel kann ein virtueller Layer erstellt werden, der einen Puffer um einen anderen Feature-Layer bildet. Wann immer ein neues Feature zum Quell-Feature-Layer hinzugefügt wird, wird der virtuelle Layer entsprechend aktualisiert.</p>
+
+<p>Derzeit scheinen virtuelle Layer nicht mit Quell-Layern im Speicher zu funktionieren.</p>
+
+<p>Virtuelle Layer sind dynamisch. Das heißt, wenn der Basis-/Quell-Layer aktualisiert wird, wird auch der virtuelle Layer aktualisiert. Dies kann Speicherplatz sparen und die Datenduplizierung reduzieren, da die Daten der virtuellen Layer einfach von der Basisebene abgerufen werden, ohne dass etwas auf der Festplatte gespeichert werden muss, obwohl es zu einem gewissen Performance-Overhead kommen kann, wenn komplexe Abfragen oder Operationen zur Definition des virtuellen Layers verwendet werden.</p>
+
+<p>Zur Definition des virtuellen Layers werden SQL-ähnliche Konstrukte verwendet.</p>
+
+<p>Virtuelle Layer sind von anderen Layern abhängig, daher ist es wichtig, dass die Basislayer nicht verschoben oder umbenannt werden.</p>
+
+<p>Wenn der Basislayer aktualisiert wird, müssen Sie die Kartenanzeige durch Schwenken oder Zoomen der Karte aktualisieren, um die Aktualisierung der virtuellen Ebene anzuzeigen.</p>
+
+<h4 id="quizfragen-2"><strong>Quizfragen</strong></h4>
+
+<ol>
+  <li>
+    <p>Richtig oder Falsch:</p>
+
+    <ol>
+      <li>Beim Exportieren eines Vektor-Layers können Sie das Format auswählen, in dem er gespeichert werden soll. – <strong><em>Richtig</em></strong></li>
+      <li>Temporäre Layer werden von QGIS immer vergessen, wenn es geschlossen wird. – <strong><em>Falsch (sie können mit Hilfe des Plugins Memory Layer Saver persistent gemacht werden)</em></strong></li>
+      <li>Wenn der Basis-Layer für einen virtuellen Layer aktualisiert wird, wird der virtuelle Layer automatisch auf der Kartenansicht aktualisiert, ohne dass eine Benutzereingabe erforderlich ist. – <strong><em>Falsch (der/die Benutzer:in muss die Kartenansicht entweder durch Schwenken oder Zoomen aktualisieren, bevor die Aktualisierung der virtuellen Layer auf der Kartenansicht angezeigt wird)</em></strong></li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="wenn-sie-lust-auf-mehr-haben">Wenn Sie Lust auf mehr haben:</h3>
+
+<h4 id="installieren-sie-einige-erweiterungen-die-als-datenquellen-dienen"><strong>Installieren Sie einige Erweiterungen, die als Datenquellen dienen</strong></h4>
+
+<p>Einige Erweiterungen bieten die Funktionalität, Daten in QGIS zu laden. Dazu gehören Vektordaten, Satellitenbilder, Rasterdateien, Basiskarten, etc. Versuchen Sie, die folgenden Erweiterungen zu installieren und finden Sie heraus, welche Art von Daten sie in QGIS laden:</p>
+
+<ul>
+  <li>QuickOSM (<a href="https://plugins.qgis.org/plugins/QuickOSM/">https://plugins.qgis.org/plugins/QuickOSM/</a>)</li>
+  <li>SRTM-Downloader (<a href="https://plugins.qgis.org/plugins/SRTM-Downloader/">https://plugins.qgis.org/plugins/SRTM-Downloader/</a>)</li>
+  <li>QuickMapServices (<a href="https://plugins.qgis.org/plugins/quick_map_services/">https://plugins.qgis.org/plugins/quick_map_services/</a>)</li>
+</ul>
+
+<p>P.S. Für einige dieser Erweiterungen müssen Sie ein Konto beim Datenanbieter einrichten.</p>
+
+<h4 id="verbindung-zu-geonode-instanzen"><strong>Verbindung zu GeoNode-Instanzen</strong></h4>
+
+<p>GeoNode (<a href="https://geonode.org/">https://geonode.org/</a>) ist ein Open-Source Geospatial Content Management System, das mit einem ausgereiften FOSS4G-Stack aufgebaut ist, der PostGIS, GeoServer, MapStore, etc. enthält. Sie können sich GeoNode als ein Geodatenportal vorstellen. Sie können QGIS einfach mit einer GeoNode-Instanz über den GeoNode-Konnektor im Bedienfeld des Browsers oder in der Datenquellenverwaltung verbinden.</p>
+
+<ol>
+  <li>Gehen Sie zum <strong>Browser Bedienfeld</strong></li>
+  <li>Klicken Sie mit der rechten Maustaste auf <strong>GeoNode ‣ Neue Verbindung</strong>.</li>
+  <li>Fügen Sie Folgendes hinzu:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name: UNESCO IHP-WINS
+URL: http://ihp-wins.unesco.org/
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><img src="media/connect-geonode.png" alt="Mit GeoNode verbinden" title="Mit GeoNode verbinden" /></p>
+
+<p>Mehr über die Verbindung von QGIS mit entfernten Diensten erfahren Sie unter: <a href="https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html">https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html</a> (englischsprachig)</p>
+
+<h4 id="übungtutorial-zu-virtuellen-layern"><strong>Übung/Tutorial zu virtuellen Layern</strong></h4>
+
+<ol>
+  <li>Öffnen Sie QGIS.</li>
+  <li>Laden Sie ein Satellitenbild oder eine Satellitenbasiskarte über XYZ-Kacheln oder QuickMapServices-Erweiterungen (z.B. Google Satellite).</li>
+  <li>Erstellen Sie einen neuen GeoPackage-Layer mit <img src="media/symbol-gpkg.png" alt="Neues GeoPackage-Symbol erstellen" title="Neues GeoPackage-Symbol erstellen" /> in der Werkzeugleiste des Datenquellen-Managers. Nennen Sie es Bäume, fügen Sie einen Radius (Integer) und ein Artenfeld (Text) hinzu und verwenden Sie ein projiziertes CRS (z.B. EPSG:3857)</li>
+</ol>
+
+<p><img src="media/virtual-1.png" alt="Neuer GeoPackage Layer" title="Neuer GeoPackage Layer" /></p>
+
+<p>Wenn Sie gefragt werden, ob die Datei bereits existiert, wählen Sie “Neuen Layer hinzufügen”.</p>
+
+<ol>
+  <li>Schalten Sie die Bearbeitung von Bäume ein, indem Sie mit der rechten Maustaste darauf klicken ‣ Bearbeitungsstatus umschalten oder klicken Sie auf <img src="media/symbol-edit.png" alt="Bearbeitungsstatus-Umschalten-Symbol" title="Bearbeitungsstatus-Umschalten-Symbol" /> in der Digitalisierungs-Symbolleiste.</li>
+  <li>Wählen Sie einen Bereich auf dem Satellitenbild aus, der Bäume enthält.</li>
+  <li>Aktivieren Sie bei eingeschalteter Bearbeitung das Hinzufügen von Punkten zum Layer “Bäume”, indem Sie auf <img src="media/symbol-add-point.png" alt="Punktobjekt-hinzufügen" title="[Punktobjekt hinzufügen" /> klicken (CTRL + .).</li>
+  <li>Digitalisieren Sie einzelne Bäume, indem Sie auf deren Standort klicken und die Attributinformationen hinzufügen. Tun Sie dies für 4 Bäume. Für diese Übung können Sie die Informationen einfach erraten.</li>
+</ol>
+
+<p><img src="media/virtual-3.png" alt="Neue Bäume hinzufügen" title="Neue Bäume hinzufügen" /></p>
+
+<ol>
+  <li>Vergessen Sie nach dem Hinzufügen der Punkte nicht, Ihre Bearbeitungen zu speichern, indem Sie auf <img src="media/symbol-save-edits.png" alt="Symbol für Bearbeitungen speichern" title="Symbol für Bearbeitungen speichern" /> in der Symbolleiste “Digitalisieren” klicken, bevor Sie die Bearbeitung ausschalten.</li>
+</ol>
+
+<p><img src="media/virtual-4.png" alt="Neue Punkte (Bäume) hinzugefügt" title="Neue Punkte (Bäume) hinzugefügt" /></p>
+
+<ol>
+  <li>Fügen Sie einen virtuellen Layer hinzu, indem Sie auf <img src="media/symbol-virtual.png" alt="Virtuellen Layer hinzufügen" title="Virtuellen Layer hinzufügen" />
+ in der Symbolleiste des Datenquellen-Managers.</li>
+  <li>Setzen Sie den Layer-Namen auf Baumkronen. Bäume importieren. Fügen Sie die folgende Abfrage hinzu:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select fid, buffer(geometry, radius), species from Trees
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><img src="media/virtual-5.png" alt="Virtuellen Layer erstellen" title="Virtuellen Layer erstellen" /></p>
+
+<p><img src="media/virtual-6.png" alt="Virtueller Layer in QGIS" title="Virtueller Layer in QGIS" /></p>
+
+<p>Fügen Sie einen neuen Punkt hinzu und aktualisieren Sie dann die Kartenansicht (durch Zoomen oder Schwenken der Kartenansicht), um die Aktualisierung im virtuellen Layer zu sehen. Was stellen Sie fest?</p>
+
+<h3 id="um-ihre-neuen-fähigkeiten-auszuprobieren-versuchen-sie">Um Ihre neuen Fähigkeiten auszuprobieren, versuchen Sie…</h3>
+
+<h4 id="das-laden-von-rastern-und-vektoren-aus-dem-internet"><strong>Das Laden von Rastern und Vektoren aus dem Internet</strong></h4>
+
+<p>Neben den lokalen Binärdateien (Vektoren, Raster) kann QGIS auch Vektoren und Raster aus dem Internet laden. Verwenden Sie den Datenquellen-Manager, um die Daten von der folgenden URL zu laden:</p>
+
+<p>https://raw.githubusercontent.com/tursics/open-data-atlas/master/data/polygon-de.geojson</p>
+
+<h4 id="laden-einer-tabellenkalkulation-in-qgis-mit-hilfe-des-spreadsheet-layers-plugins"><strong>Laden einer Tabellenkalkulation in QGIS mit Hilfe des Spreadsheet Layers Plugins</strong></h4>
+
+<p>Installieren Sie das Spreadsheet Layers Plugin und versuchen Sie, ein Tabellendokument in QGIS zu laden. Das Plugin akzeptiert Open Document Standard Formate (.ods) und Microsoft Excel Dateien (.xls, .xlsx).</p>
+
+<p>Weitere Informationen gibt es hier (englischsprachig): <a href="https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html">https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html</a></p>
+
+<h3 id="tipps">Tipps</h3>
+
+<ol>
+  <li>Wenn Sie einmal einen Weltkarten-Layer benötigen, versuchen Sie, <strong>world</strong> in die Koordinatenleiste der Statusleiste einzugeben. Was passiert? Dies ist nur eines der Easter Eggs, die man in QGIS findet, wenn man bestimmte Wörter in die Koordinatenleiste eintippt.</li>
+</ol>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

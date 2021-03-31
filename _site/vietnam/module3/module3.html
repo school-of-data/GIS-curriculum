@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Module 3 - OpenStreetMap và High Resolution Settlement Layer | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Module 3 - OpenStreetMap và High Resolution Settlement Layer page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Module 3 - OpenStreetMap và High Resolution Settlement Layer">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Module 3 - OpenStreetMap và High Resolution Settlement Layer</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/module3/module3.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="module-3---openstreetmap-và-high-resolution-settlement-layer">Module 3 - OpenStreetMap và High Resolution Settlement Layer</h1>
+
+<p><strong>Tác giả</strong>: Ben Hur</p>
+
+<p><strong>Biên dịch và bản địa hoá</strong>: Quách Đồng Thắng</p>
+
+<h2 id="giới-thiệu-chung">Giới thiệu chung</h2>
+
+<p>Module này sẽ giới thiệu OpenStreetMap (OSM) và High Resolution Settlement Layer (HRSL). Sau module này, người học sẽ làm quen với:</p>
+
+<ul>
+  <li>Các nguyên tắc của OpenStreetMap</li>
+  <li>Dữ liệu OpenStreetMap và các trường hợp sử dụng.</li>
+  <li>Dữ liệu High Resolution Settlement Layer và các trường hợp sử dụng.</li>
+</ul>
+
+<p>Đồng thời, người học có thể:</p>
+
+<ul>
+  <li>Tải dữ liệu OSM định dạng vector và định dạng tile trong QGIS</li>
+  <li>Tải dữ liệu raster HRSL trong QGIS</li>
+</ul>
+
+<h2 id="các-công-cụ-và-tài-nguyên-cần-thiết">Các công cụ và tài nguyên cần thiết</h2>
+
+<p>Các công cụ và tài nguyên cần thiết cho modulue này gồm:</p>
+
+<ul>
+  <li>Máy tính</li>
+  <li>Kết nối Internet</li>
+  <li>QGIS 3.16 đã được cài đặt trên máy tính  (<a href="https://qgis.org/en/site/forusers/download.html">https://qgis.org/en/site/forusers/download.html</a>)</li>
+  <li>HCMC_border and HCMC_District3 vector layer (trong <a href="module3.gpkg">module3.gpkg</a>).</li>
+</ul>
+
+<h2 id="yêu-cầu-về-kỹ-năng">Yêu cầu về kỹ năng</h2>
+
+<ul>
+  <li>Kiến thức cơ bản về vận hành máy tính</li>
+  <li>Quen thuộc với các định dạng dữ liệu không gian, giao diện QGIS, cách tải các lớp dữ liệu vào QGIS (hoàn thành Module 0,1 và 2)</li>
+</ul>
+
+<h2 id="tài-liệu-tham-khảo">Tài liệu tham khảo</h2>
+
+<ul>
+  <li>OpenStreetMap - <a href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a></li>
+  <li>OpenStreetMap Wiki - <a href="https://wiki.openstreetmap.org/">https://wiki.openstreetmap.org/</a></li>
+  <li>Overpass API User Manual - <a href="https://dev.overpass-api.de/overpass-doc/en/">https://dev.overpass-api.de/overpass-doc/en/</a></li>
+  <li>Facebook - High Resolution Settlement Layer - <a href="https://research.fb.com/downloads/high-resolution-settlement-layer-hrsl/">https://research.fb.com/downloads/high-resolution-settlement-layer-hrsl/</a></li>
+  <li>CEISIN - High Resolution Settlement Layer - <a href="https://ciesin.columbia.edu/data/hrsl/">https://ciesin.columbia.edu/data/hrsl/</a></li>
+  <li>HDX HRSL - <a href="https://data.humdata.org/search?organization=facebook&amp;q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22">https://data.humdata.org/search?organization=facebook&amp;q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22</a></li>
+</ul>
+
+<h2 id="giới-thiệu-chuyên-đề">Giới thiệu chuyên đề</h2>
+
+<p>Bản đồ đã trở nên phổ biến trong cuộc sống hàng ngày của chúng ta. Chúng ta có thể chỉ cần cầm điện thoại và mở các ứng dụng sử dụng các bản đồ và dữ liệu về vị trí. Có các ứng dụng được sử dụng để định hướng và định vị chính mình, để điều hướng từ nơi này đến nơi khác, bản đồ được hiển thị khi chúng ta đặt thức ăn từ dịch vụ giao hàng yêu thích,… Bản đồ đã trở nên không thể thiếu cho các hoạt động hàng ngày của chúng ta đến mức chúng ta có xu hướng quên rằng có những nơi trên thế giớ vẫn chưa được lập bản đồ hoặc không được tìm thấy trong các bản đồ số mà chúng ta sử dụng.</p>
+
+<h2 id="phân-tích-các-khái-niệm">Phân tích các khái niệm</h2>
+
+<p>Sự phổ biến của bản đồ trong cuộc sống của chúng ta là sản phẩm phụ của lượng lớn dữ liệu về vị trí và dữ liệu không gian mà chúng ta đang thu thập. Các cơ hội và tiềm năng để tạo ra những điều tốt đẹp từ dữ liệu không gian sẵn có là rất nổi bật, nhưng nó chỉ có thể hiện thực được nếu các dữ liệu không gian địa lý này miễn phí và mở.</p>
+
+<h2 id="nội-dung-chính">Nội dung chính</h2>
+
+<h3 id="phase-1-dữ-liệu-openstreetmap-osm">Phase 1: Dữ liệu OpenStreetMap (OSM)</h3>
+
+<h4 id="openstreetmap-osm-là-gì"><strong>OpenStreetMap (OSM) là gì?</strong></h4>
+
+<p>OpenStreetMap (OSM) (<a href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a>) là một bản đồ miễn phí, có thể chỉnh sửa trên phạm vi toàn cầu, được xây dựng bởi các tình nguyện viên trên toàn thế giới và được phát hành với giấy phép nội dung mở (open-content license). Đây là một dự án nhằm tạo và phân phối dữ liệu không gian địa lý mở cho thế giới – một bản đồ thế giới của mọi người và vì mọi người. Nếu thấy thiếu gì đó trên OSM, bạn có thể tự do thêm vào. Nếu có điều gì sai trên OSM, bạn có thể tự do chỉnh sửa. OSM là một tài sản số của cộng đồng giúp khuếch đại đáng kể giá trị của thông tin được thêm vào.</p>
+
+<p><img src="media/osm.png" alt="OpenStreetMap website" title="OpenStreetMap website" /></p>
+
+<p>Hình 3.1. OpenStreetMap</p>
+
+<p>Tìm hiểu thêm thông tin tại sao OpenStreetMap tồn tại và tầm quan trọng của nó tại đây <a href="https://wiki.openstreetmap.org/wiki/FAQ#Why_OpenStreetMap.3F">https://wiki.openstreetmap.org/wiki/FAQ#Why_OpenStreetMap.3F</a></p>
+
+<p>Bạn cũng có thể tham khảo: <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</a></p>
+
+<p>Theo OpenStreetMap, nó là “dữ liệu mở, với giấy phép Open Data Commons Open Database License (ODbL) (<a href="https://opendatacommons.org/licenses/odbl/">https://opendatacommons.org/licenses/odbl/</a>) bởi tổ chức OpenStreetMap Foundation (OSMF) (<a href="https://osmfoundation.org/">https://osmfoundation.org/</a>)” và “bạn có quyền tự do sao chép, phân phối, truyền tải và điều chỉnh dữ liệu, miễn là ghi nhận dẫn nguồn từ OpenStreetMap và các nhà đóng góp cho OpenStreetMap. Nếu bạn thay đổi hoặc xây dựng dựa trên dữ liệu của chúng tôi, bạn chỉ có thể phân phối kết quả với cùng giấy phép”. Nghĩa là, khi tạo một bản đồ sử dụng dữ liệu OSM, bạn phải dẫn nguồn “© OpenStreetMap contributors”. Bạn có thể tìm hiểu thêm về bản quyền và giấy phép OpenStreetMap tại đây <a href="https://www.openstreetmap.org/copyright">https://www.openstreetmap.org/copyright</a></p>
+
+<h4 id="openstreetmap-được-sử-dụng-ở-đâu"><strong>OpenStreetMap được sử dụng ở đâu?</strong></h4>
+
+<p>Một trong những giá trị cốt lõi của OSM là khả năng thu thập, chỉnh sửa và chia sẻ dữ liệu bản đồ có thể được sử dụng cho nhiều mục đích khác nhau. Đó là quyền tự do được cung cấp bởi ObDL. Vì OSM cho phép người dùng sử dụng dữ liệu với rất ít hạn chế, nên có rất nhiều ứng dụng, dịch vụ và trường hợp sử dụng được xây dựng, đang xây dựng hoặc có thể được xây dựng với OSM. OSM được dùng cho tạo bản đồ, dịch vụ định tuyến, giáo dục và ngay cả mục đích nhân đạo và vận động (chính sách/ phong trào).</p>
+
+<p>Thực tế, có nhóm Humanitarian OpenStreetMap Team (HOT) (<a href="https://www.hotosm.org/">https://www.hotosm.org/</a>), là một nhóm quốc tế dành riêng cho hoạt động nhân đạo và phát triển cộng đồng thông qua việc xây dựng bản đồ mở.</p>
+
+<p>OpenStreetMap is also a crucial part of some advocacy mapping communities such as MapBeks (<a href="https://wiki.openstreetmap.org/wiki/MapBeks">https://wiki.openstreetmap.org/wiki/MapBeks</a>) – an online LGBT mapping community, based in the Philippines, that advocates for diversity inclusion and representation focused specifically for Lesbians, Gays, Bisexuals, Transgender, Queer, Intersex, etc. (LGBTQI+) on OpenStreetMap; and Mental Health AWHEREness (<a href="https://mentalhealthawhereness.com/">https://mentalhealthawhereness.com/</a>) – a volunteer-organized online platform and map that shows the locations of mental health facilities and services that offer help to people on their mental health within the Philippines.</p>
+
+<p>OSM cũng là một phần quan trọng trong một số cộng đồng lập bản đồ vận động ủng hộ như MapBeks (<a href="https://wiki.openstreetmap.org/wiki/MapBeks">https://wiki.openstreetmap.org/wiki/MapBeks</a>) – một cộng đồng lập bản đồ LGBT trực tuyến, có trụ sở tại Philippines, ủng hộ đa dạng hóa sự hòa hợp và đại diện tập trung đặc biệt cho Lesbians, Gays, Bisexuals, Transgender, Queer, Intersex,…(LGBTQI+) trên OSM; và Mental Health AWHEREness (<a href="https://mentalhealthawhereness.com/">https://mentalhealthawhereness.com/</a>) – Một nền tảng và bản đồ trực tuyến tình nguyện thể hiện vị trí của các cơ sở và dịch vụ chăm sóc sức khỏe tâm thần, cung cấp trợ giúp cho các bệnh nhân tâm thần ở Philippines.</p>
+
+<p>Danh sách các dịch vụ dựa trên OSM tại đây <a href="https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services">https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services</a>.</p>
+
+<h4 id="sử-dụng-osm-trong-qgis-như-thế-nào"><strong>Sử dụng OSM trong QGIS như thế nào?</strong></h4>
+
+<p>Dữ liệu OSM có thể được sử dụng trong QGIS bằng nhiều cách. Cách đầu tiên là sử dụng các tile layer có nguồn gốc từ OSM như là các bản đồ nền. Trong thực tế QGIS mặc định đã có sẵn một kết nối đến OSM tile layer. Bạn có thể thấy layer có tên “OpenStreetMap” dưới mục XYZ Tiles trong Browser Panel.</p>
+
+<p>Bạn có thể thêm các OSM tile layer khác trong QGIS theo danh sách các lớp được liệt kê trong Leaflet Providers (<a href="https://leaflet-extras.github.io/leaflet-providers/preview/">https://leaflet-extras.github.io/leaflet-providers/preview/</a>). Các lớp OSM tile layer cung cấp cho người dùng quyền truy cập mở và miễn phí đến bản đồ nền mới nhất vì các tile này thường xuyên được cập nhật theo OSM.</p>
+
+<p>Bạn cũng có thể tải dữ liệu từ OSM dưới dạng dữ liệu vector trong QGIS bằng cách sử dụng các trang web như GEOFABRIK (<a href="https://www.geofabrik.de/data/download.html">https://www.geofabrik.de/data/download.html</a>).</p>
+
+<p>Dữ liệu OSM cũng có thể được tải trực tiếp trong QGIS sử dụng QuickOSM plugin. Plugin này sử dụng Overpass API (<a href="https://wiki.openstreetmap.org/wiki/Overpass_API">https://wiki.openstreetmap.org/wiki/Overpass_API</a>), cho phép người dùng chọn nhanh một tập con của dữ liệu OSM bằng các lệnh truy vấn. Điều này có thể thực hiện được là do các đối tượng trong OSM (<a href="https://wiki.openstreetmap.org/wiki/Mapfeatures">https://wiki.openstreetmap.org/wiki/Mapfeatures</a>) được gắn thẻ bằng một hệ thống gắn thẻ miễn phí (<a href="https://wiki.openstreetmap.org/wiki/Tags">https://wiki.openstreetmap.org/wiki/Tags</a>), cho phép bản đồ có thể quản lý không giới hạn các thuộc tính ứng với từng đối tượng. Các thẻ này có thể được sử dụng để truy vấn các đối tượng dựa vào thuộc tính/ thẻ của chúng.</p>
+
+<p>Thông thường, cộng đồng OSM và các cộng đồng địa phương đồng ý về một số tổ hợp key và value nhất định phù hợp với các thẻ được sử dụng phổ biến nhất mà 10 thẻ này hoạt động như một tiêu chuẩn không chính thức. Điều này đảm bảo rằng người dùng dữ liệu có thể mong đợi sự nhất quán trong việc gắn thẻ các đối tượng địa lý chung như đường xá, tòa nhà, v.v. Tuy nhiên, người dùng luôn có thể tạo các thẻ mới để style bản đồ hoặc hỗ trợ các phân tích dựa trên các thuộc tính hoặc thẻ của các đối tượng địa lý chưa được lập bản đồ trước đó.</p>
+
+<h4 id="bài-tập-1-tải-dữ-liệu-osm-trong-qgis-sử-dụng-quickosm-plugin"><strong>Bài tập 1: Tải dữ liệu OSM trong QGIS sử dụng QuickOSM Plugin</strong></h4>
+
+<p>Trong bài thực hành này, chúng ta sẽ tải dữ liệu mạng lưới giao thông và vị trí của các chuỗi thức ăn nhanh từ OSM thuộc Tp.HCM sử dụng QuickOSM Plugin.</p>
+
+<p>QuickOSM hoạt động bằng cách truy vấn các tags (keys and values) của các đối tượng trong OSM. Để biết thêm thông tin về cách sử dụng key/value trong QuickOSM, truy cập <a href="https://wiki.openstreetmap.org/wiki/Mapfeatures.">https://wiki.openstreetmap.org/wiki/Mapfeatures</a>.</p>
+
+<ol>
+  <li>Tải các lớp dữ liệu vector HCMC_border và HCMC_District3 có trong module3 geopackage
+<img src="media/quickosm-1.png" alt="Các layer HCMC được tải trong QGIS" title="Các layer HCMC được tải trong QGIS" /></li>
+</ol>
+
+<p>Hình 3.2. Các layer HCMC được tải trong QGIS</p>
+
+<ol>
+  <li>Kiểm tra QuickOSM plugin đã được cài đặt và kích hoạt. Nó sẽ xuất hiện ở <strong>Vector ‣ QuickOSM</strong> trong Menu bar. Nếu không thấy, hãy cài đặt và kích hoạt plugin sử dụng Manage and Install Plugins</li>
+  <li>Mở QuickOSM plugin (<strong>Vector ‣ QuickOSM ‣ QuickOSM</strong>). Một hộp thoại sẽ được mở với 5 tab:
+    <ol>
+      <li>Quick Query
+        <ul>
+          <li>Cho phép người dùng tạo và chạy một truy vấn đơn giản với một tổ hợp khóa – giá trị (key-value) để tải một tập con của dữ liệu OSM thỏa yêu cầu của truy vấn.</li>
+        </ul>
+      </li>
+      <li>Query
+        <ul>
+          <li>Cho phép người dùng chạy các truy vấn phức tạp sử dụng Overpass API</li>
+          <li>Liên kết đến ứng dụng web Overpass Turbo</li>
+        </ul>
+      </li>
+      <li>OSM File:
+        <ul>
+          <li>Cho phép người dùng tải dữ liệu thô OSM (ví dụ: .pbf)</li>
+        </ul>
+      </li>
+      <li>Parameters:
+        <ul>
+          <li>Cho phép người dùng chọn sử dụng Overpass API.</li>
+        </ul>
+      </li>
+      <li>About:
+        <ul>
+          <li>Thông tin giới thiệu về plugin.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p><img src="media/quickosm-2.png" alt="QuickOSM plugin" title="QuickOSM plugin" /></p>
+
+<p>Figure 3.3. QuickOSM plugin</p>
+
+<ol>
+  <li>Tải tất các các đường cao tốc trong phạm vi HCMC_SanFernando layer.
+    <ul>
+      <li>Key: highway</li>
+      <li>Value: &lt;blank&gt; (blank nghĩa là chọn tất cả)</li>
+      <li>Layer Extent: HCMC_SanFernando</li>
+      <li>Advanced:
+        <ul>
+          <li>Chọn Node, Way, Relation, Lines, Multilinestrings</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="media/quickosm-3.png" alt="Tải các highways trong phạm vi HCMC_SanFernando layer" title="Tải các highways trong phạm vi HCMC_SanFernando layer" /></p>
+
+<p>Hình 3.4. Tải các highways trong phạm vi HCMC_SanFernando layer</p>
+
+<ol>
+  <li>Chọn Run query. Về cơ bản những gì chúng ta đang yêu cầu QuickOSM làm là lấy tất các các đối tượng đường (line/ multilinestring) được gắn thẻ “highway” và tải vào QGIS. Khi plugin hoàn thành việc tải dữ liệu, kết quả như sau:</li>
+</ol>
+
+<p><img src="media/quickosm-4.png" alt="Dữ liệu highway được tải từ OSM" title="Dữ liệu highway được tải từ OSM" /></p>
+
+<p>Hình 3.5. Dữ liệu highway được tải từ OSM</p>
+
+<ol>
+  <li>
+    <p>Cần chú ý là tất cả các lớp dữ liệu tải bởi QuickOSM là các lớp tạm (temporary layer). Bạn nên lưu các lớp này lại trên máy tính để sử dụng về sau.</p>
+  </li>
+  <li>
+    <p>Nếu bạn muốn thấy phiên bản truy vấn Overpass của Quick Query, chọn Show query để hiển thị truy vấn trong tab Query. Bạn có thể thay đổi câu truy vấn để tạo câu truy vấn phức tạp hơn.</p>
+  </li>
+</ol>
+
+<p><img src="media/quickosm-5.png" alt="Phiên bản Overpass query của Quick query để tải highway" title="Phiên bản Overpass query của Quick query để tải highway" /></p>
+
+<p>Hình 3.6. Phiên bản Overpass query của Quick query để tải highway</p>
+
+<ol>
+  <li>
+    <p>Tiếp theo, tải tất cả vị trí các nhà hàng thức ăn nhanh trong phạm vi HCMC_border layer. Mở QuickOSM plugin và nhập các tham số sau vào tab Quick query:</p>
+
+    <ul>
+      <li>Key: amenity</li>
+      <li>Value: fast_food</li>
+      <li>Layer Extent: HCMC_border</li>
+      <li>Advanced:
+        <ul>
+          <li>Chọn Node, Way, Relation, Points</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="media/quickosm-6.png" alt="Tải các điểm tiện ích với thẻ fast_food trong phạm vi lớp HCMC_border" title="Tải các điểm tiện ích với thẻ fast_food trong phạm vi lớp HCMC_border" /></p>
+
+<p>Figure 3.7: Tải các điểm tiện ích với thẻ fast_food trong phạm vi lớp HCMC_border</p>
+
+<ol>
+  <li>Kết quả như hình sau:</li>
+</ol>
+
+<p><img src="media/quickosm-7.png" alt="Fast food locations loaded from OSM" title="Fast food locations loaded from OSM" /></p>
+
+<p>Hình 3.8: Fast food locations loaded from OSM</p>
+
+<ol>
+  <li>Cần chú ý là ngay cả các dữ liệu bên ngoài phạm vi lớp polygon HCMC_border cũng được tải. Điều này là do chúng ta đang sử dụng layer extent dạng bounding box. Nếu chỉ cần các đối tượng nằm trong polygon, chúng ta có thể chọn và clip các đối tượng này (cách làm xem trong các Module kế tiếp).</li>
+</ol>
+
+<h4 id="câu-hỏi"><strong>Câu hỏi</strong></h4>
+
+<ol>
+  <li>
+    <p>True or False:</p>
+
+    <ol>
+      <li>Một đối tượng trong OSM chỉ có thể có một thẻ (tag) hoặc thuộc tính (attribute). – <strong><em>False</em></strong></li>
+      <li>Bạn chỉ có thể tải các lớp dạng điểm từ OSM. – <strong><em>False (Bạn cũng có thể tải các đô1i tượng khác như line và polygon)</em></strong></li>
+      <li>OSM chỉ có thể được sử dụng ở dạng bản đồ trực tuyến.  – <strong><em>False (Bạn cũng có thể download và sử dụng vector data có trên OSM như khi sử dụng chúng với QuickOSM plugin)</em></strong></li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="phase-2--dữ-liệu-high-resolution-settlement-layer-hrsl">Phase 2 : Dữ liệu High Resolution Settlement Layer (HRSL)</h3>
+
+<h4 id="what-is-the-high-resolution-settlement-layer-hrsl"><strong>What is the High Resolution Settlement Layer (HRSL)?</strong></h4>
+
+<p>Theo Facebook và the Center for International Earth Science Information Network (CIESIN) tại Đại học Columbia, “High Resolution Settlement Layer (HRSL) cung cấp các ước tính về phân bố dân số với độ phân giải 1 giây góc (arc-second, tương đương 30m)”.</p>
+
+<p>Population grids đã được phát triển cho 140 quốc gia và có thể được truy cập từ Humanitarian Data Exchange(<a href="https://data.humdata.org/search?organization=facebook&amp;q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22">https://data.humdata.org/search?organization=facebook&amp;q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22</a>).</p>
+
+<p>Ước tính dân số dựa trên dữ liệu điều tra dân số và ảnh vệ tinh độ phân giải cao (0.5m) từ DigitalGlobe. Các nhà ở và công trình xây dựng được xác định trong ảnh nhờ áp dụng các công nghệ thị giác máy tính (computer vision). Các vị trí này sau đó được sử dụng để xác định những nơi mà người dân sinh sống, Tiếp theo, CIESIN sử dụng phương pháp phân bổ theo tỉ lệ (proportional allocation) để phân bố dân số từ dữ liệu điểu tra dân số vào các ô lưới.</p>
+
+<p>Dữ liệu HRSL hiện tại có 7 bản đồ/ tập dữ liệu về phân bố dân số như sau:</p>
+
+<ol>
+  <li>Overall population density - Mật độ tổng dân số</li>
+  <li>Women - Dân số nữ</li>
+  <li>Men - Dân số nam</li>
+  <li>Children (ages 0-5) - Trẻ em</li>
+  <li>Youth (ages 15-24) - Thanh niên</li>
+  <li>Elderly (ages 60+) - Người già</li>
+  <li>Women of reproductive age (ages 15-49) - Phụ nữ trong độ tuổi sinh sản</li>
+</ol>
+
+<p><img src="media/hdx.png" alt="Dữ liệu HRSL trên HDX" title="Dữ liệu HRSL trên HDX" /></p>
+
+<p>Figure 3.9: Dữ liệu HRSL trên HDX</p>
+
+<h4 id="các-trường-hợp-sử-dụng-của-hrsl"><strong>Các trường hợp sử dụng của HRSL</strong></h4>
+
+<p>Lưới dân số - population grids cung cấp thông tin chính xác và có độ phân giải cao trong cả việc phân định các khu định cư ở thành thị và nông thôn, cũng như số lượng người đang sinh sống trong các khu vực này. Thông tin này hữu ích cho nhiều lĩnh vực nghiên cứu như ứng phó thảm họa và nhân đạo, quy hoạch, và phát triển hạ tầng.</p>
+
+<p>Để tìm hiểu thêm về HRSL, truy cập:</p>
+
+<p>How to work with Facebook population density data - <a href="http://www.statsmapsnpix.com/2021/01/how-to-work-with-facebook-population.html">http://www.statsmapsnpix.com/2021/01/how-to-work-with-facebook-population.html</a></p>
+
+<p>Open population and open challenges - <a href="https://engineering.fb.com/2016/11/15/core-data/open-population-datasets-and-open-challenges/">https://engineering.fb.com/2016/11/15/core-data/open-population-datasets-and-open-challenges/</a></p>
+
+<p>Connecting the world with better maps - <a href="https://engineering.fb.com/2016/02/21/core-data/connecting-the-world-with-better-maps/">https://engineering.fb.com/2016/02/21/core-data/connecting-the-world-with-better-maps/</a></p>
+
+<p>Mapping the world population one building at a time - <a href="https://arxiv.org/abs/1712.05839">https://arxiv.org/abs/1712.05839</a></p>
+
+<h4 id="bài-tập-2-tải-dữ-liệu-hrsl-trong-qgis"><strong>Bài tập 2: Tải dữ liệu HRSL trong QGIS</strong></h4>
+
+<p>Dữ liệu HRSL có trên HDX ở định dạng GeoTIFF (raster) và CSV (vector). Dữ liệu CSV là vị trí các điểm tương ứng với dân số. Trong bài tập này, một tập con dữ liệu của Việt Nam đã được chuẩn bị nhưng bạn luôn có thể download toàn bộ dữ liệu hoặc thậm chí các tập dữ liệu khác để thực hành.</p>
+
+<ol>
+  <li>Tải raster <strong>HRSL_HCMC_Population</strong> trong QGIS</li>
+</ol>
+
+<p><img src="media/hrsl-1.png" alt="HRSL cho HCMC, Vietnam" title="HRSL cho HCMC, Vietnam" /></p>
+
+<p>Hình 3.10: HRSL cho HCMC, Vietnam</p>
+
+<ol>
+  <li>Click phải vào lớp HRSL và chọn Properties</li>
+  <li>Bạn cũng có thể chỉnh sửa Symbology và Style cho raster (sẽ được đề cập trong các Module sau)</li>
+</ol>
+
+<h4 id="câu-hỏi-1"><strong>Câu hỏi</strong></h4>
+
+<ol>
+  <li>Tập dữ liệu nào được sử dụng để lấy vị trí của các khu dân cư và phân bổ dân số của các khu dân cư này?</li>
+  <li>HRSL lấy vị trí của các khu dân cư này bằng cách nào?</li>
+  <li>Dân số của một khu vực được phân bổ vào các khu dân cư này bằng cách nào?</li>
+</ol>
+
+<h3 id="thực-hành-thêm">Thực hành thêm:</h3>
+
+<h4 id="sử-dụng-overpass-api-tạo-truy-vấn-trong-osm"><strong>Sử dụng Overpass API tạo truy vấn trong OSM</strong></h4>
+
+<p>Overpass API (<a href="https://wiki.openstreetmap.org/wiki/Overpass_API">https://wiki.openstreetmap.org/wiki/Overpass_API</a>) trước đây được gọi là OSM Server Side Scripting, hoặc OSM3S trước năm 2011, là một API chỉ đọc (read-only) cho phép tùy chọn từ dữ liệu OSM. Khác với API chính, vốn tối ưu cho việc biên tập, Overpass API tối ưu cho người dùng dữ liệu trích xuất một tập con nhỏ dữ liệu trong khoảng 10 triệu phần tử dữ liệu trong OSM. Các tập con này có thể được chọn bằng các tiêu chí tìm kiếm như vị trí, loại đối tượng, thẻ, thuộc tính, lân cận, hoặc kết hợp các tiêu chí này. Overpass API đóng vai trò là backend cho các dịch vụ dựa trên OSM, như QuickOSM plugin.</p>
+
+<p>Sử dụng một truy vấn Overpass cho phép tạo truy vấn đối tượng phức tạp hơn là sử dụng QuickOSM. Ví dụ, tải tất cả các nhà hàng thức ăn nhanh trong phạm vi HCMC_border nhưng lần này chỉ tải các chi nhánh của jollibee. Nếu bạn nhìn bảng thuộc tính của lớp fast food, bạn sẽ thấy có cột <strong>name</strong>. Các cột trong bảng thuộc tính của dữ liệu OSM tương ứng với các khóa thẻ, nên nếu chúng ta chỉ muốn chọn các chi nhánh Jollibee, cần thêm một bộ lọc (filter) để chọn đối tượng có <strong>key:value</strong> là <strong>name: Jollibee</strong>. Bộ lọc này có thể được thêm vào dễ dàng trong Overpass API.</p>
+
+<ol>
+  <li>Mở QuickOSM plugin và nhập các tham số mà chúng ta đã nhập bên trên để truy vấn tất cả các nhà hàng thức ăn nhanh.</li>
+</ol>
+
+<p><img src="media/quickosm-5.png" alt="Các tham số QuickOSM để tải các nhà hàng fast food ở HCMC" title="Các tham số QuickOSM để tải các nhà hàng fast food ở HCMC" /></p>
+
+<p>Quick query để tải tất cả các điểm tiện ích được gắn thẻ fast_food</p>
+
+<ol>
+  <li>Chọn Show query.</li>
+</ol>
+
+<p><img src="media/overpass-1.png" alt="Overpass API của câu truy vấn" title="Overpass API của câu truy vấn" /></p>
+
+<p>Overpass API tương ứng để tải tất cả các tiện ích được gắn thẻ fast_food</p>
+
+<ol>
+  <li>Chỉnh sửa query bằng cách thêm vào dòng <strong>&lt;has-kv k=”name” v=”Jollibee”/&gt;</strong> sau mỗi dòng &lt;has-kv k=”amenity” v=”fast_food”/&gt;</li>
+</ol>
+
+<p><img src="media/overpass-2.png" alt="Overpass query tải tất cả các tiện ích được gắn thẻ fast food có tên là Jollibee" title="Overpass query tải tất cả các tiện ích được gắn thẻ fast food có tên là Jollibee" /></p>
+
+<p>Overpass query tải tất cả các tiện ích được gắn thẻ fast food có tên là Jollibee</p>
+
+<ol>
+  <li>Chọn Run query. Lớp OsmQuery được tải với các điểm tiện ích được gắn thẻ fast_food có tên là Jollibee
+<img src="media/overpass-3.png" alt="Các điểm tiện ích được gắn thẻ fast food có tên là Jollibee được tải từ OSM" title="Các điểm tiện ích được gắn thẻ fast food có tên là Jollibee được tải từ OSM" /></li>
+</ol>
+
+<p>Các điểm tiện ích được gắn thẻ fast food có tên là Jollibee được tải từ OSM</p>
+
+<ol>
+  <li>Try it with other fast food chains.</li>
+</ol>
+
+<p>Bạn cũng có thể thử nghiệm và tạo các Overpass query trên Overpoass turbo (<a href="https://wiki.openstreetmap.org/wiki/Overpass_turbo">https://wiki.openstreetmap.org/wiki/Overpass_turbo</a>), một ứng dụng web khai phá dữ liệu OSM.</p>
+
+<h3 id="thực-hành-các-kỹ-năng-mới">Thực hành các kỹ năng mới:</h3>
+
+<h4 id="load-more-features-from-osm-using-the-quickosm-plugin"><strong>Load more features from OSM using the QuickOSM plugin</strong></h4>
+
+<ol>
+  <li>Tải thêm nhiều đối tượng (point, line, polygon) như bệnh viện, trường học,…sử dụng QuickOSM plugin</li>
+</ol>
+
+<h3 id="mẹo">Mẹo</h3>
+
+<p>Nếu bạn không thể tìm thấy đối tượng bạn muốn hoặc cần trên OSM, bạn luôn có thể thêm hoặc chỉnh sửa các đối tượng trên bản đồ. Đăng ký tại<a href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a> và bắt đầu đóng góp!.</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Module 5 - Making Maps | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Module 5 - Making Maps page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Module 5 - Making Maps">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Module 5 - Making Maps</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/india/module5/module5.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="module-5---making-maps">Module 5 - Making Maps</h1>
+
+<p><strong>Author</strong>: Ketty, Ben Hur</p>
+
+<h2 id="pedagogical-introduction">Pedagogical Introduction</h2>
+
+<p>This module will provide you with an overview of the common steps needed to complete a map in QGIS. At the end of the module, participants will know the following concepts;</p>
+
+<ul>
+  <li>Map canvas and related layers</li>
+  <li>The print layout and print layout</li>
+  <li>Map elements and properties</li>
+</ul>
+
+<p>In addition you’ll have learned the following skills;</p>
+
+<ul>
+  <li>Using the print layout to make a map</li>
+  <li>Adding map elements to the map</li>
+  <li>Managing different print layouts</li>
+</ul>
+
+<h2 id="required-tools-and-resources">Required tools and resources</h2>
+
+<ul>
+  <li>Working computer</li>
+  <li>Internet access</li>
+  <li>QGIS 3.16 or later</li>
+  <li>Bangalore administrative boundary layer (inside <a href="/vietnam/india/module5/data/module5.gpkg">module5.gpkg</a>)</li>
+  <li>Bangalore clinics (inside <a href="/vietnam/india/module5/data/module5.gpkg">module5.gpkg</a>)</li>
+  <li>IND states and union territories (inside <a href="/vietnam/india/module5/data/module5.gpkg">module5.gpkg</a>)</li>
+  <li><a href="/vietnam/india/module5/data/HRSL_Bangalore_Population.tif">Bangalore High Resolution Settlement Layer</a></li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>Basic knowledge of operating a computer</li>
+  <li>An understanding of all previous modules</li>
+</ul>
+
+<h2 id="additional-resources">Additional resources</h2>
+
+<ul>
+  <li>QGIS Map LayOut - <a href="https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html">https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html</a></li>
+  <li>Layout Templates - <a href="https://layout-hub.github.io/">https://layout-hub.github.io/</a></li>
+  <li>Style Manager - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html">https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html</a></li>
+  <li>Style Library - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html">https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html</a></li>
+</ul>
+
+<h2 id="thematic-introduction">Thematic introduction</h2>
+
+<p>Let’s start with an example:</p>
+
+<p>To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Bangalore district in the Philippines. You’ll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.</p>
+
+<h3 id="breakdown-of-the-concepts">Breakdown of the concepts</h3>
+
+<p>This module will focus on the following key map making concepts; map canvas and related layers, the print layout and map elements and properties. First, here are short definitions on each;</p>
+
+<ul>
+  <li>the <strong>map canvas and related layers</strong>: is probably the most important widget within QGIS because it shows the map composed from overlaid map layers and allows interaction with the map and layers. This is covered in the Module 0: Introduction to QGIS</li>
+  <li>the <strong>print layout and print layout</strong> : The print layout provides growing layout and printing capabilities. It allows you to add elements such as the QGIS map canvas, text labels, images, legends, scale bars, basic shapes, arrows, attribute tables and HTML frames. With the Print layout you can create nice maps and atlases that can be printed or saved as PDF-file, an image or an SVG-file. This is a powerful way to share geographical information produced with QGIS that can be included in reports or published. You can save the layout as a template and load it again in another session. Finally, generating several maps based on a template can be done through the atlas generator. The image below shows the print layout and print layout interface. This interface opens when you open a new print layout.</li>
+</ul>
+
+<p><img src="media/print_comp2.png" alt="Print layout" title="Print layout" /></p>
+
+<p>Figure 5.1: Print layout</p>
+
+<ul>
+  <li><strong>map elements and properties</strong>: Maps contain lots of information. Most maps will have the five following things: a Title, a Legend, a Grid, a Compass Rose to indicate direction, and a Scale. The Title tells you what is being represented on the map</li>
+</ul>
+
+<h2 id="main-content">Main content</h2>
+
+<h3 id="phase-1-title-exporting-the-map-canvas">Phase 1 title: Exporting the map canvas</h3>
+
+<p>In this tutorial, we’ll show two ways to ‘Export the map canvas’ to the QGIS print layout. The first method is straightforward while the second method explores the more advanced capabilities provided by the print layout.</p>
+
+<h4 id="first-method-export-the-map-canvas-without-the-print-layout"><strong>First method: Export the map canvas without the print layout</strong></h4>
+
+<ol>
+  <li>The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data. Add map decorations by clicking <strong>View ‣ Decorations</strong>. Select your preferred map decoration. For example you may add the Title label, Scale bar and Copyright Label. For each decoration you’ll have to specify settings in a dialogue box.</li>
+  <li>The final step is to export the map to either image or pdf format. To do this, Click <strong>Project ‣ Import/Export</strong> and then select your prefered export format. The export dialogue below should appear.</li>
+</ol>
+
+<p><img src="media/export-map-canvas-image.png" alt="Exporting the map canvas as image" title="Exportzing the map canvas as image" /></p>
+
+<p><img src="media/export-map-canvas.png" alt="Exporting the map" title="Exporting the map" /></p>
+
+<p>Figure 5.2: Exporting the map</p>
+
+<ol>
+  <li>Click <strong>Save</strong>. The map in the qgis canvas will be saved as a pdf or image document. Browse to the location where the file is saved and you’re now able to print or share the map.</li>
+</ol>
+
+<p><img src="media/exported-map-canvas.png" alt="Map canvas exported as image" title="Map canvas exported as image" /></p>
+
+<p>Figure 5.3: Map canvas exported as image</p>
+
+<h4 id="second-method-export-the-map-canvas-to-the-print-layout"><strong>Second method: Export the map canvas to the print layout</strong></h4>
+
+<ol>
+  <li>In this tutorial, we’ll make a map showing the 1.) location of health centres and 2.) population density of Bangalore district in the Philippines. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data.</li>
+</ol>
+
+<p><img src="media/new-print-layout.png" alt="Creating new Print Layout" title="Creating new Print Layout" /></p>
+
+<p>Figure 5.4: Creating new Print Layout</p>
+
+<ol>
+  <li>The map canvas can now be exported to the print Layout. Click the ‘new print layout layout button’ <img src="media/newprint_composer.png" alt="New Print Layout" title="New Print Layout" />. This can be accessed via the tool bar. Alternatively, access using the ‘Projects’ menu bar. A title dialogue will open, prompting you to type the title of the Print Layout. Type ‘Bangalore’ and Click OK.</li>
+</ol>
+
+<p><img src="media/new-print-layout-name.png" alt="Naming the Print Layout" title="Naming the Print Layout" /></p>
+
+<p>Figure 5.5: Naming the Print Layout</p>
+
+<ol>
+  <li>The print layout will open</li>
+</ol>
+
+<p><img src="media/new-print-layout-window.png" alt="The Print Layout window" title="The Print Layout window" /></p>
+
+<p>Figure 5.6: The Print Layout window</p>
+
+<ol>
+  <li>You’ll notice the print layout canvas is empty. To add the styled map from the QGIS canvas, Click the ‘Add new map to layout button’ <img src="media/add_new_map_to_layout.png" alt="alt_text" title="image_tooltip" />, left click your mouse and draw a rectangle in the white space at the center of the print layout. The map should be added. You’ve just exported a map to the print layout. It’s now possible to add all other map elements like the title, legend, grids etc.</li>
+</ol>
+
+<p><img src="media/print-layout-map.png" alt="Add map to Print Layout" title="Add map to Print Layout" /></p>
+
+<p>Figure 5.7: Add map to Print Layout</p>
+
+<h4 id="quiz-questions"><strong>Quiz questions</strong></h4>
+
+<ol>
+  <li>What is the qgis map canvas? (check boxes)</li>
+  <li>What is the use of the print layout? (check boxes)</li>
+  <li>Which of the following is not a map element? (radio button)</li>
+</ol>
+
+<h4 id="quiz-answers"><strong>Quiz answers</strong></h4>
+
+<ol>
+  <li>
+    <p>a. shows the map composed from overlaid map layers</p>
+
+    <p>b. allows interaction with the map and layers</p>
+
+    <p>c. a widget for making maps</p>
+  </li>
+  <li>
+    <p>a. provides growing layout and printing capabilities</p>
+
+    <p>b. allows you to add map elements</p>
+
+    <p>c. handle both exporting and printing of maps</p>
+  </li>
+  <li>
+    <p>a. Title</p>
+
+    <p>b. Scale</p>
+
+    <p>c. Legend</p>
+
+    <p>d. Colors and designs</p>
+  </li>
+</ol>
+
+<h3 id="phase-2-title-adding-and-editing-map-elements-to-the-print-layout">Phase 2 title: Adding and editing map elements to the print layout</h3>
+
+<h4 id="contenttutorial"><strong>Content/Tutorial</strong></h4>
+
+<p>Now that the styled map has been added to print layout, it’s now time to add the relevant map elements like the title, scale, legend, grid, metadata etc to the print layout. Most of the buttons are located to the left of the print layout.</p>
+
+<ol>
+  <li>Click the ‘Add label’ <img src="media/add_title.png" alt="alt_text" title="image_tooltip" /> button, hold down the left mouse button and draw a rectangle where you’d like to place the title of the map. Type the title under the ‘Main properties’ menu on the right side of the print layout. The font properties can be changed under the ‘Appearance’ menu item.</li>
+</ol>
+
+<p><img src="media/print-layout-with-title.png" alt="Add title of the map" title="Add title of the map" /></p>
+
+<p>Figure 5.8: Add title of the map</p>
+
+<ol>
+  <li>Next, we’ll add the legend and scale. A data attribution statement can be added using the ‘Add label’ button Hover over the button on the left of the print layout and click the preferred button. Follow the same steps as in 1. Above to add the map element to the print layout. You can add other map elements but be careful that the map doesn’t get too cluttered.</li>
+</ol>
+
+<p><img src="media/scale-bar.png" alt="Scale bar" title="Scale bar" /></p>
+
+<p>Figure 5.9a: Add scale bar to the map</p>
+
+<p><img src="media/legend.png" alt="Legend" title="Legend" /></p>
+
+<p>Figure 5.9b: Add legend to the map</p>
+
+<p><img src="media/attribution.png" alt="Attribution" title="Attribution" /></p>
+
+<p>Figure 5.9c: Add attribution to the map</p>
+
+<ol>
+  <li>
+    <p>If the map layout is satisfactory, the map can be exported as a pdf, png, jpeg or svg, ready for printing otherwise save the layout. All saving functionality can be accessed via the ‘layout’ menu.</p>
+  </li>
+  <li>
+    <p>Save the map as an image using via <strong>Layout ‣ Export as Image…</strong> or by clicking the <strong>Export as Image</strong> button <img src="media/export-image-btn.png" alt="Export map to image" title="Export map to image" />. QGIS will ask you what file to save the map to as well as the image parameters.</p>
+  </li>
+</ol>
+
+<p><img src="media/img-parameters.png" alt="Image parameters" title="Image parameters" /></p>
+
+<p>Figure 5.10: Add attribution to the map</p>
+
+<p><img src="media/exported-map.png" alt="Exported map as imgage" title="Exported map as imgage" /></p>
+
+<p>Figure 5.11: Exported map as imgage</p>
+
+<h4 id="quiz-questions-1"><strong>Quiz questions</strong></h4>
+
+<ol>
+  <li>Under which of the following tabs can you change the properties of map elements? (radio button)</li>
+  <li>What’s the difference between the print layout and print layout</li>
+  <li>How can you add attribution text to the map layout</li>
+</ol>
+
+<h4 id="quiz-answers-1"><strong>Quiz answers</strong></h4>
+
+<ol>
+  <li>
+    <p>a. Composition</p>
+
+    <p>b. Item properties</p>
+
+    <p>c. Atlas generation</p>
+  </li>
+  <li>Print layout allows you to add maps from the map canvas while the print layout allows you to compose your map</li>
+  <li>Add a title box, then type the attribution text. Note that the title box allows you to add all forms of text to your map.</li>
+</ol>
+
+<h3 id="phase-3-title--automating-map-creation-using-atlas-capabilities">Phase 3 title : Automating map creation using Atlas capabilities</h3>
+
+<h4 id="contenttutorial-1"><strong>Content/Tutorial</strong></h4>
+
+<p>If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different states and union territories of the Philippines as an example, here’s Administrative Boundaries for the 36 states and union territories;</p>
+
+<p><img src="media/atlas-coverage.png" alt="Coverage layer" title="Coverage layer" /></p>
+
+<p>Figure 5.12: Coverage layer</p>
+
+<p><img src="media/atlas-attr.png" alt="Attribute table" title="Attribute table" /></p>
+
+<p>Figure 5.13: Attribute table</p>
+
+<ol>
+  <li>
+    <p>This layer will serve as out coverage layer which means that the QGIS Atlas will 1 map for each of the features in this coverage layer. All in all, 36 maps will be generated.</p>
+  </li>
+  <li>
+    <p>Open or create a new Print Layout and add a map.</p>
+  </li>
+</ol>
+
+<p><img src="media/atlas-print-layout.png" alt="Atlas Print Layout" title="Atlas Print Layout" /></p>
+
+<p>Figure 5.14: Atlas Print Layout</p>
+
+<ol>
+  <li>In the right pane of the Print Layout, make sure to select the <strong>Atlas</strong> menu and check the <strong>Generate an atlas</strong> box. You can also open the Atlas Settings using the Atlas Settings button <img src="media/atlas-settings-btn.png" alt="Atlas Settings" title="Atlas Settings" /> on the Atlas toolbar.</li>
+</ol>
+
+<p><img src="media/generate-atlas.png" alt="Atlas Generation" title="Atlas Generation" /></p>
+
+<p>Figure 5.15: Atlas Generation</p>
+
+<ol>
+  <li>The next step is to choose the coverage layer; The coverage layer is the index layer used to create each page. One map/page for the Atlas will be generated for each feature in the coverage layer. In our case, using the IND_states and union territories coverage layer will create a map for each of the 36 states and union territories. QGIS Atlas dynamically changes the view-extent to each feature in the coverage layer. You can opt to make the coverage layer hidden in the maps that you create (i.e. the coverage layer will not be visible in the Print Layout) and select what to name each page of your Atlas. You can also perform some filtering and sorting of the coverage layer if you need to. For the <strong>Output</strong>, you can opt to have a single file as an output by checking the <strong>Singe file export when possible</strong> checkbox. If unchecked, you will generate 1 file per map.</li>
+</ol>
+
+<p><img src="media/coverage-layer.png" alt="Select Coverage Layer" title="Select Coverage Layer" /></p>
+
+<p>Figure 5.16: Select Coverage Layer</p>
+
+<ol>
+  <li>Now that we’ve set the coverage layer, we should tell the Print Layout to use the atlas to control the extent of the maps (area visible on the printable map) that we will generate. In the <strong>Item Properties</strong> tab, check the box for <strong>Controlled By Atlas</strong></li>
+</ol>
+
+<p><img src="media/atlas-controlled.png" alt="Controlled by Atlas" title="Controlled by Atlas" /></p>
+
+<p>Figure 5.17: Make sure that the map extent is controlled by the Atlas</p>
+
+<ol>
+  <li>To preview your Atlas, click on the Preview Atlas button <img src="media/atlas-preview-btn.png" alt="Preview Atlas button" title="Preview Atlas button" /> on the Atlas Toolbar. This will show you the 36 maps that you generated. Use the Atlas toolbar <img src="media/atlas-toolbar-nav.png" alt="Atlas toolbar" title="Atlas toolbar" /> to navigate the Atlas maps.</li>
+</ol>
+
+<p><img src="media/atlas-preview.png" alt="Atlas Preview" title="Atlas Preview" /></p>
+
+<p>Figure 5.18: Atlas Preview</p>
+
+<ol>
+  <li>You can export the Atlas maps via the <strong>Export Atlas</strong> button <img src="media/atlas-export-btn.png" alt="Export Atlas button" title="Export Atlas button" /> either as images or PDFs. Select <strong>Export Atlas as Image</strong>. You should have 36 maps generated wher each map shows the extent of the province.</li>
+</ol>
+
+<p><img src="media/atlas-outputs.png" alt="Atlas Outputs" title="Atlas Outputs" /></p>
+
+<p>Figure 5.18: Atlas Outputs</p>
+
+<ol>
+  <li>
+    <p><strong>TIP</strong>: For this example we only mapped the coverage layer. The power of the Atlas is when we map several layers. For example, we have the clinics, road network, and population density data for the entire country loaded as layers in QGIS. We would then want to create one map for each of the states and union territories showing these same layers. Using the Atlas would require us to only create one layout template and let the Atlas handle the generation of the other maps based on the coverage layer that we use.</p>
+  </li>
+  <li>
+    <p><strong>TIP</strong>: You can use QGIS Expressions and Data Defined overrides for setting the other map elements in your Atlas so that they also dynamically change depending on the coverage layer feature being mapped. For example, you can use a QGIS expression calling the value of the NAME_1 field on your label so that it dynamically changes into the value of NAME_1 for the current feature being mapped.</p>
+  </li>
+</ol>
+
+<p>For more information about the QGIS Atlas, see: <a href="https://www.youtube.com/watch?v=tOnMJBUvEjY">https://www.youtube.com/watch?v=tOnMJBUvEjY</a>.</p>
+
+<h4 id="quiz-questions-2"><strong>Quiz questions</strong></h4>
+
+<p>n/a</p>
+
+<h4 id="quiz-answers-2"><strong>Quiz answers</strong></h4>
+
+<p>n/a</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

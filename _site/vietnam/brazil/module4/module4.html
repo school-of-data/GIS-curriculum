@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Módulo 4 - Camadas de estilo | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Módulo 4 - Camadas de estilo page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Módulo 4 - Camadas de estilo">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Módulo 4 - Camadas de estilo</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/brazil/module4/module4.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="módulo-4---camadas-de-estilo">Módulo 4 - Camadas de estilo</h1>
+
+<p><strong>Autor</strong>: Ketty</p>
+
+<h2 id="introdução-pedagógica">Introdução pedagógica</h2>
+
+<p>Este módulo foi desenvolvido para te ensinar como mudar a aparência visual de um mapa selecionando símbolos apropriados, cores de mapa e aplicando efeitos apropriados. Ao final do módulo, você deverá conhecer conceitos como simbologia e estilos de mapas. Além disso, você aprenderá as seguintes habilidades;</p>
+
+<ul>
+  <li>camadas de estilo</li>
+  <li>simbologia básica de raster e vetor e como aplicá-los a uma camada</li>
+  <li>modos de mesclagem (blending) e efeitos de desenho</li>
+  <li>usando expressões para executar uma operação espacial</li>
+</ul>
+
+<h2 id="ferramentas-e-recursos-necessários">Ferramentas e recursos necessários</h2>
+
+<ul>
+  <li>Computador</li>
+  <li>Conexão com a Internet</li>
+  <li>QGIS 3.16 ou posterior</li>
+  <li>Camada do limite administrativo do Rio de Janeiro (dentro de <a href="/vietnam/brazil/module4/data/module4.gpkg">module4.gpkg</a>)</li>
+  <li>Clínicas do Rio de Janeiro (dentro de <a href="/vietnam/brazil/module4/data/module4.gpkg">module4.gpkg</a>)</li>
+  <li><a href="data/hrsl_rj_capital_populacao.tif">Camada de assentamentos de alta resolução do Rio de Janeiro</a></li>
+</ul>
+
+<h2 id="pré-requisitos">Pré-requisitos</h2>
+
+<ul>
+  <li>Conhecimento básico de operação de um computador</li>
+  <li>Compreensão razoável de todos os módulos anteriores</li>
+</ul>
+
+<h2 id="recursos-adicionais">Recursos adicionais</h2>
+
+<ul>
+  <li>Simbologia QGIS - [https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html ] (https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html)</li>
+  <li>Repositório de compartilhamento de estilo - [https://www.gislounge.com/qgis-style-sharing-repository/ ] (https://www.gislounge.com/qgis-style-sharing-repository/)</li>
+  <li>Estilos - <a href="https://plugins.qg is.org/styles/">https://plugins.qgis.org/styles/</a></li>
+  <li>Style Hub - <a href="https://style-hub.github.io/">https://style-hub.github.io/</a></li>
+  <li>Hillshade no QGIS - [https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html] (https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html)</li>
+  <li>Mapeando icebergs no QGIS - <a href="https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+</ul>
+
+<h2 id="introdução-temática">Introdução temática</h2>
+
+<p>Vamos começar com um exemplo:</p>
+
+<p>Vamos imaginar que você está em uma nova cidade, talvez como turista, a lazer ou a negócios. A cidade tem uma gama de locais que você precisa ver, incluindo museus, cafés, praias, monumentos, lojas culturais e mercados. Em seguida, você recebe um mapa de papel da cidade que mostra a localização dos pontos de todos os lugares imperdíveis da cidade. Os pontos turísticos estão todos marcados com pontos vermelhos. Em sua opinião, este mapa facilitaria seu passeio pela nova cidade? Eu imaginaria que não.</p>
+
+<p>Por isso é sempre importante fazer um “Mapa com diferentes símbolos e cores”. O que você vê em seu mapa depois de aplicar conceitos de estilo é uma representação visual dinâmica dos dados com os quais você está trabalhando.</p>
+
+<h3 id="painéis-guias-e-tipos-de-renderização-principais">Painéis, guias e tipos de renderização principais</h3>
+
+<h4 id="painel-de-estilo-da-camada"><strong>Painel de estilo da camada</strong></h4>
+
+<p>Este painel é um atalho para alguns dos recursos da caixa de diálogo de propriedades da camada. Na verdade, ele oferece uma maneira rápida e prática de definir a renderização e o comportamento de uma camada e de visualizar seus efeitos sem abrir a caixa de diálogo de propriedades da camada.</p>
+
+<p>Além de evitar que você tenha que lidar com o janela das propriedades da camada, ele também evita que você congestione a tela com diálogos de recursos, visto que incorpora a maioria deles (seletor de cores, propriedades de efeitos, edição de regras, substituição de rótulos…): por exemplo, clicar nos botões de cores dentro do painel de estilo da camada faz com que a caixa de diálogo do seletor de cores seja aberta dentro do próprio painel de estilo da camada, e não como uma caixa de diálogo separada.</p>
+
+<p>Em uma lista suspensa de camadas atuais no painel de camadas, selecione um item e:</p>
+
+<ul>
+  <li>defina sua simbologia, transparência e histograma no caso de uma camada raster. Essas opções são as mesmas disponíveis na caixa de diálogo Propriedades do raster (<a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog</a>).
+    <ul>
+      <li>Acesse o Diálogo de Propriedades Raster clicando duas vezes em Camada Raster-&gt; Geral</li>
+    </ul>
+  </li>
+  <li>defina sua simbologia e rótulos. Essas opções são as mesmas disponíveis na caixa de diálogo Propriedades do vetor (<a href="https://docs. qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog</a>).
+    <ul>
+      <li>Acesse a caixa de diálogo Propriedades do vetor clicando duas vezes em Camada do vetor-&gt; Geral</li>
+    </ul>
+  </li>
+  <li>siga todo o histórico de alterações que você aplicou ao estilo da camada no projeto atual; você pode, portanto, cancelar ou restaurar qualquer estado selecionando-o na lista e clicando em Aplicar.</li>
+</ul>
+
+<p>Outro recurso poderoso deste painel é a caixa de seleção Atualização ao vivo. Marque-o e suas alterações serão automaticamente renderizadas na tela do mapa conforme você avança. Assim, você não precisa mais clicar no botão Aplicar.</p>
+
+<p>Para ativar o painel, clique em Visão -&gt; Painéis e, a seguir, marque Estilização de camadas.</p>
+
+<p><img src="media/layer-styling.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 4.1: Painel de estilo da camada</p>
+
+<h4 id="guia-simbologia-nas-propriedades-das-camadas"><strong>Guia Simbologia nas Propriedades das camadas</strong></h4>
+
+<p>Para acessar a guia Simbologia, clique duas vezes na camada para abrir as Propriedades de Camada -&gt; Clique em Simbologia</p>
+
+<p>Aqui, você pode especificar as configurações como o tipo de renderização, banda, valores mínimos e máximos, renderização de cores e reamostragem (resampling). Nas capturas de tela abaixo, você pode ver as guias de simbologia para conjuntos de dados vetoriais e raster, respectivamente;</p>
+
+<p><img src="media/style-vector.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p><img src="media/style-raster.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 4.2: Guia de simbologia para dados vetoriais e raster, respectivamente</p>
+
+<h4 id="renderização-raster-renderização-de-banda"><strong>Renderização raster: renderização de banda</strong></h4>
+
+<p>QGIS oferece quatro tipos diferentes de renderização. A escolha do renderizador depende do tipo de dados. O tipo de renderização padrão é a cor cinza de banda única. Você terá que alterá-lo para o tipo apropriado com base no tipo de dados.</p>
+
+<ul>
+  <li>Cores multibanda  (<a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color</a>) - se o arquivo vier com várias bandas (por exemplo, uma imagem de satélite com várias bandas).</li>
+  <li>Valores paletados / únicos (<a href="">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#paletted</a>) - para arquivos de banda única que vêm com uma paleta indexada (por exemplo, um mapa topográfico digital), ou para uso geral de paletas para renderizar camadas raster.</li>
+  <li>Faixa única de cinzas (<a href="https://docs.qgis.org/3.16/en/docs/ user_manual / working_with_raster / raster_properties.html # singleband-grey">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray</a>) - a imagem será renderizada como cinza (uma banda só dela). O QGIS escolherá este renderizador se o arquivo não for multibanda nem paletizado (por exemplo, um mapa de relevo sombreado).</li>
+  <li>Banda simples falsa-cor (<a href="https://docs.qgis.org/3.16/en/docs/ user_manual / working_with_raster / raster_properties.html # label-colormaptab">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab</a>) - este renderizador pode ser usado para arquivos com uma paleta contínua ou mapa de cores (por exemplo, um mapa de elevação).</li>
+  <li>Hillshade (<a href="https://docs.qgis.org/3.16/en/docs/ user_manual / working_with_raster / raster_properties.html # hillshade-renderer">(https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer</a>) - Cria hillshade (sombras de colina) a partir de uma banda.</li>
+</ul>
+
+<h4 id="renderização-de-vetor"><strong>Renderização de vetor</strong></h4>
+
+<p>Quando você carrega camadas de dados espaciais no QGIS Desktop, elas são estilizadas com uma renderização de símbolo único aleatória. Para alterar isso, clique em Camada-&gt; Propriedades-&gt; Estilo.</p>
+
+<p>Existem várias opções de renderização disponíveis no menu no canto superior esquerdo:</p>
+
+<ul>
+  <li>Símbolo único - esta é a renderização padrão em que um único símbolo é aplicado a todas feições em uma camada.</li>
+  <li>Categorizado - permite que você escolha um campo de atributo categórico para estilizar a camada. Escolha o campo e clique em Classificar e o QGIS aplicará um símbolo diferente a cada valor único no campo. Você também pode usar o botão Definir expressão de coluna para aprimorar o estilo com uma expressão SQL.</li>
+  <li>Graduado - permite que você classifique os dados por um atributo de campo numérico em categorias discretas. Você pode especificar os parâmetros da classificação (tipo de classificação e número de classes) e pode usar o botão Definir expressão de coluna para aprimorar o estilo com uma expressão SQL.</li>
+  <li>Com base em regras - use para criar estilos baseados em regras personalizadas. As regras serão baseadas em expressões SQL.</li>
+  <li>Deslocamento de pontos - se você tiver uma camada de pontos com pontos empilhados, esta opção pode ser usada para deslocar os pontos para que fiquem todos visíveis.</li>
+  <li>Polígonos invertidos - este é um novo renderizador que permite que uma camada de polígonos seja convertida em uma máscara. Por exemplo, um polígono de limite de cidade usado com este renderizador se tornaria uma máscara ao redor da cidade. Também permite o uso de renderizadores categorizados, graduados e baseados em regras e expressões SQL.</li>
+</ul>
+
+<h2 id="conteúdo-principal">Conteúdo principal</h2>
+
+<h3 id="fase-1-raster-básico-e-simbologia-vetorial">Fase 1: Raster básico e simbologia vetorial</h3>
+
+<p>A simbologia de dados vetoriais pode variar de acordo com a transparência, cor, rotação e tamanho.</p>
+
+<h4 id="conteúdo"><strong>Conteúdo</strong></h4>
+
+<ul>
+  <li>Propriedades da camada e menu de simbologia</li>
+  <li>Tipos de renderização vetorial</li>
+  <li>Tipos de renderização raster (renderização de banda)</li>
+</ul>
+
+<h4 id="exemplo-1-renderização-vetorial"><strong>Exemplo 1: Renderização vetorial</strong></h4>
+
+<ol>
+  <li>Para demonstrar este exemplo, nós usaremos dois conjuntos de dados de exemplo; 1. Clínicas (equipamentos de saúde, identificados no OpenStreetMap com a tag “clinics”) e 2. Limite administrativo da cidade do Rio de Janeiro</li>
+  <li>Adicione as duas camadas vetoriais ao QGIS; Clique no botão Adicionar camada vetorial <img src="media/add-vector.png" alt="alt_text" title="image_tooltip" /> ou use o painel do navegador.</li>
+  <li>É assim que eles são renderizados por padrão. Você notará que temos uma camada de polígono e uma camada de pontos. O próximo passo é mudar a simbologia de cada um deles. As cores de preenchimento podem não ser as mesmas do que as você está vendo aqui, mas isso não é um problema porque o QGIS seleciona cores aleatoriamente quando você adiciona uma camada.</li>
+</ol>
+
+<p><img src="media/default-vector-render.png" alt="Renderização padrão" title="Renderização padrão" />Renderização padrão</p>
+
+<p>Figura 4.3:</p>
+
+<ol>
+  <li>Clique duas vezes na camada vetorial de polígono, que também é a camada de limite administrativo da cidade do Rio de Janeiro</li>
+  <li>Selecione a <strong>Aba Simbologia</strong> no menu que aparece</li>
+  <li>Altere a <strong>Cor do preenchimento</strong> para <strong>Preenchimento transparente</strong>. Dica: Clique na seta suspensa em Cor do preenchimento</li>
+  <li>O resultado deve ser o seguinte. Você pode notar que a opção sem preenchimento não tem cor</li>
+</ol>
+
+<p><img src="media/no-fill-render.png" alt="Sem renderização de preenchimento para o polígono" title="Sem renderização de preenchimento para o polígono" /></p>
+
+<p>Figura 4.4: Polígono sem preenchimento</p>
+
+<ol>
+  <li>A próxima etapa é simbolizar a camada de ponto que também é a camada <code class="language-plaintext highlighter-rouge">rj_clinics</code></li>
+  <li>Clique duas vezes na <strong>camada <code class="language-plaintext highlighter-rouge">rj_clinics</code></strong> para abrir o diálogo <strong>Propriedades da camada</strong>. Altere o tipo de renderização de Símbolo Único para <strong>Categorizado</strong>, selecione <strong>Valor</strong> como <code class="language-plaintext highlighter-rouge">amenity</code>. O valor representa o campo de interesse. Especifique o símbolo e a escala de cor. Em seguida, clique em classificar.</li>
+</ol>
+
+<p><img src="media/vector-style.png" alt="Diálogo de Propriedades da Camada" title="Diálogo de Propriedades da Camada" /></p>
+
+<p>Figura 4.5: Diálogo de Propriedades da Camada</p>
+
+<ol>
+  <li>O mapa resultante deve ser o seguinte</li>
+</ol>
+
+<p><img src="media/final-vector-render.png" alt="Renderização vetorial final" title="Renderização vetorial final" /></p>
+
+<p>Figura 4.6: Renderização vetorial final</p>
+
+<ol>
+  <li>Lembre-se de organizar as camadas no <strong>Painel de camadas</strong> de forma que a camada poligonal fique abaixo da camada de pontos. Isso torna a camada de pontos visível.</li>
+</ol>
+
+<h4 id="exemplo-2-renderização-raster"><strong>Exemplo 2: Renderização raster</strong></h4>
+
+<ol>
+  <li>Clique duas vezes na camada raster, que também é a camada de densidade populacional. Isso também significa que ela é um conjunto de dados normalizado e, portanto, pode ser visualizado como um mapa coroplético.</li>
+  <li>Selecione a guia de simbologia no menu que aparece</li>
+  <li>Altere o modo de estilo para ‘Banda simples falsa-cor’</li>
+</ol>
+
+<p><img src="media/qgis9.png" alt="Menu de simbologia" title="Menu de simbologia" /></p>
+
+<p>Figura 4.7: Menu de simbologia</p>
+
+<ol>
+  <li>Especifique a interpolação, escala de cor e modo. Clique em classificar. O resultado é um mapa coroplético mostrando a densidade populacional na cidade do Rio de Janeiro.</li>
+</ol>
+
+<p><img src="media/hrsl-style.png" alt="Densidade populacional da cidade do Rio de Janeiro" title="Densidade populacional da cidade do Rio de Janeiro" /></p>
+
+<p>Figura 4.8: Densidade populacional da cidade do Rio de Janeiro</p>
+
+<ol>
+  <li>Amplie para ver o novo mapa em maior detalhe</li>
+</ol>
+
+<p><img src="media/zoom-in.png" alt="Mapa ampliado" title="Mapa ampliado" /></p>
+
+<p>Figura 4.9: Mapa ampliado</p>
+
+<ol>
+  <li>Como alternativa, use o <strong>painel Estilização de camadas</strong>.</li>
+</ol>
+
+<h4 id="perguntas-do-questionário"><strong>Perguntas do questionário</strong></h4>
+
+<ol>
+  <li>O que é simbologia de camada?</li>
+  <li>Quais dos tipos de renderização abaixo são aplicáveis ​​para dados vetoriais?</li>
+  <li>Quais são os tipos de renderização raster?</li>
+</ol>
+
+<h4 id="respostas-do-questionário"><strong>Respostas do questionário</strong></h4>
+
+<ol>
+  <li>
+    <p>a. elemento gráfico representado como um marcador, traço ou preenchimento
+b. um ponteiro para os dados originais
+c. um repositório de diferentes esquemas de cores</p>
+  </li>
+  <li>
+    <p>a. renderizador de símbolo único
+b. renderizador sem símbolos
+c. renderizador categorizado
+d. renderizador graduado
+e. símbolo proporcional
+f. renderizador de cluster de ponto</p>
+  </li>
+  <li>
+    <p>a. pseudocolor de banda única
+b. cinza de banda única
+c. paletted</p>
+  </li>
+  <li>
+    <p>d. cor multibanda</p>
+  </li>
+</ol>
+
+<h3 id="fase-2-modos-de-mesclagem-e-efeitos-de-desenho">Fase 2: modos de mesclagem e efeitos de desenho</h3>
+
+<h4 id="conteúdo-1"><strong>Conteúdo</strong></h4>
+
+<ul>
+  <li>Alterando estruturas de símbolos</li>
+  <li>Alterando efeitos de desenho e modos de mesclagem (blending)</li>
+  <li>Visualização impactante de dados</li>
+</ul>
+
+<h4 id="tutorial"><strong>Tutorial</strong></h4>
+
+<ol>
+  <li>Depois de carregar ambas as camadas no QGIS, a tela terá a aparência abaixo. Você notará que ambas as camadas têm um estilo simples. Este tutorial explicará como alterar efeitos de desenho e modos de mesclagem para uma melhor visualização.</li>
+</ol>
+
+<p><img src="media/initial-workspace.png" alt="A área de trabalho inicial esperada" title="A área de trabalho inicial esperada" /></p>
+
+<p>Figura 4.10: A área de trabalho inicial esperada</p>
+
+<ol>
+  <li>Abra a janela Propriedades da camada e clique no item de menu Simbologia para a camada de limites administrativos. Dica: faça isso clicando duas vezes na camada ou use o painel de estilo da camada. Ative o painel de estilo da camada clicando em: Visão -&gt; Painéis -&gt; Estilo da camada.</li>
+</ol>
+
+<p>Na parte inferior do menu Simbologia, há uma caixa de seleção para efeitos do Desenho. Vamos habilitar isso e, em seguida, clicar no botão personalizar efeitos <img src="media/customise-effects-button.png" alt="Alt_text" title="image_tooltip" /> à sua direita:</p>
+
+<p><img src="media/draw-effects.png" alt="Janela Propriedades da camada e menu de simbologia" title="Janela Propriedades da camada e menu Simbologia" /></p>
+
+<p>Figura 4.11: Janela Propriedades da camada e menu Simbologia</p>
+
+<ol>
+  <li>Uma nova caixa de diálogo Propriedades de efeitos é aberta</li>
+</ol>
+
+<p><img src="media/new-effects-dialog.png" alt="Caixa de diálogo Propriedades de efeitos" title="caixa de diálogo Propriedades de efeitos" /></p>
+
+<p>Figura 4.12: Diálogo de propriedades de efeitos</p>
+
+<ol>
+  <li>Você pode ver que atualmente o único efeito listado é um efeito Fonte (Source). Os efeitos Fonte não são particularmente interessantes - tudo o que fazem é desenhar a camada original inalterada. Mude para um efeito de Desfoque <strong>clicando na caixa de combinação Tipo de efeito e selecionando Desfoque</strong>. Você pode então experimentar com os parâmetros de desfoque.</li>
+</ol>
+
+<p><img src="media/blur-effect.png" alt="Selecione o tipo de efeito como desfoque" title="Selecione o tipo de efeito como desfoque" /></p>
+
+<p>Figura 4.13: Selecione o tipo de efeito como desfoque</p>
+
+<ol>
+  <li>Aplique as configurações e você verá que a camada de polígono agora está desfocada. Agora estamos chegando a algum lugar!</li>
+</ol>
+
+<p><img src="media/blurry-result.png" alt="Camada desfocada" title="Camada desfocada" /></p>
+
+<p>Figura 4.14: Camada desfocada</p>
+
+<ol>
+  <li>Vamos usar a caixa de diálogo <strong>Propriedades dos efeitos</strong> novamente. Agora vamos tentar algo um pouco mais avançado. Em vez de apenas um único efeito, é possível encadear vários efeitos para criar resultados diferentes. Vamos fazer uma sombra projetada tradicional adicionando um efeito de <strong>Sombra projetada</strong> sob o efeito <strong>Fonte</strong>.</li>
+</ol>
+
+<p><img src="media/drop-shadow.png" alt="Diálogo de propriedades de efeitos" title="Diálogo de propriedades de efeitos" /></p>
+
+<p>Figura 4.15: Diálogo de propriedades de efeitos</p>
+
+<ol>
+  <li>Os efeitos são desenhados de cima para baixo, então a sombra aparecerá abaixo dos polígonos de origem</li>
+</ol>
+
+<p><img src="media/drop-shadow-result.png" alt="Efeito de sombra projetada" title="Efeito de sombra projetada" /></p>
+
+<p>Figura 4.16: Efeito de sombra projetada</p>
+
+<ol>
+  <li>Você pode empilhar quantos efeitos desejar. Por exemplo, um <strong>brilho interno</strong> sobre um <strong>efeito fonte</strong> com uma <strong>sombra projetada</strong> por baixo de tudo. Experimente!</li>
+</ol>
+
+<p>Em geral, lembre-se de que os efeitos podem ser aplicados a uma camada inteira ou às camadas de símbolo individuais para feições dentro de uma camada. Basicamente, as possibilidades são quase infinitas! Os plug-ins Python também podem estender isso ainda mais implementando efeitos adicionais.</p>
+
+<p>Para mais exemplos sobre o que você pode fazer com Modos de mescla e Efeitos de desenho no QGIS, você pode verificar:</p>
+<ul>
+  <li>Hillshade no QGIS - [https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis. html] (https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html)</li>
+  <li>Mapeando icebergs no QGIS - [https://bnhr.xyz/2019/02/08/mapping- icebergs-in-qgis.html] (https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html)</li>
+</ul>
+
+<h3 id="fase-3-substituições-definidas-por-dados-e-geradores-de-geometria">Fase 3: Substituições definidas por dados e geradores de geometria</h3>
+
+<h4 id="conteúdo-2"><strong>Conteúdo</strong></h4>
+
+<ul>
+  <li>Executar uma operação espacial dentro da simbologia da camada</li>
+</ul>
+
+<h4 id="tutorial-1"><strong>Tutorial</strong></h4>
+
+<p>Um gerador de geometria é um tipo de camada símbolo que permite usar código para criar novas geometrias a partir de feições existentes e usar as novas geometrias ‘geradas’ como símbolos que podem, por sua vez, ter estilos aplicados. Este é um recurso poderoso e é melhor explicado com um exemplo.</p>
+
+<p>Você pode usar a simbologia do gerador de geometria com todos os tipos de camadas (pontos, linhas e polígonos). O símbolo resultante depende diretamente do tipo de camada.</p>
+
+<p>Muito resumidamente, a simbologia do gerador de geometria permite que você execute algumas operações espaciais dentro da própria simbologia. Por exemplo, você pode executar uma operação espacial de centróide em uma camada de polígonos sem criar uma outras camada de pontos.</p>
+
+<p>Além disso, você ainda tem todas as opções de estilo para alterar a aparência do símbolo resultante. Aqui está um tutorial de exemplo:</p>
+
+<ol>
+  <li>Clique duas vezes na camada de limite administrativo</li>
+  <li>Clique em Preenchimento simples e altere o tipo de camada de símbolo para Gerador de geometria. Antes de começar a escrever a consulta espacial, escolha o Tipo de geometria na saída. Neste exemplo, vamos criar centróides para cada recurso, então altere o Tipo de geometria para Ponto / Multiponto.</li>
+</ol>
+
+<p><img src="media/centroid.png" alt="Operação centróide na camada limite administrativa" title="Operação centróide na camada limite administrativa" /></p>
+
+<p>Figura 4.17: Operação centróide na camada limite administrativa</p>
+
+<ol>
+  <li>Ao clicar em OK, você verá que o limite da camada administrativa é renderizado como uma camada de ponto. Acabamos de executar uma operação espacial dentro da própria simbologia da camada.</li>
+</ol>
+
+<p><img src="media/centroid-result.png" alt="Camada de pontos" title="Camada de pontos" /></p>
+
+<p>Figura 4.18: Camada de pontos</p>
+
+<ol>
+  <li>Observe que uma maneira alternativa e mais fácil de escrever consultas espaciais é usando o ‘diálogo Expressões’. Clique no <img src="media/expression.png" alt="Alt_text" title="image_tooltip" /> botão de expressões para abrir a caixa de diálogo de expressão. Aqui você terá acesso a uma extensa referência de funções. Você pode pesquisar uma função pelo nome. Por exemplo, digite “centróide” na barra de pesquisa.</li>
+  <li>Com a simbologia do gerador de geometria, você pode realmente ir além da simbologia normal.</li>
+  <li>Se você quiser ir mais longe, escreva uma consulta espacial para calcular um buffer em torno da camada de pontos, linhas ou polígonos.</li>
+</ol>
+
+<h4 id="-perguntas-do-questionário-">** Perguntas do questionário **</h4>
+
+<p>1.N / A</p>
+
+<h4 id="-respostas-do-questionário-">** Respostas do questionário **</h4>
+
+<p>1.N / A</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

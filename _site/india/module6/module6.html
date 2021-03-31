@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Module 6 - Layer attributes | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Module 6 - Layer attributes page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Module 6 - Layer attributes">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Module 6 - Layer attributes</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/india/module6/module6.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="module-6---layer-attributes">Module 6 - Layer attributes</h1>
+
+<p><strong>Author</strong>: Ketty, Ben Hur</p>
+
+<h2 id="pedagogical-introduction">Pedagogical Introduction</h2>
+
+<p>This module will provide you with an overview of the common steps needed to work with the attribute table and layer attributes in QGIS. At the end of the module you’ll be able to understand the following concepts;</p>
+
+<ul>
+  <li>Working with the attribute table</li>
+  <li>Using the field calculator</li>
+  <li>QGIS expression engine</li>
+  <li>Refactoring fields</li>
+</ul>
+
+<p>Additionally, you will learn the following skills;</p>
+
+<ul>
+  <li>Introducing the attribute table interface</li>
+  <li>Interacting with features in an attribute table</li>
+  <li>Saving selected feature as new layer</li>
+  <li>Editing layer fields</li>
+</ul>
+
+<p>You’ll use the field calculator and qgis expression engine to run mathematical operations and functions in QGIS.</p>
+
+<h2 id="required-tools-and-resources">Required tools and resources</h2>
+
+<ul>
+  <li>Working computer</li>
+  <li>Internet connection</li>
+  <li>QGIS 3.16 and above</li>
+  <li>Bangalore administrative boundary layer (inside <a href="/india/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li>Bangalore clinics (inside <a href="/india/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li>PHL provinces (inside <a href="/india/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li><a href="/india/module6/data/HRSL_Bangalore_Population.tif">Bangalore High Resolution Settlement Layer</a></li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>A fair knowledge of all previous modules</li>
+  <li>Basic knowledge of operating a computer</li>
+</ul>
+
+<h2 id="additional-resources">Additional resources</h2>
+
+<ul>
+  <li>Working with the Attribute Table - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes</a></li>
+  <li>QGIS Expressions - <a href="https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html">https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html</a></li>
+</ul>
+
+<h2 id="thematic-introduction">Thematic introduction</h2>
+
+<p>Let’s start with an example:</p>
+
+<p>In some cases, for instance for infrastructure planning purposes, you may want to know the area of the polygons in a layer. If you have one polygon, this would not be a problem. But what if you have many polygons/areas in the layer? To calculate each area one by one is almost impossible. The India administrative boundary vector layer has many polygons which means it would be a good dataset for this tutorial. We are going to calculate the area for each polygon using an automated way. In total, the area of 81 provinces will be calculated.</p>
+
+<h2 id="breakdown-of-the-concepts">Breakdown of the concepts</h2>
+
+<p>Much of the work you do when making a map involves working with layer attributes. Whether you’re drawing the layer, configuring a popup, performing analysis or visualising you need some level of knowledge of the layer’s fields and the values they contain. If it’s your own layer, you know and understand its attributes. But if it isn’t, how do you gain that knowledge? Likely, you inspect the field names and examine field values for some clues. And if you’re lucky, you’ll find some documentation that describes the layer’s attributes.</p>
+
+<p>The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.Specifically, there are two new field properties that describe the values contained in a field;</p>
+
+<ul>
+  <li><strong>Field description</strong> –  a few words, a sentence, or a paragraph of text that describes the values in the field.</li>
+  <li><strong>Field value type</strong> – a keyword that categorizes the type of values contained in the field. The keyword helps people understand how to use the values and allows QGIS and other client applications to make smarter suggestions for working with them, for example, the values types in the field may be integer, string, boolean, double or floating point</li>
+</ul>
+
+<p>Here’s an example; Suppose you have a land parcel layer that has these fields:</p>
+
+<ul>
+  <li>Parcel ID – Integer</li>
+  <li>Owner – String</li>
+  <li>Street Address – String</li>
+  <li>Property Description – String</li>
+  <li>Buildings – Integer</li>
+  <li>Land Area – Double</li>
+  <li>Assessed Value – Double</li>
+  <li>Assessment Date – Date</li>
+</ul>
+
+<p>If you were to describe these field values, you might write something like this:</p>
+
+<ul>
+  <li>Parcel ID – the unique identifier of the parcel</li>
+  <li>Owner – the name of the property owner</li>
+  <li>Street Address – the location of the parcel</li>
+  <li>Property Description – the legal description of the property</li>
+  <li>Buildings – the number of buildings on the parcel</li>
+  <li>Land Area – the size of the parcel in acres</li>
+  <li>Assessed value – the value of the parcel and buildings in dollars</li>
+  <li>Assessment Date – the date of the last assessment</li>
+</ul>
+
+<p>In looking at these descriptions, some words stand out, like: identifier, name, location, description, number of, size, value, and date. These are the <em>keywords</em> that describe what the field values are. The field value type keywords are constructed from these types of words. They are:</p>
+
+<ul>
+  <li>Name or Title</li>
+  <li>Description</li>
+  <li>Type or Category</li>
+  <li>Count or Amount</li>
+  <li>Percentage or Ratio</li>
+  <li>Measurement</li>
+  <li>Unique Identifier</li>
+  <li>Ordered or Ranked</li>
+  <li>Binary</li>
+  <li>Location or Place Name</li>
+  <li>Coordinate</li>
+  <li>Date and Time</li>
+</ul>
+
+<p>In the parcel layer example above, the Parcel ID field is an integer field. If the field value type indicates the field values represent a unique identifier rather than a count, QGIS would not suggest drawing this field attribute using graduated colors or symbols.</p>
+
+<p>In addition, other concepts like the field calculator functionality in the attribute table allows one to perform calculations on basis of existing attribute values or defined functions, e.g to calculate length, area or population density. Note that the possible calculations are determined by the attributes or make up of your data. For example, it’s only possible to calculate population density if there’s a field with population counts. Using the expression engine and field calculator, you would then go on to construct an expression or formula to calculate population density. In this case the formula would be; total population as a number of people/the land area covered by that population. You’ll notice that it’s important to know what each of the fields in the layer attribute table represents. This means you need to know and understand your data thoroughly. This makes it easier to apply functions and expressions and therefore come up with meaningful analyses and visualizations/map products.</p>
+
+<h3 id="phase-1-title-editing-layer-attributes">Phase 1 title: Editing layer attributes</h3>
+
+<h4 id="contenttutorial"><strong>Content/Tutorial</strong></h4>
+
+<p>The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.</p>
+
+<ol>
+  <li>Load the PHL provinces vector layer (found inside <a href="/india/module6/data/module6.gpkg">module6.gpkg</a>) in QGIS. You can know how many features are in the current feature by <strong>Right-clicking on the layer on the Layers Panel ‣ Show Feature Count</strong>. As you can see below, the vector layer has many features. In total, there are 81 features corresponding to 81 provinces.</li>
+</ol>
+
+<p><img src="media/many-polygons.png" alt="Several polygons" title="Several polygons" /></p>
+
+<p>Figure 6.1: Several polygons</p>
+
+<ol>
+  <li>The next step is to explore the attribute table interface. Open the attribute table by <strong>Right-clicking on the layer on the Layers Panel ‣ Open Attribute Table</strong>. You can also click the <strong>Open Attribute Table button</strong> <img src="media/open-attribute-btn.png" alt="Open attribute table button" title="Open attribute table button" /> from the Attributes Toolbar. This is what the attribute table looks like. The tool bar has a range of buttons, hover over each button to see the embedded functionality.</li>
+</ol>
+
+<p><img src="media/attribute-tab.png" alt="Open attribute table" title="Open attribute table" /></p>
+
+<p>Figure 6.2: Open attribute table</p>
+
+<p>If you don’t want the attribute table to be a floating window but rather dock it on the QGIS interface, you can click the <strong>Dock attribute table button</strong> <img src="media/dock-attr-btn.png" alt="&quot;Dock attribute table&quot;" title="Dock attribute table" />. When docked, attribute tables will appear as tabs instead of individual windows.</p>
+
+<p><img src="media/docked-attribute-tab.png" alt="Docked attribute table" title="Docked attribute table" /></p>
+
+<p>Figure 6.3: Docked attribute table</p>
+
+<ol>
+  <li>
+    <p>For area calculations, the Coordinate Reference System should be a projected one. This allows you to calculate distances correctly. Remember, our interest is to automatically calculate the area for each of the 81 provinces. Check the Coordinate Reference System of the vector layer. If it’s a geographic coordinate reference system, then reproject the layer to a projected coordinate system. Check for different projections on the <a href="https://epsg.io/?q=India%20kind%3APROJCRS">EPSG</a> website. This is the India, we’ll use <a href="https://epsg.io/24383">Kalianpur 1975 / India Zone IVa</a>, EPSG:24383. From previous modules where map projections are extensively discussed, you may already know that map projections are applied relative to a given location on earth.</p>
+  </li>
+  <li>
+    <p>Check the project Settings; Go to: <strong>Project ‣ Properties Properties ‣ General</strong>.</p>
+  </li>
+</ol>
+
+<p><img src="media/gen-settings.png" alt="Planimetric" title="Planimetric" /></p>
+
+<p>Figure 6.4: General settings</p>
+
+<ol>
+  <li>Next, Click the <strong>Open field calculator</strong> <img src="media/field_calculator.png" alt="alt_text" title="image_tooltip" /> button on the Attributes Toolbar to open the field calculator. The field calculator dialogue will open; fill in the output field name, in this case it will be ‘AREA (SQ KM)’. Choose the Decimal number (double) on the output field type. Change the precision to 2 decimal places. To calculate the area, use the following expression:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$area / 1000000
+</code></pre></div></div>
+
+<p>You can find this expression under <strong>Geometry</strong>. Click OK and it will automatically calculate the area for each polygon. Take note that the area computation is dependent on the coordinate reference system used so you may have different results depending on what CRS you used. You can also search and find information about expressions on the right side of the Field Calculator or Expression Builder.</p>
+
+<p><img src="media/fieldcalc.png" alt="Field calculator dialogue" title="Field calculator dialogue" /></p>
+
+<p>Figure 6.5: Field calculator dialogue</p>
+
+<ol>
+  <li>Open the attribute table to see the result. You just edited the contents of the attribute table, in an automated way as opposed to typing the values in each cell one by one.</li>
+</ol>
+
+<p><img src="media/area.png" alt="New attribute table with new field and attributes" title="New attribute table with new field and attributes" /></p>
+
+<p>Figure 6.6: New attribute table with new field and attributes</p>
+
+<h4 id="quiz-questions"><strong>Quiz questions</strong></h4>
+
+<ol>
+  <li>
+    <p>An attribute table is a database or tabular file containing information about a set of geographic features</p>
+  </li>
+  <li>
+    <p>Geographic features are usually arranged so that each row represents a feature and each column represents one feature attribute</p>
+  </li>
+  <li>
+    <p>It is necessary to reproject layers prior to area calculations when the layer has a geographic coordinate reference system</p>
+  </li>
+</ol>
+
+<h4 id="quiz-answers"><strong>Quiz answers</strong></h4>
+
+<ol>
+  <li>True</li>
+  <li>True</li>
+  <li>True</li>
+</ol>
+
+<h3 id="phase-2--understanding-and-working-with-attribute-data-queries-and-analysis">Phase 2 : Understanding and working with attribute data, queries and analysis</h3>
+
+<h4 id="contenttutorial-1"><strong>Content/Tutorial</strong></h4>
+
+<p>At this point, you might notice that the attribute table stores both spatial and non-spatial data. In this tutorial you’ll discover ways of working with attribute table data. For example, Using expressions, select Clinics in Bangalore with an emergency facility, all using data from the attribute table.</p>
+
+<ol>
+  <li>Add the following datasets of the India to the QGIS map canvas;</li>
+</ol>
+
+<ul>
+  <li>Bangalore administrative boundary layer (inside <a href="/india/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li>Bangalore clinics (inside <a href="/india/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li>PHL provinces (inside <a href="/india/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li><a href="/india/module6/data/HRSL_Bangalore_Population.tif">Bangalore High Resolution Settlement Layer</a></li>
+</ul>
+
+<p><img src="media/add-layers.png" alt="Add different layers" title="Add different layers" /></p>
+
+<p>Figure 6.7: Add different layers</p>
+
+<ol>
+  <li>The selection will be applied to the Clinics layer, therefore Open the attribute table for the Clinic layer. Click the select features using expression <img src="media/select_features_button.png" alt="alt_text" title="image_tooltip" /> button and type the following expression in the expression builder;</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"amenity" = 'clinic' AND "emergency" = 'yes'
+</code></pre></div></div>
+
+<p>You’ll notice that the expression has a number of predicates like the comparison sign (=), the logical predicate (AND) and a string which is enclosed in single quotes (‘ ‘). There are also two attribute names(amenity, emergency) and their values (clinic,yes).</p>
+
+<p><img src="media/select.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figure 6.8: Select by Expression builder dialogue</p>
+
+<ol>
+  <li>One Clinic is selected. You can see the selection highlighted in yellow. The selected clinic is also highlighted in the attribute table. Now we know there’s only one clinic with an emergency facility in Bangalore district.</li>
+</ol>
+
+<p><img src="media/selected-canvas.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figure 6.9: Selected clinic/feature is highlighted (yellow)</p>
+
+<p><img src="media/selected-attr.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figure 6.10: Selected clinic/feature is highlighted (blue)</p>
+
+<p>It’s also possible to make selections by clicking a feature  within the map canvas.</p>
+
+<p>Developing a functional expression starts with understanding your data; for example the attributes and   the values they hold. Then asking the right questions and finally, developing the correct expression, putting into consideration all mathematical rules that make an error free expression.</p>
+
+<h4 id="quiz-questions-1"><strong>Quiz questions</strong></h4>
+
+<ol>
+  <li>These operators are provided by the expression builder.  {+, -, *}</li>
+  <li>Single quotes must enclose a string.</li>
+  <li>The attribute table stores only non spatial data.</li>
+</ol>
+
+<h4 id="quiz-answers-1"><strong>Quiz answers</strong></h4>
+
+<ol>
+  <li>True</li>
+  <li>True</li>
+  <li>False</li>
+</ol>
+
+<h3 id="phase-3-title--advanced-qgis-expressions">Phase 3 title : Advanced QGIS expressions</h3>
+
+<p>The Expression builder dialog offers access to the:</p>
+
+<ul>
+  <li>Expression tab (<a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#functions-list">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#functions-list</a>) which, thanks to a list of predefined functions, helps to write and check the expression to use;</li>
+  <li>Function Editor tab (<a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#function-editor">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html#function-editor</a>) which helps to extend the list of functions by creating custom ones.</li>
+</ul>
+
+<h4 id="contenttutorial-2"><strong>Content/Tutorial</strong></h4>
+
+<p>There are many use cases for expressions, here are some examples. Notice how the expressions are developed and what operators or predicates are used. Also important is the fact that all these expressions are developed based on the content of the dataset. You may adapt this to your dataset of choice.</p>
+
+<ol>
+  <li>From Field Calculator, calculate a “pop_density” field using existing “total_pop” and “area_km2” fields:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"total_pop" / "area_km2"
+</code></pre></div></div>
+
+<ol>
+  <li>Update the field “density_level” with categories according to the “pop_density” values:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CASE WHEN "pop_density" &lt; 50 THEN 'Low population density'
+     WHEN "pop_density" &gt;= 50 AND  "pop_density" &lt; 150 THEN 'Medium population density'
+     WHEN "pop_density" &gt; 150 THEN 'High population density'
+END
+</code></pre></div></div>
+
+<ol>
+  <li>Apply a categorized style to all the features according to whether their average house price is smaller or higher than 10000 shillings per square metre:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"price_m2" &gt; 10000
+</code></pre></div>    </div>
+  </li>
+  <li>Using the “Select By Expression…” tool, select all the features representing areas of “High population density” and whose average house price is higher than 10000 pesos per square metre:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"density level" = 'High population density' and "price_m2" &gt; 10000
+</code></pre></div></div>
+
+<ol>
+  <li>Likewise, the previous expression could also be used to define which features should be labeled or shown in the map.</li>
+</ol>
+
+<h4 id="quiz-questions-2"><strong>Quiz questions</strong></h4>
+
+<ol>
+  <li>Both Field calculator and Select by Expression dialogue can be used to develop expressions – <strong><em>True</em></strong></li>
+  <li>Expressions can be used to update a new field – <strong><em>True</em></strong></li>
+  <li>Expressions can be used to apply a style  – <strong><em>True</em></strong></li>
+</ol>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

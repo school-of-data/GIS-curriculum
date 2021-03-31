@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Module 4 - Styling Layers | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Module 4 - Styling Layers page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Module 4 - Styling Layers">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Module 4 - Styling Layers</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/module4/module4.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="module-4---styling-layers">Module 4 - Styling Layers</h1>
+
+<p><strong>Tác giả</strong>: Ketty</p>
+
+<p><strong>Biên dịch và bản địa hoá</strong>: Quách Đồng Thắng</p>
+
+<h2 id="giới-thiệu-chung">Giới thiệu chung</h2>
+
+<p>Module này sẽ hướng dẫn bạn cách thay đổi hiển thị trực quan bản đồ bằng cách lựa chọn các biểu tưỢng (symbol), màu sắc thích hợp và sử dụng các hiệu ứng thích hợp. Kết thúc module, bạn sẽ nắm được các khái niệm niệm như symbology và style của bản đồ. Ngoài ra, bạn sẽ học các kỹ năng sau;</p>
+
+<ul>
+  <li>styling layers</li>
+  <li>symbology cơ bản cho vector/ raster và cách áp dụng cho một layer.</li>
+  <li>blending mode và draw effect</li>
+  <li>sử dụng các công thức để chạy một chức năng xử lý không gian</li>
+</ul>
+
+<h2 id="các-công-cụ-và-tài-nguyên-cần-thiết">Các công cụ và tài nguyên cần thiết</h2>
+
+<ul>
+  <li>Máy tính</li>
+  <li>Kết nối Internet</li>
+  <li>QGIS 3.16 hoặc mới hơn</li>
+  <li>HCMC_border (trong  <a href="/vietnam/module4/data/module4.gpkg">module4.gpkg</a>))</li>
+  <li>HCMC_clinics (trong <a href="/vietnam/module4/data/module4.gpkg">module4.gpkg</a>)</li>
+  <li><a href="/vietnam/module4/data/HRSL_HCMC_Population.tif">Tp.HCM High Resolution Settlement Layer</a></li>
+</ul>
+
+<h2 id="kỹ-năng-cần-có">Kỹ năng cần có</h2>
+
+<ul>
+  <li>Kiến thức cơ bản về vận hành máy tính</li>
+  <li>Nắm vững tất cả các Module đã học</li>
+</ul>
+
+<h2 id="tham-khảo-thêm">Tham khảo thêm</h2>
+
+<ul>
+  <li>QGIS Symbology - <a href="https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html">https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html</a></li>
+  <li>Style Sharing Repository - <a href="https://www.gislounge.com/qgis-style-sharing-repository/">https://www.gislounge.com/qgis-style-sharing-repository/</a></li>
+  <li>Styles - <a href="https://plugins.qgis.org/styles/">https://plugins.qgis.org/styles/</a></li>
+  <li>Style Hub - <a href="https://style-hub.github.io/">https://style-hub.github.io/</a></li>
+  <li>Hillshade in QGIS -<a href="https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+  <li>Mapping Icebergs in QGIS - <a href="https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+</ul>
+
+<h2 id="giới-thiệu-chuyên-đề">Giới thiệu chuyên đề</h2>
+
+<p>Hãy bắt đầu bằng một ví dụ:</p>
+
+<p>Tưởng tượng bạn đến một thành phố mới, với vai trò là một khách du lịch, đi chơi hoặc đi công việc. Thành phố có một loạt các địa điểm mà bạn nhất định phải đến hoặc tham quan, bao gồm các bảo tàng, quán cá phê, bãi biển, đài tưởng niệm, cửa hàng bán đồ lưu niệm địa phương và chợ. Bạn cầm một bản đồ giấy thể hiện vị trí của các địa điểm này. Các địa điểm này đểu được đánh dấu chấm đỏ. Theo bạn, bản đồ này có dễ cho chuyến du lịch của bạn ở thành phố này không? Tôi e là không</p>
+
+<p>Đó là lý do vì sao việc tạo “bản đồ với các ký hiệu và màu sắc khác nhau” luôn luôn quan trọng. Những gì bạn thấy trong bản đồ của mình sau khi áp dụng các khái niệm tạo kiểu (styling) là một thể hiện trực quan, sinh động về dữ liệu mà bạn đang làm việc.</p>
+
+<h3 id="các-panels-tabs-và-render-types-quan-trọng">Các Panels, Tabs và Render types quan trọng</h3>
+
+<h4 id="layer-styling-panel"><strong>Layer Styling Panel</strong></h4>
+
+<p>Panel này có thể xem là một shortcut đến một số chức năng của layer properties. Nó giúp bạn thiết lập hiển thị cho layer nhanh chóng và thuận tiện, và hiển thị trực quan các hiệu ứng tức thì mà không cần truy cập vào layer properties.</p>
+
+<p>Ngoài việc tránh phải mở cửa sở layer properties, nó cũng tránh tình trạng lộn xộn trong việc hiển thị từng cửa sổ ứng với từng thao tác chọn màu, chỉnh sửa hiệu ứng, hiển thị nhãn,… Ví dụ, khi bạn nhấn nút chọn màu trong Layer Styling Panel, bảng chọn màu được hiển thị ngay bên trong panel thay vì hiện thêm một cửa sổ mới</p>
+
+<p>Trong Layer Styling Panel, chọn một layer cần thiết lập hiển thị:</p>
+
+<ul>
+  <li>Thiết lập symbology, transparency (độ trong suốt) và histogram cho raster layer. Các tuỳ chọn này cũng có trong cửa sổ Raster Properties</li>
+  <li>(<a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog</a>).
+    <ul>
+      <li>Truy cập Raster Properties bằng cách kích đúp chuột vào Raster Layer -&gt; General</li>
+    </ul>
+  </li>
+  <li>Thiết lập symbology và label. Các tuỳ chọn này cũng có trong Vector Properties Dialog (<a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog</a>).
+    <ul>
+      <li>Truy cập Vector Properties Dialog bằng cách kích đúp chuột vào Vector Layer -&gt; General</li>
+    </ul>
+  </li>
+  <li>Bạn có thể undo, redo các style đã áp dụng cho layer</li>
+</ul>
+
+<p>Mộ chức năng mạnh mẽ khác của panel này là tuỳ chọn Live update. Nếu được chọn, các thay đổi sẽ được hiển thị ngay tức thì trên map canvas mà không cần nhấn nút Apply</p>
+
+<p>Để kích hoạt panel này, vào View-&gt;Panels, chọn Layer Styling</p>
+
+<p><img src="media/layer-styling.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figure 4.1: Layer Styling Panel</p>
+
+<h4 id="symbology-tab-trong-layers-properties"><strong>Symbology Tab trong Layers Properties</strong></h4>
+
+<p>Để truy cập Symbology Tab, kích đúp chuột vào Layer để mở cửa sổ Layer Properties-&gt; Chọn Symbology</p>
+
+<p>Tại đây, bạn có thể thiết lập hiển thị cho các kênh ảnh (đối với dữ liệu raster) như render type, band, mix/max values, color rendering và resampling. Hình bên dưới lần lượt thể hiện các symbology tabs cho dữ liệu vector và dữ liệu raster;</p>
+
+<p><img src="media/style-vector.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p><img src="media/style-raster.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figure 4.2: Symbology cho dữ liệu vector và raster</p>
+
+<h4 id="raster-rendering-band-rendering"><strong>Raster rendering: Band rendering</strong></h4>
+
+<p>QGIS cung cấp 04 kiểu hiển thị (render) dữ liệu raster. Lựa chọn cách hiển thị nào tuỳ thuộc vào loại dữ liệu. Loại render mặc định là đơn kênh (màu xám). Bạn sẽ phải thay đổi kiểu hiển thị thích hợp tuỳ vào loại dữ liệu.</p>
+
+<ul>
+  <li>Multiband color - Màu đa kênh (<a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color</a>) - nếu raster có nhiểu kênh ảnh (ví dụ như ảnh vệ tinh được chụp ở nhiều kênh phổ khác nhau).</li>
+  <li>Paletted/Unique values (<a href="">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#paletted</a>) - đối với ảnh đơn kênh (đơn phổ) với một bảng màu được đánh chỉ mục - indexed palette (ví dụ bản đồ địa hình số) hoặc cho các trường hợp chung sử dụng palette để hiển thị raster.</li>
+  <li>Singleband gray - xám đơn kênh (<a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray</a>) - (một kênh của) ảnh sẽ được hiển thị dưới dạng màu xám. QGIS sẽ chọn kiểu hiển thị này nếu raster không phải là ảnh đa kênh hoặc palette (ví dụ như bản đồ dạng shaded relief)</li>
+  <li>Singleband pseudocolor -  màu giả đơn kênh(<a href="https://docs.qgis.org/3.16/en/docs/user-_manual/working_with_raster/raster_properties.html#label-colormaptab">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab</a>) - cách hiển thị này có thể được dùng cho các raster với raster có bảng màu liên tục hoặc các bản đồ màu (ví dụ như bản đồ độ cao)</li>
+  <li>Hillshade (<a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer">(https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer</a>) - Tạo hillshade từ một kênh ảnh.</li>
+</ul>
+
+<h4 id="vector-rendering"><strong>Vector rendering</strong></h4>
+
+<p>Khi bạn tải các lớp dữ liệu không gian trong QGIS Desktop, chúng được gán style Single Symbol với màu ngẫu nhiên. Để thay đổi, kích vào Layer-&gt;Properties-&gt;Style</p>
+
+<p>Có nhiều tuỳ chọn hiển thị:</p>
+
+<ul>
+  <li>Single Symbol – Đây là kiểu hiển thị mặc định với một symbol (kiểu đường, màu sắc) áp dụng cho tất cả các đối tượng của layer.</li>
+  <li>Categorized – cho phép chọn một thuộc tính phân loại để tạo stlye cho layer. Sau khi chọn thuộc tính phân loại, chọn Classify để QGIS áp dụng các symbol khác nhau tương ứng với từng giá trị khác nhau của thuộc tính được chọn. Bạn cũng có thể chọn chức năng tính toán giá trị thuộc tính thông qua các biểu thức SQL.</li>
+  <li>Graduated – cho phép phân lớp dữ liệu bởi một trường thuộc tính dạng số thành các nhóm riêng biệt. Bạn có thể chọn các tham số choa việc phân lớp (cách phân lớp và số lớp) và có thể chọn chức năng tính toán giá trị thuộc tính thông qua các biểu thức SQL.</li>
+  <li>Rule-based – dùng để tạo một style dựa trên luật do người dùng định nghĩa. Các luật này có cấu trúc dựa trên biểu thức SQL.</li>
+  <li>Point displacement – nếu bạn có một lớp điểm với các điểm xếp chồng lên nhau, tuỳ chọn này có thể được sử dụng để dời vị trí các điểm sao cho tất cả điểm đều được hiển thị.</li>
+  <li>Inverted polygons – Đây là một cách hiển thị mới, cho phép một đối tượng polygon được chuyển đổi thành một mặt nạ. Ví dụ, một polygon thể hiện ranh giới thành phố sử dụng cách hiển thị này sẽ trở thành một mặt nạ xung quanh thành phố. Nó cũng cho phép sử dụng thêm các cách hiển thị khác như Categorized, Graduated và Rule-based, cũng như sử dụng các biểu thức SQL.</li>
+</ul>
+
+<h2 id="nội-dung-chính">Nội dung chính</h2>
+
+<h3 id="phase-1-symbology-cơ-bản-cho-raster-và-vector">Phase 1: Symbology cơ bản cho raster và vector</h3>
+
+<p>Symbology cho dữ liệu vector có thể thay đổi dựa vào độ trong suốt, màu sắc, góc quay và kích thước.</p>
+
+<h4 id="nội-dung"><strong>Nội dung</strong></h4>
+
+<ul>
+  <li>Layer properties và symbology menu</li>
+  <li>Các loại hiển thị Vector</li>
+  <li>Các loại hiển thị raster(band rendering)</li>
+</ul>
+
+<h4 id="ví-dụ-1-hiển-thị-vector"><strong>Ví dụ 1: Hiển thị Vector</strong></h4>
+
+<ol>
+  <li>Để minh hoạ cho ví dụ này, chúng ta sẽ sử dụng 02 tập dữ liệu mẫu; HCMC_clinics và HCMC_border (trong module4.gpkg).</li>
+  <li>Thêm 02 lớp vector này vào QGIS; Kích chọn nút Add vector layer <img src="media/add-vector.png" alt="alt_text" title="image_tooltip" /> hoặc sử dụng Browser Panel.</li>
+  <li>Đây là cách chúng hiển thị theo mặc định. Bạn chú ý là chúng ta có một lớp dạng vùng (polygon) và một lớp dạng điểm (point). Bước tiếp theo là thay đổi symbology cho từng lớp này. Fill color có thể không trùng nhau, nhưng không vấn đề gì bởi vì QGIS chọn màu ngẫu nhiên cho các lớp dữ liệu.</li>
+</ol>
+
+<p><img src="media/default-vector-render.png" alt="Default render" title="Default render" /></p>
+
+<p>Hình 4.3: Hiển thị mặc định</p>
+
+<ol>
+  <li>Kích đúp chuột vào lớp polygon, chính là ranh giới hành chính của Tp.HCM.</li>
+  <li>Chọn <strong>Symbology Tab</strong></li>
+  <li>Thay đổi <strong>Fill color</strong> thành <strong>Transparent fill. Mẹo:</strong> Kích vào mũi tên chỉ xuống, phía dưới Fill color</li>
+  <li>Kết quả như hình bên dưới. Bạn có thể thấy là không có màu nền.</li>
+</ol>
+
+<p><img src="media/no-fill-render.png" alt="Polygon không có màu nền" title="Polygon không có màu nền" /></p>
+
+<p>Hình 4.4: Polygon không có màu nền</p>
+
+<ol>
+  <li>Bước tiếp theo là định nghĩa symbology cho point layer (lớp HCMC_clinics)</li>
+  <li>Kích đúp chuột vào lớp <strong>HCMC_clinics</strong> để mở cửa sổ <strong>Layer Properties</strong> . Đổi kiểu hiển thị Single Symbol thành <strong>Categorized</strong>, chọn  <strong>Value</strong> là amenity. Chọn Symbol và Color ramp, sau đó chọn Classify</li>
+</ol>
+
+<p><img src="media/vector-style.png" alt="Layer Properties dialogue" title="Layer Properties dialogue" /></p>
+
+<p>Hình 4.5: Layer Properties dialogue</p>
+
+<ol>
+  <li>Kết quả như hình bên dưới</li>
+</ol>
+
+<p><img src="media/final-vector-render.png" alt="Kết quả hiển thị vector" title="Kết quả hiển thị vector" /></p>
+
+<p>Hình 4.6: Kết quả hiển thị vector</p>
+
+<ol>
+  <li>Cần nhớ sắp xếp các layer trong <strong>Layer Panel</strong> sao cho polygon layer nằm bên dưới point layer để point layer không bị che khuất.</li>
+</ol>
+
+<h4 id="ví-dụ-2-raster-rendering"><strong>Ví dụ 2: Raster rendering</strong></h4>
+
+<ol>
+  <li>Kích đúp chuột vào raster layer, chính là lớp mật độ dân số (population density). Đây cũng dữ liệu được chuẩn hoá để có thể hiển thị dưới dạng một choropleth map.</li>
+  <li>Chọn tab Symbology</li>
+  <li>Chọn kiểu styling là ‘Singleband pseudocolor’</li>
+</ol>
+
+<p><img src="media/qgis9.png" alt="Symbology menu" title="Symbology menu" /></p>
+
+<p>Hình 4.7: Symbology menu</p>
+
+<ol>
+  <li>Chọn phương pháp nội suy (interpolation), color ramp và mode. Chọn classify. Kết quả là một choropleth map hiển thị mật độ dân số của Tp.HCM</li>
+</ol>
+
+<p><img src="media/hrsl-style.png" alt="Mậ độ dân số Tp.HCM" title="Mật độ dân số Tp.HCM" /></p>
+
+<p>Hình 4.8: Mật độ dân số Tp.HCM</p>
+
+<ol>
+  <li>Phóng to bản đồ để hiển thị chi tiết hơn.</li>
+</ol>
+
+<p><img src="media/zoom-in.png" alt="Bản đồ phóng to" title="Bản đồ phóng to" /></p>
+
+<p>Hình 4.9: Bản đồ phóng to</p>
+
+<ol>
+  <li>Ngoài ra, có thể sử dụng <strong>Layer Styling panel</strong> để thiết lập hiển thị cho raster.</li>
+</ol>
+
+<h4 id="câu-hỏi"><strong>Câu hỏi</strong></h4>
+
+<ol>
+  <li>Layer symbology là gì ?</li>
+  <li>Phương pháp hiển thị nào là thích hợp cho dữ liệu vector?</li>
+  <li>Các loại hiển thị dữ liệu raster?</li>
+</ol>
+
+<h4 id="các-phương-án-trả-lời"><strong>Các phương án trả lời</strong></h4>
+
+<ol>
+  <li>
+    <p>a. graphical element represented as a marker, stroke or fill 
+b. a pointer to the original data
+c. a repository of different color schemes</p>
+  </li>
+  <li>
+    <p>a. single symbol renderer
+b. no symbols renderer
+c. categorized renderer
+d. graduated renderer
+e. proportional symbol 
+f. proportional symbol
+g. point cluster renderer</p>
+  </li>
+  <li>
+    <p>a. singleband pseudocolor
+b. singleband gray
+c. paletted
+d. multiband color</p>
+  </li>
+</ol>
+
+<h3 id="phase-2-blending-modes-và-draw-effects">Phase 2: Blending modes và draw effects</h3>
+
+<h4 id="nội-dung-1"><strong>Nội dung</strong></h4>
+
+<ul>
+  <li>Thay đổi cấu trúc symbol</li>
+  <li>Thay đổi draw effects and blending modes</li>
+  <li>Trực quan hoá dữ liệu</li>
+</ul>
+
+<h4 id="hướng-dẫn"><strong>Hướng dẫn</strong></h4>
+
+<ol>
+  <li>Sau khi tải 02 layer vào QGIS, map canvas sẽ như hình bên dưới. Bạn có thể thấy là cả 02 layer đều có style đơn giản. Hướng dẫn này sẽ giải thích cách thay đổi draw effects và blending modes để trực quan hoá tốt hơn</li>
+</ol>
+
+<p><img src="media/initial-workspace.png" alt="Workspace ban đầu" title="Workspace ban đầu" /></p>
+
+<p>Hình 4.10: Workspace ban đầu</p>
+
+<ol>
+  <li>Mở cửa sổ Layer Properties, chọn Symbology cho lớp ranh giới hành chính. Mẹo: kích đúp chuột vào layer hoặc sử dụng Layer Styling Panel. Kích hoạt Layer Styling Panel bằng cách: View -&gt; Panels -&gt; Layer Styling.</li>
+</ol>
+
+<p>Ở dưới Symbology menu, có một checkbox Draw Effects. Kích chọn checkbox này và kích chọn nút tuỳ chỉnh hiệu ứng <img src="media/customise-effects-button.png" alt="alt_text" title="image_tooltip" /> ở bên phải:</p>
+
+<p><img src="media/draw-effects.png" alt="Layer Properties window và Symbology menu" title="Layer Properties window và Symbology menu" /></p>
+
+<p>Hình 4.11: Layer Properties window và Symbology menu</p>
+
+<ol>
+  <li>Cửa sổ Effects Properties xuất hiện</li>
+</ol>
+
+<p><img src="media/new-effects-dialog.png" alt="Effects properties dialogue" title="Effects properties dialogue" /></p>
+
+<p>Hình 4.12: Effects properties dialogue</p>
+
+<ol>
+  <li>Bạn có thể thấy chỗ Effect type Source effect được chọn mặc định. Source effect không thú vị lắm - nó chỉ đơn giản là vẽ lại layer mà không thay đổi gì cả. Hãy chọn Blur effect bằng cách <strong>kích vào combobox Effec type và chọn Blur</strong>. Bạn có thể thử thiết lập các tham số cho tuỳ chọn Blur</li>
+</ol>
+
+<p><img src="media/blur-effect.png" alt="Chọn Effect Type la Blur" title="Chọn Effect Type la Blur" /></p>
+
+<p>Hình 4.13: Chọn Effect Type la Blur</p>
+
+<ol>
+  <li>Chọn Apply, bạn có thể thấy polygon layer lúc này bị mờ.</li>
+</ol>
+
+<p><img src="media/blurry-result.png" alt="Layer với hiệu ứng mờ" title="Layer với hiệu ứng mờ" /></p>
+
+<p>Hình 4.14: Layer với hiệu ứng mờ</p>
+
+<ol>
+  <li>Trở lại  <strong>Effects Properties</strong>. Hãy thử nâng cao hơn một chút. Thay vì chỉ chọn một hiệu ứng, có thể chọn cùng lúc nhiều hiệu ứng khác nhau. Hãy chọn thêm hiệu ứng <strong>Drop shadow</strong></li>
+</ol>
+
+<p><img src="media/drop-shadow.png" alt="Effects properties dialogue" title="Effects properties dialogue" /></p>
+
+<p>Hình 4.15: Effects properties dialogue</p>
+
+<ol>
+  <li>Các hiệu ứng sẽ được vẽ từ trên xuống, do đó Drop shadow sẽ hiển thị bên dưới source polygon</li>
+</ol>
+
+<p><img src="media/drop-shadow-result.png" alt="Hiệu ứng Drop shadow" title="Hiệu ứng Drop shadow" /></p>
+
+<p>Hình 4.16: Hiệu ứng Drop shadow</p>
+
+<ol>
+  <li>Bạn có thể thêm bao nhiêu hiệu ứng tuỳ ý. Ví dụ một <strong>inner glow</strong> trên  <strong>source effect</strong>, với <strong>drop shadow</strong> ở dưới cùng. Hãy làm thử để xem kết quả thế nào!</li>
+</ol>
+
+<p>Nhìn chung, hãy nhớ rằng các hiệu ứng có thể được áp dụng cho toàn bộ layer hoặc cho các symbol riêng lẻ cho các đối tượng trong một layer. Về cơ bản, các khả năng gần như là vô tận! Các Python plugin cũng có thể bổ sung nhiều hiệu ứng khác nữa..</p>
+
+<p>Để xem thêm ví dụ về những gì có thể làm với Blending Modes và Draw Effects trong QGIS, bạn có thể tham khảo tại đây:</p>
+<ul>
+  <li>Hillshade in QGIS -<a href="https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+  <li>Mapping Icebergs in QGIS - <a href="https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+</ul>
+
+<h3 id="phase-3-data-defined-overrides-và-geometry-generators">Phase 3: Data defined overrides và geometry generators</h3>
+
+<h4 id="nội-dung-2"><strong>Nội dung</strong></h4>
+
+<ul>
+  <li>Chạy một tính toán không gian trong layer symbology</li>
+</ul>
+
+<h4 id="hướng-dẫn-1"><strong>Hướng dẫn</strong></h4>
+
+<p>A geometry generator là một dạng symbol layer cho phép sử dụng mã để tạo các đối tượng hình học mới từ các đối tượng đã có, và sử dụng các đối tượng hình học mới tạo này như các symbol để tạo style cho layer. Đây là một tính năng mạnh mẽ được giải thích tốt nhất bằng một ví dụ.</p>
+
+<p>Bạn có thể sử dụng geometry generator symbology với tất cả các loại layer (point, line và polygon). Symbol kết quả phụ thuộc trực tiếp vào loại layer.</p>
+
+<p>Rất ngắn gọn, geometry generator symbology cho phép bạn chạy tính toán không gian trong chính symbology. Ví dụ: bạn có thể chạy ra lớp tâm của polygon mà không cần tạo thêm một lớp điểm.</p>
+
+<p>Hơn nữa, bạn có tất cả các tùy chọn styling để thay đổi hiển thị của symbol kết quả. Đây là một hướng dẫn ví dụ;</p>
+
+<ol>
+  <li>Kích đúp chuột vào HCMC_border layer</li>
+  <li>Kích vào Simple fill và đổi Symbol layer type thành Geometry generator. Trước khi bạn bắt đầu viết câu truy vấn không gian, chọn loại đối tượng đầu ra. Trong ví dụ này chúng ta sẽ tạo tâm điểm của mỗi đối tượng polygon, do đó loại đối tượng là Point/ Multipoint.</li>
+</ol>
+
+<p><img src="media/centroid.png" alt="Tính toán tâm của từng polygon trên HCMC_border layer" title="Tính toán tâm của từng polygon trên HCMC_border layer" /></p>
+
+<p>Hình 4.17: Tính toán tâm của từng polygon trên HCMC_border layer</p>
+
+<ol>
+  <li>Khi bạn kích chọn OK, bạn sẽ thấy HCMC_border layer được hiển thị dưới dạng một point layer. Chúng ta vừa chạy một tính toán không gian ngay trong layer symbology.</li>
+</ol>
+
+<p><img src="media/centroid-result.png" alt="Point layer" title="Point layer" /></p>
+
+<p>Hình 4.18: Point layer</p>
+
+<ol>
+  <li>Chú ý là một cách thay thế và nhanh hơn là viết các truy vấn không gian sử dụng ‘Expressions dialogue’. Kích vào nút bấm <img src="media/expression.png" alt="alt_text" title="image_tooltip" /> để mở hộp thoại ‘Expression string builder’. Tại đây bạn sẽ có quyền truy cập vào tham chiếu chức năng mở rộng. Bạn có thể tìm kiếm một hàm bằng tên. Ví dụ, gõ centroid trong thanh tìm kiếm.</li>
+  <li>Với Geometry generator symbology bạn thực sự có thể vượt qua ranh giới của symbology thông thường.</li>
+  <li>Nếu bạn muốn thực hành thêm, hãy viết một cây truy vấn không gian để tính buffer zone cho lớp điểm, đượng hoặc vùng.</li>
+</ol>
+
+<h4 id="câu-hỏi-1"><strong>Câu hỏi</strong></h4>
+
+<p>1.N/A</p>
+
+<h4 id="trả-lời"><strong>Trả lời</strong></h4>
+
+<p>1.N.A</p>
+
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

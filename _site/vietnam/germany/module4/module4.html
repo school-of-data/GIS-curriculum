@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Modul 4 - Layer-Styling | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Modul 4 - Layer-Styling page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Modul 4 - Layer-Styling">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Modul 4 - Layer-Styling</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/germany/module4/module4.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="modul-4---layer-styling">Modul 4 - Layer-Styling</h1>
+
+<p><strong>Autor:in</strong>: Ketty</p>
+
+<h2 id="pädagogische-einführung">Pädagogische Einführung</h2>
+
+<p>In diesem Modul lernen Sie, wie Sie das visuelle Erscheinungsbild einer Karte durch die Auswahl geeigneter Symbole und Kartenfarben verändern können. Am Ende des Moduls sollten Sie Konzepte wie Kartensymbologie und Kartenstile kennen. Außerdem erlernen Sie die folgenden Fähigkeiten:</p>
+
+<ul>
+  <li>Styling von Layern</li>
+  <li>grundlegende Raster- und Vektorsymbole und wie man sie auf einen Layer anwendet</li>
+  <li>Mischmodi und Zeicheneffekte</li>
+  <li>Verwenden von Abfragen, um räumliche Operationen auszuführen</li>
+</ul>
+
+<h2 id="technische-voraussetzungen">Technische Voraussetzungen</h2>
+
+<ul>
+  <li>Computer</li>
+  <li>Internetverbindung</li>
+  <li>QGIS 3.16 oder neuer</li>
+  <li>Mittelsachsen (innerhalb von <a href="/vietnam/germany/module4/data/Modul4.gpkg">Modul4.gpkg</a>)</li>
+  <li>Schulen-Mittelsachsen (innerhalb von <a href="/vietnam/germany/module4/data/Modul4.gpkg">Modul4.gpkg</a>)</li>
+  <li><a href="/vietnam/germany/module4/data/HRSL_Mittelsachsen.tif">Mittelsachsen High Resolution Settlement Layer</a></li>
+</ul>
+
+<h2 id="voraussetzungen">Voraussetzungen</h2>
+
+<ul>
+  <li>Grundkenntnisse in der Bedienung eines Computers</li>
+  <li>Grundlegendes Verständnis aller vorherigen Module</li>
+</ul>
+
+<h2 id="zusätzliche-ressourcen">Zusätzliche Ressourcen</h2>
+
+<ul>
+  <li>QGIS-Symbologie - <a href="https://docs.qgis.org/3.16/de/docs/training_manual/basic_map/symbology.html">https://docs.qgis.org/3.16/de/docs/training_manual/basic_map/symbology.html</a></li>
+  <li>Style Sharing Repository - <a href="https://www.gislounge.com/qgis-style-sharing-repository/">https://www.gislounge.com/qgis-style-sharing-repository/</a></li>
+  <li>Stile - <a href="https://plugins.qgis.org/styles/">https://plugins.qgis.org/styles/</a></li>
+  <li>Style Hub - <a href="https://style-hub.github.io/">https://style-hub.github.io/</a></li>
+  <li>Hillshade in QGIS - <a href="https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+  <li>Kartierung von Eisbergen in QGIS - <a href="https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+</ul>
+
+<h2 id="thematische-einführung">Thematische Einführung</h2>
+
+<p>Lassen Sie uns mit einem Beispiel beginnen:</p>
+
+<p>Stellen wir uns vor, Sie sind in einer neuen Stadt, vielleicht als Tourist:in, in der Freizeit oder aus geschäftlichen Gründen. In der Stadt gibt es eine Reihe von Orten, die man gesehen haben muss, wie z. B. Museen, Cafés, Strandpromenaden, Denkmäler, Kulturläden und Märkte. Sie erhalten dann einen Papier-Stadtplan, auf dem Sie die Punkte finden, die Sie unbedingt sehen müssen. Die touristischen Punkte sind alle ausschließlich als rote Punkte markiert. Würde dieser Stadtplan Ihrer Meinung nach Ihre Tour durch die neue Stadt erleichtern? Vermutlich nicht.</p>
+
+<p>Deshalb lernen Sie im folgenden, eine Karte mit verschiedenen Symbolen und Farben zu erstellen. Was Sie nach der Anwendung von Styling-Konzepten in Ihrer Karte sehen, ist eine dynamische visuelle Darstellung der Daten, mit denen Sie arbeiten.</p>
+
+<h3 id="wichtige-bedienfelder-registerkarten-und-darstellungsarten">Wichtige Bedienfelder, Registerkarten und Darstellungsarten</h3>
+
+<h4 id="layergestaltung-bedienfeld"><strong>Layergestaltung-Bedienfeld</strong></h4>
+
+<p>Dieses Bedienfeld ist gewissermaßen eine Abkürzung zu einigen Funktionen des Dialogs “Layereigenschaften”. Es bietet Ihnen eine schnelle und praktische Möglichkeit, das Rendering und das Verhalten eines Layers zu definieren und seine Auswirkungen zu visualisieren, ohne den Layer-Eigenschaften-Dialog zu öffnen.</p>
+
+<p>Es erspart Ihnen nicht nur den Umgang mit dem modalen und blockierenden Dialog der Layereigenschaften, sondern auch die Überfrachtung des Bildschirms mit Funktionsdialogen, da die meisten von ihnen (Farbauswahl, Effekteigenschaften, Regelbearbeitung, Beschriftungsersetzung…) eingebettet sind: Wenn Sie z. B. auf die Farbschaltflächen im Layer-Bedienfeld klicken, wird der Farbauswahldialog im Layer-Bedienfeld selbst geöffnet und nicht als separater Dialog.</p>
+
+<p>Wählen Sie im Layergestaltung-Bedienfeld aus der Dropdown-Liste einen Layer aus. Sie können nun:</p>
+
+<ul>
+  <li>seine Symbologie, Transparenz und sein Histogramm im Falle einer Rasterebene einstellen. Diese Optionen sind dieselben, die auch im Dialogfeld “Rasterlayereigenschaften” (<a href="https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog">https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog</a>) verfügbar sind.</li>
+  <li>seine Symbologie und Beschriftung einstellen. Diese Optionen sind auch im Dialogfeld “Vektoreigenschaften” (<a href="https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog">https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog</a>) verfügbar.</li>
+  <li>die gesamte Historie der Änderungen überblicken, die Sie im aktuellen Projekt auf den Layer-Stil angewendet haben. Sie können also jeden Zustand rückgängig machen oder wiederherstellen, indem Sie ihn in der Liste auswählen und auf Anwenden klicken.</li>
+</ul>
+
+<p>Eine weitere leistungsstarke Funktion dieses Bedienfelds ist das Kontrollkästchen Live-Aktualisierung. Aktivieren Sie es und Ihre Änderungen werden automatisch in der Kartenansicht gerendert, während Sie fortfahren. Sie müssen nicht mehr auf die Schaltfläche “Anwenden” klicken.</p>
+
+<p>Um das Bedienfeld zu aktivieren, klicken Sie auf Ansicht-&gt;Bediefelder und markieren Sie dann Layergestaltung.</p>
+
+<p><img src="media/layer-styling.png" alt="Bedienfeld Layergestaltung" title="Bedienfeld Layergestaltung" /></p>
+
+<p>Abbildung 4.1: Bedienfeld Layergestaltung</p>
+
+<h4 id="registerkarte-symbolisierung-in-den-layereigenschaften"><strong>Registerkarte “Symbolisierung” in den Layereigenschaften</strong></h4>
+
+<p>Um auf die Registerkarte “Symbolisierung” zuzugreifen, doppelklicken Sie auf den Layer, um die Layereigenschaften zu öffnen. Wäheln Sie dann die Registerkarte Symbolisierung.</p>
+
+<p>Hier können Sie die diverse Einstellungen machen um zu beeinflussen, wie Ihre Daten dargestellt werden. In den Screenshots unten sehen Sie die Symbolisierung-Registerkarten für Vektor- bzw. Rasterdatensätze;</p>
+
+<p><img src="media/style-vector.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p><img src="media/style-raster.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figure 4.2: Symbolisierung für Vektor- und Rasterlayer</p>
+
+<h4 id="raster-rendering-kanal-rendering"><strong>Raster-Rendering: Kanal-Rendering</strong></h4>
+
+<p>QGIS bietet vier verschiedene Darstellungsarten an. Die Wahl der Darstellungsart hängt vom Datentyp ab. Der voreingestellte Darstellungstyp ist Einkanalgraustufe. Sie müssen ihn je nach Datentyp auf den entsprechenden Typ umstellen.</p>
+
+<ul>
+  <li>Multikanalfarbe (<a href="https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#multiband-color">https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#multiband-color</a>) - wenn die Datei mehrere Bänder enthält (z. B. ein Satellitenbild mit mehreren Bändern).</li>
+  <li>Paletten/Eindeutige Werte (<a href="">https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#paletted</a>) - für Einzelband-Dateien, die mit einer indizierten Palette geliefert werden (z. B. eine digitale topografische Karte) oder für die allgemeine Verwendung von Paletten zum Rendern von Raster-Layern.</li>
+  <li>Einzelkanalgraustufen (<a href="https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray">https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray</a>) - (ein Kanal des) Bildes wird als Grau gerendert. QGIS wählt diese Darstellungsart, wenn die Datei weder mehrbandig noch palettiert ist (z. B. eine schattierte Reliefkarte).</li>
+  <li>Einkanalpseudofarbe (<a href="https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab">https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab</a>) - diese Darstellungsart kann für Dateien mit einer kontinuierlichen Palette oder Farbkarte (z.B. eine Höhenkarte) verwendet werden.</li>
+  <li>Schummerung (<a href="https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer">(https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer</a>) - Erzeugt eine Schummerung (auch als Hilldshade bekannt) aus einem Kanal.</li>
+</ul>
+
+<h4 id="vektor-rendering"><strong>Vektor-Rendering</strong></h4>
+
+<p>Wenn Sie Geodaten-Layer in QGIS Desktop laden, werden diese mit einem zufälligen Single-Symbol-Darstellungsart gestylt. Um dies zu ändern, klicken Sie auf Layer-&gt;Layereigenschaften-&gt;Symbolisierung.</p>
+
+<p>Im Menü oben links stehen mehrere Darstellungsart-Optionen zur Verfügung:</p>
+
+<ul>
+  <li>Einzelsymbol - dies ist die Standard-Darstellungsart, bei der ein Symbol auf alle Features in einem Layer angewendet wird.</li>
+  <li>Kategorisiert - ermöglicht die Auswahl eines kategorischen Attributfelds, mit dem der Layer gestaltet werden soll. Wählen Sie das Feld aus und klicken Sie auf Klassifizieren und QGIS wendet ein anderes Symbol für eindeutigen Wert im Feld an. Sie können auch die Schaltfläche “Ausdrucksdialog” verwenden, um das Styling mit einem SQL-Ausdruck zu erweitern.</li>
+  <li>Abgestuft - ermöglicht es Ihnen, die Daten nach einem numerischen Feldattribut in diskrete Kategorien zu klassifizieren. Sie können die Parameter der Klassifizierung angeben (Klassifizierungstyp und Anzahl der Klassen) und die Schaltfläche “Ausdrucksdialog” verwenden, um das Styling mit einem SQL-Ausdruck zu erweitern.</li>
+  <li>Regelbasierend - verwenden Sie diese Darstellungsart, um ein benutzerdefiniertes regelbasiertes Styling zu erstellen. Die Regeln basieren dabei auf SQL-Ausdrücken.</li>
+  <li>Punktversatz - wenn Sie einen Layer mit gestapelten Punkten haben, können Sie mit dieser Option die Punkte verschieben, damit sie alle sichtbar sind.</li>
+  <li>Invertierte Polygone - dies ist ein neuer Darstellungstyp, mit dem ein Feature-Polygon in eine Maske umgewandelt werden kann. Zum Beispiel würde ein Stadtgrenzpolygon, das mit dieser Darstellungsart verwendet wird, zu einer Maske um die Stadt herum werden. Sie ermöglicht auch die Verwendung von kategorisierten, abgestuften und regelbasierten Darstellungsarten und SQL-Ausdrücken.</li>
+</ul>
+
+<h2 id="hauptinhalt">Hauptinhalt</h2>
+
+<h3 id="teil-1-grundlegende-raster--und-vektorsymbologie">Teil 1: Grundlegende Raster- und Vektorsymbologie</h3>
+
+<p>Die Symbologie von Vektordaten kann durch Transparenz, Farbe, Drehung und Größe variieren.</p>
+
+<h4 id="inhalt"><strong>Inhalt</strong></h4>
+
+<ul>
+  <li>Layer-Eigenschaften und Symbologie-Menü</li>
+  <li>Arten der Vektordarstellung</li>
+  <li>Arten des Rasterdarstellung (Kanalrendering)</li>
+</ul>
+
+<h4 id="beispiel-1-vektordarstellung"><strong>Beispiel 1: Vektordarstellung</strong></h4>
+
+<ol>
+  <li>Zur Demonstration dieses Beispiels werden zwei Beispieldatensätze verwendet: Die Schulen und die Landkreise vom Landkreis Mittelsachsen.</li>
+  <li>Fügen Sie die beiden Vektorlayer zu QGIS hinzu.</li>
+  <li>Schauen Sie sich an, wie die Daten standardmäßg dargestellt werden. Die Füllfarben aus dem Screenshot sind möglicherweise nicht die gleichen woe bei Ihnen, da QGIS die Farben für beim Anwendungsstart zufällig auswählt.</li>
+</ol>
+
+<p><img src="media/default-vector-render.png" alt="Standard-Darstellung" title="Standard-Darstellung" /></p>
+
+<p>Abbildung 4.3: Standard-Darstellung</p>
+
+<ol>
+  <li>Doppelklicken Sie auf den “Mittelsachsen” der die Grenze des Landkreises beschreibt.</li>
+  <li>Wählen Sie im erscheinenden Menü die Registerkarte <strong>Symbolisierung</strong>.</li>
+  <li>Ändern Sie die <strong>Füllfarbe</strong> auf <strong>Transparente Füllung</strong>: ** Klicken Sie auf den Dropdown-Pfeil unter “Füllfarbe”.**</li>
+  <li>Das Ergebnis sollte wie unten dargestellt aussehen.</li>
+</ol>
+
+<p><img src="media/no-fill-render.png" alt="Transparente Füllung für das Polygon" title="Transparente Füllung für das Polygon" /></p>
+
+<p>Bild 4.4: Transparente Füllung für das Polygon</p>
+
+<ol>
+  <li>Der nächste Schritt ist die Symbolisierung des Punkt-Layers - den Schulen.</li>
+  <li>Doppelklicken Sie auf den Layer <strong>Schulen-Mittelsachsen</strong>, um den Dialog <strong>Layereigenschaften</strong> zu öffnen. Ändern Sie den Rendertyp von Einzelsymbol auf <strong>Kategorisiert</strong>, wählen Sie als Eigenschaft den <strong>Wert</strong>. Der Wert stellt den Bereich von Interesse dar. Legen Sie das Symbol und die Farbrampe fest. Klicken Sie dann auf Klassifizieren. In unserem Beispiel werden wir die Schulen wieder nach ihrer barrierefreiheit für Rollstühle klassifizieren.</li>
+</ol>
+
+<p><img src="media/vector-style.png" alt="Der Layereigenschaften Dialog für den Schullayer" title="Der Layereigenschaften Dialog für den Schullayer" /></p>
+
+<p>Bild 4.5: Der Layereigenschaften Dialog für den Schullayer</p>
+
+<ol>
+  <li>Die resultierende Karte sollte wie folgt aussehen</li>
+</ol>
+
+<p><img src="media/final-vector-render.png" alt="Kartendarstellung der Schulen" title="Kartendarstellung der Schulen" /></p>
+
+<p>Bild 4.6: Kartendarstellung der Schulen</p>
+
+<ol>
+  <li>Denken Sie daran, die Layer im <strong>Layer-Bedienfeld</strong> so anzuordnen, dass der Polygon-Layer unterhalb des Punkt-Layers liegt. Dadurch wird die Punktebene sichtbar.</li>
+</ol>
+
+<h4 id="beispiel-2-rasterdarstellung"><strong>Beispiel 2: Rasterdarstellung</strong></h4>
+
+<ol>
+  <li>Doppelklicken Sie auf den HRSL_Mittelsachsen Rasterlayer.</li>
+  <li>Wählen Sie im erscheinenden Menü die Registerkarte Symbologie</li>
+  <li>Ändern Sie die Darstellungsart auf “Einkanalpseudofarbe”.</li>
+</ol>
+
+<p><img src="media/qgis9.png" alt="Symbolisierung-Menü" title="Symbolisierung-Menü" /></p>
+
+<p>Bild 4.7: Symbolisierung-Menü</p>
+
+<ol>
+  <li>Legen Sie die Interpolation, den Farbverlauf und den Modus fest. Klicken Sie auf Klassifizieren. Das Ergebnis ist eine Choroplethenkarte, die die Bevölkerungsdichte zeigt.</li>
+</ol>
+
+<p><img src="media/hrsl-style.png" alt="Bevölkerungsdichte im Landkreis Mittelsachsen" title="Bevölkerungsdichte im Landkreis Mittelsachsen" /></p>
+
+<p>Abbildung 4.8: Bevölkerungsdichte im Landkreis Mittelsachsen</p>
+
+<ol>
+  <li>Zoomen Sie hinein, um die neue Karte feiner zu sehen.</li>
+</ol>
+
+<p><img src="media/zoom-in.png" alt="Vergrößerte Karte" title="Vergrößerte Karte" /></p>
+
+<p>Abbildung 4.9: Vergrößerte Karte</p>
+
+<ol>
+  <li>Alternativ können Sie auch das <strong>Layergestaltung-Bedienfeld</strong> verwenden.</li>
+</ol>
+
+<h4 id="teil-2-effekte"><strong>Teil 2: Effekte</strong></h4>
+
+<ol>
+  <li>Im folgenden wollen wir uns noch ein wenig mit fortgeschrittenen Darstellungsarten beschäftigten. Ladne Sie dzau den HRSL_Mittelsachsen und den Mittelsachsen Layer. In diesem Tutorial wird erklärt, wie Sie die Zeicheneffekte und Blending-Modi für eine bessere Darstellung verändern können.</li>
+</ol>
+
+<p><img src="media/initial-workspace.png" alt="Der anfängliche Arbeitsbereich" title="Der anfängliche Arbeitsbereich" /></p>
+
+<p>Abbildung 4.10: Der anfängliche Arbeitsbereich</p>
+
+<ol>
+  <li>Öffnen Sie das Fenster Layereigenschaften und klicken Sie dann auf den Menüpunkt Symbolisierung für den Sachsen-Layer.</li>
+</ol>
+
+<p>Unten im Menü befindet sich ein Kontrollkästchen für Zeicheneffekte. Aktivieren Sie dieses, und klicken Sie dann auf die Schaltfläche Effekte einstellen <img src="media/customise-effects-button.png" alt="" title="Effekte einstellen" /> rechts daneben:</p>
+
+<p><img src="media/draw-effects.png" alt="Layereigenschaften-Fenster und Symbologie-Menü" title="Layereigenschaften-Fenster und Symbologie-Menü" /></p>
+
+<p>Bild 4.11: Fenster “Layereigenschaften” und Menü “Symbolisierung”</p>
+
+<ol>
+  <li>Es öffnet sich ein neuer Effekteigenschaften-Dialog</li>
+</ol>
+
+<p><img src="media/new-effects-dialog.png" alt="Effekteigenschaften-Dialog" title="Effekteigenschaften-Dialog" /></p>
+
+<p>Bild 4.12: Effekteigenschaften-Dialog</p>
+
+<ol>
+  <li>Sie können sehen, dass der einzige aufgelistete Effekt derzeit ein Quelleffekt ist. Quelleffekte sind nicht besonders aufregend - alles, was sie tun, ist, die ursprüngliche Ebene unverändert zu zeichnen. Ändern Sie dies in einen Weichzeichner-Effekt, indem Sie <strong>auf das Kombinationsfeld Effekttyp klicken und Verwischen auswählen</strong>. Sie können dann mit den Parametern herumspielen.</li>
+</ol>
+
+<p><img src="media/blur-effect.png" alt="Effekttyp Verwischen auswählen" title="Effekttyp Verwischen auswählen" /></p>
+
+<p>Bild 4.13: Effekttyp Verwischen auswählen</p>
+
+<ol>
+  <li>Wenden Sie nun die Einstellungen an, Sie werden sehen, dass die Polygonebene nun unscharf ist. Jetzt geht’s voran!</li>
+</ol>
+
+<p><img src="media/blurry-result.png" alt="Unscharfe Ebene" title="Unscharfe Ebene" /></p>
+
+<p>Bild 4.14: Unscharfe Ebene</p>
+
+<ol>
+  <li>Öffenen Sie den <strong>Effekteigenschaften-Dialog</strong> erneut. Lassen Sie uns etwas Fortgeschritteneres ausprobieren. Anstatt nur einen einzigen Effekt zu verwenden, können Sie mehrere Effekte miteinander verknüpfen, um verschiedene Ergebnisse zu erzielen. Lassen Sie uns einen traditionellen Schlagschatten erzeugen, indem wir einen <strong>Schattenwurf</strong>-Effekt unter dem <strong>Quellen</strong>- und dem <strong>Verwischen</strong>-Effekt hinzufügen. Sollten Sie noch die transparente Füllung des Layers aus dem letzten Schritt ausgewählt haben, sollten Sie diese nun zu einer Farbe ändern um ein schöneres Resultat zu erhalten.</li>
+</ol>
+
+<p><img src="media/drop-shadow.png" alt="Dialog Effekteigenschaften" title="Dialog Effekteigenschaften" /></p>
+
+<p>Bild 4.15: Dialog Effekteigenschaften</p>
+
+<ol>
+  <li>Effekte werden von oben nach unten gezeichnet, so dass der Schlagschatten unter den Quellpolygonen erscheint</li>
+</ol>
+
+<p><img src="media/drop-shadow-result.png" alt="Schlagschatten-Effekt" title="Schlagschatten-Effekt" /></p>
+
+<p>Bild 4.16: Schlagschatteneffekt</p>
+
+<ol>
+  <li>Sie können so viele Effekte stapeln, wie Sie möchten. Zum Beispiel ein <strong>inneres Glühen</strong> über einem <strong>Quelleneffekt</strong>, mit einem <strong>Schattenwurf</strong> unter allem. Probieren Sie es aus!</li>
+</ol>
+
+<p>Insgesamt ist zu beachten, dass Effekte entweder auf eine gesamte Ebene oder auf die einzelnen Symbolebenen für Merkmale innerhalb einer Ebene angewendet werden können. Im Grunde sind die Möglichkeiten nahezu unbegrenzt! Python-Plugins können dies noch weiter ausbauen, indem sie zusätzliche Effekte implementieren.</p>
+
+<p>Weitere Beispiele dafür, was Sie mit Misch- und Zeichemodi in QGIS machen können, finden Sie hier:</p>
+<ul>
+  <li>Hillshade in QGIS (englischsprachig) -<a href="https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+  <li>Kartierung von Eisbergen in QGIS (englischsprachig) - <a href="https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+</ul>
+
+<h3 id="teil-3-geometriegeneratoren">Teil 3: Geometriegeneratoren</h3>
+
+<h4 id="inhalt-1"><strong>Inhalt</strong></h4>
+
+<ul>
+  <li>Ausführen einer räumlichen Operation innerhalb der Layer-Symbologie</li>
+</ul>
+
+<h4 id="tutorial"><strong>Tutorial</strong></h4>
+
+<p>Ein Geometriegenerator ist ein Symbol-Layer-Typ, der es Ihnen ermöglicht, mit Hilfe von Code neue Geometrien aus bestehenden Features zu erstellen und die neuen “generierten” Geometrien als Symbole zu verwenden, auf die wiederum Stile angewendet werden können. Dies ist eine leistungsstarke Funktion, die am besten anhand eines Beispiels erklärt wird.</p>
+
+<p>Sie können die Symbolik des Geometriegenerators mit allen Layer-Typen (Punkte, Linien und Polygone) verwenden. Das resultierende Symbol hängt direkt vom Layer-Typ ab.</p>
+
+<p>In aller Kürze: Die Geometriegenerator-Symbologie ermöglicht es Ihnen, einige räumliche Operationen innerhalb der Symbologie selbst auszuführen. So können Sie z. B. eine echte räumliche Schwerpunktoperation auf einem Polygon-Layer ausführen, ohne einen Punkt-Layer zu erstellen.</p>
+
+<p>Außerdem haben Sie alle Darstellungsoptionen, um das Aussehen des resultierenden Symbols zu ändern. Hier ein kleines Beispiel:</p>
+
+<ol>
+  <li>Doppelklicken Sie auf den Sachsen Layer</li>
+  <li>Klicken Sie auf Einfache Füllung und ändern Sie den Layer-Typ Symbol in Geometriegenerator. Bevor Sie mit dem Schreiben der räumlichen Abfrage beginnen, wählen Sie den Geometrietyp in der Ausgabe. In diesem Beispiel werden wir Zentroide für jedes Feature erstellen, also ändern Sie die Geometrieart auf Punkt / Mehrpunkt.</li>
+</ol>
+
+<p><img src="media/centroid.png" alt="Zentroid-Operation auf Sachsen-Layer" title="Zentroid-Operation auf Sachsen-Layer" /></p>
+
+<p>Bild 4.17: Zentroid-Operation auf Sachsen-Layer</p>
+
+<ol>
+  <li>Wenn Sie auf OK klicken, sehen Sie, dass der administrative Layer als Punkt-Layer gerendert wird. Wir haben gerade eine räumliche Operation innerhalb der Layer-Symbologie selbst ausgeführt.</li>
+</ol>
+
+<p><img src="media/centroid-result.png" alt="HRSL-Layer mit Centroid aus dem Vektorlayer" title="HRSL-Layer mit Centroid aus dem Vektorlayer" /></p>
+
+<p>Abbildung 4.18: HRSL-Layer mit Centroid aus dem Vektorlayer</p>
+
+<ol>
+  <li>Beachten Sie, dass eine alternative und einfachere Möglichkeit, räumliche Abfragen zu schreiben, die Verwendung des “Ausdrucksdialogs” ist. Klicken Sie auf die <img src="media/expression.png" alt="" title="Ausdrucksdialog" /> Schaltfläche, um das Dialogfeld zu öffnen. Hier haben Sie Zugriff auf eine umfangreiche Funktionsreferenz. Sie können nach einer Funktion anhand ihres Namens suchen. Geben Sie zum Beispiel centroid in die Suchleiste ein.</li>
+  <li>Mit dem Geometrie-Generator Symbologie können Sie wirklich über den Rand der normalen Symbologie hinausgehen.</li>
+  <li>Wenn Sie noch weiter gehen wollen, schreiben Sie eine räumliche Abfrage, um eine Pufferzone um den Punkt-, Linien- oder Polygon-Layer zu berechnen.</li>
+</ol>
+
+<h4 id="quizfragen"><strong>Quizfragen</strong></h4>
+
+<p>1.N/A</p>
+
+<h4 id="quizantworten"><strong>Quizantworten</strong></h4>
+
+<p>1.N.A</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

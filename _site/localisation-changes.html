@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title> | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the  page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main"></h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/localisation-changes.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <p><strong>LIST OF CHANGES FOR LOCALISATION OF MODULES</strong></p>
+
+<h1 id="tips">TIPS</h1>
+<ul>
+  <li>Utilize Search and Replace
+    <ul>
+      <li>Search and replace <em>Pampanga province</em> with the name of your area of interest (e.g. for Sri Lanka, I replaced <em>Pampanga province</em> with <em>Colombo district</em>)</li>
+      <li>Search and replace <em>Philippines</em> with the name of your country of interest (e.g. for Sri Lanka, I replaced <em>Philippines</em> with <em>Sri Lanka</em>)</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="module-0">Module 0</h1>
+
+<h2 id="media">media</h2>
+<ul>
+  <li><strong>true-size-of.png</strong> -&gt; replace with screenshot showing the country</li>
+  <li><strong>spatial-model.png</strong> -&gt; replace with screenshot showing the country</li>
+  <li><strong>vector.png</strong> -&gt; replace with screenshot showing a country vector file (geometry and attribute table)</li>
+</ul>
+
+<h2 id="module0">module0</h2>
+<ul>
+  <li><strong>line 268 and 269</strong> -&gt; replace with common CRS used in the country</li>
+</ul>
+
+<h1 id="module-1">Module 1</h1>
+
+<h2 id="media-1">media</h2>
+<ul>
+  <li><strong>change-theme.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>ex01-01.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>ex01-02.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>ex01-03.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>manage-and-install-plugins-dialog.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>manage-and-install-plugins-dialog-2.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>memory-layer-saver-plugin.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>plugins-menu.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>plugins-menu-2.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>qgis-interface.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>qgis-interface-custom.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>qgis-interface-parts.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>quickosm-plugin.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>settings-1.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>settings-2.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>user-profiles-1.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>user-profiles-2.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+  <li><strong>user-profiles-3.png</strong> -&gt; replace with screenshot of local/translated QGIS (if available)</li>
+</ul>
+
+<h1 id="module-2">Module 2</h1>
+
+<h2 id="data">data</h2>
+<ul>
+  <li><strong>*.shp</strong> -&gt; use shapefile of province or country</li>
+  <li><strong>*.geojson</strong> -&gt; use geojson admin boundary 1 level higher than the shapefile (i.e. if shapefile is level 0, geojson should be level 1)</li>
+  <li><strong>*.fgb</strong> -&gt; use flatgeobuf admin boundary 1 level (2 levels) higher than the geojson (shapefile) (i.e. if the shapefile is level 0, the flatgeobuf should be level 2)</li>
+  <li><strong>*.gpkg</strong> -&gt; Geopapackage containing a DEM and a point vector.
+    <ul>
+      <li><strong>*_SRTM_DEM</strong>
+        <ol>
+          <li>Same extent as the shapefile.</li>
+          <li>Can be generated using the <strong>SRTM Downloader</strong> plugin, merging the loaded rasters, and clipping the resulting merged raster using the shapefile polygon/mask.</li>
+          <li>Save the output of step 2 in a geopackage.</li>
+        </ol>
+      </li>
+      <li><strong>*_hospitals</strong>
+        <ol>
+          <li>This can be generated using the <strong>QuickOSM plugin</strong> with key: amenity and value: hospital. Get points only.</li>
+          <li>Save the loaded layer into the same geopackage as the DEM.</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li><strong>*_schools.csv</strong> -&gt; CSV file of school locations.
+    <ol>
+      <li>This can be generated using the <strong>QuickOSM plugin</strong> with key: amenity and value: schools. get points only.</li>
+      <li>Add the X/Y field to the generated vector file using the <strong>Add X/Y fields to layer</strong> algorithm.</li>
+      <li>Save the output of step 2 as a CSV file.</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="media-2">media</h2>
+<ul>
+  <li><strong>data-source-manager-csv.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>data-source-manager-raster.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>data-source-manager-vector.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>layer-properties.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>layer-panel-1.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>layer-panel-2.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>map-canvas-1.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>metadata-1.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>metadata-2.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>metadata-3.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>qgis-browser-2.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>qgis-browser-3.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>qgis-browser-layer-properties.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>vector-layers-loaded-1.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>xyz-3.png</strong> -&gt; replace with screenshot using the localised data</li>
+</ul>
+
+<h2 id="module2">module2</h2>
+<ul>
+  <li><strong>line 157 to 163</strong> -&gt; replace names of files (e.g. NCR_admin_boundary to LKA_admin_boundary)</li>
+  <li><strong>line 182</strong> -&gt; replace names of files</li>
+  <li><strong>line 260, 263, 265</strong> -&gt; replace name fo files</li>
+  <li><strong>line 308, 311</strong> -&gt; replace name of files</li>
+  <li><strong>line 321, 324</strong> -&gt; replace name of files</li>
+  <li><strong>line 342, 345</strong> -&gt; replace name of files</li>
+  <li><strong>line 398-399, 407, 411, 417</strong> -&gt; replace with sample of local tile server (XYZ), if not available, use ESRI World Imagery (see <a href="/sri-lanka/module2/module2.html">Sri Lanka example</a>, lines 398-417)</li>
+  <li><strong>line 449-450, 458, 460, 462, 466, 468</strong> -&gt; replace with sample of local WMS server, if not available, use EOS Sentinel 2 (see <a href="/sri-lanka/module2/module2.html">Sri Lanka example</a>, lines 438-459)</li>
+</ul>
+
+<h1 id="module-3">Module 3</h1>
+
+<h2 id="data-1">data</h2>
+<ul>
+  <li><strong>module3.gpkg</strong> -&gt; replace content of geopackage with admin boundary of 1 large (e.g. province/district) and 1 small (e.g. city/division) admin boundary</li>
+  <li><strong>HRSL_*_Population.tif</strong> -&gt; High Resolution Settlement Layer raster data covering the larger admin area
+  -&gt; can be found at https://data.humdata.org/search?organization=facebook&amp;q=%22High%20Resolution%20Population%20Density%20Maps%20%2B%20Demographic%20Estimates%22</li>
+</ul>
+
+<h2 id="media-3">media</h2>
+<ul>
+  <li><strong>hrsl-1.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>osm.png</strong> -&gt; replace with screenshot showing the country on OSM</li>
+  <li><strong>overpass-1.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>overpass-2.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>overpass-3.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>quickosm-1.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>quickosm-2.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>quickosm-3.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>quickosm-4.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>quickosm-5.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>quickosm-6.png</strong> -&gt; replace with screenshot using the localised data</li>
+  <li><strong>quickosm-7.png</strong> -&gt; replace with screenshot using the localised data</li>
+</ul>
+
+<h2 id="module3">module3</h2>
+<ul>
+  <li><strong>line 26</strong> -&gt; replace name of layers</li>
+  <li><strong>line 105, 107, 109</strong> -&gt; replace name of layers</li>
+  <li><strong>line 134, 138, 142, 144</strong> -&gt; replace name of layers</li>
+  <li><strong>line 159, 163, 167, 169</strong> -&gt; replace name of layers</li>
+  <li><strong>line 232, 234, 236</strong> -&gt; replace name of layers</li>
+  <li><strong>line 254</strong> -&gt; replace name of layer</li>
+  <li><strong>line 268, 270, 272, 274, 276, 278</strong> -&gt; check if the overpass query returns a layer. if not, replace with a different query (e.g. use a different fast food name).</li>
+</ul>
+
+<h1 id="module-4">Module 4</h1>
+
+<h2 id="data-2">data</h2>
+<ul>
+  <li><strong>module4.gpkg</strong> -&gt; same content with module3.gpkg + a clinics layer
+    <ul>
+      <li>clinics layer can be generated using QuickOSM with parameters key: amenity, value: clinic</li>
+    </ul>
+  </li>
+  <li><strong>HRSL_*_Population.tif</strong> -&gt; High Resolution Settlement Layer raster data covering the larger admin boundary layer (same as module 3)</li>
+</ul>
+
+<h2 id="media-4">media</h2>
+<ul>
+  <li><strong>blur-effect.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>blurry-result.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>centroid.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>centroid-result.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>default-vector-render.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>draw-effects.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>drop-shadow-result.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>final-vector-render.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>hrsl-style.png</strong> -&gt; replace with screenshot using localised data
+    <ul>
+      <li>color ramp is viridis, inverted, quantile, 5 classes</li>
+    </ul>
+  </li>
+  <li><strong>initial-workspace.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>layer-styling.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>new-effects-dialog</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>no-fill-render.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>qgis9.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>vector-style.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>zoom-in.png</strong> -&gt; replace with screenshot using localised data</li>
+</ul>
+
+<h2 id="module4">module4</h2>
+<ul>
+  <li><strong>line 20, 21, 22</strong> -&gt; replace name of layers (e.g. Pampanga -&gt; Colombo)</li>
+</ul>
+
+<h1 id="module-5">Module 5</h1>
+
+<h2 id="data-3">data</h2>
+<ul>
+  <li><strong>module5.gpkg</strong> -&gt; same content with module4.gpkg + province/district admin layer vector</li>
+  <li><strong>HRSL_*_Population.tif</strong> -&gt; High Resolution Settlement Layer raster data covering the province/district of interest boundary layer (same as module 3 and 4)</li>
+</ul>
+
+<h2 id="media-5">media</h2>
+<ul>
+  <li><strong>atlas-attr.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>atlas-controlled.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>atlas-coverage.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>atlas-outputs.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>atlas-preview.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>atlas-print-layout.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>atlas-toolbar-nav.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>attribution.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>controlled_by_atlas.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>coverage-layer.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>exported-map.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>exported-map-canvas.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>export-map-canvas.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>export-map-canvas-image.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>generate-atlas.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>img-parameters.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>legend.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>legend_scalebar_added.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>newprint_composer.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>new-print-layout.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>new-print-layout-name.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>new-print-layout-window.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>print_comp2.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>print-layout-map.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>print-layout-with-title.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>scale-bar.png</strong> -&gt; replace with screenshot using localised data</li>
+</ul>
+
+<h2 id="module5">module5</h2>
+<ul>
+  <li><strong>line 26-30</strong> -&gt; replace name of files</li>
+  <li><strong>line 49</strong> -&gt; replace name of area and country</li>
+  <li><strong>line 91</strong> -&gt; replace name of area and country</li>
+  <li><strong>line 198</strong> -&gt; replace name of area and country</li>
+  <li><strong>line 208</strong> -&gt; replace number of maps to be generated</li>
+  <li><strong>line 223</strong> -&gt; replace number of maps/areas (e.g. 81 provinces -&gt; 25 districts)</li>
+  <li><strong>line 235</strong> -&gt; replace number of maps to be generated</li>
+  <li><strong>line 241</strong> -&gt; replace number of maps to be generated</li>
+  <li><strong>line 248</strong> -&gt; replace kind of area (e.g. provinces -&gt; districts)</li>
+</ul>
+
+<h1 id="module-6">Module 6</h1>
+
+<h2 id="data-4">data</h2>
+<ul>
+  <li><strong>module6.gpkg</strong> -&gt; same as module 5.gpkg</li>
+  <li><strong>HRSL_*_Population.tif</strong> -&gt; High Resolution Settlement Layer raster data covering the province/district of interest boundary layer (same as module 3, 4, and 5)</li>
+</ul>
+
+<h2 id="media-6">media</h2>
+<ul>
+  <li><strong>add-layers.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>area.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>attribute-tab.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>dock-attr-btn.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>docked-attribute-tab.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>field_calculator.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>gen-settings.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>many-polygons.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>select.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>selected-attr.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>selected-canvas.png</strong> -&gt; replace with screenshot using localised data</li>
+</ul>
+
+<h2 id="module6">module6</h2>
+<ul>
+  <li><strong>line 29-32</strong> -&gt; replace name of files</li>
+  <li><strong>line 113</strong> -&gt; replace name of area and country</li>
+  <li><strong>line 133</strong> -&gt; replace name of country and CRS</li>
+  <li><strong>line 180</strong> -&gt; replace name of area</li>
+  <li><strong>line 184-187</strong> -&gt; replace name of files</li>
+  <li><strong>line 196, 199</strong> -&gt; replace if needed (e.g. current expression is invalid or does not return results)</li>
+  <li><strong>line 205</strong> -&gt; replace number of selected clinics based on result of query</li>
+</ul>
+
+<h1 id="module-7">Module 7</h1>
+
+<h2 id="data-5">data</h2>
+<ul>
+  <li><strong>(topo map or any map of the country to be georeferenced)</strong></li>
+</ul>
+
+<h2 id="media-7">media</h2>
+<ul>
+  <li><strong>digitize-1.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>digitize-2.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>digitize-3.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>digitize-zoom.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>georef-1.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>georef-2.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>georef-3.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>georef-4.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>georef-5.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>georeferencer.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>new-geopackage-dialog.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>new-shapefile-dialog.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>transformation-settings.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>xyz-1.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>xyz-2.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>xyz-3.png</strong> -&gt; replace with screenshot using localised data</li>
+</ul>
+
+<h2 id="module7">module7</h2>
+<ul>
+  <li><strong>line 14</strong> -&gt; replace with file to be georeferenced</li>
+  <li><strong>line 254</strong> -&gt; replace name of map image file to that of the file to be georeferenced</li>
+</ul>
+
+<h1 id="module-8">Module 8</h1>
+
+<h2 id="data-6">data</h2>
+<ul>
+  <li><strong>module8.gpkg</strong> -&gt; contains the following OSM layers downloaded from GeoFabrik, clipped to the province/district/state of interest, and projected to a projected CRS used by the country. For example, for the Philippines, layers are clipped to the province of Pampanga with EPSG 3123. For Sri Lanka, the district of Colombo is used with EPSG 5235.
+    <ul>
+      <li>pois (point)</li>
+      <li>pofw (point)</li>
+      <li>road (line)</li>
+      <li>waterways (line)</li>
+      <li>buildings (polygon)</li>
+      <li>landuse (polygon)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>NOTE:</strong> There’s a possibility that module8.gpkg can exceed the 100MB single file size limit when pushing to GitHub. If this is the case, just put a text file inside the data folder with a link to where the data can be found or save the individual layers as shapefiles (or other vector formats) or save the layers into separate geopackages if these individual files will be less than 100MB.</p>
+
+<h2 id="media-8">media</h2>
+<ul>
+  <li><strong>fig81.png</strong> -&gt; replace with screenshot showing OSM routing using local places</li>
+  <li><strong>fig85.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig86.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig87.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig88.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig810.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig811.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig812.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig813.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig814.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig815.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig816.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig817_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig818_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig818_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig818_c.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig819_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig819_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig820_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig821.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig822.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig824.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig825.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig826_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig827_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig828_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig828_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig828_d.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig829_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig830_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig832.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig833.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig834_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig834_c.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig834_e.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig835_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig835_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig836_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig836_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig837_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig837_d.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig837_e.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig838_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig838_c.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig839.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig840_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig840_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig840_c.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig840_d.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig841.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig842.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig843.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig844.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig845.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig846.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig847.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig849.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig850.png</strong> -&gt; replace with screenshot using localised data</li>
+</ul>
+
+<h2 id="module8">module8</h2>
+<ul>
+  <li><strong>line 36</strong> -&gt; replace with coordinate reference system used in the country (e.g. <em>PRS92 / Philippines zone 3, EPSG 3123</em> becomes <em>SLD 99 / Sri Lanka Grid 1999, EPSG 5235</em>)</li>
+  <li><strong>line 59</strong> -&gt; replace area with local places (e.g. <em>Angeles, Pampanga, Philippines</em> becomes <em>Colombo, Sri Lanka</em>)</li>
+  <li><strong>lines 135, 150, 169</strong> -&gt; replace with local EPSG code used (e.g. <em>3123</em> becomes <em>5235</em>)</li>
+  <li><strong>lines 201-221, 227-236</strong> -&gt; replace with output of Basic Statistics of Field algorithm using localised data</li>
+  <li><strong>line 239</strong> -&gt; replace with outputs of Basic Statistics of Field algorithm using localised data (e.g. <em>827657</em> becomes <em>158500</em>)</li>
+  <li><strong>line 287, 377, 563, 596, 601, 603, 608, 610, 618, 620, 623, 625, 666, 855, 859, 878, 898, 900, 923, 929</strong> -&gt; replace name of area with local area of interest (e.g. <em>Pampanga</em> becomes <em>Colombo</em>, <em>province</em> becomes <em>district</em>)</li>
+  <li><strong>line 328</strong> -&gt; replace number of features with output from localized data (e.g. <em>2727</em> becomes <em>394</em>)</li>
+  <li><strong>line 414-457</strong> -&gt; replace with outputs of List unique values algorithm using localized data</li>
+  <li><strong>line 484</strong> -&gt; replace name of area (<em>Pampanga</em> to <em>Colombo</em>) and values based on GroupStats computation (<em>3270 buildings</em> to <em>303 buildings</em>)</li>
+  <li><strong>line 788 - 813</strong> -&gt; depending on the POI dataset, replace the fclass to be queried. If public buildings fclasses exist in the data (e.g. town_hall, hospital, etc.), no need to replace type of POI. If not, as with Sri Lanka which has different fclasses on the POI layer, replace with the appropriate POI class. In the case of Sri Lanka, I used towns and cities instead (Philippines uses public buildings POI classes like hospitals, schools, etc.).</li>
+</ul>
+
+<h1 id="module-9">Module 9</h1>
+
+<h2 id="downloading-data-for-module-9">Downloading data for Module 9</h2>
+<ul>
+  <li>For the SRTM DEM, you can use the SRTM Downloader plugin in QGIS and download the tiles covering your area of choice. Save the downloaded layers as TIFF files.</li>
+  <li>For the Copernicus Global Land Cover layers, the easiest way to download is to use Google Earth Engine.
+    <ol>
+      <li>Get the extent of your Area of Interest (AOI)</li>
+      <li>Use the following script to download the LC data from 2015 to 2019 (the script below does 1 download per run, feel free to modify it to run as a loop)</li>
+    </ol>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Select geometry to extract PROBA-V Landcover data</span>
+  <span class="c1">// Replace the vertices with the vertices of the extent of your area</span>
+  <span class="kd">var</span> <span class="nx">geometry</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">.</span><span class="nx">Polygon</span><span class="p">([</span> <span class="p">[</span> <span class="p">[</span> <span class="mf">79.8397728261881383</span><span class="p">,</span> <span class="mf">6.7136763269970103</span> <span class="p">],</span> <span class="p">[</span> <span class="mf">80.2238350772961866</span><span class="p">,</span> <span class="mf">6.7136763269970103</span> <span class="p">],</span> <span class="p">[</span> <span class="mf">80.2238350772961866</span><span class="p">,</span> <span class="mf">6.9797629738920230</span> <span class="p">],</span> <span class="p">[</span> <span class="mf">79.8397728261881383</span><span class="p">,</span> <span class="mf">6.9797629738920230</span> <span class="p">],</span> <span class="p">[</span> <span class="mf">79.8397728261881383</span><span class="p">,</span> <span class="mf">6.7136763269970103</span> <span class="p">]]]);</span>
+
+  <span class="c1">// Location</span>
+  <span class="kd">var</span> <span class="nx">area</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="nx">geometry</span><span class="p">);</span>
+  <span class="c1">// Set study area as map center.</span>
+
+  <span class="nb">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">area</span><span class="p">);</span>
+
+  <span class="c1">// Select dataset from the Copernicus Landcover Proba-V</span>
+  <span class="c1">// Just replace the year at the end of the URL (e.g. replace Global/2015 to Global/2016 to download the 2016 data)</span>
+  <span class="kd">var</span> <span class="nx">landcover</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="dl">"</span><span class="s2">COPERNICUS/Landcover/100m/Proba-V-C3/Global/2015</span><span class="dl">"</span><span class="p">).</span><span class="nx">select</span><span class="p">(</span><span class="dl">'</span><span class="s1">discrete_classification</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">forest_type</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">urban-coverfraction</span><span class="dl">'</span><span class="p">).</span><span class="nx">clip</span><span class="p">(</span><span class="nx">area</span><span class="p">);</span>
+
+  <span class="c1">// Check the console for the result of the data selection</span>
+  <span class="nx">print</span> <span class="p">(</span><span class="nx">landcover</span><span class="p">);</span>
+
+  <span class="c1">// Add dataset to the map</span>
+  <span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">landcover</span><span class="p">,</span> <span class="p">{},</span> <span class="dl">"</span><span class="s2">Land Cover</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="c1">// Export files as cloud-optimized GeoTIFFs.</span>
+  <span class="nx">Export</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">toDrive</span><span class="p">({</span>
+  <span class="na">image</span><span class="p">:</span> <span class="nx">landcover</span><span class="p">,</span> 
+  <span class="na">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">LandCover_2015</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="na">scale</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> 
+  <span class="na">region</span><span class="p">:</span> <span class="nx">area</span><span class="p">,</span> 
+  <span class="na">maxPixels</span><span class="p">:</span> <span class="mi">1</span><span class="nx">e10</span><span class="p">,</span> 
+  <span class="na">fileFormat</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GeoTIFF</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="na">formatOptions</span><span class="p">:</span> <span class="p">{</span><span class="na">cloudOptimized</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span>
+  <span class="p">});</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="data-7">data</h2>
+<ul>
+  <li><strong>module9.gpkg</strong> - contains admin boundary of Area of Interest (e.g. Pampanga province, Colombo district)</li>
+  <li><strong>SRTM_DEM</strong> - folder contains the SRTM DEM layers (.tiff)</li>
+  <li><strong>Dynamic_Land_Cover_Map</strong> - folder contains the Copernicus Land Cover maps downloaded using the GEE script above</li>
+  <li><strong>HRSL_area_Population.tif</strong> - HRSL of the Area of Interest</li>
+</ul>
+
+<h2 id="media-9">media</h2>
+<ul>
+  <li><strong>fig96.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig97.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig98.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig99_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig99_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig912.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig913_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig913_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig913_c.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig914.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig915_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig915_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig915_c.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig915_d.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig916.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig917.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig918.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig919.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig920.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig921.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig922.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig923.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig924.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig925.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig926_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig926_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig927.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig928.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig929.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig930.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig931.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig932.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig933_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig933_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig934.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig935.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig936.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig937.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig939.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig940.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig941.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig942.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig943.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig944.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig945.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig946_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig946_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig947.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig948_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig948_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig948_c.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig949.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig950_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig950_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig951.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig952.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig953_a.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig953_b.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig954.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig955.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig956.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig957.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig958.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig959.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig960.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig961.png</strong> -&gt; replace with screenshot using localised data</li>
+  <li><strong>fig962.png</strong> -&gt; replace with screenshot using localised data</li>
+</ul>
+
+<h2 id="module9">module9</h2>
+<ul>
+  <li><strong>line 25, 26, 29, 394, 408, 412, 437, 708, 712, 724, 726, 729, 737, 739, 741, 757, 800, 807, 822, 824, 827, 829, 831, 877, 895, 911, 929, 963, 1024, 1068, 1087</strong> -&gt; replace name of area with local area of interest (e.g. <em>Pampanga</em> becomes <em>Colombo</em>, <em>province</em> becomes <em>district</em>)</li>
+  <li><strong>line 545</strong> -&gt; replace with output of raster information algorithm</li>
+  <li><strong>line 29, 408, 421, 476, 523, 527, 653, 655, 730, 969, 1075</strong> -&gt; replace with coordinate reference system used in the country (e.g. <em>PRS92 / Philippines zone 3, EPSG 3123</em> becomes <em>SLD 99 / Sri Lanka Grid 1999, EPSG 5235</em>)</li>
+</ul>
+
+<h1 id="module-10">Module 10</h1>
+
+<h2 id="data-8">data</h2>
+
+<h2 id="media-10">media</h2>
+<ul>
+  <li><strong>You are free to keep the screenshots as is but you may also use your own screenshots using local data if you have time (or if you think that is better).</strong></li>
+</ul>
+
+<h2 id="module10">module10</h2>
+<ul>
+  <li><strong>Feel free to add/replace/edit the plugins featured in the module as you see fit</strong></li>
+</ul>
+
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Módulo 8 - Processamento e análise vetorial | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Módulo 8 - Processamento e análise vetorial page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Módulo 8 - Processamento e análise vetorial">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Módulo 8 - Processamento e análise vetorial</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/brazil/module8/module8.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="módulo-8---processamento-e-análise-vetorial"><strong>Módulo 8 - Processamento e análise vetorial</strong></h1>
+
+<p><strong>Autores</strong>: Codrina, Ben Hur</p>
+
+<h2 id="introdução-pedagógica">Introdução pedagógica</h2>
+
+<p>Este módulo é focado em um tipo específico de modelo de dados geográficos: os geodados vetoriais.</p>
+
+<p>Ao final deste módulo, os alunos terão a compreensão básica dos seguintes conceitos:</p>
+
+<ul>
+  <li>modelo de dados vetoriais</li>
+  <li>metadados</li>
+  <li>processamento vetorial</li>
+  <li>análise de dados espaciais</li>
+  <li>geoestatística</li>
+  <li>topologia</li>
+  <li>geoprocessamento</li>
+</ul>
+
+<p>E adquirirão as seguintes habilidades:</p>
+
+<ul>
+  <li>Verificando a qualidade do conjunto de dados vetoriais geométricos usando algoritmos para checar a topologia de dados vetoriais e executar correções automáticas básicas;</li>
+  <li>Trabalhando com algoritmos para identificar erros na tabela de atributos;</li>
+  <li>Processando dados vetoriais - executando algoritmos de geoprocessamento simples para atender a perguntas em potencial, como por exemplo: quantos prédios públicos existem em uma região administrativa?</li>
+  <li>Processamento de dados vetoriais - usando algoritmos de geoestatística para preencher os dados faltantes.</li>
+</ul>
+
+<h2 id="ferramentas-e-recursos-necessários">Ferramentas e recursos necessários</h2>
+
+<ul>
+  <li>Este módulo foi preparado usando <a href="https://qgis.org/en/site/forusers/download.html">QGIS versão 3.16.1 - Hannover</a></li>
+  <li>Os conjuntos de dados usados ​​para todos os exercícios detalhados em este módulo são apresentados na tabela abaixo:</li>
+  <li>O sistema de referência de coordenadas utilizado é o SIRGAS 2000/UTM zona 24S, EPSG 31984. Por se tratar de um sistema de coordenadas projetado, ele permite cálculos geométricos.</li>
+</ul>
+
+<h2 id="pré-requisitos">Pré-requisitos</h2>
+
+<ul>
+  <li>Conhecimento básico de como operar um computador</li>
+  <li>Uma compreensão robusta dos módulos 0, 1 e 2 e 6 deste currículo. O Módulo 0 apresenta a noção de modelo de dados vetoriais que está no cerne desta seção atual. A compreensão prévia dos módulos 1, 2 e 6 permite que você se concentre estritamente nas novas noções e funcionalidades do QGIS introduzidas nesta nova seção, sem ter que se perguntar como você poderia carregar uma nova camada em seu projeto, ou como trabalhar com a tabela de atributos do seu conjunto de dados.</li>
+</ul>
+
+<p>Como parte deste módulo, você aprenderá como trabalhar de forma eficiente com conjuntos de dados geográficos vetoriais para que possa extrair novas informações. Isso inclui uma compreensão mais aprofundada do que são dados vetoriais, quais padrões de qualidade eles devem cumprir para que sejam realmente úteis, quais são as operações mais comuns feitas em dados vetoriais (geoprocessamento, geoestatística).</p>
+
+<h2 id="recursos-adicionais">Recursos adicionais:</h2>
+
+<ul>
+  <li><a href="https://docs.qgis.org/3.16/en/docs/user_manual/ working_with_vector/functions_list.html">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/functions_list.html</a></li>
+  <li><a href="http://www. geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm">http://www.geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm</a></li>
+  <li><a href="https://link.springer.com/referencework/10.1007/978-3-319-17885-1">Enciclopédia de GIS, Edição 2017, Editores: Shashi Shekhar, Hui Xiong, Xun Zhou</a><span style="text-decoration: underline;"> </span></li>
+  <li><a href="https://www.geo-train.eu/modules/metadata/pdf/Metadata.pdf">Metadata And Catalog Services</a>, autora Mariana Belgiu, UNIGIS Salzburg;</li>
+  <li><a href="https://www.fgdc.gov/resources/factsheets/documents/GeospatialMetadata-July2011.pdf">Noções básicas de metadados</a> elaborado pelo Comitê Federal de Dados Geográficos;</li>
+</ul>
+
+<h2 id="introdução-temática">Introdução temática</h2>
+
+<p>Vamos começar com um exemplo: Você acaba de pousar na cidade do Recife, Pernambuco e precisa ir do aeroporto ao hotel. Você não tem conhecimento de onde está situado o aeroporto em relação à cidade, nem onde fica o hotel, então a primeira coisa que você faz é abrir um mapa para ajudá-lo a navegar por esta cidade nova e animada! Você pega o telefone, abre um aplicativo de mapa e seleciona o ponto de partida - o aeroporto - e o ponto de chegada - seu hotel - e, em seguida, pede a rota, a pé, de carro ou transporte público. Em questão de segundos, o aplicativo de roteamento oferece a melhor solução para você ir do ponto A ao ponto B e o destaca ao traçar uma linha distinta seguindo ruas e becos, conforme visível na figura 8.1.</p>
+
+<p><img src="media/fig81.png" alt="Indo do ponto A ao B usando o Openstreetmap" title="Indo do ponto A ao B usando o Openstreetmap" /></p>
+
+<p>Figura 8.1 - Indo do ponto A ao B usando o Openstreetmap</p>
+
+<h2 id="detalhamento-dos-conceitos">Detalhamento dos conceitos</h2>
+
+<p>Este é um exemplo clássico de uso de dados vetoriais e ele pode ser dividido em vários conceitos que definiremos a seguir.</p>
+
+<p>Os dados usados ​​são espaciais - eles têm uma localização muito bem definida na Terra, e seus atributos também são bem identificados. Assim, um ponto com longitude e latitude e o nome do atributo = Aeroporto Internacional de Recife - representa o ponto de partida A e um ponto com outro par de longitude e latitude e o nome do atributo = Hotel representa o ponto final B. As ruas são representadas por linhas compostas por segmentos e vértices (representados por pequenos círculos azuis na figura 8.2), com atributos como nome, direção, limitação de velocidade etc.</p>
+
+<p><img src="media/fig82.png" alt="Linhas de vetor representando ruas e a tabela de atributos associada" title="Linhas de vetor representando ruas e a tabela de atributos associada " /></p>
+
+<p>Figura 8.2 - Linhas de vetor representando ruas e a tabela de atributos associada</p>
+
+<p>As ruas representam um modelo de rede que é basicamente uma coleção de pontos e linhas topologicamente interconectados. Os resultados do algoritmo que calcula a rota do ponto A ao ponto B - no nosso caso do aeroporto ao hotel - são altamente dependentes da qualidade dos vetores, tanto na geometria - as regras de topologia devem ser respeitadas - como nos atributos - se uma estrada é de mão única isso deve ser indicado para que a rota não te leve para o lado errado.</p>
+
+<h3 id="o-modelo-de-dados-vetoriais">O modelo de dados vetoriais</h3>
+
+<p>Conforme apresentado no módulo 0, existem 2 modelos de dados usados ​​em um sistema de informação geográfica - SIG: raster e vetor. Os dados geoespaciais sempre incluem um componente <strong>espacial</strong> indicando a localização ou a distribuição espacial do fenômeno em questão e um componente <strong>de atributo</strong> que descreve suas propriedades. A escolha entre usar o modelo de dados raster ou vetorial para uma situação particular depende da fonte dos dados, bem como de seu uso pretendido.</p>
+
+<p>O modelo de dados vetoriais é usado para representar áreas, linhas e pontos (Figura 8.1).</p>
+
+<p><img src="media/fig83.png" alt="dados vetoriais com tabela de atributos" title="dados vetoriais com tabela de atributos" /></p>
+
+<p>Figura 8.1 - dados vetoriais com tabela de atributos</p>
+
+<h3 id="metadados">Metadados</h3>
+
+<p>Metadados são mais simplesmente definidos como dados sobre dados. Um metadado caracteriza, em diferentes níveis de detalhamento, o conjunto de dados ao qual está associado, incluindo categorias como: quem é o provedor/proprietário do conjunto de dados; qual é a licença de uso; em que idioma estão os atributos; qual era o sistema de coordenadas usado; que área geográfica descreve e qual é o ano de referência; palavras-chave; quais são as limitações conhecidas; nível de precisão; qual era o escopo original do conjunto de dados e muito mais.</p>
+
+<p>Os metadados são primordiais porque uma compreensão clara dos dados a serem usados ​​em uma análise específica pode fazer toda a diferença entre uma decisão correta ou tendenciosa. Se for necessário identificar onde colocar um novo hospital temporário, mas os dados da estrada forem antigos e não refletirem mais a realidade no local, qualquer decisão baseada neles será imprecisa.</p>
+
+<p>Devido à importância dos metadados, suas categorias (suas definições, nome, que tipo de informação eles podem armazenar etc.) seguem estruturas bem definidas e padronizadas. Esses arquivos de metadados bem estruturados podem então ser integrados em catálogos dedicados, permitindo que um usuário pesquise e encontre dados geográficos apenas consultando as características de seu interesse, sem precisar baixar e analisar os dados por conta própria. Existem inúmeros catálogos de metadados que, quando padronizados, podem ser acessados ​​por meio de diferentes funcionalidades de um software GIS. Um exemplo disso será apresentado no Módulo 9, através de plugins do QGIS.</p>
+
+<p>É importante dizer que os metadados não são uma especificidade dos recursos geoespaciais, mas se aplicam a qualquer tipo de dado.</p>
+
+<h3 id="lógica-do-processamento-vetorial">Lógica do processamento vetorial</h3>
+
+<p>O poder do GIS reside em sua capacidade única de conectar propriedades geométricas que definem objetos e fenômenos reais em nosso mundo com seus atributos - sejam observados, medidos ou calculados - e permitindo por meio de software especializado realizar operações em seus geometrias, em seus atributos ou em ambos, a fim de derivar novas informações valiosas.</p>
+
+<p>Embora na maioria das vezes o GIS esteja intimamente associado a mapas que simplesmente exibem informações geográficas, suas funcionalidades vão muito além da criação de representações cartográficas, sejam elas dinâmicas ou estáticas.</p>
+
+<p><strong>Análise de dados espaciais</strong> (sinônimos: análise espacial, análise geoespacial, análise geográfica, interação espacial) é um termo geral que se refere a qualquer técnica destinada a identificar padrões, detectar anomalias e testar teorias com base em dados espaciais. Uma análise é espacial se e somente se os resultados forem sensíveis à realocação dos objetos analisados ​​- ou simplificando, se a <strong>localização for importante</strong>. À medida que a tecnologia da informação evoluiu, cientistas começaram a aplicar várias técnicas de estatística, geometria, topologia e outras ciências à análise de dados geográficos, de modo a estudar padrões e fenômenos na superfície da Terra.</p>
+
+<p><strong>Geoestatística</strong> é um ramo da estatística que se aplica a dados espaciais. Os métodos mais comumente empregados estão relacionados à interpolação, que é um processo matemático que permite estimar valores desconhecidos com base nos conhecidos.</p>
+
+<p><strong>Topologia</strong> é um ramo da matemática que permite ao usuário GIS controlar as relações geométricas entre recursos e manter a integridade geométrica. A topologia é melhor entendida como um conjunto de regras que garantem a qualidade dos dados espaciais e que podem ser aplicados a uma camada vetorial ou mais. As regras são definidas de modo a respeitar as relações do mundo real que as camadas vetoriais representam. Por exemplo, não pode haver lacunas entre os polígonos que representam lotes em uma região. Ou, para uma camada vetorial que representa árvores, nenhum dos seus pontos pode estar contido em um polígono de uma camada vetorial que represente edifícios.</p>
+
+<p>Os softwares GIS oferecem funcionalidades que permitem ao usuário definir regras relevantes de topologia, bem como algoritmos para verificá-las e para limpar a camada vetorial onde são identificadas inconsistências.</p>
+
+<p>Geoprocessamento é um termo geral usado para definir qualquer operação ou processo aplicado a um conjunto de dados geográficos com o objetivo de derivar um novo conjunto de dados, gerando novos conhecimentos sobre os dados. As operações de geoprocessamento mais comuns são a sobreposição de feições geográficas, seleção e análise de recursos, processamento de topologia e conversão de dados. O geoprocessamento permite definir, gerenciar e analisar informações geográficas para apoiar a tomada de decisão.</p>
+
+<p><img src="media/fig84.png" alt="Elementos de uma operação de geoprocessamento" title="elementos de uma operação de geoprocessamento" /></p>
+
+<p>Figura 8.4 - Elementos de uma operação de geoprocessamento</p>
+
+<h2 id="conteúdo-principal">Conteúdo principal:</h2>
+
+<h3 id="fase-1-entendendo-seus-dados">Fase 1: Entendendo seus dados.</h3>
+
+<p>Existem muitas operações de geoprocessamento que podem ser realizadas sobre dados vetoriais, as mais comuns sendo a sobreposição de feições geográficas, seleção e análise de recursos, processamento de topologia e conversão de dados. Nesta primeira fase, vamos nos familiarizar com alguns desses, entendendo como funcionam e quais os resultados que podemos esperar deles.</p>
+
+<h4 id="etapa-1-prepare-seu-ambiente-de-trabalho"><strong>Etapa 1. Prepare seu ambiente de trabalho.</strong></h4>
+
+<p>Abra o QGIS, configure o sistema de referência de coordenadas em que você trabalhará {localize}- EPSG 31984 - e adicione as seguintes camadas de dados:</p>
+
+<ul>
+  <li>Polígonos - limites administrativos; edifícios; uso da terra;</li>
+  <li>Linhas - estradas, rios;</li>
+  <li>Pontos - locais religiosos, pontos de interesse (POI)</li>
+</ul>
+
+<p>Neste ponto, a janela do seu mapa QGIS deve ser semelhante à figura 8.5, mas provavelmente apresentando outras cores.</p>
+
+<p><img src="media/fig85.png" alt="Conjuntos de dados vetoriais carregados: pontos, linha e polígonos" title="Conjuntos de dados vetoriais carregados: pontos, linha e polígonos" /></p>
+
+<p>Figura 8.5 - Conjuntos de dados vetoriais carregados: pontos, linha e polígonos</p>
+
+<p><strong>Verifique!</strong> Todas as camadas estão no mesmo sistema de coordenadas (EPSG 31984) olhando no canto direito inferior. Se for assim, você está olhando para 7 camadas de dados vetoriais sobrepostas.</p>
+
+<h4 id="etapa-2-entenda-o-que-você-está-olhando"><strong>Etapa 2. Entenda o que você está olhando.</strong></h4>
+
+<p>Neste ponto, temos 7 camadas vetoriais carregadas em nosso projeto QGIS. As próximas etapas nos ajudarão a entender nossos dados.</p>
+
+<ul>
+  <li>Verifique quantos recursos temos em uma camada - existem várias maneiras de fazer isso:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Clique duas vezes na camada de interesse - Propriedades - Informações - Contagem de recursos
+
+Abra a tabela de atributos da camada de interesse e olhe na parte superior lado central
+</code></pre></div></div>
+
+<p>Antes de executar qualquer estatística básica, vamos completar a tabela de atributos com alguns atributos geométricos (consulte o Módulo 6 para detalhes):</p>
+
+<ul>
+  <li>Camada de estradas - calcule o comprimento de cada segmento de estrada e armazene-o na tabela de atributos: nome do campo de saída - <code class="language-plaintext highlighter-rouge">comprimento</code> <code class="language-plaintext highlighter-rouge">round($length, 2)</code></li>
+  <li>Camada de edifícios - calcule a área para cada edifício e armazena-a na tabela de atributos; nome do campo de saída - <code class="language-plaintext highlighter-rouge">area</code> <code class="language-plaintext highlighter-rouge">round($area, 2)</code></li>
+</ul>
+
+<p>Agora os campos de atributo estão preenchidos. Se você não tiver certeza em qual unidade de medida o QGIS calculou o comprimento dos segmentos de estradas e áreas de edifícios, você pode verificar as informações do sistema de coordenadas que está usando.</p>
+
+<p>Clique no canto inferior direito da janela do mapa QGIS, em EPSG 31984 e uma janela como a da figura 8.6 aparecerá.</p>
+
+<p><img src="media/fig86.png" alt="Especificações do sistema de referência de coordenadas usado no projeto QGIS" title="Especificações do sistema de referência de coordenadas usado no projeto QGIS" /></p>
+
+<p>Figura 8.6 - Especificações do sistema de referência de coordenadas usado no projeto QGIS</p>
+
+<p>Descobrimos que a unidade de medida é o metro, portanto os comprimentos são medidos em metros e as áreas em metros quadrados.</p>
+
+<ul>
+  <li>Execute estatísticas básicas nas camadas carregadas para obter uma melhor compreensão de seus dados (figura 8.7):</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Menu de vetores ‣ Análise ‣ Campo para estatística básica
+
+Janela da caixa de ferramentas de processamento ‣ pesquisa por 'stats'`
+</code></pre></div></div>
+
+<p><img src="media/fig87.png" alt="Estatísticas básicas para campos" title="Estatísticas básicas para campos" /></p>
+
+<p>Figura 8.7 - Estatísticas básicas para campos</p>
+
+<p>As estatísticas retornadas dependem do tipo de campo que escolhemos e são geradas como um arquivo HTML.</p>
+
+<p>Vamos executá-lo em nossa camada de estradas e ver quais resultados obtemos. Complete a janela, como na figura 8.8.</p>
+
+<p><img src="media/fig88.png" alt="Preparando para executar estatísticas básicas para camada de estradas" title="Preparando para executar estatísticas básicas para camada de estradas" /></p>
+
+<p>Figura 8.8 - Preparando para executar estatísticas básicas para camada de estradas</p>
+
+<p>O arquivo de saída é um html que pode ser aberto com qualquer navegador (Firefox, Chrome, Safari etc.) que deve ser semelhante a abaixo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Campo analisado: comprimento
+Contagem: 22401
+Valores únicos: 15600
+Valores NULL (perdidos): 0
+Valor mínimo: 0.01
+Valor máximo: 7927.8
+Intervalo: 7927.79
+Soma: 3167017.3500000173
+Valor médio: 141.37839158966196
+Valor da mediana: 91.39
+Desvio padrão: 184.41028681969576
+Coeficiente de Variação: 1.3043739198485862
+Minoria (valor de ocorrência mais rara): 0.01
+Maioria (valor mais frequente): 9.0
+Primeiro quartil: 42.25
+Terceiro quartil: 174.47
+Intervalo interquartil (IQR): 132.22
+</code></pre></div></div>
+
+<p>A partir dessas estatísticas básicas, descobrimos que existem 22401 segmentos de estrada na camada carregada, onde o mais curto tem 0,01m e o mais longo 7927,8m - quase 8 km. Verificamos que a soma das estradas no Recife é de quase 3,2 mil km (3167.01km). Dado que a média é maior do que a mediana, isso nos diz que a segunda metade do conjunto de dados contém segmentos de estrada mais longos e que supera os segmentos de estrada na primeira metade.</p>
+
+<p>Executando as estatísticas básicas na camada Edifícios (<code class="language-plaintext highlighter-rouge">buildings</code>) para a categoria de <code class="language-plaintext highlighter-rouge">type</code>, obtemos o seguinte:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Campo analisado: type
+Contagem: 75511
+Valores únicos: 47
+Valores NULL (perdidos): 62776
+Valor mínimo: Prédio
+Valor máximo: warehouse
+Comprimento mínimo: 0
+Comprimento máximo: 18
+Comprimento médio: 0.9626147183854008
+</code></pre></div></div>
+
+<p>Os resultados não parecem iguais aos anteriores: não temos média, mediana ou desvio padrão. Isso ocorre porque o campo de atributo em que executamos o algoritmo é diferente, no qual não temos números, mas palavras - tipos de edifícios. Descobrimos que dos 75511 edifícios no Recife, para 62776 não sabemos o tipo de edifício. Também descobrimos que existem 47 categorias únicas.</p>
+
+<h4 id="etapa-3-verificações-básicas-para-encontrar-erros-rapidamente-em-seus-dados"><strong>Etapa 3. Verificações básicas para encontrar erros rapidamente em seus dados.</strong></h4>
+
+<p>Conjuntos de dados perfeitos e sem falhas são equivalentes ao gás ideal em física. Não existe tal coisa, mas muitos podem chegar muito perto disso. Portanto, antes de fazer qualquer tipo de análise para extrair informações, pelo menos algumas verificações básicas são necessárias sobre quão <em>limpos</em> estão os dados que temos.</p>
+
+<p>Existem muitos tipos de erros que podem afetar a qualidade de seus dados e, considerando o escopo de sua análise geoespacial, sua influência no resultado final pode ser mais ou menos importante. Por exemplo, se você usar dados geoespaciais para se rotear do ponto A ao ponto B de carro, ter uma camada de estradas completa com atributos em que as ruas são de mão única ou fechadas para o tráfego rodoviário é essencial para obter um bom resultado. No entanto, se a sua rota for a pé, essa informação não é crucial para o seu resultado.</p>
+
+<p>Ao se referir a erros de dados geoespaciais, existem 2 termos principais que precisam ser bem compreendidos:</p>
+
+<p><strong>Acurácia</strong> é o grau em que as informações em um mapa correspondem aos valores do mundo real e se aplica tanto à geometria quanto aos atributos.</p>
+
+<p><strong>Precisão</strong> refere-se ao nível de medição e exatidão de descrição em um conjunto de dados geoespaciais.</p>
+
+<p><strong>Um erro</strong> abrange tanto a imprecisão dos dados quanto falta de acurácia. <strong>Qualidade de dados</strong> refere-se ao nível de precisão e acurácia dos conjuntos de dados e é frequentemente documentado em relatórios de qualidade de dados.</p>
+
+<p>Analisar e <em>limpar</em> um conjunto de dados geoespaciais pode ser uma tarefa muito demorada e complicada, no entanto - conforme mostrado no exemplo acima - é essencial. Nesta seção, apresentaremos algumas funcionalidades do GIS que permitem ao usuário realizar verificações rápidas em dados vetoriais e tirar um conjunto de conclusões preliminares sobre sua qualidade.</p>
+
+<p><strong>Verificações de topologia.</strong></p>
+
+<p>O QGIS oferece uma funcionalidade que permite ao usuário realizar uma série de verificações topológicas nos conjuntos de dados vetoriais carregados, chamada Verificador de Topologia. Ela pode ser encontrado como um dos painéis (figura 8.9.a) e uma vez ativada, sua janela se parece com a figura 8.9.b.</p>
+
+<p><img src="media/fig89_a.png" alt="Painel de verificação de topologia" title="Painel de verificação de topologia" /></p>
+
+<p><img src="media/fig89_b.png" alt="Janela de verificação de topologia" title="Janela de verificação de topologia" /></p>
+
+<p>Figura 8.9.a - Painel de verificação de topologia; b - Janela do verificador de topologia</p>
+
+<p>Para definir as regras de topologia, clique no ícone do Verificador de Topologia. Depois, no painel, clique no ícone de configurações (o terceiro da esquerda para direita), abrindo uma janela conforme figura 8.10.</p>
+
+<p><img src="media/fig810.png" alt="Janela de configurações de regras de topologia" title="Janela de configurações de regras de topologia" /></p>
+
+<p>Figura 8.10 - Janela de configurações de regras de topologia</p>
+
+<p>Definiremos uma série de regras para as camadas que carregamos em nosso projeto QGIS, considerando os objetos do mundo real que elas retratam como estradas, edifícios e cursos de água no Recife.</p>
+
+<p>A configuração da topologia é simples, pois as regras que podem ser aplicadas a partir da camada selecionada já estão embutidas nesta funcionalidade, conforme mostra a figura 8.11.</p>
+
+<p><img src="media/fig811.png" alt="Menu suspenso de regras de topologia com base na camada selecionada" title="Menu suspenso de regras de topologia com base na camada selecionada" /></p>
+
+<p>Figura 8.11 - Menu suspenso de regras de topologia com base na camada selecionada.</p>
+
+<p>Escolha as regras de topologia conforme ilustrado na figura 8.12 e, em seguida, clique no primeiro ícone da janela para executar e aguardar os resultados.</p>
+
+<p><img src="media/fig812.png" alt="Regras de topologia a serem definidas" title="Regras de topologia a serem definidas" /></p>
+
+<p>Figura 8.12 - Regras de topologia a serem definidas</p>
+
+<p>Após executar a verificação de topologia, suas janelas de mapa devem se parecer com a figura 8.13.</p>
+
+<p><img src="media/fig813.png" alt="Resultados da verificação de topologia" title="Resultados da verificação de topologia" /></p>
+
+<p>Figura 8.13 - Resultados da verificação de topologia</p>
+
+<p>No canto inferior direito, a janela do verificador de topologia lista todos os erros identificados com base nas regras que definimos na fase anterior. Se a caixa de seleção “Mostrar erros” estiver marcada, os erros serão destacados em vermelho no mapa. Clicar duas vezes em um erro moverá o mapa para sua localização.</p>
+
+<p>O processo de correção de erros em um conjunto de dados, seja ele relacionado à geometria (duplicatas, lacunas etc.) ou no atributo relacionado (valores ausentes, erros ortográficos etc.) é chamado de limpeza de um conjunto de dados e na maioria das vezes é tão complicado quanto necessário. Embora existam funcionalidades para dar suporte a um processo de limpeza semiautomático, o trabalho manual do usuário geralmente é necessário. Por exemplo, na figura 8.14, ampliamos um erro em nossa camada de pontos de interesse, um ponto duplicado. Como pode ser visto, há 2 pontos retratando um restaurante. Na tabela de atributos podemos que possuem nomes diferentes. Talvez o restaurante tenha mudado de nome e agora esteja duplicado?</p>
+
+<p><img src="media/fig814.png" alt="Erro de ponto duplicado na camada do vetor de pontos de interesse" title="Erro de ponto duplicado na camada do vetor de pontos de interesse" /></p>
+
+<p>Figura 8.14 - Erro de ponto duplicado na camada do vetor de pontos de interesse</p>
+
+<p>Neste caso particular, o usuário provavelmente removeria o ponto duplicado, pois isso pode inserir erros em análises espaciais posteriores. Por exemplo, se um oficial municipal deseja saber quantos restaurantes existem em um bairro específico, o ponto duplicado inserirá um erro nos resultados e isso pode levar a decisões enganosas.</p>
+
+<p>Portanto, procederemos com a remoção automática dos pontos duplicados. Para fazer isso, usaremos uma funcionalidade central do QGIS - Excluir geometrias duplicadas - encontrada na caixa de ferramentas de processamento. Seu QGIS deve ser semelhante à figura 8.15.</p>
+
+<p><img src="media/fig815.png" alt="Excluir geometrias duplicadas nos pontos de interesse da camada" title="Excluir geometrias duplicadas nos pontos de interesse da camada" /></p>
+
+<p>Figura 8.15 - Excluir geometrias duplicadas nos pontos de interesse da camada</p>
+
+<p>Após executar o algoritmo, a janela de funcionalidade apresenta os resultados, identificando 6 pontos duplicados, assim como o verificador de topologia, e informa ao usuário que excluiu todos eles, deixando a camada de pontos de interesse com 1981 feições.</p>
+
+<p><img src="media/fig816.png" alt="Resultado da execução da exclusão de geometrias duplicadas" title="Resultado da execução da exclusão de geometrias duplicadas" /></p>
+
+<p>Figura 8.16 - Resultado da execução da exclusão de geometrias duplicadas</p>
+
+<p>A nova execução do verificador de topologia mostrará que há 0 erros de pontos duplicados na camada.</p>
+
+<p><strong>Atenção!</strong> O algoritmo considera <strong>apenas geometrias</strong>, ignorando os atributos. Se, como é o nosso caso, houver alguma diferença no atributo das duplicatas, o usuário não tem controle sobre qual será mantida. Portanto, se houver necessidade de todas as informações serem mantidas, elas devem ser primeiro copiadas para todas as geometrias, de modo que quando um recurso duplicado for excluído, não haverá perda de informações.</p>
+
+<p>Vamos executar outra verificação de topologia, desta vez em nossa camada de edifícios. Configure as seguintes regras:</p>
+
+<ul>
+  <li>Sem duplicatas</li>
+  <li>Sem geometrias inválidas</li>
+</ul>
+
+<p><img src="media/fig817_a.png" alt="Verificação de topologia na camada vetorial de edifícios" title="Verificação de topologia na camada vetorial de edifícios" /></p>
+
+<p>Figura 8.17a - Regras do verificador de topologia na camada vetorial de edifícios</p>
+
+<p>Execute o algoritmo.</p>
+
+<p>O resultado deve ser semelhante à figura 8.17b (sem erros).</p>
+
+<p><img src="media/fig817_b.png" alt="Resultados da verificação de topologia na camada vetorial de edifícios" title="Resultados da verificação de topologia na camada vetorial de edifícios" /></p>
+
+<p>Figura 8.17b - Resultados da verificação da topologia na camada vetorial de edifícios</p>
+
+<p>Se você tivesse geometrias duplicadas, poderia limpá-las fazendo os mesmos passos descritos acima para os pontos.</p>
+
+<p>Uma limpeza completa dos conjuntos de dados vetoriais usados ​​para este módulo está fora do escopo. Sua complexidade o transforma em um módulo mais avançado em si mesmo.</p>
+
+<h4 id="etapa-4-observe-as-informações-anexadas-aos-pontos-linhas-e-polígonos"><strong>Etapa 4. Observe as informações anexadas aos pontos, linhas e polígonos.</strong></h4>
+
+<p>Vamos executar mais um algoritmo para ter uma ideia de quais são os atributos de nossas camadas do Recife. Depois de identificarmos quantos recursos cada camada possui, vamos ver quantos e quais são os atributos exclusivos nos seguintes casos:</p>
+
+<ul>
+  <li>camada buildings - atributo type;</li>
+  <li>camada pois_cleaned - atributo fclass;</li>
+  <li>camada waterways - atributo fclass;</li>
+  <li>camada pofw - atributo fclass;</li>
+  <li>camada road - atributo fclass;</li>
+  <li>camada landuse - atributo fclass;</li>
+</ul>
+
+<p>Para isso, vá para <strong>Vetor ‣ Analisar ‣ Listar valores únicos</strong> (figura 8.19). Depois, clique em “Executar processo em Lote…”, na parte inferior da janela.</p>
+
+<p><img src="media/fig819_a.png" alt="Listar valores únicos em uma funcionalidade de camada vetorial" title="Listar valores únicos em uma funcionalidade de camada vetorial" /></p>
+
+<p>Figura 8.19a - Lista valores únicos em uma funcionalidade de camada vetorial</p>
+
+<p>Na janela que se abre, insira o nome de cada camada e o atributo de interesse conforme enumerado na lista acima e você deverá obter os seguintes resultados:</p>
+
+<p><img src="media/fig819_b.png" alt="Lista valores exclusivos em uma funcionalidade de camada vetorial (Processamento em lote)" title="Lista valores exclusivos em uma funcionalidade de camada vetorial (Processamento em lote)" /></p>
+
+<p>Figura 8.19b - Lista de valores únicos em uma funcionalidade de camada vetorial (Processamento em lote)</p>
+<h4 id="buildings">buildings</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  'TOTAL_VALUES': 47,
+  'UNIQUE_VALUES': 'parking;dormitory;stilt_house;NULL;pavilion;greenhouse;ruins;transportation;college;yes;chapel;boathouse;retail;supermarket;Prédio;college;industrial;farm;house;garages;garage;university;public;shed;roof;carport;church;temple;service;residential;hotel;warehouse;shop;cowshed;civic;kindergarten;stadium;apartments;semidetached_house;office;cabin;school;construction;commercial;terrace;grandstand;hospital;government'
+}
+</code></pre></div></div>
+
+<h4 id="pois_cleand">pois_cleand</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  'TOTAL_VALUES': 95,
+  'UNIQUE_VALUES': 'recycling;artwork;tourist_info;shoe_shop;department_store;greengrocer;bicycle_rental;pharmacy;vending_any;hairdresser;post_box;car_wash;laundry;newsagent;drinking_water;outdoor_shop;community_centre;florist;fast_food;pitch;computer_shop;viewpoint;car_sharing;dog_park;guesthouse;theatre;travel_agent;library;convenience;waste_basket;bank;car_rental;supermarket;college;wayside_shrine;university;car_dealership;optician;hostel;telephone;toilet;pub;jeweller;bar;courthouse;embassy;monument;doctors;video_shop;camera_surveillance;hospital;bicycle_shop;fire_station;ruins;mall;playground;mobile_phone_shop;beverages;gift_shop;lighthouse;toy_shop;clothes;bench;dentist;bakery;water_tower;sports_shop;police;sports_centre;kiosk;cafe;shelter;cinema;attraction;museum;bookshop;motel;chalet;furniture_shop;post_office;atm;hotel;fountain;restaurant;doityourself;arts_centre;beauty_shop;comms_tower;tower;memorial;school;stationery;park;nightclub;camp_site'
+}
+</code></pre></div></div>
+
+<h4 id="waterways">waterways</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  'TOTAL_VALUES': 4,
+  'UNIQUE_VALUES': 'river;drain;stream;canal'
+}
+</code></pre></div></div>
+
+<h4 id="pofw">pofw</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  'TOTAL_VALUES': 6,
+  'UNIQUE_VALUES': 'buddhist;christian_evangelical;muslim;christian;christian_catholic;christian_methodist'
+}
+</code></pre></div></div>
+
+<h4 id="road">road</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  'TOTAL_VALUES': 19,
+  'UNIQUE_VALUES': 'secondary_link;primary_link;path;trunk_link;service;track;residential;track_grade3;primary;living_street;unclassified;trunk;pedestrian;tertiary_link;footway;tertiary;steps;secondary;cycleway'
+}
+</code></pre></div></div>
+
+<h4 id="landuse">landuse</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  'TOTAL_VALUES': 17,
+  'UNIQUE_VALUES': 'allotments;farmland;orchard;cemetery;grass;recreation_ground;park;farmyard;industrial;meadow;heath;commercial;forest;scrub;retail;military;residential'
+}
+</code></pre></div></div>
+
+<p>Tabela 8.1 - Tabela que identifica quantos e quais são os valores únicos para os atributos selecionados</p>
+
+<p>Para uma análise mais aprofundada dos atributos de nossas camadas vetoriais, usaremos o plugin Group Stats. Ele foi desenvolvido para oferecer suporte ao cálculo de estatísticas para grupos de recursos em uma camada vetorial, tornando-o muito útil para obter mais compreensão de seus dados, bem como para detectar possíveis erros nos atributos.</p>
+
+<p>Primeiro, certifique-se de ter instalado e ativado o plugin Group Stats. Em seguida, para abrir a janela Group Stats, vá para <strong>Vetor ‣ Group Stats ‣ Group Stats</strong>.</p>
+
+<p><img src="media/fig820_a.png" alt="Plugin Group Stats" title="plugin Group Stats" /></p>
+
+<p>Figura 8.20a - Plug-in Group Stats</p>
+
+<p>Uma nova janela como a da figura 8.20b deve abrir.</p>
+
+<p><img src="media/fig820_b.png" alt="Janela Group Stats" title="Janela Group Stats" /></p>
+
+<p>Figura 8.20b - Janela Group Stats</p>
+
+<p>De acordo com a análise feita anteriormente, vimos que para os edifícios da camada temos 47 tipos diferentes de edifícios, mas quantos de cada e qual é a área construída total de cada categoria? Quanto espaço para escolas, mercados, casas? Group Stats pode nos ajudar a responder a essa pergunta. Do lado direito da janela, está o painel de controle, onde escolhemos o que queremos calcular, bem como a forma como os dados devem ser organizados. Usando arrastar e soltar, siga o arranjo na figura 8.21 e pressione calcular.</p>
+
+<p><img src="media/fig821.png" alt="Executando Group Stats na camada de construção" title="Executando Group Stats na camada de construção" /></p>
+
+<p>Figura 8.21 - Executando Group Stats na camada de construção.</p>
+
+<p>Olhando para o resultado, podemos extrair informações importantes sobre nossos dados. Por exemplo, para estádios no Recife, temos 33 edifícios com uma área total construída de 31539 metros quadrados, aprox. 32 hectares. E pode-se continuar a análise para mais informações valiosas.</p>
+
+<p>Outra análise interessante pode ser executada na camada vetorial de estradas. A Figura 8.22 mostra como calcular os comprimentos de estradas categorizados por tipo de estrada (primária, residencial, rodovia etc.) e velocidade máxima permitida.</p>
+
+<p><img src="media/fig822.png" alt="Executando Group Stats na camada de estradas" title="Executando Group Stats na camada de estradas" /></p>
+
+<p>Figura 8.22 - Executando Group Stats na camada de estradas.</p>
+
+<h4 id="perguntas-do-teste"><strong>Perguntas do teste</strong></h4>
+
+<ol>
+  <li>Os metadados são importantes?
+    <ul>
+      <li>_ <span style="text-decoration: underline;"> Sim, porque fornecem uma visão sobre os dados geográficos que de outra forma não seria possível obter. </span> _</li>
+      <li>_Não, é apenas burocracia. _</li>
+    </ul>
+  </li>
+  <li>A topologia é relevante para a geometria ou para a tabela de atributos de uma camada vetorial?
+    <ul>
+      <li>_para a geometria da camada vetorial. _</li>
+    </ul>
+  </li>
+  <li>O que é mais importante, a geometria ou os dados do atributo?
+    <ul>
+      <li><em>Geometria.</em></li>
+      <li><em>Dados de atributo.</em></li>
+      <li>_ <span style="text-decoration: underline;"> Ambos. </span> _</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="fase-2-introdução-ao-processamento-vetorial">Fase 2: Introdução ao processamento vetorial</h3>
+
+<p>A primeira fase do módulo vetorial fez uma breve introdução sobre as etapas que se devem realizar para se ter uma compreensão básica dos dados geoespaciais que temos em mãos.</p>
+
+<p>Esta segunda fase do módulo leva a um trabalho mais aprofundado para processar dados vetoriais a fim de extrair percepções valiosas para auxiliar na tomada de decisões. Seguindo os conceitos descritos no início deste módulo, o geoprocessamento representa qualquer processo aplicado a um conjunto de dados geográficos, com o objetivo de obter um conjunto de dados derivado abrindo novos insights sobre os dados. E é isso que tentaremos fazer a seguir.</p>
+
+<p>Existem muitas operações que podem ser realizadas em um ou mais conjuntos de dados geoespaciais e, durante esta primeira etapa, executaremos algumas das mais comuns para entender como funcionam.</p>
+
+<p><strong>Buffer.</strong> Imagine que você precise analisar uma nova legislação que exige que em uma área de 500 metros ao redor de locais de culto não possa haver outra construção. Você gostaria de ver onde exatamente essas delimitações estão e talvez até quantos metros quadrados isso representa para o seu distrito. O primeiro passo é definir um buffer em torno dos locais de culto: <strong>Vector ‣ ferramentas de geoprocessamento ‣ Buffer (Amortecedor)</strong>. Quando a janela do buffer abrir, defina os parâmetros como na figura 8.23:</p>
+
+<p><img src="media/fig823.png" alt="Definindo os parâmetros para um buffer de 500 m ao redor dos locais de culto" title="Definindo os parâmetros para um buffer de 500 m ao redor dos locais de culto" /></p>
+
+<p>Figura 8.23 ​​- Definindo os parâmetros para um buffer de 500 m ao redor dos locais de culto</p>
+
+<p>Um detalhe do resultado do geoprocessamento está representado na figura 8.24:</p>
+
+<p><img src="media/fig824.png" alt="Buffer de execução em uma camada vetorial de ponto" title="Running buffer on a point vector layer" /></p>
+
+<p>Figura 8.24 - Buffer em execução em uma camada vetorial de ponto</p>
+
+<p>Para responder completamente à pergunta inicial, o próximo passo é calcular as áreas para todos os buffers e somá-los (ver Fase 1, passo 4) - figura 8.25.</p>
+
+<p><img src="media/fig825.png" alt="Calcule a área para a camada recém-obtida e, em seguida, calcule usando Group Stats a soma total" title="Buffer de execução em Calcule a área para a camada recém-obtida, então calcule usando Group Stats a soma total da camada vetorial" /></p>
+
+<p>Figura 8.25 - Calcule a área para a camada recém-obtida e, em seguida, calcule usando Group Stats a soma total.</p>
+
+<p><strong>Recortar</strong> Imagine que você queira saber onde estão todas as áreas industriais delineadas em seu distrito e também quantos edifícios estão dentro desse perímetro. Ao inspecionar visualmente seus dados vetoriais, você percebe que há várias áreas industriais que contêm vários edifícios. Você deseja separar esses edifícios e usá-los posteriormente. O primeiro passo é selecionar todos os recursos da camada de uso do solo que tenham como atributo industrial (ver módulo 6 para saber como fazer isso). Em seguida, você vai para <strong>Vetor ‣ Geoprocessamento ‣ Recortar</strong> e escolhe como a camada a ser recortada buildings. Seus resultados devem ser semelhantes à figura 8.27b.</p>
+
+<p><img src="media/fig826_a.png" alt="Figura 8.26a - Selecione landuse fclass = industrial" title="Figura 8.26a - Selecione landuse fclass = industrial" /></p>
+
+<p>Figura 8.26a - Selecione landuse fclass = industrial.</p>
+
+<p><img src="media/fig826_b.png" alt="Seleção reduzida de alguns edifícios e uso do solo industrial, para que o cálculo possa terminar mais rápido" title="Seleção reduzida de alguns edifícios e uso do solo industrial, para que o cálculo possa terminar mais rápido" /></p>
+
+<p>Figura 8.26b - Seleção reduzida de alguns edifícios e uso do solo industrial, para que o cálculo possa terminar mais rápido.</p>
+
+<p>Execute o algoritmo de Clip. Certifique-se de marcar a caixa ** Somente recursos selecionados ** para a camada de sobreposição (uso do solo). Isso garantirá que apenas os recursos atualmente selecionados serão usados ​​para recortar e acelerar os cálculos.</p>
+
+<p><img src="media/fig827_a.png" alt="Executando o algoritmo de Clip" title="Executando o algoritmo de Clip" /></p>
+
+<p>Figura 8.27a - Executando o algoritmo de Clip</p>
+
+<p>Depois de executar o algoritmo, seus resultados devem ser semelhantes à figura 8.27b. Os edifícios recortados são coloridos em verde (pode ser diferente em seu machince). Quantos edifícios industriais você cortou e qual é sua área total?</p>
+
+<p><img src="media/fig827_b.png" alt="Resultados da funcionalidade do clipe" title="Resultados da funcionalidade do clipe" /></p>
+
+<p>Figura 8.27b - Resultados da funcionalidade de clipe</p>
+
+<p><strong>Polígonos de Thiessen (Voronoi).</strong> Imagine que você tenha que tomar uma série de decisões administrativas em seu distrito com base no número de escolas existentes e em quais áreas específicas elas atendem. A análise geoespacial pode ser útil. Você pode começar calculando os polígonos de Thiessen. Com base em uma área contendo pelo menos dois pontos, um polígono de Thiessen é uma forma bidimensional cujos limites contêm todo o espaço que está mais próximo de um ponto dentro da área do que qualquer outro ponto sem a área. Um bom exemplo de uso é em meteorologia, onde estações meteorológicas são pontos discretos, mas as informações coletadas são consideradas medidas na superfície com base nos polígonos de Thiessen.</p>
+
+<p>Para responder à pergunta acima, vamos executar o algoritmo apenas para pontos que têm o atributo escola no tipo. Portanto, faça a seleção conforme as instruções no módulo 6. Você deve ter 88 recursos selecionados na camada pois_cleaned. Vá para <strong>Vetor ‣ Geometria ‣ Polígonos de Voronoi</strong> Depois de definir os parâmetros - selecione a camada de pontos para a qual queremos os polígonos de Voronoi calculados e uma extensão de 30% para que toda a cidade do Recife esteja contida, você deve ver um resultado como na figura 8.28d.</p>
+
+<p><img src="media/fig828_a.png" alt="Filtrando a camada de poi para obter todas as escolas" title="Filtrando a camada de poi para obter todas as escolas" /></p>
+
+<p>Figura 8.28a - Filtrando a camada de poi para obter todas as escolas</p>
+
+<p><img src="media/fig828_b.png" alt="Todas as escolas na camada de poi" title="Todas as escolas na camada de poi" /></p>
+
+<p>Figura 8.28b - Todas as escolas na camada de poi</p>
+
+<p><img src="media/fig828_c.png" alt="Executando o algoritmo do polígono de Voronoi" title="Executando o algoritmo do polígono de Voronoi" /></p>
+
+<p>Figura 8.28c - Executando o algoritmo do polígono de Voronoi</p>
+
+<p><img src="media/fig828_d.png" alt="Resultados da aplicação do algoritmo de polígonos de Thiessen (Voronoi) a uma camada de vetor de ponto" title="Resultados da aplicação do algoritmo de polígonos de Thiessen (Voronoi) a uma camada de vetor de ponto" /></p>
+
+<p>Figura 8.28d - Resultados da aplicação do algoritmo de polígonos de Thiessen (Voronoi) a uma camada vetorial de ponto</p>
+
+<p>Às vezes, as necessidades impõem a exigência de se ter informações em áreas menores, claramente definidas e iguais e não para toda uma grande região, como um país ou uma grande cidade. Portanto, os dados precisam ser analisados ​​e visualizados de forma fatiada e bem definida, permitindo a comparação que de outra forma poderia ser difícil sem uma referência comum de base.</p>
+
+<p>Vamos supor que você tenha que apresentar um relatório que permitirá comparações feitas para unidades de 2X2 km sobre a unidade administrativa, incluindo:</p>
+
+<ol>
+  <li>densidade de espaços verdes (parques, florestas) no relatório to o espaço construído por unidade;</li>
+  <li>Comprimento total das ruas de cada unidade;</li>
+  <li>Comprimento total dos cursos d’água para cada unidade;</li>
+  <li>número total de edifícios públicos para cada unidade (escolas, jardins de infância, hospitais, prefeituras etc.).</li>
+</ol>
+
+<p>Vimos que existem ferramentas que podem nos auxiliar no cálculo da superfície total ocupada por um determinado tipo de recurso, no entanto, o primeiro passo é criar nossas unidades 2X2 - grades de células. Para fazer isso, vá para: <strong>Vetor ‣ Investigar ‣ Criar grade ..</strong> Defina os parâmetros para:</p>
+<ul>
+  <li>Tipo de grade - Retângulo (polígono)</li>
+  <li>Extensão da grade - camada limites_mun_recife</li>
+  <li>Espaçamento horizontal - 2 km</li>
+  <li>Espaçamento vertical - 2 km</li>
+</ul>
+
+<p><img src="media/fig829_a.png" alt="Criando uma grade vetorial de 2X2km para o Recife" title="Criando uma grade vetorial 2X2km para Recife" /></p>
+
+<p>Figura 8.29a - Criar grade vetorial de 2x2 km para o Recife</p>
+
+<p>Você deve obter um resultado como na figura 8.29b.</p>
+
+<p><img src="media/fig829_b.png" alt="Grade vetorial de 2X2km para a província de Recife" title="Grade vetorial de 2X2km para a província de Recife" /></p>
+
+<p>Figura 8.29b - Grade vetorial de 2x2 km para o Recife</p>
+
+<p>Indo além na resposta às perguntas em nosso exercício, precisamos fazer o seguinte:</p>
+
+<ol>
+  <li>espaços verdes (parques, florestas), espaço construído por proporção de unidade da grade:</li>
+</ol>
+
+<p>Espaços verdes e espaços construídos são dados contidos na camada vetorial de uso do solo, tipo polígono. Para saber exatamente quais são os “espaços verdes”, precisamos ver quais são as categorias incluídas no conjunto de dados. Para isso, executamos o algoritmo <strong>Listar valores únicos</strong> no atributo <code class="language-plaintext highlighter-rouge">fclass</code> e descobrimos que temos as seguintes classes ‘verdes’: prado, grama, natureza_reserva, parque, floresta e o seguinte ‘espaço construído’ classes: varejo, comercial, industrial, residencial. A Figura 8.30b apresenta uma visualização de nossas seleções:</p>
+
+<p><img src="media/fig830_a.png" alt="Filtrando áreas verdes e espaços construídos em Recife" title="Filtrando áreas verdes e espaços construídos em Recife" /></p>
+
+<p>Figura 8.30a - Filtragem de áreas verdes e espaços construídos em Recife</p>
+
+<p><img src="media/fig830_b.png" alt="Distribuição espacial das áreas verdes e áreas construídas em Recife" title="Distribuição espacial das áreas verdes e áreas construídas em Recife" /></p>
+
+<p>Figura 8.30b - Distribuição espacial das áreas verdes e áreas construídas em Recife</p>
+
+<p>A segunda etapa para atender ao requisito é identificar quanto espaço verde e quanto espaço construído existe em cada 2X2 km. Para obter isso, iremos <strong>interceptar</strong> as 2 camadas vetoriais poligonais sobrepostas. O algoritmo extrai as porções sobrepostas de recursos na Entrada - a camada de uso do solo e a camada de Sobreposição - a camada de grade. Vá para <strong>Vetor - Geoprocessamento - Interseção</strong> ou procure <strong>Interseção na Caixa de Ferramentas de Processamento ou na Barra Localizadora</strong> Defina os parâmetros do algoritmo como na figura 8.31.</p>
+
+<p><img src="media/fig831.png" alt="Parâmetros para o algoritmo de interseção" title="Parâmetros para o algoritmo de interseção" /></p>
+
+<p>Figura 8.31 - Parâmetros para o algoritmo de interseção</p>
+
+<p>O resultado deve ser semelhante ao da figura 8.32.</p>
+
+<p><img src="media/fig832.png" alt="Resultado da execução do algoritmo de interseção para prender os polígonos vetoriais de uso do solo à camada da grade" title="Resultado da execução do algoritmo de interseção para prender os polígonos vetoriais do uso do solo à camada da grade" /></p>
+
+<p>Figura 8.32 - Resultado da execução do algoritmo de interseção para prender os polígonos vetoriais de uso do solo à camada da grade.</p>
+
+<p>Agora, para cada unidade de 2X2 km, temos os recursos de uso do solo com os quais podemos trabalhar. A tabela de atributos também armazena essas informações, pois cada célula da grade - unidade - possui um id único, ver figura 8.33.</p>
+
+<p><img src="media/fig833.png" alt="Recursos Landuse cortados por cada célula da grade e sua tabela de atributos associada" title="Recursos Landuse cortados por cada célula da grade e sua tabela de atributos associada" /></p>
+
+<p>Figura 8.33 - Características Landuse cortadas por cada célula da grade e sua tabela de atributos associada.</p>
+
+<p>Agora que temos todos os recursos de uso do solo por unidade de 2X2 km, continuaremos separando as geometrias das que compõem o espaço verde e o espaço construído conforme definido anteriormente - para cada célula da grade. Assim, para espaços verdes, selecionaremos todos os recursos que têm o valor de atributo para <code class="language-plaintext highlighter-rouge">"fclass" IN ( 'forest', 'grass', 'meadow', 'park', 'recreation_ground')</code>. Na tabela de atributos, no campo de expressão digite: <code class="language-plaintext highlighter-rouge">"fclass" IN ( 'forest', 'grass', 'meadow', 'park', 'recreation_ground')</code>. Exporte os recursos selecionados como espacos_verdes_grade (consulte o módulo 6 para obter mais detalhes). Não se esqueça de marcar <strong>Salvar apenas os recursos selecionados</strong>. A nova saída deve ter 2160 recursos. Faça o mesmo para o espaço construído. Selecione os recursos em uso do solo que têm o valor de atributo <code class="language-plaintext highlighter-rouge">"fclass" IN ('commercial', 'industrial', 'retail', 'residential')</code>, escrevendo a seguinte expressão na janela de filtro com base em Expressão: <code class="language-plaintext highlighter-rouge">"fclass" IN ('commercial', 'industrial', 'retail', 'residential')</code>. Selecione as geometrias filtradas e exporte como espacos_construidos_grade. Sua nova saída deve ter 585 recursos.</p>
+
+<p>Como alternativa, você também pode usar um filtro em vez de uma seleção.</p>
+
+<p><img src="media/fig834_a.png" alt="Selecionando os espaços verdes" title="Selecionando os espaços verdes" /></p>
+
+<p>Figura 8.34a - Seleção dos espaços verdes.</p>
+
+<p><img src="media/fig834_b.png" alt="Espaços verdes selecionados" title="Espaços verdes selecionados" /></p>
+
+<p>Figura 8.34b - Espaços verdes selecionados.</p>
+
+<p><img src="media/fig834_c.png" alt="Espaços verdes e construídos" title="Espaços verdes e construídos" /></p>
+
+<p>Figura 8.34c - Espaços verdes e edificados.</p>
+
+<p>Em seguida, calcule a área ocupada por cada característica das 2 camadas. Vá para a tabela de atributos de cada camada e adicione a área da coluna geométrica inserindo a expressão <code class="language-plaintext highlighter-rouge">round ($ area, 2)</code> na calculadora de campo. (consulte o módulo 6 para obter detalhes, se necessário). No entanto, a grade de 2X2km do Recife tem um número conhecido de células da grade, que é 117. Portanto, precisamos resumir as áreas para todos os tipos de espaços verdes (florestas, parques etc.) e espaços construídos (comerciais , residencial, etc.) e junte-o de acordo com todas as 117 células da grade. Para fazer isso, usaremos o plugin <strong>Group Stats</strong> para somar para cada grid_id todas as categorias verdes, respectivamente todas as categorias construídas. Para a camada vetorial espacos_verdes_grade, defina os parâmetros como na figura 8.34e.</p>
+
+<p><img src="media/fig834_d.png" alt="Calculando a área de cada recurso" title="Calculando a área de cada recurso" /></p>
+
+<p>Figura 8.34d - Calculando a área de cada recurso.</p>
+
+<p><img src="media/fig834_e.png" alt="Configuração de parâmetros GroupStat para somar as áreas verdes por cada célula de grade de 2X2km" title="Configuração de parâmetros GroupStat para somar as áreas verdes por cada célula de grade 2X2km" /></p>
+
+<p>Figura 8.34e - Configuração dos parâmetros do GroupStat para somar as áreas verdes por cada célula de grade de 2X2km.</p>
+
+<p>Em seguida, salve os resultados como um arquivo .csv denominado <code class="language-plaintext highlighter-rouge">espacos_verdes_grade</code>. Vá para <strong>Data ‣ Save all to CSV file</strong></p>
+
+<p>Execute Group Stats para o espaço construído da mesma maneira e salve-o como um arquivo csv denominado <code class="language-plaintext highlighter-rouge">espacos_construidos_grade</code>.</p>
+
+<p>A seguir, vamos trazer os 2 arquivos csv calculados com GroupStat para o QGIS (<strong>Camada ‣ Adicionar camada ‣ Adicionar camada de texto delimitado</strong> - veja mais detalhes no módulo 2).</p>
+
+<p><img src="media/fig835_a.png" alt="Carregando espacos_verdes_grade CSV" title="Carregando espacos_verdes_grade CSV" /></p>
+
+<p>Figura 8.35a - Carregando o CSV espacos_verdes_grade</p>
+
+<p><img src="media/fig835_b.png" alt="A tabela de atributos CSV espacos_verdes_grade" title="A tabela de atributos CSV espacos_verdes_grade" /></p>
+
+<p>Figura 8.35b - A tabela de atributos de CSV espacos_verdes_grade</p>
+
+<p>Seguindo em frente, precisamos juntar os espaços calculados - verdes e construídos - a cada grade de células de 2X2 km. Para isso, selecione a camada vetorial Grade, abra a janela de propriedades e vá em <strong>Uniões</strong>. Esta funcionalidade permite que você se junte por um campo de atributo comum, outros. No nosso caso, usando o valor comum grid_id vamos juntar, a soma das áreas construídas e espaços verdes dos 2 arquivos csv obtidos na etapa anterior.</p>
+
+<p>Na janela <strong>Uniões</strong>, pressione o botão verde mais abaixo<img src="media/add_join_btn.png" alt="Botão Adicionar camada de junção" title="botão Adicionar camada de junção" /> e defina os parâmetros como na figura 8.35, para espaços verdes.</p>
+
+<p><img src="media/fig835_c.png" alt="Configurando os parâmetros para unir pelo campo comum grid_id/id as somas dos espaços verdes e construídos para cada célula da grade - unidade de 2X2km" title="Configurando os parâmetros para unir pelo campo comum grid_id/id as somas de espaços verdes e construídos para cada célula da grade - unidade de 2X2km " /></p>
+
+<p>Figura 8.35c - Configurando os parâmetros para unir por campo comum grid_id/id as somas de espaços verdes e construídos para cada célula da grade - unidade de 2X2km.</p>
+
+<p>Repita para espaços construídos.</p>
+
+<p>Os resultados das duas junções são visíveis na tabela de atributos, como pode ser visto na figura 8.36_b. Mantivemos o grid_id em ambas as junções, para ter certeza de que nenhum erro ocorreu. Podemos verificar visualmente rapidamente para ter certeza de que os 3 campos de atributo: id, construido_grid_id e verde_grid_id são exatamente os mesmos.</p>
+
+<p><img src="media/fig836_a.png" alt="CSV verde e incorporado unido à grade" title="CSV verde e incorporado unido à grade" /></p>
+
+<p>Figura 8.36a - CSV verde e construído unido à grade.</p>
+
+<p><img src="media/fig836_b.png" alt="Tabela de atributos da camada vetorial Grade contendo as áreas totais para espaços verdes e edificados" title="Tabela de atributos da camada vetorial Grade contendo as áreas totais para espaços verdes e edificados" /></p>
+
+<p>Figura 8.36b - Tabela de atributos da camada vetorial Grade contendo as áreas totais para espaços verdes e edificados.</p>
+
+<p>Como reunimos todas as informações necessárias para espaços verdes e construídos na tabela de atributos da camada de grade, tudo o que precisamos fazer é calcular a porcentagem desses espaços dentro da célula de grade de 2X2 km. Iremos calculá-lo usando a calculadora de campo, usando a seguinte expressão: <code class="language-plaintext highlighter-rouge">round (100 * verde_None/(2000*2000), 5)</code> e <code class="language-plaintext highlighter-rouge">round (100 * construido_None/(2000*2000), 5)</code>. Em seguida, adicionamos um novo campo no qual calcular o relatório do verde_por/construido_por, e assim chegar à resposta ao nosso pedido: espaços verdes (parques, florestas) espaço construído por unidade de proporção: <code class="language-plaintext highlighter-rouge">round (" verde_por "/" construido_por ", 5)</code>. uma visão geral clara do nosso conjunto de dados, nos casos em que não há espaço acumulado na célula da grade- inserimos o valor 1000 na tabela de atributos, nos casos em que não há espaço verde, inseriremos o valor 999, enquanto no caso de ambos os valores serem NULL então inserimos 1001. Para isso podemos usar a expressão:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CASE
+WHEN (verde_por IS NULL) AND (construido_por IS NOT NULL) THEN 999
+WHEN (construido_por IS NULL) AND (verde_por IS NOT NULL) THEN 1000
+WHEN (verde_por IS NULL) AND (construido_por IS NULL) THEN 1001
+ELSE round(verde_por/construido_por, 5)
+END
+</code></pre></div></div>
+
+<p>O resultado final seria semelhante ao da figura 8.37e.</p>
+
+<p><img src="media/fig837_a.png" alt="Porcentagem de área verde na grade de 2kmX2km" title="Porcentagem de área verde na grade de 2kmX2km" /></p>
+
+<p>Figura 8.37a - Porcentagem de área verde na grade de 2km X 2km</p>
+
+<p><img src="media/fig837_b.png" alt="Porcentagem calculada de área verde e construída" title="Porcentagem calculada de área verde e construída" /></p>
+
+<p>Figura 8.37b - Porcentagem calculada de área verde e construída</p>
+
+<p><img src="media/fig837_c.png" alt="Calculando para a proporção de áreas verdes e construídas" title="Calculando para a proporção de áreas verdes e construídas" /></p>
+
+<p>Figura 8.37c - Computação para a proporção de áreas verdes e áreas construídas</p>
+
+<p><img src="media/fig837_d.png" alt="Proporção calculada de áreas verdes e edificadas" title="Proporção calculada de áreas verdes e edificadas" /></p>
+
+<p>Figura 8.37d - Razão calculada de áreas verdes e construídas</p>
+
+<p><img src="media/fig837_e.png" alt="Proporção de áreas verdes e construídas na grade de 2kmX2km" title="Proporção de áreas verdes e áreas construídas na grade de 2kmX2km" /></p>
+
+<p>Figura 8.37e - Razão de áreas verdes e áreas construídas na grade de 2km X 2km</p>
+
+<ol>
+  <li>extensão total de ruas e vias navegáveis ​​de cada unidade;</li>
+</ol>
+
+<p>Para realizar esta tarefa, o QGIS oferece um algoritmo que pega uma camada de polígono e uma camada de linha e mede o comprimento total das linhas e o número total delas que cruzam cada polígono. A camada resultante tem os mesmos recursos da camada de polígono de entrada, mas com dois atributos adicionais contendo o comprimento e a contagem das linhas em cada polígono. Vá para <strong>Vetor &gt; Análise &gt; Soma de Comprimentos de Linha</strong> e defina os parâmetros da seguinte forma:</p>
+<ul>
+  <li>polígonos - Grade</li>
+  <li>linhas - road</li>
+  <li>nome do campo de comprimento de linhas - road_comp</li>
+  <li>nome do campo de contagem de linhas - road_cont</li>
+</ul>
+
+<p>Você pode criar uma camada temporária ou salvá-la como um arquivo em seu computador. Se, para representação, você usa quebras naturais, seu mapa deve se parecer com a figura 8.38c.</p>
+
+<p><img src="media/fig838_a.png" alt="Parâmetros de Soma de Comprimento de Linha" title="Parâmetros de Soma de Comprimento de Linha" /></p>
+
+<p>Figura 8.38a - Parâmetros de Somatórios de Comprimento de Linha</p>
+
+<p><img src="media/fig838_b.png" alt="Comprimentos de estradas e contagens por célula de grade" title="Comprimento de estradas e contagens por célula de grade" /></p>
+
+<p>Figura 8.38b - Comprimentos de estradas e contagens por célula de grade</p>
+
+<p><img src="media/fig838_c.png" alt="Distribuição espacial de unidades de 2X2km com a maioria das estradas" title="Distribuição espacial de unidades de 2X2km com a maioria das estradas" /></p>
+
+<p>Figura 8.38c - Distribuição espacial de unidades de 2X2km com a maioria das estradas</p>
+
+<p>Agora, repita o mesmo processamento para comprimentos de cursos d’água (waterways) ​​em cada célula da grade. Executar o processo no arquivo de grade obtido anteriormente o ajudará a ter todas as informações obtidas até agora anexadas à mesma geometria. Aconselhamos que você salve este arquivo em seu computador com comprimentos_linhas_grade. Se, para representação, você usar quebras naturais, seu mapa deve se parecer com a figura 8.39.</p>
+
+<p><img src="media/fig839.png" alt="Distribuição espacial de unidades de 2X2km com a maioria dos cursos d'água" title="Distribuição espacial de unidades de 2X2km com a maioria dos cursos d'água" /></p>
+
+<p>Figura 8.39 - Distribuição espacial de unidades de 2X2km com a maioria dos cursos d’água</p>
+
+<ol>
+  <li>número total de edifícios públicos (escolas, jardins de infância, hospitais, prefeituras etc.) para cada célula da grade</li>
+</ol>
+
+<p>Para contar o número total de prédios públicos na unidade 2X2, usaremos o pois_cleaned. Primeiro, executamos <strong>Vetor ‣ Analisar ‣ Lista de Valores Únicos</strong> e decidimos qual edifício consideramos público. Selecionaremos em nossa camada de dados de pontos vetoriais (pois) os seguintes recursos: <code class="language-plaintext highlighter-rouge">"fclass" IN ('arts_centre', 'embassy', 'hospital', 'library', 'museum', 'school', 'university', 'monument')</code>. Sua seleção deve ter 324 recursos no total.</p>
+
+<p><img src="media/fig840_a.png" alt="Selecionando POIs públicos" title="Selecionando POIs públicos" /></p>
+
+<p>Figura 8.40a - Seleção de POIs públicos</p>
+
+<p><img src="media/fig840_b.png" alt="POIS público selecionado" title="POIS público selecionado" /></p>
+
+<p>Figura 8.40b - POIS público selecionado</p>
+
+<p>Para responder à nossa solicitação, usaremos o algoritmo <strong>Vetor ‣ Analisar ‣ Contagem de pontos em polígono</strong>. Este algoritmo pega uma camada de pontos e uma camada de polígono e conta o número de pontos da primeira em cada polígono da segunda. Uma nova camada de polígonos é gerada, com exatamente o mesmo conteúdo da camada de polígonos de entrada, mas contendo um campo adicional com a contagem de pontos correspondente a cada polígono. Defina a camada de ponto para pois_cleand e a camada de grade de polígono com as informações calculadas na rodada anterior. Para os pontos, marque os <strong>Apenas feições selecionadas</strong>, para que o algoritmo calcule apenas os pontos selecionados - os POIs públicos. Salve o arquivo de saída como pontos_publicos_grade.</p>
+
+<p><img src="media/fig840_c.png" alt="Contar POIS públicos em cada grade de 2km X 2km" title="Contar POIS públicos em cada grade de 2km X 2km" /></p>
+
+<p>Figura 8.40c - Contagem de POIS públicos em cada grade de 2km X 2km</p>
+
+<p><img src="media/fig840_d.png" alt="Distribuição espacial da densidade de POIs públicos por unidade 2X2km" title="Distribuição espacial da densidade de POIs públicos por unidade 2X2km" /></p>
+
+<p>Figura 8.40d - Distribuição espacial da densidade de POIs públicos por unidade 2X2km</p>
+
+<h4 id="perguntas-do-teste-1"><strong>Perguntas do teste</strong></h4>
+
+<p>P: Se eu tiver 2 camadas vetoriais - uma representa a extensão da cidade onde estou trabalhando e a segunda, as estradas construídas em todo o país - que ferramenta de processamento usaria para extrair apenas as estradas da minha cidade: buffer ou recortar (clip)?</p>
+
+<p>R: Recortar.</p>
+
+<p>P. A ferramenta de buffer é útil no seguinte caso: Eu tenho uma camada vetorial de polígono com monumentos históricos em minha região e quero desenhar uma área de proteção de 50m ao redor deles?</p>
+
+<p>R: Sim</p>
+
+<p>P: Qual das três ferramentas de geoprocessamento você usaria para mesclar duas camadas vetoriais semelhantes? Polígonos de Voronoi, dissolver, interseção?</p>
+
+<p>R: Dissolver.</p>
+
+<h3 id="fase-3-geoestatística-interpolação---estimativa-de-dados-faltantes">Fase 3: Geoestatística. Interpolação - estimativa de dados faltantes</h3>
+
+<p>A última fase do módulo de dados vetoriais apresenta o conceito de estimativa de dados. Estamos acostumados a estimar quase diariamente em vários tópicos, por exemplo, quanto tempo levará para ir de casa para o trabalho em certas condições. Estamos acostumados a dar nosso melhor palpite, com base em experiências anteriores e palpites. No entanto, ao estimar dados faltantes, a estimativa é substituída por equações matemáticas muito bem definidas com limitações bem conhecidas.</p>
+
+<p>O assunto requer conhecimentos significativos em estatística e os resultados devem ser sempre considerados à luz das suas limitações.</p>
+
+<p>Dito isso, apresentaremos um pequeno exemplo de estimativa de dados que fará a transição para o próximo módulo - processamento de dados raster.</p>
+
+<p><strong>Interpolação</strong> é um processo matemático através do qual se pode estimar os valores que faltam com base em um número limitado de valores que existem. E essas situações são comuns - imagine informações meteorológicas. Os dados sobre as temperaturas da superfície e de quanta chuva caiu podem ser medidos apenas em pontos específicos em estações meteorológicas calibradas, e não em toda a superfície. No entanto, não temos “pontos cegos” de nenhuma temperatura nos mapas que vemos na seção de meteorologia dos jornais. Assim, o resto dos valores - para construir os fenômenos contínuos - são obtidos por interpolação.</p>
+
+<p>A suposição na qual a interpolação se baseia é que objetos espacialmente distribuídos são espacialmente correlacionados; em outras palavras, coisas próximas tendem a ter características semelhantes.</p>
+
+<p>Existem muitos métodos de interpolação implementados em pacotes de software GIS; decidir qual é o melhor em cada caso particular depende da especificidade dos dados, o que eles representam e do entendimento geoestatístico do usuário que faz a interpolação.</p>
+
+<p>Para fazer uma verificação rápida sobre quais métodos de interpolação estão disponíveis no QGIS, vá para a Caixa de Ferramentas de Processamento e escreva na barra de pesquisa a palavra-chave interpolação. O resultado deve ser semelhante à figura 8.41.</p>
+
+<p><img src="media/fig841.png" alt="Métodos de interpolação disponíveis no QGIS" title="Métodos de interpolação disponíveis no QGIS" /></p>
+
+<p>Figura 8.41 - Métodos de interpolação disponíveis no QGIS</p>
+
+<p>Como pode ser observado, através do QGIS o usuário tem acesso a outros algoritmos, implementados no GRASS ou SAGA, como resultado da integração em QGIS destas (e outras) soluções de software muito poderosas.</p>
+
+<p>Mergulhar na matemática por trás de cada algoritmo de interpolação está além do escopo deste módulo. No entanto, para fins de demonstração, simularemos a interpolação de dados de precipitação para obter um conjunto de dados uniforme sobre a quantidade de precipitações caídas em nossa área de interesse, a cidade do Recife.</p>
+
+<p>Como o exercício é puramente para fins de demonstração, criaremos nosso próprio conjunto de dados de ponto - para representar as estações meteorológicas onde os valores de precipitação foram registrados no decorrer de uma semana.</p>
+
+<p>Assim, o primeiro passo é criar uma nova camada vetorial - tipo de ponto - com pontos atribuídos aleatoriamente dentro da extensão do Recife. Existem várias maneiras de fazer isso, seja com o algoritmo de <strong>Pontos aleatórios em polígonos ..</strong> ou com o algoritmo <strong>Pontos aleatórios em limites de camada ..</strong>. Vá para <strong>Vetor ‣ Analisar ‣ Pontos aleatórios em polígonos (Random points in polygons)…</strong>. Você também pode pesquisar o algoritmo na caixa de ferramentas de processamento ou na barra do localizador. Escolha como parâmetros:</p>
+<ul>
+  <li>93 pontos</li>
+  <li>mínimo 5 km.</li>
+</ul>
+
+<p>O resultado deve ser semelhante à figura 8.42.</p>
+
+<p><img src="media/fig842.png" alt="Criando pontos aleatórios dentro de uma camada poligonal" title="Criando pontos aleatórios dentro de uma camada poligonal" /></p>
+
+<p>Figura 8.42 - Criação de pontos aleatórios dentro de uma camada poligonal</p>
+
+<p>A camada de pontos resultante será semelhante à figura 8.43.</p>
+
+<p><img src="media/fig843.png" alt="Camada de dados de ponto - criada aleatoriamente dentro de polígonos especificados" title="Camada de dados de ponto - criada aleatoriamente dentro de polígonos especificados" /></p>
+
+<p>Figura 8.43 - Camada de dados de ponto - criada aleatoriamente dentro de polígonos especificados.</p>
+
+<p>Agora que temos nossas estações meteorológicas imaginárias que medem as precipitações no Recife, continuaremos adicionando medições fictícias ao longo de 7 dias.</p>
+
+<p>Para fazer isso, podemos usar a função aleatória fornecida pelo QGIS. Abra a tabela de atributos da camada de dados do ponto criada e abra a calculadora de campo. Em um campo recém-criado (número inteiro inteiro), insira a seguinte fórmula <code class="language-plaintext highlighter-rouge">rand(min, max)</code>, onde min e max serão substituídos pelo seguinte par de números para os 7 dias correspondentes (consulte a figura 8.44):</p>
+
+<ol>
+  <li>0 - 59;</li>
+  <li>2 - 35;</li>
+  <li>10 - 45;</li>
+  <li>0 - 21;</li>
+  <li>5 - 63;</li>
+  <li>0 - 10;</li>
+  <li>0 - 21.</li>
+</ol>
+
+<p><img src="media/fig844.png" alt="Criando valores aleatórios dentro dos limites especificados" title="Criando valores aleatórios dentro dos limites especificados" /></p>
+
+<p>Figura 8.44 - Criação de valores aleatórios dentro dos limites especificados</p>
+
+<p>Depois de adicionar todas as 7 colunas, sua tabela de atributos deve se parecer com a figura 8.45.</p>
+
+<p><img src="media/fig845.png" alt="Dados fictícios de precipitação para 93 estações meteorologia fictícias no Recife" title="Dados fictícios de precipitação para 93 estações meteorológicas fictícias no Recife" /></p>
+
+<p>Figura 8.45 - Dados fictícios de precipitação para 93 meteorologia estações fictícias no Recife.</p>
+
+<p>A seguir, iremos interpolar esses valores para cada um dos 7 dias para obter uma camada contínua que cobre todo o território da província. Visto que a operação é repetitiva, usaremos o processamento em lote. O método de interpolação selecionado - estritamente para fins de demonstração! - é IDW - ponderada pela distância inversa.</p>
+
+<p>Defina os seguintes parâmetros:</p>
+<ul>
+  <li>coeficiente de distância: 2</li>
+  <li>extensão: limite_mun_recife</li>
+  <li>tamanho do raster de saída: 50.</li>
+</ul>
+
+<p>Seus parâmetros devem ser semelhantes à figura 8.46 a seguir.</p>
+
+<p><img src="media/fig846.png" alt="Configurando a janela de processamento em lote para interpolar os valores de precipitação para todos os 7 dias" title="Configurando a janela de processamento em lote para interpolar os valores de precipitação para todos os 7 dias" /></p>
+
+<p>Figura 8.46 - Configurando a janela de processamento em lote para interpolar os valores de precipitação para todos os 7 dias</p>
+
+<p>O resultado da interpolação será semelhante ao da figura 8.47.</p>
+
+<p><img src="media/fig847.png" alt="Conjuntos de dados interpolados" title="Conjuntos de dados interpolados" /></p>
+
+<p>Figura 8.47 - Conjuntos de dados interpolados</p>
+
+<p>As estações meteorológicas são visíveis na tela do mapa e nas camadas você pode ver todos os 7 conjuntos de dados raster recém-criados que representam os valores de precipitação para cada dia no Recife.</p>
+
+<p>A seguir, vamos mudar a simbologia das 7 camadas para uma mais colorida (<strong>Propriedades ‣ Simbologia ‣ Banda única falsa cor ‣ Magma</strong>).</p>
+
+<p>Olhando para os dados de ponto e os conjuntos de dados raster criados com base neles, podemos perceber que agora temos valores para toda a região e não apenas no local medido. Existem muitos algoritmos de processamento que podem ser aplicados a esses rasters para extrair informações, mas mais sobre isso no próximo módulo - processamento e visualização de dados raster.</p>
+
+<p>No entanto, como temos valores interpolados para 7 dias, vamos preparar uma curta animação sobre como os valores de precipitação evoluíram para o Recife.</p>
+
+<p>Para fazer isso, abra a caixa de diálogo <strong>Propriedades de test_meteo_stations_1 raster ‣ clique na guia Temporal ‣ marque a opção Temporal ‣ selecione as datas de início e término</strong>, como na figura 8.48. Faça o mesmo para todas as 7 camadas raster.</p>
+
+<p><img src="media/fig848_a.png" alt="Configurando informações temporais para o conjunto de dados raster (1)" title="Configurando informações temporais para o conjunto de dados raster (1)" /></p>
+
+<p><img src="media/fig848_b.png" alt="Configurando informações temporais para o conjunto de dados raster (2)" title="Configurando informações temporais para o conjunto de dados raster (2)" /></p>
+
+<p><img src="media/fig848_c.png" alt="Configurando informações temporais para o conjunto de dados raster (7)" title="Configurando informações temporais para o conjunto de dados raster (7)" /></p>
+
+<p>Figura 8.48 - Definição de informações temporais para o conjunto de dados raster (1, 2, 7).</p>
+
+<p>Abra o Painel do Controlador Temporal (pode ser encontrado em ** Exibir ‣ Painéis ‣ Painel do Controlador Temporal **) e defina os parâmetros como na figura 8.49.</p>
+
+<p><img src="media/fig849.png" alt="Defina os parâmetros do Painel de controle de tempo" title="Defina os parâmetros do Painel de controle de tempo" /></p>
+
+<p>Figura 8.49 - Definir os parâmetros do painel do controlador de tempo.</p>
+
+<p>Clique no botão Reproduzir<img src="media/play-btn.png" alt="Botão Reproduzir" title="Botão Reproduzir" /> e veja como os valores mudam. Você pode escolher quais outras camadas ficarão visíveis. Na figura 8.50, adicionamos a camada vetorial de edifícios.</p>
+
+<p><img src="media/fig850.png" alt="Selecionando outras camadas para serem visíveis na animação temporal" title="Selecionando outras camadas para serem visíveis na animação temporal" /></p>
+
+<p>Figura 8.50 - Selecionando outras camadas para serem visíveis na animação temporal.</p>
+
+<p>Quiz questões</p>
+
+<ol>
+  <li>Existe um algoritmo para interpolar dados no QGIS ou mais?</li>
+</ol>
+
+<p><em>Existem mais de um algoritmos implementados.</em></p>
+
+<ol>
+  <li>Para que serve a interpolação?</li>
+</ol>
+
+<p><em>A interpolação é útil para estimar dados com base em dados conhecidos.</em></p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

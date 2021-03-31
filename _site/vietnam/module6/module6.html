@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Module 6 - Layer attributes | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Module 6 - Layer attributes page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Module 6 - Layer attributes">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Module 6 - Layer attributes</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/module6/module6.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="module-6---layer-attributes">Module 6 - Layer attributes</h1>
+
+<p><strong>Tác giả</strong>: Ketty</p>
+
+<p><strong>Biên dịch và bản địa hoá</strong>: Quách Đồng Thắng</p>
+
+<h2 id="giới-thiệu-chung">Giới thiệu chung</h2>
+
+<p>Module này sẽ trang bị cho bạn một cái nhìn tổng quan về các bước chung cần thiết để làm việc với bảng thuộc tính - attribute table và thuộc tính của layer trong QGIS. Kết thúc Module, bạn có thể nắm được các khái niệm sau;</p>
+
+<ul>
+  <li>Làm việc với attribute table</li>
+  <li>Sử dụng field calculator</li>
+  <li>QGIS expression engine</li>
+  <li>Cấu trúc lại các trường dữ liệu</li>
+</ul>
+
+<p>Ngoài ra, bạn sẽ học được các kỹ năng sau;</p>
+
+<ul>
+  <li>Giới thiệu giao diện attribute table</li>
+  <li>Tương tác với đối tượng trong attribute table</li>
+  <li>Lưu các đối tượng được chọn thành layer mới</li>
+  <li>Chỉnh sửa các trường thuộc tính của layer</li>
+</ul>
+
+<p>Bạn sẽ sử dụng field calculator và QGIS expression engine để chạy các phép toán và hàm trong QGIS.</p>
+
+<h2 id="các-công-cụ-và-tài-nguyên-cần-thiết">Các công cụ và tài nguyên cần thiết</h2>
+
+<ul>
+  <li>Máy tính</li>
+  <li>Kết nối Internet</li>
+  <li>QGIS 3.16 trở lên</li>
+  <li>Lớp ranh giới hành chính Tp.HCM (trong <a href="/vietnam/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li>Cơ sở y tế Tp.HCM (trong <a href="/vietnam/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li>Vietnam provinces (trong <a href="/vietnam/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li><a href="data/HRSL_HCMC_Population.tif">HCM City High Resolution Settlement Layer</a></li>
+</ul>
+
+<h2 id="yêu-cầu-về-kỹ-năng">Yêu cầu về kỹ năng</h2>
+
+<ul>
+  <li>Nắm được các Module trước</li>
+  <li>Kiến thức cơ bản về vận hành máy tính</li>
+</ul>
+
+<h2 id="tài-liệu-tham-khảo">Tài liệu tham khảo</h2>
+
+<ul>
+  <li>Working with the Attribute Table - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/attribute_table.html?highlight=layer%20attributes</a></li>
+  <li>QGIS Expressions - <a href="https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html">https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html</a></li>
+</ul>
+
+<h2 id="giới-thiệu-chuyên-đề">Giới thiệu chuyên đề</h2>
+
+<p>Hãy bắt đầu với một ví dụ:</p>
+
+<p>Trong một số trường hợp, ví dụ cho mục đích quy hoạch cơ sở hạ tầng, bạn có thể muốn biết diện tích của polygon trong một layer. Nếu bạn có một polygon, điều này không là vấn đề. Nhưng nếu bạn có nhiều polygon trong một layer thì sao? Để tính toán diện tích cho từng polygon gần như là không thể. Lớp dữ liệu ranh giới hành chính Việt Nam có nhiều polygon sẽ là một bộ dữ liệu tốt cho Hướng dẫn này. Chúng ta sẽ tính diện tích cho từng polygon một cách tự động. Tổng cộng sẽ có 63 polygon được tính diện tích.</p>
+
+<h2 id="phân-tích-các-khái-niệm">Phân tích các khái niệm</h2>
+
+<p>Phần lớn công việc bạn làm khi tạo bản đồ liên quan đến việc làm việc với thuộc tính của layer. Cho dù bạn đang vẽ layer, cấu hình một cửa sổ popup, thực hiện các phép phân tích hay trực quan hoá, bạn cần có một số kiến thức về các trường dữ liệu của lớp và các giá trị của chúng. Nếu đó là layer của riêng bạn, bạn biết và hiểu các thuộc tính của nó. Nhưng nếu không phải, làm sao bạn có thể hiểu được? Có thể, bạn kiểm tra tên trường dữ liệu và giá trị cả nó để tìm một số manh mối. Và nếu bạn may mắn, bạn có thể tìm một vài tài liệu mô tả thuộc tính của layer.</p>
+
+<p>Bảng thuốc tính hiển thị thông tin của các đối tượng của một layer được chọn. Mỗi dòng trong bảng thể hiện một đối tượng (có thể có hoặc không có yếu tố hình học), mỗi cột chứa một phần thông tin cụ thể của đối tượng. Các đối tượng trong bảng có thể được tìm kiến, chọn, di chuyển hoặc thậm chí chỉnh sửa. Đặc biệt, có 02 thuộc tính mới của trường mô tả các giá trị được chứa trong trường dữ liệu;</p>
+
+<ul>
+  <li><strong>Field description</strong> –  một vài từ, một câu hoặc một đoạn văn bản mô tả các giá trị trong trường dữ liệu.</li>
+  <li><strong>Field value type</strong> – một từ khoá phân loại giá trị dữ liệu chứa trong trường dữ liệu. Từ khoá giúp chúng ta hiểu cách sử dụng các giá trị này và cho phép QGIS và các ứng dụng khác đưa ra các đề xuất thông minh hơn để làm việc với chúng, ví dụ, loại giá trị của trường dữ liệu có thể là integer, string, boolean, double và floating point</li>
+</ul>
+
+<p>Sau đây là một ví dụ; Giả sử bạn có một lớp thửa đất với các trường dữ liệu sau:</p>
+
+<ul>
+  <li>Parcel ID – Integer</li>
+  <li>Owner – String</li>
+  <li>Street Address – String</li>
+  <li>Property Description – String</li>
+  <li>Buildings – Integer</li>
+  <li>Land Area – Double</li>
+  <li>Assessed Value – Double</li>
+  <li>Assessment Date – Date</li>
+</ul>
+
+<p>Nếu bạn muốn mô tả các giá trị trường dữ liệu này, bạn có thể viết như sau:</p>
+
+<ul>
+  <li>Parcel ID –  Số định danh duy nhất của thửa đất</li>
+  <li>Owner – Tên chủ sở hữu</li>
+  <li>Street Address – Địa chỉ thửa đất</li>
+  <li>Property Description – Thông tin pháp lý của thửa đất</li>
+  <li>Buildings – Số căn nhà trên thửa đất</li>
+  <li>Land Area – Diện tích thửa đất</li>
+  <li>Assessed value – Giá trị của thửa đất và các căn nhà trên thửa đất.</li>
+  <li>Assessment Date – Ngày tính giá trị của thửa đất.</li>
+</ul>
+
+<p>Khi nhìn vào các mô tả này, một số từ nổi bật như: mã định danh, tên, địa chỉ, thông tin pháp lý, số lượng, kích tước, giá trị và ngày. Chúng là các <em>từ khoá</em> để mô tả các giá trị của trường là gì. Các từ khoá loại giá trị trường dữ liệu được tạo dựa trên các loại từ này. Gồm có:</p>
+
+<ul>
+  <li>Tên gọi hoặc tiêu đề</li>
+  <li>Mô tả</li>
+  <li>Kiểu, loại</li>
+  <li>Số đếm,  số lượng</li>
+  <li>Phần trăm, tỉ lệ</li>
+  <li>Đo đạc</li>
+  <li>Mã định danh</li>
+  <li>Thứ tự hoặc xếp hạng</li>
+  <li>Nhị phân</li>
+  <li>Vị trí hoặc tên địa điểm</li>
+  <li>Toạ độ</li>
+  <li>Thời gian và ngày tháng</li>
+</ul>
+
+<p>Trong lớp thửa đất ở ví dụ trên, trường Parcel ID có kiểu là số nguyên - integer. Nếu loại trường dữ liệu 
+là mã định danh thay vì số đếm, QGIS sẽ không đề xuất vẽ thuộc tính này sử dụng màu hoặc ký hiệu.</p>
+
+<p>Ngoài ra, các khái niệm khác như chức năng field calculator trong bảng thuộc tính cho phép người dùng thực hiện các tính toán dựa trên giá trị các thuộc tính có sẵn hoặc các hàm được định nghĩa, ví dụ như để tính toán chiều dài, diện tích hoặc mật độ dân số. Cần chú ý là các phép tính có thể được xác định bởi các thuộc tính hoặc tính toán từ dữ liệu. Ví dụ, chỉ có thể tính toán mật độ dân số nếu có trường dân số. Sử dụng công cụ biểu thức tính toán và field calculator, bạn có thể xây dựng một biểu thức hoặc công thức tính toán để tính toán mật độ dân số. Trong trường hợp này công thức là tổng dân số/ diện tích. Bạn có thể thấy rằng điều quan trọng là biết được mỗi trường dữ liệu trong bảng thuộc tính biểu diễn cho cái gì. Điều này có nghĩa là bạn cần biết và hiểu rõ dữ liệu của mình, qua đó giúp cho việc áp dụng các hàm và biểu thức tính toán dễ dàng hơn để thực hiện các phép phân tích và bản đồ có ý nghĩa.</p>
+
+<h3 id="phase-1--chỉnh-sửa-layer-attributes">Phase 1 : Chỉnh sửa layer attributes</h3>
+
+<h4 id="nội-dung"><strong>Nội dung</strong></h4>
+
+<p>Bảng thuộc tính hiển thị thông tin của các đối tượng của layer được chọn. Mỗi dòng trong bảng biểu diễn một đối tượng (có hoặc không có yếu tố hình học), và mỗi cột chứa một phần thông tin về đối tượng Các đối tượng trong bảng có thể được tìm kiếm, chọn, di chuyển hoặc thậm chí chỉnh sửa.</p>
+
+<ol>
+  <li>Tải lớp ranh giới hành chính Việt Nam trong QGIS (trong <a href="/vietnam/module6/data/module6.gpkg">module6.gpkg</a>). Bạn có thể xem số lượng đối tượng của layer bằng cách <strong>Kích chuột phải vào layer trong Layers Panel - Show Feature Count</strong>. Bạn có thể thấy trong hình bên dưới, vector layer có nhiều đối tượng, Tổng cộng có 63 đối tượng tương ứng với 63 tỉnh thành.</li>
+</ol>
+
+<p><img src="media/many-polygons.png" alt="Số lượng polygon của vector layer" title="Số lượng polygon của vector layer" /></p>
+
+<p>Hình 6.1: Số lượng polygon của vector layer</p>
+
+<ol>
+  <li>Bước tiếp theo là khám phá giao diện bảng thuộc tính. Mở bảng thuộc tính bằng cách <strong>Kích chuột phải tại layer trong Layers Panel- Open Attribute Table</strong>. Bạn cũng có thể kích chọn  <strong>Open Attribute Table button</strong> <img src="media/open-attribute-btn.png" alt="Open attribute table button" title="Open attribute table button" /> từ Attributes Toolbar. Hình bên dưới là bảng thuộc tính. Có nhiều nút bấm phía trên bảng thuộc tính, di chuyển chuột trên mỗi nút bấm để xem chức năng tương ứng.</li>
+</ol>
+
+<p><img src="media/attribute-tab.png" alt="Open attribute table" title="Open attribute table" /></p>
+
+<p>Hình 6.2: Bảng thuộc tính ở dạng cửa sổ nổi mà gắn vào giao diện QGIS, bạn có thể kích chọn <strong>Dock attribute table button</strong> <img src="media/dock-attr-btn.png" alt="&quot;Dock attribute table&quot;" title="Dock attribute table" />, lúc này bảng thuộc tính sẽ hiển thị dạng tab thay vì một cửa sổ riêng.</p>
+
+<p><img src="media/docked-attribute-tab.png" alt="Docked attribute table" title="Docked attribute table" /></p>
+
+<p>Hình 6.3: Bảng thuộc tính dạng tab</p>
+
+<ol>
+  <li>
+    <p>Để tính toán diện tích, hệ quy chiếu toạ độ CRS phải ở dạng hệ toạ độ phẳng. Điều nay cho phép bạn có thể tính toán khoảng cách chính xác. Nên nhớ rằng, mối quan tâm của chúng ta là tính toán diện tích tự động cho từng tỉnh thành. Kiểm tra CRS của vector layer. Nếu nó là hệt toạ độ địa lý, phải reproject để chuyển đổi sang hệ toạ độ phẳng. Tham khảo thông tin các hệ toạ độ trên <a href="https://epsg.io/?q=Vietnam+kind%3APROJCRS">EPSG</a>. Đối với Việt Nam chúng ta có thể sử dụng  <a href="https://epsg.io/3405">VN-2000 / UTM zone 48N</a>. Ở các Module trước đã đề cập đến các hệ quy chiếu toạ độ bản đồ, nên bạn có thể đã hiểu hệ toạ độ nào được lựa chọn sử dụng cho một khu vực địa lý nhất định.</p>
+  </li>
+  <li>
+    <p>Chọn Project Settings <strong>Project ‣ Properties Properties ‣ General</strong>.</p>
+  </li>
+</ol>
+
+<p><img src="media/gen-settings.png" alt="Planimetric" title="Planimetric" /></p>
+
+<p>Hình 6.4: General settings</p>
+
+<ol>
+  <li>Tiếp theo, kích chọn <strong>Open field calculator</strong> <img src="media/field_calculator.png" alt="alt_text" title="image_tooltip" /> trên Attibute Toolbar để mở cửa sổ field calculator; điền các tham số như ouput field name, trong trường hợp này là ‘AREA (SQ KM)’. Chọn Output field type là Decimal number (double), với precision là 2 decimal places. Để tính toán diện tích, nhập vào biểu thức sau:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AREA (SQ KM)
+</code></pre></div></div>
+
+<p>Tham số $area nằm trong mục <strong>Geometry</strong>. Chọn OK để tính toán tự động diện tích của từng polygon. Cần chú ý là việc tính toán diện tính tuỳ thuộc vào CRS mà chúng ta sử dụng, nên có thể có nhiều kết quả tính toán khác nhau tuỳ vào CRS. Bạn cũng có thể tìm kiếm thông tin về các biểu thức ở phía bên phải của Field Calculator hoặc sử dụng Expression Builder</p>
+
+<p><img src="media/fieldcalc.png" alt="Field calculator dialogue" title="Field calculator dialogue" /></p>
+
+<p>Hình 6.5: Field calculator dialogue</p>
+
+<ol>
+  <li>Trở lại bảng thuộc tính để xem kết quả. Bạn vừa thay đổi nội dung của attribute table một cách tự động thay vì phải nhập từng giá trị trên từng ô của bảng thuộc tính.</li>
+</ol>
+
+<p><img src="media/area.png" alt="Bảng thuộc tính với trường AREA vừa được tính toán" title="Bảng thuộc tính với trường AREA vừa được tính toán" /></p>
+
+<p>Hình 6.6: Bảng thuộc tính với trường AREA vừa được tính toán</p>
+
+<h4 id="câu-hỏi"><strong>Câu hỏi</strong></h4>
+
+<ol>
+  <li>
+    <p>Một bảng thuộc tính là một CSDL hoặc tệp dạng bảng chứa thông tin về một tập các đối tượng địa lý.</p>
+  </li>
+  <li>
+    <p>Các đối tượng địa lý thường được sắp xếp sao cho mỗi dòng biểu diễn một đối tượng và mỗi cột biểu diển một thuộc tính của đối tượng.</p>
+  </li>
+  <li>
+    <p>Cần phải chuyển đổi hệ toạ độ các layer trước khi tính toán diện tích khi layer đang ở hệ toạ độ địa lý.</p>
+  </li>
+</ol>
+
+<h4 id="đáp-án"><strong>Đáp án</strong></h4>
+
+<ol>
+  <li>True</li>
+  <li>True</li>
+  <li>True</li>
+</ol>
+
+<h3 id="phase-2--hiểu-và-làm-việc-với-dữ-liệu-thuộc-tính-truy-vấn-và-phân-tích">Phase 2 : Hiểu và làm việc với dữ liệu thuộc tính, truy vấn và phân tích</h3>
+
+<h4 id="nội-dung-1"><strong>Nội dung</strong></h4>
+
+<p>Bạn có thể thấy rằng bảng thuộc tính chứa dữ liệu không gian lẫn phi không gian. Trong bài hướng dẫn này bạn sẽ khám phá các phương pháp làm việc với dữ liệu thuộc tính. Ví dụ, sử dụng biểu thức tính toán, chọn các cơ sở y tế ở Tp.HCM có Phòng cấp cứu, tất cả đều sử dụng dữ liệu thuộc tính.</p>
+
+<ol>
+  <li>Thêm các dữ liệu sau của Việt Nam vào QGIS map canvas;</li>
+</ol>
+
+<ul>
+  <li>Ranh giới hành chính Tp.HCM - HCMC_border (trong <a href="/vietnam/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li>Cơ sở Y tế Tp.HCM - HCMC_clinics (trong <a href="/vietnam/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li>Ranh giới hành chính các tỉnh thành Việt Namp - Vietnam_provinces (trong <a href="/vietnam/module6/data/module6.gpkg">module6.gpkg</a>)</li>
+  <li><a href="data/HRSL_HCMC_Population.tif">HCM City High Resolution Settlement Layer</a></li>
+</ul>
+
+<p><img src="media/add-layers.png" alt="Thêm các layer vào QGIS" title="Thêm các layer vào QGIS" /></p>
+
+<p>Hình 6.7: Thêm các layer vào QGIS</p>
+
+<ol>
+  <li>Phép chọn được áp dụng trên lớp cơ sở y tế, do đó mở bảng thuộc tính của lớp cơ sở y tế. Kích chọn  select features using expression <img src="media/select_features_button.png" alt="alt_text" title="image_tooltip" /> và nhập vào biểu thức sau trong expression builder</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"amenity" = 'clinic' AND "wheelchair" = 'yes'
+</code></pre></div></div>
+
+<p>Bạn có thể thấy rằng biểu thức có một số toán tử như so sánh (=), toán tử logic (AND) và một chuỗi nằm trong dấu nháy đơn (‘ ‘). Ngoài ra còn có 02 thuộc tính (amenity, wheelchair) và giá trị thuộc tính tương ứng (clinic,yes).</p>
+
+<p><img src="media/select.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Hình 6.8: Select by Expression builder dialogue</p>
+
+<ol>
+  <li>Khi lớp cơ sở y tế được chọn. Bạn có thể thấy các đối tượng được chọn sẽ được tô màu vàng ở map canvas và màu xanh ở bảng thuộc tính.</li>
+</ol>
+
+<p><img src="media/selected-canvas.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Hình 6.9: Các cơ sở y tế được chọn ở map canvas(màu vàng)</p>
+
+<p><img src="media/selected-attr.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Hình 6.10: Các cơ sở y tế được chọn trong bảng thuộc tính(màu xanh)</p>
+
+<p>Bạn cũng có thể chọn đối tượng bằng cách kích chuột trực tiếp trên map canvas.</p>
+
+<p>xây dựng một biểu thức chọn bắt đầu với việc hiểu về dữ liệu của bạn; ví dụ như các thuộc tính và các giá trị của chúng. Tiếp đó, đặt ra những câu hỏi đúng và cuối cùng, xây dựng một biểu thức chính xác, xem xét tất cả các quy tắc toán học để tạo ra một biểu thức không có lỗi.</p>
+
+<h4 id="câu-hỏi-1"><strong>Câu hỏi</strong></h4>
+
+<ol>
+  <li>Các toán tử sau được cung cấp bởi expression builder. {+, -, *}</li>
+  <li>Các chuỗi (string) phải được chứa trong dấu nháy đơn.</li>
+  <li>Bảng thuộc tính chỉ chứa các thông tin phi không gian.</li>
+</ol>
+
+<h4 id="đáp-án-1"><strong>Đáp án</strong></h4>
+
+<ol>
+  <li>True</li>
+  <li>True</li>
+  <li>False</li>
+</ol>
+
+<h3 id="phase-3--advanced-qgis-expressions">Phase 3 : Advanced QGIS expressions</h3>
+
+<p>Cửa sổ Expression builder cung cấp truy cập đến:</p>
+
+<ul>
+  <li>Expression tab (<a href="https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions-list">https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions-list</a>) chứa danh sách các hàm được định nghĩa trước, giúp cho việc viết và kiểm tra các hàm/ biểu thức.</li>
+  <li>Function Editor tab (<a href="https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor">https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor</a>) hỗ trợ mở rộng các hàm có sẵn bằng cách tự định nghĩa các hàm tính toán mới.</li>
+</ul>
+
+<h4 id="nội-dung-2"><strong>Nội dung</strong></h4>
+
+<p>Có nhiều trường hợp sử dụng cho các biểu thức, sau đây là một số ví dụ. Chú ý cách mà các biểu thức được xây dựng và các toán tử hay vị từ nào được sử dụng. Điều quan trọng nữA là các biểu thức tính toán này được xây dựng dựa trên nội dung của dữ liệu. Bạn có thể điều chỉnh cho phù hợp với tập dữ liệu mà bạn có.</p>
+
+<ol>
+  <li>Từ Field Calculator, tính toán “pop_density” sử dụng 02 trường đã có “total_pop” và “area_km2”</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"total_pop" / "area_km2"
+</code></pre></div></div>
+
+<ol>
+  <li>Cập nhật trường “density_level” căn cứ vào giá trị “pop_density” vừa tính toán:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CASE WHEN "pop_density" &lt; 50 THEN 'Low population density'
+     WHEN "pop_density" &gt;= 50 AND  "pop_density" &lt; 150 THEN 'Medium population density'
+     WHEN "pop_density" &gt; 150 THEN 'High population density'
+END
+</code></pre></div></div>
+
+<ol>
+  <li>Áp dụng style dạng categorized cho tất cả các đối tượng theo giá nhà trung bình trên mỗi mét vuông nhỏ hơn hoặc lớn hơn một giá trị nhất định :</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"price_m2" &gt; 10000000
+</code></pre></div></div>
+
+<ol>
+  <li>Sử dụng công cụ “Select By Expression…”, chọn tất cả các đối tượng các khu vực có “Mật độ dân số cao” và có giá nhà cao hơn 10 triệu/ m2</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"density level" = 'High population density' and "price_m2" &gt; 10000000
+</code></pre></div></div>
+
+<ol>
+  <li>Tương tự như vậy, biểu thức trên cũng có thể được dùng để định nghĩa các đối tượng được gán nhãn hoặc hiển thị trên bản đồ.</li>
+</ol>
+
+<h4 id="câu-hỏi-2"><strong>Câu hỏi</strong></h4>
+
+<ol>
+  <li>Cả Field Calculator và Select by Expression dialogue đều có thể được dùng để xây dựng các biểu thức – <strong><em>True</em></strong></li>
+  <li>Các biểu thức có thể được sử dụng để cập nhật một thuộc tính mới – <strong><em>True</em></strong></li>
+  <li>Các biểu thức có thể được sử dụng để định nghĩa kiểu hiển thị - style  – <strong><em>True</em></strong></li>
+</ol>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

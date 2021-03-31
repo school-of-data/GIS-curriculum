@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Module 8 - Vector processing and analysis | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Module 8 - Vector processing and analysis page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Module 8 - Vector processing and analysis">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Module 8 - Vector processing and analysis</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/philippines/module8/module8.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="module-8---vector-processing-and-analysis"><strong>Module 8 - Vector processing and analysis</strong></h1>
+
+<p><strong>Author</strong>: Codrina, Ben Hur</p>
+
+<h2 id="pedagogical-introduction">Pedagogical Introduction</h2>
+
+<p>This module is focused on a specific type of geographical data model: vector geodata.</p>
+
+<p>By the end of this module, learners will have the basic understanding of the following concepts:</p>
+
+<ul>
+  <li>vector data model</li>
+  <li>metadata</li>
+  <li>vector processing</li>
+  <li>spatial data analysis</li>
+  <li>geostatistics</li>
+  <li>topology</li>
+  <li>geoprocessing</li>
+</ul>
+
+<p>and acquire the following skills:</p>
+
+<ul>
+  <li>Checking geometric vector dataset quality using algorithms to check vector data topology and perform basic automatic corrections;</li>
+  <li>Working with algorithms to identify errors in the attribute table;</li>
+  <li>Vector data processing - running simple geoprocessing algorithms to answer potential requirements, such as how many public buildings are in my administrative region?</li>
+  <li>Vector data processing - using geostatistics algorithms to fill in missing data.</li>
+</ul>
+
+<h2 id="required-tools-and-resources">Required tools and resources</h2>
+
+<ul>
+  <li>This module has been prepared using <a href="https://qgis.org/en/site/forusers/download.html">QGIS version 3.16 - Hannover</a></li>
+  <li><a href="data/module8.gpkg">module8.gpkg</a> which contains the following layers:
+    <ul>
+      <li>pois (point)</li>
+      <li>pofw (point)</li>
+      <li>road (line)</li>
+      <li>waterways (line)</li>
+      <li>buildings (polygon)</li>
+      <li>landuse (polygon)</li>
+      <li>admin_boundary (polygon)</li>
+    </ul>
+  </li>
+  <li>The coordinate reference system used is the PRS92 / Philippines zone 3, EPSG 3123. As it is a projected coordinate system, it allows geometric calculations.</li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>Basic knowledge of operating a computer</li>
+  <li>A robust understanding of modules 0, 1 and 2 and 6 of this curriculum. Module 0 introduces the notion of vector data model that is at the core of this current section. Prior understanding of modules 1, 2 and 6 allows you to focus strictly on the new notions and QGIS functionalities introduced in this new section, without having to wonder how you could load a new layer into your project, or how to work with the attribute table of your dataset.</li>
+</ul>
+
+<p>As part of this module, you will learn how to efficiently work with vector geographical datasets so that you can extract new information. This includes a more in depth understanding of what vector data is, what quality standards it must comply so that it is truly useful, what are the most common operations done on vector data (geoprocessing, geostatistics).</p>
+
+<h2 id="additional-resources">Additional resources:</h2>
+
+<ul>
+  <li><a href="https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/functions_list.html">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/functions_list.html</a></li>
+  <li><a href="http://www.geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm">http://www.geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm</a></li>
+  <li><a href="https://link.springer.com/referencework/10.1007/978-3-319-17885-1">Encyclopedia of GIS, 2017 Edition, Editors: Shashi Shekhar, Hui Xiong, Xun Zhou</a><span style="text-decoration:underline;"></span></li>
+  <li><a href="https://www.geo-train.eu/modules/metadata/pdf/Metadata.pdf">Metadata And Catalogue Services</a>, author Mariana Belgiu, UNIGIS Salzburg;</li>
+  <li><a href="https://www.fgdc.gov/resources/factsheets/documents/GeospatialMetadata-July2011.pdf">Basics of Metadata</a> by the Federal Geographic Data Committee;</li>
+</ul>
+
+<h2 id="thematic-introduction">Thematic introduction</h2>
+
+<p>Let’s start with an example: You have just landed for your city break in Angeles, Pampanga, Philippines and you need to get from the airport to your hotel. You have no knowledge of where the airport is situated with respect to the city, nor where the hotel is, so the first thing you do is open a map to help you navigate through this new and excited city! You take your phone out, open a map app and you select the start point - the airport - and the end point - your hotel - then ask for the route, by foot, car or public transport. In a matter of seconds, the routing app offers you the best solution for you to get from point A to point B and it highlights it by drawing a distinct line following streets and alleys, as visible in figure 8.1.</p>
+
+<p><img src="media/fig81.png" alt="Getting from point A to B using Openstreetmap" title="Getting from point A to B using Openstreetmap" /></p>
+
+<p>Figure 8.1 - Getting from point A to B using Openstreetmap</p>
+
+<h2 id="breakdown-of-the-concepts">Breakdown of the concepts</h2>
+
+<p>This is a classic example of vector data use and it breaks down into several concepts that we will define below.</p>
+
+<p>The data used is spatial - it has a very well defined location on Earth, its attributes are also well identified. Thus, a point with longitude and latitude and the attribute name= Clark International Airport - represents the starting point A and a point with another pair of longitude and latitude and the attribute name= Hotel Boss represents the end point B. Streets are represented by lines composed of segments and vertices (represented by blue small circles in figure 8.2), with attributes such as name, direction, speed limitation etc.</p>
+
+<p><img src="media/fig82.png" alt="Vector lines representing streets and the associated attribute table" title="Vector lines representing streets and the associated attribute table" /></p>
+
+<p>Figure 8.2 - Vector lines representing streets and the associated attribute table</p>
+
+<p>Streets represent a network model that is basically a collection of topologically interconnected point and line features. The results of the algorithm that calculates the route from point A to point B - in our case from the airport to the hotel - are highly dependent on the quality of the vectors, both in geometry - topology rules are respected - and in attributes - if a road is unidirectional that must be indicated so the routing doesn’t lead you the wrong way.</p>
+
+<h3 id="the-vector-data-model">The vector data model</h3>
+
+<p>As presented in module 0, there are 2 data models used in a geographical information system - GIS: raster and vector. Geospatial data always includes a <strong>spatial</strong> component indicating the location or the spatial distribution of the phenomenon at hand and an <strong>attribute</strong> component that describes its properties. The choice between using the raster or the vector data model for a particular situation depends on the source of the data as well as its intended use.</p>
+
+<p>The vector data model is used to represent areas, lines and points (Figure 8.1).</p>
+
+<p><img src="media/fig83.png" alt="vector data with attribute table" title="vector data with attribute table" /></p>
+
+<p>Figure 8.1 - vector data with attribute table</p>
+
+<h3 id="metadata">Metadata</h3>
+
+<p>Metadata is most simply defined as data about data. It characterises, at different levels of detail, the dataset that it is associated to, including categories such as: who is the provider/owner of the dataset, what is the license, in what language are the attributes written, what was the coordinate system used, which geographical area it describes and what is the reference year, keywords, what are the known limitations, accuracy level, what was the original scope of the dataset and many more.</p>
+
+<p>Metadata is paramount because a clear understanding of the data to be used in a specific analysis can make the difference between a correct or a biased decision. If one must identify where to place a new temporary hospital, but the road data is old and no longer reflects the reality on site, then any decision based on it will be inaccurate.</p>
+
+<p>Because of the importance of metadata, its categories (their definitions, name, what kind of information they can store etc.) follow well-defined and standardized structures. These metadata well-structured files can then be integrated in dedicated catalogues, allowing a user to search and find geographical data only by querying the characteristics she is interested in, without downloading and analysing the data herself. There are numerous metadata catalogues and, when standardised, they can be accessed through different functionalities within GIS software. An example of that will be presented in Module 9 QGIS Plugins.</p>
+
+<p>It must be said that metadata is not a specificity of geospatial resources, but it applies to any kind of data.</p>
+
+<h3 id="rational-of-vector-processing">Rational of vector processing</h3>
+
+<p>The power of GIS lies in its unique capacity of connecting geometric properties that define real objects and phenomena in our world and their attributes - either observed, measured or calculated - and allowing through specialised software to perform operations on their geometries, on their attributes or both in order to derive new valuable information.</p>
+
+<p>Although most oftenly, GIS is closely associated with maps that simply display geographical information, its functionalities go far beyond the creation of cartographic representations, be they dynamic or static.</p>
+
+<p><strong>Spatial data analysis</strong> (synonyms: spatial analysis, geospatial analysis, geographical analysis, spatial interaction) is a general term referring to any technique designed to identify patterns, to detect anomalies and to test theories based on spatial data. An analysis is spatial if and only if the results are sensible to relocation of the objects analysed - simply put, <strong>location matters</strong>. As information technology evolved, scientists started applying various techniques from the literature of statistics, geometry, topology and other sciences to the analysis of geographic data to study patterns and phenomena on the Earth’s surface.</p>
+
+<p><strong>Geostatistics</strong> is a branch of statistics that applies to spatial data. The most common employed methods are related to interpolation, which is a mathematical process that allows  estimation of unknown values based on the known ones.</p>
+
+<p><strong>Topology</strong> is a branch of mathematics that allows the GIS user to control the geometric relationships between features and maintain geometric integrity. Topology is best understood as a set of rules that ensures spatial data quality that can apply to the same vector layer or more. The rules are designed as to respect the real world relationships that the vector layers represent. For example there can be no gaps between the polygons that represent cadastral parcels in a region, or no point belonging to the vector layer that represents individual trees can not be contained in any polygon of the vector layer that represents buildings within a region.</p>
+
+<p>GIS software offers functionalities allowing the user to define relevant topology rules, as well as algorithms to check if they apply and to clean the vector layer where inconsistencies are identified.</p>
+
+<p>Geoprocessing is a general term used to define any operation - process - applied to a geographical dataset, with the scope of obtaining a derived dataset opening new insights on the data. Common geoprocessing operations are geographic feature overlay, feature selection and analysis, topology processing and data conversion. Geoprocessing allows one to define, manage, and analyze geographic information to support decision making.</p>
+
+<p><img src="media/fig84.png" alt="elements of a geoprocessing operation" title="elements of a geoprocessing operation" /></p>
+
+<p>Figure 8.4 - elements of a geoprocessing operation</p>
+
+<p><strong>TIP</strong>: You can access Processing Algorithms (such as those used in this module) on the <strong>Processing Toolbox</strong> or <strong>Locator Bar</strong>.</p>
+
+<h2 id="main-content">Main content:</h2>
+
+<h3 id="phase-1-understanding-your-data">Phase 1: Understanding your data.</h3>
+
+<p>There are many geoprocessing operations that can be performed on vector data, most commonly including geographic feature overlay, feature selection and analysis, topology processing and data conversion. In this first phase, we will become familiar with some of them, understanding how they work and what results we can expect.</p>
+
+<h4 id="step-1-prepare-your-working-environment"><strong>Step 1. Prepare your working environment.</strong></h4>
+
+<p>Open QGIS, set up the coordinate reference system you will work in - EPSG 3123 -  and add the following data layers:</p>
+
+<ul>
+  <li>Polygons - administrative boundaries; buildings; land use;</li>
+  <li>Lines - roads, rivers;</li>
+  <li>Points - places of worship, places of interest</li>
+</ul>
+
+<p>At this point, your QGIS map window should look like in figure 8.5, of course, most probably, in other colours.</p>
+
+<p><strong>TIP</strong>: Use spatial indices to speed up and improve processing time. You can do this using the <strong>Create spatial index</strong> algorithm.</p>
+
+<p><img src="media/fig85.png" alt="Loaded vector data sets: points, line and polygons" title="Loaded vector data sets: points, line and polygons" /></p>
+
+<p>Figure 8.5 - Loaded vector data sets: points, line and polygons</p>
+
+<p><strong>Check!</strong> All layers are in the same coordinate system (EPSG 3123) by looking in the right down side corner. If it is so, then you are looking at 7 vector data layers overlaid.</p>
+
+<h4 id="step-2-understand-what-you-are-looking-at"><strong>Step 2. Understand what you are looking at.</strong></h4>
+
+<p>At this point, we have 7 vector layers loaded into our QGIS project. The next steps will help us understand our data.</p>
+
+<ul>
+  <li>
+    <p>Check how many features we have in a layer - there are several ways to do that:</p>
+
+    <ul>
+      <li><strong>Double click on the layer of interest ‣ Properties ‣ Information ‣ Feature count</strong></li>
+      <li><strong>Open the attribute table of the layer of interest and look at the upper central side</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Before running any basic statistics, let us complete the attribute table with some geometric attributes (see Module 6 for details):</p>
+
+<ul>
+  <li>Roads layer - calculate length for each road segment and store it in the attribute table: output field name - length <code class="language-plaintext highlighter-rouge">round($length, 2)</code></li>
+  <li>Buildings layer - calculate the area for each building and store it in the attribute table; output field name - area <code class="language-plaintext highlighter-rouge">round($area, 2)</code></li>
+</ul>
+
+<p>Now, the attribute fields are filled, yet if you are not certain in which measurement unit QGIS has calculated the length of roads segments and areas of buildings, then checking the coordinate system information will help you.</p>
+
+<p>Click on the down right corner of the QGIS map window, on EPSG 3123 and a window as the one in figure 8.6 will appear.</p>
+
+<p><img src="media/fig86.png" alt="Specifications of the coordinate reference system used in the QGIS project" title="Specifications of the coordinate reference system used in the QGIS project" /></p>
+
+<p>Figure 8.6 - Specifications of the coordinate reference system used in the QGIS project</p>
+
+<p>Thus, we find out that the measurement unit is the meter, therefore the lengths are measured in meters and the areas in square meters.</p>
+
+<ul>
+  <li>
+    <p>Run basic statistics on the loaded layers to get a better grip on your data (figure 8.7 ):</p>
+
+    <ul>
+      <li><strong>Vector menu ‣ Analysis Tools ‣ Basic statistics for fields</strong></li>
+      <li><strong>Processing toolbox window ‣ search for ‘stats’</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="media/fig87.png" alt="Basics statistics for fields" title="Basics statistics for fields" /></p>
+
+<p>Figure 8.7 - Basics statistics for fields</p>
+
+<p>The statistics returned depend on the field type we choose and are generated as an HTML file.</p>
+
+<p>Let’s run it on our roads layer and see what results we get. Complete the window, like in figure 8.8.</p>
+
+<p><img src="media/fig88.png" alt="Preparing to run basics statistics for roads layer" title="Preparing to run basics statistics for roads layer" /></p>
+
+<p>Figure 8.8 - Preparing to run basics statistics for roads layer</p>
+
+<p>The output file is an html which can be opened with any browser (Firefox, Chrome, Safari etc. ) that should look like below:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Analyzed field: length
+Count: 64473
+Unique values: 33106
+NULL (missing) values: 0
+Minimum value: 0.04
+Maximum value: 19690.45
+Range: 19690.41
+Sum: 13927358.250000086
+Mean value: 216.01846121632445
+Median value: 111.18
+Standard deviation: 372.48583667812585
+Coefficient of Variation: 1.724324090546652
+Minority (rarest occurring value): 0.04
+Majority (most frequently occurring value): 0.55
+First quartile: 51.03
+Third quartile: 239.99
+Interquartile Range (IQR): 188.96
+</code></pre></div></div>
+
+<p>From these basic statistics, we find out that there are 64473 road segments in the loaded layer, where the shortest has 0.04m and the longest 19690.45m - almost 20 km. We find out that the sum of roads in Pampanga is almost 14k km (13927.358 km). Given that the mean is greater than the median, it tells us that the 2nd half of the dataset contains longer road segments and that it outweighs the road segments in the 1st half. However, the median shows that most road segments have length around 500 m.</p>
+
+<p>Running the basic statistics on the layer Buildings for the type category, we obtain the followings:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Analyzed field: type
+Count: 827657
+Unique values: 74
+NULL (missing) values: 773210
+Minimum value: Brgy. San Vicente
+Maximum value: yes;house
+Minimum length: 0
+Maximum length: 20
+Mean length: 0.3669563599413767
+</code></pre></div></div>
+
+<p>The results don’t look the same, we don’t have mean, nor median or standard deviation. That is because the attribute field we ran the algorithm on is different, we don’t have numbers but words - types of buildings. We find out that out of 827657 buildings in Pampanga, for 773210 we don’t know the type of the building. We also find out that there are 74 unique categories.</p>
+
+<h4 id="step-3-basic-checks-to-quickly-find-errors-in-your-data"><strong>Step 3. Basic checks to quickly find errors in your data.</strong></h4>
+
+<p>Perfect, flawless datasets are the equivalent of the ideal gas in physics. There is no such thing, but many can come very close to it. Therefore, before doing any kind of analysis to extract information, at least some basic checks are necessary on how <em>clean</em> the data we have are.</p>
+
+<p>There are many types of errors that can affect the quality of your data and, given the scope of your geospatial analysis, their influence on the final result can be more or less important. For example, if you use geospatial data to route yourself from point A to point B by car, then having a roads layer complete with attributes on which streets are one way or  closed to road traffic, is essential to get a viable result.  However, if your routing is by foot, then that information is not crucial for your result.</p>
+
+<p>When referring to geospatial data errors, there are 2 main terms that need to be well understood:</p>
+
+<p><strong>Accuracy</strong> is the degree to which information on a map matches real-world values and it applies both to the geometry and to attributes.</p>
+
+<p><strong>Precision</strong> refers to the level of measurement and exactness of description in a geospatial dataset.</p>
+
+<p><strong>An error</strong> encompasses both the imprecision of data and its inaccuracies. **Data quality **refers to the level of precision and accuracy of the datasets and it is most often documented in data quality reports.</p>
+
+<p>Analysing and _cleaning _a geospatial dataset can be a very time consuming and cumbersome task, however - as shown in the example above - it is essential. In this section, we present a few GIS functionalities that allow a user to perform fast checks on vector data and draw a set of preliminary conclusions on its quality.</p>
+
+<p><strong>Topology checks.</strong></p>
+
+<p>QGIS offers a core functionality that allows the user to perform a series of topological checks on the loaded vector datasets, named Topology Checker. The Topology Checker is a Core plugin and can be activated from the <strong>Manage and Install Plugins Dialog</strong>. Open the Manage and Install Plugins Dialog and make sure that the Topology Checker plugin is activated (with check sign). It can be found under the <strong>Installed</strong> tab.</p>
+
+<p><img src="media/fig89_a.png" alt="Topology checker plugin" title="Topology checker plugin" /></p>
+
+<p>Figure 8.9.a - Topology checker plugin</p>
+
+<p>To show the Topology Checker, enable it as a panel under <strong>View ‣ Panels ‣ Topology Checker</strong> (figure 8.9.b). If it does not appear in the Panels menu, you can enable it by clicking the Topology Checker button <img src="media/fig89_btn.png" alt="Topology checker button" title="Topology checker button" /> on the Plugins toolbar. Once activated it’s window looks like in figure 8.9.c.</p>
+
+<p><img src="media/fig89_b.png" alt="Topology checker panel" title="Topology checker panel" /></p>
+
+<p>Figure 8.9.b - Topology checker panel</p>
+
+<p><img src="media/fig89_c.png" alt="Topology checker window" title="Topology checker window" /></p>
+
+<p>Figure 8.9.c - Topology checker window</p>
+
+<p>To define the topology rules, click on the third icon <img src="media/fig810_btn.png" alt="Topology rule settings button" title="Topology rule settings button" />, opening a window as in figure 8.10.</p>
+
+<p><img src="media/fig810.png" alt="Topology rule settings window" title="Topology rule settings window" /></p>
+
+<p>Figure 8.10 - Topology rule settings window</p>
+
+<p>We will set a number of rules for the layers we have loaded in our QGIS project, considering the real world objects they depict- roads, buildings, waterways in the district of Pampanga.</p>
+
+<p>The configuration of the topology is straightforward, as the rules that can be applied based on the selected layer are already embedded in this functionality, as figure 8.11 depicts.</p>
+
+<p><img src="media/fig811.png" alt="Topology rules dropdown menu based on the selected layer" title="Topology rules dropdown menu based on the selected layer" /></p>
+
+<p>Figure 8.11 - Topology rules dropdown menu based on the selected layer.</p>
+
+<p>Choose the topology rules as depicted in figure 8.12.</p>
+
+<p><img src="media/fig812.png" alt="Topology rules to be set" title="Topology rules to be set" /></p>
+
+<p>Figure 8.12 - Topology rules to be set</p>
+
+<p>Click on the first icon <img src="media/fig813_btn.png" alt="Validate rules button" title="Validate rules button" /> on the Topology Checker window to run and wait for the results. After running the topology check, your map windows should look like in figure 8.13.</p>
+
+<p><img src="media/fig813.png" alt="Topology check results" title="Topology check results" /></p>
+
+<p>Figure 8.13 - Topology check results</p>
+
+<p>In the down right side corner, the topology checker window lists all errors identified based on the rules we have defined in the earlier phase. If the Show errors checkbox is ticked, then the errors will be highlighted on the map with red. Double clicking on a selected error, will move the map to its location.</p>
+
+<p>The process of correcting the errors in a dataset, be it geometry related (duplicates, gaps etc.) or in the attribute related  (missing values, misspelled etc.) is called cleaning a dataset and it is most times as cumbersome as it is necessary. Although there are functionalities to support a semi-automatically cleaning process, the user’s input is often necessary. For example, in figure 8.14, we have zoomed in an error in our points of interest layer, a duplicated point. As it can be seen, there are 2 point depicting one cafe, the difference being in the attribute table where one is listed as a cafe and one as a “doityourself” - which one can assume might be a popular name for cafes where you prepare your own coffee.</p>
+
+<p><img src="media/fig814.png" alt="Duplicate point error in points of interest vector layer" title="sDuplicate point error in points of interest vector layer" /></p>
+
+<p>Figure 8.14 - Duplicate point error in points of interest vector layer</p>
+
+<p>In this particular case, the decision of the user would most probably be to remove the duplicate point, as it can insert error in further spatial analysis. For example, if a town official wants to know how many restaurants and cafes are in a specific neighbourhood, the duplicate point will insert an error in the results and that could eventually lead to mislead decisions.</p>
+
+<p>Therefore, we will proceed with an automatic removal of the duplicate points. To do it, we will use a core functionality of QGIS - <strong>Delete duplicate geometries</strong> - found in the processing toolbox. Your QGIS should look as in figure 8.15.</p>
+
+<p><img src="media/fig815.png" alt=" Delete duplicate geometries on layer points of interest" title=" Delete duplicate geometries on layer points of interest" /></p>
+
+<p>Figure 8.15 - Delete duplicate geometries on layer points of interest</p>
+
+<p>After running the algorithm, the functionality window presents the results, it has identified 6 duplicate points, just as the topology checker, and it informs the user that it has deleted them all, leaving the points of interest layer with <strong>2727 features</strong>. Rename this layer to <strong>pois_cleaned</strong>. Note that the output is a layer in memory, you can make it permanent by saving it to a file.</p>
+
+<p><img src="media/fig816.png" alt="Result of running delete duplicate geometries" title="Result of running delete duplicate geometries" /></p>
+
+<p>Figure 8.16 - Result of running delete duplicate geometries</p>
+
+<p>Re-running the topology checker will lead to a 0 errors results with respect to the topology rule of no geometric duplicates for the points of interest layer.</p>
+
+<p><strong>Attention!</strong> The algorithm considers <strong>only geometries</strong>, ignoring the attribute. If, such is our case, there are some differences in the attribute for the duplicates, the user has no control over which one will be kept. Therefore, if there is a need for all information to be kept, it must be first copied to all geometries, so when a duplicate feature is deleted there is no info loss.</p>
+
+<p>Let us run another topology check, this time on our building layer. Configure the following rules:</p>
+
+<ul>
+  <li>No duplicate</li>
+  <li>No invalid geometries</li>
+</ul>
+
+<p><img src="media/fig817_a.png" alt="Topology check on the buildings vector layer" title="Topology check on the buildings vector layer" /></p>
+
+<p>Figure 8.17a - Topology checker rules on the buildings vector layer</p>
+
+<p>Run the algorithm.</p>
+
+<p>The result should look like figure 8.17b.</p>
+
+<p><img src="media/fig817_b.png" alt="Results of topology check on the buildings vector layer" title="Results of topology check on the buildings vector layer" /></p>
+
+<p>Figure 8.17b - Results of topology check on the buildings vector layer</p>
+
+<p>Clean the duplicate feature by using the process indicated above (figure 8.18a)</p>
+
+<p><img src="media/fig818_a.png" alt="Remove duplicate geometries on the buildings vector layer" title="Remove duplicate geometries on the buildings vector layer" /></p>
+
+<p>Figure 8.18a - Remove duplicate geometries on the buildings vector layer</p>
+
+<p><img src="media/fig818_b.png" alt="Results of remove duplicate geometries on the buildings vector layer" title="Results of remove duplicate geometries on the buildings vector layer" /></p>
+
+<p><img src="media/fig818_c.png" alt="Results of Delete duplicate geometries" title="Results of Delete duplicate geometries" /></p>
+
+<p>Figure 8.18b - Results of removing duplicate geometries on the buildings vector layer</p>
+
+<p>A complete cleaning of the vector datasets used for this module is out of scope. Its complexity transforms it in a more advanced module in itself.</p>
+
+<h4 id="step-4-take-a-closer-look-at-the-information-attached-to-the-points-lines-and-polygons"><strong>Step 4. Take a closer look at the information attached to the points, lines and polygons.</strong></h4>
+
+<p>Let’s run one more algorithm to get a sense of what the attributes for our Pampanga layers are. After we’ve identified how many features each layer has, let’s see how many and which are the unique attributes in the following cases:</p>
+
+<ul>
+  <li>layer buildings_cleaned - attribute type;</li>
+  <li>layer pois_cleaned - attribute fclass;</li>
+  <li>layer waterways - attribute fclass;</li>
+  <li>layer pofw - attribute fclass;</li>
+  <li>layer roads -attribute fclass;</li>
+  <li>layer landuse - attribute fclass;</li>
+</ul>
+
+<p>For that, go to <strong>Vector ‣ Analysis Tools ‣ List unique values</strong> (figure 8.19)</p>
+
+<p><img src="media/fig819_a.png" alt="List unique values in a vector layer functionality" title="List unique values in a vector layer functionality" /></p>
+
+<p>Figure 8.19a - List unique values in a vector layer functionality</p>
+
+<p>In the window that opens, insert each layer’s name and attribute of interest as enumerated in the list above and you should have the following results:</p>
+
+<p><img src="media/fig819_b.png" alt="List unique values in a vector layer functionality (Batch Processing)" title="List unique values in a vector layer functionality (Batch Processing)" /></p>
+
+<p>Figure 8.19b - List unique values in a vector layer functionality (Batch Processing)</p>
+
+<table>
+  <tr>
+   <td><strong>Layer name</strong>
+   </td>
+   <td><strong>No. of unique values</strong>
+   </td>
+   <td><strong>Unique values</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>buildings_cleaned
+   </td>
+   <td>74
+   </td>
+   <td>military;parking;gymnasium;mosque;yes;house;NULL;track;college;Idelfonso';'Tuazon Str;terrace;with roof;construction;veterinary;gazebo;hut;connector_bridge_sky;barn;roof;Yakult;kindergarten;hospital;pharmacy;laboratory;apartments;multipurpose;public;warehouse;farm;quarry;school;footway;Not_sure.;temple;service;garage;office;allotment_house;train_station;commercial;transportation;industrial;storage_tank;hotel;marketplace;farm_auxiliary;university;Unsure_-_please_chec;power_substation;clinic;hall;hangar;greenhouse;gawad kaling phase 1;tennis;church;Brgy. San Vicente;fire_station;toilets;civic;pumping_station;retail;residential;shed;chapel;supermarket;clubhouse;dormitory;Pineda Residence;government;carport;manufacture;garages;motorway;house
+   </td>
+  </tr>
+  <tr>
+   <td>pois_cleaned
+   </td>
+   <td>105
+   </td>
+   <td>alpine_hut;artwork;bicycle_shop;comms_tower;college;chalet;beverages;tourist_info;veterinary;hunting_stand;greengrocer;gift_shop;food_court;restaurant;ruins;pharmacy;bank;fountain;convenience;monument;clothes;caravan_site;cafe;camera_surveillance;recycling;atm;furniture_shop;sports_shop;post_office;hospital;viewpoint;guesthouse;kindergarten;cinema;biergarten;garden_centre;doityourself;florist;lighthouse;fast_food;butcher;mobile_phone_shop;sports_centre;nightclub;motel;department_store;graveyard;fire_station;bar;car_rental;shoe_shop;stationery;golf_course;picnic_site;post_box;pitch;theatre;recycling_metal;playground;school;shelter;stadium;computer_shop;toy_shop;doctors;beauty_shop;bakery;kiosk;hostel;recycling_glass;laundry;pub;bicycle_rental;water_well;archaeological;nursing_home;swimming_pool;camp_site;town_hall;supermarket;toilet;bookshop;water_tower;park;courthouse;telephone;attraction;memorial;library;optician;mall;hotel;travel_agent;car_dealership;observation_tower;video_shop;tower;water_works;dentist;police;community_centre;car_wash;bench;hairdresser;museum
+   </td>
+  </tr>
+  <tr>
+   <td>waterways
+   </td>
+   <td>4
+   </td>
+   <td>river;canal;drain;stream
+   </td>
+  </tr>
+  <tr>
+   <td>pofw
+   </td>
+   <td>5
+   </td>
+   <td>christian_evangelical;christian_methodist;buddhist;christian_catholic;christian
+   </td>
+  </tr>
+  <tr>
+   <td> roads 
+   </td>
+   <td>25
+   </td>
+   <td>secondary;trunk;track;bridleway;primary;tertiary;path;track_grade2;steps;footway;cycleway;trunk_link;track_grade4;unclassified;service;primary_link;pedestrian;unknown;tertiary_link;secondary_link;living_street;track_grade5;residential;motorway_link;motorway
+   </td>
+  </tr>
+  <tr>
+   <td>landuse
+   </td>
+   <td>19
+   </td>
+   <td>military;park;forest;cemetery;recreation_ground;nature_reserve;heath;farmland;quarry;commercial;vineyard;industrial;scrub;orchard;grass;farmyard;meadow;retail;residential
+   </td>
+  </tr>
+</table>
+
+<p>Table 8.1 - Table identifying how many and what are the unique values for the selected attributes</p>
+
+<p>For a more in depth analysis of the attributes of our vector layers, we will use the GroupStats plugin. It was developed to support statistics calculation for feature groups in a vector layer making it very useful to gain more understanding of your data, as well as to spot potential errors in the attributes.</p>
+
+<p>First, make sure that you have installed and activated the GroupStats plugin. Afterwards, to open the GroupStats window, go to   <strong>Vector ‣ GroupStats ‣ GroupStats</strong>.</p>
+
+<p><img src="media/fig820_a.png" alt="GroupStats plugin" title="GroupStats plugin" /></p>
+
+<p>Figure 8.20a - GroupStats plugin</p>
+
+<p>A new window like the one in figure 8.20b should open.</p>
+
+<p><img src="media/fig820_b.png" alt="GroupStats window" title="GroupStats window" /></p>
+
+<p>Figure 8.20b - GroupStats window</p>
+
+<p>As per the analysis done earlier, we have seen that for the layer buildings we have 74 different types of buildings, but how many each and what is the total built area taken by each category? How much space for schools, for markets, houses? GroupStats can help us answer this question. On the right side of the window, there is the control panel, where we choose what we want to calculate, as well as how the data should be arranged. Using drag&amp;drop, follow the arrangement in figure 8.21, then press calculate.</p>
+
+<p><img src="media/fig821.png" alt="Running GroupStats on the building layer" title="Running GroupStats on the building layer" /></p>
+
+<p>Figure 8.21 - Running GroupStats on the building layer.</p>
+
+<p>Looking at the result, we can extract important insights regarding our data. For example, for residential purposes in the Pampanga province, we have 3270 buildings with a total surface area built of 405937 square meters, approx. 40 hectares. We also find out that the largest has 1474 square meters as the smallest has 10 square meters. And one can continue the analysis for further valuable information.</p>
+
+<p>Another interesting analysis can be run on the roads vector layer. Figure 8.22 shows how to calculate the lengths of roads categorised by type of road (primary, residential, motorway etc.) and maximum speed allowed.</p>
+
+<p><img src="media/fig822.png" alt="Running GroupStats on the roads layer" title="Running GroupStats on the roads layer" /></p>
+
+<p>Figure 8.22 - Running GroupStats on the roads layer.</p>
+
+<h4 id="quiz-questions"><strong>Quiz questions</strong></h4>
+
+<ol>
+  <li>Is metadata important?
+    <ul>
+      <li><em><span style="text-decoration:underline;">Yes, because it gives insight into the geographical data that otherwise one could not gain. </span></em></li>
+      <li>_No, it’s just bureaucracy. _</li>
+    </ul>
+  </li>
+  <li>Topology is relevant to the geometry or to the attribute table of a vector layer?
+    <ul>
+      <li>_to the geometry of the vector layer. _</li>
+    </ul>
+  </li>
+  <li>What is more important, the geometry or the attribute data?
+    <ul>
+      <li><em>Geometry.</em></li>
+      <li><em>Attribute data.</em></li>
+      <li><em><span style="text-decoration:underline;">Both.</span></em></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="phase-2-introduction-into-vector-processing">Phase 2: Introduction into vector processing</h3>
+
+<p>First phase of the vector module made a brief introduction into the steps that one should make to have a basic understanding of the geospatial data they have at hand.</p>
+
+<p>This second phase of the module leads you into a more in depth work to process vector data in order to extract valuable insights to assist decision making. Following the concepts described at the beginning of this module, geoprocessing represents any process applied to a geographical dataset, with the scope of obtaining a derived dataset opening new insights on the data. And this is what we will attempt to do in the following.</p>
+
+<p>There are many operations that can be performed on one or more geospatial datasets and during this first step, we will run some of the most common ones to understand how they operate.</p>
+
+<p><strong>Buffer.</strong> Imagine that you need to analyse a new piece of legislation that asks that on an area of 500 meters around places of worship there can be no other construction built. You would want to see where exactly those delinations are and maybe even how many square meters that is for your district. First step is to define a buffer around the places of worship: <strong>Vector ‣ geoprocessing tools ‣ Buffer</strong>. When the buffer window opens, set the parameters like in figure 8.23:</p>
+
+<p><img src="media/fig823.png" alt="Setting the parameters for a 500 m buffer around the places of worship" title="Setting the parameters for a 500 m buffer around the places of worship" /></p>
+
+<p>Figure 8.23 - Setting the parameters for a 500 m buffer around the places of worship</p>
+
+<p>A detail of the result of the geoprocessing is depicted in figure 8.24:</p>
+
+<p><img src="media/fig824.png" alt="Running buffer on a point vector layer" title="Running buffer on a point vector layer" /></p>
+
+<p>Figure 8.24 - Running buffer on a point vector layer</p>
+
+<p>To completely answer the initial question, the next step is to calculate the areas for all buffers and sum them up (see Phase 1, step 4) - figure 8.25.</p>
+
+<p><img src="media/fig825.png" alt="Calculate area for the newly obtained layer, then calculate using GroupStats the total sum" title="Running buffer on Calculate area for the newly obtained layer, then calculate using GroupStats the total sum point vector layer" /></p>
+
+<p>Figure 8.25 - Calculate area for the newly obtained layer, then calculate using GroupStats the total sum.</p>
+
+<p><strong>Clip.</strong> Imagine you want to know where all the industrial delineated areas are in your district and also how many buildings are within that perimeter. Visual inspecting your vector data, you notice that you have a number of industrial areas that contain several buildings. You want to separate those buildings and to use them further. First step is to select all features in the landuse layer that have as attribute industrial (see module 6 for how to do that). Afterwards, you go to <strong>Vector ‣ Geoprocessing tools ‣ Clip</strong> and choose as the layer to be clipped buildings_cleaned. Your results should look like in figure 8.27b.</p>
+
+<p><img src="media/fig826_a.png" alt="Figure 8.26a - Select landuse fclass = industrial" title="Figure 8.26a - Select landuse fclass = industrial" /></p>
+
+<p>Figure 8.26a - Select landuse fclass = industrial.</p>
+
+<p><img src="media/fig826_b.png" alt="Reduced selection of a few buildings and industrial landuse, so the computation can finish faster" title="Reduced selection of a few buildings and industrial landuse, so the computation can finish faster" /></p>
+
+<p>Figure 8.26b - Reduced selection of a few buildings and industrial landuse, so the computation can finish faster.</p>
+
+<p>Run the Clip algorithm. Make sure to check <strong>Selected features only</strong> box for the Overlay layer (landuse). This will ensure that only the currently selected features will be used for clipping and speed up the computations.</p>
+
+<p><img src="media/fig827_a.png" alt="Running the Clip algorithm" title="Running the Clip algorithm" /></p>
+
+<p>Figure 8.27a - Running the Clip algorithm</p>
+
+<p>After running the algorithm, your results should look like in figure 8.27b. The clipped buildings are colored in green (might be different on your machince). How many industrial buildings have you clipped and what is their total area?</p>
+
+<p><img src="media/fig827_b.png" alt="Results of the clip functionality" title="Results of the clip functionality" /></p>
+
+<p>Figure 8.27b - Results of the clip functionality</p>
+
+<p><strong>Thiessen (Voronoi) polygons.</strong> Imagine you have to make a series of administrative decisions in your district based on how many schools there are and what specific areas they serve. Geospatial analysis can be of assistance. You can start by calculating the Thiessen polygons. Based on an area containing at least two points, a Thiessen Polygon is a 2-dimensional shape which boundaries contain all space which is closer to a point within the area than any other point without the area. A good use example is in meteorology, where weather stations are discrete points, yet the information collected is considered to be measured out on the surface based on the thiessen polygons.</p>
+
+<p>To respond to the above question, we will run the algorithm only for points that have the attribute school at type. Thus, make the selection as instructed in module 6. You should have 88 features selected on layer pois_cleaned. Go to <strong>Vector ‣ Geometry Tools ‣ Voronoi Polygons..</strong> After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Pampanga province is contained, you should see a result like in figure 8.28d.</p>
+
+<p><img src="media/fig828_a.png" alt="Filtering the poi layer to get all schools" title="Filtering the poi layer to get all schools" /></p>
+
+<p>Figure 8.28a - Filtering the poi layer to get all schools</p>
+
+<p><img src="media/fig828_b.png" alt="All schools in the poi layer" title="All schools in the poi layer" /></p>
+
+<p>Figure 8.28b - All schools in the poi layer</p>
+
+<p><img src="media/fig828_c.png" alt="Running the Voronoi polygon algorithm" title="Running the Voronoi polygon algorithm" /></p>
+
+<p>Figure 8.28c - Running the Voronoi polygon algorithm</p>
+
+<p><img src="media/fig828_d.png" alt="Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer" title="Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer" /></p>
+
+<p>Figure 8.28d - Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer</p>
+
+<p>Sometimes, the necessities impose the requirement of having information in smaller, clearly defined and equal areas and not for an entire large region, such as a country or a big city. Therefore, the data needs to be analysed and visualised in a sliced, well-defined way, allowing comparison that otherwise could prove difficult without a ground common reference.</p>
+
+<p>Let us assume that you have to present a report that will allow comparisons done for units of 10X10 km over the administrative unit, including:</p>
+
+<ol>
+  <li>density of green spaces (parks, forests) in report to the built-up space per unit;</li>
+  <li>total length of streets for each unit;</li>
+  <li>total length of waterways for each unit;</li>
+  <li>total number of public buildings for each unit (schools, kindergartens, hospitals , town halls etc.).</li>
+</ol>
+
+<p>We’ve seen that there are tools that can assist us in calculating the total surface occupied by a certain type of feature, however the first step is to create our 10X10 units - cell grids. To do that, go to: <strong>Vector ‣ Research Tools ‣ Create grid..</strong> Set the parameters to:</p>
+<ul>
+  <li>Grid type - Rectangle (polygon)</li>
+  <li>Grid extent - Pampanga_admin_boundary layer</li>
+  <li>Horizontal spacing - 10 km</li>
+  <li>Vertical spacing - 10 km</li>
+</ul>
+
+<p><img src="media/fig829_a.png" alt="Creating a 10X10km vector grid for the Pampanga province" title="Creating a 10X10km vector grid for the Pampanga province" /></p>
+
+<p>Figure 8.29a - Create 10kmx10km vector grid for Pampanga province</p>
+
+<p>You should get a result like in figure 8.29b.</p>
+
+<p><img src="media/fig829_b.png" alt="10X10km vector grid for the Pampanga province" title="10X10km vector grid for the Pampanga province" /></p>
+
+<p>Figure 8.29b - 10X10km vector grid for the Pampanga province</p>
+
+<p>Going further in answering the questions in our exercise, we need to do the following:</p>
+
+<ol>
+  <li>green spaces (parks, forests) built-up space per unit ratio:</li>
+</ol>
+
+<p>Green spaces and built-up spaces is data contained by the landuse vector layer, polygon type. To know exactly what are the ‘green spaces’ we need to see what are the categories enclosed in the dataset. For that, we run <strong>List unique values</strong> algorithm on the <code class="language-plaintext highlighter-rouge">fclass</code> attribute and find out that we have the following ‘green’ classes: meadow, grass, nature_reserve, park, forest and the following ‘built-up space’ classes: retail, commercial, industrial,  residential.  Figure 8.30b presents a visualisation of our selections:</p>
+
+<p><img src="media/fig830_a.png" alt="Filtering green areas and built-up space in Pampanga" title="Filtering green areas and built-up space in Pampanga " /></p>
+
+<p>Figure 8.30a - Filtering green areas and built-up space in Pampanga</p>
+
+<p><img src="media/fig830_b.png" alt="Spatial distribution of the green areas and built-up space in Pampanga" title="Spatial distribution of the green areas and built-up space in Pampanga" /></p>
+
+<p>Figure 8.30b - Spatial distribution of the green areas and built-up space in Pampanga</p>
+
+<p>The second step to answer the requirement, is to identify how much green space and how much built-up space there is in each 10X10 km. To obtain that we will <strong>intersect</strong> the 2 overlaid polygon vector layers. The algorithm extracts the overlapping portions of features in the Input - the landuse layer and Overlay layer - the grid layer. Go to <strong>Vector - Geoprocessing Tools - Intersection</strong> or look for <strong>Intersection in the Processing Toolbox or Locator Bar</strong> Set the algorithm parameters as in figure 8.31.</p>
+
+<p><img src="media/fig831.png" alt="Parameters for the intersect algorithm" title="Parameters for the intersect algorithm" /></p>
+
+<p>Figure 8.31 - Parameters for the intersect algorithm</p>
+
+<p>The result should look like in figure 8.32.</p>
+
+<p><img src="media/fig832.png" alt="Result of running the intersection algorithm to clip the landuse vector polygons to the grid layer" title="Result of running the intersection algorithm to clip the landuse vector polygons to the grid layer" /></p>
+
+<p>Figure 8.32 - Result of running the intersection algorithm to clip the landuse vector polygons to the grid layer.</p>
+
+<p>Now for each 10X10 km unit, we have the landuse features that we can work with. The attribute table also stores this information, as each grid cell - unit - has a unique id, see figure 8.33.</p>
+
+<p><img src="media/fig833.png" alt="Landuse features clipped per each grid cell and it's associated attribute table" title="Landuse features clipped per each grid cell and it's associated attribute table" /></p>
+
+<p>Figure 8.33 - Landuse features clipped per each grid cell and it’s associated attribute table.</p>
+
+<p>Now, that we have all landuse features per 10X10 km unit, we will continue with separating the geometries of the ones that make up the green space and built-up space as defined earlier - for each grid cell.  Thus, for green space, we will select all features that have the attribute value for <code class="language-plaintext highlighter-rouge">fclass: </code>meadow, grass, nature_reserve, park, forest. In attribute table, in the expression filed write down: ` “fclass” =  ‘meadow’ or  “fclass” =  ‘grass’ or  “fclass” =  ‘nature_reserve’ or  “fclass” =  ‘park’ or  “fclass”  =  ‘forest’<code class="language-plaintext highlighter-rouge">. Similarly, you can just type: </code>“fclass” in (‘meadow’, ‘grass’, ‘nature_reserve’, ‘park’, ‘forest’)<code class="language-plaintext highlighter-rouge">. Export the selected features as green_spaces_gridded  (see module 6 for more details). Don't forget to check **Save only selected features**. The new output should have 621 features. Do the same for the built-up space. Select the features in landuse that have the attribute value for </code>fclass<code class="language-plaintext highlighter-rouge"> the following: retail, commercial, industrial,  residential, by writing the following expression in the Expression based filter window: </code>“fclass” =  ‘retail’ or  “fclass” =  ‘commercial’ or  “fclass” =  ‘industrial’ or  “fclass” =  ‘residential’.` Select the filtered geometries and export as builtup_spaces_gridded. Your new output should have 3849 features.</p>
+
+<p>Alternatively, you can also use a filter instead of a selection.</p>
+
+<p><img src="media/fig834_a.png" alt="Selecting the green spaces" title="Selecting the green spaces" /></p>
+
+<p>Figure 8.34a - Selecting the green spaces.</p>
+
+<p><img src="media/fig834_b.png" alt="Selected green spaces" title="Selected green spaces" /></p>
+
+<p>Figure 8.34b - Selected green spaces.</p>
+
+<p><img src="media/fig834_c.png" alt="Green and Built-up spaces" title="Green and Built-up spaces" /></p>
+
+<p>Figure 8.34c - Green and Built-up spaces.</p>
+
+<p>Next, calculate the area occupied by each feature of the 2 layers. Go to the attribute table of each layer and then add the geometric column area by inserting the expression <code class="language-plaintext highlighter-rouge">round($area,2) </code>in the field calculator.  (see module 6 for details, if needed). However, the 10X10km grid of the Pampanga province has a known number of grid cells, and that is 42. Therefore, we need to summarise the areas for all types of green spaces (forests, parks etc.) an built-up spaces (commercial, residential etc.) and join it accordingly to all of the 42 grid cells. To do this, we will use the <strong>GroupStats</strong> plugin to sum up for each grid_id all the green categories, respectively all the built-up categories. For the green_spaced_gridded vector layer, set the parameters as in figure 8.34e.</p>
+
+<p><img src="media/fig834_d.png" alt="Computing the area of each feature" title="Computing the area of each feature" /></p>
+
+<p>Figure 8.34d - Computing the area of each feature.</p>
+
+<p><img src="media/fig834_e.png" alt="GroupStat parameters setup to sum up the green areas per each 10X10km grid cell" title="GroupStat parameters setup to sum up the green areas per each 10X10km grid cell" /></p>
+
+<p>Figure 8.34e - GroupStat parameters setup to sum up the green areas per each 10X10km grid cell.</p>
+
+<p>Afterwards, save the results as a .csv file named <code class="language-plaintext highlighter-rouge">green_spaces_gridded</code>. Go to <strong>Data ‣ Save all to CSV file.</strong></p>
+
+<p>Run GroupStats for the built-up space in the same manner and then save it as a csv file named <code class="language-plaintext highlighter-rouge">builtup_spaces_gridded</code>.</p>
+
+<p>Next, we will bring the 2 csv files calculated with GroupStat into QGIS  (<strong>Layer ‣ Add layer ‣ Add delimited text layer</strong> - see more details in module 2).</p>
+
+<p><img src="media/fig835_a.png" alt="Loading green_spaces_gridded CSV" title="Loading green_spaces_gridded CSV" /></p>
+
+<p>Figure 8.35a - Loading green_spaces_gridded CSV</p>
+
+<p><img src="media/fig835_b.png" alt="The green_spaces_gridded CSV attribute table" title="The green_spaces_gridded CSV attribute table" /></p>
+
+<p>Figure 8.35b - The green_spaces_gridded CSV attribute table</p>
+
+<p>Moving forward, we need to join the calculated spaces - green and built-up - to each 10X10 km cell grid. For that, select the grid10km vector layer in the TOC, open the properties window and go to <strong>Joins</strong>. This functionality allows you to join by a common attribute field, others. In our case, using the common grid_id value we will join, the sum of the built-up areas and green spaces fro the 2 csv files obtained in the previous stage.</p>
+
+<p>In the <strong>Join</strong> window, push on the green plus button below <img src="media/add_join_btn.png" alt="Add join layer button" title="Add join layer button" /> and set the parameters like in figure 8.35, for green spaces.</p>
+
+<p><img src="media/fig835_c.png" alt="Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit" title="Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit" /></p>
+
+<p>Figure 8.35c - Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit.</p>
+
+<p>Repeat for built-up spaces.</p>
+
+<p>The results of the two joins are visible in the attribute table, as can be seen in figure 8.36_b. We have kept the grid_id in both joins, to be sure no mistakes occurred. We can visually quickly check to make sure the 3 attribute fields: id, builtupgrid_id and greengrid_id are exactly the same.</p>
+
+<p><img src="media/fig836_a.png" alt="Green and built-up CSV joined to Grid" title="Green and built-up CSV joined to Grid" /></p>
+
+<p>Figure 8.36a - Green and built-up CSV joined to Grid.</p>
+
+<p><img src="media/fig836_b.png" alt="Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces" title="Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces" /></p>
+
+<p>Figure 8.36b - Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces.</p>
+
+<p>As we have gathered all the needed information for green and built-up spaces in the attribute table of the grid layer, all we need to do is calculate the percentage of these spaces within the 10X10 km grid cell. We will calculate it using the field calculator, using the following expression: <code class="language-plaintext highlighter-rouge">round(100*green_None/100000000, 5)</code> and <code class="language-plaintext highlighter-rouge">round(100*builtup_None/100000000, 5).</code> Next, we add a new field in which we calculate the report of the GreenPre/BuilupPer, and thus reaching the answer to our request: green spaces (parks, forests) built-up space per unit ratio: <code class="language-plaintext highlighter-rouge">round( "greenPer" / "builtupPer" , 5).</code> To have a clear overview of our dataset, in cases where there is no built-up space in the grid cell - we insert the value 1000 in the attribute table, in cases where there is no green space, we will insert value 999, while in case both values are NULL then we insert 1001.  For this we can use the expression:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CASE 
+WHEN (greenPer is NULL) and (builtupPer is not NULL) then 999
+WHEN (builtupPer is NULL) and (greenPer is not NULL) then 1000
+WHEN (greenPer is NULL) and (builtupPer is NULL) then 1001
+ELSE round(greenPer / builtupPer, 5)
+END
+</code></pre></div></div>
+
+<p>The final result would look like in figure 8.37e.</p>
+
+<p><img src="media/fig837_a.png" alt="Percentage of green area in the 10km x 10km grid" title="Percentage of green area in the 10km x 10km grid" /></p>
+
+<p>Figure 8.37a - Percentage of green area in the 10km x 10km grid</p>
+
+<p><img src="media/fig837_b.png" alt="Computed percentage of green and built-up area" title="Computed percentage of green and built-up area" /></p>
+
+<p>Figure 8.37b - Computed percentage of green and built-up area</p>
+
+<p><img src="media/fig837_c.png" alt="Computing for the ratio of green and built-up areas" title="Computing for the ratio of green and built-up areas" /></p>
+
+<p>Figure 8.37c - Computing for the ratio of green and built-up areas</p>
+
+<p><img src="media/fig837_d.png" alt="Computed ratio of green and built-up areas" title="Computed ratio of green and built-up areas" /></p>
+
+<p>Figure 8.37d - Computed ratio of green and built-up areas</p>
+
+<p><img src="media/fig837_e.png" alt="Ratio of green and built-up areas in the 10km x 10km grid" title="Ratio of green and built-up areas in the 10km x 10km grid" /></p>
+
+<p>Figure 8.37e - Ratio of green and built-up areas in the 10km x 10km grid</p>
+
+<ol>
+  <li>total length of streets and waterways for each unit;</li>
+</ol>
+
+<p>To accomplish this task, QGIS offers an algorithm that takes a polygon layer and a line layer and measures the total length of lines and the total number of them that cross each polygon. The resulting layer has the same features as the input polygon layer, but with two additional attributes containing the length and count of the lines across each polygon. Go to <strong>Analysis Tools - Sum Line Lengths</strong> and set the parameters as follows:</p>
+<ul>
+  <li>polygons - Grid</li>
+  <li>lines - roads</li>
+  <li>lines length field name - roadsL</li>
+  <li>lines count field name - roadsC</li>
+</ul>
+
+<p>You can create a temporary layer or save it as a file on your computer. If for representation, you use natural breaks, your map should look like in figure 8.38c.</p>
+
+<p><img src="media/fig838_a.png" alt="Sum Line Lengths parameters" title="Sum Line Lengths parameters" /></p>
+
+<p>Figure 8.38a - Sum Line Lengths parameters</p>
+
+<p><img src="media/fig838_b.png" alt="Road lengths and counts per Grid cell" title="Road lengths and counts per Grid cell" /></p>
+
+<p>Figure 8.38b - Road lengths and counts per Grid cell</p>
+
+<p><img src="media/fig838_c.png" alt="Spatial distribution of 10X10km units with most roads" title="Spatial distribution of 10X10km units with most roads" /></p>
+
+<p>Figure 8.38c - Spatial distribution of 10X10km units with most roads</p>
+
+<p>Now, repeat the same processing for waterways lengths in each grid cell. Running the process on the grid file obtained earlier will help you in having all information obtained so far attached to the same geometry. We advise you save this file on your computer with line_lengths_gridded.  If for representation, you use natural breaks, your map should look like în figure 8.39.</p>
+
+<p><img src="media/fig839.png" alt="Spatial distribution of 10X10km units with most waterways" title="Spatial distribution of 10X10km units with most waterway" /></p>
+
+<p>Figure 8.39 -  Spatial distribution of 10X10km units with most waterways</p>
+
+<ol>
+  <li>total number of public buildings (schools, kindergartens, hospitals , town halls etc.) for each grid cell</li>
+</ol>
+
+<p>To count the total number of public buildings in the 10X10 unit, we will use the pois_cleaned. First, we run <strong>Vector ‣ Analysis Tools ‣ List unique values..</strong> and decide which building we consider public. We will select from our vector point data layer (pois) the following features: <code class="language-plaintext highlighter-rouge">"fclass" = 'town_hall' or "fclass" = 'kindergarten' or "fclass" = 'hospital' or "fclass" = 'doctors' or "fclass" = 'fire_station' or "fclass" = 'community_centre' or "fclass" = 'stadium' or "fclass" = 'museum' or "fclass" = 'school' or "fclass" = 'theatre'.</code> Similarly, you can just type <code class="language-plaintext highlighter-rouge">"fclass" in ('town_hall', 'kindegarten', 'hospital', 'doctors', 'fire_station', 'community_centre', 'stadium', 'museum', 'school', 'theatre')</code>. Your selection should have 227 features in total.</p>
+
+<p><img src="media/fig840_a.png" alt="Selecting public POIs" title="Selecting public POIs" /></p>
+
+<p>Figure 8.40a - Selecting public POIs</p>
+
+<p><img src="media/fig840_b.png" alt="Selected public POIS" title="Selected public POIS" /></p>
+
+<p>Figure 8.40b - Selected public POIS</p>
+
+<p>To answer our request, we will use <strong>Vector ‣ Analysis Tools ‣ Count points in polygon</strong> algorithm. This algorithm takes a points layer and a polygon layer and counts the number of points from the first one in each polygons of the second one. A new polygons layer is generated, with the exact same content as the input polygons layer, but containing an additional field with the points count corresponding to each polygon. Set the point layer to pois_cleand and the polygon Grid layer with the calculated information in the previous round. For the points, check the <strong>Selected features only</strong> checkbox, so the algorithm calculates only the selected points - the public POIs. Save the output file as grid_info.</p>
+
+<p><img src="media/fig840_c.png" alt="Count public POIS in each 10km x 10km grid" title="Count public POIS in each 10km x 10km grid" /></p>
+
+<p>Figure 8.40c - Count public POIS in each 10km x 10km grid</p>
+
+<p><img src="media/fig840_d.png" alt="Spatial distribution of public POIs density per unit 10X10km" title="Spatial distribution of public POIs density per unit 10X10km" /></p>
+
+<p>Figure 8.40d - Spatial distribution of public POIs density per unit 10X10km</p>
+
+<h4 id="quiz-questions-1"><strong>Quiz questions</strong></h4>
+
+<p>Q: If I have 2 vector layers - one represents the extent of the city where I am working and the second, the built roads in the entire country - what processing tool would I use to extract only the roads in my city: buffer or clip?</p>
+
+<p>A: Clip.</p>
+
+<p>Q. Is the buffer tool useful in the following case: I have a polygon vector layer with historic monuments in my region and I want to draw a 50m protection area around them?</p>
+
+<p>A: Yes</p>
+
+<p>Q: Which one of the three geoprocessing tools would you use to merge two similar vector layers ? Voronoi polygons, dissolve, intersection?</p>
+
+<p>A: Dissolve.</p>
+
+<h3 id="phase-3-geostatistics-interpolation---estimating-missing-data">Phase 3: Geostatistics. Interpolation - estimating missing data</h3>
+
+<p>The last phase of the vector data module introduces the concept of data estimation. We are used to estimating almost daily on various topics, for example how much time it will take to get from home to work in certain conditions. We are used to giving our best guess,  based on previous experience and hunches. However, in estimating missing data the best guess is replaced by very well defined mathematical equations with well known limitations.</p>
+
+<p>The subject requires significant knowledge in statistics and results should always be regarding through the light of their limitations.</p>
+
+<p>That being said, we will introduce a short example of data estimation that will make the transition to the next module - raster data processing.</p>
+
+<p><strong>Interpolation</strong> is a mathematical process through which one can estimate the values that are missing based on a limited number of values that do exist. And those situations are common - imagine meteorological information. Data on surface temperatures and of how much rain has fallen can be measured only in specific points at calibrated meteo stations, and not on the entirety of a surface. However, we don’t have “blind spots’’ of no temperatures on the maps we see in the meteo section. Thus, the rest of the values - as to construct the seamless phenomena - are obtained by interpolation. 
+The assumption on which interpolation is based is that spatially distributed objects are spatially correlated; in other words, things that are close together tend to have similar characteristics.</p>
+
+<p>There are many interpolation methods implemented in GIS software packages, deciding which one is the best in each particular case depends on the specificity of the data, what it represents and the geostatistics understanding of the user doing the interpolation.</p>
+
+<p>To make a quick check on what interpolation methods are available in QGIS, go to the Processing Toolbox and write in the search bar the keyword interpolation. The result should look like in figure 8.41.</p>
+
+<p><img src="media/fig841.png" alt="Interpolation methods available in QGIS" title="Interpolation methods available in QGIS" /></p>
+
+<p>Figure 8.41 - Interpolation methods available in QGIS</p>
+
+<p>As can be observed, through QGIS the user has access to other algorithms, implemented in GRASS or SAGA, as a result of the integration into QGIS of these (and other) very powerful software solutions.</p>
+
+<p>Diving into the math behind each interpolation algorithm is beyond the scope of this module. However, for demonstration purposes, we will simulate precipitation data interpolation to obtain a seamless dataset on the quantity of precipitations fallen in our area of interest, Pampanga province.</p>
+
+<p>As the exercise is purely for showing purposes, we will create our own set of point data - to represent the meteo stations where precipitation values have been registered for the course of one week.</p>
+
+<p>Thus, the first step is creating a new vector layer - point type - with points randomly assigned inside the extent of the Pampanga province. There are several ways to do that, either with the algorithm of <strong>Random points in polygons..</strong> or with the algorithm <strong>Random points in layer bounds..</strong>. Go to <strong>Vector ‣ Research Tools ‣ Random points in polygons…</strong>. You may also search for the algorithm in the Processing Toolbox or Locator bar. Choose as parameters:</p>
+<ul>
+  <li>93 points</li>
+  <li>minimum 5 km.</li>
+</ul>
+
+<p>The result should look like in figure 8.42.</p>
+
+<p><img src="media/fig842.png" alt="Creating random points inside a polygon layer" title="Creating random points inside a polygon layer" /></p>
+
+<p>Figure 8.42 - Creating random points inside a polygon layer</p>
+
+<p>The resulting point layer will look approximately like in figure 8.43.</p>
+
+<p><img src="media/fig843.png" alt="Point data layer - randomly created within specified polygons" title="Point data layer - randomly created within specified polygons" /></p>
+
+<p>Figure 8.43 - Point data layer - randomly created within specified polygons.</p>
+
+<p>Now that we have our imaginary meteo stations that measure precipitations in Pampanga province, we will continue by adding fictitious measurements on the course of 7 days.</p>
+
+<p>To do that, we can use the random function provided by QGIS. Open the attribute table of the point data layer created and open field calculator. In a newly created field (Whole number integer), insert the following formula rand(min, max), where min and max will be replaced by the following pair of numbers for the corresponding 7 days (see figure 8.44):</p>
+
+<ol>
+  <li>0 - 59;</li>
+  <li>2 - 35;</li>
+  <li>10 - 45;</li>
+  <li>0 - 21;</li>
+  <li>5 - 63;</li>
+  <li>0 - 10;</li>
+  <li>0 - 21.</li>
+</ol>
+
+<p><img src="media/fig844.png" alt="Creating random values within specified limits" title="Creating random values within specified limits" /></p>
+
+<p>Figure 8.44 - Creating random values within specified limits</p>
+
+<p>After adding all 7 columns, your attribute table should look like in figure 8.45.</p>
+
+<p><img src="media/fig845.png" alt="Fictitious precipitation data for the 93 fictitious meteo stations in Pampanga province" title="Fictitious precipitation data for the 93 fictitious meteo stations in Pampanga province" /></p>
+
+<p>Figure 8.45 - Fictitious precipitation data for the 93 fictitious meteo stations in Pampanga province.</p>
+
+<p>Next, we will interpolate these values for each of the 7 days  to obtain a seamless layer that covers the entire territory of the province. Given that the operation is repetitive, we will use batch processing. The selected interpolation method selected - strictly for demonstration purposes! - is IDW - inverse distance weighted.</p>
+
+<p>Set the following parameters:</p>
+<ul>
+  <li>distance coefficient: 2</li>
+  <li>extent: Pampanga_admin_boundary</li>
+  <li>output raster size: 50.</li>
+</ul>
+
+<p>Your parameters should look like in the following figure 8.46.</p>
+
+<p><img src="media/fig846.png" alt="Setting up the batch processing window to interpolate the precipitation values for all 7 days" title="Setting up the batch processing window to interpolate the precipitation values for all 7 days" /></p>
+
+<p>Figure 8.46 - Setting up the batch processing window to interpolate the precipitation values for all 7 days</p>
+
+<p>The interpolation result will look approximately like in figure 8.47.</p>
+
+<p><img src="media/fig847.png" alt="Interpolated datasets" title="Interpolated datasets" /></p>
+
+<p>Figure 8.47 - Interpolated datasets</p>
+
+<p>The meteo stations are visible on the map canvas and in the TOC you can see all the 7 newly created raster datasets that represent precipitation values for each day in the Pampanga province.</p>
+
+<p>Next, let’s change the symbology of the 7 layers to a more colourful one (<strong>Properties ‣ Symbology ‣ Singleband pseudocolour ‣ Magma</strong>).</p>
+
+<p>Looking at the point data and the raster datasets created based on them, we can notice that now we have values for the entire region and not only in the measured location. There are many processing algorithms that can be applied to these rasters in order to extract information, but more on that in the next module - processing and visualisation of raster data.</p>
+
+<p>However, as we have interpolated values for 7 days, let us prepare a short animation on how precipitation values have evolved for the Pampanga province.</p>
+
+<p>To do that, open the <strong>Properties dialog of test_meteo_stations_1 raster ‣ click on the Temporal tab ‣ tick the Temporal option ‣ select start and end date</strong>, like in figure 8.48. Do the same for all 7 raster layers.</p>
+
+<p><img src="media/fig848_a.png" alt="Setting temporal information to the raster dataset (1)" title="Setting temporal information to the raster dataset (1)" /></p>
+
+<p><img src="media/fig848_b.png" alt="Setting temporal information to the raster dataset (2)" title="Setting temporal information to the raster dataset (2)" /></p>
+
+<p><img src="media/fig848_c.png" alt="Setting temporal information to the raster dataset (7)" title="Setting temporal information to the raster dataset (7)" /></p>
+
+<p>Figure 8.48 - Setting temporal information to the raster dataset (1, 2, 7).</p>
+
+<p>Open Temporal Controller Panel (can be found in <strong>View ‣ Panels ‣ Temporal Controller Panel</strong>) and set the parameters as in figure 8.49.</p>
+
+<p><img src="media/fig849.png" alt="Set the parameters of the Time Controller Panel" title="Set the parameters of the Time Controller Panel" /></p>
+
+<p>Figure 8.49 - Set the parameters of the Time Controller Panel.</p>
+
+<p>Click on the play button <img src="media/play-btn.png" alt="Play button" title="Play button" /> and see how the values change. You can choose what other layers to be visible. In figure 8.50, we added the buildings vector layer.</p>
+
+<p><img src="media/fig850.png" alt="Selecting other layers to be visible in the temporal animation" title="Selecting other layers to be visible in the temporal animation" /></p>
+
+<p>Figure 8.50 - Selecting other layers to be visible in the temporal animation.</p>
+
+<p>Quiz questions</p>
+
+<ol>
+  <li>Is there one algorithm to interpolate data in QGIS or more?</li>
+</ol>
+
+<p><em>There are more algorithms implemented.</em></p>
+
+<ol>
+  <li>What is interpolation useful for?</li>
+</ol>
+
+<p><em>Interpolation is useful to estimate data based on known data.</em></p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Modul 5 - Karten erstellen | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Modul 5 - Karten erstellen page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Modul 5 - Karten erstellen">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Modul 5 - Karten erstellen</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/germany/module5/module5.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="modul-5---karten-erstellen">Modul 5 - Karten erstellen</h1>
+
+<p><strong>Autor:in</strong>: Ketty</p>
+
+<h2 id="pädagogische-einführung">Pädagogische Einführung</h2>
+
+<p>In diesem Modul erhalten Sie einen Überblick über die üblichen Schritte, die zur Erstellung einer Karte in QGIS notwendig sind. Am Ende des Moduls werden die Teilnehmenden die folgenden Konzepte kennen;</p>
+
+<ul>
+  <li>Kartenbereich und zugehörige Layer</li>
+  <li>Das Drucklayout und die Druckvorlage</li>
+  <li>Kartenelemente und Eigenschaften</li>
+</ul>
+
+<p>Darüber hinaus werden Sie die folgenden Fähigkeiten erlernt haben:</p>
+
+<ul>
+  <li>Verwenden des Drucklayouts zur Erstellung einer Karte</li>
+  <li>Hinzufügen von Kartenelementen zur Karte</li>
+  <li>Verwalten verschiedener Drucklayouts</li>
+</ul>
+
+<h2 id="technische-voraussetzungen">Technische Voraussetzungen</h2>
+
+<ul>
+  <li>Arbeitsfähiger Computer</li>
+  <li>Internetzugang</li>
+  <li>QGIS 3.16 oder neuer</li>
+  <li>Mittelsachsen (innerhalb von <a href="/vietnam/germany/module5/data/Modul-5.gpkg">Modul-5.gpkg</a>)</li>
+  <li>Schulen-Mittelsachsen (innerhalb von <a href="/vietnam/germany/module5/data/Modul-5.gpkg">Modul-5.gpkg</a>)</li>
+  <li>Landkreise_Sachsen (innerhalb von <a href="/vietnam/germany/module5/data/Modul-5.gpkg">Modul-5.gpkg</a>)</li>
+  <li><a href="/vietnam/germany/module5/data/HRSL_Mittelsachsen.tif">Sachsen High Resolution Settlement Layer</a></li>
+</ul>
+
+<h2 id="voraussetzungen">Voraussetzungen</h2>
+
+<ul>
+  <li>Grundkenntnisse in der Bedienung eines Computers</li>
+  <li>Verständnis für alle vorherigen Module</li>
+</ul>
+
+<h2 id="zusätzliche-ressourcen">Zusätzliche Ressourcen</h2>
+
+<ul>
+  <li>QGIS Kartenlayout - <a href="https://docs.qgis.org/3.16/de/docs/training_manual/map_composer/index.html">https://docs.qgis.org/3.16/de/docs/training_manual/map_composer/index.html</a></li>
+  <li>Layout-Hub - <a href="https://layout-hub.github.io/">https://layout-hub.github.io/</a></li>
+  <li>Der Style Manager - <a href="https://docs.qgis.org/3.16/de/docs/user_manual/style_library/style_manager.html">https://docs.qgis.org/3.16/de/docs/user_manual/style_library/style_manager.html</a></li>
+  <li>Die Stilbibliothek - <a href="https://docs.qgis.org/3.16/de/docs/user_manual/style_library/index.html">https://docs.qgis.org/3.16/de/docs/user_manual/style_library/index.html</a></li>
+</ul>
+
+<h2 id="thematische-einführung">Thematische Einführung</h2>
+
+<p>Lassen Sie uns mit einem Beispiel beginnen:</p>
+
+<p>Um eine Karte zu erstellen, benötigen Sie eine Frage, das Sie besser verstehen möchten, z. B. “Räumliche Verteilung von Schulen in Mittelsachsen”. Sie werden feststellen, dass die Frage sowohl ein zu erforschendes Thema als auch die geografische Lage vorgibt. Mit diesen Informationen und den relevanten Daten, die es Ihnen erlauben, die Frage weiter zu erforschen, können Sie loslegen und eine Karte erstellen.</p>
+
+<h3 id="gliederung-der-konzepte">Gliederung der Konzepte</h3>
+
+<p>Dieses Modul konzentriert sich auf die folgenden Schlüsselkonzepte der Kartenerstellung: die Kartenansicht und die zugehörigen Layer, das Drucklayout sowie die Kartenelemente und -eigenschaften. Zunächst werden die einzelnen Begriffe kurz definiert;</p>
+
+<ul>
+  <li>Die <strong>Kartenansicht und das Layer-Bedienfeld</strong>: sind wahrscheinlich die wichtigste Widgets innerhalb von QGIS. Sie zeigen die aus überlagerten Kartenebenen zusammengesetzte Karte und erlaubt die Interaktion mit der Karte und den Ebenen. Beides wurde im Modul 0: Einführung in QGIS behandelt</li>
+  <li>das <strong>Drucklayout</strong> : Das Drucklayout bietet Layout- und Druckfunktionen. Es erlaubt Ihnen, Elemente wie die QGIS-Kartenansicht, Textbeschriftungen, Bilder, Legenden, Maßstabsbalken, Grundformen, Pfeile, Attributtabellen und HTML-Rahmen hinzuzufügen. Mit dem Druck-Layout können Sie schöne Karten und Atlanten erstellen, die gedruckt oder als PDF-Datei, ein Bild oder eine SVG-Datei gespeichert werden können. Dies ist eine leistungsfähige Möglichkeit, mit QGIS erstellte geografische Informationen weiterzugeben, die in Berichte aufgenommen oder veröffentlicht werden können. Sie können das Layout als Vorlage speichern und in einer anderen Sitzung wieder laden. Schließlich können Sie mit dem Atlas-Generator mehrere Karten auf Basis einer Vorlage erzeugen. Die Abbildung unten zeigt die Schnittstelle für das Drucken von Layouts und Druckvorlagen. Diese Ansicht wird geöffnet, wenn Sie ein neues Drucklayout öffnen.</li>
+</ul>
+
+<p><img src="media/print_comp2.png" alt="Drucklayout" title="Drucklayout" /></p>
+
+<p>Bild 5.1: Drucklayout</p>
+
+<ul>
+  <li><strong>Kartenelemente und Eigenschaften</strong>: Karten enthalten eine Vielzahl von Informationen. Die meisten Karten haben die folgenden fünf Dinge: einen Titel, eine Legende, ein Raster, eine Kompassrose zur Richtungsangabe und einen Maßstab.</li>
+</ul>
+
+<h2 id="hauptinhalt">Hauptinhalt</h2>
+
+<h3 id="teil-1-exportieren-der-kartenansicht">Teil 1: Exportieren der Kartenansicht</h3>
+
+<p>In diesem Tutorial zeigen wir zwei Möglichkeiten, die Kartenansicht in das QGIS Drucklayout zu exportieren. Die erste Methode ist einfach, während die zweite Methode die erweiterten Möglichkeiten des Drucklayouts erforscht.</p>
+
+<h4 id="erste-methode-exportieren-der-kartenansicht-ohne-das-drucklayout"><strong>Erste Methode: Exportieren der Kartenansicht ohne das Drucklayout</strong></h4>
+
+<ol>
+  <li>Sie sollten Ihre Daten bereits als Layer hinzugefügt und gestylt haben. Sie können Kartendekorationen hinzufügen, indem Sie auf <strong>Ansicht ‣ Dekorationen</strong> klicken. Wählen Sie Ihre bevorzugte Kartendekoration aus. Sie können z. B. die Titelbeschriftung, den Maßstabsbalken und die Urheberrechtshinweise hinzufügen. Für jede Dekoration müssen Sie in einem Dialogfeld Einstellungen festlegen.</li>
+  <li>Der letzte Schritt besteht darin, die Karte entweder in ein Bild- oder ein PDF-Format zu exportieren. Klicken Sie dazu auf <strong>Projekt ‣ Import/Export</strong> und wählen Sie dann das gewünschte Exportformat. Der folgende Exportdialog sollte erscheinen.</li>
+</ol>
+
+<p><img src="media/export-map-canvas-image.png" alt="Exportieren der Karten als Bild" title="Exportieren der Karten als Bild" /></p>
+
+<p><img src="media/export-map-canvas.png" alt="Karte als Bild speichern" title="Karte als Bild speichern" /></p>
+
+<p>Bild 5.2: Exportieren der Karte</p>
+
+<ol>
+  <li>Klicken Sie auf <strong>Speichern</strong>. Die Karte in der wird als PDF- oder Bilddokument gespeichert.</li>
+</ol>
+
+<p><img src="media/exported-map-canvas.png" alt="Kartenansicht als Bild exportiert" title="Kartenansicht als Bild exportiert" /></p>
+
+<p>Abbildung 5.3: Kartenansicht als Bild exportiert</p>
+
+<h4 id="zweite-methode-exportieren-der-kartenansicht-in-das-drucklayout"><strong>Zweite Methode: Exportieren der Kartenansicht in das Drucklayout</strong></h4>
+
+<ol>
+  <li>In diesem Tutorial werden wir eine Karte erstellen, die 1.) die Lage von Schulen und 2.) die Bevölkerungsdichte in Mittelsachsen zeigt. Die Daten-Layer sollten bereits zum QGIS-Canvas hinzugefügt sein. Die Layer können dann gestylt werden, um die Informationen in Ihren Daten zu vermitteln.</li>
+</ol>
+
+<p><img src="media/new-print-layout.png" alt="Neues Drucklayout erstellen" title="Neues Drucklayout erstellen" /></p>
+
+<p>Abbildung 5.4: Neues Drucklayout erstellen</p>
+
+<ol>
+  <li>Die Kartenansicht kann nun in das Drucklayout exportiert werden. Klicken Sie dazu auf die Schaltfläche “Neues Drucklayout” !(media/newprint_composer.png “Neues Drucklayout”). Diese kann über die Symbolleiste aufgerufen werden. Alternativ können Sie auch über die Menüleiste “Projekte” darauf zugreifen. Es öffnet sich ein Titeldialog, der Sie auffordert, den Titel des Drucklayouts einzugeben. Geben Sie “Mittelsachsen” ein und klicken Sie auf “OK”.</li>
+</ol>
+
+<p><img src="media/new-print-layout-name.png" alt="Benennen des Drucklayouts" title="Benennen des Drucklayouts" /></p>
+
+<p>Abbildung 5.5: Benennung des Drucklayouts</p>
+
+<ol>
+  <li>Das Drucklayout wird geöffnet</li>
+</ol>
+
+<p><img src="media/new-print-layout-window.png" alt="Das Drucklayoutfenster" title="Das Drucklayoutfenster" /></p>
+
+<p>Bild 5.6: Das Drucklayoutfenster</p>
+
+<ol>
+  <li>Sie werden feststellen, dass die Drucklayout-Leinwand leer ist. Um die gestylte Karte aus der QGIS-Leinwand hinzuzufügen, klicken Sie auf die Schaltfläche “Karte hinzufügen” <img src="/vietnam/germany/module5/media/add_new_map_to_layout.png" alt="" />, klicken Sie mit der linken Maustaste und zeichnen Sie ein Rechteck in den weißen Bereich in der Mitte des Drucklayouts. Die Karte sollte nun hinzugefügt werden. Nun können Sie alle anderen Kartenelemente wie Titel, Legende, Raster usw. hinzufügen.</li>
+</ol>
+
+<p><img src="media/print-layout-map.png" alt="Karte zum Drucklayout hinzufügen" title="Karte zum Drucklayout hinzufügen" /></p>
+
+<p>Abbildung 5.7: Karte zum Drucklayout hinzufügen</p>
+
+<h4 id="quizfragen"><strong>Quizfragen</strong></h4>
+
+<ol>
+  <li>Was ist die QGIS Kartenansicht? (mehrere auswählen)</li>
+  <li>Was ist der Nutzen des Drucklayouts? (mehrere auswählen)</li>
+  <li>Welches der folgenden Elemente ist kein Kartenelement? (eine Antwort)</li>
+</ol>
+
+<h4 id="quizantworten"><strong>Quizantworten</strong></h4>
+
+<ol>
+  <li>
+    <p>a. zeigt die Karte, die aus überlagerten Karten-Layern zusammengesetzt ist
+b. ermöglicht die Interaktion mit der Karte und den Layern
+c. ein Widget zur Erstellung von Karten</p>
+  </li>
+  <li>
+    <p>a. bietet Layout- und Druckfunktionen
+b. ermöglicht das Hinzufügen von Kartenelementen
+c. ermöglicht das Exportieren und Drucken von Karten</p>
+  </li>
+  <li>
+    <p>a. Titel
+b. Maßstab
+c. Legende
+d. Farben und Designs</p>
+  </li>
+</ol>
+
+<h3 id="teil-2-kartenelemente-mit-dem-drucklayout-hinzufügen-und-bearbeiten">Teil 2: Kartenelemente mit dem Drucklayout hinzufügen und bearbeiten</h3>
+
+<h4 id="inhalttutorial"><strong>Inhalt/Tutorial</strong></h4>
+
+<p>Nachdem die gestylte Karte zum Drucklayout hinzugefügt wurde, ist es nun an der Zeit, die relevanten Kartenelemente wie Titel, Maßstab, Legende, Raster, Metadaten usw. zum Drucklayout hinzuzufügen. Die meisten Schaltflächen befinden sich auf der linken Seite des Drucklayouts.</p>
+
+<ol>
+  <li>Klicken Sie auf die Schaltfläche “Beschriftung hinzufügen” <img src="media/add_title.png" alt="Beschriftung hinzufügen Button" title="Beschriftung hinzufügen Button" />
+, halten Sie die linke Maustaste gedrückt und ziehen Sie ein Rechteck auf, in dem Sie den Titel der Karte platzieren möchten. Geben Sie den Titel unter dem Menü “Haupteigenschaften” auf der rechten Seite des Drucklayouts ein. Die Schrifteigenschaften können Sie im Bereich “Erscheinungsbild” ändern.</li>
+</ol>
+
+<p><img src="media/print-layout-with-title.png" alt="Kartentitel hinzufügen" title="Kartentitel hinzufügen" /></p>
+
+<p>Bild 5.8: Kartentitel hinzufügen</p>
+
+<ol>
+  <li>Als nächstes fügen wir die Legende und den Maßstab hinzu. Mit der Schaltfläche “Beschriftung hinzufügen” können Sie außerdem auch eine Übersicht über die Datenquellen hinzufügen. Bewegen Sie den Mauszeiger über die Schaltfläche auf der linken Seite des Drucklayouts und klicken Sie auf die gewünschte Schaltfläche. Führen Sie die gleichen Schritte wie in oben aus, um das Kartenelement zum Drucklayout hinzuzufügen. Sie können weitere Kartenelemente hinzufügen, aber achten Sie darauf, dass die Karte nicht zu unübersichtlich wird.</li>
+</ol>
+
+<p><img src="media/scale-bar.png" alt="Maßstab" title="Maßstab" /></p>
+
+<p>Bild 5.9: Maßstab zur Karte hinzufügen</p>
+
+<p><img src="media/legend.png" alt="Legende" title="Legende" /></p>
+
+<p>Bild 5.9: Legende zur Karte einfügen</p>
+
+<p><img src="/vietnam/germany/module5/media/attribution.png" alt="Datenquellen" /></p>
+
+<p>Bild 5.10: Datenquellen zur Karte einfügen</p>
+
+<ol>
+  <li>
+    <p>Wenn das Kartenlayout zufriedenstellend ist, kann die Karte als pdf, png, jpeg oder svg exportiert werden. Alle Speicherfunktionen können über das Menü “Layout” aufgerufen werden.</p>
+  </li>
+  <li>
+    <p>Speichern Sie die Karte als Bild über <strong>Layout ‣ Als Bild exportieren…</strong> oder durch Klicken auf die Schaltfläche <strong>Speichern als Rasterbild</strong> <img src="/vietnam/germany/module5/media/export-image-btn.png" alt="" />. QGIS wird Sie fragen wo und mit welchen Optionen die Karte gespeichert werden soll.</p>
+  </li>
+</ol>
+
+<p><img src="media/img-parameters.png" alt="Exportparameter" title="Exportparameter" /></p>
+
+<p>Abbildung 5.10: Exportparameter</p>
+
+<p><img src="media/exported-map.png" alt="Exportierte Karte als Bild" title="Exportierte Karte als Bild" /></p>
+
+<p>Bild 5.11: Exportierte Karte als Bild</p>
+
+<h4 id="quizfragen-1"><strong>Quizfragen</strong></h4>
+
+<ol>
+  <li>Unter welcher der folgenden Registerkarten können Sie die Eigenschaften von Kartenelementen ändern? (eine Antwort)</li>
+  <li>Wie können Sie dem Kartenlayout einen Quellenverweis hinzufügen</li>
+</ol>
+
+<h4 id="quizantworten-1"><strong>Quizantworten</strong></h4>
+
+<ol>
+  <li>a. Zusammenstellung
+b. Elementeigenschaften
+c. Atlas-Erzeugung</li>
+  <li>Fügen Sie eine neue Beschriftung hinzu und geben Sie dann den Quellenverweis ein.</li>
+</ol>
+
+<h3 id="teil-3-automatisierte-kartenerstellung-mit-der-atlas-funktion">Teil 3: Automatisierte Kartenerstellung mit der Atlas-Funktion</h3>
+
+<h4 id="inhalttutorial-1"><strong>Inhalt/Tutorial</strong></h4>
+
+<p>Wenn Ihre Organisation gedruckte oder Online-Karten veröffentlicht, müssen Sie oft viele Karten mit der gleichen Vorlage erstellen - normalerweise eine für jede Verwaltungseinheit oder Region. Die manuelle Erstellung dieser Karten kann sehr viel Zeit in Anspruch nehmen und wenn Sie gerade bei regelmäßigen Aktualisierungen lästig werden. QGIS hat ein Werkzeug namens Atlas, das Ihnen helfen kann, eine Kartenvorlage zu erstellen und einfach eine große Anzahl von Karten für verschiedene geographische Regionen zu veröffentlichen. Nehmen wir die verschiedenen Landkreise Sachsens als Beispiel.</p>
+
+<p><img src="media/atlas-coverage.png" alt="Abdeckungslayer" title="Abdeckungslayer" /></p>
+
+<p>Bild 5.12: Abdeckungslayer</p>
+
+<p><img src="media/atlas-attr.png" alt="Attributtabelle" title="Attributtabelle" /></p>
+
+<p>Bild 5.13: Attributtabelle</p>
+
+<ol>
+  <li>
+    <p>Dieser Layer dient als Abdeckungslayer, was bedeutet, dass der QGIS-Atlas für jedes der Features in diesem Layer eine Karte erstellt. Insgesamt werden also 13 Karten erzeugt.</p>
+  </li>
+  <li>
+    <p>Öffnen oder erstellen Sie ein neues Drucklayout und fügen Sie eine Karte hinzu.</p>
+  </li>
+</ol>
+
+<p><img src="media/atlas-print-layout.png" alt="Atlas Drucklayout" title="Atlas Drucklayout" /></p>
+
+<p>Abbildung 5.14: Atlas-Drucklayout</p>
+
+<ol>
+  <li>Wählen Sie dann im rechten Bereich des Drucklayouts das Menü <strong>Atlas</strong> aus und aktivieren Sie das Kontrollkästchen <strong>Einen Atlas generieren</strong>. Sie können die Atlas-Einstellungen auch über die Schaltfläche <img src="media/atlas-settings-btn.png" alt="Atlas-Einstellungen" title="Atlas-Einstellungen" /> in der Atlas-Symbolleiste öffnen.</li>
+</ol>
+
+<p><img src="media/generate-atlas.png" alt="Atlas-Generierung" title="Atlas-Generierung" /></p>
+
+<p>Bild 5.15: Atlas-Generierung</p>
+
+<ol>
+  <li>Der nächste Schritt ist die Auswahl des Abdeckungslayers; der Abdeckungslayer ist der Indexlayer, der zur Erstellung jeder Seite verwendet wird. Für jedes Merkmal im Abdeckungslayer wird eine Karte/Seite für den Atlas erzeugt. In unserem Fall wird bei Verwendung des Layers Landkreise_Sachsen eine Karte für jeden der 13 Landkreise erstellt. QGIS Atlas ändert dynamisch den Ansichtsausschnitt für jedes Feature im Abdeckungslayer. Sie können den Abdeckungslayer in den von Ihnen erstellten Karten ausblenden (d.h. der Abdeckungslayer wird im Drucklayout nicht sichtbar sein) und auswählen, wie die einzelnen Seiten Ihres Atlas benannt werden sollen. Sie können auch einige Filterungen und Sortierungen des Abdeckungslayers vornehmen, wenn Sie dies benötigen. Für das <strong>Ergebnis</strong> können Sie sich für eine einzelne Datei als Ausgabe entscheiden, indem Sie das Kontrollkästchen <strong>Einzeldatei wenn möglich</strong> aktivieren. Wenn das Häkchen nicht gesetzt ist, wird eine Datei pro Karte erzeugt.</li>
+</ol>
+
+<p><img src="media/coverage-layer.png" alt="Abdeckungslayer auswählen" title="Abdeckungslayer auswählen" /></p>
+
+<p>Bild 5.16: Abdeckungslayer auswählen</p>
+
+<ol>
+  <li>Nachdem wir nun den Abdeckungslayer festgelegt haben, sollten wir dem Drucklayout mitteilen, dass es den Atlas verwenden soll, um den Umfang der Karten (auf der druckbaren Karte sichtbarer Bereich) zu steuern. Aktivieren Sie auf der Registerkarte <strong>Elementeigenschaften</strong> das Kontrollkästchen für <strong>Gesteuert durch Atlas</strong>.</li>
+</ol>
+
+<p><img src="media/atlas-controlled.png" alt="Gesteuert durch Atlas" title="Gesteuert durch Atlas" /></p>
+
+<p>Abbildung 5.17: Stellen Sie sicher, dass die Kartenausdehnung durch den Atlas gesteuert wird</p>
+
+<ol>
+  <li>Um eine Vorschau Ihres Atlas zu erhalten, klicken Sie auf die Schaltfläche Atlas-Vorschau anzeigen <img src="media/atlas-preview-btn.png" alt="Atlas-Vorschau anzeigen Button" title="Atlas-Vorschau anzeigen Button" /> in der Atlas-Symbolleiste. Dies zeigt Ihnen die 13 Karten, die Sie erstellt haben. Verwenden Sie die Atlas-Symbolleiste <img src="media/atlas-toolbar-nav.png" alt="Atlas-Symbolleiste" title="Atlas-Symbolleiste" />, um in den Atlas-Karten zu navigieren.</li>
+</ol>
+
+<p><img src="media/atlas-preview.png" alt="Atlas-Vorschau" title="Atlas-Vorschau" /></p>
+
+<p>Abbildung 5.18: Atlas-Vorschau</p>
+
+<ol>
+  <li>Sie können die Atlas-Karten über die Schaltfläche <strong>Atlas exportieren</strong> <img src="media/atlas-export-btn.png" alt="Atlas exportieren" title="Atlas exportieren" /> entweder als Bild oder als PDF exportieren. Wählen Sie <strong>Atlas als Bild exportieren</strong>. Sie sollten 13 Karten generiert haben, wobei jede Karte die Ausdehnung jedes Landkreises zeigt.</li>
+</ol>
+
+<p><img src="media/atlas-outputs.png" alt="Atlas-Dateien" title="Atlas-Dateien" /></p>
+
+<p>Abbildung 5.18: Atlas Dateien</p>
+
+<ol>
+  <li>
+    <p><strong>Tipp</strong>: Für dieses Beispiel haben wir nur den Abdeckungslayer abgebildet. Die Stärke des Atlas liegt darin, dass er mehrere Layer abbildet. In unserem Beispiel haben wir die Daten zu Kliniken, Straßennetz und Bevölkerungsdichte für das gesamte Land als Layer in QGIS geladen. Würden wir eine Karte für jede Provinz erstellen wollen, die dieselben Layer zeigt, könnten wir nun den Atlas verwenden. Dabei müssen wir nur eine Layout-Vorlage erstellen, und der Atlas übernimmt die Erstellung der anderen Karten auf der Grundlage des verwendeten Layers.</p>
+  </li>
+  <li>
+    <p><strong>Tipp</strong>: Sie können QGIS Ausdrücke für die Einstellung der anderen Kartenelemente in Ihrem Atlas verwenden, so dass diese sich ebenfalls dynamisch in Abhängigkeit von dem abgebildeten Feature des Abdeckungslayers ändern. In unserem Beispiel können Sie zum Beispiel einen QGIS-Ausdruck verwenden um den aktuellen Landkreis in einem Beschriftungsfeld anzuzeigen. Wählen Sie dafür <code class="language-plaintext highlighter-rouge">[%BEZ + '-' + GEN%]</code> als Beschriftung. Diese wird sich in jeder der exportierten Karten an den entsprechenden Landkreis anpassen.</p>
+  </li>
+</ol>
+
+<p>Weitere Informationen über den QGIS Atlas finden Sie unter: <a href="https://www.youtube.com/watch?v=tOnMJBUvEjY">https://www.youtube.com/watch?v=tOnMJBUvEjY</a>.</p>
+
+<h4 id="quizfragen-2"><strong>Quizfragen</strong></h4>
+
+<p>k.A.</p>
+
+<h4 id="quiz-antworten"><strong>Quiz-Antworten</strong></h4>
+
+<p>k.A.</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

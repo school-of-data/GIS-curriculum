@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Modul 10 - QGIS-Erweiterungen / -Plugins | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Modul 10 - QGIS-Erweiterungen / -Plugins page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Modul 10 - QGIS-Erweiterungen / -Plugins">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Modul 10 - QGIS-Erweiterungen / -Plugins</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/germany/module10/module10.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="modul-10---qgis-erweiterungen---plugins">Modul 10 - QGIS-Erweiterungen / -Plugins</h1>
+
+<p><strong>Autor:in</strong>: Codrina</p>
+
+<h2 id="pädagogische-einführung">Pädagogische Einführung</h2>
+
+<p>In diesem Modul werden einige der interessantesten und hoffentlich nützlichen Erweiterungen vorgestellt, die von der internationalen QGIS-Gemeinschaft entwickelt und für jedermann zur Verfügung gestellt wurden. Wir werden dabei den Begriff Plugin und Erweiterung austauschbar benutzen - Die deutsche QGIS-Oberfläche nutzt hauptsächlich den Begriff Erweiterungen, da viele der Erweiterungen aber nicht lokalisiert sind, tauchen sie häufig auch unter dem internationalen Namen - Plugins - auf.
+Am Ende des Moduls sollten Sie wissen:</p>
+
+<ul>
+  <li>Wie man ein neues Plugin sucht und installiert</li>
+  <li>Wie man zwischen den verschiedenen Plugin-Repositories wechselt</li>
+  <li>Wie man eine Plugin-Dokumentation liest und worauf man achten muss.</li>
+</ul>
+
+<h2 id="erforderliche-tools-und-ressourcen">Erforderliche Tools und Ressourcen</h2>
+
+<ul>
+  <li>Dieses Modul wurde mit <a href="https://qgis.org/en/site/forusers/download.html">QGIS Version 3.16.1 - Hannover</a> erstellt.</li>
+</ul>
+
+<h2 id="voraussetzungen">Voraussetzungen:</h2>
+
+<ul>
+  <li>Grundkenntnisse in der Bedienung eines Computers</li>
+  <li>Ein solides Verständnis aller Module, da die Plugins, die wir vorstellen werden, sich auf verschiedene Begriffe/Elemente beziehen, die Sie im Laufe dieses Curriculums kennengelernt haben, wie z.B. Vektoren, Raster, Attributtabellen und viele andere.</li>
+</ul>
+
+<h2 id="hauptinhalt">Hauptinhalt</h2>
+
+<h3 id="teil-1-einführung-in-den-plugin-gedanken">Teil 1: Einführung in den Plugin-Gedanken</h3>
+
+<p>Einer der vielen Vorteile der Open-Source-Gemeinschaft - sowohl für Entwickler:innen als auch für Anwender:innen - ist die unglaubliche Geschwindigkeit, mit der Entwicklungen und Verbesserungen stattfinden, die Art und Weise, wie neue Ideen aufkommen und dann in die Praxis umgesetzt werden.</p>
+
+<p>Wie Sie in Modul 1 gesehen haben, ist QGIS mit einer “Plugin”-Architektur konzipiert, die es erlaubt, es durch Hinzufügen externer Plugins leicht an die eigenen Bedürfnisse anzupassen. In QGIS Unterscheidet man zwischen <strong>Kern-</strong> und <strong>externen Plugins</strong>. Die Kern-Plugins - wie der Name schon sagt - bilden die Hauptstruktur, sie werden vom QGIS-Entwicklungsteam gewartet und sind immer in der Installation enthalten. Beispiele sind die  wie z.B. das Processing-Kern-Plugin, die Zonale Statistik oder der Plugin-Manager. Im Laufe der Zeit sind verschiedene externe Plugins aufgrund ihrer Relevanz in Richtung des Kerns gewandert.</p>
+
+<p>Natürlich kann man angesichts der Open-Source-Prinzipien, gepaart mit den großartigen und sehr detaillierten Dokumentationen, die zur Verfügung stehen, und den vielen Kommunikationskanälen und speziellen Veranstaltungen lernen, wie man ein Plugin baut, das den eigenen Anforderungen entspricht. Und das ist ein <strong>externes Plugin</strong>. Auf der dedizierten <a href="https://plugins.qgis.org/">Webseite</a> finden Sie die gesamte notwendige Dokumentation. Die meisten externen Plugins sind in Python geschrieben, aber sie können auch in C++ geschrieben werden.</p>
+
+<p>In dieser ersten Phase werden wir uns mit der Einrichtung von QGIS-Plugins beschäftigen - wie man nach einem Plugin sucht, um eine bestimmte Anforderung zu lösen, die man vielleicht hat, wie man dessen Dokumentation interpretiert und wie man dem Entwicklungsteam meldet, wenn man auf ein Problem gestoßen ist.</p>
+
+<h3 id="die-erweiterungsverwaltung">Die Erweiterungsverwaltung</h3>
+
+<p>QGIS bietet ein Kern-Plugin, mit dem externe Plugins verwaltet, installiert, aktualisiert und deinstalliert werden können. Die Funktionalität ist intuitiv und bietet vollen Zugriff auf das offizielle öffentliche Plugin-Repository.</p>
+
+<p>Es muss betont werden, dass die externen Plugins - seien sie offiziell oder experimentell - die Arbeit einzelner Entwickler:innen oder Organisationen sind und die QGIS-Organisation keine Verantwortung für sie übernimmt. Davon abgesehen gibt es einige Regeln, die Entwickler:innen, die ihre Arbeit über das offizielle Repository zur Verfügung stellen wollen, einhalten müssen, sowie eine Reihe von Empfehlungen für eine schnelle Akzeptanz. Zu den Anforderungen gehören Elemente wie eine kompatible Lizenz, minimale Dokumentation, klare Identifizierung von Abhängigkeiten und andere. Zu den Empfehlungen gehört die Überprüfung, ob das Plugin keine bestehende Funktionalität dupliziert, eine gute Struktur des Quellcode-Repositorys, Kompatibilität mit allen Plattformen (Windows, Linux, macOS) und viele andere.</p>
+
+<p>Experimentelle Plugins - die im Plugin-Manager als solche gekennzeichnet sind - sind Plugins, die sich in einem frühen Entwicklungsstadium befinden, also nicht für den operativen Einsatz geeignet sind. Sie gelten als “Proof of Concept”-Tests und es wird nicht empfohlen, sie zu installieren, es sei denn, man möchte sie zu Testzwecken verwenden.</p>
+
+<p>Um die experimentellen Plugins zu sehen, muss dies Funktionalität explizit eingeschaltet werden. Dies können Sie tun, indem Sie in den Einstellungen des Plugin-Managers die Option <code class="language-plaintext highlighter-rouge">Auch experimentelle Erweiterungen anzeigen</code> auswählen (Abbildung 10.2a). Es gibt auch die Möglichkeit, die veralteten Plugins aufzulisten. Diese werden nicht empfohlen, da sie nicht mehr gepflegt werden.</p>
+
+<p>Die beiden Typen werden im Plugin-Manager gut unterschieden (siehe Abbildungen 10.1 und 10.2b).</p>
+
+<p><img src="/germany/module10/media/fig101.png" alt="alt_text" /></p>
+
+<p>Abbildung 10.1 - Alle Erweiterungen</p>
+
+<p><img src="/germany/module10/media/fig102_a.png" alt="alt_text" /></p>
+
+<p>Abbildung 10.2a - Anzeige experimenteller Plugins</p>
+
+<p><img src="/germany/module10/media/fig102_b.png" alt="alt_text" /></p>
+
+<p>Abbildung 10.2b - Eine Erweiterung mit experimenteller Version</p>
+
+<p>Ein weiterer erwähnenswerter Aspekt ist, dass die Erweiterungsverwaltung eine recht vielseitige Funktionalität hat, die es Entwickler:innen erlaubt, ihre privaten Repositories hinzuzufügen (siehe Abbildung 10.3).</p>
+
+<p><img src="/germany/module10/media/fig103.png" alt="alt_text" /></p>
+
+<p>Abbildung 10.3 - Hinzufügen eines privaten Plugin-Repositorys zu QGIS</p>
+
+<p>Das ist nützlich, wenn z.B. innerhalb Ihrer Organisation ein Bedarf an weiteren Erweiterungen besteht, die aber nicht den Anforderungen von QGIS für das öffentliche Hosting in ihrem offiziellen Repository entsprechen.  Eine nützliche Ressource, wie Sie Ihr eigenes Plugin-Repository einrichten können, finden Sie auf <a href="https://gis-ops.com/qgis-3-plugin-tutorial-set-up-a-plugin-repository-explained/">GIS OPS (englischsprachig)</a>.</p>
+
+<p>Die einfachere Methode besteht darin, ein Zip-Paket vorzubereiten, das eine Erweiterung enthält und das auf herkömmliche Weise weitergegeben werden kann. Diese Methode ist jedoch nicht zu empfehlen.</p>
+
+<p>Nachdem Sie entschieden haben, welche Arten von Erweiterungen in Ihrem Manager aufgelistet werden sollen, können Sie auf die Registerkarte <code class="language-plaintext highlighter-rouge">Alle</code> wechseln und genauer betrachten, wie eine Erweiterung im Plugin Manager erscheint. Suchen Sie zu Demonstrationszwecken das Plugin <code class="language-plaintext highlighter-rouge">Cartographic Line Generalization</code>.</p>
+
+<p><img src="media/fig104.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.4 - Suche nach einer bestimmten Erweiterung im Plugin-Manager</p>
+
+<p>Wie Sie sehen können, befindet sich auf der rechten Seite ein Fenster, das eine Reihe von Informationen anzeigt. Diese Informationen folgen für alle Erweiterungen dem gleichen Schema:</p>
+
+<ol>
+  <li>Name der Erweiterung und Untertitel</li>
+  <li>Abschnitt “Beschreibung” - je nach Erweiterung kann dieser Abschnitt mehr oder weniger detailliert sein</li>
+  <li>Die Anzahl der Downloads und wie viele Sterne die Erweiterung von der Community erhalten hat</li>
+  <li>Eine Reihe an Tags, die die Erweiterung kategorisieren</li>
+  <li>Eine Reihe von wichtigen Links: die Webseite der Erweiterung, der <strong>Bug-Tracker</strong> und das Coderepositorium</li>
+  <li>Der Name des/der Entwickler:in, sowie der angeschlossenen Organisation. Manchmal wird auch der Name des Projekts, in dem die Erweiterung entwickelt wurde, aufgeführt</li>
+  <li>Die Versionsnummer mit dem Hinweis <em>stabil</em> oder <em>experimentell</em>, je nach Fall</li>
+  <li>Das Logo der Erweiterung</li>
+</ol>
+
+<p>Über den Button <code class="language-plaintext highlighter-rouge">Erweiterung installieren</code> können Sie die Erweiterung hinzufügen. Sie taucht dann meist als neuer Button in der QGIS-Oberfläche auf.</p>
+
+<p>Aus Platzgründen ist die Beschreibung im Plugin-Manager meist recht kurz. Mehr Details zur Funktionalität des Plugins findet man üblicherweise auf der verlinkten Homepage. In unserem Fall stellen wir fest, dass die Homepage mit dem Coderepositorium identisch ist - auf Github, aber das ist nicht immer der Fall (siehe Abbildung 10.6).</p>
+
+<p><img src="media/fig106_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.6a - Homepage des ausgewählten Plugins</p>
+
+<p><img src="media/fig106_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.6b - Detaillierte Metadaten auf der Plugin-Homepage</p>
+
+<p>Ein weiterer sehr wichtiger Aspekt, der bei der Dokumentation eines Plugins hervorzuheben ist, ist die Web-Anzeige des <strong>Bug-Trackers</strong> bzw der <strong>Fehlerverfolgung</strong>. Ein Bug-Tracker-System ist eine Software-Anwendung, die alle gemeldeten Software-Probleme (<em>Bugs</em>) aufzeichnet. In unserem Fall wird der Bug Tracker durch das dedizierte Coderepositorium Github unterstützt (siehe Abbildung 10.7).</p>
+
+<p><img src="media/fig107.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figure 10.7 - Bug tracking system in Github for a QGIS plugin</p>
+
+<p>Es würde den Rahmen dieses Moduls sprengen, im Detail darauf einzugehen, wie man ein Software-Problem auf Github meldet, aber es ist wichtig, ein paar Aspekte hervorzuheben. Erstens funktioniert das Open-Source-Ökosystem - sei es für Geodaten oder nicht - am besten, wenn alle Beteiligten ihren Teil aktiv beitragen, d.h. Entwickler:innen programmieren und Benutzer:innen testen und melden identifizierte Probleme zurück. Wenn man einen Blick auf die  Bug-Tracker für <a href="https://github.com/qgis/QGIS/issues">QGIS</a> oder <a href="https://github.com/OSGeo/grass/issues">GRASS</a> oder andere Open-Source-Lösungen wirft, wird man intensive Aktivität feststellen. Und das ist gut so, zeigt es doch, dass die Community lebendig ist, dass die Interaktion zwischen Entwickler:innen und Anwender:innen normal funktioniert. Um den Entwicklungsteams Arbeit abzunehmen, gehört es zum guten Ton, dass Sie - bevor sie einen neuen Bug melden - erst die bestehenden Bugs durchsuchen, um Duplikate zu vermeiden.</p>
+
+<h4 id="quizfragen"><strong>Quizfragen</strong></h4>
+
+<ol>
+  <li>Benötigen Sie den vollständigen Namen der Erweiterung, um sie in der Erweiterungsverwaltung zu finden?
+    <ul>
+      <li><em>Nein, ein Stichwort reicht aus</em></li>
+      <li>Ja</li>
+    </ul>
+  </li>
+  <li>Sind sowohl die offiziellen als auch die experimentellen Erweiterungen im gleichen Repository verfügbar?
+    <ul>
+      <li><em>Ja, sofern die Option ‘Auch experimentelle Erweiterungen anzeigen’ im Plugin-Manager ausgewählt ist.</em></li>
+      <li>Nein, für experimentelle gibt es andere Repositories.</li>
+    </ul>
+  </li>
+  <li>Nennen Sie 2 oder 3 Informationen, die in der Dokumentation einer Erweiterung zu finden sind:
+    <ul>
+      <li>Titel &amp; Beschreibung, Anzahl der Downloads, Homepage, Links zum Code-Repository, Name des/der Entwickler:in, eine Kurzbeschreibung</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="teil-2-einige-nützliche-qgis-erweiterungen-">Teil 2: Einige nützliche QGIS-Erweiterungen **</h3>
+
+<p>Erweiterungen können auf unterschiedliche Arten klassifiziert werden. Im Folgenden identifizieren wir zwei Möglichkeiten:</p>
+
+<ul>
+  <li>Nach dem Stand der Entwicklung:
+    <ul>
+      <li>Offiziell - die Erweiterung wird als stabil angesehen, ist gut dokumentiert und kann in einem professionellen Kontext verwendet werden</li>
+      <li>Experimentell - die Erweiterung befindet sich in einem frühen Entwicklungsstadium, sie wird nur zu Testzwecken empfohlen</li>
+      <li>Veraltet - die Erweiterung wird nicht mehr weiterentwickelt, d.h. sie wird nicht mehr auf neue Versionen aktualisiert, das Entwicklungsteam antwortet möglicherweise nicht mehr auf Fehlerberichte. Diese Erweiterungen sollten nur verwendet werden, wenn es keine andere Möglichkeit gibt, das Problem zu lösen.</li>
+    </ul>
+  </li>
+  <li>Nach Kategorie-Typ:
+    <ul>
+      <li>Vektor</li>
+      <li>Raster</li>
+      <li>Web</li>
+      <li>Datenbank</li>
+      <li>Kartographie</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Einige externe Erweiterungen erlauben den Zugriff durch QGIS auf externe Datenbanken, Cloudspeicher und Dienste. In diesem Fall kann es zu zusätzlichen Voraussetzungen kommen - z.B. ein bezahltes Konto für den externen Dienst oder den Cloudspeicher oder ein API-Schlüssel. Ein Beispiel zur Veranschaulichung ist die Erweiterung Planet Explorer von Planet Inc. (siehe Abbildung 10.8).</p>
+
+<p><img src="media/fig108.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.8 - Beispiel für eine Erweiterung, die ein externes Abonnement benötigt, damit sie in QGIS in vollem Umfang funktioniert</p>
+
+<p>Obwohl in der Beschreibung kein Hinweis darauf zu finden ist, offenbart ein Blick auf die Homepage der Erweiterung die Voraussetzungen, damit sie funktioniert: “Planet subscription or trial for accessing and downloading Planet imagery. Don’t have a subscription? Contact our <a href="https://www.planet.com/contact/">team</a> to learn more”</p>
+
+<p>In den folgenden Abschnitten werden wir einige Erweiterungen, die unserer Meinung nach nützlich sein könnten, identifizieren und mit kurzen Beispielen versehen. Dies ist natürlich nur eine kurze Liste aus dem umfangreichen Universum der Erweiterungen, zögern Sie nicht, darüber hinaus zu gehen.</p>
+
+<h4 id="discoverz"><strong>Discoverz</strong></h4>
+
+<p><img src="media/fig109_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.9a - Die Erweiterung “Discovery”</p>
+
+<p>Discovery ist eine sehr nützliche Erweiterung, mit der Sie in den Attributen Ihrer Vektordaten nach Text suchen können. Die Erweiterung verbindet sich entweder mit einer PostgreSQL/PostGIS-Datenbank, MS SQL Server oder einem Geopackage und sucht nach Text in den angegebenen Spalten.</p>
+
+<p>Um es zu testen, werden wir eine Geopackage-Datei verwenden, die vom Humanitarian Data Exchange vorbereitet wurde und zum <a href="https://data.humdata.org/dataset/hotosm_phl_north_populated_places">Download</a> zur Verfügung steht. Es handelt sich um eine Vektordatei, die die besiedelten Orte von den Philippinen enthält, zusammen mit Namen und Anzahl der Menschen. Die Rohdaten wurden von OpenStreetMap heruntergeladen.</p>
+
+<p>Nachdem Sie die Erweiterungsverwaltung benutzt haben, um Discovery zu installieren, sollte eine neue Symbolleiste in Ihrem QGIS sichtbar sein. Lassen Sie uns die Parameter einrichten: Datenquellentyp: Geopackage, Name: Philippines, wählen Sie die Datei entsprechend aus und der Layer wird Populated Places sein, die Suchspalte: name. Wir werden auch zusätzliche Informationen anfordern, die in der Suchleiste angezeigt werden sollen: is_in und population. Dadurch werden wir in der Lage sein, mehrere Dörfer mit demselben Namen zu unterscheiden, wenn diese in unterschiedlichen Provinzen liegen Ihr Discovery-Setup sollte wie in Abbildung 10.9b aussehen.</p>
+
+<p><img src="media/fig109_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.9b - Einstellen der Erweiterung “Discovery”</p>
+
+<p>Klicken Sie auf OK und lassen Sie uns in der Suchleiste nach “San Roque” suchen (siehe Abbildung 10.9c).</p>
+
+<p><img src="media/fig109_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.9c - Verwenden der Suche zum schnellen Durchsuchen der Attribute der Vektor-Layer.</p>
+
+<p>In unserem Beispiel können wir sehen, dass es viele Orte in San Roque auf den Philippinen gibt. Wählen Sie einen Eintrag in dieser Liste aus und QGIS zoomt ihn heran (siehe Abbildung 10.9d).</p>
+
+<p><img src="media/fig109_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.9d - Heranzoomen auf die Geometrie des ausgewählten Elements in der Suchleiste.</p>
+
+<p>Die Erweiterung bietet die Möglichkeit, Vektoren per Textsuche gekoppelt mit verschiedenen Filtern, wie z. B. einer Bounding Box, oder verschiedenen SQL-Abfragen zu finden.</p>
+
+<p>Eine ausführliche Beschreibung der Fähigkeiten des Plugins sowie ein umfassenderes Tutorial finden Sie auf der <a href="https://www.lutraconsulting.co.uk/projects/discovery/">offiziellen Website (englischsprachig)</a>.</p>
+
+<h4 id="polygon-divider"><strong>Polygon Divider</strong></h4>
+
+<p><img src="media/fig1010_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.10a - Die Erweiterung Polygon Divider</p>
+
+<p>Polygon Divider ist eine weitere nützliche Erweiterung von QGIS, die es ermöglicht, einen Vektor-Layer vom Typ Polygon effizient in eine Anzahl von “quadratischen” Polygonen einer definierten Größe zu unterteilen.</p>
+
+<p>Dieses Werkzeug kann für eine Vielzahl von Anwendungen nützlich sein, z.B. für die Parzellierung von Grundstücken, für Umweltproben und so weiter.</p>
+
+<p>Lassen Sie uns dieses Werkzeug auf unsere Region Mittelsachsen anwenden und sehen, welche Ergebnisse wir erhalten.</p>
+
+<p>Installieren Sie mit der Erweiterungsverwaltung den Polygon Divider. Nach der Fertigstellung erscheint ein neues Piktogramm in Ihrer QGIS-Symbolleiste und ein neues Fenster öffnet sich (siehe Abbildung 10.10b).</p>
+
+<p><img src="media/fig1010_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.10b - Fenster der Erweiterung “Polygon Divider</p>
+
+<p>Wählen Sie als Eingabe-Layer den Polygon-Layer Mittelsachsen, speichern Sie die Ausgabedatei als Mittelsachsen_polygone, wählen Sie 1000000 (d.h. alle Teilungen werden etwa 100 Hektar groß sein), wählen Sie als Schnittrichtung links nach rechts und die Toleranz 1. Das Ergebnis sollte wie in Abbildung 10.10c aussehen.</p>
+
+<p><img src="media/fig1010_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.10c - Ergebnis der Ausführung der Erweiterung Polygon Divider auf dem Vektorlayer Mittelsachsen</p>
+
+<p>Eine ausführliche Beschreibung der Fähigkeiten der Erweiterung sowie eine umfassendere Anleitung finden Sie auf der Polygon Divider <a href="https://github.com/jonnyhuck/RFCL-PolygonDivider">Website (englischsprachig)</a>.</p>
+
+<h4 id="load-them-all">Load Them All</h4>
+
+<p><img src="media/fig1011_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.11a - Die Erweiterung “Load Them All”</p>
+
+<p>Dies ist eine nützliche Erweiterung, wenn Sie mehrere Layer (Vektoren und Raster) haben, die Sie in QGIS laden müssen. Die Erweiterung erlaubt es Ihnen, automatisch alle auf einmal zu laden, aber der große Vorteil ist, dass es Ihnen eine Vielzahl von Filtern zur Verfügung stellt, wie z.B. alphanumerisch (nach Namen), Änderungsdatum, Bounding Box (von Hand eingefügte Koordinaten), Art der Geometrie usw.</p>
+
+<p>Um es zu testen, werden wir Dateien aus dem vorherigen Modul 8 laden. Unter den Vektordaten werden wir die Shapefiles auswählen, die vor einem ausgewählten Datum bearbeitet wurden, bei den Raterdaten werden wir einen alphanumerischen Filter wählen - der Name des geladenen Rasters sollte mit LandCover beginnen (siehe Abbildung 10.11_b). Die Screenshots beziehen sich hier auf die Version dieses Trainings, die für die Philippinen erstellt wurde - Sie können natürlich analog für die deutschen Daten vorgehen.</p>
+
+<p><img src="media/fig1011_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Bild 10.11b - Einstellen der Parameter für die Erweiterung Load Them All (Vektoren und Raster)</p>
+
+<p>Die oben angegebenen Parameter stellen ein Beispiel auf der Grundlage der verfügbaren Struktur dar. Sie können sie nach eigenem Ermessen auf der Grundlage Ihrer Dateien auf Ihrem Computer ändern.</p>
+
+<p>Beachten Sie, dass nach Abschluss der</p>
+
+<p>Die Ergebnisse der Ausführung der Erweiterung Load Them All mit den oben genannten Parametern sind in Abbildung 10.11c (Vektoren) und 10.11d (Raster) dargestellt.</p>
+
+<p><img src="media/fig1011_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.11c - Verwendung der Erweiterung Load Them All zum Laden mehrerer Vektoren</p>
+
+<p><img src="media/fig1011_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Bild 10.11d - Erweiterung “Load Them All” zum Laden mehrerer Raster</p>
+
+<p>Eine ausführliche Beschreibung der Funktionen der Erweiterungen sowie eine umfassendere Anleitung finden Sie auf der Seite Load the All <a href="https://github.com/gacarrillor/loadthemall">Website (englischsprachig)</a>.</p>
+
+<h4 id="raster-tracer">Raster Tracer</h4>
+
+<p><img src="media/fig1012_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Bild 10.12a - Die Erweiterung Raster tracer</p>
+
+<p>Der Raster Tracer kann eine sehr nützliche Erweiterung sein, wenn Sie Vektordaten aus einer nicht maschinenlesbaren Karte extrahieren wollen. Diese Tätigkeit wird in der Regel an gescannten älteren topographischen Karten durchgeführt, aus denen wir verschiedene Informationen extrahieren wollen, um sie in einem Informationssystem zu speichern, zu verarbeiten und zu visualisieren. Ein gutes Beispiel ist die Digitalisierung von topografischen Karten, um Höhenlinien zu extrahieren und in einem GIS ein 3D-Modell des Reliefs zu erstellen.</p>
+
+<p>Obwohl dies heute, mit dem Aufkommen digitaler Geländemodelle, die aus Satellitenbildern gewonnen werden, kein Thema mehr ist, wird die Digitalisierung immer noch ausgiebig genutzt. Die prominenteste Anwendung ist die Extraktion von Informationen aus alten Karten. Historische Karten bieten uns einen Einblick in die Zeit, bevor wir Satelliten hatten, um unsere Wälder und Landbedeckungsveränderungen zu überwachen. Da diese kartografischen Dokumente ursprünglich auf Papier waren, muss man, um die Informationen mit moderner Technologie nutzen zu können, digitalisieren.</p>
+
+<p>Suchen Sie mit Hilfe der Erweiterungsverwaltung den Raster Tracer und installieren Sie ihn. Diese Erweiterung fügt QGIS eine halbautomatische Fähigkeit hinzu, Linienmerkmale der zugrundeliegenden Rasterkarte zu verfolgen, indem man auf ihre Wendepunkte auf der Rasterkarte klickt. Nach der Installation sollte ein neues Piktogramm in Ihrer Symbolleiste erscheinen.</p>
+
+<p>Um die Erweiterung verwenden zu können, benötigen wir mindestens 2 Layer - einen Raster-Layer und einen Vektor-Layer, der die Daten erfasst. Wir haben hier beispielhaft eine topographische Karte von den Philippinen, 1:50k auf der offiziellen Website der National Mapping and Resources Information Authority gefunden. Leider ist die <a href="http://www.namria.gov.ph/3131-IIIAngelesCity.html">Karte</a> nicht georeferenziert. Zu Demonstrationszwecken machen wir weiter, ohne dieses Problem zu beheben, aber bitte beachten Sie: Vor der Digitalisierung von Vektoren aus einer Rasterkarte ist es entscheidend, dass diese korrekt georeferenziert ist. Andernfalls ist die - durchaus zeitaufwendige - Arbeit nutzlos.</p>
+
+<p>Bringen Sie also die topographische Karte von Angeles City ein (<code class="language-plaintext highlighter-rouge">Layer - Layer hinzufügen - Rasterlayer hinzufügen...</code>).</p>
+
+<p>Als nächstes erstellen wir einen MultiString-Vektor-Layer, in dem alle Linienobjekte, die wir aus der topographischen Karte extrahieren, gespeichert werden (Layer - Layer erstellen - Neuer GeoPackage Layer..). Erstellen Sie einen MultiLine-Vektor und speichern Sie ihn unter dem Namen tracer_lines. Wählen Sie die Projektion EPSG: 3123 - die offizielle Projektion der Region. Starten Sie den Bearbeitungsmodus darauf (<code class="language-plaintext highlighter-rouge">Rechtsklick - Bearbeitungsstatus umschalten</code>).</p>
+
+<p>Klicken Sie auf das Piktogramm RasterTracer und stellen Sie die Parameter ein, wie in Abbildung 10.12b. Wählen Sie die Farbe der Konturlinien mit Hilfe des Farbwählers, der sich beim Anklicken der Option Trace color öffnet.</p>
+
+<p><img src="media/fig1012_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.12b - Einstellen der RasterTracer-Parameter</p>
+
+<p>Jetzt müssen Sie nur noch mit dem Digitalisieren beginnen. Nachdem Sie sich vergewissert haben, dass Ihr Vektorraster bearbeitbar ist und die Erweiterung durch erneutes Anklicken aktiviert ist, klicken Sie auf die Wendepunkte der Konturlinie, die wir extrahieren wollen (siehe Abbildung 10.112c).</p>
+
+<p><img src="media/fig1012_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.12c - Klicken auf die Wendepunkte zum Zeichnen der Linie mit RasterTracer</p>
+
+<p>Abbildung 10.12d zeigt das Ergebnis.</p>
+
+<p><img src="media/fig1012_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.12d - Halbautomatisch gezeichnete Linie durch Folgen der angegebenen Farbe.</p>
+
+<h4 id="active-fire">Active Fire</h4>
+
+<p><img src="media/fig1013_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.13a - Die Erweiterung “Active Fire”</p>
+
+<p>Erweiterungen sind nicht nur dafür gedacht, mit Daten zu arbeiten, die Sie selbst haben, sondern auch, um Datensätze einzubinden, die von anderen Institutionen oder Personen produziert und über standardisierte Web-Mapping-Dienste zur Verfügung gestellt werden.</p>
+
+<p>Ein gutes Beispiel ist die Erweiterung Active Fire. Dieses wurde entwickelt, um QGIS-Benutzer:innen die Möglichkeit zu geben, schnell, intuitiv und ohne jeglichen Aufwand Brände der letzten 24 Stunden in einer beliebigen Region von Interesse anzuzeigen. Die Feuerdaten werden von der NASA produziert und für jede:n frei verfügbar gemacht. Die Rohdaten stammen von 2 Satelliten: dem Moderate Resolution Imaging Spectroradiometer (<a href="https://modis.gsfc.nasa.gov/">MODIS</a>) (<a href="https://earthdata.nasa.gov/earth-observation-data/near-real-time/firms/c6-mcd14dl">MCD14DL</a>) und der Visible Infrared Imaging Radiometer Suite (<a href="https://www.jpss.noaa.gov/viirs.html">VIIRS</a>) 375 m (<a href="https://earthdata.nasa.gov/earth-observation-data/near-real-time/firms/v1-vnp14imgt">VNP14IMGTDL_NRT</a> und <a href="https://earthdata.nasa.gov/earth-observation-data/near-real-time/firms/vj114imgtdl-nrt">VJ114IMGTDL_NRT</a>).</p>
+
+<p>Um sie zu finden, öffnen Sie die Erweiterungsverwaltung und schreiben Sie fire. Nach der Installation erscheint ein neues rotes Piktogramm in Ihrer QGIS-Symbolleiste. Wenn Sie darauf klicken, erscheint ein neues Fenster, in dem Sie auswählen können, von welchem Sensor Sie die Feuerpixel in den letzten 24 Stunden ermittelt haben wollen (siehe Abbildung 10.13b).</p>
+
+<p><img src="media/fig1013_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.13b - Verwendung der Erweiterung Active Fire zum Laden von NASA-Feuerprodukten in QGIS</p>
+
+<p>Die Erweiterung berechnet auch die Anzahl der registrierten Feuerpixel.</p>
+
+<h4 id="qgis2web">qgis2web</h4>
+
+<p><img src="media/fig1014_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.14a - Das qgis2web Plugin</p>
+
+<p>Bei qgis2web handelt es sich um eine Erweiterung, mit der Benutzer:innen QGIS-Projekte als <strong>Webkarte</strong> exportieren können.</p>
+
+<p>Eine Webkarte ist eine interaktive Darstellung von geografischen Informationen, die in Browsern geöffnet werden kann. Wir interagieren täglich mit solchen Darstellungen, man denke nur an OpenStreetMap, Google Maps, Waze, etc.</p>
+
+<p>Dieses Plugin ermöglicht uns, sehr schnell eine Karte vorzubereiten und zu exportieren, die im Internet veröffentlicht werde kann. Dies funktioniert über die Web-Technologien von <a href="https://openlayers.org/">OpenLayer3</a> oder <a href="https://leafletjs.com/">Leaflet</a>. Qgis2web tut sein Bestes, um ein QGIS-Projekt zu interpretieren und HTML, Javascript und CSS zu exportieren, um eine Webkarte zu erstellen, die so nah wie möglich am QGIS-Projekt ist.</p>
+
+<p>Nach der Installation des qgis2web-Plugins erscheint ein neues Icon in der QGIS-Symbolleiste, wie es auch im Plugin-Manager abgebildet ist. Wenn Sie darauf klicken, öffnet sich ein Fenster, wie in Abbildung 10.14b.</p>
+
+<p><img src="media/fig1014_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.14b - Auswählen, was Ihre Karte im Browser zeigen soll.</p>
+
+<p>Die Benutzeroberfläche ist intuitiv, aber bedenken Sie, je größer die Datensätze sind, desto länger dauert die Vorbereitung und der Export. Nachdem Sie ausgewählt haben, wohin exportiert werden soll, klicken Sie auf den Button “Export”, um den Vorgang abzuschließen (siehe Abbildung 10.14c).</p>
+
+<p>Der exportierte Ordner enthält mehrere Dateien, je nachdem, welche WebMapping-Technologie gewählt wurde - Leaflet oder Openlayers3. Ein Doppelklick auf die Datei index.html öffnet die exportierte Karte in Ihrem Browser (siehe Abbildung 10.14d).</p>
+
+<p><img src="media/fig1014_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.14d - Öffnen der Datei index.html in Ihrem Browser</p>
+
+<p>Eine detaillierte Beschreibung der Fähigkeiten des Plugins, zusammen mit einem umfassenderen Tutorial, finden Sie auf der qgis2web <a href="https://github.com/tomchadwin/qgis2web">Website (englischsprachig)</a>.</p>
+
+<h4 id="dataplotly">DataPlotly</h4>
+
+<h4 id="datenplotly">DatenPlotly</h4>
+
+<p><img src="media/fig1015_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.14a - Das DataPlotly-Plugin</p>
+
+<p>Das DataPlotly-Plugin wurde speziell entwickelt, um interaktive Graphen der geladenen Vektordaten in QGIS zu unterstützen. Das Plugin basiert auf einer Python-Bibliothek namens Plotly, die sehr leistungsfähig ist und die Möglichkeit bietet, eine Vielzahl von interaktiven Diagrammen zu erstellen: Liniendiagramme, Streudiagramme, Flächendiagramme, Balkendiagramme, Fehlerbalken, Boxplots, Histogramme, Heatmaps, Subplots, mehrere Achsen, Polardiagramme und Blasendiagramme. Weitere Informationen zu dieser speziellen py-Bibliothek finden Sie auf der offiziellen <a href="https://plotly.com/python/">Website</a>.</p>
+
+<p>Installieren Sie das Plugin über den Plugin-Manager und laden Sie einige Vektorlayer zur Visualisierung. In den Screenshots werden wir uns wieder auf das Beispiel von den Philippinen beziehen, Sie können aber auch hier wieder analog für Mittelsachsen vorgehen (nutzen Sie dafür die Daten aus Modul 8). Laden Sie zwei unterschiedliche Layer:</p>
+
+<ul>
+  <li>Wasserstraßen (Linien);</li>
+  <li>Besiedelte Orte (Punkte);</li>
+</ul>
+
+<p>Lassen Sie uns ein interaktives Diagramm vorbereiten, das zeigt, wie viele Flüsse vs. Kanäle vs. Bäche vs. Abwasserkanäle wir in unserem Datensatz haben.</p>
+
+<p>Wenn Sie auf das jeweilige Piktogramm klicken, öffnet sich ein neues Fenster, siehe Abbildung 10.24.</p>
+
+<p><img src="media/fig1015_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15b - DataPlotly-Fenster/Panel.</p>
+
+<p>Als nächstes stellen Sie die Parameter ein, wie in Abbildung 10.15c.</p>
+
+<p><img src="media/fig1015_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15c - Einrichten der Parameter für das Kreisdiagramm, das die Arten von Wasserstraßen darstellt</p>
+
+<p>Wählen Sie den Wasserwege-Vektorlayer, aus dem die geplotteten Daten extrahiert werden sollen, Grouping field - fclass, Y-field - length. Um sicherzustellen, dass alle Segmente eine Länge haben, gehen Sie in die Attributtabelle des Vektorlayers und erstellen Sie mit dem Feldrechner eine neue Spalte mit der Formel <code class="language-plaintext highlighter-rouge">round($length)</code> wie Sie es auch schon in Modul 8 gelernt haben.  Wählen Sie anschließend beim Plot-Typ ‘Singe Plot’ und klicken Sie unten rechts auf die Schaltfläche ‘Create Plot’. Ihr Ergebnis sollte wie in Abbildung 10.15d aussehen.</p>
+
+<p><img src="media/fig1015_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15d - Kreisdiagramm der Wasserstraßenarten nach Länge.</p>
+
+<p>Wenn Sie mit der Maus über jedes Kreisdiagrammsegment fahren, erscheint ein Popup-Fenster, das den Namen (aus der Spalte fclass), die Summe der Längen und den prozentualen Anteil an der Gesamtsumme anzeigt.</p>
+
+<p>Eine wichtige Funktionalität von DataPlotly ist die Verbindung mit der QGIS Kartenansicht. Klicken Sie auf einen der Abschnitte des Kreisdiagramms und Sie sollten sehen, dass einige Features <strong>automatisch</strong> in der Kartenansicht ausgewählt werden (siehe Abbildung 10.15e).</p>
+
+<p><img src="media/fig1015_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15e - Hervorhebung von Daten in DataPlotly und der Kartenansicht</p>
+
+<p>Das bedeutet auch, dass Sie Ihren Plot interaktiv aktualisieren können, um z. B. nur die ausgewählten Features anzuzeigen. Um das zu testen, markieren Sie nur einen Teil der Wasserstraßen in Ihrer Kartenansicht, dann gehen Sie in DataPlotly auf den ersten Reiter und setzen bei den Plot-Parametern ein Häkchen bei der Option ‘only selected features’ (siehe Abbildung 10.15f).</p>
+
+<p><img src="media/fig1015_f.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15f - Interaktives Aktualisieren des Plots, um nur ausgewählte Features anzuzeigen.</p>
+
+<p>Klicken Sie anschließend auf die Schaltfläche “Update plot”. Das Ergebnis sollte ungefähr so aussehen wie in Abbildung 10.29.</p>
+
+<p><img src="media/fig1015_g.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15g - Aktualisieren Sie den Plot, um nur die ausgewählten Features auf der Kartenleinwand anzuzeigen.</p>
+
+<p>Darüber hinaus bietet DataPlotly eine Exportfunktion - entweder in eine .pdf-Datei oder in eine .html-Datei. Die entsprechenden Schaltflächen befinden sich am unteren, rechten Rand des DataPlotly-Fensters, siehe Abbildung 10.15h.</p>
+
+<p><img src="media/fig1015_h.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15h - Exportmöglichkeiten von DataPlotly</p>
+
+<p>Der Export als HTML-Datei ermöglicht es, eine Vielzahl von Datenplots für die Veröffentlichung im Internet vorzubereiten (siehe Abbildung 10.15i).</p>
+
+<p><img src="media/fig1015_i.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15i - Verwendung eines Browsers zum Öffnen der von DataPlotly exportierten HTML-Datei.</p>
+
+<p>Das Plugin ist auch sehr gut dokumentiert und es gibt ein Hilfemenü für jeden Plot-Typ. Sie können darauf zugreifen, indem Sie auf den vierten Reiter in DataPlotly klicken (siehe Abbildung 10.15j).</p>
+
+<p><img src="media/fig1015_j.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15j - Hilfemenü für jeden Plot-Typ, das über das Plugin-Fenster zugänglich ist.</p>
+
+<p>Durch die direkte, interaktive Verknüpfung mit den in QGIS geladenen Datensätzen können beim Erstellen eines Plots auch Ausdrücke verwendet werden. Um diese Fähigkeit zu testen, werden wir einen Plot auf Basis des Vektorlayers “Besiedelte Orte” erstellen. Stellen Sie die folgenden Parameter ein: Typ: Balkenplot, Layer: Besiedelte Orte, X_Feld: is_in, Y_Feld - öffnen Sie den Feldrechner und fügen Sie <code class="language-plaintext highlighter-rouge">"Bevölkerung" ist nicht null </code> ein (siehe Abbildung 10.15k und Abbildung 10.15l).</p>
+
+<p><img src="media/fig1015_k.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15k - Öffnen des Feldeditors in DataPlotly basierend auf Attributen des ausgewählten QGIS-Layers, um einen Ausdruck zur Filterung dessen, was der Plot anzeigen wird, anzuwenden</p>
+
+<p><img src="media/fig1015_l.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15l - Einfügen eines Ausdrucks in den Feldrechner</p>
+
+<p>Das Ergebnis sollte wie in Abbildung 10.35 aussehen. .</p>
+
+<p><img src="media/fig1015_m.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15m - DataPlotly-Ergebnis der Filterung nach Ausdruck</p>
+
+<p>Wenn wir diesen Plot interpretieren sollen, zeigt er uns, dass unter allen Provinzen, in denen besiedelte Orte registriert wurden, das Attribut Bevölkerung nur in 3 Regionen überhaupt gesetzt ist: Alaminos, Sual, und Bagac. Man kann diese Schlussfolgerung leicht testen, indem man in die Attributtabelle schaut.</p>
+
+<p>DataPlotly bietet auch die Möglichkeit, Subplots zu erstellen, was bedeutet, dass mehrere Plots in einer einzigen Abbildung dargestellt werden können.</p>
+
+<p>Um diese Funktionalität zu testen, werden wir den Vektorlayer “Besiedelte Orte” verwenden. Wir haben die folgenden Attribute von Interesse: <code class="language-plaintext highlighter-rouge">place</code> = Typ des Ortes (Stadt, Dorf, etc.), <code class="language-plaintext highlighter-rouge">is_in</code> = Name der nächstgrößeren Verwaltungseinheit, zu der er gehört (falls bekannt), <code class="language-plaintext highlighter-rouge">population</code> = (Bevölkerungszahl) und <code class="language-plaintext highlighter-rouge">name</code> = der Name des Ortes. Wir werden in der gleichen Abbildung zwei Datendiagramme integrieren: eines, um uns zu zeigen, wie viele der besiedelten Orte in jede Kategorie von <code class="language-plaintext highlighter-rouge">place</code> fallen und das zweite, wie sich die Bevölkerung auf die 4 Arten von <code class="language-plaintext highlighter-rouge">place</code> aufteilt.</p>
+
+<p><img src="media/fig1015_n.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15n - Einstellen der Parameter für die erste Darstellung - Siedlungstypen nach ihrer Anzahl</p>
+
+<p><img src="media/fig1015_o.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abb. 10.15o - Einstellen der Parameter für das zweite Diagramm - Siedlungstypen nach Einwohnerzahlen.</p>
+
+<p><img src="media/fig1015_p.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.15p - Subplots in einer Reihe</p>
+
+<p>Eine ausführliche Beschreibung der Möglichkeiten des Plugins sowie ein umfassenderes Tutorial finden Sie auf der DataPlotly <a href="https://github.com/ghtmtt/DataPlotly">Website (englischsprachig)</a>.</p>
+
+<h4 id="quickmapservices--openlayers">QuickMapServices / OpenLayers</h4>
+
+<p><img src="media/fig1016_a1.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p><img src="media/fig1016_a2.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.16a - QuickMapServices-Erweiterung; 10.16b - OpenLayers-Erweiterung</p>
+
+<p>Diese beiden Erweiterungen sind außerordentlich nützlich, wenn Sie Basiskarten zu Ihrem QGIS-Projekt hinzufügen möchten. So ein Basislayer hilft zum Beispiel, um die korrekte Positionierung eines neu Vektorlayers zu überprüfen. QuickMapServices erlabut es uns, mit nur 2 Klicks Basiskarten-Layer von verschiedenen Anbietern, wie OpenStreetMap, NASA, Bing oder Google Maps, in seinen Desktop-Client zu laden.</p>
+
+<p>Installieren Sie beide Erweiterungen über die Erweiterungsverwaltung. Die Erweiterungen erscheinen dann im Menü unter “Web” (siehe Abbildung 10.16b).</p>
+
+<p><img src="media/fig1016_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.16b - Menüs der Erweiterungen QuickMapServices und OpenLayers.</p>
+
+<p>Die Verwendung dieser Plugins ist ziemlich einfach: Sie klicken einfach auf den Layer, den Sie in Ihre Kartenansicht bringen möchten, und die Erweiterung macht den Rest.</p>
+
+<p>Abbildung 10.16c zeigt die Stamen Toner Karte als Basiskarte für einige der in Modul 8 und 9 verwendeten Daten aus Mittelsachsen.</p>
+
+<p><img src="media/fig1016_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.16c - Verwendung der OpenLayers-Erweiterung.</p>
+
+<p>Abbildung 10.16d zeigt die perfekte Ausrichtung der in die QGIS Kartenansicht geladenen Basiskarte unter Verwendung der OpenLayers Erweiterung. Obwohl die 2 Layer nicht in der gleichen Projektion sind, erlaubt QGIS eine Projektion on-the-fly, so dass eine Überlagerung möglich ist. Hier sehen wir auch, dass die Stamen Toner Karte eine relativ reduzierte Ansicht nutzt und viele der kleineren Straßen in der Darstellung auslässt.</p>
+
+<p><img src="media/fig1016_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.16d - Geladene Vektordaten (Straßen), überlagert mit einer Stamen Basiskarte</p>
+
+<p>Eine detaillierte Beschreibung der Fähigkeiten der Erweiterungen sowie ein umfassenderes Tutorial finden Sie auf deren (englischsprachigen) Webseite: <a href="https://nextgis.com/blog/quickmapservices/">QuickMapServices</a> und <a href="https://github.com/sourcepole/qgis-openlayers-plugin">OpenLayer Plugin</a>.</p>
+
+<h4 id="table-to-style">Table to Style</h4>
+
+<p><img src="media/fig1017_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.17a - Das Table to Style-Plugin</p>
+
+<p>Dieses Plugin ist nützlich für Situationen, in denen Sie einen Rasterdatensatz haben, in dem bestimmte Pixelwerte zur Kategorisierung von Daten genutzt werden. Wir kennen das aus dem Modul 9 in dem wir mit den Landbedeckungsdaten gearbeitet haben (siehe Abbildung 10.17b).</p>
+
+<p><img src="media/fig1017_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.17b - Beispielhafte Situationen, in denen Pixelwerte einen Wert kategorisieren</p>
+
+<p>Vom Anbieter dieses Produkts, das auf Satellitenbildern basiert, werden auch die Pixelwerte und die zugehörigen Farben zur Verfügung gestellt:</p>
+
+<table>
+  <tr>
+   <td><strong>Value</strong>
+   </td>
+   <td><strong>Color</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>0
+   </td>
+   <td>#282828
+   </td>
+   <td>Unknown. No or not enough satellite data available.
+   </td>
+  </tr>
+  <tr>
+   <td>20
+   </td>
+   <td>#FFBB22
+   </td>
+   <td>Shrubs. Woody perennial plants with persistent and woody stems and without any defined main stem being less than 5 m tall. The shrub foliage can be either evergreen or deciduous.
+   </td>
+  </tr>
+  <tr>
+   <td>30
+   </td>
+   <td>#FFFF4C
+   </td>
+   <td>Herbaceous vegetation. Plants without persistent stem or shoots above ground and lacking definite firm structure. Tree and shrub cover is less than 10 %.
+   </td>
+  </tr>
+  <tr>
+   <td>40
+   </td>
+   <td>#F096FF
+   </td>
+   <td>Cultivated and managed vegetation / agriculture. Lands covered with temporary crops followed by harvest and a bare soil period (e.g., single and multiple cropping systems). Note that perennial woody crops will be classified as the appropriate forest or shrub land cover type.
+   </td>
+  </tr>
+  <tr>
+   <td>50
+   </td>
+   <td>#FA0000
+   </td>
+   <td>Urban / built up. Land covered by buildings and other man-made structures.
+   </td>
+  </tr>
+  <tr>
+   <td>60
+   </td>
+   <td>#B4B4B4
+   </td>
+   <td>Bare / sparse vegetation. Lands with exposed soil, sand, or rocks and never has more than 10 % vegetated cover during any time of the year.
+   </td>
+  </tr>
+  <tr>
+   <td>70
+   </td>
+   <td>#F0F0F0
+   </td>
+   <td>Snow and ice. Lands under snow or ice cover throughout the year.
+   </td>
+  </tr>
+  <tr>
+   <td>80
+   </td>
+   <td>#0032C8
+   </td>
+   <td>Permanent water bodies. Lakes, reservoirs, and rivers. Can be either fresh or salt-water bodies.
+   </td>
+  </tr>
+  <tr>
+   <td>90
+   </td>
+   <td>#0096A0
+   </td>
+   <td>Herbaceous wetland. Lands with a permanent mixture of water and herbaceous or woody vegetation. The vegetation can be present in either salt, brackish, or fresh water.
+   </td>
+  </tr>
+  <tr>
+   <td>100
+   </td>
+   <td>#FAE6A0
+   </td>
+   <td>Moss and lichen.
+   </td>
+  </tr>
+  <tr>
+   <td>111
+   </td>
+   <td>#58481F
+   </td>
+   <td>Closed forest, evergreen needle leaf. Tree canopy &gt;70 %, almost all needle leaf trees remain green all year. Canopy is never without green foliage.
+   </td>
+  </tr>
+  <tr>
+   <td>112
+   </td>
+   <td>#009900
+   </td>
+   <td>Closed forest, evergreen broad leaf. Tree canopy &gt;70 %, almost all broadleaf trees remain green year round. Canopy is never without green foliage.
+   </td>
+  </tr>
+  <tr>
+   <td>113
+   </td>
+   <td>#70663E
+   </td>
+   <td>Closed forest, deciduous needle leaf. Tree canopy &gt;70 %, consists of seasonal needle leaf tree communities with an annual cycle of leaf-on and leaf-off periods.
+   </td>
+  </tr>
+  <tr>
+   <td>114
+   </td>
+   <td>#00CC00
+   </td>
+   <td>Closed forest, deciduous broad leaf. Tree canopy &gt;70 %, consists of seasonal broadleaf tree communities with an annual cycle of leaf-on and leaf-off periods.
+   </td>
+  </tr>
+  <tr>
+   <td>115
+   </td>
+   <td>#4E751F
+   </td>
+   <td>Closed forest, mixed.
+   </td>
+  </tr>
+  <tr>
+   <td>116
+   </td>
+   <td>#007800
+   </td>
+   <td>Closed forest, not matching any of the other definitions.
+   </td>
+  </tr>
+  <tr>
+   <td>121
+   </td>
+   <td>#666000
+   </td>
+   <td>Open forest, evergreen needle leaf. Top layer- trees 15-70 % and second layer- mixed of shrubs and grassland, almost all needle leaf trees remain green all year. Canopy is never without green foliage.
+   </td>
+  </tr>
+  <tr>
+   <td>122
+   </td>
+   <td>#8DB400
+   </td>
+   <td>Open forest, evergreen broad leaf. Top layer- trees 15-70 % and second layer- mixed of shrubs and grassland, almost all broadleaf trees remain green year round. Canopy is never without green foliage.
+   </td>
+  </tr>
+  <tr>
+   <td>123
+   </td>
+   <td>#8D7400
+   </td>
+   <td>Open forest, deciduous needle leaf. Top layer- trees 15-70 % and second layer- mixed of shrubs and grassland, consists of seasonal needle leaf tree communities with an annual cycle of leaf-on and leaf-off periods.
+   </td>
+  </tr>
+  <tr>
+   <td>124
+   </td>
+   <td>#A0DC00
+   </td>
+   <td>Open forest, deciduous broadleaf. Top layer- trees 15-70 % and second layer- mixed of shrubs and grassland, consists of seasonal broadleaf tree communities with an annual cycle of leaf-on and leaf-off periods.
+   </td>
+  </tr>
+  <tr>
+   <td>125
+   </td>
+   <td>#929900
+   </td>
+   <td>Open forest, mixed.
+   </td>
+  </tr>
+  <tr>
+   <td>126
+   </td>
+   <td>#648C00
+   </td>
+   <td>Open forest, not matching any of the other definitions.
+   </td>
+  </tr>
+  <tr>
+   <td>200
+   </td>
+   <td>#000080
+   </td>
+   <td>Oceans, seas. Can be either fresh or salt-water bodies.
+   </td>
+  </tr>
+</table>
+
+<p>Wenn ein neuer Datensatz - Raster oder Vektor - geladen wird, weist QGIS ihm eine zufällige visuelle Darstellung zu. Es liegt an den Benutzer:innen, geeignete Farben und Stylisierungen der Daten zu definieren. Weitere Informationen zum Styling von Layern finden Sie in Modul 4.</p>
+
+<p>Um das Table to Style Plugin zu testen, verwenden wir den Rasterdatensatz LandCover2019, der auch in Modul Nr. 9 verwendet wird. Wenn Sie das Raster in QGIS laden, sollten Sie eine ähnliche Darstellung wie in Abbildung 10.17c erhalten.</p>
+
+<p><img src="media/fig1017_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.17c - QGIS ordnet den Pixelwerten zufällig Farben zu</p>
+
+<p>Vom Datenanbieter wissen wir, dass es für jeden Pixelwert eine eindeutig zugewiesene Farbe gibt und im Bereich Landbedeckung stellen diese Farben bereits Konventionen dar, genau wie in der klassischen Kartographie. Wälder werden mit einer bestimmten Art von Grün dargestellt, Weiden mit einer anderen, Meer wird mit einer anderen Art von Blau dargestellt als Binnengewässer und so weiter. Im schlimmsten Fall müsste man alle diese Farben manuell zuordnen. Das Table to Style Plugin löst dieses Problem jedoch automatisch und in Sekundenschnelle.</p>
+
+<p>Gehen Sie in die Erweiterungsverwaltung und installieren Sie das Table to Style Plugin. Es erscheint ein neues Symbol in Ihrer Symbolleiste. Wenn Sie es öffnen, sollte ein Einstellungsfenster erscheinen, wie in Abbildung 10.17d.</p>
+
+<p><img src="media/fig1017_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.17d - Table2style-Fenster</p>
+
+<p>Das Plugin benötigt 2 Parameter - eine Rasterebene und eine Attributtabelle mit Pixelwerten, Beschriftung und Farbcodes in einem der drei Systeme: RGB, HSV oder Hex. In unserer Tabelle oben haben wir Hex-Codes für die zugeordneten Farben. Laden Sie die CSV-Datei wie gewohnt als Layer - die Daten haben dabei natürlich keine Geometrie. Die Tabelle der LandCover-Werte sollte wie in Abbildung 10.17e aussehen.</p>
+
+<p><img src="media/fig1017_e.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Bild 10.17e - Attributtabelle mit Pixelwerten, Farbcodes und Beschreibung für Land Cover</p>
+
+<p>Werfen wir nun einen Blick auf den Rasterdatensatz. Die Table to Style Erweiterung funktioniert nur bei einem 1-Band-Raster, da es sich um eine 1 zu 1 Verbindung handelt: Pixelwert - Farbcode. Wenn mehr Kanäle vorhanden wären, wüsste nicht, welches es wählen sollte. Wenn wir jedoch die Eigenschaften der Ebene LandCover2019 überprüfen, stellen wir fest, dass es 3 Kanäle gibt (<code class="language-plaintext highlighter-rouge">Eigenschaften - Informationen - nach unten zu Bänder scrollen</code>). Da wir nur Kanal 1 - discrete_classification - benötigen, werden wir den Raster Calculator verwenden, um es zu extrahieren. Fügen Sie dort im Ausdrucksfeld nur “LandCover2019@1” ein. Weitere Details zur Arbeit mit Rastern finden Sie in Modul 9.</p>
+
+<p>Jetzt haben wir alles, was wir brauchen, um das Plugin zu testen. Stellen Sie die Parameter wie in Abbildung 10.17f ein.</p>
+
+<p><img src="media/fig1017_f.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.17f - Einstellen der Parameter des Table to Style Plugins für den Datensatz LandCover_2019-Band-1</p>
+
+<p>Das Ergebnis sollte wie in Abbildung 10.17g aussehen.</p>
+
+<p><img src="media/fig1017_g.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.17g - Automatisch gestylter Rasterdatensatz mit Table to Style -Plugin</p>
+
+<p>Eine ausführliche Beschreibung der Fähigkeiten des Plugins sowie ein umfassenderes Tutorial finden Sie auf der Webseite des Plugins Table 2 Style.</p>
+
+<h4 id="ors-tool">ORS Tool</h4>
+
+<p><img src="media/fig1018_a.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Bild 10.48a - Das ORS Tools-Plugin</p>
+
+<p>In unserer letzten Erweiterungen wollen wir Ihnen die Möglichkeiten der vernetzten Welt der GIS-Daten, -Tools und -Dienste zu zeigen. Wir haben bereits gesehen, dass es Erweiterungen gibt, die uns dabei helfen können, unsere QGIS-Daten von anderen Anbietern zu laden, ohne dass wir sie mühsam herunterladen, speichern und öffnen müssen (OpenLayers-Plugin , Active Fire). Die Erweiterung ORS Tools wurde jedoch entwickelt, um den Zugriff auf einen externen Routing-Dienst zu ermöglichen - den openrouteservice.org, der auf OpenStreetMap basiert.</p>
+
+<p><strong>Routing</strong> ist der Prozess der Auswahl eines Pfades für den Verkehr in einem Netzwerk oder zwischen oder über mehrere ausgewählte Punkte.</p>
+
+<p>Die Erweiterung ermöglicht Routing, Isochronen und Matrixberechnungen, entweder interaktiv in der Kartenansicht oder aus Punktdateien innerhalb des Verarbeitungsrahmens.</p>
+
+<p>Installieren Sie mit der Erweiterungsverwaltung das Plugin “ORS Tools”. Ein neues Piktogramm erscheint in Ihrer Werkzeugleiste. Doppelklicken Sie darauf, um es zu öffnen (siehe Abbildung 10.18b).</p>
+
+<p><img src="media/fig1018_b.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.18b - Fenster “ORS Tools” öffnen.</p>
+
+<p>Wie bereits erwähnt, verwendet diese Erweiterung eine externe Datenbank - OpenStreetMap - und externe Algorithmen, die in einen Dienst - openrouteservice - angeboten werden. Um eine Verbindung zu diesem externen Dienst herstellen zu können, müssen wir ein Konto auf deren Webseite erstellen und einen <strong>API-Key anfordern</strong>.</p>
+
+<p>Ein API-Schlüssel/API-Key/API-Token ist eine eindeutige Kennung, die zur Authentifizierung gegenüber einer API verwendet wird. Die API ist wie Zugang zum Innenleben einer Software, ein programmatischer Zugang zu deren Prozessen und Algorithmen. Um also den openrouteservice durch QGIS zu nutzen, werden wir nach einem <em>Schlüssel</em> fragen.</p>
+
+<p>Fahren Sie mit den folgenden Schritten fort:</p>
+
+<ol>
+  <li>Klicken Sie auf die Schaltfläche Sign Up im Fenster ORS Tools (Abbildung 10.49).</li>
+</ol>
+
+<p><img src="media/fig1018_c.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Bild 10.18c - Schaltfläche “Sign in”</p>
+
+<ol>
+  <li>Legen Sie auf der geöffneten openrouteservice-Website ein kostenloses Konto an.</li>
+</ol>
+
+<p><img src="media/fig1018_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Bild 10.18d - Openrouteservice-Kontoseite</p>
+
+<ol>
+  <li>Nach dem Anlegen des Kontos erhalten Sie eine E-Mail, die Sie über den soeben erhaltenen kostenlosen Zugang informiert.</li>
+</ol>
+
+<p><img src="media/fig1018_d.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.18e - E-Mail von openrouteservice erhalten</p>
+
+<ol>
+  <li>Melden Sie sich an Ihrem neu erstellten Konto an und fordern Sie ein Token an.</li>
+</ol>
+
+<p><img src="media/fig1018_f.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Bild 10.18f - openrouteservice-Token anfordern</p>
+
+<ol>
+  <li>Nachdem Ihr Token erstellt wurde, klicken Sie auf die lange alphanumerische Zeichenfolge unterhalb des Namensschlüssels. Es erscheint eine Meldung, dass es kopiert wurde.</li>
+  <li>Kehren Sie zu QGIS zurück und fügen Sie den kopierten API-Schlüssel ein.</li>
+</ol>
+
+<p><img src="media/fig1018_g.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.18g - Einfügen des openrouteserviceAPI-Schlüssels in Ihr QGIS</p>
+
+<p>An diesem Punkt sollte Ihr QGIS bereit sein, Routen mit openrouteservice und OpenStreetMap zu berechnen. Um die grundlegenden Fähigkeiten zu testen, laden Sie den Layer der Gebäude aus Mittelsachsen. Stellen Sie sicher, dass Sie in EPSG:3857 arbeiten - hierfür kann es nötig sein, dass Sie den Gebäudelayer voerst in das KBS EPSG:5650 reporojizieren. Nachdem Sie den Layer geladen haben, beginnen Sie mit dem Einfügen der Routingpunkte. Öffnen Sie die ORS-Tools, und drücken Sie die grüne + Taste (siehe Abbildung 10.18h).</p>
+
+<p><img src="media/fig1018_h.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Bild 10.18h - Einfügen der Routingpunkte mit den ORS-Tools.</p>
+
+<p>Wählen Sie den Routing-Algorithmus Traveling Salesman und klicken Sie auf Anwenden. Nach wenigen Augenblicken ist ein neuer Vektor-Layer erstellt worden: Routes_ORS.</p>
+
+<p><img src="media/fig1018_i.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.18i - Ergebnis der Ausführung der ORS Tools.</p>
+
+<p><img src="media/fig1018_j.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Abbildung 10.18j - Die berechnete Route, mit eine OpenStreetMap Hintergrundkarte</p>
+
+<p>Die Ergebnisse der ORS-Tools hängen stark von der Qualität der verwendeten Datenbanken ab, in diesem Fall - der OpenStreetMap.</p>
+
+<p>Die Erweiterung, wie auch der openroutingservice, hat noch mehr zu bieten, aber wir überlassen es Ihnen, das auf Ihrer GIS-Reise zu entdecken.</p>
+
+<h4 id="quizfragen-1"><strong>Quizfragen</strong></h4>
+
+<ol>
+  <li>Können QGIS-Erweiterungen außerhalb der QGIS-Plattform betrieben werden?
+    <ul>
+      <li><em>Nein</em></li>
+      <li>Ja</li>
+    </ul>
+  </li>
+  <li>Um eine QGIS Erweiterung zu benutzen, muss man programmieren lernen.
+    <ul>
+      <li><em>Nein</em></li>
+      <li>Ja</li>
+    </ul>
+  </li>
+  <li>Es wird empfohlen, dass alle Erweiterungen über die Erweiterungsverwaltung installiert werden, auch wenn sie durch Herunterladen der Zip-Datei und Ablegen im richtigen QGIS-Ordner installiert werden könnten.
+    <ul>
+      <li>Nein</li>
+      <li><em>Ja</em></li>
+    </ul>
+  </li>
+</ol>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

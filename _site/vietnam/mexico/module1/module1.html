@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Módulo 1 - Introducción to QGIS | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Módulo 1 - Introducción to QGIS page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Módulo 1 - Introducción to QGIS">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Módulo 1 - Introducción to QGIS</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/mexico/module1/module1.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="módulo-1---introducción-to-qgis">Módulo 1 - Introducción to QGIS</h1>
+
+<p><strong>Autor</strong>: Ben Hur</p>
+
+<h2 id="introducción-pedagógica">Introducción Pedagógica</h2>
+
+<p>Este módulo sirve como una introducción a QGIS. Al final de este módulo, deberían sentirse familiares con:</p>
+
+<ul>
+  <li>Qué es QGIS</li>
+  <li>La interfaz QGIS</li>
+  <li>Las configuraciones de QGIS</li>
+  <li>Los complementos de QGIS</li>
+</ul>
+
+<p>También deberían aprender:</p>
+
+<ul>
+  <li>cómo instalar y abrir QGIS</li>
+  <li>las diferentes partes y características de la interfaz QGIS</li>
+  <li>cómo editar el diseño y el tema de la interfaz</li>
+  <li>las diferentes configuraciones de QGIS, cómo cambiarlas y cómo afectan a QGIS</li>
+  <li>qué son los perfiles de usuario y cómo utilizarlos</li>
+  <li>qué son los complementos y cómo instalarlos</li>
+</ul>
+
+<p>El módulo también discutirá algunos matices de QGIS y qué lo hace único o diferente a otros SIG, como los formatos de archivo QGIS.</p>
+
+<h2 id="herramientas-y-recursos-necesarios">Herramientas y recursos necesarios</h2>
+
+<p>Las herramientas y los recursos necesarios para este módulo son:</p>
+
+<ul>
+  <li>computadora de trabajo</li>
+  <li>conexión a Internet</li>
+  <li>QGIS 3.16 instalado en la computadora (<a href="https://qgis.org/en/site/forusers/download.html">https://qgis.org/en/site/forusers/download.html</a>)</li>
+</ul>
+
+<h2 id="prerrequisitos">Prerrequisitos</h2>
+
+<ul>
+  <li>Conocimientos básicos sobre cómo operar una computadora</li>
+</ul>
+
+<h2 id="recursos-adicionales">Recursos Adicionales</h2>
+
+<p>Manual del Usuario QGIS - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/">https://docs.qgis.org/3.16/en/docs/user_manual/</a></p>
+
+<p>Manual de Entrenamiento QGIS - <a href="https://docs.qgis.org/3.16/en/docs/training_manual/index.html">https://docs.qgis.org/3.16/en/docs/training_manual/index.html</a></p>
+
+<h2 id="introducción-temática">Introducción Temática</h2>
+
+<p>El mapa que se encuentra debajo (<a href="https://flic.kr/p/2jFfGJP">https://flic.kr/p/2jFfGJP</a>) muestra partes de Bogotá, ciudad capital de Colombia, en el estilo de la obra “Noche Estrellada” de Vincent van Gogh. Fue hecho por Andrés Felipe Lancheros Sánchez.</p>
+
+<p><img src="media/sample-1.jpg" alt="Map of Bogota, Columbia in the style of Starry Starry Night" title="Map of Bogota, Columbia in the style of Starry Starry Night" /></p>
+
+<p>Este otro mapa (<a href="https://flic.kr/p/2jAsphv">https://flic.kr/p/2jAsphv</a>) muestra datos de seguimiento de tormentas de NOAA entre 1851 y 2020 realizados por Fajr Alim.</p>
+
+<p><img src="media/sample-2.jpg" alt="Storm trace data between 1851 to 2020" title="Storm trace data between 1851 to 2020" /></p>
+
+<p>El siguiente (<a href="https://flic.kr/p/FA9TiR">https://flic.kr/p/FA9TiR</a>) es un mapa de la isla Kerguelen de Heinrich Lingnau Schneider.</p>
+
+<p><img src="media/sample-3.jpg" alt="Map of Kerguelen Island" title="Map of Kerguelen Island" /></p>
+
+<p>Este último (<a href="https://flic.kr/p/2kqVzsg">https://flic.kr/p/2kqVzsg)</a>) es de intentos de gol de campo y puntos anotados por intento durante la temporada 81 del torneo de baloncesto masculino UAAP en Filipinas por Ben Hur Pintor.</p>
+
+<p><img src="media/sample-4.jpg" alt="Field goal attempts and points scored in UAAP Season 81" title="Field goal attempts and points scored in UAAP Season 81" /></p>
+
+<p>¿Qué tienen todos estos mapas en común? Todos fueron hechos usando QGIS.</p>
+
+<h3 id="desglose-de-conceptos">Desglose de conceptos</h3>
+
+<p>Los mapas que se muestran arriba fueron creados en QGIS (<a href="https://qgis.org/en/site/">https://qgis.org/en/site/</a>), un Sistema de Información Geográfica (SIG) gratuito y de código abierto. QGIS se puede utilizar con todo tipo de datos espaciales (como datos de baloncesto en el último ejemplo) y no solo con datos geoespaciales relacionados a la Tierra.</p>
+
+<p>Puedes crear mapas maravillosos y sorprendentes, como los ejemplos anteriores, porque QGIS es gratuito, de código abierto y tiene potentes capacidades de gestión, análisis y presentación de datos.</p>
+
+<h2 id="contenido-principal">Contenido Principal</h2>
+
+<h3 id="título-de-la-fase-1-introducción-a-qgis-y-la-interfaz-qgis">Título de la fase 1: Introducción a QGIS y la interfaz QGIS</h3>
+
+<h4 id="qué-es-qgis"><strong>Qué es QGIS</strong></h4>
+
+<p><strong>QGIS,</strong> conocido como Quantum GIS antes de su lanzamiento 2.X, es un Sistema de Información Geoespacial (SIG) maduro, multiplataforma, gratuito y de código abierto.</p>
+
+<p>Es un SIG listo para la empresa que tiene funciones para recopilar, almacenar, analizar, presentar y administrar datos espaciales y no espaciales. También se integra bien con otras tecnologías geoespaciales existentes y sirve como una parte integral de cualquier stack FOSS4G (Software libre y de código abierto para aplicaciones geoespaciales).</p>
+
+<p>Al ser multiplataforma, QGIS se ejecuta en GNU / Linux, macOS, Windows e incluso Android.</p>
+
+<h4 id="ciclo-de-lanzamiento-y-versiones"><strong>Ciclo de lanzamiento y versiones</strong></h4>
+
+<p>Los lanzamientos y el desarrollo de QGIS siguen un calendario / hoja de ruta basados en el tiempo (<a href="https://www.qgis.org/en/site/getinvolved/development/roadmap.html">https://www.qgis.org/en/site/getinvolved/development/roadmap.html</a>).</p>
+
+<ul>
+  <li>Una versión de QGIS se especifica con tres números (X.Y.Z). Por ejemplo, QGIS 3.16.4.</li>
+  <li>X se refiere a la versión principal. En este caso, QGIS 3.</li>
+  <li>Y se refiere a la versión de lanzamiento. En este caso, la versión de lanzamiento 16. Las versiones de lanzamiento son siempre números pares, ya que los números impares están reservados para las versiones de desarrollo.</li>
+  <li>Z se refiere al Lanzamiento Con Cambios Menores (PR) de esa versión. Para 3.16.4, eso significa que es el cuarto lanzamiento de la versión 3.16.</li>
+</ul>
+
+<p>Hay tres ramas principales de QGIS que los usuarios pueden instalar. Estas son la rama <strong>Versión a largo plazo (LTR)</strong>, la rama <strong>Versión más reciente (LR)</strong> y la rama <strong>Desarrollo (nocturno)</strong>.</p>
+
+<ul>
+  <li><strong>Versión a largo plazo (LTR)</strong> se llama así porque se mantiene y recibe correcciones de errores hasta que se publique el siguiente LTR. Actualmente, eso significa un (1) año. A febrero de 2021, el LTR actual es 3.16.4. Está programado que sea reemplazado por QGIS 3.22.4 en febrero de 2022.</li>
+  <li>**Versión más reciente (LR) **se refiere a la versión de lanzamiento de QGIS que contiene las funciones más recientes. Se publica un nuevo LR cada cuatro (4) meses. Por ejemplo, un nuevo 3.18 LR se lanzó en febrero de 2021. El próximo LR (3.20) se lanzará dentro de 4 meses, es decir, en junio de 2021. Actualmente, cada tercer LR se convierte en el próximo LTR. Por ejemplo, el LTR de febrero de 2021 es la versión 3.16. El tercer LR de 3.16 es 3.22, por lo que el próximo LTR se basará en la versión de lanzamiento 3.22.</li>
+  <li>**Desarrollo/Nocturna **se basa en la versión más reciente del código fuente de QGIS, pero es útil si desea probar, depurar o ayudar en el desarrollo de QGIS.</li>
+</ul>
+
+<p>Entonces, ¿qué versión deberías usar? Depende. Si necesitas una versión que se mantenga durante más tiempo y no necesitas nuevas funciones a medida que se lanzan, entonces la versión LTR puede ser la mejor opción. Si necesitas tener las funciones más recientes y no te importa hacer una actualización cada pocos meses, puedes utilizar la versión LR. A veces también es bueno echar un vistazo a las versiones de desarrollo o nocturnas, especialmente si tienes curiosidad o estás entusiasmado con las próximas funciones de QGIS.</p>
+
+<p>Para más información, visita:	 <a href="https://bnhr.xyz/2020/10/26/about-qgis-versions-release-cycle-english.html">https://bnhr.xyz/2020/10/26/about-qgis-versions-release-cycle-english.html</a></p>
+
+<h4 id="ejemplos-de-mapas-qgis-maps-en-la-naturaleza"><strong>Ejemplos de mapas QGIS maps en la naturaleza</strong></h4>
+
+<p><img src="media/qgis-map-showcase.png" alt="QGIS Map Showcase" title="QGIS Map Showcase" /></p>
+
+<p>Figura 1. Presentación de mapas de QGIS</p>
+
+<p>Para más mapas creados con QGIS, visita:	 <a href="https://www.flickr.com/groups/2244553@N22/pool/with/50355460063/">https://www.flickr.com/groups/2244553@N22/pool/with/50355460063/</a></p>
+
+<h4 id="instalar-qgis"><strong>Instalar QGIS</strong></h4>
+
+<p>QGIS es multiplataforma y funciona en Linux, Windows y macOS. Al ser de código abierto, puedes construir e instalar QGIS desde su código fuente disponible en <a href="https://github.com/qgis/QGIS/">https://github.com/qgis/QGIS/</a>.</p>
+
+<p>Los instaladores y las instrucciones de instalación también están disponibles en <a href="https://qgis.org/en/site/forusers/download.html">https://qgis.org/en/site/forusers/download.html</a> o <a href="https://qgis.org/en/site/forusers/alldownloads.html">https://qgis.org/en/site/forusers/alldownloads.html</a>.</p>
+
+<p>Para <strong>Linux (o GNU / Linux)</strong>, QGIS generalmente está disponible en el sistema de gestión de paquetes de su distribución. Para los usuarios de Debian / Ubuntu, QGIS tiene repositorios para las ramas LR, LTR y Desarrollo, así como versiones de QGIS con dependencias del PPA ubuntugis-inestable. QGIS también está disponible como paquete Flatpak o en Conda.</p>
+
+<p>Para <strong>Windows</strong>, los usuarios pueden elegir entre el instalador de red OSGeo4W o los instaladores independientes. Hay un instalador independiente para la versión LTR y para la LR.</p>
+
+<p>Los instaladores independientes son los más fáciles de instalar y se recomiendan para principiantes. Se pueden instalar múltiples versiones de QGIS en su computadora a la vez. Esto significa que puede tener instaladas las versiones 3.16 y 3.18 de QGIS.</p>
+
+<p>El instalador de red OSGeo4W es un poco más avanzado y complejo que los instaladores independientes, pero también brinda la posibilidad de actualizar su versión de QGIS en el lugar, lo que significa que no necesitará desinstalar una versión anterior si desea instalar uno más nuevo.</p>
+
+<p>En algunos casos podrías necesitar derechos de administrador para instalar QGIS, por lo que si lo estás instalando en una computadora donde tu usuario no tiene derechos de administrador, es posible que debas pedirle a tu administrador de IT o de oficina que instale QGIS.</p>
+
+<p>La instalación en Windows también viene con QGIS con GRASS (otro SIG gratuito y de código abierto).</p>
+
+<p>Ten en cuenta que QGIS está <a href="https://blog.qgis.org/2020/10/15/phasing-out-32-bit-support-in-qgis/">eliminando lentamente el soporte de 32 bits para Windows</a>, por lo que es mejor instalar QGIS en una computadora que ejecute un sistema operativo de 64 bits.</p>
+
+<p>Para <strong>macOS</strong>, existen instaladores oficiales Todo-en-uno para macOS High Sierra (10.13) y versiones posteriores. QGIS aún no está certificado como lo requieren las reglas de seguridad de macOS Catalina (10.15). En el primer inicio, haga clic con el botón derecho en el icono de la aplicación QGIS, mantenga presionada la tecla Opción y luego elija Abrir.</p>
+
+<h4 id="partes-de-la-interfaz-qgis"><strong>Partes de la Interfaz QGIS</strong></h4>
+
+<p>Después de instalar QGIS, puede ejecutarlo o abrirlo como lo haría con cualquier programa en su computadora. Al abrir QGIS, verás la interfaz de usuario (UI) predeterminada, algo similar a esto:</p>
+
+<p><img src="media/qgis-interface.png" alt="The QGIS interface" title="The QGIS interface" /></p>
+
+<p>Figura 2. La interfaz QGIS en una instalación nueva</p>
+
+<p>Hay seis partes principales de la interfaz de usuario de QGIS:</p>
+
+<ol>
+  <li>Barra de Menú (menú)</li>
+  <li>Lienzo del mapa (Map Canvas)</li>
+  <li>Barras de herramientas (Toolbars)</li>
+  <li>Paneles (Panels)</li>
+  <li>Barra de estado (Status Bar)</li>
+  <li>Localizador (Locator)</li>
+</ol>
+
+<p>En el centro de la interfaz de usuario (UI) hay un Lienzo del mapa. Los paneles y las Barras de Herramientas se pueden colocar alrededor del Canvas. Los paneles también se pueden acoplar para crear un panel de varias pestañas. También hay otras partes de la interfaz de usuario, como la interfaz de Python, las ventanas de complementos, etc.</p>
+
+<p><strong>Barra de Menú:</strong> es un menú jerárquico simple que brinda acceso a las funciones y comandos de QGIS. Por lo general, se encuentra en la parte superior de la interfaz de usuario.</p>
+
+<p><strong>Lienzo del mapa:</strong> es donde se muestran las capas cargadas en QGIS. Aquí también es donde se reflejan los filtros, selecciones y simbologías creadas por el usuario. Puede haber más de uno en cualquier momento. Un usuario puede ampliar, desplazar e incluso rotar el Canvas. También puede mostrar datos 3D.</p>
+
+<p><strong>Barras de Herramientas:</strong> muestran botones “click-and-run” (hacer clic y ejecutar). Permiten un fácil acceso a los comandos, funciones, complementos, etc. de QGIS. Se pueden mover y acoplar alrededor del lienzo del mapa. La lista de barras de herramientas se puede encontrar, activar y desactivar desde la barra de menú en <strong>Ver ‣ Barras de herramientas.</strong> Ejemplos de Barras de Herramientas son la Attributes Toolbar (de atributos) y la Digitizing Toolbar (de herramientas de digitalización).</p>
+
+<p><strong>Paneles:</strong> son similares a las Barras de Herramientas, pero en lugar de botones, proporcionan una interfaz para funciones y características más complejas. El panel de capas y el panel del navegador son ejemplos. Al igual que las Barras de Herramientas, se pueden mover y acoplar alrededor del Lienzo del mapa. La lista de paneles se puede encontrar, activar y desactivar desde la barra de menú en <strong>Ver ‣ Paneles.</strong></p>
+
+<p><strong>Barra de Estado:</strong> se encuentra comúnmente en la parte inferior de la interfaz de usuario y muestra información relevante como el CRS, la escala, las notificaciones, etc.</p>
+
+<p>**Localizador: **se encuentra en la esquina inferior izquierda de la interfaz de QGIS. Permite al usuario acceder fácilmente a capas, campos, algoritmos de procesamiento y otras cosas en QGIS. Esta es una de las características más poderosas de QGIS.</p>
+
+<p><img src="media/qgis-interface-parts.png" alt="Parts of the QGIS Interface" title="Parts of the QGIS Interface" /></p>
+
+<p>Figura 3. Partes de la interfaz QGIS</p>
+
+<p>Una de las bellezas de QGIS es la personalización que ofrece a sus usuarios. Esta personalización comienza con la interfaz de usuario. Al editar algunas configuraciones y mover algunas partes de la interfaz, puede tener un QGIS que se parece al siguiente:</p>
+
+<p><img src="media/qgis-interface-custom.png" alt="QGIS interface with some customizations" title="QGIS interface with some customizations" /></p>
+
+<p>Figura 4. La interfaz QGIS con algunas personalizaciones</p>
+
+<h4 id="tutorial--ejercicio-1-cambiar-el-aspecto-y-el-diseño-de-la-interfaz-qgis"><strong>Tutorial / Ejercicio 1: Cambiar el aspecto y el diseño de la interfaz QGIS</strong></h4>
+
+<ol>
+  <li>Abre <strong>QGIS</strong></li>
+  <li>Haz clic en el botón <strong>Ver</strong></li>
+</ol>
+
+<p><img src="media/ex01-01.png" alt="Open QGIS and click on View menu" title="Open QGIS and click on View menu" /></p>
+
+<ol>
+  <li>Observa el menú <strong>Paneles</strong></li>
+</ol>
+
+<p><img src="media/ex01-02.png" alt="Observe the Panels menu" title="Observe the Panels menu" /></p>
+
+<ol>
+  <li>Observa el menú <strong>Barras de Herramientas</strong></li>
+</ol>
+
+<p><img src="media/ex01-03.png" alt="Observe the Toolbars menu" title="Observe the Toolbars menu" /></p>
+
+<ol>
+  <li>Selecciona las <strong>Barras de Herramientas</strong> y los <strong>paneles</strong> que deseas mostrar en la interfaz de usuario. Algunos de los paneles útiles incluyen las <strong>Cajas  de herramientas (Toolbox)</strong> de <strong>Estilo de capas (Layer Styling) y Procesamiento (processing)</strong>.</li>
+  <li>Mueve las <strong>Barras de Herramientas</strong> y los <strong>paneles</strong> a las posiciones que tengan más sentido para tí.</li>
+</ol>
+
+<p><strong>Restablecimiento de la interfaz QGIS (Resetting)</strong></p>
+
+<p>Para restablecer su pantalla a la configuración predeterminada, vaya a: <strong>Ajustes ‣ Opciones ‣ Pestaña Sistema ‣ Ajustes ‣ Reiniciar</strong> y reinicie QGIS.</p>
+
+<h4 id="preguntas-de-evaluación"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>Verdadero o Falso:
+    <ol>
+      <li>Puedes tener varios Lienzos del mapa.</li>
+      <li>Puedes mover la Barra de Estado a una ubicación diferente.</li>
+      <li>Solo puede colocar paneles en el lado izquierdo o derecho del lienzo del mapa.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="título-de-la-fase-2-complementos-de-qgis">Título de la fase 2: Complementos de QGIS</h3>
+
+<h4 id="contenidotutorial"><strong>Contenido/Tutorial</strong></h4>
+
+<p>La capacidad de agregar, crear y extender la funcionalidad de QGIS a través de complementos es una de sus características más poderosas.</p>
+
+<p>A partir de QGIS 3.16.3, hay más de 700 complementos disponibles para que el usuario los descargue y mejore. Estos complementos varían en función desde lo complejo hasta lo mundano.</p>
+
+<p>Los complementos de QGIS se pueden clasificar como:</p>
+
+<ul>
+  <li><strong>Complementos principales:</strong> integrados en su versión de QGIS, no se pueden desinstalar</li>
+  <li><strong>Complementos externos:</strong> se instalan manualmente y se obtienen de un repositorio externo (es decir, el repositorio oficial de complementos de QGIS) o mediante el código fuente.</li>
+</ul>
+
+<p>Pueden ser instalados de tres (3) formas:</p>
+
+<ol>
+  <li>A través del cuadro de diálogo “Administrar e Instalar Complementos” (administrar e instalar complementos) (<strong>Complementos ‣ Administrar e Instalar Complementos</strong>)</li>
+  <li>Instalar desde el ZIP, al que se puede acceder en la pestaña “<strong>Instalar desde ZIP”</strong> en el cuadro de diálogo “<strong>Administrar e Instalar Complementos</strong>”.</li>
+  <li>Agregar manualmente el código fuente en la carpeta de complementos de su perfil de QGIS. Esta carpeta generalmente se encuentra en:
+    <ol>
+      <li><strong>Linux</strong>: .local/share/QGIS/QGIS3/profiles/default/python/complementos</li>
+      <li><strong>Mac OS X</strong>: Library/Application/Support/QGIS/QGIS3/profiles/default/python/complementos</li>
+      <li><strong>Windows:</strong> C:\Users<User>\AppData\Roaming\QGIS\QGIS3\profiles\default\python\complementos</User></li>
+    </ol>
+  </li>
+</ol>
+
+<p><img src="media/plugins-menu.png" alt="Manage and Install Plugins menu" title="Manage and Install Plugins menu" /></p>
+
+<p>Figura 5. Acceder al “Administrar e Instalar Complementos dialog”</p>
+
+<h4 id="cuadro-de-diálogo-administrar-e-instalar-complementos"><strong>Cuadro de Diálogo “Administrar e Instalar Complementos”</strong></h4>
+
+<p>El Cuadro de Diálogo “Administrar e Instalar Complementos” se conecta al Repositorio Oficial de Complementos de QGIS (o cualquier otro repositorio que hayas indicado en la Pestaña de Configuraciones) para obtener los complementos disponibles para tu versión de QGIS. Tiene (5) tabs (pestaña):</p>
+
+<ul>
+  <li><strong>Pestaña Todos</strong> – muestra TODOS los complementos disponibles para tu versión de QGIS, incluidos los que ya están instalados en su máquina.</li>
+  <li><strong>Pestaña Instalados</strong> – muestra solo los complementos instalados en tu computadora.</li>
+  <li><strong>Pestaña No Instalados</strong> – muestra los complementos que NO están instalados en tu computadora.</li>
+  <li><strong>Instalar desde ZIP</strong> – te permite instalar complementos desde un archivo ZIP.</li>
+  <li><strong>Pestaña Ajustes</strong> – te ofrece opciones sobre cuándo buscar actualizaciones de  complementos, si incluir o no  complementos experimentales y obsoletos, o agregar / cambiar el repositorio para obtener complementos.</li>
+</ul>
+
+<p>Si el complemento que buscas está etiquetado como experimental u obsoleto, deberías revisar “<strong>Mostrar complementos experimentales”</strong> y “<strong>Mostrar complementos obsoletos”</strong> en la pestaña de configuraciones.</p>
+
+<p>La Barra de Búsqueda te permite buscar complementos que se encuentren en el repositorio al que estás conectado.</p>
+
+<p><img src="media/manage-and-install-plugins-dialog.png" alt="Manage and Install Plugins dialog" title="Manage and Install Plugins dialog" /></p>
+
+<p>Figura 6. El cuadro de diálogo “Administrar e Instalar Complementos”</p>
+
+<h4 id="tutorialejercicio-2-instalar-un-complemento-qgis"><strong>Tutorial/Ejercicio 2: Instalar un Complemento QGIS</strong></h4>
+
+<ol>
+  <li>Abre el cuadro de diálogo **Administrar e Instalar Complementos **desde **Complementos ‣ Administrar e Instalar Complementos **en el Menú.</li>
+</ol>
+
+<p><img src="media/plugins-menu-2.png" alt="Open Manage and Install Plugins dialog" title="Open Manage and Install Plugins dialog" /></p>
+
+<p><img src="media/manage-and-install-plugins-dialog.png" alt="Manage and Install Plugins dialog" title="Manage and Install Plugins dialog" /></p>
+
+<ol>
+  <li>
+    <p>Instala los siguientes complementos buscándolos en la <strong>Pestaña Todos</strong> haciendo clic en <strong>Instalar Complemento</strong> en la esquina inferior derecha del cuadro de diálogo “Administrar e Instalar complementos”</p>
+
+    <ul>
+      <li>Memory Layer Saver</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="media/memory-layer-saver-plugin.png" alt="Install Memory Layer Saver plugin" title="Install Memory Layer Saver plugin" /></p>
+
+<ul>
+  <li>QuickOSM</li>
+</ul>
+
+<p><img src="media/quickosm-plugin.png" alt="Install QuickOSM plugin" title="Install QuickOSM plugin" /></p>
+
+<ol>
+  <li>Fíjate si los complementos fueron instalados correctamente. El complemento Memory Layer Saver debería estar disponible en <strong>Complementos ‣ Memory Layer Saver **en el menú mientras que el complemento QuickOSM debería estar disponible en **Vector ‣ QuickOSM</strong> en el menú.</li>
+</ol>
+
+<h4 id="preguntas-de-evaluación-1"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>Verdadero o Falso
+    <ol>
+      <li>Puedes eliminar o desinstalar los complementos principales</li>
+      <li>Puede agregar complementos que no se encuentran en el repositorio oficial de complementos de QGIS</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="título-de-la-fase-3-configuraciones-de-qgis">Título de la fase 3: Configuraciones de QGIS</h3>
+
+<h4 id="configuración-del-sistema-y-del-proyecto"><strong>Configuración del Sistema y del Proyecto</strong></h4>
+
+<p>La configuración de QGIS te permite editar y administrar diferentes cosas sobre QGIS, como perfiles de usuario, estilos, sistemas de referencia de coordenadas, atajos de teclado, la interfaz de usuario, colores predeterminados, etc. La configuración del sistema se puede encontrar en el menú <strong>Configuración</strong> y es la configuración predeterminada utilizada por QGIS a menos que sean anulados por la configuración de un Proyecto. La configuración del proyecto se puede encontrar en **Proyecto ‣ Propiedades **y pertenece a la configuración o propiedades del proyecto actual. Estos valores anulan los valores predeterminados del sistema.</p>
+
+<p><img src="media/settings-1.png" alt="The System Settings" title="The System Settings" /></p>
+
+<p>Figura 6. La configuración del sistema</p>
+
+<p><img src="media/settings-2.png" alt="Project Settings" title="Project Settings" /></p>
+
+<p>Figura 7. Configuración del proyecto</p>
+
+<h4 id="cambiando-el-tema-de-qgis"><strong>Cambiando el tema de QGIS</strong></h4>
+
+<p>Puedes cambiar la apariencia de QGIS en la pestaña <strong>Ajustes ‣ Opciones ‣ General</strong>.</p>
+
+<p>Puedes elegir entre tres temas: predeterminado, Mezcla de grises y Mapeo nocturno. También puedes cambiar el tamaño de los iconos, la fuente utilizada por QGIS y otros valores predeterminados del sistema.</p>
+
+<p><img src="media/change-theme.png" alt="General Settings of QGIS" title="General Settings of QGIS" /></p>
+
+<p>Figura 8. Configuración general de QGIS</p>
+
+<p>Para algunas configuraciones en QGIS, es posible que debas reiniciar la aplicación para que surtan efecto.</p>
+
+<p><strong>Perfiles de Usuario</strong></p>
+
+<p>QGIS 3.X introdujo el concepto de perfiles de usuario de QGIS.</p>
+
+<p>Un perfil de usuario es una colección de configuraciones para complementos instalados, barras de herramientas habilitadas, disposición de la interfaz de usuario y otras configuraciones. QGIS viene con un perfil de usuario predeterminado llamado defecto. Los perfiles de usuario permiten al usuario crear diferentes configuraciones para análisis específicos (por ejemplo, un perfil de usuario específico para la gestión de recursos hídricos, digitalización de datos, cartografía, etc.), proyectos particulares o incluso clientes.</p>
+
+<p>Se pueden crear perfiles de usuario y acceder a ellos desde la barra de menú en: <strong>Ajustes ‣ Perfiles de Usuario</strong>.</p>
+
+<p>El perfil de usuario activo se muestra con [Perfil de usuario] en la barra de título.</p>
+
+<p><img src="media/user-profiles-1.png" alt="Accessing User Profiles" title="Accessing User Profiles" /></p>
+
+<p>Figure 9. Acceder a los perfiles de usuario</p>
+
+<p>Los perfiles de usuario se guardan en un directorio de su computadora al que se puede acceder haciendo clic en <strong>Ajustes ‣ Perfiles de Usuario ‣ Abrir Carpeta de Perfil Activo</strong>.</p>
+
+<h4 id="tutorialejercicio-03-creando-un-perfil-de-usuario">**Tutorial/Ejercicio 03: Creando un Perfil de Usuario</h4>
+
+<ol>
+  <li>Ve a <strong>Ajustes ‣ Perfiles de Usuario ‣ Perfil Nuevo…</strong></li>
+</ol>
+
+<p><img src="media/user-profiles-2.png" alt="alt_text" title="image_tooltip" /></p>
+
+<ol>
+  <li>Dale un nombre a tu nuevo perfil de usuario.</li>
+</ol>
+
+<p><img src="media/user-profiles-3.png" alt="alt_text" title="image_tooltip" /></p>
+
+<ol>
+  <li>
+    <p>Debería abrirse una nueva ventana de QGIS con su nuevo perfil de usuario. Observa que tu nombre de perfil se muestra en la barra de título de QGIS.</p>
+  </li>
+  <li>
+    <p>¿Nota alguna diferencia en el nuevo perfil de usuario? Verifique la interfaz de usuario, los complementos y la configuración del perfil anterior y el nuevo perfil que creó.</p>
+  </li>
+</ol>
+
+<h4 id="preguntas-de-evaluación-2"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>Verdadero o Falso
+    <ol>
+      <li>Solo puedes tener un perfil de usuario en QGIS.</li>
+      <li>No puedes anular la configuración y las propiedades del sistema.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="título-de-la-fase-4-adicional-formatos-de-archivo-qgis">Título de la fase 4 (adicional): Formatos de archivo QGIS</h3>
+
+<h4 id="archivo-de-proyecto-qgis-qgs--qgz"><strong>Archivo de proyecto QGIS (QGS / QGZ)</strong></h4>
+
+<p>Los proyectos de QGIS son para QGIS como los archivos .mxd son para ArcMap. Estos archivos vienen como <strong>QGS (<em>.qgs)** o **QGZ (</em>.qgz)</strong>. La principal diferencia entre los dos es que el formato QGZ es un archivo comprimido (zip) que contiene un archivo QGS y un archivo QGD. El formato QGS es un formato XML para almacenar proyectos QGIS. El archivo QGD es la base de datos sqlite asociada del proyecto qgis que contiene datos auxiliares para el proyecto. Si no hay datos auxiliares, el archivo QGD estará vacío.</p>
+
+<p>Un archivo de proyecto QGIS contiene todo lo que se necesita para almacenar un proyecto QGIS, que incluye:</p>
+
+<ul>
+  <li>título del proyecto</li>
+  <li>proyecto CRS</li>
+  <li>el árbol de capas</li>
+  <li>ajustes de autoensamblado</li>
+  <li>relaciones</li>
+  <li>la extensión del Lienzo del mapa</li>
+  <li>modelos de proyecto</li>
+  <li>leyenda</li>
+  <li>Docks mapview (2D y 3D)</li>
+  <li>las capas con vínculos a los conjuntos de datos subyacentes (fuentes de datos) y otras propiedades de capa, incluida la extensión, SRS, uniones, estilos, renderizador, modo de fusión, opacidad y más.</li>
+  <li>propiedades del proyecto</li>
+</ul>
+
+<p>Los archivos del proyecto QGIS se pueden guardar en un GeoPackage o en una base de datos PostGIS. Guardar el archivo del proyecto junto con el archivo de estilo y las capas correspondientes en un solo GeoPackage facilita compartir proyectos QGIS.</p>
+
+<h4 id="definición-de-capa-qgis-qlr"><strong>Definición de capa QGIS (QLR)</strong></h4>
+
+<p>Un archivo de QGIS definición de capa es un archivo XML que contiene un puntero a la fuente de datos de la capa además de la información de estilo QGIS para la capa. Actualmente, un archivo QLR corresponde a una sola capa.</p>
+
+<p>El caso de uso de este archivo es simple: tener un solo archivo para abrir una fuente de datos y traer toda la información de estilo relacionada. Los archivos QLR también le permiten enmascarar la fuente de datos subyacente en un archivo fácil de abrir.</p>
+
+<p>Un ejemplo de uso de QLR es para abrir una capa desde una base de datos PostGIS. En lugar de conectarse a la base de datos, buscar la capa y aplicar un filtro, puede abrir un archivo .qlr que apunte a la capa PostGIS correcta con su estilo y filtro correspondientes.</p>
+
+<h4 id="archivo-de-estilo-qgis-qml"><strong>Archivo de estilo QGIS (QML)</strong></h4>
+
+<p>**QML **es un formato XML para almacenar estilos de capa. Un archivo QML (.qml) contiene toda la información que le dice a QGIS cómo renderizar geometrías de entidades, lo que incluye definiciones de símbolos, tamaños y rotaciones, etiquetado, opacidad, modo de fusión y más.</p>
+
+<p>Un archivo .qml debe tener el mismo nombre que la fuente de datos a la que corresponde. Cuando se encuentra en el mismo directorio o carpeta que la fuente de datos, la carga de la fuente de datos también carga automáticamente su estilo tal como se define en el archivo .qml.</p>
+
+<p>Por ejemplo, si tiene un GeoJSON llamado Regions.geojson y un archivo QML llamado Regions.qml, la carga de Regions.geojson en QGIS aplicará los estilos definidos en Regions.qml en la capa cargada.</p>
+
+<p>Cuando utilizas GeoPackages (.gpkg), a menudo no se necesita un archivo .qml ya que puedes guardar el estilo de una capa directamente en el GeoPackage.</p>
+
+<h3 id="si-quieres-ir-más-lejos">Si quieres ir más lejos:</h3>
+
+<p>Puedes intentar crear tu propio complemento QGIS.  Si no hay ninguno que haga lo que quieres, siempre puedes hacerlo tú mismo.</p>
+
+<p>El <strong>Generador de Complementos (Plugin Builder)</strong> es un complemento que crea una plantilla que puede servir como punto de partida para el desarrollo de complementos de QGIS para que no tengas que crear uno desde cero. Puedes instalarlo desde el cuadro de diálogo Administrar e instalar complementos.</p>
+
+<p>Obviamente, siempre puedes crear un complemento desde cero. Si te interesa hacerlo, puedes revisar la documentación oficial de QGIS (<a href="https://documentation.qgis.org/">https://documentation.qgis.org/</a>). Para los complementos de Python, es una buena idea revisar el  libro de recetas del PyQGIS Developer	 (<a href="https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/">https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/</a>).</p>
+
+<p>Para más información, mira: <a href="https://bnhr.xyz/2018/10/08/qgis-plugins-3.0.html">https://bnhr.xyz/2018/10/08/qgis-complementos-3.0.html</a></p>
+
+<p>Para practicar tus nuevas habilidades, intenta:</p>
+
+<ul>
+  <li>Cambiar el tema y el aspecto de la interfaz de usuario de QGIS para adaptarlo a sus preferencias.</li>
+  <li>Instalar otros complementos de QGIS.</li>
+  <li>Cambiar otras configuraciones de QGIS.
+    <ul>
+      <li>crear un sistema de referencia de coordenadas personalizado</li>
+      <li>agregar una pantalla de bienvenida personalizada (<a href="https://bnhr.xyz/2020/09/05/custom-splash-screen-qgis.html">https://bnhr.xyz/2020/09/05/custom-splash-screen-qgis.html</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="consejos">Consejos</h3>
+
+<p>N/A</p>
+
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

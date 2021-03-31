@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Module 1 - Giới thiệu QGIS | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Module 1 - Giới thiệu QGIS page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Module 1 - Giới thiệu QGIS">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Module 1 - Giới thiệu QGIS</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/module1/module1.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="module-1---giới-thiệu-qgis">Module 1 - Giới thiệu QGIS</h1>
+
+<p><strong>Tác giả</strong>: Ben Hur</p>
+
+<p><strong>Biên dịch và bản địa hoá</strong>: Quách Đồng Thắng</p>
+
+<h2 id="giới-thệu-chung">Giới thệu chung</h2>
+
+<p>Module này giới thiệu về QGIS. Kết thúc module, người học sẽ làm quen với:</p>
+
+<ul>
+  <li>QGIS là gì</li>
+  <li>Giao diện QGIS</li>
+  <li>Các thiết lập QGIS</li>
+  <li>Trình cắm QGSI (QGIS Plugin)</li>
+</ul>
+
+<p>Và học cách:</p>
+<ul>
+  <li>Cài đặt và khởi chạy QGIS.</li>
+  <li>Các thành phần và tính năng của giao diện QGIS.</li>
+  <li>Chỉnh sửa bố cục giao diện và chủ đề (theme).</li>
+  <li>Các thiết lập QGIS (QGIS setting), cách thay đổi và xem kết quả thay đổi trên QGIS.</li>
+  <li>Hồ sơ người dùng (user profile) là gì và cách sử dụng.</li>
+  <li>Trình cắm (plugin) là gì và cách cài đặt.</li>
+</ul>
+
+<p>Module này cũng thảo luận một số đặc điểm của QGIS và điều gì làm cho nó độc đáo và khác biệt so với các phần mềm GIS khác, ví dụ như khuôn dạng dữ liệu QGIS (file format).</p>
+
+<h2 id="các-công-cụ-và-tài-nguyên-cần-thiết">Các công cụ và tài nguyên cần thiết</h2>
+
+<p>Các công cụ và tài nguyên cần thiết cho Module này gồm:</p>
+
+<ul>
+  <li>Máy tính</li>
+  <li>Kết nối Internet</li>
+  <li>QGIS 3.16 đã được cài đặt trên máy tính (<a href="https://qgis.org/en/site/forusers/download.html">https://qgis.org/en/site/forusers/download.html</a>)</li>
+</ul>
+
+<h2 id="yêu-cầu-về-kỹ-năng">Yêu cầu về kỹ năng</h2>
+
+<ul>
+  <li>Kiến thức cơ bản về vận hành máy tính</li>
+</ul>
+
+<h2 id="tài-liệu-tham-khảo">Tài liệu tham khảo</h2>
+
+<ul>
+  <li>QGIS User Guide - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/">https://docs.qgis.org/3.16/en/docs/user_manual/</a></li>
+  <li>QGIS Training Manual - <a href="https://docs.qgis.org/3.16/en/docs/training_manual/index.html">https://docs.qgis.org/3.16/en/docs/training_manual/index.html</a></li>
+</ul>
+
+<h2 id="giới-thiệu-chuyên-đề">Giới thiệu chuyên đề</h2>
+
+<p>Bản đồ dưới đây (<a href="https://flic.kr/p/2jFfGJP">https://flic.kr/p/2jFfGJP</a>) cho thấy một phần thành phố Bogota ở Columbia theo phong cách của Vincent van Gogh’s “Starry Starry Night”, tác giả: Andrés Felipe Lancheros Sánchez.</p>
+
+<p><img src="media/sample-1.jpg" alt="Bản đồ Bogota, Columbia theo phong cách Starry Starry Night" title="Bản đồ Bogota, Columbia theo phong cách Starry Starry Night" /></p>
+
+<p>Bản đồ kế tiếp (<a href="https://flic.kr/p/2jAsphv">https://flic.kr/p/2jAsphv</a>) thể hiện dữ liệu theo dõi các cơn bão của NOAA từ năm 1851 đến 2020, tác giả: Fajr Alim</p>
+
+<p><img src="media/sample-2.jpg" alt="Dữ liệu theo dõi bão từ năm 1851 đến 2020" title="Dữ liệu theo dõi bão từ năm 1851 đến 2020" /></p>
+
+<p>Tiếp thep (<a href="https://flic.kr/p/FA9TiR">https://flic.kr/p/FA9TiR</a>) là bản đồ đảo Kerguelen được thực hiện bởi Heinrich Lingnau Schneider</p>
+
+<p><img src="media/sample-3.jpg" alt="Bản đồ đảo Kerguelen" title="Bản đồ đảo Kerguelen" /></p>
+
+<p>Cuối cùng, (<a href="https://flic.kr/p/v2kqVzsg">https://flic.kr/p/2kqVzsg</a>) là số lần ghi điểm trên sân và số điểm ghi được trong mỗi lần ghi điểm thuộc giải UAAP Men’s Basketball Tournament Season 81 ở Philippines, tác giả: Ben Hur Pintor</p>
+
+<p><img src="media/sample-4.jpg" alt="Số lần ghi điểm và số điểm ghi được ở giải UAAP Season 81" title="Field goal attempts and points scored in UAAP Season 81" /></p>
+
+<p>Tất cả các bản đồ này có điểm gì chung? Chúng được tạo ra bằng QGIS.</p>
+
+<h2 id="phân-tích-các-khái-niệm">Phân tích các khái niệm</h2>
+
+<p>Các bản đồ trên đều được tao ra bằng QGIS (<a href="https://qgis.org/en/site/">https://qgis.org/en/site/</a>), một phần mềm GIS mã nguồn mở tự do. QGIS có thể được sử dụng với tất các các loại dữ liệu không gian (như dữ liệu môn bóng rổ trong ví dụ cuối) và không chỉ với dữ liệu không gian địa lý.</p>
+
+<p>Mọi người có thể tạo các bản đồ tuyệt vời và đáng kinh ngạc như các ví dụ nêu trên vì QGIS là phần mềm tự do, mã nguồn mở và có khả năng quản lý, phân tích và trình diễn dữ liệu mạnh mẽ.</p>
+
+<h2 id="nội-dung-chính">Nội dung chính</h2>
+
+<h3 id="phase-1-giới-thiệu-qgis-và-giao-diện-qgis">Phase 1: Giới thiệu QGIS và giao diện QGIS.</h3>
+
+<h4 id="qgis-là-gì"><strong>QGIS là gì</strong></h4>
+
+<p><strong>QGIS</strong>, trước kia là Quantum GIS với các phiên bản 2.X là một phần mềm GIS hoàn thiện, đa nền tảng, tự do, mã nguồn mở.</p>
+
+<p>Đây là một phần mềm GIS sẵn dùng cho doanh nghiệp với các tính năng thu thập, lưu trữ, phân tích, trình diễn và quản lý dữ liệu không gian và phi không gian. Nó cũng tích hợp tốt với các công nghệ không gian địa lý hiện hữu khác và đóng vai trò như một phần không thể thiếu trong tập hợp các phần mềm của FOSS4G.</p>
+
+<p>Là một phần mềm đa nền tảng, QGIS có thể chạy trên GNU/Linux, macOS, Windows và ngay cả Android.</p>
+
+<h4 id="chu-kỳ-phát-hành-và-các-phiên-bản"><strong>Chu kỳ phát hành và các phiên bản</strong></h4>
+
+<p>Các phiên bản phát hành và phát triển của QGIS tuân theo một lộ trình dựa trên các mốc thời gian (<a href="https://www.qgis.org/en/site/getinvolved/development/roadmap.html">https://www.qgis.org/en/site/getinvolved/development/roadmap.html</a>).</p>
+
+<p>Một bản phát hành của QGIS được xác định bởi 03 con số (X.Y.Z). Ví dụ QGIS 3.16.4.</p>
+
+<ul>
+  <li>X là phiên bản chính. Trong trường hợp này là QGIS 3.</li>
+  <li>Y refers to the release version. In this case release version 16. Release versions are always even numbers since odd numbers are reserved for development versions.</li>
+  <li>Y là phiên bản phát hành. Trong trường hợp này phiên bản phát hành là 16. Các phiên bản phát hành luôn là số chẳn vì các số lẻ dành cho các phiên bản phát triển.</li>
+  <li>Z là điểm phát hành của phiên bản (Point Release -PR). Đối với phiên bản 3.16.4 có nghĩa là đây là điểm phát hành thứ tư của phiên bản 3.16.</li>
+</ul>
+
+<p>Có 03 nhánh chính của QGIS mà người dùng có thể cài đặt: Dài hạn - <strong>Long Term Release (LTR)</strong>, Mới nhất - <strong>Latest Release (LR)</strong> và Phát triển - <strong>Development (Nightly)</strong></p>
+
+<ul>
+  <li><strong>Phiên bản dài hạn (Long Term Release - LTR)</strong> được bảo trì và sửa lỗi cho đến khi một phiên bản LTR tiếp theo được phát hành. Hiện tại thời gian xuất bản LRT là 01 năm. Vào tháng 02/2021, phiên bản LTR là 3.16.4 nên nó sẽ được thay thế bằng phiên bản 3.22.4 vào tháng 02/2022.</li>
+  <li><strong>Phiên bản mới nhất (Latest Release - LR)</strong> là phiên bản chứa các tính năng mới nhất của QGIS. Phiên bản LR được phát hành mỗi 04 tháng. Ví dụ, phiên bản 3.18 LR mới được phát hành vào tháng 02/2021. Phiên bản LR kết tiếp (3.20) sẽ được phát hành sau 04 tháng nữa, tức là tháng 06/2021. Hiện tại, cứ sau mỗi 03 phiên bản LR sẽ đến phiên bản LRT kế tiếp. Ví dụ, phiên bản LTR tháng 02/2021 là 3.16. Phiên bản LR thứ 3 từ 3.16 là 3.22, do đó phiên bản LTR kế tiếp sẽ dựa trên phiên bản 3.22.</li>
+  <li><strong>Phiên bản phát triển (Development/Nightly)</strong> dựa trên phiên bản mã nguồn mới nhất của QGIS nhưng hữu ích cho mục đích kiểm tra, sửa lỗi hoặc giúp phát triển QGIS.</li>
+</ul>
+
+<p>Vậy bạn nên dùng phiên bản nào? Câu trả lời là tùy vào nhu cầu. Nếu bạn muốn một phiên bản được bảo trì trong một thời gian dài hơn và bạn không cần các tính năng mới nhất thì nên sử dụng phiên bản LTR. Nếu bạn muốn có những tính năng mới nhất và không ngại nâng cấp vài tháng một lần, thì sử dụng phiên bản LR. Đôi khi bạn tò mò hoặc hào hứng với các tính năng sắp có thì nên xem qua phiên bản phát triển (Development/ Nightly)</p>
+
+<p>Để biết thêm thông tin, hãy truy cập: <a href="https://bnhr.xyz/2020/10/26/about-qgis-versions-release-cycle-english.html">https://bnhr.xyz/2020/10/26/about-qgis-versions-release-cycle-english.html</a></p>
+
+<h4 id="các-ví-dụ-về-bản-đồ-được-tạo-bằng-qgis-trong-thực-tế"><strong>Các ví dụ về bản đồ được tạo bằng QGIS trong thực tế</strong></h4>
+
+<p><img src="media/qgis-map-showcase.png" alt="QGIS Map Showcase" title="QGIS Map Showcase" /></p>
+
+<p>Hình 1.1. QGIS Map Showcase</p>
+
+<p>Để xem thêm các bản đồ được tạo bằng QGIS, hãy truy cập: <a href="https://www.flickr.com/groups/2244553@N22/pool/with/50355460063/">https://www.flickr.com/groups/2244553@N22/pool/with/50355460063/</a></p>
+
+<h4 id="cài-đặt-qgis"><strong>Cài đặt QGIS</strong></h4>
+
+<p>QGIS là phần mềm đa nền tảng, có thể chạy trên Linux, Windows và macOS. Nhờ mã nguồn mở, bạn có thể build và cài đặt QGIS từ mã nguồn trên <a href="https://github.com/qgis/QGIS/">https://github.com/qgis/QGIS/</a>.</p>
+
+<p>Bộ cài đặt và hướng dẫn cài đặt cũng có trên <a href="https://qgis.org/en/site/forusers/download.html">https://qgis.org/en/site/forusers/download.html</a> hoặc <a href="https://qgis.org/en/site/forusers/alldownloads.html">https://qgis.org/en/site/forusers/alldownloads.html</a>.</p>
+
+<p>Đối với <strong>Linux (hoặc GNU/Linux)</strong>, QGIS thường có sẵn trong trình quản lý gói (package manager). Đối với Debian/Ubuntu, QGIS có các kho lưu trữ (repositories) cho các nhánh phân phối LR, LTR, Development/Nightly cũng như các phiên bản của QGIS trong ubuntugis-unstable PPA (Personal Package Archives). QGIS cũng có thể được cài đặt thông qua Flatpak package hoặc Conda.</p>
+
+<p>Đối với <strong>Windows</strong>, người dùng có thể cài đặt bằng OSGeo4W Network Installer hoặc Standalone installers cho phiên bản LTR và LR.</p>
+
+<p>Standalone installers là cách dễ nhất để cài đặt và được khuyến cáo sử dụng cho người mới bắt đầu. Có thể cài đặt cung luc nhiều phiên bản của QGIS trên cùng một máy tính, có nghĩa là bạn có thể cùng lúc cài đặt và sử dụng 02 phiên bản QGIS 3.16 và QGIS 3.18.</p>
+
+<p>Bộ cài đặt OSGeo4W Network Installer hơi nâng cao và phức tạp so với standalone installers, nhưng nó cũng cho phép người dùng cập nhật và nâng cấp phiên bản QGIS tại chỗ, nghĩa là bạn không cần gỡ phiên bản cài đặt cũ để cài đặt phiên bản mới hơn.</p>
+
+<p>Trong một số trường hợp, bạn cần quyền quản trị viên (administrator) để cài đặt QGIS, nên nếu bạn đang cài đặt QGIS trên máy tính với vai trò không phải là quản trị viên, bạn cần yêu cầu quản trị viên CNTT hoặc văn phòng cài đặt giúp bạn.</p>
+
+<p>The installation in Windows also comes with QGIS with GRASS (another Free and Open Source GIS).
+Phiên bản cài đặt trên Windows có thêm QGIS with GRASS (một phần mềm mã nguồn mở tự do khác)</p>
+
+<p>Cần lưu ý là QGIS đang <a href="https://blog.qgis.org/2020/10/15/phasing-out-32-bit-support-in-qgis/">dần bỏ hỗ trợ phiên bản 32-bit cho Window</a>, nên tốt nhất là cài đặt QGIS trên máy tính chạy hệ điều hành 64-bit.</p>
+
+<p>Đối với macOS, có trình cài đặt All-in-one signed installers cho macOS High Sierra (10.13) và các phiên bản mới hơn. QGIS chưa được chứng thực theo yêu cầu của các quy tắc bảo mật macOS Catalina (10.15). Do đó, ở lần khởi chạy đầu tiên, click chuột phải trên biểu tượng QGIS, kết hợp nhấn phím Option, sau đó chọn Open.</p>
+
+<h4 id="các-thành-phần-giao-diện-của-qgis"><strong>Các thành phần giao diện của QGIS</strong></h4>
+
+<p>Sau khi cài đặt QGIS, bạn có thể chạy hoặc mở nó như bất cứ một chương trình nào khác trên máy tính. Khi mở QGIS, bạn sẽ được chào mừng bằng giao diện người dùng (User Interface - UI) mặc định giống như sau:</p>
+
+<p><img src="media/qgis-interface.png" alt="Giao diện QGIS khi mới cài đặt" title="Giao diện QGIS khi mới cài đặt" /></p>
+
+<p>Hình 1.2. Giao diện QGIS khi mới cài đặt</p>
+
+<p>There are six main parts of the QGIS User Interface – the Menu Bar, Map Canvas, Toolbars, Panels, Status Bar, and the Locator.
+Có 6 thành phần chính của giao diện QGIS – Menu Bar (thanh menu), Map Canvas (vùng bản đồ), Toolbars (thanh công cụ), Panels (bảng điều khiển), Status Bar (thanh trạng thái), and và Locator bar (Thanh định vị).</p>
+
+<p>Trung tâm của giao diện là Map Canvas. Panels và Toolbars có thể được đặt xung quanh Map Canvas. Các panel có thể được gắn với nhau để tạo thành một panel nhiều tab. Ngoài ra còn có các thành phần khác của UI như giao diện Python, plugin window,…</p>
+
+<p><strong>Menu Bar</strong> – là một menu phân cấp đơn giản, cung cấp quyền truy cập đến các các hàm và lệnh của GIS. Nó thường nằm ở trên cùng của UI.</p>
+
+<p><strong>Map Canvas</strong> – là nơi hiển thị các lớp dữ liệu được tải trong QGIS. Đây cũng là nơi hiển thị kết quả của các phép filter (lọc), select (chọn), biên tập hiển thị(symbology) của người dùng. Có thể có nhiều map canvas hiển thị cùng lúc. Người dùng có thể phóng to, thu nhỏ, di chuyển hoặc thậm chí xoay map canvas. Map canvas cũng có thể hiển thị dữ liệu 3D.</p>
+
+<p><strong>Toolbars</strong> – chứa các nút bấm và chạy (click-and-run buttons). Chúng cho phép truy cập dễ dàng đến các lệnh, tính năng, plugin,…trong QGIS. Người dùng có thể di chuyển và gắn các toolbar tại bất kỳ vị trí nào xung quanh Map Canvas. Danh sách các toolbars có thể được tìm thấy, kích hoạt và hủy kích hoạt từ Menu bar bằng cách vào <strong>View ‣ Toolbars</strong>, ví dụ như Attributes Toolbar, Digitizing Toolbar.</p>
+
+<p><strong>Panels</strong> –  panel tương tự với toolbar nhưng thay vì là các nút bấm, nó cung cấp giao diện cửa sổ cho các chức năng và tính năng phức tạp hơn. Ví dụ như Layer Panel và Browser Panel. Tương tự như toolbar, các panel có thể được di chuyển và gắn xung quanh Map Canvas. Danh sách các panel có thể được tìm thấy, kích hoạt và hủy kích hoạt từ thanh menu bằng cách vào <strong>View ‣ Panels</strong>.</p>
+
+<p><strong>Status Bar</strong> – thường nằm dưới cùng của UI, hiển thị các thông tin liên quan như hệ quy chiếu tọa độ - CRS, tỉ lệ bản đồ, thông báo,…</p>
+
+<p><strong>Locator Bar</strong> – nằm ở góc dưới bên trái của giao diện QGIS, cho phép người dùng truy cập dễ dàng đến các lớp dữ liệu, thuộc tính, thuật toán xử lý và các thành phần khác trong QGIS. Đây là một trong những tính năng mạnh mẽ nhất của QGIS.</p>
+
+<p><img src="media/qgis-interface-parts.png" alt="Các thành phần giao diện của QGIS" title="Các thành phần giao diện của QGIS" /></p>
+
+<p>Hình 1.3. Các thành phần giao diện của QGIS</p>
+
+<p>Một trong những điểm hay của QGIS là khả năng tùy biến, bắt đầu với giao diện người dùng. Chỉ cần chỉnh sửa một vài thiết lập và di chuyển một vài thành phần của giao diện, bạn có thể có giao diện QGIS như hình bên dưới:</p>
+
+<p><img src="media/qgis-interface-custom.png" alt="Giao diện QGIS với một số tùy biến" title="Giao diện QGIS với một số tùy biến" /></p>
+
+<p>Hình 1.4. Giao diện QGIS với một số tùy biến</p>
+
+<h4 id="hướng-dẫn-bài-tập-1-thay-đổi-hiển-thị-và-bố-cục-của-giao-diện-qgis">**Hướng dẫn/ Bài tập 1: Thay đổi hiển thị và bố cục của giao diện QGIS</h4>
+
+<ol>
+  <li>Mở <strong>QGIS</strong></li>
+  <li>Kích chọn menu <strong>View</strong></li>
+</ol>
+
+<p><img src="media/ex01-01.png" alt="Mở QGIS và kích chọn menu View" title="Open QGIS and click on menu View" /></p>
+
+<ol>
+  <li>Mở menu <strong>Panels</strong></li>
+</ol>
+
+<p><img src="media/ex01-02.png" alt="Mở menu Panels" title="Mở menu Panels" /></p>
+
+<ol>
+  <li>Mở menu <strong>Toolbars</strong></li>
+</ol>
+
+<p><img src="media/ex01-03.png" alt="Mở menu Toolbars" title="Mở menu Toolbars" /></p>
+
+<ol>
+  <li>
+    <p>Chọn các <strong>Toolbars</strong> và <strong>Panels</strong> mà bạn muốn hiển thị trong giao diện người dùng. Một số Panel hữu ích như  <strong>Layer Styling</strong> và <strong>Processing Toolbox</strong>.</p>
+  </li>
+  <li>
+    <p>Di chuyển các <strong>Toolbars</strong> and <strong>Panels</strong> đến các vị trí yêu thích của bạn</p>
+  </li>
+</ol>
+
+<p><strong>Thiết lập lại giao diện QGIS</strong></p>
+
+<p>To reset your display to the default settings, go to<strong>: Settings ‣ Options ‣ System Tab ‣ Settings ‣ Reset</strong> button and restart QGIS
+Đế thiết lập lại hiển thị trở lại chế độ mặc định, truy cập <strong>Settings ‣ Options ‣ System Tab ‣ Settings ‣ Reset</strong></p>
+
+<h4 id="câu-hỏi">**Câu hỏi</h4>
+
+<ol>
+  <li>True or False:
+    <ol>
+      <li>Bạn có thể có nhiều map canvas – <strong><em>True</em></strong></li>
+      <li>Bạn có thể hiển thị hoặc ẩn các panel và toolbar – <strong><em>True</em></strong></li>
+      <li>Bạn chỉ có thể đặt các panel ở bên trái hoặc phải của Map Canvas – <strong><em>False (bạn cũng có thể đặt các panel phía trên hoặc dưới Map Canvas)</em></strong></li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="phase-2--qgis-plugins">Phase 2 : QGIS Plugins</h3>
+
+<p>Khả năng thêm, tạo và mở rộng các chức năng QGIS thông qua các plugin là một trong những tính năng mạnh mẽ nhất của QGIS.</p>
+
+<p>Từ QGIS 3.16.3, có trên 1000 plugin có sẵn cho người dùng download và cải tiến. Các plugin này có chức năng từ phức tạp tới đơn giản.</p>
+
+<p>QGIS plugin có thể được phân loại thành:</p>
+
+<ul>
+  <li><strong>Core plugins</strong> - các plugin tích hợp sẵn trong QGIS, không thể gỡ cài đặt.</li>
+  <li><strong>External plugins</strong> - được cài đặt thủ công bằng cách tìm trong kho lưu trữ bên ngoài (các QGIS Official Plugin Repository) hoặc cài đặt trực tiếp từ mã nguồn.</li>
+</ul>
+
+<p>Plugin có thể được cài đặt bằng ba cách sau:</p>
+
+<ol>
+  <li>Sử dụng Manage and Install Plugins (<strong>Plugins ‣ Manage and Install Plugins</strong>)</li>
+  <li>Cài đặt từ file ZIP thông qua chức năng <strong>Install from ZIP</strong> trong giao diện Manage and Install Plugins.</li>
+  <li>Thêm mã nguồn thủ công trong thư mục plugin của QGIS profile. Thư mục này thường nằm ở:
+    <ol>
+      <li><strong>Linux</strong>: .local/share/QGIS/QGIS3/profiles/default/python/plugins</li>
+      <li><strong>Mac OS X</strong>: Library/Application/Support/QGIS/QGIS3/profiles/default/python/plugins</li>
+      <li>**Windows: **C:\Users<User>\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins</User></li>
+    </ol>
+  </li>
+</ol>
+
+<p><img src="media/plugins-menu.png" alt="Chức năng Manage and Install Plugins" title="Chức năng Manage and Install Plugins" /></p>
+
+<p>Hình 1.5. Chức năng Manage and Install Plugins</p>
+
+<p><strong>Giao diện Manage and Install Plugins</strong></p>
+
+<p>Giao diện Manage and Install Plugins kết nối đến QGIS Official Plugin repository (hoặc bất cứ repository nào được thiết lập trong tab Settings) để tìm nạp các plugin có sẵn cho phiên bản QGIS của bạn. Nó có 05 tab:</p>
+
+<ul>
+  <li><strong>All Tab</strong> – Hiển thị tất cả các plugin có sẵn cho phiên bản QGIS của bạn, bao gồm các plugin đã được cài đặt.</li>
+  <li><strong>Installed Tab</strong> – Chỉ hiển thị các plugin đã được cài đặt.</li>
+  <li><strong>Not installed Tab</strong> – Hiển thị các plugin chưa được cài đặt.</li>
+  <li><strong>Install from ZIP</strong>– Cài đặt plugin bằng ZIP file</li>
+  <li><strong>Settings Tab</strong> – Thiết lập các tuỳ chọn thời điểm kiểm tra các bản cập nhật plugin, có bao gồm các plugin thử nghiệm hoặc không dùng nữa hay không, hoặc thêm/ thay đổi repository chứa các plugin</li>
+</ul>
+
+<p>Nếu plugin bạn đang tìm kiếm được gắn thẻ là experimental hoặc deprecated, bạn cần chọn <strong>Show experimental plugins</strong> và <strong>Show deprecated</strong> plugins trong tab Settings.</p>
+
+<p>The <strong>Search Bar</strong> allows you to search for plugins found in the plugin repository/ies that you are connected to.
+<strong>Search Bar</strong> cho phép bạn tìm kiếm các plugin trong các repository được kết nối.</p>
+
+<p><img src="media/manage-and-install-plugins-dialog.png" alt="Giao diện Manage and Install Plugins" title="Giao diện Manage and Install Plugins" /></p>
+
+<p>Hình 1.6. Giao diện Manage and Install Plugins</p>
+
+<h4 id="hướng-dẫn-bài-tập-2-cài-đặt-qgis-plugin"><strong>Hướng dẫn/ bài tập 2: Cài đặt QGIS Plugin</strong></h4>
+
+<ol>
+  <li>Truy cập <strong>Manage and Install Plugins dialog</strong> từ <strong>Plugins ‣ Manage and Install Plugins</strong> trên Menu bar để mở giao diện Manage and Install Plugins</li>
+</ol>
+
+<p><img src="media/plugins-menu-2.png" alt="Mở Manage and Install Plugins" title="Mở Manage and Install Plugins" /></p>
+
+<p><img src="media/manage-and-install-plugins-dialog.png" alt="Giao diện Manage and Install Plugins" title="Giao diện Manage and Install Plugins" /></p>
+
+<ol>
+  <li>Cài đặt các plugin sau đây bằng cách tìm kiếm trong <strong>All Tab</strong>, kích chọn <strong>Install Plugin</strong> trong góc dưới bên phải của giao diện Manage and Install plugins.
+    <ul>
+      <li>Memory Layer Saver</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="media/memory-layer-saver-plugin.png" alt="Cài đặt Memory Layer Saver plugin" title="Cài đặt Memory Layer Saver plugin" /></p>
+
+<ul>
+  <li>QuickOSM</li>
+</ul>
+
+<p><img src="media/quickosm-plugin.png" alt="Cài đặt QuickOSM plugin" title="Cài đặt QuickOSM plugin" /></p>
+
+<ol>
+  <li>Kiểm tra xem các plugin đã cài đặt thành công hay chưa. Memory Layer Saver plugin sẽ nằm ở <strong>Plugins ‣ Memory Layer Saver</strong> trên Menu bar, trong khi QuickOSM plugin nằm ở <strong>Vector ‣ QuickOSM</strong> trên Menu bar.</li>
+</ol>
+
+<h4 id="câu-hỏi-1"><strong>Câu hỏi</strong></h4>
+
+<ol>
+  <li>True or False
+    <ol>
+      <li>Bạn có thể bỏ hoặc gỡ cài đặt các core plugin – <strong><em>False</em></strong></li>
+      <li>Bạn có thể thêm các plugin không có trong Official QGIS Plugin Repository – <strong><em>True</em></strong></li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="phase-3-qgis-settings">Phase 3: QGIS Settings</h3>
+
+<p><strong>System and Project Settings</strong></p>
+
+<p>QGIS Settings cho phép bạn chỉnh sửA và quản lý nhiều thứ trong QGIS như user profiles, styles, coordinate reference systems, keyboard shortcuts, user interface, default colors,… System settings có thể được tìm thấy trong menu <strong>Settings</strong> và là các thiết lập mặc định của QGIS trừ khi bị ghi đè bởi Project settings. 
+Project Settings có thể được tìm thấy trong <strong>Project ‣ Properties</strong> và liên quan đến settings hoặc properties cho project hiện hành. Các thiết lập này sẽ ghi đè các thiết lập mặc định của hệ thống.</p>
+
+<p><img src="media/settings-1.png" alt="System Settings" title="System Settings" /></p>
+
+<p>Hình 1.7. System Settings</p>
+
+<p><img src="media/settings-2.png" alt="Project Settings" title="Project Settings" /></p>
+
+<p>Hình 1.8. Project Settings</p>
+
+<p><strong>Thay đổi QGIS Theme</strong></p>
+
+<p>Bạn có thể thay đổi giao diện (look-and-feel) của QGIS tại <strong>Settings ‣ Options ‣ General</strong> Tab.</p>
+
+<p>Bạn có thể chọn giữa 03 chủ đề (theme) – default, Blend of Gray và Night Mapping. Bạn cũng có thể thay đổi kích thước của các icon, font chữ và các thiết lập hệ thống mặc định của QGIS.</p>
+
+<p><img src="media/change-theme.png" alt="General Settings trong QGIS" title="General Settings trong QGIS" /></p>
+
+<p>Hình 1.9. General Settings trong QGIS</p>
+
+<p>Đối với một số thiết lập trong QGIS, bạn có thể cần khởi động lại ứng dụng để chúng có hiệu lực.</p>
+
+<p><strong>User Profiles</strong></p>
+
+<p>QGIS 3.X giới thiệu khái niệm QGIS User Profiles.</p>
+
+<p>Một User Profile là một tập hợp các thiết lập về các plugin được cài đặt, các toolbar được kích hoạt, sắp xếp giao diện người dùng và các thiết lập khác. QGIS có sẵn một User Profile mặc định, có tân là default. User profile cho phép người dùng tạo các thiết lập khác nhau cho các phân tích cụ thể (ví dụ như user profile cho quản lý tài nguyên nước, số hoá dữ liệu, biên tập bản đồ,…), các dự án hoặc khách hàng cụ thể.</p>
+
+<p>User Profiles có thể được tạo và truy cập từ menu bar: <strong>Settings ‣ User Profiles</strong>.</p>
+
+<p>User profile đang hoạt động được hiển thị với tên [User Profile] trên title bar.</p>
+
+<p><img src="media/user-profiles-1.png" alt="Truy cập User Profiles" title="Truy cập User Profiles" /></p>
+
+<p>Hình 1.10. Truy cập User Profiles</p>
+
+<p>User profiles được lưu trữ trong một thư mục trên máy tính và có thể truy cập qua <strong>Settings ‣ User Profiles ‣ Open Active Profile Folder</strong>.</p>
+
+<h4 id="hướng-dẫn-bài-tập-03-tạo-user-profile"><strong>Hướng dẫn/ Bài tập 03: Tạo User Profile</strong></h4>
+
+<ol>
+  <li>Truy cập <strong>Settings ‣ User Profiles ‣ New Profile…</strong></li>
+</ol>
+
+<p><img src="media/user-profiles-2.png" alt="New Profile" title="New Profile" /></p>
+
+<ol>
+  <li>Đặt tên cho user profile.</li>
+</ol>
+
+<p><img src="media/user-profiles-3.png" alt="Đặt tên cho user profile" title="Đặt tên cho user profile" /></p>
+
+<ol>
+  <li>
+    <p>Một cửa sổ QGIS mới được mở với user profile mới vừa tạo. Cần chú ý là nên user profile được hiển thị trên title bar.</p>
+  </li>
+  <li>
+    <p>Bạn có thấy bất kì sự khác biệt nào trong user profile mới không? Kiểm tra giao diện, plugins và settings của profile cũ so với profile mới vừa tạo.</p>
+  </li>
+</ol>
+
+<h4 id="câu-hỏi-2"><strong>Câu hỏi</strong></h4>
+
+<ol>
+  <li>True or False
+    <ol>
+      <li>Bạn chỉ có thể có một user profile trong QGIS. – <strong><em>False (you can have multiple user profiles)</em></strong></li>
+      <li>Bạn không thể ghi đè system settings và properties – <strong><em>False</em></strong></li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="phase-4-bổ-sung-các-định-dạng-file-qgis">Phase 4 (bổ sung): Các định dạng file QGIS</h3>
+
+<h4 id="qgis-project-file-qgsqgz"><strong>QGIS Project File (QGS/QGZ)</strong></h4>
+
+<p>Các QGIS Projects cũng giống như các file .mxd của ArcMap. Các file này có dạng  <strong>QGS (<em>.qgs)** hoặc  ** QGZ (</em>.qgz)</strong>. Khác biệt chính giữa 02 dạng này ở chỗ định dạng QGZ là một file nén (zip) chứa một QGS file và một QGD file. QGS là một định dạng XML để luu trữ các QGIS project. QGD file là một sqlite database đi cùng với QGIS project, chứa các dữ liệu bổ trợ cho project. Nếu không có dư4 liệu bổ trợ, QGD file sẽ rỗng.</p>
+
+<p>Một QGIS Project file chứa tất cả những thứ cần thiết để lưu trữ một QGIS project, bao gồm:</p>
+
+<ul>
+  <li>project title</li>
+  <li>project CRS</li>
+  <li>the layer tree</li>
+  <li>snapping settings</li>
+  <li>relations</li>
+  <li>the map canvas extent</li>
+  <li>project models</li>
+  <li>legend</li>
+  <li>mapview docks (2D and 3D)</li>
+  <li>the layers with links to the underlying datasets (data sources) and other layer properties including extent, SRS, joins, styles, renderer, blend mode, opacity and more.</li>
+  <li>project properties</li>
+</ul>
+
+<p>QGIS project fils có thể được lưu trong một GeoPackage hoặc một Postgis database. Lưu  project file cùng với style file và các layer liên quan trong một GeoPackage duy nhất sẽ giúp chia sẻ các QGIS project được dễ dàng.</p>
+
+<h4 id="qgis-layer-definition-qlr"><strong>QGIS Layer Definition (QLR)</strong></h4>
+
+<p>QGIS Layer Definition file (<strong>QLR</strong>) là một XML file chứa con trỏ đến các layer cùng với các thông tin style của layer. Hiện tại, một QLR file chỉ tương ứng với một layer.</p>
+
+<p>Trường hợp sử dụng cho file này rất đơn giản: Có một file duy nhất để mở một nguồn dữ liệu cùng với tất cả các thông tin style tương ứng. QLR file cũng cho phép che nguồn dữ liệu bên dưới thông qua một file dễ mở.</p>
+
+<p>Một ví dụ cho sử dụng QLR là để mở một layer từ PostGIS databse. Thay vì phải kết nối đến database, tìm kiếm layer, áp dụnp một bộ lọc, bạn chỉ cần mở một .qlr file trỏ đến đúng PostGIS layer với style và bộ lọc tương ứng.</p>
+
+<h4 id="qgis-style-file-qml"><strong>QGIS Style File (QML)</strong></h4>
+
+<p><strong>QML</strong> là một định dạng XML để lưu trữ layer styling. Một QML file (.qml) chứa tất cả các thông tin cho QGIS biết cách hiển thị các đối tượng hình học với các thiết lập symbol, size, rotation, labeling, opacity, blend mode, và nhiều thiết lập styling khác.</p>
+
+<p>Một .qml file phải có cùng tên với layer tương ứng. Khi chúng được tìm thấy trong cùng thư mục với layer, khi tải layer sẽ tự động tải style đã được định nghĩa trong .qml file.</p>
+
+<p>Ví dụ, nếu bạn có một GeoJSON tên là regions.geojson và một QML file có tên regions. qml. khi tải regions.geojson trong QGIS, nó sẽ áp dụng style được định nghĩa trong regions.qml.</p>
+
+<p>Khi sử dụng GeoPackages (.gpkg), một .qml file đôi khi không cần thiết vì bạn có thể lưu style của layer trực tiếp trong GeoPackage.</p>
+
+<h3 id="nếu-bạn-muốn-tìm-hiểu-kĩ-hơn">Nếu bạn muốn tìm hiểu kĩ hơn:</h3>
+
+<p>Bạn có thể tạo một QGIS plugin của riêng mình. Nếu không có plugin nào đáp ứng nhu cầu của bạn thì bạn luôn có thể tạo một plugin cho riêng mình.</p>
+
+<p><strong>Plugin Builder</strong> là một plugin tạo một template có thể đóng vai trò là điểm khởi đầu cho phát triển QGIS plugin, nên bạn không cần phải tạo plugin từ đầu. Bạn có thể cài đặt Plugin Builder trong giao diện Manage and Install Plugins.</p>
+
+<p>Tất nhiên, bạn luôn có thể tạo một plugin từ đầu. Nếu bạn quan tâm đến việc tạo plugin cho riêng mình, bạn có thể tham khảo Official QGIS documentation (<a href="https://documentation.qgis.org/">https://documentation.qgis.org/</a>). Đối với Python plugins, bạn nên tham khảo PyQGIS Developer Cookbook (<a href="https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/">https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/</a>).</p>
+
+<p>Để biết thêm thông tin, vui lòng truy cập: <a href="https://bnhr.xyz/2018/10/08/qgis-plugins-3.0.html">https://bnhr.xyz/2018/10/08/qgis-plugins-3.0.html</a></p>
+
+<h3 id="để-thực-hành-các-kỹ-năng-mới-hãy-thử">Để thực hành các kỹ năng mới, hãy thử:</h3>
+
+<ul>
+  <li>Thay đổi theme của giao diện QGIS cho phù hợp với sở thích của bạn.</li>
+  <li>Cài đặt các QGIS plugin khác.</li>
+  <li>Thay đổi các QGIS settings khác.
+    <ul>
+      <li>Tạp một custom coordinate reference system</li>
+      <li>Thêm một custom splash screen (<a href="https://bnhr.xyz/2020/09/05/custom-splash-screen-qgis.html">https://bnhr.xyz/2020/09/05/custom-splash-screen-qgis.html</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="mẹo">Mẹo</h3>
+
+<p>N/A</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

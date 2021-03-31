@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Módulo 5 - Fazendo Mapas | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Módulo 5 - Fazendo Mapas page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Módulo 5 - Fazendo Mapas">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Módulo 5 - Fazendo Mapas</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/brazil/module5/module5.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="módulo-5---fazendo-mapas">Módulo 5 - Fazendo Mapas</h1>
+
+<p><strong>Autor</strong>: Ketty</p>
+
+<h2 id="introdução-pedagógica">Introdução Pedagógica</h2>
+
+<p>Este módulo irá fornecer a você uma visão geral das etapas frequentemente necessárias para elaborar um mapa no QGIS. No final do módulo, os participantes conhecerão os seguintes conceitos:</p>
+
+<ul>
+  <li>Tela do mapa e camadas relacionadas</li>
+  <li>O layout de impressão e o layout de impressão</li>
+  <li>Elementos e propriedades do mapa</li>
+</ul>
+
+<p>Além disso, você terá aprendido as seguintes habilidades;</p>
+
+<ul>
+  <li>Usando o layout de impressão para fazer um mapa</li>
+  <li>Adicionando elementos do mapa ao mapa</li>
+  <li>Gerenciando layouts de impressão diferentes</li>
+</ul>
+
+<h2 id="ferramentas-e-recursos-necessários">Ferramentas e recursos necessários</h2>
+
+<ul>
+  <li>Computador</li>
+  <li>Acesso à Internet</li>
+  <li>QGIS 3.16 ou posterior</li>
+  <li>Camada de limite administrativo <code class="language-plaintext highlighter-rouge">rj_capital</code> (dentro de <a href="/brazil/module5/data/module5.gpkg">module5.gpkg</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">rj_clinics</code> (dentro de <a href="/brazil/module5/data/module5.gpkg">module5.gpkg</a>)</li>
+  <li>Unidades Federativas do Brasil, <code class="language-plaintext highlighter-rouge">br_ufs</code> (dentro de <a href="/brazil/module5/data/module5.gpkg">module5.gpkg</a>)</li>
+  <li><a href="/brazil/module5/data/hrsl_rj_capital_populacao.tif">RJ High Resolution Settlement Layer</a></li>
+</ul>
+
+<h2 id="pré-requisitos">Pré-requisitos</h2>
+
+<ul>
+  <li>Conhecimento básico de como operar um computador</li>
+  <li>Uma compreensão de todos os módulos anteriores</li>
+</ul>
+
+<h2 id="recursos-adicionais">Recursos adicionais</h2>
+
+<ul>
+  <li>QGIS Map LayOut - <a href="https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html">https://docs.qgis.org/3.16/en/ docs/training_manual/map_layout/map_layout.html</a></li>
+  <li>Modelos de layout - <a href="https://layout-hub.github.io/">https://layout-hub.github.io/</a></li>
+  <li>Gerenciador de estilos - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html">https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html</a></li>
+  <li>Biblioteca de estilos - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html">https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html</a></li>
+</ul>
+
+<h2 id="introdução-temática">Introdução temática</h2>
+
+<p>Vamos começar com um exemplo:</p>
+
+<p>Para fazer um mapa, você precisará de um tópico que gostaria de entender melhor, por exemplo ‘Distribuição espacial de clínicas (equipamentos de saúde) no Rio de Janeiro’. Você notará que o tópico fornece um tema para explorar e a localização geográfica. Munido com essas informações e os dados relevantes que permitem que você explore mais a questão, você pode prosseguir para elaborar um mapa.</p>
+
+<h3 id="detalhamento-dos-conceitos">Detalhamento dos conceitos</h3>
+
+<p>Este módulo enfocará os seguintes conceitos-chave de criação de mapas; tela do mapa e camadas relacionadas, o layout de impressão e elementos e propriedades do mapa. Primeiro, aqui estão as definições curtas de cada um:</p>
+
+<ul>
+  <li>a <strong>tela do mapa e camadas relacionadas</strong>: é provavelmente o widget mais importante no QGIS porque mostra o mapa composto de camadas sobrepostas e permite a interação com o mapa e as camadas. Isso é abordado no Módulo 0: Introdução ao QGIS</li>
+  <li>o <strong>layout de impressão</strong>: O layout de impressão fornece layout e recursos de impressão. Ele permite que você adicione elementos como o mapa, rótulos de texto, imagens, legendas, barras de escala, formas básicas, setas, tabelas de atributos e quadros HTML. Com o layout de impressão, você pode criar belos mapas e atlas que podem ser impressos ou salvos como um arquivo PDF, uma imagem ou um arquivo SVG. Esta é uma maneira poderosa de compartilhar informações geográficas produzidas com QGIS que podem ser incluídas em relatórios ou publicadas. Você pode salvar o layout como um modelo e carregá-lo novamente em outra sessão. Finalmente, a geração de vários mapas com base em um modelo pode ser feita por meio do gerador de atlas. A imagem abaixo mostra o layout de impressão e a interface do layout de impressão. Esta interface é aberta quando você abre um novo layout de impressão.</li>
+</ul>
+
+<p><img src="media/print_comp2.png" alt="Layout de impressão" title="Layout de impressão" /></p>
+
+<p>Figura 5.1: Layout de impressão</p>
+
+<ul>
+  <li><strong>elementos e propriedades do mapa</strong>: os mapas contêm muitas informações. A maioria dos mapas terá as cinco seguintes coisas: um título, uma legenda, uma grade, uma rosa dos ventos para indicar a direção e uma escala. O título informa o que está sendo representado no mapa.</li>
+</ul>
+
+<h2 id="conteúdo-principal">Conteúdo principal</h2>
+
+<h3 id="título-da-fase-1-exportando-a-tela-do-mapa">Título da fase 1: Exportando a tela do mapa</h3>
+
+<p>Neste tutorial, mostraremos duas maneiras de ‘Exportar a tela do mapa’ para o layout de impressão do QGIS. O primeiro método é direto, enquanto o segundo método explora os recursos mais avançados fornecidos pelo layout de impressão.</p>
+
+<h4 id="primeiro-método-exportar-a-tela-do-mapa-sem-o-layout-de-impressão"><strong>Primeiro método: Exportar a tela do mapa sem o layout de impressão</strong></h4>
+
+<ol>
+  <li>As camadas de dados já devem estar adicionadas à tela do QGIS. As camadas podem então ser estilizadas para comunicar informações em seus dados. Adicione as decorações do mapa clicando em <strong>Exibir ‣ Decorações</strong>. Selecione sua decoração de mapa preferida. Por exemplo, você pode adicionar o rótulo de título, barra de escala e rótulo de direitos autorais. Para cada decoração, você terá que especificar as configurações em uma caixa de diálogo.</li>
+  <li>A etapa final é exportar o mapa para o formato de imagem ou PDF. Para fazer isso, clique em <strong>Projeto ‣ Importar/Exportar</strong> e selecione o formato de exportação de sua preferência. A caixa de diálogo de exportação abaixo deve aparecer.</li>
+</ol>
+
+<p><img src="media/export-map-canvas-image.png" alt="Exportando a tela do mapa como imagem" title="Exportando a tela do mapa como imagem" /></p>
+
+<p><img src="media/export-map-canvas.png" alt="Exportando o mapa" title="Exportando o mapa " /></p>
+
+<p>Figura 5.2: Exportando o mapa</p>
+
+<ol>
+  <li>Clique em <strong>Salvar</strong>. O mapa na tela do QGIS será salvo como um documento PDF ou imagem. Navegue até o local onde o arquivo foi salvo e agora você pode imprimir ou compartilhar o mapa.</li>
+</ol>
+
+<p><img src="media/export-map-canvas.png" alt="Tela do mapa exportada como imagem" title="Tela do mapa exportada como imagem" /></p>
+
+<p>Figura 5.3: Tela do mapa exportada como imagem</p>
+
+<h4 id="segundo-método-exportar-a-tela-do-mapa-para-a-impressão-layout"><strong>Segundo método: Exportar a tela do mapa para a impressão layout</strong></h4>
+
+<ol>
+  <li>Neste tutorial, faremos um mapa mostrando a 1.) localização dos centros de saúde e 2.) densidade populacional do Rio de Janeiro. As camadas de dados já devem ser adicionadas à tela do QGIS. As camadas podem então ser estilizadas para comunicar as informações dos seus dados.</li>
+</ol>
+
+<p><img src="media/new-print-layout.png" alt="Criando novo layout de impressão" title="Criando novo layout de impressão" /></p>
+
+<p>Figura 5.4: Criando novo layout de impressão</p>
+
+<ol>
+  <li>A tela do mapa agora pode ser exportada para o layout de impressão. Clique no ‘botão novo layout de impressão’ <img src="media/newprint_composer.png" alt="Novo layout de impressão" title="Novo layout de impressão" />. Isso pode ser acessado através da barra de ferramentas. Como alternative, acesse usando a barra de menu ‘Projetos’. Uma caixa de diálogo de título será aberta, solicitando que você digite o título do Layout de impressão. Digite ‘Rio de Janeiro’ e clique em OK.</li>
+</ol>
+
+<p><img src="media/new-print-layout-name.png" alt="Nomeando o layout de impressão" title="Nomeando o layout de impressão" /></p>
+
+<p>Figura 5.5: Nomeando o layout de impressão</p>
+
+<ol>
+  <li>O layout de impressão será aberto</li>
+</ol>
+
+<p><img src="media/new-print-layout-window.png" alt="A janela Layout de impressão" title="A janela Layout de impressão" /></p>
+
+<p>Figura 5.6: A janela Layout de impressão</p>
+
+<ol>
+  <li>Você notará que a tela do layout de impressão está vazia. Para adicionar o mapa estilizado da tela QGIS, clique no botão ‘Adicionar novo mapa ao layout’<img src="media/add_new_map_to_layout.png" alt="Alt_text" title="image_tooltip" />, clique com o botão esquerdo do mouse e desenhe um retângulo no espaço em branco no centro do layout de impressão. O mapa será adicionado. Você acabou de adicionar um mapa para o layout de impressão. Agora é possível adicionar todos os outros elementos do mapa, como título, legenda, grades, etc.</li>
+</ol>
+
+<p><img src="media/print-layout-map.png" alt="Adicionar mapa ao layout de impressão" title="Adicionar mapa ao layout de impressão" /></p>
+
+<p>Figura 5.7: Adicionar mapa a Layout de impressão</p>
+
+<h4 id="perguntas-do-questionário-">**Perguntas do questionário **</h4>
+
+<ol>
+  <li>O que é a tela do mapa QGIS? (caixas de seleção)</li>
+  <li>Qual é a utilidade do layout de impressão? (caixas de seleção)</li>
+  <li>Qual dos seguintes não é um elemento do mapa? (botão de radio)</li>
+</ol>
+
+<h4 id="respostas-do-questionário-">**Respostas do questionário **</h4>
+
+<ol>
+  <li>
+    <p>a. mostra o mapa composto de camadas de mapa sobrepostas
+b. permite interação com o mapa e camadas
+c. um widget para fazer mapas</p>
+  </li>
+  <li>
+    <p>a. fornece layout crescente e recursos de impressão
+b. permite adicionar elementos do mapa
+c. lidar com a exportação e impressão de mapas</p>
+  </li>
+  <li>
+    <p>a. Título
+b. Escala
+c. Legenda
+d. Cores e designs</p>
+  </li>
+</ol>
+
+<h3 id="título-da-fase-2-adicionando-e-editando-elementos-do-mapa-ao-layout-de-impressão">Título da fase 2: Adicionando e editando elementos do mapa ao layout de impressão</h3>
+
+<h4 id="conteúdotutorial"><strong>Conteúdo/Tutorial</strong></h4>
+
+<p>Agora que o mapa estilizado foi adicionado ao layout de impressão, é hora de adicionar elementos importantes como o título, escala, legenda, grade, metadados etc. para o layout de impressão. A maioria dos botões está localizada à esquerda do layout de impressão.</p>
+
+<ol>
+  <li>Clique no botão ‘Adicionar rótulo’ <img src="media/add_title.png" alt="Alt_text" title="image_tooltip" />, mantenha pressionado o botão esquerdo do mouse e desenhe um retângulo onde deseja colocar o título do mapa. Digite o título no menu ‘Propriedades principais’ no lado direito do layout de impressão. As propriedades da fonte podem ser alteradas no item de menu ‘Aparência’.</li>
+</ol>
+
+<p><img src="media/print-layout-with-title.png" alt="Adicione o título do mapa" title="Adicione o título do mapa" /></p>
+
+<p>Figura 5.8: Adicione o título do mapa</p>
+
+<ol>
+  <li>Em seguida, adicionaremos a legenda e a escala. Uma declaração de atribuição de dados pode ser adicionada usando o botão ‘Adicionar rótulo’. Clique no botão de Adicionar rótulo na barra da esquerda. Siga as mesmas etapas do item 1. acima para adicionar esse elemento ao layout de impressão. Você pode adicionar outros elementos do mapa, mas tome cuidado para que o mapa não fique muito confuso.</li>
+</ol>
+
+<p><img src="media/scale-bar.png" alt="Barra de escala" title="Barra de escala" /></p>
+
+<p>Figura 5.9: Adicionar barra de escala ao mapa</p>
+
+<p><img src="media/legend.png" alt="Legenda" title="Legenda" /></p>
+
+<p>Figura 5.9: Adicionar legenda ao mapa</p>
+
+<p><img src="media/attribution.png" alt="Atribuição" title="Atribuição" /></p>
+
+<p>Figura 5.10: Adicionar atribuição ao mapa</p>
+
+<ol>
+  <li>
+    <p>Se o layout do mapa estiver satisfatório, você já pode exportar o mapa um PDF, PNG, JPEG ou SVG, pronto para impressão. Lembre-se também de salvar o layout. Todas as funções de salvamento podem ser acessadas através do menu ‘layout’.</p>
+  </li>
+  <li>
+    <p>Salve o mapa como uma imagem usando <strong>Layout ‣ Exportar como imagem</strong> ou clicando no botão <strong>Exportar como imagem</strong> <img src="media/export-image-btn. png" alt="Exportar mapa como imagem" title="Exportar mapa como imagem" />. O QGIS irá perguntar a você em qual arquivo salvar o mapa, bem como os parâmetros da imagem.</p>
+  </li>
+</ol>
+
+<p><img src="media/img-parameters.png" alt="Parâmetros de imagem" title="Parâmetros de imagem" /></p>
+
+<p>Figura 5.10: Adicionar atribuição ao mapa</p>
+
+<p><img src="media/exported-map.png" alt="Mapa exportado como img." title="Mapa exportado como img." /></p>
+
+<p>Figura 5.11 : Mapa exportado como imagem</p>
+
+<h4 id="perguntas-do-questionário"><strong>Perguntas do questionário</strong></h4>
+
+<ol>
+  <li>Em qual das seguintes guias você pode alterar as propriedades dos elementos do mapa? (botão de opção)</li>
+  <li>Qual é a diferença entre o layout do mapa e o layout de impressão?</li>
+  <li>Como você pode adicionar texto de atribuição ao layout do mapa?</li>
+</ol>
+
+<h4 id="respostas-do-questionário--1">**Respostas do questionário **</h4>
+
+<ol>
+  <li>a. Composição
+b. Propriedades do item
+c. Geração de Atlas</li>
+  <li>O layout do mapa permite que você adicione mapas da tela do mapa, enquanto o layout de impressão permite que você componha seu mapa</li>
+  <li>Adicione uma caixa de título e digite o texto de atribuição. Observe que a caixa de título permite que você adicione todas as formas de texto ao seu mapa.</li>
+</ol>
+
+<h3 id="título-da-fase-3-automatizando-a-criação-de-mapas-usando-os-recursos-do-atlas">Título da Fase 3: Automatizando a criação de mapas usando os recursos do Atlas</h3>
+
+<h4 id="conteúdotutorial-1"><strong>Conteúdo/Tutorial</strong></h4>
+
+<p>Se sua organização publica mapas impressos ou on-line, geralmente você precisa criar muitos mapas com o mesmo modelo - geralmente um para cada unidade administrativa ou região de interesse. Criar esses mapas manualmente pode levar muito tempo e, se você quiser atualizá-los regularmente, isso pode se tornar uma tarefa árdua. O QGIS tem uma ferramenta chamada Atlas que pode ajudá-lo a criar um modelo de mapa e publicar facilmente um grande número de mapas para diferentes regiões geográficas. Vamos tomar as diferentes Unidades Federativas do Brasil como exemplo:</p>
+
+<p><img src="media/atlas-coverage.png" alt="Camada de cobertura" title="Camada de cobertura" /></p>
+
+<p>Figura 5.12: Camada de cobertura</p>
+
+<p><img src="media/atlas-attr.png" alt="Tabela de atributos" title="Tabela de atributos" /></p>
+
+<p>Figura 5.13: Tabela de atributos</p>
+
+<ol>
+  <li>
+    <p>Esta camada servirá como camada de cobertura externa, o que significa que o Atlas QGIS irá cirar um mapa para cada uma das feições dessa camada de cobertura. Ao todo, serão gerados 27 mapas.</p>
+  </li>
+  <li>
+    <p>Abra ou crie um novo Layout de impressão e adicione um mapa.</p>
+  </li>
+</ol>
+
+<p><img src="media/atlas-print-layout.png" alt="Layout de impressão do Atlas" title="Layout de impressão do Atlas" /></p>
+
+<p>Figura 5.14: Layout de impressão do Atlas</p>
+
+<ol>
+  <li>No painel direito do Layout de impressão, certifique-se de selecionar o menu <strong>Atlas</strong> e marque a caixa <strong>Gerar um atlas</strong>. Você também pode abrir as Configurações do Atlas usando o botão Configurações do Atlas <img src="media/atlas-settings-btn.png" alt="Configurações do Atlas" title="Configurações do Atlas" /> na barra de ferramentas do Atlas.</li>
+</ol>
+
+<p><img src="media/generate-atlas.png" alt="Geração Atlas" title="Geração Atlas" /></p>
+
+<p>Figura 5.15: Geração Atlas</p>
+
+<ol>
+  <li>A próxima etapa é escolher a camada de cobertura; A camada de cobertura é a camada de índice usada para criar cada página. Um mapa/página para o Atlas será gerada para cada feição na camada de cobertura. No nosso caso, usar a camada de cobertura <code class="language-plaintext highlighter-rouge">br_ufs</code> criará um mapa para cada uma das 27 UFs. O QGIS Atlas altera dinamicamente a extensão da visualização para cada recurso na camada de cobertura. Você pode optar por tornar a camada de cobertura oculta nos mapas que você cria (ou seja, a camada de cobertura não será visível no Layout de Impressão) e selecionar como nomear cada página do Atlas. Você também pode realizar alguma filtragem e classificação da camada de cobertura, se necessário. Para a <strong>Saída</strong>, você pode optar por ter um único arquivo como saída marcando a caixa de seleção <strong>Exportar arquivo único quando possível</strong>. Se desmarcado, você gerará um arquivo diferente por mapa.</li>
+</ol>
+
+<p><img src="media/coverage-layer.png" alt="Selecionar camada de cobertura" title="Selecionar camada de cobertura" /></p>
+
+<p>Figura 5.16: Selecionar camada de cobertura</p>
+
+<ol>
+  <li>Agora que definimos a camada de cobertura, devemos dizer ao Layout de impressão para usar o atlas para controlar a extensão dos mapas (área visível no mapa imprimível) que iremos gerar. Na guia <strong>Propriedades do item</strong>, marque a caixa para <strong>Controlado pelo Atlas</strong></li>
+</ol>
+
+<p><img src="media/atlas-controlled.png" alt="Controlado pelo Atlas" title="Controlado pelo Atlas" /></p>
+
+<p>Figura 5.17: Certifique-se de que a extensão do mapa é controlado pelo Atlas</p>
+
+<ol>
+  <li>Para visualizar seu Atlas, clique no botão Visualizar Atlas <img src="media/atlas-preview-btn.png" alt="Botão Visualizar Atlas" title="botão Visualizar Atlas" /> na barra de ferramentas Atlas. Isso mostrará os 27 mapas que você gerou. Use a barra de ferramentas do Atlas <img src="media/atlas-toolbar-nav.png" alt="Barra de ferramentas do Atlas" title="Barra de ferramentas do Atlas" /> para navegar pelos mapas do Atlas.</li>
+</ol>
+
+<p><img src="media/atlas-preview.png" alt="Atlas Preview" title="Atlas Preview" /></p>
+
+<p>Figura 5.18: Atlas Preview</p>
+
+<ol>
+  <li>Você pode exportar os mapas do Atlas através do botão <strong>Exportar Atlas</strong> <img src="media/atlas-export-btn.png" alt="Botão Exportar Atlas" title="Botão Exportar Atlas" /> como imagens ou PDFs. Selecione <strong>Exportar Atlas como imagem</strong>. Você deve gerar 27 mapas, e cada mapa mostrará a extensão de uma das UFs.</li>
+</ol>
+
+<p><img src="media/atlas-outputs.png" alt="Resultado do Atlas" title="Resultado do Atlas" /></p>
+
+<p>Figura 5.18: Resultado do Atlas</p>
+
+<ol>
+  <li>
+    <p><strong>DICA</strong>: Para este exemplo, mapeamos apenas a camada de cobertura. O poder do Atlas é quando mapeamos várias camadas. Por exemplo, temos as clínicas, rede de estradas e dados de densidade populacional para todo o país carregados como camadas no QGIS. Em seguida, gostaríamos de criar um mapa para cada uma das UFs mostrando essas mesmas camadas. Usar o Atlas exigiria que criássemos apenas um modelo de layout e deixássemos o Atlas lidar com a geração dos outros mapas com base na camada de cobertura que usamos.</p>
+  </li>
+  <li>
+    <p><strong>DICA</strong>: Você pode usar as expressões QGIS e substituições definidas por dados para definir os outros elementos do mapa em seu Atlas para que eles também mudem dinamicamente, dependendo da feição da camada de cobertura que está sendo mapeado. Por exemplo, você pode usar uma expressão QGIS chamando o valor do campo NAME_1 em seu rótulo para que ele mude dinamicamente para exibir o valor de NAME_1 para a feição atual que está sendo mapeada.</p>
+  </li>
+</ol>
+
+<p>Para obter mais informações sobre o Atlas QGIS, consulte: <a href="https://www.youtube.com/watch?v=tOnMJBUvEjY">https://www.youtube.com/watch?v=tOnMJBUvEjY</a>.</p>
+
+<h4 id="perguntas-do-questionário-1"><strong>Perguntas do questionário</strong></h4>
+
+<p>n/a</p>
+
+<h4 id="respostas-do-questionário"><strong>Respostas do questionário</strong></h4>
+
+<p>n/a</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

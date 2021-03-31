@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Módulo 2: Capas (capas) en QGIS | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Módulo 2: Capas (capas) en QGIS page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Módulo 2: Capas (capas) en QGIS">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Módulo 2: Capas (capas) en QGIS</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/argentina/module2/module2.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="módulo-2-capas-capas-en-qgis">Módulo 2: Capas (capas) en QGIS</h1>
+
+<p><strong>Autor</strong>: Ben Hur</p>
+
+<p><strong>Traductora</strong>: Malena</p>
+
+<h2 id="introducción-pedagógica">Introducción Pedagógica</h2>
+
+<p>En este módulo veremos los conceptos básicos de capas (layers) en QGIS y cómo cargarlas. Al final de este módulo, deberían estar familiarizados con:</p>
+
+<ul>
+  <li>las diferentes fuentes de datos y formatos de archivo que se pueden cargar en QGIS</li>
+  <li>las diferentes formas en que se pueden cargar datos en QGIS</li>
+  <li>algunos formatos de archivo de datos comunes</li>
+</ul>
+
+<p>También deberían poder:</p>
+
+<ul>
+  <li>cargar capas (tanto vectorial como raster) usando el Navegador (Browser Panel)  y el Administrador de fuentes de datos (Data Source Manager)</li>
+  <li>conectar QGIS a servicios remotos</li>
+  <li>trabajar con capas temporales y virtuales</li>
+  <li>instalar algunos complementos que cargarán otros conjuntos de datos en QGIS</li>
+  <li>mostrar propiedades de la capa, como información de metadatos</li>
+  <li>guardar y exportar capas</li>
+</ul>
+
+<h2 id="herramientas-y-recursos-necesarios">Herramientas y recursos necesarios</h2>
+
+<p>Las herramientas y los recursos necesarios para este módulo son:</p>
+
+<ul>
+  <li>computadora de trabajo</li>
+  <li>conexión a Internet</li>
+  <li>QGIS 3.16 instalado en la computadora 	(<a href="https://qgis.org/es/site/forusers/download.html">https://qgis.org/es/site/forusers/download.html</a>)</li>
+</ul>
+
+<h2 id="prerrequisitos">Prerrequisitos</h2>
+
+<ul>
+  <li>Conocimientos básicos sobre cómo operar una computadora</li>
+  <li>Familiaridad con los formatos de datos espaciales y la interfaz de QGIS (haber completado los Módulos 0 y 1)</li>
+</ul>
+
+<h2 id="recursos-adicionales">Recursos adicionales</h2>
+
+<p>Guía del usuario de QGIS - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/">https://docs.qgis.org/3.16/en/docs/user_manual/</a></p>
+
+<p>Manual de entrenamiento en QGIS - <a href="https://docs.qgis.org/3.16/en/docs/training_manual/index.html">https://docs.qgis.org/3.16/en/docs/training_manual/index.html</a></p>
+
+<h2 id="introducción-temática">Introducción Temática</h2>
+
+<p><img src="media/spatial-layers.jpg" alt="Multiple layer analysis in GIS" title="Multiple layer analysis in GIS" /></p>
+
+<p>Figura 1. Una superposición de mapa que contiene diferentes capas y tipos de datos (https://www.lexgeo.com/arquitecturaenterreno/)</p>
+
+<p>Aprendimos de los módulos anteriores que los modelos de datos espaciales como vectores y raster son modelos de objetos y fenómenos del mundo real y, aunque está perfectamente bien tener un solo capa que modele una cosa (por ejemplo, elevación, temperatura, ubicaciones de hogares, zonificación, etc.), en la práctica, si queremos realizar análisis útiles o crear un modelo que refleje mejor el mundo real, necesitaríamos utilizar varios datos y capas juntos. La superposición de varios mapas temáticos de la misma área colocándolos uno encima del otro es una de las técnicas de análisis geográfico más antiguas y comunes.</p>
+
+<h3 id="desglose-de-conceptos">Desglose de conceptos</h3>
+
+<p>La imagen de arriba nos da un ejemplo simple y concreto de esto. Imagínate ser un consultor de SIG encargado de encontrar la mejor ubicación para un nuevo restaurante de franquicia (por ejemplo, Starbucks o McDonalds). Para hacer esto, necesitas recopilar la información relevante que te ayudará a decidir. Esto puede incluir información sobre las calles de la ciudad, parcelas de terreno, ubicación y distribución de posibles clientes, la topografía de la zona, uso del suelo, etc.</p>
+
+<p>Estos conjuntos de datos pueden venir en diferentes tipos y formatos. Algunos pueden ser archivos vectoriales, mientras que otros pueden ser raster. Algunos pueden estar en el mismo sistema de referencia de coordenadas, mientras que otros pueden estar en diferentes sistemas de referencia de coordenadas. Algunos pueden ser archivos locales que se encuentran en su computadora, mientras que otros solo se pueden cargar a través de Internet. Debido a las muchas posibilidades sobre qué tipo de datos necesitaría para su análisis espacial, un buen SIG debería poder manejar y administrar una variedad de fuentes de datos.</p>
+
+<h2 id="contenido-principal">Contenido Principal</h2>
+
+<h3 id="título-de-la-fase-1-tipos-de-datos-formatos-de-archivo-el-navegador-y-el-panel-de-capas">Título de la fase 1: Tipos de datos, formatos de archivo, el Navegador y el Panel de Capas</h3>
+
+<h4 id="tipos-comunes-de-datos-y-formatos-de-archivo"><strong>Tipos comunes de datos y formatos de archivo</strong></h4>
+
+<p>Aparte de los modelos de datos espaciales (raster y vectores) discutidos en el primer módulo, la familiaridad con los formatos de archivos geoespaciales y sus pros y contras también es importante para cualquiera que realice análisis espacial.</p>
+
+<p>La mayoría de las personas que comienzan a trabajar con SIG suelen conocer los datos espaciales a través de archivos shapefiles. La mayoría de las personas nunca superan esto y usan shapefile para referirse a todos los tipos y formas de datos vectoriales. Esto es similar a cómo una marca específica como Coca Cola comienza a usarse como término general para todas las bebidas Cola. Esto no es necesariamente incorrecto, pero es bastante desafortunado ya que los shapefiles son solo uno de los muchos tipos de formato de datos vectoriales. Otros tipos son: geopackage, geojson, topojson y flatgeobuf. El formato de shapefile, aunque omnipresente, tiene algunas limitaciones importantes como:</p>
+
+<ul>
+  <li>No es solo un archivo. Un shapefile en realidad consta de varios archivos, cuatro de los cuales son obligatorios: .prj, .shp, .shx, .dbf. Todos los demás archivos se denominan archivos complementarios.</li>
+  <li>Tiene un límite de tamaño de 2 GB para cada archivo individual.</li>
+  <li>Están limitados a 10 caracteres para nombrar los campos.</li>
+  <li>Las columnas de atributos están limitadas a 255 columnas.</li>
+  <li>No hay soporte para algunos tipos de datos como el tiempo.</li>
+  <li>No almacena explícitamente la topología.</li>
+</ul>
+
+<p>Otros formatos de datos como GeoPackage, GeoJSON, TopoJSON y flatgeobuff solucionan estas limitaciones de los shapefiles. De hecho, QGIS y GRASS GIS han cambiado a GeoPackage como el formato de archivo vectorial predeterminado al importar o exportar capas y, aunque GeoPackage también tiene algunas limitaciones, ser un formato completamente abierto permite a la comunidad ayudar a dar forma al futuro del formato.</p>
+
+<p>Entonces, si no son shapefiles, ¿qué deberías usar?</p>
+
+<p>No hay nada de malo en usar shapefiles, especialmente si se ajusta a tu caso de uso. Si no necesitas un conjunto de datos que supere los 2 GB; si estás de acuerdo con tener un límite de 10 caracteres para nombrar los campos; o si estás trabajando con una pequeña cantidad de archivos localmente, un shapefile está completamente bien.</p>
+
+<p>Sin embargo, si deseas empaquetar tu proyecto QGIS junto con todos las capas (vectores, raster), estilos y modelos; o deseas compartir varios tipos de capas y datos espaciales en un solo archivo, vale la pena echarle un vistazo a un GeoPackage. GeoPackage y GeoJSON también son compatibles con la web y pueden ser utilizados directamente por bibliotecas de mapas web como Mapbox y Leaflet.</p>
+
+<p>Puedes leer más en este link: 	<a href="https://mappinggis.com/2017/06/geopackage-para-novatos-uso-en-arcgis-qgis-publicacion-en-geoserver/">https://mappinggis.com/2017/06/geopackage-para-novatos-uso-en-arcgis-qgis-publicacion-en-geoserver/</a></p>
+
+<p>Mientras tanto, QGIS puede leer cualquier formato que pueda representarse como una cuadrícula de píxeles o celdas como datos ráster. Esto incluye formatos de imagen como PNG (.png) y JPEG (.jpg). Vale la pena señalar que aunque todos los formatos de archivo de imagen se pueden leer como raster, no todos están georreferenciados o contienen información geoespacial que nos permita ubicarlos correctamente en la Tierra. Para casos como este, podemos usar lo que se conoce como “World File” (archivo mundial) (<a href="http://www.gisandbeers.com/exportar-imagenes-georreferenciadas-world-files/">http://www.gisandbeers.com/exportar-imagenes-georreferenciadas-world-files/</a>). Un World File es un archivo de datos de texto plano separado cuyo nombre es el mismo que el archivo ráster al que pertenece y cuya extensión de archivo tiene la letra w agregada al final. Por ejemplo, el World File para <strong>world.png</strong> se llamará <strong>world.pngw</strong> o <strong>world.pgw</strong>.</p>
+
+<p>Algunos formatos de archivo de imagen contienen información y georreferenciación explícita y no necesitan un archivo mundial. Algunos ejemplos son GeoTIFFs (.tif o tiff) y el formato de archivo ERDAS Imagine (.img).</p>
+
+<p>Para obtener más información sobre los formatos de archivo, también puedes consultar: <a href="https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html">https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html</a></p>
+
+<p>Los datos geoespaciales también pueden venir en forma de bases de datos geoespaciales. Estas pueden ser bases de datos de nivel empresarial como Postgres de código abierto y gratuito con extensión PostGIS (<a href="https://postgis.net">https://postgis.net</a>/) o ArcSDE propiedad de ESRI. También hay bases que pueden almacenar diferentes tipos de datos (por ejemplo, vectores y raster) dentro de ellas. Algunos ejemplos son el GeoPackage OGC abierto y gratuito (.gpkg) (<a href="https://www.geopackage.org/">https://www.geopackage.org/</a>) y el formato patentado File Geodatabase de ESRI (.gdb).</p>
+
+<h4 id="tipos-de-fuentes-de-datos"><strong>Tipos de fuentes de datos</strong></h4>
+
+<p>Una de las características más poderosas de QGIS es su capacidad para conectar, cargar y usar diferentes datos espaciales y no espaciales de una variedad de fuentes. QGIS puede abrir:</p>
+
+<ul>
+  <li>archivos locales ráster y vectoriales</li>
+  <li>bases de datos locales</li>
+  <li>archivos y bases de datos en Internet a través de su identificador uniforme de recursos (URL) o localizador uniforme de recursos (URL),</li>
+  <li>servicios web (servicios web OSGeo y servicios web ArcGIS), servicios de teselas y portales de datos como GeoNode</li>
+  <li>y muchos más…</li>
+</ul>
+
+<p>QGIS también puede conectar y cargar datos de servicios como los datos SRTM de la NASA, imágenes del planeta, Sentinel Hub, Google Earth Engine y OpenStreetMap a través del poder de los complementos.</p>
+
+<p>Esto convierte a QGIS en un componente integral para cualquier flujo de trabajo o infraestructura de datos espaciales.</p>
+
+<h4 id="cargando-capas-en-qgis"><strong>Cargando capas en QGIS</strong></h4>
+
+<p>Hay muchas formas de cargar capas en QGIS. Estas incluyen:</p>
+
+<ol>
+  <li><strong>Arrastra y Suelta (Drag-and-drop)</strong>: Arrastra y suelta la capa en el lienzo del mapa de QGIS o en el Panel de capas. Esta podría ser la forma más fácil de cargar una capa en QGIS, pero no es el enfoque recomendado, ya que existen trampas al usar este enfoque, como cuando se cargan datos tabulares no espaciales como CSV.</li>
+  <li>Usar el <strong>Navegador</strong>.</li>
+  <li>Usar el <strong>Administrador de Fuentes de Datos</strong>.</li>
+  <li>Usar las <strong>Barras de Herramientas Administrador de Fuentes de Datos **y **Administrar Capas</strong></li>
+</ol>
+
+<p><strong>NOTA: <em>Al cargar capas, los colores predeterminados de sus capas pueden ser diferentes a los colores predeterminados que se muestran en este módulo.</em></strong></p>
+
+<h4 id="el-navegador"><strong>El Navegador</strong></h4>
+
+<p>El <strong>Navegador</strong> muestra un árbol de archivos que muestra los archivos y carpetas de su computadora, así como las conexiones a bases de datos y servidores web. De forma predeterminada, está acoplado en el lado izquierdo de la interfaz de usuario de QGIS junto con el Panel de Capas.</p>
+
+<p>El Navegador expone una gran cantidad de funcionalidades para conectar, cargar y mostrar información sobre capas. También puede crear conexiones a directorios favoritos y marcadores espaciales en el Navegador.</p>
+
+<p>Para aprender más, mira:	 <a href="https://docs.qgis.org/3.16/es/docs/user_manual/introduction/browser.html">https://docs.qgis.org/3.16/es/docs/user_manual/introduction/browser.html</a></p>
+
+<h4 id="ejercicio-11-el-navegador"><strong>Ejercicio 1.1: El Navegador</strong></h4>
+
+<ol>
+  <li>Abre QGIS.</li>
+  <li>Mira el Navegador (Figura 2). Si no lo encuentras, puedes hacerlo visible yendo a <strong>Ver ‣ Paneles ‣ Navegador</strong> en el Menú.</li>
+</ol>
+
+<p><img src="media/qgis-browser-1.png" alt="The QGIS Browser Panel" title="The QGIS Browser Panel" /></p>
+
+<p>Figura 2. El Navegador</p>
+
+<ol>
+  <li>Observa cómo las unidades y carpetas se pueden expandir para mostrar las subcarpetas dentro de ellas.</li>
+  <li>Ubica el <strong>Módulo 2 - Capas</strong> en la carpeta QGIS (Figura 3) en el árbol de archivos (observa dónde guardaste o descargaste el archivo). Deberías poder ver los datos necesarios para este manual. En mi ejemplo de la derecha, vinculé la carpeta mencionada anteriormente como uno de mis favoritos para poder acceder fácilmente a ella desde el Panel del navegador. Puedes agregar un directorio favorito al Navegador haciendo clic con el botón derecho en Favoritos y agregando el directorio.</li>
+  <li>Verifica los archivos dentro de la carpeta (Figura 3). Hay muchos de ellos. Desde el árbol de archivos en sí, ya podemos hacernos una idea de los archivos y capas que podemos cargar en QGIS. Los iconos a la izquierda de los nombres indican si los datos son un vector <img src="media/symbol-vector.png" alt="Vector symbol" title="Vector symbol" />, un ráster <img src="media/symbol-raster.png" alt="Raster symbol" title="Raster symbol" />, una base de datos <img src="media/symbol-db.png" alt="Database symbol" title="Database symbol" />, o datos tabulares simples <img src="media/symbol-table.png" alt="Table symbol" title="Table symbol" />.</li>
+</ol>
+
+<p><img src="media/qgis-browser-2.png" alt="Module 2 files in the Browser Panel" title="Module 2 files in the Browser Panel" /></p>
+
+<p>Figura 3. Los archivos del módulo en el Navegador</p>
+
+<ol>
+  <li>
+    <p>Hay 5 archivos en la carpeta de datos:</p>
+
+    <ol>
+      <li>un GeoPackage (mendoza_modulo2.gpkg) que contiene un vector (sushi_osm_mendoza) y un archivo ráster (srtm_mendoza);</li>
+      <li>un GeoJSON (departamentos_mendoza.geojson);</li>
+      <li>un archivo flatgeobuf (NCR_municities.fgb);</li>
+      <li>un archivo shapefile (limite_provincial_mendoza.shp); y</li>
+      <li>un archivo de valores separados por comas (CSV) (parrillas_osm_mendoza.csv).</li>
+    </ol>
+  </li>
+  <li>
+    <p>Haga clic derecho en limite_provincial_mendoza.shp y haga clic en Propiedades de la Capa (Layer Properties) (Figura 4). Esto abre la ventana Propiedades de la Capa (Figura 5). Nota la información provista en la ventana. ¿Cuál es la geometría de la capa? ¿Qué CRS se utiliza? ¿Cuántas características hay en la capa?</p>
+  </li>
+</ol>
+
+<p><img src="media/qgis-browser-3.png" alt="Checking Layer Properties" title="Checking Layer Properties" /></p>
+
+<p>Figura 4. Observando Propiedades de la Capa</p>
+
+<p><img src="media/qgis-browser-layer-properties.png" alt="Layer Properties from Browser Panel" title="Layer Properties from Browser Panel" /></p>
+
+<p>Figura 5. Propiedades de la Capa en el Navegador</p>
+
+<ol>
+  <li>Además de proporcionar metadatos en los capas, también puedes obtener una vista previa de la geometría y los atributos en la ventana de Propiedades de la Capa</li>
+  <li>
+    <p>Puedes cargar una capa en el Navegador así:</p>
+
+    <ol>
+      <li><strong>dando doble clic a la capa</strong></li>
+      <li><strong>clic derecho a la capa ‣ Agregar al Proyecto</strong></li>
+      <li><strong>arrastrando la capa al lienzo del mapa</strong></li>
+    </ol>
+  </li>
+  <li>Intenta cargar las capas <strong>limite_provincial_mendoza</strong> y <strong>departamentos_mendoza</strong> usando cualquiera de estos métodos.</li>
+</ol>
+
+<p><img src="media/vector-layers-loaded-1.png" alt="The vector layers loaded in QGIS" title="The vector layers loaded in QGIS" /></p>
+
+<p>Figura 6. Los capas de vector cargados en QGIS</p>
+
+<h4 id="el-panel-de-capas"><strong>El Panel de Capas</strong></h4>
+
+<p>En el Panel de Capas podrás ver todos los laters actualmente en el proyecto. Ayuda a administrar su visibilidad, orden y puede ser utilizado para mostrar sus propiedades. Puede activarse desde <strong>Ver ‣ Paneles ‣ Panel de Capas **o usando el atajo **CTRL+1</strong>. También se llama Leyenda del Mapa. Si cargaste todos los vectores del ejercicio anterior, el Panel de Capas debería aparecerte así:</p>
+
+<p><img src="media/layers-panel-1.png" alt="The Layers Panel" title="The Layers Panel" /></p>
+
+<p>Figura 7. Panel de Capas</p>
+
+<p>La visibilidad de una capa se puede controlar marcando o desmarcando la casilla a la izquierda de su nombre. Al arrastrar las capas hacia arriba o hacia abajo en el Panel, se puede cambiar su orden en Z. De manera similar al software de manipulación de imágenes como GIMP o Photoshop, las capas enumeradas cerca de la parte superior se dibujan sobre las capas enumeradas más abajo. Por lo tanto, si dos capas muestran la misma área, el que está más arriba en el Panel se dibuja encima del inferior y es posible que la capa inferior no sea visible en el lienzo del mapa. Vale la pena señalar esto porque puede haber casos en los que pensamos que una capa no aparece en QGIS cuando en realidad está siendo cubierto u oculto por una capa encima.</p>
+
+<p><strong>NOTA: **El orden en Z de las capas en el Panel de Capas puede ser anulado por el **Panel de Orden de Capas</strong>.</p>
+
+<p>El Panel de Capas también permite al usuario renombrar y remover capas, filtrar la visibilidad de las capas, crear y administrar grupos de capas y mapas.</p>
+
+<p>La tabla de atributos de una capa vectorial también puede abrirse desde el Panel de Capas haciendo <strong>clic derecho en la capa ‣ Abrir tabla de atributos</strong>.</p>
+
+<p>Para aprender más, visita: <a href="https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel">https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#capas-panel</a></p>
+
+<h4 id="propiedades-de-la-capa"><strong>Propiedades de la Capa</strong></h4>
+
+<p>Haciendo clic derecho en una capa en Panel de Capas y seleccionando Propiedades de la Capa abrirás el cuadro de diálogo Propiedades de la Capa.</p>
+
+<p><img src="media/layer-properties.png" alt="The Layer Properties dialog" title="The Layer Properties dialog" /></p>
+
+<p>Figura 8. El diálogo Propiedades de la Capa</p>
+
+<p>Hay varias pestañas en el cuadro de diálogo Propiedades de la Capa que permiten al usuario ver información e incluso editar / modificar propiedades relacionadas con la capa.</p>
+
+<p>La pestaña Información muestra una representación de solo lectura de información resumida y metadatos en la capa actual, que incluye:</p>
+
+<ul>
+  <li>proveedor de datos</li>
+  <li>metadatos llenos</li>
+  <li>geometría o información del campo</li>
+</ul>
+
+<p>La pestaña Fuente (Source) muestra la configuración general para un vector capa.</p>
+
+<p>Pestañas como Simbología (Symbology), Etiquetas (Labels), Máscaras (Masks) y Vista 3D (3d View) permiten al usuario modificar la simbología y el estilo de la capa.</p>
+
+<p>Otras pestañas permiten a los usuarios hacer uniones con la Capa (Unir), obtener información sobre los campos de atributos (Campos), agregar formularios personalizados para agregar nuevos datos (Formularios de Atributos) y hay muchas más.</p>
+
+<p>Otra pestaña que vale la pena mencionar es Metadatos, que permite crear y editar un reporte de metadatos en la capa. Esto incluye información sobre:</p>
+
+<ul>
+  <li>Identificación de datos: atribución básica del conjunto de datos: parent, identificador, título, resumen, idioma…</li>
+  <li>Categorías a las que pertenecen los datos, como categorías ISO y personalizadas;</li>
+  <li>Palabras clave (Keywords) para recuperar los datos y los conceptos asociados siguiendo un vocabulario estándar;</li>
+  <li>Acceso al conjunto de datos (dataset): licencias, derechos, fees y restricciones</li>
+  <li>Extensión del conjunto de datos, ya sea espacial (CRS, extensión del mapa, altitudes) o temporal</li>
+  <li>Contacto del propietario (s) del conjunto de datos</li>
+  <li>Enlaces a recursos auxiliares e información relacionada</li>
+  <li>Historia del conjunto de datos.</li>
+</ul>
+
+<p>Se proporciona un resumen de la información completa en la pestaña Validación y ayuda a identificar problemas potenciales relacionados con el formulario de metadatos. Actualmente, los metadatos se guardan en el archivo del proyecto, pero también se pueden guardar en un archivo .qmd separado junto con las capas basadas en archivos o en una base de datos .sqlite local para capas remotos.</p>
+
+<p>Para saber más sobre propiedades de capas vectoriales, visita: <a href="https://docs.qgis.org/3.16/es/docs/user_manual/working_with_vector/vector_properties.html">https://docs.qgis.org/3.16/es/docs/user_manual/working_with_vector/vector_properties.html</a></p>
+
+<p>Para saber más sobre propiedades de capas ráster, visita: : <a href="https://docs.qgis.org/3.16/es/docs/user_manual/working_with_raster/raster_properties.html">https://docs.qgis.org/3.16/es/docs/user_manual/working_with_raster/raster_properties.html</a></p>
+
+<h4 id="metadatos-geoespaciales"><strong>Metadatos Geoespaciales</strong></h4>
+
+<p>Los metadatos son simplemente datos sobre los datos. Responden al quién, qué, cuándo, dónde y cómo del conjunto de datos y viene en todas las formas y tamaños. Para propósitos de SIG, generalmente nos interesan los metadatos geoespaciales. Los metadatos geoespaciales se describen en el Comité Federal de Datos Geográficos de EE. UU. (FGDC) como</p>
+
+<p><em>“un archivo de información, generalmente presentado como un documento XML, que captura las características básicas de un recurso de datos o información. Representa el quién, qué, cuándo, dónde, por qué y cómo del recurso. Los metadatos geoespaciales comúnmente documentan datos digitales geográficos como archivos del Sistema de Información Geográfica (GIS), bases de datos geoespaciales e imágenes de la tierra, pero también pueden usarse para documentar recursos geoespaciales, incluidos catálogos de datos, aplicaciones de mapeo, modelos de datos y sitios web relacionados. Los registros de metadatos incluyen elementos básicos del catálogo de la biblioteca, como título, resumen y datos de publicación; elementos geográficos como la extensión geográfica y la información de proyección; y elementos de base de datos como definiciones de etiquetas de atributos y valores de dominio de atributos”.</em> \</p>
+
+<p>La importancia de los metadatos es que no solo promueven la transparencia, sino que también facilitan el intercambio de datos e información. Por eso es importante agregar siempre metadatos a nuestros conjuntos de datos. Al agregar metadatos, es igualmente importante seguir estándares (reglas y prácticas ampliamente promovidas, aceptadas y seguidas) para que los metadatos que creamos sean interoperables. Uno de estos estándares es el ISO 19115: 2014 “Información geográfica - Metadatos” de ISO / TC 211(<a href="https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en">https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en</a>)</p>
+
+<h4 id="ejercicio-012-agregando-metadatos"><strong>Ejercicio 01.2: Agregando Metadatos</strong></h4>
+
+<ol>
+  <li>Abre Propiedades de la Capa de la capa departamentos_mendoza.</li>
+  <li>Revisa la información que aparece en la pestaña Information. ¿Está completa? ¿Podemos agregar más?</li>
+</ol>
+
+<p><img src="media/metadata-1.png" alt="Information properties of the NCR_admin_boundary layer" title="Information properties of the NCR_admin_boundary layer" /></p>
+
+<p>Figura 9. Propiedades de información de la capa departamentos_mendoza.</p>
+
+<ol>
+  <li>Ve a la pestaña Metadatos e intenta agregar más información sobre la capa, como la extensión, categoría del dato, licencia, etc. Haz clic en OK cuando hayas terminado.</li>
+</ol>
+
+<p><img src="media/metadata-2.png" alt="Editing some metadata" title="Editing some metadata" /></p>
+
+<p>Figura 10. Editando algunos metadatos.</p>
+
+<ol>
+  <li>Ve a la pestaña Information de nuevo y fíjate si ha cambiado algo.</li>
+</ol>
+
+<p><img src="media/metadata-3.png" alt="The Information tab after editing some metadata" title="The Information tab after editing some metadata" /></p>
+
+<p>Figura 11. La pestaña Information después de editar algunos metadatos.</p>
+
+<h4 id="preguntas-de-evaluación"><strong>Preguntas de Evaluación</strong></h4>
+
+<ol>
+  <li>
+    <p>Verdadero o Falso:</p>
+
+    <ol>
+      <li>Todos los archivos de vector son shapefiles.</li>
+      <li>Cuando se renderiza en el lienzo del mapa, una capa que está más alta en el Panel de Capas siempre cubrirá o aparecerá por arriba de una capa que esté más abajo en el Panel de Capas.</li>
+      <li>Podés revisar la información de metadatos de una capa en el Panel de Capas y el Navegador.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="título-de-la-fase-2-administrador-de-fuentes-de-datos-data-source-manager-y-conexión-a-servicios-remotos">Título de la fase 2: Administrador de Fuentes de Datos (Data Source Manager) y conexión a servicios remotos</h3>
+
+<h4 id="administrador-de-fuentes-de-datos"><strong>Administrador de Fuentes de Datos</strong></h4>
+
+<p>Si no quieres usar el Navegador para cargar capas, siempre puedes usar el <strong>Administrador de Fuentes de Datos</strong>.</p>
+
+<p>El <strong>Administrador de Fuentes de Datos</strong> se introdujo con el lanzamiento de QGIS 3. Es una “ventanilla única” para agregar y cargar capas de diferentes fuentes de datos en QGIS. Antes de su introducción, había ventanas separadas para cargar diferentes fuentes de datos (es decir, una para rásteres, otra para vectores, etc.). Se puede acceder a través de** Capa ‣ Administrador de fuentes de datos** o <strong>CTRL + L</strong>.</p>
+
+<p><img src="media/data-source-manager-1.png" alt="Data Source Manager" title="Data Source Manager" /></p>
+
+<p>Figura 12. Administrador de Fuentes de Datos</p>
+
+<h4 id="ejercicio-021-el-administrador-de-fuentes-de-datos"><strong>Ejercicio 02.1: El Administrador de Fuentes de Datos</strong></h4>
+
+<ol>
+  <li>
+    <p>Abre el **Administrador de fuentes de datos **(Figura 6). Contiene pestañas en el lado derecho que pertenecen al tipo de fuente de datos que desea cargar o conectarse. Al igual que en el Navegador, puede cargar y conectar varios tipos de datos desde el Administrador de fuentes de datos.</p>
+  </li>
+  <li>
+    <p><strong>Cargando Vectores</strong></p>
+
+    <ol>
+      <li>Para cargarlos, ve a la pestaña Vector. Archivos, archivos en un directorio, una base de datos, e incluso archivos remotos  vía un protocolo como HTTP, cloud, etc. pueden ser cargados.</li>
+      <li>
+        <p>Carguemos el archivo vector (sushi_osm_mendoza) que está dentro del geopackage mendoza_modulo2.gpkg. Esta es una capa de puntos de las ubicaciones del restaurantes de Sushi en Mendoza, Argentina.</p>
+
+        <ol>
+          <li>Tipo de fuente: archivo</li>
+          <li>Fuente: Selecciona el geopackage mendoza_modulo2 usando el botón <img src="media/data-source-manager-search.png" alt="Search button" title="Search button" /></li>
+          <li>Haz clic en Añadir</li>
+          <li>Si hay más de 1 archivo vector dentro del geopackage, QGIS te pedirá que elijas cuáles cargar</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p><img src="media/data-source-manager-vector.png" alt="Loading a vector inside a GeoPackage" title="Loading a vector inside a GeoPackage" /></p>
+
+<p>Figura 13. Cargando un vector dentro de un GeoPackage</p>
+
+<ol>
+  <li>
+    <p><strong>Cargando ráster</strong></p>
+
+    <ol>
+      <li>
+        <p>Para cargar un ráster, ve a la pestaña Raster. Se pueden cargar archivos y archivos remotos a través de un protocolo como HTTP, cloud, etc. Hay un ráster (srtm_mendoza) dentro del geopackage mendoza_modulo2. Este ráster es un modelo de elevación digital de la provincia de Mendoza, Argentina. Para cargarlo:</p>
+
+        <ol>
+          <li>Tipo de fuente: archivo</li>
+          <li>Fuente: Selecciona el geopackage mendoza_modulo2 usando el botón <img src="media/data-source-manager-search.png" alt="Search button" title="Search button" /></li>
+          <li>Haz clic en Agregar</li>
+          <li>Si hay más de 1 archivo vector dentro del geopackage, QGIS te pedirá que elijas cuáles cargar</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p><img src="media/data-source-manager-raster.png" alt="Loading a raster inside a GeoPackage" title="Loading a raster inside a GeoPackage" /></p>
+
+<p>Figura 14. Cargando un ráster dentro de un GeoPackage</p>
+
+<ol>
+  <li>
+    <p><strong>Carga de archivos CSV y otros archivos de texto delimitados</strong></p>
+
+    <ol>
+      <li>Aparte de los vectores y raster, otro archivo común utilizado en SIG son los CSV y las hojas de cálculo. Afortunadamente, es relativamente fácil cargar estos archivos en QGIS.</li>
+      <li>
+        <p>Los archivos CSV y otros archivos de texto delimitados se pueden cargar a través de la pestaña Texto delimitado en el Administrador de fuentes de datos, agregarlos desde el Panel del navegador e incluso simplemente arrastrarlos al Lienzo del mapa. Sin embargo, se deben considerar algunas cosas si el CSV que tiene contiene información de geometría (es decir, ubicaciones de puntos). La regla de oro es:</p>
+
+        <ol>
+          <li>Usar el Administrador de Fuentes de Datos para cargar CSVs tengan o no información de la geometría.</li>
+          <li>Si los CSV se cargarán a través del Navegador o arrastrándolos, asegúrate de que haya un archivo CSVT correspondiente para conservar los tipos de datos de campo.</li>
+          <li>Si tienes problemas para conservar los tipos de datos para sus textos delimitados (específicamente CSV), puedes usar lo que se llama un archivo CSVT. Puedes leer más sobre la carga de CSV en QGIS en el siguiente enlace: <a href="https://docs.qgis.org/3.16/es/docs/user_manual/managing_data_source/supported_data.html#using-csvt-file-to-control-field-formatting">https://docs.qgis.org/3.16/es/docs/user_manual/managing_data_source/supported_data.html#using-csvt-file-to-control-field-formatting</a></li>
+        </ol>
+      </li>
+      <li>Los CSV y las hojas de cálculo se pueden cargar en QGIS con o sin información espacial o geométrica. Cuando se cargan con información espacial, se tratan como datos vectoriales. Cuando se cargan sin, se tratan como datos tabulares normales.</li>
+      <li>
+        <p>Hay un archivo CSV en la carpeta de datos llamado parrillas_osm_mendoza.csv que contiene ubicaciones de puntos de los restaurantes que venden Barbacoa en la provincia de Mendoza, Argentina. Para cargarlo:</p>
+
+        <ol>
+          <li>Ve a la pestaña Texto Delimitado</li>
+          <li>Nombre de archivo: Selecciona parrillas_osm_mendoza CSV usando el botón <img src="media/data-source-manager-search.png" alt="Search button" title="Search button" /></li>
+          <li>Formato de archivo: CSV</li>
+          <li>Opciones de registros y campos: mantener el valor predeterminado</li>
+          <li>
+            <p>Definición de la geometría:</p>
+
+            <ol>
+              <li>Coordenadas de puntos</li>
+              <li>Campo X: longitud</li>
+              <li>Campo Y: latitud</li>
+              <li>Geometría CRS: EPSG: 4326 - WGS 84</li>
+            </ol>
+          </li>
+          <li>Configuraciones de Capa: Selecciona “Vigilar archivo” y “usar índice espacial”</li>
+          <li>
+            <p>Cuando haces clic en “Vigilar archivo”, las actualizaciones del CSV local se reflejan automáticamente en la capa cargada en QGIS.</p>
+
+            <ol>
+              <li>“Usar índice espacial” agrega un índice espacial a la capa cargado que hace que el procesamiento de los vectores sea más rápido.</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p><img src="media/data-source-manager-csv.png" alt="Loading a CSV file" title="Loading a CSV file" /></p>
+
+<p>Figura 15. Cargando un archivo CSV</p>
+
+<p>Una vez que todos los capas de los ejercicios anteriores estén cargados, el Panel de Capas debería verse así:</p>
+
+<p><img src="media/layers-panel-2.png" alt="Layers Panel with all layers loaded" title="Layers Panel with all layers loaded" /></p>
+
+<p>Figura 16. Panel de Capas con todas las capas cargadas</p>
+
+<p>El lienzo del mapa debería verse así:</p>
+
+<p><img src="media/map-canvas-1.png" alt="QGIS Interface with all layers loaded" title="QGIS Interface with all layers loaded" /></p>
+
+<p>Figura 17. Interfaz QGIS con todas las capas cargadas</p>
+
+<p>Puedes reacomodar las capas como quieras en el Panel de Capas.</p>
+
+<h4 id="conectando-qgis-a-servicios-remotos"><strong>Conectando QGIS a Servicios Remotos</strong></h4>
+
+<p>Además de los archivos vector y ráster, QGIS también puede conectarse a servicios remotos como servicios tile, servicios web OGC (WMS, WFS) e incluso servicios web ESRI ArcGIS. Esta conexión se puede crear desde el Navegador o el Administrador de Fuentes de Datos.</p>
+
+<h4 id="ejercicio-022-conectando-a-xyz-tiles"><strong>Ejercicio 02.2: Conectando a XYZ tiles</strong></h4>
+
+<p>XYZ tiles se utilizan generalmente como mapas base y no solo en aplicaciones de escritorio, sino más comúnmente en aplicaciones web.</p>
+
+<p>Para conectarte a un servidor tile:</p>
+
+<ol>
+  <li>Ve al <strong>Navegador</strong></li>
+  <li><strong>Clic derecho en XYZ Tiles ‣ Conexión nueva</strong></li>
+  <li>Agrega lo siguiente:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Nombre: Capa Base Argenmap
+    URL: http://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/%7Bz%7D/%7Bx%7D/%7B-y%7D.png
+</code></pre></div></div>
+<ol>
+  <li>Click Aceptar.</li>
+</ol>
+
+<p><img src="media/xyz-1.png" alt="Adding an XYZ connection in QGIS" title="Adding an XYZ connection in QGIS" /></p>
+
+<p>Figura 18. Agregando una conexión XYZ en QGIS</p>
+
+<ol>
+  <li>Esto debería agregar el ítem Capa Base Argenmap debajo de XYZ Tiles en el Navegador.</li>
+</ol>
+
+<p><img src="media/xyz-2.png" alt="PGP Basemap Tile server added to the Browser Panel" title="PGP Basemap Tile server added to the Browser Panel" /></p>
+
+<p>Figura 19. Capa Base Argenmap agregado al Navegador</p>
+
+<ol>
+  <li>Puedes cargar la capa XYZ tile como lo harías con cualquier otra capa del Navegador.</li>
+</ol>
+
+<p><img src="media/xyz-3.png" alt="PGP Basemap layer loaded in QGIS" title="PGP Basemap layer loaded in QGIS" /></p>
+
+<p>Figura 20. Capa Base Argenmap cargado en QGIS</p>
+
+<p><strong>BONUS:</strong> Si quieres agregar varios mapas base bajo XYZ Tiles en el Navegador, puedes seguir las instruccones en esta publicación: <a href="https://mappinggis.com/2018/03/como-anadir-mapas-base-en-qgis-3-0-openstreetmap-google-carto-stamen/">https://mappinggis.com/2018/03/como-anadir-mapas-base-en-qgis-3-0-openstreetmap-google-carto-stamen/</a></p>
+
+<p><strong>BONUS #2:</strong> Puedes agregar las URLs de los servidores tile que se encuentran en el sitio Leaflet Providers (<a href="https://leaflet-extras.github.io/leaflet-providers/preview/">https://leaflet-extras.github.io/leaflet-providers/preview/</a>) como XYZ Tiles en el Navegador.</p>
+
+<h4 id="ejercicio-023-conectando-a-wmswmts-y-wfs"><strong>Ejercicio 02.3: Conectando a WMS/WMTS y WFS</strong></h4>
+
+<p>WMS o Web Map Service es un estándar de servicio web del Consorcio Geoespacial Abierto (OGC) (<a href="https://www.ogc.org/">https://www.ogc.org/</a>) para el servicio de imágenes (mosaicos ráster) a través de Internet. Cuando los datos se sirven a través de WMS, el usuario no puede editar directamente la información que se encuentra debajo ni cambiar su estilo.</p>
+
+<p>Mientras tanto, WFS o Web Feature Services es otro servicio web compatible con OGC para ofrecer características (vectores) a través de Internet. Cuando los datos se entregan a través de WFS, el usuario tiene acceso a los atributos y la geometría subyacentes, lo que le permite diseñar, editar y usar la capa para el análisis vectorial.</p>
+
+<p>Para conectarse a un WMS:</p>
+
+<ol>
+  <li>Ve al <strong>Navegador</strong></li>
+  <li><strong>Clic derecho en WMS/WMTS ‣ Conexión Nueva</strong></li>
+  <li>Agrega lo siguiente:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Nombre: Estatus Hídrico Percentil del API semanal
+    URL: https://geoservicios2.conae.gov.ar/geoserver/EstatusHidrico/wms
+</code></pre></div></div>
+<ol>
+  <li>Haz clic en Añadir</li>
+</ol>
+
+<p><img src="media/wms-1.png" alt="Creating a new WMS/WMTS Connection" title="Creating a new WMS/WMTS Connection" /></p>
+
+<p>Figura 21. Creando una nueva conexión WMS/WMTS</p>
+
+<ol>
+  <li>Esto debería agregar el ítem Estatus Hídrico debajo de las conexiones WMS/WMTS y OWS en el Navegador.</li>
+</ol>
+
+<p><img src="media/wms-2.png" alt="The LiPAD 100-year Flood Hazard WMS added in the Browser Panel" title="The LiPAD 100-year Flood Hazard WMS added in the Browser Panel" /></p>
+
+<p>Figura 22. El WMS Estatus Hídrico agregado al Navegador</p>
+
+<ol>
+  <li>Puedes cargar las capas WMS como lo harías con cualquier otra desde el Navegador.</li>
+</ol>
+
+<p><img src="media/wms-3.png" alt="Flood hazard map from WMS loaded in QGIS" title="Flood hazard map from WMS loaded in QGIS" /></p>
+
+<p>Figura 23. Mapa de Estatus Hídrico de WMS cargado en QGIS</p>
+
+<ol>
+  <li>Para conectar a WFS, sigue el mismo procedimiento</li>
+</ol>
+
+<h4 id="preguntas-de-evaluación-1"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>
+    <p>Verdadero o falso:</p>
+
+    <ol>
+      <li>Solo puedes cargar archivos locales en QGIS</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="título-de-la-fase-3-exportando-capas-capas-en-la-memoria-temporales-capas-virtuales">Título de la fase 3: Exportando Capas, Capas en la Memoria (Temporales), Capas Virtuales</h3>
+
+<h4 id="exportando-capas-de-qgis"><strong>Exportando Capas de QGIS</strong></h4>
+
+<p>Exportar capas (o guardar capas como archivos) es bastante sencillo en QGIS. <strong>Simplemente haz clic derecho en la capa ‣ Exportar</strong> para ver las opciones de exportación.</p>
+
+<p><img src="media/exporting-layers.png" alt="Exporting a layer from QGIS" title="Exporting a layer from QGIS" /></p>
+
+<p>Figura 24. Exportando una capa de QGIS</p>
+
+<ul>
+  <li>
+    <p><strong>Guardar objetos como…</strong> te permite guardar la capa ráster o vectorial.</p>
+
+    <ul>
+      <li>Cuando un <strong>filtro</strong> está activo en la capa vectorial, sólo las características filtradas (aquellas que aparecen en el lienzo del mapa) son exportadas.</li>
+    </ul>
+  </li>
+  <li><strong>Guardar objetos seleccionados como…</strong> es una opción para guardar sólo las características seleccionadas en las capas vectoriales.</li>
+  <li><strong>Guardar como archivo de definición de capa…</strong> crea un archivo QLR (ver Módulo 1, Formatos de Archivos QGIS) para la capa</li>
+  <li><strong>Guardar como archivo de estilo de capa de QGIS…</strong> guarda un archivo QML (ver Módulo 1, Formatos de Archivos QGIS) para la capa</li>
+</ul>
+
+<p>Al exportar una capa, QGIS te da la opción de seleccionar el formato de archivo de salida, los campos a incluir (si es un archivo vectorial), el sistema de referencia de coordenadas de salida y otras opciones. Esto significa que puedes realizar una proyección de coordenadas exportando una capa.</p>
+
+<p><img src="media/save-vector.png" alt="Save Vector Layer dialog" title="Save Vector Layer dialog" /></p>
+
+<p>Figura 25. Cuadro de diálogo guardar la capa vectorial</p>
+
+<p>Para obtener más información sobre cómo guardar una capa de un archivo existente, visita: <a href="https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_layers.html#save-layer-from-an-existing-file">https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_capas.html#save-capa-from-an-existing-file</a></p>
+
+<h4 id="capas-en-la-memoria"><strong>Capas en la Memoria</strong></h4>
+
+<p>A veces, no necesitamos ni queremos guardar físicamente las capas que usamos en nuestro análisis en nuestras computadoras, especialmente si son solo temporales.</p>
+
+<p>QGIS comprende esto y permite a los usuarios crear <strong>capas temporales</strong>. Estos se pueden usar de manera similar a los capas vectoriales normales, pero no es necesario guardarlos permanentemente en un archivo en nuestras unidades de almacenamiento porque QGIS las almacena en la memoria o RAM. Los capas temporales se muestran en el Panel de Capas con este ícono <img src="media/symbol-temp.png" alt="Temporary layer symbol" title="Temporary layer symbol" />.</p>
+
+<p>Los outputs (salidas) de los algoritmos de procesamiento se almacenan como capas temporales de forma predeterminada.</p>
+
+<p>La desventaja es que QGIS “olvida” estas “capas in memory” cuando se cierra. Para remediar esto, podemos usar el complemento Memory Layer Saver para permitir que nuestras capas temporales sean persistentes. Al guardar un proyecto QGIS que usa capas temporales, es una buena práctica ejecutar / activar primero el complemento Memory Layer Saver. Para usar el complemento Memory Layer Saver, simplemente vaya a Complementos ‣ Memory Layer Saver antes de guardar y cerrar tu proyecto QGIS. La próxima vez que abras tu proyecto QGIS, las capas temporales (o capas en la memoria) aún deberían estar presentes.</p>
+
+<p>Por supuesto, también puedes hacer que la capa temporal sea permanente exportando la capa a un archivo. Haciendo clic en el ícono <img src="media/symbol-temp.png" alt="Temporary layer symbol" title="Temporary layer symbol" /> automáticamente abrirás un cuadro de diálogo de exportación.</p>
+
+<h4 id="capas-virtuales"><strong>Capas Virtuales</strong></h4>
+
+<p>Una capa virtual es un tipo especial de capa vectorial que se crea “sobre la marcha” como resultado de una consulta o datos de otra capa.</p>
+
+<p>Por ejemplo, podemos crear una capa virtual que crea un búfer alrededor de otra capa de entidades. Siempre que se agregue una nueva entidad a la capa de entidades de origen, la capa virtual se actualizará en consecuencia.</p>
+
+<p>Actualmente, las capas virtuales no parecen funcionar con las capas de origen en la memoria.</p>
+
+<p>Las capas virtuales son dinámicas. Esto significa que cuando se actualiza la capa base, el virtual también se actualiza. Esto puede ahorrar espacio y reducir la duplicación de datos, ya que los datos del virtual simplemente obtendrán datos de la capa base sin necesidad de guardar nada en su disco, aunque puede haber una sobrecarga de rendimiento si se utilizan consultas u operaciones complejas para definir el virtual.</p>
+
+<p>Se utilizan construcciones similares a SQL para definirlo.</p>
+
+<p>Las capas virtuales dependen de otras capas, por lo que es importante que las capas base no se muevan ni se les cambie el nombre.</p>
+
+<p>Cuando se actualiza la capa base, debe actualizar la visualización del mapa haciendo un barrido o haciendo zoom en el mapa para mostrar la actualización de la capa virtual.</p>
+
+<h4 id="preguntas-de-evaluación-2"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>
+    <p>Verdadero o Falso:</p>
+
+    <ol>
+      <li>Cuando se exporta una capa vectorial, se puede seleccionar en qué formato de archivo guardarlo.</li>
+      <li>Las capas temporarias siempre son olvidadas por QGIS cuando se cierra.</li>
+      <li>Cuando la capa base para una capa virtual se actualiza, la capa virtual se actualiza automáticamente en el lienzo del mapa sin necesidad de que hagas nada.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="si-quieres-ir-más-lejos">Si quieres ir más lejos:</h3>
+
+<h4 id="instala-algunos-complementos-que-sirven-como-fuentes-de-datos-data-sources"><strong>Instala algunos complementos que sirven como fuentes de datos (data sources)</strong></h4>
+
+<p>Algunos complementos proporcionan la funcionalidad para cargar datos en QGIS. Estos incluyen datos vectoriales, imágenes de satélite, archivos ráster, mapas base, etc. Intenta instalar los siguientes y descubre qué tipo de datos cargan en QGIS:</p>
+
+<ul>
+  <li>QuickOSM (<a href="https://plugins.qgis.org/plugins/QuickOSM/">https://complementos.qgis.org/complementos/QuickOSM/</a>)</li>
+  <li>SRTM-Downloader (<a href="https://plugins.qgis.org/plugins/SRTM-Downloader/">https://complementos.qgis.org/complementos/SRTM-Downloader/</a>)</li>
+  <li>QuickMapServices (<a href="https://plugins.qgis.org/plugins/quick_map_services/">https://complementos.qgis.org/complementos/quick_map_services/</a>)</li>
+</ul>
+
+<p>P.D. Algunos de estos complementos requieren que te hagas una cuenta en el proveedor de datos.</p>
+
+<h4 id="conectarse-a-instancias-geonode"><strong>Conectarse a instancias GeoNode</strong></h4>
+
+<p>GeoNode (<a href="https://geonode.org/">https://geonode.org/</a>) es un sistema de gestión de contenido geoespacial de código abierto construido con un stack maduro de FOSS4G que incluye PostGIS, GeoServer, MapStore, etc. Puedes pensar en GeoNode como un portal de datos geoespaciales. Puedes conectar fácilmente QGIS a una instancia de GeoNode a través del conector GeoNode en el Navegador o en el Administrador de Fuentes de Datos.</p>
+
+<ol>
+  <li>Ve al <strong>Navegador</strong></li>
+  <li>Clic derecho en <strong>GeoNode ‣ Conexión Nueva</strong></li>
+  <li>Agrega lo siguiente:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Name: IDE del Conurbano - UNGS
+    URL: [http://ideconurbano.ungs.edu.ar/](http://ideconurbano.ungs.edu.ar/) 
+</code></pre></div></div>
+
+<p><img src="media/connect-geonode.png" alt="Connect to GeoNode" title="Connect to GeoNode" /></p>
+
+<p>Puedes aprender más sobre conectar QGIS a servicios remotos en: <a href="https://mappinggis.com/2015/09/como-conectar-con-servicios-wms-y-wfs-con-arcgis-qgis-y-gvsig/">https://mappinggis.com/2015/09/como-conectar-con-servicios-wms-y-wfs-con-arcgis-qgis-y-gvsig/</a></p>
+
+<h4 id="ejerciciotutorial-sobre-capas-virtuales"><strong>Ejercicio/Tutorial sobre Capas Virtuales</strong></h4>
+
+<ol>
+  <li>Abre QGIS.</li>
+  <li>Carga una imagen o un mapa base de satélite a través de XYZ tiles o el complemento QuickMap Services (por ejemplo, Google Satellite).</li>
+  <li>Crea un nuevo capa geopackage con <img src="media/symbol-gpkg.png" alt="Create new geopakage symbol" title="Create new geopakage symbol" /> en la Barra de Herramientas Administrador de Fuentes de Datos. Nómbrala arboles, agrega el radio (número entero) y campos de especie (texto), y usa un CRS proyectado (e.g. EPSG:3857)</li>
+</ol>
+
+<p><img src="media/virtual-1.png" alt="New GeoPackage Layer" title="New GeoPackage Layer" /></p>
+
+<p>Cuando aparezca un cuadro de diálogo diciendo que el archivo ya existe, seleccione Agregar nueva capa.</p>
+
+<p><img src="media/virtual-2.png" alt="GeoPackage Layer exists" title="GeoPackage Layer exists" /></p>
+
+<ol>
+  <li>Alterna la edición en el archivo haciendo clic derecho sobre él  ‣ Alternar Edición o haciendo clic en <img src="media/symbol-edit.png" alt="Toggle editing symbol" title="Toggle editing symbol" /> en la Barra de Herramientas de Digitalización.</li>
+  <li>Selecciona un área en la imagen de satélite que tenga árboles.</li>
+  <li>Con Edición, habilita agregar puntos a la capa haciendo clic en <img src="media/symbol-add-point.png" alt="Add new point symbol" title="[Add new point symbol" /> (CTRL + .).</li>
+  <li>Digitaliza árboles individuales haciendo clic en su ubicación y agregando la información del atributo. Haga esto para 4 árboles. Para este ejercicio, puedes adivinar la información.</li>
+</ol>
+
+<p><img src="media/virtual-3.png" alt="Add new trees" title="Add new trees" /></p>
+
+<ol>
+  <li>Después de agregar los puntos, no olvides guardar tus ediciones haciendo clic en <img src="media/symbol-save-edits.png" alt="Save edits symbol" title="Save edits symbol" /> en la Barra de Herramientas de Digitalización antes de apagar la función Edición.</li>
+</ol>
+
+<p><img src="media/virtual-4.png" alt="New points (trees) added" title="New points (trees) added]" /></p>
+
+<ol>
+  <li>Agrega una capa virtual haciendo clic en <img src="media/symbol-virtual.png" alt="Add virtual layer symbol" title="Add virtual layer symbol" />  en la Barra de Herramientas Administrador de Fuentes de Datos.</li>
+  <li>Cambia el nombre de la Capa a capa_arboles. Importa arboles. Agrega la siguiente consulta:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select fid, buffer(geometry, radio), especies from arboles
+</code></pre></div></div>
+
+<p><img src="media/virtual-5.png" alt="Create Virtual Layer" title="Create Virtual Layer" /></p>
+
+<p><img src="media/virtual-6.png" alt="Virtual layer in QGIS" title="Virtual layer in QGIS" /></p>
+
+<p>Agrega un nuevo punto y luego actualiza la visualización del mapa (haciendo zoom o desplazando el lienzo del mapa) para ver la actualización en la capa virtual. ¿Qué notaste?</p>
+
+<h3 id="para-practicar-tus-nuevas-habilidades-intenta">Para practicar tus nuevas habilidades, intenta…</h3>
+
+<h4 id="cargar-capa-ráster-y-vectorial-que-hayas-encontrado-en-internet"><strong>Cargar capa ráster y vectorial que hayas encontrado en internet</strong></h4>
+
+<p>Además de los archivos binarios locales (vectores, raster), QGIS también puede cargar vectores y raster que se encuentran en Internet. Usa el Administrador de Fuentes de Datos para cargar los datos desde la siguiente URL:</p>
+
+<p><a href="https://raw.githubusercontent.com/benhur07b/stomp-covid19-data/master/spatial/stompcovidph_regions.geojson">https://raw.githubusercontent.com/benhur07b/stomp-covid19-data/master/spatial/stompcovidph_regions.geojson</a></p>
+
+<h4 id="cargar-una-hoja-de-cálculo-en-qgis-usando-el-complemento-hoja-de-cálculo-de-capas-">**Cargar una Hoja de cálculo en QGIS usando el complemento Hoja de cálculo de Capas **</h4>
+
+<p>Instala el complemento Hoja de cálculo de Capas e intenta cargar una hoja de cálculo en QGIS. El complemento acepta archivos con el formato Open Document Standard (.ods) y Microsoft Excel (.xls, .xlsx).</p>
+
+<p>Lee aquí: <a href="https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html">https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html</a></p>
+
+<h3 id="tips">Tips</h3>
+
+<ol>
+  <li>Si en algún momento necesitas una capa de un mapamundi, intenta escribir <strong>“world”</strong> (mundo) en la Barra de Coordenadas de la Barra de Estado. ¿Qué sucede? Este es solo uno de los easter eggs (sorpresas) que se encuentran en QGIS cuando escribe ciertas palabras en la barra de coordenadas.</li>
+</ol>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

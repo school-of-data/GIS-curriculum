@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Módulo 4 - Estilo de Capas (Styling Layers) | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Módulo 4 - Estilo de Capas (Styling Layers) page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Módulo 4 - Estilo de Capas (Styling Layers)">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Módulo 4 - Estilo de Capas (Styling Layers)</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/mexico/module4/module4.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="módulo-4---estilo-de-capas-styling-layers">Módulo 4 - Estilo de Capas (Styling Layers)</h1>
+
+<p><strong>Autor:</strong> Ketty, Ben Hur</p>
+
+<p><strong>Traductora</strong>: Malena</p>
+
+<h2 id="introducción-pedagógica">Introducción pedagógica</h2>
+
+<p>Este módulo está diseñado para enseñarle cómo cambiar la apariencia visual de un mapa seleccionando los símbolos apropiados, los colores del mapa y aplicando los efectos apropiados. Al final del módulo, debe conocer conceptos como simbología de mapas y estilos de mapas. Además, aprenderá las siguientes habilidades;</p>
+
+<ul>
+  <li>Estilo de Capas</li>
+  <li>simbología básica de ráster y vector y cómo aplicarlos a una capa</li>
+  <li>modos fusión y efectos de dibujo</li>
+  <li>usar expresiones para ejecutar una operación espacial</li>
+</ul>
+
+<h2 id="herramientas-y-recursos-necesarios">Herramientas y recursos necesarios</h2>
+
+<ul>
+  <li>Computadora de trabajo</li>
+  <li>conexión a Internet</li>
+  <li>QGIS 3.16 o posterior</li>
+  <li>Capa de la Provincia de Sanata Fe, Argentina (dentro del modulo4_santafe.gpkg )</li>
+  <li>Hospitales de Santa Fe (dentro del modulo4_santafe.gpkg )</li>
+  <li>Capa de Alta Resolución de Asentamientos de Santa Fe</li>
+</ul>
+
+<h2 id="prerrequisitos">Prerrequisitos</h2>
+
+<ul>
+  <li>Conocimientos básicos de cómo operar una computadora</li>
+  <li>Comprensión de todos los módulos anteriores</li>
+</ul>
+
+<h2 id="recursos-adicionales">Recursos adicionales</h2>
+
+<ul>
+  <li>Simbología QGIS: <a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html">https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html</a></li>
+  <li>Repositorio para compartir estilos: <a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://www.gislounge.com/qgis-style-sharing-repository/">https://www.gislounge.com/qgis-style-sharing-repository/</a></li>
+  <li>Estilos: <a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://plugins.qgis.org/styles/">https://plugins.qgis.org/styles/</a></li>
+  <li>Centro de estilo: <a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://style-hub.github.io/">https://style-hub.github.io/</a></li>
+  <li>Sombreado en QGIS - <a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+  <li>Mapeo de Icebergs en QGIS - <a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+</ul>
+
+<h2 id="introducción-temática">Introducción temática</h2>
+
+<p>Comencemos con un ejemplo:</p>
+
+<p>Imaginemos que se encuentra en una ciudad nueva, tal vez como turista, por placer o por negocios. La ciudad tiene una variedad de lugares de visita obligada que incluyen museos, cafés, playas, monumentos, tiendas culturales y mercados. A continuación, se le entrega un mapa de papel de la ciudad que le muestra las ubicaciones de todos los lugares que debe visitar en esa ciudad. Los puntos turísticos están todos marcados con puntos rojos. En su opinión, ¿este mapa facilitaría su recorrido por la nueva ciudad? No lo creo.</p>
+
+<p>Por eso siempre es importante hacer un “Mapa que muestre diferentes símbolos y colores”. Lo que ve en su mapa después de aplicar conceptos de estilo es una representación visual dinámica de los datos con los que está trabajando.</p>
+
+<h3 id="paneles-pestañas-y-tipos-de-renderizado-importantes">Paneles, pestañas y tipos de renderizado importantes</h3>
+
+<h4 id="panel-de-estilo-de-capas"><strong>Panel de Estilo de Capas</strong></h4>
+
+<p>Este panel es de alguna manera un acceso directo a algunas de las características del diálogo de propiedades de la capa. De hecho, le ofrece una forma rápida y práctica de definir el renderizado y el comportamiento de una capa, y de visualizar sus efectos sin abrir el diálogo de propiedades de la capa.</p>
+
+<p>Además de evitarle lidiar con el diálogo modal y de bloqueo de las propiedades de la capa, también le evita abarrotar la pantalla con cuadros de diálogo de features dado que incrusta la mayoría de ellos (selector de color, propiedades de efectos, edición de reglas, sustitución de etiquetas …): p. , al hacer clic en los botones de color dentro del panel Estilo de Capas, el diálogo del selector de color se abre dentro del propio panel en lugar de como un diálogo separado.</p>
+
+<p>En una lista desplegable de capas actuales en el Panel de Capa, seleccione un elemento y:</p>
+
+<ul>
+  <li>establezca su simbología, transparencia e histograma en el caso de una capa ráster. Estas opciones son las mismas disponibles en el cuadro de diálogo Propiedades de ráster   (<a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html%23raster-properties-dialog">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog</a>).
+    <ul>
+      <li>Acceda al diálogo de propiedades de ráster haciendo doble clic en Capa Raster ‣General</li>
+    </ul>
+  </li>
+  <li>establecer su simbología y etiquetas. Estas opciones son las mismas disponibles en el diálogo de propiedades vectoriales (<a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html%23vector-properties-dialog">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog</a>).
+    <ul>
+      <li>Acceda al diálogo de propiedades vectoriales haciendo doble clic en la capa vectorial‣ general</li>
+    </ul>
+  </li>
+  <li>siga todo el historial de cambios que aplicó al estilo de capa en el proyecto actual; por lo tanto, puede cancelar o restaurar a cualquier estado seleccionándolo en la lista y haciendo clic en Aplicar.</li>
+</ul>
+
+<p>Otra característica poderosa de este panel es la casilla Verificación de actualización en vivo. Marque esta casilla y sus cambios se procesarán automáticamente en el lienzo del mapa a medida que avanza. Ya no es necesario hacer clic en el botón Aplicar.</p>
+
+<p>Para activar el panel, haga clic en <strong>Ver ‣ Paneles</strong>, luego seleccione Estilo de Capas.</p>
+
+<p><img src="media/layer-styling.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 4.1: Panel Estilo de Capas</p>
+
+<h4 id="pestaña-simbología-en-propiedades-de-la-capa"><strong>Pestaña Simbología en Propiedades de la Capa</strong></h4>
+
+<p>Para acceder a la pestaña Simbología, haga doble clic en la capa para abrir <strong>Propiedades de la Capa-‣ Simbología</strong></p>
+
+<p>Aquí, puede especificar la configuración de renderización de la banda, como el tipo de renderización, la banda, los valores máximos/de mezcla, la renderización del color y el remuestreo. En las capturas de pantalla a continuación, puede ver las pestañas de simbología para datasets vectoriales y ráster, respectivamente;</p>
+
+<p><img src="media/style-vector.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p><img src="media/style-raster.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 4.2: Pestaña Simbología para datos vectoriales y ráster, respectivamente</p>
+
+<h4 id="renderización-de-ráster-renderización-de-bandas"><strong>Renderización de ráster: renderización de bandas</strong></h4>
+
+<p>QGIS ofrece cuatro tipos de renderizado diferentes. La elección del renderizador depende del tipo de datos. El tipo de renderizado predeterminado es Color gris de banda única. Tendrá que cambiarlo al tipo apropiado según el tipo de datos.</p>
+
+<ul>
+  <li>Color multibanda (<a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html%23multiband-color">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#multiband-color</a>) - si el archivo viene con varias bandas (por ejemplo, una imagen de satélite con varias bandas).</li>
+  <li>Valores paletizados / únicos (<a href="https://ejx443527mp5pavdnqqog23gcy--github-com.translate.goog/school-of-data/GIS-curriculum/blob/main/philippines/module4">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#paletted</a>) - para archivos de banda única que vienen con una paleta indexada (por ejemplo, un mapa topográfico digital) o para uso general de paletas para renderizar capas ráster.</li>
+  <li>Gris de banda única (<a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html%23singleband-gray">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#singleband-gray</a>) - (una banda de) la imagen se mostrará en gris. QGIS elegirá este renderizador si el archivo no es multibanda ni paletizado (por ejemplo, un mapa en relieve sombreado).</li>
+  <li>Pseudocolor de banda única (<a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html%23label-colormaptab">https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#label-colormaptab</a>): este renderizador se puede utilizar para archivos con una paleta continua o un mapa de color (por ejemplo, un mapa de elevación).</li>
+  <li>Sombreado <a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html%23hillshade-renderer">(https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#hillshade-renderer</a>) - Crea sombreado a partir de una banda.</li>
+</ul>
+
+<h4 id="renderización-vectorial"><strong>Renderización vectorial</strong></h4>
+
+<p>Cuando carga capas de datos espaciales en QGIS Desktop, se les aplica un estilo con una renderización aleatoria de símbolo único. Para cambiar esto, haga clic en <strong>Capa‣Propiedades‣Estilo</strong>.</p>
+
+<p>Hay varias opciones de renderización disponibles en el menú de la esquina superior izquierda:</p>
+
+<ul>
+  <li>Símbolo único: esta es la renderización predeterminada en la que se aplica un símbolo a todas las entidades de una capa.</li>
+  <li>Categorizado: le permite elegir un campo de atributo categórico para diseñar la capa. Elija el campo y haga clic en Classify (Clasificar) y QGIS aplicará un símbolo diferente a cada valor único en el campo. También puede utilizar el botón Set column expression (establecer expresión de columna) para mejorar el estilo con una expresión SQL.</li>
+  <li>Graduado: le permite clasificar los datos por un atributo de campo numérico en categorías discretas. Puede especificar los parámetros de la clasificación (tipo de clasificación y número de clases) y puede utilizar el botón Set column expression para mejorar el estilo con una expresión SQL.</li>
+  <li>Basado en reglas: use esto para crear un estilo personalizado basado en reglas. Las reglas se basarán en expresiones SQL.</li>
+  <li>Desplazamiento de puntos: si tiene una capade puntos con puntos apilados, esta opción se puede usar para desplazar los puntos para que todos sean visibles.</li>
+  <li>Polígonos invertidos: este es un nuevo renderizador que permite convertir un polígono de entidades en una máscara. Por ejemplo, un polígono de límites de ciudad usado con este renderizador se convertiría en una máscara alrededor de la ciudad. También permite el uso de renderizadores y expresiones SQL categorizados, graduados y basados en reglas.</li>
+</ul>
+
+<h2 id="contenido-principal">Contenido Principal</h2>
+
+<h3 id="fase-1-simbología-básica-de-ráster-y-vector">Fase 1: Simbología básica de ráster y vector</h3>
+
+<p>La simbología de datos vectoriales puede variar según la transparencia, el color, la rotación y el tamaño.</p>
+
+<h4 id="contenido"><strong>Contenido</strong></h4>
+
+<ul>
+  <li>Propiedades de la Capa y Simbología</li>
+  <li>Tipos de renderizado vectorial</li>
+  <li>Tipos de renderizado ráster (renderizado de bandas)</li>
+</ul>
+
+<h4 id="ejemplo-1-renderizado-vectorial"><strong>Ejemplo 1: renderizado vectorial</strong></h4>
+
+<ol>
+  <li>Para demostrar este ejemplo, usaremos dos conjuntos de datos de ejemplo; 1. Hospitales y 2. Límite administrativo de la provincia de Santa Fe</li>
+  <li>Agregue las dos capas vectoriales en qgis; Haga clic en el botón Agregar capa vectorial <img src="media/add-vector.png" alt="alt_text" title="image_tooltip" /> o use el panel del navegador.</li>
+  <li>Así es como se renderizan por defecto. Notarás que tenemos un polígono y una capa de puntos. El siguiente paso es cambiar la simbología de cada uno de ellos. Los colores de relleno pueden no ser los mismos, pero eso no es un problema porque QGIS selecciona colores al azar para diferentes instancias de la aplicación.</li>
+</ol>
+
+<p><img src="media/default-vector-render.png" alt="Default render" title="Default render" /></p>
+
+<p>Figura 4.3: Render predeterminado</p>
+
+<ol>
+  <li>Haga doble clic en la capa vectorial poligonal, que también es la capa límite administrativa de la provincia de Santa Fe, Argentina</li>
+  <li>Seleccione la pestaña Simbología en el menú que aparece</li>
+  <li>Cambie el color de relleno a relleno transparente. Sugerencia: haga clic en la flecha desplegable debajo de Color de relleno</li>
+  <li>El resultado debería ser el siguiente. Puede notar que la opción sin relleno no tiene color</li>
+</ol>
+
+<p><img src="media/no-fill-render.png" alt="No fill rendering for the polygon" title="No fill rendering for the polygon" /></p>
+
+<p>Figura 4.4: Sin renderizado de relleno para el polígono</p>
+
+<ol>
+  <li>El siguiente paso es simbolizar la capa de puntos que también es la capa de Hospitales</li>
+  <li>Haga doble clic en la capa Hospitales para abrir el diálogo Propiedades de la Capa. Cambie el tipo de renderizado de Símbolo único a Categorizado, seleccione el valor como operator:type. El valor representa el campo de interés. Especifique la rampa de símbolo y color. Luego haga clic en clasificar.</li>
+</ol>
+
+<p><img src="media/vector-style.png" alt="Layer Properties dialogue" title="Layer Properties dialogue" /></p>
+
+<p>Figura 4.5: Diálogo Propiedades de la Capa</p>
+
+<ol>
+  <li>El mapa resultante debe verse como se muestra a continuación</li>
+</ol>
+
+<p><img src="media/final-vector-render.png" alt="Final vector render" title="Final vector render" /></p>
+
+<p>Figura 4.6: Renderizado vectorial final</p>
+
+<ol>
+  <li>Recuerde organizar las capas en el Panel de Capas de tal manera que la capa de polígono esté debajo de la capa de puntos. Esto hace que la capa de puntos sea visible.</li>
+</ol>
+
+<h4 id="ejemplo-2-renderizado-ráster"><strong>Ejemplo 2: renderizado ráster</strong></h4>
+
+<ol>
+  <li>Haga doble clic en la capa ráster que también es la capa de densidad de población. Esto también significa que es un conjunto de datos normalizado y, por lo tanto, se puede visualizar como un mapa de coropletas.</li>
+  <li>Seleccione la pestaña Simbología en el menú que aparece</li>
+  <li>Cambie el modo de Estilo a ‘Pseudocolor monobanda’</li>
+</ol>
+
+<p><img src="media/qgis9.png" alt="Symbology menu" title="Symbology menu" /></p>
+
+<p>Figura 4.7: Menú Simbología</p>
+
+<ol>
+  <li>Especifique la interpolación, la rampa de color y el modo. Haga clic en Classify. El resultado es un mapa de coropletas que muestra la densidad de población en la provincia de Santa Fe, Argentina.</li>
+</ol>
+
+<p><img src="media/hrsl-style.png" alt="Population density of Santa Fe, Argentina" title="Population density of Santa Fe, Argentina" /></p>
+
+<p>Figura 4.8: Densidad de población de la provincia de Santa Fe, Argentina</p>
+
+<ol>
+  <li>Acerca la imagen para ver el nuevo mapa con más detalle.</li>
+</ol>
+
+<p><img src="media/zoom-in.png" alt="Zoomed-in map" title="Zoomed-in map" /></p>
+
+<p>Figura 4.9: Mapa ampliado</p>
+
+<ol>
+  <li>Alternativamente, use el panel Estilo de Capas.</li>
+</ol>
+
+<h4 id="preguntas-de-prueba"><strong>Preguntas de prueba</strong></h4>
+
+<ol>
+  <li>¿Qué es Simbología de Capa?</li>
+  <li>¿Cuáles de los siguientes tipos de renderización son aplicables a datos vectoriales?</li>
+  <li>¿Cuáles son los tipos de renderizado ráster?</li>
+</ol>
+
+<h4 id="respuestas-al-cuestionario"><strong>Respuestas al cuestionario</strong></h4>
+
+<ol>
+  <li>
+    <ol>
+      <li>elemento gráfico representado como marcador, trazo o relleno</li>
+      <li>un puntero a los datos originales</li>
+      <li>un repositorio de diferentes esquemas de color</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>renderizador de símbolo único</li>
+      <li>sin renderizador de símbolos</li>
+      <li>renderizador categorizado</li>
+      <li>renderizador graduado</li>
+      <li>símbolo proporcional</li>
+      <li>símbolo proporcional</li>
+      <li>renderizador de clúster de puntos</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>pseudocolor de banda única</li>
+      <li>gris de banda única</li>
+      <li>paletizado</li>
+      <li>color multibanda</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="fase-2-modo-de-fusión-y-efectos-de-dibujo">Fase 2: Modo de fusión y efectos de dibujo</h3>
+
+<h4 id="contenido-1">Contenido</h4>
+
+<ul>
+  <li>Alterar las estructuras de los símbolos</li>
+  <li>Modificar los efectos de dibujo y el modo de fusión</li>
+  <li>Visualización impactante de datos</li>
+</ul>
+
+<h4 id="tutorial">Tutorial</h4>
+
+<ol>
+  <li>Después de cargar las dos capas en QGIS, el canvas se verá como se muestra a continuación. Notarás que ambas capas tienen un estilo sencillo. Este tutorial explicará cómo modificar los efectos de dibujo y el modo de fusión para una mejor visualización.</li>
+</ol>
+
+<p><img src="media/initial-workspace.png" alt="The expected initial workspace" title="The expected initial workspace" /></p>
+
+<p>Figura 4.10: El espacio de trabajo inicial esperado</p>
+
+<ol>
+  <li>Abra la ventana Propiedades de la Capa, luego haga clic en el elemento de menú Simbología para la capa de límites administrativos. Consejo: haz esto haciendo doble clic en la capa o usa el panel de Estilo de Capas. Habilite el panel haciendo clic en: <strong>Ver ‣ Paneles ‣ Estilo de Capas</strong></li>
+</ol>
+
+<p>En la parte inferior del menú Simbología, hay una casilla de verificación para Draw Effects (Efectos de Dibujo). Habilitemos eso y luego hagamos clic en el botón customize effects (personalizar efectos) <img src="media/customise-effects-button.png" alt="alt_text" title="image_tooltip" /> a su derecha:</p>
+
+<p><img src="media/draw-effects.png" alt="Layer Properties window and Symbology menu" title="Layer Properties window and Symbology menu" /></p>
+
+<p>Figura 4.11: Ventana Propiedades de la Capa y menú Simbología</p>
+
+<ol>
+  <li>Se abre un nuevo cuadro de diálogo Effects Properties</li>
+</ol>
+
+<p><img src="media/new-effects-dialog.png" alt="Effects properties dialogue" title="Effects properties dialogue" /></p>
+
+<p>Figura 4.12: Diálogo Effects Properties</p>
+
+<ol>
+  <li>Puede ver que actualmente el único efecto enumerado es un efecto Source (de fuente). Este no es particularmente interesante: todo lo que hace es dibujar la capa original sin cambios. Cambie esto a un efecto de Blur (Desenfoque) haciendo clic en el cuadro combinado Effect Type (Tipo de efecto) y seleccionando Blur (Desenfocar). A continuación, puede jugar con los parámetros de desenfoque.</li>
+</ol>
+
+<p><img src="media/blur-effect.png" alt="Select effect type as blur" title="Select effect type as blur" /></p>
+
+<p>Figura 4.13: Seleccione el tipo de efecto como Blur</p>
+
+<ol>
+  <li>Aplique la configuración ahora, verá que la capa de polígono ahora está borroso. ¡Ahora estamos llegando a alguna parte!</li>
+</ol>
+
+<p><img src="media/blurry-result.png" alt="Blurry layer" title="Blurry layer" /></p>
+
+<p>Figura 4.14: Capa borrosa</p>
+
+<ol>
+  <li>Usando el cuadro de diálogo Effects Properties nuevamente. Probemos algo un poco más avanzado. En lugar de un solo efecto, es posible encadenar varios efectos para crear diferentes resultados. Hagamos una sombra paralela tradicional agregando <strong>Drop shadow</strong> (sombra exterior) debajo del efecto <strong>Source</strong>.</li>
+</ol>
+
+<p><img src="media/drop-shadow.png" alt="Effects properties dialogue" title="Effects properties dialogue" /></p>
+
+<p>Figura 4.15: Diálogo Effects Properties</p>
+
+<ol>
+  <li>Los efectos se dibujan de arriba hacia abajo, por lo que la sombra paralela aparecerá debajo de los polígonos de source.</li>
+</ol>
+
+<p><img src="media/drop-shadow-result.png" alt="Drop shadow effect" title="Drop shadow effect" /></p>
+
+<p>Figura 4.16: Efecto de sombra paralela</p>
+
+<ol>
+  <li>Puedes apilar tantos efectos como quieras. Por ejemplo, un resplandor interior sobre un efecto de source, con una sombra debajo de todo. ¡Pruébalo!</li>
+</ol>
+
+<p>En general, recuerde que los efectos se pueden aplicar a una capa completo o a las capas de símbolo individuales para las entidades dentro de una capa. Básicamente, ¡las posibilidades son casi infinitas! Los complementos de Python también pueden extender esto aún más implementando efectos adicionales.</p>
+
+<p>Para obtener más ejemplos sobre lo que puede hacer con modo de fusión y los efectos de dibujo en QGIS, puede consultar:</p>
+<ul>
+  <li>Sombreado en QGIS - <a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+  <li>Mapeo de Icebergs en QGIS - <a href="https://translate.google.com/website?sl=en&amp;tl=es&amp;u=https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html">https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html</a></li>
+</ul>
+
+<h3 id="fase-3-overrides-anulaciones-definidas-por-datos-y-generadores-de-geometría">Fase 3: Overrides (anulaciones) definidas por datos y generadores de geometría</h3>
+
+<h4 id="contenido-2">Contenido</h4>
+
+<ul>
+  <li>Ejecutar una operación espacial dentro de Simbología de Capa</li>
+</ul>
+
+<h4 id="tutorial-1"><strong>Tutorial</strong></h4>
+
+<p>Un generador de geometría es un tipo de capa de símbolo que le permite usar código para crear nuevas geometrías a partir de entidades existentes y usar las nuevas geometrías “generadas” como símbolos que, a su vez, pueden tener estilos aplicados. Esta es una característica poderosa que se explica mejor con un ejemplo.</p>
+
+<p>Puede utilizar la simbología del generador de geometría con todos los tipos de capas (puntos, líneas y polígonos). El símbolo resultante depende directamente del tipo de capa.</p>
+
+<p>Muy brevemente, la simbología del generador de geometría le permite ejecutar algunas operaciones espaciales dentro de la simbología misma. Por ejemplo, puede ejecutar una operación espacial de centroide real en una capa de polígono sin crear una capa de puntos.</p>
+
+<p>Además, tiene todas las opciones de estilo para cambiar la apariencia del símbolo resultante. Aquí hay un tutorial de ejemplo;</p>
+
+<ol>
+  <li>Haga doble clic en la capa de límite administrativo</li>
+  <li>Haga clic en Relleno simple y cambie el tipo de capa de Símbolo a Generador de geometría. Antes de comenzar a escribir la consulta espacial, elija el tipo de geometría en output. En este ejemplo vamos a crear centroides para cada entidad, así que cambiaremos el tipo de geometría a Point / Multipoint (Punto / Multipunto).</li>
+</ol>
+
+<p><img src="media/centroid.png" alt="Centroid operation on administrative boundary layer" title="Centroid operation on administrative boundary layer" /></p>
+
+<p>Figura 4.17: Operación centroide en la capa límite administrativo</p>
+
+<ol>
+  <li>Cuando haga clic en Aceptar, verá que el límite de la capa administrativo se representa como una capa de puntos. Acabamos de ejecutar una operación espacial dentro de la simbología de la capa.</li>
+</ol>
+
+<p><img src="media/centroid-result.png" alt="Point layer" title="Point layer" /></p>
+
+<p>Figura 4.18: Capa de puntos</p>
+
+<ol>
+  <li>Tenga en cuenta que una forma alternativa y más sencilla de escribir consultas espaciales es utilizar el “Expressions dialogue” (diálogo Expresiones). Haga clic en el botón <img src="media/expression.png" alt="alt_text" title="image_tooltip" /> de expresiones para abrir el cuadro de diálogo “Expression string builder” (Generador de cadenas de expresión). Aquí tendrá acceso a una amplia referencia de funciones. Puede buscar una función por nombre. Por ejemplo, escriba centroid (centroide) en la barra de búsqueda.</li>
+  <li>Con la simbología del generador de geometría realmente puede ir más allá de la simbología normal.</li>
+  <li>Si desea ir más allá, escriba una consulta espacial para calcular una zona de amortiguación alrededor de la capa de punto, línea o polígono.</li>
+</ol>
+
+<h4 id="preguntas-de-evaluación"><strong>Preguntas de evaluación</strong></h4>
+
+<ol>
+  <li>N/A</li>
+</ol>
+
+<h4 id="respuestas-al-cuestionario-1"><strong>Respuestas al cuestionario</strong></h4>
+
+<ol>
+  <li>N/A</li>
+</ol>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

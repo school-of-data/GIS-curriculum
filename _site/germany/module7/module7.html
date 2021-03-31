@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Modul 7 - Erstellen und Bearbeiten von Layern | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Modul 7 - Erstellen und Bearbeiten von Layern page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Modul 7 - Erstellen und Bearbeiten von Layern">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Modul 7 - Erstellen und Bearbeiten von Layern</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/germany/module7/module7.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="modul-7---erstellen-und-bearbeiten-von-layern">Modul 7 - Erstellen und Bearbeiten von Layern</h1>
+
+<p><strong>Autor:in</strong>: Ketty</p>
+
+<h2 id="pädagogische-einführung">Pädagogische Einführung</h2>
+
+<p>In diesem Modul lernen Sie, wie Sie mit den QGIS-Werkzeugen einen neuen GIS-Layer erstellen. Sie lernen Konzepte wie Digitalisieren und Georeferenzieren kennen.</p>
+
+<h2 id="technische-voraussetzungen">Technische Voraussetzungen</h2>
+<ul>
+  <li>Computer</li>
+  <li>Internetzugang</li>
+  <li>QGIS 3.16 oder neuer</li>
+  <li><a href="https://www.govdata.de/web/guest/suchen/-/details/regionalkarte-nw-1-150-000">Regionalkarte Münster</a></li>
+</ul>
+
+<h2 id="voraussetzungen">Voraussetzungen</h2>
+
+<ul>
+  <li>Grundlegende Kenntnisse aller vorherigen Module</li>
+  <li>Grundkenntnisse in der Bedienung eines Computers</li>
+</ul>
+
+<h2 id="zusätzliche-ressourcen">Zusätzliche Ressourcen</h2>
+
+<ul>
+  <li>Erstellen von Layern - <a href="https://docs.qgis.org/3.16/de/docs/user_manual/managing_data_source/create_layers.html">https://docs.qgis.org/3.16/de/docs/user_manual/managing_data_source/create_layers.html</a></li>
+  <li>Digitalisieren von Waldbeständen - <a href="https://docs.qgis.org/3.16/de/docs/training_manual/forestry/stands_digitazing.html?highlight=digitizing">https://docs.qgis.org/3.16/de/docs/training_manual/forestry/stands_digitazing.html?highlight=digitizing</a></li>
+  <li>Weitere Lektüre: <a href="https://docs.qgis.org/3.16/de/docs/training_manual/forestry/map_georeferencing.html?highlight=georeferencing">Georeferenzierung einer Karte</a></li>
+</ul>
+
+<h2 id="thematische-einführung">Thematische Einführung</h2>
+
+<p>Lassen Sie uns mit einem Beispiel beginnen:</p>
+
+<p>Stellen wir uns vor, Ihre Abteilung plant den Bau einer neuen Schule in Ihrem Landkreis. Sie möchten vielleicht eine Umweltvorprüfung für das geplante Infrastrukturprojekt durchführen. Die Bewertung kann eine Recherche der verfügbaren Daten beinhalten. Wie Sie sich vielleicht vorstellen können, gibt es eine große Menge an geografischen Daten in Formaten, die nicht sofort mit anderen GIS-Daten integriert werden können. Einige dieser Daten können in Form von alten Karten, hochauflösenden Satellitenbildern oder fernerkundeten Bildern vorliegen, die oft für die Erstellung digitaler Karten wie Google Maps oder OpenStreetMap verwendet werden. Hier kommt das Erstellen und Bearbeiten von Layern ins Spiel. Eine Möglichkeit, wie neue Daten in einem GIS erstellt werden können, ist die Digitalisierung. Andere Methoden sind die Georeferenzierung, das Scannen und Vektorisieren, das Ausschneiden, die Auswahl und das anschließende Speichern.</p>
+
+<p><img src="media/rs-images.png" alt="Fernerkundete Bilder verschiedener Küstenlinien" title="Fernerkundete Bilder verschiedener Küstenlinien" /></p>
+
+<p>Abbildung 7.1: Fernerkundungsbilder verschiedener Küstenlinien. A. Interferometric Synthetic Aperture Radar (IFSAR)-Daten (Verwendung von Mikrowellen zur Datenerfassung für die Erstellung repräsentativer Bilder), B. topografische und bathymetrische Lidar-Daten (Höhen- und Konturdaten, die durch Farben dargestellt werden), C. hyperspektrale Bilder (Hinzufügen von Farbe zu unsichtbarer Energie) und D. digitale Fotografie (für das menschliche Auge sichtbare Farben, die als solche dargestellt werden)</p>
+
+<h2 id="aufschlüsselung-der-begriffe">Aufschlüsselung der Begriffe</h2>
+
+<p>Digitalisierung im GIS ist der Prozess des “Nachzeichnens” von Informationen aus Medien/Karten auf geographisch korrekte Weise.</p>
+
+<p><img src="media/buildings.png" alt="Hier wurden Gebäude auf einem Luftbild digitalisiert (nachgezeichnet)" title="Hier wurden Gebäude auf einem Luftbild digitalisiert (nachgezeichnet)" /></p>
+
+<p>Abbildung 7.2: Hier wurden Gebäude auf einem Luftbild digitalisiert (nachgezeichnet)</p>
+
+<p>Bei der Georeferenzierung hingegen wird ein digitales Bild (z. B. ein Luftbild, eine gescannte geologische Karte oder ein Bild einer topografischen Karte) mit geografischen Informationen versehen, so dass eine GIS- oder Kartierungssoftware das Bild an der entsprechenden Stelle in der realen Welt “platzieren” kann.</p>
+
+<h2 id="hauptinhalt">Hauptinhalt</h2>
+
+<p>QGIS erlaubt es Ihnen, neue Layer in verschiedenen Formaten zu erstellen. Es bietet Werkzeuge zum Erstellen von GeoPackage-, Shapefile-, SpatiaLite-, GPX-Format- und temporären Scratch-Layern (auch Speicher-Layer genannt). Mit der Bearbeitung können Sie Features in Vektordatensätzen hinzufügen, löschen und ändern. Der erste Schritt besteht darin, den Datensatz in den Bearbeitungsmodus zu versetzen. Wählen Sie den Layer im Bedienfeld “Layer” aus und klicken Sie auf “Bearbeitungsstatus umschalten”. Alternativ können Sie mit der rechten Maustaste auf einen Layer im Bedienfeld “Layer” klicken und “Bearbeitungsstatus umschalten” aus dem Kontextmenü wählen. Es können mehrere Layer gleichzeitig bearbeitet werden. Der Layer, der gerade bearbeitet wird, ist derjenige, der im Bedienfeld “Layer” ausgewählt ist. Sobald Sie sich im Bearbeitungsmodus befinden, können Sie mit der Digitalisierungs-Symbolleiste Features hinzufügen, löschen und ändern.</p>
+
+<p>Wie Sie sich sicher schon denken können, ist das Digitalisieren die Kunst (oder Wissenschaft) der Erstellung digitaler Vektordaten aus einer anderen Quelle, wie z. B. einem Rasterbild. Um mit dem Digitalisieren zu beginnen, müssen wir zunächst in den Bearbeitungsmodus wechseln. GIS-Software benötigt in der Regel einen separaten Modus für die Bearbeitung, um zu verhindern, dass der/die Benutzer:in versehentlich wichtige Daten bearbeitet oder löscht. Der Bearbeitungsmodus wird für jeden Layer einzeln ein- oder ausgeschaltet.</p>
+
+<h3 id="teil-1-erstellen-eines-neuen-geopackage-layers-oder-shapefiles">Teil 1: Erstellen eines neuen GeoPackage Layers oder Shapefiles</h3>
+
+<h4 id="erstellen-eines-neuen-geopackage-layers"><strong>Erstellen eines neuen GeoPackage Layers</strong></h4>
+
+<ol>
+  <li>Um einen neuen GeoPackage Layer zu erstellen, wählen Sie die Schaltfläche Neuer Geopackage Layer <img src="/germany/module7/media/geopackage-button.png" alt="" />
+ im Menü “Layer ‣ Layer erstellen” oder in der Symbolleiste des Datenquellen-Managers. Der Dialog Neuer Geopackage Layer wird angezeigt, wie in Abbildung 7.3 dargestellt.</li>
+</ol>
+
+<p><img src="media/new-geopackage-dialog.png" alt="Dialog Neues GeoPaket Layer" title="Dialog Neues GeoPaket Layer" /></p>
+
+<p>Abbildung 7.3: Dialog Neues GeoPackage Layer</p>
+
+<ol>
+  <li>Der erste Schritt besteht darin, den Speicherort der Datenbankdatei anzugeben. Dazu drücken Sie den <img src="/germany/module7/media/database-file-location.png" alt="" /> Button rechts neben dem Feld Database und wählen eine bestehende GeoPackage Datei aus oder erstellen eine neue. QGIS fügt automatisch die richtige Erweiterung an den von Ihnen angegebenen Namen an.</li>
+  <li>Geben Sie einen Namen für den neuen Layer / die neue Tabelle ein (Tabellenname)</li>
+  <li>Definieren Sie den Geometrietyp. Wenn es sich nicht um einen geometrielosen Layer handelt, können Sie angeben, ob er die Z-Dimension und/oder die M-Werte einschließen soll.</li>
+  <li>
+    <p>Geben Sie das Koordinatenreferenzsystem über die Schaltfläche <img src="/germany/module7/media/mActionSetProjection.png" alt="" /> an</p>
+  </li>
+  <li>
+    <p>So fügen Sie dem Layer, den Sie erstellen, Felder hinzu:</p>
+
+    <ol>
+      <li>Geben Sie den Namen des Feldes ein</li>
+      <li>Wählen Sie den Datentyp. Unterstützte Typen sind Textdaten, Ganzzahl (sowohl Integer als auch Integer64), Dezimalzahl, Datum und Datum und Uhrzeit, Binär (Blob) und Boolean.</li>
+      <li>Geben Sie je nach ausgewähltem Datenformat die maximale Länge der Werte ein.</li>
+      <li>Klicken Sie auf die Schaltfläche Add to Fields List <img src="/germany/module7/media/mActionNewAttribute.png" alt="" /></li>
+    </ol>
+  </li>
+  <li>Wiederholen Sie die obigen Schritte für jedes Feld, das Sie hinzufügen möchten</li>
+  <li>Wenn Sie mit den Attributen zufrieden sind, klicken Sie auf OK. QGIS fügt den neuen Layer zur Legende hinzu, und Sie können ihn wie im kommenden Teil “Digitalisieren eines bestehenden Layers” dieses Moduls beschrieben bearbeiten.</li>
+</ol>
+
+<h4 id="erstellen-eines-neuen-shapefiles"><strong>Erstellen eines neuen Shapefiles</strong></h4>
+
+<ol>
+  <li>Um einen neuen Layer im ESRI Shapefile-Format zu erstellen, drücken Sie die Schaltfläche <img src="/germany/module7/media/mActionNewVectorLayer.png" alt="" /> “Neuer Shapedatei Layer…” im Menü “Layer ‣ Layer hinzufügen” oder in der Symbolleiste der Datenquellenverwaltung. Der Dialog Neuer Shapedatei Layer wird angezeigt, wie in Abbildung 7.4 dargestellt.</li>
+</ol>
+
+<p><img src="/germany/module7/media/new-shapefile-dialog.png" alt="" /></p>
+
+<p>Abbildung 7.4: Dialog Neuer Shapedatei Layer</p>
+
+<ol>
+  <li>Geben Sie einen Pfad und einen Dateinamen an, indem Sie die Schaltfläche … neben dem Feld Dateiname verwenden. QGIS fügt automatisch die richtige Erweiterung an den von Ihnen angegebenen Namen an.</li>
+  <li>Geben Sie als nächstes die Dateikodierung der Daten an</li>
+  <li>Wählen Sie den Geometrietyp des Layers: Keine Geometrie (was zu einer Datei im .DBF-Format führt), Punkt, Mehrpunkt, Linie oder Polygon</li>
+  <li>Geben Sie an, ob die Geometrie zusätzliche Abmessungen haben soll: Keine, Z (+ M-Werte) oder M-Werte</li>
+  <li>
+    <p>Geben Sie das Koordinatenreferenzsystem über die Schaltfläche <img src="/germany/module7/media/mActionSetProjection.png" alt="" /> an, Sie können das universelle WGS 84 wählen, das sich gut für WebMapping-Projekte auf der ganzen Welt eignet</p>
+  </li>
+  <li>So fügen Sie dem Layer, den Sie gerade erstellen, Felder hinzu:
+    <ol>
+      <li>Geben Sie den Namen des Feldes ein</li>
+      <li>Wählen Sie den Datentyp. Es werden nur die Attribute Dezimalzahl, Ganzzahl, Textdaten und Datum unterstützt.</li>
+      <li>Geben Sie je nach ausgewähltem Datenformat die Länge und die Genauigkeit ein.</li>
+      <li>Klicken Sie auf die Schaltfläche Add to Fields List <img src="/germany/module7/media/mActionNewAttribute.png" alt="" /></li>
+    </ol>
+  </li>
+  <li>Wiederholen Sie die obigen Schritte für jedes Feld, das Sie hinzufügen möchten</li>
+  <li>Wenn Sie mit den Attributen zufrieden sind, klicken Sie auf OK. QGIS fügt den neuen Layer zur Legende hinzu, und Sie können ihn wie im nächsten Teil “Digitalisieren eines bestehenden Layers” dieses Moduls beschrieben bearbeiten.</li>
+</ol>
+
+<h3 id="phase-2-titel-digitalisieren-eines-bestehenden-layers">Phase 2 Titel: Digitalisieren eines bestehenden Layers</h3>
+
+<h4 id="inhalttutorial"><strong>Inhalt/Tutorial</strong></h4>
+
+<p>In diesem Tutorial wird gezeigt, wie man ein neues Shapefile mit Hilfe von Hilfsdaten wie z.B. Satellitenbildern, die von Google bereitgestellt werden, erstellt. In der Praxis werden genaue sogenannte Ground-Truth-Daten verfügbar sein. Es ist wichtig, dass Sie vorher wissen, welches Feature Sie erstellen möchten, z. B. ob es sich um einen Punkt-, Linien- oder Polygon-Vektor-Layer handelt. Wenn wir den Layer erstellen, müssen wir festlegen, welche Art von Daten er enthalten soll. Der Zweck dieses Tutorials ist es, einen Datensatz zu erstellen, der leicht mit einem GIS-System manipuliert, analysiert und gespeichert werden kann. Wir wählen daher eine Vektordatei und werden als Beispiel Polygon-Features erstellen.</p>
+
+<ol>
+  <li>Bevor Sie neue Vektordaten hinzufügen können, benötigen Sie einen Vektordatensatz (einen Layer), dem Sie sie hinzufügen können. In unserem Fall beginnen wir mit der Erstellung eines neuen Daten-Layers und fügen diesem dann Features hinzu. Zuerst müssen wir unseren Datensatz definieren.</li>
+  <li>Erstellen Sie ein neues Projekt in QGIS, indem Sie auf das Symbol <em>Neues Projekt</em> <img src="media/new-project.png" alt="alt_text" /> klicken.</li>
+  <li>Gehen Sie zu <em>Layer ‣ Layer erstellen ‣ Neuer Geopackage Layer</em>. Sie erhalten den folgenden Dialog:</li>
+</ol>
+
+<p><img src="/germany/module7/media/new-vector.png" alt="" /></p>
+
+<p>Abbildung 7.5: Dialog Neuer GeoPackage-Layer</p>
+
+<p>An dieser Stelle müssen wir entscheiden, welche Art von Datensatz wir erstellen wollen. Denken Sie daran, dass ein Daten-Layer nur Features aus Punkten, Linien oder Polygonen enthalten kann - niemals eine Mischung. Wenn wir den Layer erstellen, müssen wir festlegen, welche Art von Daten er enthalten soll.</p>
+
+<p>Da Polygone technisch aus Punkten und Linien bestehen, lassen Sie uns Polygone erstellen. Wenn Sie dies einmal gemeistert haben, sollte es ein Leichtes sein, einen Punkt- oder Linien-Layer zu erstellen!</p>
+
+<p>Geben Sie im Dialog einen Dateinamen für die neue Datei, die Dateikodierung, den Geometrietyp und das CRS an und fügen Sie die Daten für das neue Feld hinzu. Fügen Sie weitere Feldnamen hinzu. Dies erfordert ein vorgefertigtes Datenmodell, das alle Informationen über das besagte Feature korrekt erfasst.</p>
+
+<ol>
+  <li>Der zweite Schritt ist das Hinzufügen des ESRI World Imagery Layers zur Kartenansicht. Diese wurde in einem früheren Modul hinzugefügt und sollte im <strong>Browser Panel</strong> unter <strong>XYZ Tiles</strong> zur Verfügung stehen.</li>
+</ol>
+
+<p><img src="/germany/module7/media/xyz-2.png" alt="ESRI World Imagery im Browser Bedienfeld" /></p>
+
+<p><img src="/germany/module7/media/xyz-3.png" alt="ESRI World Imagery geladen in QGIS" /></p>
+
+<p>Abbildung 7.6.1: QGIS-Canvas nach Hinzufügen des ESRI World Imagery Layers</p>
+
+<ol>
+  <li>Zoomen Sie in das Bild, bis Sie Merkmale wie Dächer, Straßen, Bäume usw. erkennen können. Die Dächer können als 2D-Proxy für Gebäude dienen, daher digitalisieren wir den neu erstellten Etagen-Layer.</li>
+</ol>
+
+<p><img src="/germany/module7/media/digitize-zoom.png" alt="Details im ESRI World Imagery Layer" /></p>
+
+<p>Abbildung 7.6.2: Details im ESRI World Imagery Layer</p>
+
+<ol>
+  <li>Wechseln wir in den Bearbeitungsmodus für den Layer <em>Etagen</em>.</li>
+  <li>Wählen Sie <em>Etagen</em> im Bedienfeld Layers</li>
+  <li>Klicken Sie auf die Schaltfläche <em>Bearbeitungsmodus umschalten</em> <img src="/germany/module7/media/edit-layer.png" alt="" /></li>
+  <li>Wenn Sie diese Schaltfläche nicht finden können, vergewissern Sie sich, dass die Symbolleiste “Digitalisieren” aktiviert ist. Neben dem Menüeintrag <em>Ansicht ‣ Werkzeugkästen ‣ Digitalisierungswerkzeugleiste</em> sollte ein Häkchen vorhanden sein.</li>
+  <li>Sobald Sie sich im Bearbeitungsmodus befinden, werden die Digitalisierwerkzeuge aktiv</li>
+</ol>
+
+<p><img src="media/digi-toolbar.png" alt="Digitalisierwerkzeuge" title="Digitalisierwerkzeuge" /></p>
+
+<p>Abbildung 7.7: Digitalisierwerkzeuge</p>
+
+<p>Von links nach rechts auf dem Bild oben sind dies:</p>
+
+<ul>
+  <li><strong>Aktuelle Änderungen</strong>: Erlaubt es Ihnen, die gemachten Änderungen zu speichern oder zu verwerfen</li>
+  <li><strong>Bearbeitungsstatus umschalten</strong>: aktiviert/deaktiviert den Bearbeitungsmodus.</li>
+  <li><strong>Layeränderungen speichern</strong>: speichert die Änderungen am Layer.</li>
+  <li><strong>Objekt hinzufügen</strong>: startet die Digitalisierung eines neuen Objekten.</li>
+  <li><strong>Objekte verschieben</strong>: verschiebt ein ganzes Objekt.</li>
+  <li><strong>Knotenwerkzeug</strong>: verschiebt nur einen Teil eines Objekten.</li>
+  <li><strong>Ausgewähltes löschen</strong>: das ausgewählte Objekt löschen (nur aktiv, wenn ein Objekt ausgewählt ist).</li>
+  <li><strong>Ausgewählte Objekte ausschneiden</strong>: das ausgewählte Objekt ausschneiden (nur aktiv, wenn ein Objekt ausgewählt ist).</li>
+  <li><strong>Merkmale kopieren</strong>: Kopieren des ausgewählten Merkmals (nur aktiv, wenn ein Merkmal ausgewählt ist).</li>
+  <li><strong>Objekte einfügen</strong>: ein ausgeschnittenes oder kopiertes Objekt wieder in die Map einfügen (nur aktiv, wenn ein Feature ausgeschnitten oder kopiert wurde).</li>
+</ul>
+
+<p>Wir wollen ein neues Feature hinzufügen.</p>
+
+<ol>
+  <li>Klicken Sie auf die Schaltfläche <em>Polygonobjekt hinzufügen</em> <img src="/germany/module7/media/add-feature.png" alt="" />, um mit dem Digitalisieren zu beginnen. Wir werden die Gebäude digitalisieren</li>
+  <li>Beginnen Sie mit einem Klick auf einen Punkt irgendwo an der Gebäudekante</li>
+  <li>Setzen Sie weitere Punkte, indem Sie weiter entlang der Kante klicken, bis die Form, die Sie zeichnen, das Feld vollständig abdeckt. Der Anfangs- und der Endpunkt müssen sich dabei berühren.</li>
+  <li>Um den letzten Punkt zu platzieren, <strong>klicken Sie mit der rechten Maustaste auf die gewünschte Stelle</strong>. Dadurch wird das Feature abgeschlossen und das Dialogfeld “Attribute” wird angezeigt.</li>
+  <li>Füllen Sie den Etagenwert aus. In unserem Fall können Sie einfach raten.</li>
+</ol>
+
+<p><img src="/germany/module7/media/digitize-1.png" alt=" Neues Feature digitalisieren" /></p>
+
+<p>Abbildung 7.8.1: Neues Feature digitalisieren</p>
+
+<p><img src="/germany/module7/media/digitize-2.png" alt="Ausfüllen der Attributwerte" /></p>
+
+<p>Abbildung 7.8.2: Ausfüllen der Attributwerte</p>
+
+<ol>
+  <li>Klicken Sie auf <em>OK</em>. Sie haben ein neues Feature erstellt!</li>
+</ol>
+
+<p><img src="media/digitize-3.png" alt="Neues Objekt" title="Neues Objekt" /></p>
+
+<p>Abbildung 7.8.3: Neues Objekt</p>
+
+<p>Wenn Sie beim Digitalisieren eines Objekts einen Fehler machen, können Sie es später immer noch bearbeiten. Beenden Sie einfach die Digitalisierung des Objekts und führen Sie dann die folgenden Schritte aus:</p>
+
+<ul>
+  <li>Wählen Sie das Objekt mit dem Werkzeug <em>Objekt über Rechtsklick oder Einzelklick wählen</em> aus</li>
+</ul>
+
+<p><img src="media/select-feature.png" alt="" title="image_tooltip" /></p>
+
+<ul>
+  <li>Verwenden Sie dann eines der folgenden Werkzeuge, um das Objekt zu bearbeiten</li>
+</ul>
+
+<table>
+  <tr>
+   <td>
+<img src="media/image186.png" />
+
+   </td>
+   <td>Objekt verschieben
+   </td>
+   <td>Ganzes Objekt verschieben
+   </td>
+  </tr>
+  <tr>
+   <td>
+
+<img src="media/image187.png" />
+
+   </td>
+   <td>Knotenwerkzeuge
+   </td>
+   <td>Verschieben Sie nur einen Punkt, an dem Sie möglicherweise falsch geklickt haben
+   </td>
+  </tr>
+  <tr>
+   <td>
+
+<img src="media/image188.png" />
+
+   </td>
+   <td>Ausgewähltes löschen
+   </td>
+   <td>Das Feature ganz löschen, damit Sie es erneut versuchen können
+   </td>
+  </tr>
+  <tr>
+   <td>Gehen Sie zu Bearbeiten ‣ Rückgängig oder drücken Sie Strg+Z auf der Tastatur.
+   </td>
+   <td>Fehler rückgängig machen
+   </td>
+   <td>
+   </td>
+  </tr>
+</table>
+
+<ol>
+  <li>Probieren Sie es nun selbst aus, digitalisieren Sie weitere Gebäude im Bild.</li>
+</ol>
+
+<h3 id="phase-3-titel-georeferenzierung-einer-printkarte">Phase 3 Titel: Georeferenzierung einer Printkarte</h3>
+
+<p>Im folgenden wollen wir eine bestehende gedruckte Karte in QGIS hinzufügen. Um mit ihr zu arbeiten, müssen wir zuerst einmal georeferenzieren. Da Sachsen leider eines der wenigen Bundesländer ohne gute Open-Data-Gesetzgebung ist wenden wir uns an dieser Stelle einemal an das in dieser hinsicht progressivere Nordrhein-Westfalen und werden eine Karte von dort digitalisieren.</p>
+
+<h4 id="inhalttutorial-1"><strong>Inhalt/Tutorial</strong></h4>
+
+<p>So georeferenzieren Sie die Karte;</p>
+
+<ol>
+  <li>Öffnen Sie das Werkzeug Georeferenzierung, Raster ► Georeferenzierung</li>
+  <li>Klicken Sie auf die Schaltfläche Raster hinzufügen <img src="media/add-raster.png" alt="Raster hinzufügen" title="Add Raster" />, um die Kartenbilddatei, <a href="https://www.opengeodata.nrw.de/produkte/geobasis/vkg/rk150_f_pdf/rk150cmyk_05500000_Münster.pdf">rk150cmyk_05500000_Münster.pdf</a>, als das zu georeferenzierende Bild hinzuzufügen. Die topographische Karte wird der Georeferenzierungs-Arbeitsfläche hinzugefügt. Sie können nun hineinzoomen, um die Details der Karte zu lesen. Eine Möglichkeit, dies zu tun, ist, die Metadaten und Legendeninformationen am rechten Rand zu lesen und sie dann mit den Merkmalen auf der Karte in Beziehung zu setzen.</li>
+</ol>
+
+<p><img src="media/georeferencer.png" alt="Karte im Georeferenzierung-Fenster" title="Karte im Georeferenzierung-Fenster" /></p>
+
+<p>Abbildung 7.9: Karte im Georeferenzierung-Fenster</p>
+
+<p>Als nächstes sollten Sie die Transformationseinstellungen für die Georeferenzierung der Karte festlegen:</p>
+
+<ol>
+  <li>Öffnen Sie Einstellungen ► Transformationseinstellungen oder klicken Sie auf die Schaltfläche Transformationseinstellungen <img src="/germany/module7/media/georef-settings-btn.png" alt="" />.</li>
+  <li>Klicken Sie auf das Symbol <img src="/germany/module7/media/dots.png" alt="" /> um auszuwählen, wo die georefenzierte Karte gespeichert werden soll.</li>
+  <li>Stellen Sie den Rest der Parameter wie unten gezeigt ein</li>
+</ol>
+
+<p><img src="media/transformation-settings.png" alt="Transformationsparameter" title="Transformationsparameter" /></p>
+
+<p>Abbildung 7.10: Transformationsparameter</p>
+
+<p>Bei der Auswahl der Transformationsparameter sind folgende Dinge zu berücksichtigen:</p>
+<ul>
+  <li>die Komplexität und Verzerrung der Karte (bei regelmäßig geformten Karten sind normalerweise nur einfache Transformationsparameter erforderlich)</li>
+  <li>die Anzahl der Passpunkte, die Sie auf der Karte erhalten können - je komplexer der Transformationstyp, desto mehr Passpunkte werden benötigt, um gute Ergebnisse zu erhalten.</li>
+  <li>die Verteilung der Passpunkte auf der Karte – eine schlechte Passpunkte-Verteilung führt zu mehr Verzerrungen, insbesondere bei Transformationsgleichungen höherer Ordnung.</li>
+  <li>mehr (oder komplexer) ist nicht immer besser.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Ordnung der Transformation</th>
+      <th style="text-align: center">Erforderliche Mindestanzahl an Passpunkten</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">21</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">28</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">36</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Zur Sicherheit sollten Sie immer mindestens einen mehr als das Minimum haben, um Redundanz zu schaffen.</p>
+
+<ol>
+  <li>Klicken Sie auf OK.</li>
+  <li>Die Originalkarte enthält mehrere Fadenkreuze, die die Koordinaten in der Karte markieren; wir werden diese verwenden, um dieses Bild zu georeferenzieren. Sie können die Werkzeuge zum Zoomen und Schwenken verwenden, wie Sie es in QGIS gewohnt sind, um das Bild im Fenster des Georeferenzierers zu inspizieren.</li>
+  <li>Zoomen Sie in die untere rechte Ecke der Karte und beachten Sie, dass dort ein Fadenkreuz mit einem Koordinatenpaar, zu sehen ist. Diese Koordinaten liegen laut Legende im ETRS89/WGS84 Format vor.</li>
+  <li>Klicken Sie auf die Schaltfläche Punkt hinzufügen <img src="/germany/module7/media/add-point.png" alt="" /> und klicken Sie in den Schnittpunkt der Fadenkreuze (Schwenken und Zoomen nach Bedarf).</li>
+  <li>Schreiben Sie in den Dialog “Kartenkoordinaten eingeben” die Koordinaten, die in der Karte erscheinen (Y: 8° 30’ und X: 51° 30’). Achten Sie darauf, die Daten in dem Format wie vom Dialog vorgegeben (also ohne Sonderzeichen) einzugeben.</li>
+</ol>
+
+<p><img src="media/georef-1.png" alt="GCP auswählen" title="GCP auswählen" /></p>
+
+<p>Abbildung 7.11.1: Kartenkoordinaten eingeben</p>
+
+<p><img src="media/georef-2.png" alt="Kartenkoordinaten eingeben" title="Kartenkoordinaten eingeben" /></p>
+
+<p>Abbildung 7.11.2: Kartenkoordinaten eingeben</p>
+
+<ol>
+  <li>Klicken Sie auf OK.</li>
+</ol>
+
+<p>Die erste Koordinate für die Georeferenzierung ist nun fertig. Nachfolgend ein Screenshot, der zeigt, was Sie an dieser Stelle erwartet</p>
+
+<p><img src="media/georef-3.png" alt="Erste Koordinate für die Georeferenzierung" title="Erste Koordinate für die Georeferenzierung" /></p>
+
+<p>Abbildung 7.12: Erste Koordinate für die Georeferenzierung</p>
+
+<ol>
+  <li>
+    <p>Zoomen Sie im Bild heraus und bewegen Sie sich umher, bis Sie ein anderes Fadenkreuz finden,und fügen Sie auch für dieses einen Passpunkt hinzu. Versuchen Sie, die Passpunkte so weit wie möglich voneinander zu entfernen. Digitalisieren Sie mindestens drei weitere Passpunkte auf die gleiche Weise wie den ersten. Tipp: Achten Sie darauf, dass die Punkte einigermaßen gleichmäßig über das Bild verteilt sind, zum Beispiel in allen vier Ecken des Bildes oder in gleichen Abständen zueinander. Dies wirkt sich auf die Leistung des Transformationsalgorithmus aus.</p>
+  </li>
+  <li>
+    <p>Bei bereits drei digitalisierten Passpunkte  können Sie den Georeferenzierungsfehler als rote Linie sehen, die von den Punkten ausgeht. Der Fehler in Pixeln ist auch in der Passpunktabelle in den Spalten dX(Pixel) und dY(Pixel) zu sehen. Die Deltas sollten nicht höher als ein von Ihnen festgelegter Schwellenwert sein. Wenn dies der Fall ist, sollten Sie die von Ihnen digitalisierten Punkte und die eingegebenen Koordinaten überprüfen, um das Problem zu finden. Sie können das unten stehende Bild als Anhaltspunkt verwenden.</p>
+  </li>
+  <li>Fügen Sie weitere Kontrollpunkte hinzu, bis Sie mit den erwarteten Ergebnissen zufrieden sind.</li>
+  <li>Sie können die Passpunkte speichern <strong>Datei ► GCP-Punkte speichern als…</strong>.</li>
+  <li>Abschließend georeferenzieren Sie Ihre Karte mit <strong>Datei ► Georeferenzierung starten</strong> oder der Schaltfläche <img src="media/georef-start-btn.png" alt="Georeferenzierung starten" title="Start Georeferencing button" />.</li>
+</ol>
+
+<p><img src="media/georef-4.png" alt="GCPs hinzugefügt" title="GCPs hinzugefügt" /></p>
+
+<p>Abbildung 7.13: GCPs hinzugefügt</p>
+
+<p><img src="media/georef-5.png" alt="Georeferenzierte Karte in QGIS geladen" title="Georeferenzierte Karte in QGIS geladen" /></p>
+
+<p>Abbildung 7.14: Georeferenzierte Karte in QGIS geladen</p>
+
+<p>Hinweis: Um zu überprüfen, ob Ihre Daten richtig georeferenziert sind, können Sie sich den Layer anschauen. Stellen Sie die Layertransparenz auf 75% und laden Sie sich den OSM-XYZ Layer in den Hintergrund.</p>
+
+<h4 id="quizfragen"><strong>Quizfragen</strong></h4>
+
+<ol>
+  <li>Was versteht man unter Digitalisierung im GIS? (Mehrere auswählen)</li>
+  <li>Welche der folgenden Hilfsdatensätze unterstützen das Digitalisieren? (Mehrere auswählen)</li>
+  <li>Welche Faktoren können die Genauigkeit der Daten beim Digitalisieren beeinflussen? (Eine Antwort wählen)</li>
+  <li>Was kann getan werden, um die Genauigkeit zu verbessern? (Mehrere auswählen)</li>
+  <li>Warum ist ein Datenmodell bei der Erstellung neuer Daten wichtig? (Eine Antwort wählen)</li>
+</ol>
+
+<h4 id="quizantworten">Quizantworten</h4>
+
+<ol>
+  <li>
+    <p>a. der Prozess der Umwandlung von geografischen Daten entweder aus einem gescannten Bild oder einem digitalen Bild in Vektordaten durch Nachzeichnen der Merkmale
+b. beschreibt die reine Analog-Digital-Wandlung von bestehenden Daten und Dokumenten <br />
+c. Prozess, bei dem Koordinaten aus einer Karte, einem Bild oder anderen Datenquellen in einem <em>GIS</em> in ein digitales Format umgewandelt werden
+d. bezieht sich auf die Erstellung einer digitalen Darstellung von physischen Objekten oder Attributen</p>
+  </li>
+  <li>
+    <p>a. GPS-Datenpunkte
+b. Topografische Karten
+c. Satellitenbilder
+d. Diagramme und Tabellen</p>
+  </li>
+  <li>
+    <p>a. Auflösung der Daten (räumlich, zeitlich, radiometrisch)
+b. Beleuchtung
+c. Lage des Merkmals
+d. Typ des Merkmals</p>
+  </li>
+  <li>
+    <p>a. genaue Datenquellen nutzen
+b. Ziele für die Datenqualität festlegen
+c. die Daten überprüfen um Bearbeitungen zu überarbeiten oder rückgängig zu machen</p>
+  </li>
+  <li>
+    <p>a. ermöglicht die Erfassung umfassender Informationen über das Feature
+b. automatisiert den Prozess
+c. erfasst Digitalisierungsfehler</p>
+  </li>
+</ol>
+
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

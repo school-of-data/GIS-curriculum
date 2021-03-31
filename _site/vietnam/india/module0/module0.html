@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Module 0 - Gentle Introduction to GIS concepts | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Module 0 - Gentle Introduction to GIS concepts page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Module 0 - Gentle Introduction to GIS concepts">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Module 0 - Gentle Introduction to GIS concepts</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/vietnam/india/module0/module0.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="module-0---gentle-introduction-to-gis-concepts">Module 0 - Gentle Introduction to GIS concepts</h1>
+
+<p><strong>Author</strong>: Ben Hur</p>
+
+<h2 id="pedagogical-introduction">Pedagogical Introduction</h2>
+
+<p>This module serves as a gentle introduction to geographic concepts necessary for working with geographic information systems (GIS). By the end of this module, learners should understand the following concepts:</p>
+
+<ul>
+  <li>map projections</li>
+  <li>coordinate reference systems</li>
+  <li>spatial data formats (e.g. vectors and rasters)</li>
+  <li>parts and features of a GIS</li>
+  <li>uses of a GIS</li>
+  <li>examples of GIS and other geospatial applications</li>
+</ul>
+
+<p>In addition, this module will also introduce some key concepts of Free and Open Source Software (FOSS) and Free and Open Source Software for Geospatial (FOSS4G) applications.</p>
+
+<h2 id="required-tools-and-resources">Required tools and resources</h2>
+
+<p>The required tools and resources for this module are:</p>
+
+<ul>
+  <li>working computer</li>
+  <li>internet connection</li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>basic knowledge of operating a computer</li>
+</ul>
+
+<h2 id="additional-resources">Additional resources</h2>
+
+<ul>
+  <li>A Gentle Introduction to GIS - <a href="https://docs.qgis.org/3.16/en/docs/gentle_gis_introduction/index.html">https://docs.qgis.org/3.16/en/docs/gentle_gis_introduction/index.html</a></li>
+  <li>QGIS User Guide - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/">https://docs.qgis.org/3.16/en/docs/user_manual/</a></li>
+  <li>QGIS Training Manual - <a href="https://docs.qgis.org/3.16/en/docs/training_manual/index.html">https://docs.qgis.org/3.16/en/docs/training_manual/index.html</a></li>
+  <li>QGIS website - <a href="https://qgis.org/en/site/">https://qgis.org/en/site/</a></li>
+  <li>OSGeo website - <a href="https://www.osgeo.org/">https://www.osgeo.org/</a></li>
+  <li>OSGeoLive website - <a href="https://live.osgeo.org/en/index.html">https://live.osgeo.org/en/index.html</a></li>
+  <li>What is free software? - <a href="https://www.gnu.org/philosophy/free-sw.en.html">https://www.gnu.org/philosophy/free-sw.en.html</a></li>
+  <li>Open source definition - <a href="https://opensource.org/osd">https://opensource.org/osd</a></li>
+</ul>
+
+<h2 id="thematic-introduction">Thematic introduction</h2>
+
+<p>Let’s start with an example:</p>
+
+<p>You might have heard the phrase “All maps lie.” or you’ve seen a post on social media claiming that “The map of the world you’ve known all your life is wrong!”.  Well, it’s not that maps are actively choosing to lie to you, it’s just that maps can never show you the whole truth. One such example is the relative sizes of countries.</p>
+
+<p>The True Size Of (<a href="https://thetruesize.com/">https://thetruesize.com/</a>) is a cool web mapping application that shows how the relative sizes of countries are distorted in one of the most common maps we use (one that uses the Mercator projection). It also shows some examples of spatial data types that we will learn more about in this module. Try to use the web application to compare the size of your country with others.</p>
+
+<p><img src="media/true-size-of.png" alt="True Size Of" title="True Size of Countries" /></p>
+
+<h2 id="breakdown-of-the-concepts">Breakdown of the concepts</h2>
+
+<p>So why is this the case? As you will learn in this module, it’s difficult to represent the 3-dimensional shape of the earth on a flat sheet of paper. To do this, cartographers use what’s called a <strong>map</strong> <strong>projection</strong> to project the points on the earth’s three-dimensional surface to a flat surface. However, by doing so, <strong>distortion</strong> is introduced. This distortion can be on the shape, size, direction, and distances of objects on the map. All maps have at least one of these distortions. Because of this distortion, a map can never show the whole truth about the earth.</p>
+
+<p>In the web app we used, the background map that doesn’t change size (the grayish one) is an example of <strong>raster</strong> <strong>data</strong>. Raster data are pixel-based representations of the world similar to photographs. Meanwhile, the shape of the countries that we can move around are examples of <strong>vector</strong> <strong>data</strong>. Vector data, unlike rasters, represent the world using discrete objects such as points, lines, and polygons.</p>
+
+<h2 id="main-content">Main content</h2>
+
+<h3 id="phase-1-title-maps-and-coordinates">Phase 1 title: Maps and Coordinates</h3>
+
+<p>When people think of the earth today, they usually picture a spherical mass of blue, green, white, and brown floating in space. This is why the traditional way to model the earth is through the use of globes.</p>
+
+<table>
+  <tr>
+   <td>
+        <img src="media/blue-marble.jpg" />
+        Figure 0.1. The Blue Marble (<a href="https://commons.wikimedia.org/wiki/Earth#/media/File:The_Blue_Marble.jpg">https://commons.wikimedia.org/wiki/Earth#/media/File:The_Blue_Marble.jpg</a>)
+   </td>
+   <td>
+        <img src="media/globe.jpg" />  
+        Figure 0.2.  de l'Isle globe (1765) (<a href="https://commons.wikimedia.org/wiki/Globe#/media/File:3quarter_globe.jpg">https://commons.wikimedia.org/wiki/Globe#/media/File:3quarter_globe.jpg</a>)
+   </td>
+  </tr>
+</table>
+
+<p>However, even though the globe is able to capture most of the characteristics of the earth, it suffers from two main drawbacks:</p>
+
+<ul>
+  <li>Globes are cumbersome and difficult to bring with you.</li>
+  <li>Globes are only usable at small scales (e.g. finding locations of countries, the relative positions of cities, etc.). They are next to useless for activities that require large scales or fine details (e.g. city navigation).</li>
+</ul>
+
+<p>This is where maps come in. Maps remedy these two drawbacks of globes by representing the earth as a flat surface. By doing so, maps become portable and suitable for a multitude of uses. Having said that, maps also introduce a drawback of their own. Through the process of converting a three-dimensional object (globe) into a two-dimensional one (map), distortions are introduced such that it is impossible for a map to perfectly capture the different characteristics of the earth (i.e. shapes, areas, directions).</p>
+
+<h4 id="map-projections"><strong>Map Projections</strong></h4>
+
+<p>A map projection is used to flatten the earth’s (or globe’s) surface into a plane in order to create a map. This transformation process introduces distortion.</p>
+
+<p><img src="media/dalandan.png" alt="The earth as an orange" title="The earth as an orange" /></p>
+
+<p>You can think of the Earth as an orange. If you peel the skin, you can lay it down flat but you can never make it perfectly flat. You will always encounter one of the following issues:</p>
+
+<ul>
+  <li><strong>Shearing</strong> - the lengthening of the skin (or surface) in one or more directions</li>
+  <li><strong>Tearing</strong> - the splitting or breaking apart of the skin (or surface)</li>
+  <li><strong>Compressing</strong> - the shortening or shrinking of the skin (or surface)</li>
+</ul>
+
+<p>Because of these issues, every map contains distortion in one or more of the following characteristics:</p>
+
+<ul>
+  <li><strong>Shape</strong></li>
+  <li><strong>Area</strong></li>
+  <li><strong>Distance</strong></li>
+  <li><strong>Direction</strong></li>
+</ul>
+
+<p>Map projections can preserve (no distortion) one or more characteristics but never all at the same time. Alternatively, they can have a compromise where the distortions are balanced and minimized for all characteristics. This is due to the nature of the characteristics themselves.</p>
+
+<p>Major characteristics like <strong>Shape</strong> and <strong>Area</strong> are <strong>mutually exclusive</strong> and cannot be preserved simultaneously. Meanwhile, the minor characteristics, <strong>Distance</strong> and <strong>Direction</strong> <strong>cannot be correct everywhere</strong> on the map.</p>
+
+<p>In choosing what map projection to use, it’s important that you consider the purpose of the map. For example, if you wish to perform area-based analyses, it’s best to use a map projection that preserves the area.</p>
+
+<p>There are several classifications of map projections. The first one is based on the <strong>characteristic/s they preserve</strong>.</p>
+
+<ul>
+  <li><strong>Conformal</strong> or <strong>Orthomorphic</strong> map projections are those that preserve shape or angular conformity. These are commonly used for navigation or meteorological purposes. Shapes are preserved but areas are distorted. The larger the area, the greater the distortion.</li>
+  <li><strong>Equal-area</strong> or <strong>Authalic</strong> map projections are those that preserve the proportion or relative areas of the objects in the map. In this kind of map projection, the larger the area being mapped, the more precise it is.</li>
+  <li><strong>Equidistant</strong> map projections preserve the distance of lines originating from one or two points on the map or have proper scale along one or more lines.</li>
+  <li><strong>Azimuthal</strong> map projections preserve the direction from one or two points on the map. These are useful for mapping routes of aircrafts and seacrafts between ports.</li>
+</ul>
+
+<p>A single map projection can preserve more than one characteristic (e.g. an Azimuthal Equidistant projection that preserves the direction and distances from one or two points on the map) but not all of them as shown in the table below.</p>
+
+<table>
+  <tr>
+   <td>
+   </td>
+   <td><strong>Conformal</strong>
+   </td>
+   <td><strong>Equal Area</strong>
+   </td>
+   <td><strong>Equidistant</strong>
+   </td>
+   <td><strong>Azimuthal</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Conformal</strong></p>
+
+   </td>
+   <td>-
+   </td>
+   <td>N
+   </td>
+   <td>N
+   </td>
+   <td>Y
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Equal Area</strong></p>
+
+   </td>
+   <td>N
+   </td>
+   <td>-
+   </td>
+   <td>N
+   </td>
+   <td>Y
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Equidistant</strong></p>
+
+   </td>
+   <td>N
+   </td>
+   <td>N
+   </td>
+   <td>-
+   </td>
+   <td>Y
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Azimuthal</strong></p>
+
+   </td>
+   <td>Y
+   </td>
+   <td>Y
+   </td>
+   <td>Y
+   </td>
+   <td>-
+   </td>
+  </tr>
+</table>
+
+<p>Table: Can both characteristics be preserved by a map at the same time?</p>
+
+<p>There exists another classification of map projections that doesn’t preserve any of the map’s characteristics but tries to minimize all the distortions in the map. These are called <strong>Compromise</strong> or <strong>Minimum</strong> <strong>Error</strong> map projections (maps that do not preserve shape nor area are called <strong>Aphylactic</strong>).</p>
+
+<p>One way to show and see distortion is by using what’s called the <strong>Tissot’s</strong> <strong>indicatrix</strong>. This indicator characterizes local distortions by using circles and showing how these circles are transformed over the map.</p>
+
+<p><img src="media/conformal.png" alt="Conformal map projection" title="Conformal map projection" /></p>
+
+<p>Figure 0.3. Conformal map projection with its Tissot’s indicatrix. Circles remain as circles all over the map but their areas increase as the circles move from the equator toward the poles.</p>
+
+<p><img src="media/authalic.png" alt="Equal-area map projection" title="Equal-area map projection" /></p>
+
+<p>Figure 0.4. Equal-area map projection with its Tissot’s indicatrix. Circles become ellipses but their areas remain the same.</p>
+
+<p><img src="media/equidistant.png" alt="Equidistant map projection" title="Equidistant map projection" /></p>
+
+<p>Figure 0.5. Equidistant map projection with its Tissot’s indicatrix. Notice that the heights of the circles are equal which means that the scale/distances along meridians are preserved.</p>
+
+<p><img src="media/az-equidistant.png" alt="Azimuthal equidistant map projection" title="Azimuthal equidistant map projection" /></p>
+
+<p>Figure 0.6. Azimuthal equidistant projection with its Tissot’s indicatrix. Notice that the circles are all pointing towards the map’s center and the heights of the circles are all equal.</p>
+
+<p>Another way to classify map projections is by the <strong>developable surface</strong> used to create the map. A surface is developable if it can be flattened without introducing distortions. The most commonly used surfaces are: Cylinders (Figure 0.7), Cones (Figure 0.8), and Planes (Figure 0.9).</p>
+
+<p><img src="media/cylinder.png" alt="Cylinder as a developable surface" title="Cylinder as a developable surface" /></p>
+
+<p>Figure 0.7. Cylindrical projections have meridians (longitude) and parallels (latitude) meeting at right angles with the distances between meridians being equal.</p>
+
+<p><img src="media/cone.png" alt="Cone as a developable surface" title="Cone as a developable surface" /></p>
+
+<p>Figure 0.8. Conic projections have straight meridians going to one point at the poles. The parallels are arcs.</p>
+
+<p><img src="media/plane.png" alt="Plane as a developable surface" title="Plane as a developable surface" /></p>
+
+<p>Figure 0.9. Planar projections (commonly used in azimuthal projections) have straight meridians similar to conic projections but their parallels are circles instead of arcs.</p>
+
+<p>There are countless other developable surfaces that can be used to transform a globe into a map. They can be a variation of the common surfaces like in the case of pseudo-cylindrical and pseudo-conic projections or they can be unique and entirely different surfaces such as in the Dymaxion map which uses a icosahedron (polyhedron with 20 faces), or the Cahill-Keyes projection which uses an octahedron (polyhedron with 8 faces).</p>
+
+<p>A map projection can also be classified according to its <strong>aspect</strong> (Figure 0.10) or how the developable surface is positioned on the globe: either Normal, Transverse, or Oblique.</p>
+
+<p><img src="media/aspects.png" alt="Aspects of a map projection" title="Aspects of a map projection" /></p>
+
+<p>Figure 0.10. Aspects of a map projection</p>
+
+<h4 id="coordinate-reference-systems"><strong>Coordinate Reference Systems</strong></h4>
+
+<p>A <strong>Coordinate Reference System (CRS)</strong> is used to specify the location of an object on the surface of the earth through the use of coordinates. They can be classified into two:</p>
+
+<ul>
+  <li><strong>Geographic Coordinate Reference Systems</strong> use degrees of latitude and longitude as coordinates to refer to position.</li>
+  <li><strong>Projected Coordinate Reference Systems</strong> use linear units (e.g. meters, feet, kilometers) of eastings and northings as coordinates.</li>
+</ul>
+
+<p>Knowledge of coordinate reference systems is important because even if two maps (or layers) show the same area, the coordinates of the locations in those maps will be different if the CRS they use are different.</p>
+
+<p><strong>Take this example:</strong> Map A and Map B show the same area and extent. They’re basically the same map. The only difference is the coordinate reference system they use. Map A uses CRS X and Map B uses CRS Y. Let’s say we get the coordinate of Point 1, which is (10, 10), from Map A. If we look at the coordinate (10,10) in Map B, it’s possible that Point 1 won’t be there since Map B uses a different CRS. Or if you overlay the maps over each other using a common reference, the features on the two maps won’t coincide. This knowledge of coordinate reference systems is important in any GIS.</p>
+
+<p>Prior to QGIS 3.X, QGIS had an option to activate what’s called “OTF” or “On-The-Fly Transformation”. This allows layers with different CRS to be projected on the map canvas as if they were in the same CRS. With QGIS 3.X onward, this option is the default behavior of QGIS.  QGIS also performs this action automatically for processing tasks.  This is very important because if the layers aren’t in the same CRS, the results of spatial queries and processing like spatial joins, clips, etc. could be compromised.</p>
+
+<p>You may notice that some Coordinate Reference Systems are referred to by their EPSG Code. This code refers to the CRS’ code in the EPSG Geodetic Parameter Dataset which is a  registry of geodetic datums, spatial reference systems, Earth ellipsoids, coordinate transformations and related units of measurement. Most GIS, including QGIS, refer to the EPSG code to identify coordinate reference systems, projections, and perform transformations between these systems.</p>
+
+<p>Common EPSG Codes include:</p>
+
+<ul>
+  <li><strong>EPSG:4326</strong> - WGS 84, latitude/longitude coordinate system based used by the Global Positioning System (GPS) among others.</li>
+  <li><strong>EPSG:3857</strong> - Web Mercator projection used for display by many web-based mapping tools such as OpenStreetMap and Google Maps</li>
+  <li><strong>EPSG:32642 - 32645</strong> - WGS 84 / Universal Transverse Mercator (UTM) Zone 42N-45N. UTM Zone covering the country of India</li>
+  <li><strong>EPSG:24378 - 24383</strong> - Kailanpur 1975 / India Zone I-IVa</li>
+</ul>
+
+<h4 id="quiz-questions"><strong>Quiz questions</strong></h4>
+
+<ol>
+  <li>What type of map projection is best for the following use-cases?
+    <ol>
+      <li>a general purpose map that needs to look pleasing – <strong><em>compromise</em></strong></li>
+      <li>a map showing a per-unit area analysis between different locations – <strong><em>equal-area or authalic</em></strong></li>
+      <li>a map showing a comparison of a 10-km buffer zone from different locations – <strong><em>equidistant</em></strong></li>
+    </ol>
+  </li>
+  <li>
+    <p>What type (geographic or projected) of coordinate reference system is best to use for the following use cases?</p>
+
+    <ol>
+      <li>showing the location of points using GPS – <strong><em>Geographic Coordinate Reference System</em></strong></li>
+      <li>computing the distance between two points – <strong><em>Projected Coordinate Reference Systme</em></strong></li>
+    </ol>
+  </li>
+  <li>True or False – It is possible to preserve the following map characteristics together in a single map:
+    <ol>
+      <li>Area and Shape – <strong><em>False</em></strong></li>
+      <li>Distance and Direction – <strong><em>True</em></strong></li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="phase-2-title-spatial-data-types">Phase 2 title: Spatial Data Types</h3>
+
+<p>At its core, a Geographic Information System (GIS) must be able to model real-world objects, information, and phenomena such as lot boundaries, rivers, roads, temperature, etc. It does this through spatial data models.</p>
+
+<p>Spatial data models are composed of two primary components that, when combined, model reality. These components are:</p>
+
+<ul>
+  <li><strong>Spatial features (or geometry)</strong></li>
+  <li><strong>Attributes</strong></li>
+</ul>
+
+<p><img src="media/spatial-model.png" alt="Spatial data model" title="Spatial data modelling reality" /></p>
+
+<p>There are two main spatial data models: <strong>raster</strong> and <strong>vector</strong>. Although any real-world object can be represented by either data model, one data model is usually better at representing certain real-world objects than the other.</p>
+
+<h4 id="raster-data"><strong>Raster Data</strong></h4>
+
+<p>Raster data is best used to represent continuous phenomena such as elevation or temperature.</p>
+
+<p>A raster is a cell-based or pixel-based representation of real-world objects composed of rows and columns of cells or pixels where each cell or pixel represents a geographical area (think of a photograph or an image). The value of the cell represents the value of an attribute in the said geographic area. The size of the area is dependent on the spatial resolution of the raster.</p>
+
+<p>Rasters are quite useful for site suitability modelling since you can combine rasters via mathematical operations (raster algebra).</p>
+
+<p><img src="media/raster.png" alt="Raster data model" title="Raster data model" /></p>
+
+<p>Figure 0.12. A raster consists of equal-sized pixels in rows and columns.</p>
+
+<p>A raster pixel may only hold one value at a time. Thus, a raster may only model one object or phenomenon at a time.</p>
+
+<h4 id="vector-data"><strong>Vector Data</strong></h4>
+
+<p>Vector data is best used to represent discrete objects.</p>
+
+<p>Vector data comes in three primary forms: point, line, and polygon. It is more precise than rasters because points, lines, and polygons are modelled using well-defined coordinates thus making them better at representing discrete objects than rasters.</p>
+
+<p>Vectors are commonly used when precise lengths, areas, and distances are needed. They are also useful when performing network analysis (e.g. finding the shortest path of road from one point to another).</p>
+
+<p><img src="media/vector.png" alt="Vector data model" title="Vector data model" /></p>
+
+<p>Figure 0.13. A vector consists of features with their corresponding attributes.</p>
+
+<p>Compared to raster pixels, a vector feature may hold more than one value at a time. These values are stored as columns in the attribute table. Each feature, on the other hand, is stored as a row.</p>
+
+<h4 id="quiz-questions-1"><strong>Quiz questions</strong></h4>
+
+<ol>
+  <li>What data type can best represent the following objects/phenomenon:
+    <ol>
+      <li>roads</li>
+      <li>houses</li>
+      <li>population density</li>
+      <li>flood hazard</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="phase-3-title-geographic-information-system-gis">Phase 3 title: Geographic Information System (GIS)</h3>
+
+<p>Geographic and location information have become ubiquitous in the 21st century at all levels of granularity. We have satellites, aircrafts, and even commercial drones that are able to capture large quantities of raw data over large areas over long periods of time. There are also sensors that collect and gather location information such as the GPS and other applications on our phones and gadgets.</p>
+
+<p>With all of this data available to us, knowing how to properly manage, analyse, and present them is imperative. This is where Geographic Information Systems, or more commonly known as GIS, come in.</p>
+
+<p>GIS is a tool/framework/system that allows us to work with geographic (or spatial) information and its corresponding attribute (non-spatial) information. In particular, a GIS should be able to:</p>
+
+<ul>
+  <li><strong>Collect</strong>, <strong>store</strong>, <strong>edit</strong>, <strong>manipulate</strong>, or generally, <strong>manage</strong> spatial data.</li>
+  <li><strong>Analyse</strong> the data using its spatial component (where the data is) or attribute (the value of the data).</li>
+  <li><strong>Present</strong> the data and analyses as meaningful information through maps, charts, plots, and other visualizations.</li>
+</ul>
+
+<p><em>GIS is not just mapping</em>. Although map-making is one of the most important and commonly-known aspects of GIS, it is still just one of its many parts and features. We can view the modern GIS framework as being composed of:</p>
+
+<ul>
+  <li><strong>Data</strong> - these refer to the pieces of information used by GIS which may or may not have location information (e.g. names of stores, locations of stores).</li>
+  <li><strong>Technology</strong> - these include both the hardware and software components of a GIS — the machines, instruments, and computers with the software applications used to do geospatial work.</li>
+  <li><strong>Methods &amp; Analysis</strong> - these refer to the science and mathematics in GIS which allows it to perform both spatial and non-spatial (attribute) queries and computations.</li>
+  <li><strong>Visualization</strong> - although similar to methods &amp; analysis, visualization can be considered as a separate component as these refer specifically to the means by which a GIS represents data graphically. These include not just maps, although that’s the most common case, but also tables, charts, graphs, etc.</li>
+  <li><strong>People</strong> - these are the people and/or groups of people who are involved in the use, development, teaching, and maintenance of GIS.</li>
+</ul>
+
+<p>All parts of the modern GIS framework — from the data to the people — are integral in ensuring its success.</p>
+
+<h4 id="quiz-questions-2"><strong>Quiz questions</strong></h4>
+
+<ol>
+  <li>True or False:
+    <ol>
+      <li>GIS can only be used with geospatial data – <strong><em>False</em></strong></li>
+      <li>A map is always the output when using GIS – <strong><em>False</em></strong></li>
+      <li>Learning GIS is difficult and expensive – <strong><em>False</em></strong></li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="phase-4-title-additional-free-and-open-source-software-for-geospatial-foss4g">Phase 4 title (additional): Free and Open Source Software for Geospatial (FOSS4G)</h3>
+
+<p>QGIS is just one example of Free and Open Source Software for Geospatial (FOSS4G) application. Other examples of FOSS4G are GRASS, PostGIS, GeoServer, GeoNode, etc. These FOSS4G applications are great tools to work with not only because they are reliable but also because, being free and open source, they have a lower barrier of entry and are highly customizable to any need. You can find a variety of free and open source geospatial applications for every need and for every part of the geospatial stack.</p>
+
+<p><img src="media/foss4g-stack.jpeg" alt="Free and Open Source Software for Geospatial (FOSS4G) applications stack" title="Free and Open Source Software for Geospatial (FOSS4G) applications stack" /></p>
+
+<p>Figure 0.14. A sample open source geospatial (or FOSS4G) stack (from Simon Nitz (<a href="https://twitter.com/si_nitz?lang=en">https://twitter.com/si_nitz?lang=en</a>))</p>
+
+<h4 id="free-software"><strong>Free Software</strong></h4>
+
+<p><em>Free as in freedom not just free food.</em></p>
+
+<p>Free software are software that adhere to the the Four Essential Freedoms of Free Software, which are:</p>
+
+<ol>
+  <li>The freedom to run the program as you wish, for any purpose (freedom 0).</li>
+  <li>The freedom to study how the program works, and change it so it does your computing as you wish (freedom 1). Access to the source code is a precondition for this.</li>
+  <li>The freedom to redistribute copies so you can help others (freedom 2).</li>
+  <li>The freedom to distribute copies of your modified versions to others (freedom 3). By doing this you can give the whole community a chance to benefit from your changes. Access to the source code is a precondition for this.</li>
+</ol>
+
+<h4 id="open-source"><strong>Open source</strong></h4>
+
+<p>Open source software are those that have licenses which provide royalty-free use and reuse of the software together with open access to the source code. By convention, these open source licenses are those that comply with the Open Source Definition as provided for by the Open Source Initiative.  Open source not only guarantees free access to the software and source code but also the ability to redistribute the software with no additional costs.</p>
+
+<p>Because of the open nature of open source software, it is also a great software development model where everyone is free to update, upgrade, modify, and share their modifications to the community.</p>
+
+<h4 id="osgeo"><strong>OSGeo</strong></h4>
+
+<p>There are a lot of open source geospatial applications out there and sometimes the most difficult part is knowing where and how to start working with these applications. Thankfully, the Open Source Geospatial Foundation (OSGeo) (<a href="https://www.osgeo.org/">https://www.osgeo.org/</a>) is there to help foster global adoption of open geospatial technology and support the development of these technologies.</p>
+
+<h4 id="quiz-questions-3"><strong>Quiz questions</strong></h4>
+
+<p>N/A</p>
+
+<h3 id="if-you-want-to-go-further">If you want to go further:</h3>
+
+<p>If you want to quickly try using FOSS4G applications, you can try OSGeoLive (<a href="https://live.osgeo.org/en/index.html">https://live.osgeo.org/en/index.html</a>) which is a Linux distribution (Operating System) that comes pre-installed with QGIS, GRASS, and other FOSS4G applications.</p>
+
+<h3 id="to-practice-your-new-skills-try-to">To practice your new skills, try to…</h3>
+
+<p>N/A</p>
+
+<h3 id="tips">Tips</h3>
+
+<p>N/A</p>
+
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

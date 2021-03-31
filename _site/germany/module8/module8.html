@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Modul 8 - Vektorverarbeitung und -analyse | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Modul 8 - Vektorverarbeitung und -analyse page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Modul 8 - Vektorverarbeitung und -analyse">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Modul 8 - Vektorverarbeitung und -analyse</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/germany/module8/module8.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="modul-8---vektorverarbeitung-und--analyse"><strong>Modul 8 - Vektorverarbeitung und -analyse</strong></h1>
+
+<p><strong>Autor:in</strong>: Codrina</p>
+
+<h2 id="pädagogische-einführung">Pädagogische Einführung</h2>
+
+<p>Dieses Modul konzentriert sich auf einen bestimmten Typ von geographischen Daten: Vektor-Geodaten.</p>
+
+<p>Am Ende dieses Moduls sollten Sie ein grundlegendes Verständnis für die folgenden Konzepte haben:</p>
+
+<ul>
+  <li>Vektordatenmodell</li>
+  <li>Metadaten</li>
+  <li>Vektorverarbeitung</li>
+  <li>Geodatenanalyse</li>
+  <li>Geostatistik</li>
+  <li>Topologie</li>
+  <li>Geoverarbeitung</li>
+</ul>
+
+<p>Außerdem erwerben Sie die folgenden Fähigkeiten:</p>
+
+<ul>
+  <li>Qualitätskontrolle von geometrischen Vektordatensätzen mit Algorithmen zur Überprüfung der Vektordatentopologie und Durchführung grundlegender automatischer Korrekturen</li>
+  <li>Arbeiten mit Algorithmen zur Identifizierung von Fehlern in der Attributtabelle</li>
+  <li>Vektordatenverarbeitung - Ausführen einfacher Geoverarbeitungsalgorithmen zur Beantwortung möglicher Anforderungen, z. B. wie viele öffentliche Gebäude gibt es in meiner Verwaltungsregion?</li>
+  <li>Vektordatenverarbeitung - Verwendung von Geostatistik-Algorithmen zum Auffüllen fehlender Daten.</li>
+</ul>
+
+<h2 id="erforderliche-werkzeuge-und-ressourcen">Erforderliche Werkzeuge und Ressourcen</h2>
+
+<ul>
+  <li>Dieses Modul wurde mit <a href="https://qgis.org/de/site/forusers/download.html">QGIS Version 3.16.1 - Hannover</a> erstellt.</li>
+  <li>Die folgenden Datensätzen aus dem Geopackage Modul-8.gpkg:
+    <ul>
+      <li>Gebäude (Polygone) - buildings</li>
+      <li>Landnutzung (Polygone) - landuse</li>
+      <li>Administrative Grenze von Mittelsachsen (Polygone) - Mittelsachsen</li>
+      <li>Gotteshäuser (Punkte) - pofw</li>
+      <li>Points of Interest (Punkte) - pois</li>
+      <li>Straßen (Linien) - roads</li>
+      <li>Waserwege (Linien) - waterways</li>
+    </ul>
+  </li>
+  <li>Das verwendete Koordinatenreferenzsystem ist das ETRS89/UTM Zone 33N, EPSG 25833. Da es sich um ein projiziertes Koordinatensystem handelt, ermöglicht es geometrische Berechnungen.</li>
+</ul>
+
+<h2 id="voraussetzungen">Voraussetzungen</h2>
+
+<ul>
+  <li>Grundkenntnisse in der Bedienung eines Computers</li>
+  <li>Ein solides Verständnis der Module 0, 1 und 2 und 6. Modul 0 führt in den Begriff des Vektordatenmodells ein, das im Mittelpunkt dieses aktuellen Abschnitts steht. Ein vorheriges Verständnis der Module 1, 2 und 6 ermöglicht es Ihnen, sich ausschließlich auf die neuen Begriffe und QGIS-Funktionalitäten zu konzentrieren, die in diesem neuen Abschnitt eingeführt werden, ohne dass Sie sich fragen müssen, wie Sie einen neuen Layer in Ihr Projekt laden können oder wie Sie mit der Attributtabelle Ihres Datensatzes arbeiten.</li>
+</ul>
+
+<p>Im Rahmen dieses Moduls lernen Sie, wie Sie effizient mit vektorgeografischen Datensätzen arbeiten können, um neue Informationen zu extrahieren. Dazu gehört ein vertieftes Verständnis dafür, was Vektordaten sind, welche Qualitätsstandards sie erfüllen müssen, damit sie wirklich brauchbar sind, was die häufigsten Operationen sind, die mit Vektordaten durchgeführt werden (Geoprocessing, Geostatistik).</p>
+
+<h2 id="zusätzliche-ressourcen">Zusätzliche Ressourcen:</h2>
+
+<ul>
+  <li>QGIS: Arbeiten mit Vektordaten <a href="https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/functions_list.html">https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/functions_list.html</a></li>
+  <li><a href="http://www.geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm">What is geoprocessing?</a></li>
+  <li><a href="https://link.springer.com/referencework/10.1007/978-3-319-17885-1">Encyclopedia of GIS, 2017 Edition, Editors: Shashi Shekhar, Hui Xiong, Xun Zhou</a></li>
+  <li><a href="https://www.geo-train.eu/modules/metadata/pdf/Metadata.pdf">Metadata And Catalogue Services</a>, Autorin Mariana Belgiu, UNIGIS Salzburg</li>
+  <li><a href="https://www.fgdc.gov/resources/factsheets/documents/GeospatialMetadata-July2011.pdf">Grundlagen der Metadaten (englischsprachig)</a></li>
+</ul>
+
+<h2 id="thematische-einführung">Thematische Einführung</h2>
+
+<p>Lassen Sie uns mit einem Beispiel beginnen: Sie sind gerade mit der Bahn in Chemnitz angekommenund wollen sich jetzt mit dem Fahrrad weiter auf den Weg nach Frankenberg machen. Sie wissen weder, wo der Bahnhof in Bezug auf die Stadt liegt, noch, wo sich ihr Ziel befindet, also öffnen Sie als erstes einen Stadtplan, um sich in dieser neuen Stadt zu orientieren. Sie nehmen Ihr Telefon heraus, öffnen eine Karten-App und wählen den Startpunkt - den Bahnhof - und den Endpunkt - Frankenberg - und fragen dann nach der Route mit dem Fahrrad. In Sekundenschnelle bietet Ihnen die Routing-App die beste Lösung an, um von Punkt A zu Punkt B zu gelangen, und zeigt Ihnen diese an, wie in Abbildung 8.1 zu sehen.</p>
+
+<p><img src="media/osm-routing.png" alt="Von Punkt A nach B mit Openstreetmap" title="Von Punkt A nach B mit Openstreetmap" /></p>
+
+<p>Abbildung 8.1 - Mit Openstreetmap von Punkt A nach B</p>
+
+<h2 id="aufschlüsselung-der-konzepte">Aufschlüsselung der Konzepte</h2>
+
+<p>Routing ist ein klassisches Beispiel für die Verwendung von Vektordaten und lässt sich in mehrere Konzepte aufschlüsseln, die wir im Folgenden definieren werden.</p>
+
+<p>Die verwendeten Daten sind räumlich - sie haben eine definierte Position auf der Erde, ihre Attribute sind ebenfalls gut identifiziert. So repräsentiert ein Punkt mit Längen- und Breitengrad und dem Attribut “name=Chemitz Hauptbahnhof” - den Startpunkt A und ein Punkt mit einem anderen Paar von Längen- und Breitengrad und dem Attribut “name=Frankenberg/Sachsen” den Punk B. Straßen werden durch Linien repräsentiert, die aus Knoten und Verbindungen bestehen (dargestellt durch blaue kleine Kreise in Abbildung 8.2), mit Attributen wie Name, Richtung, Geschwindigkeitsbegrenzung usw.</p>
+
+<p><img src="media/fig82.png" alt="Vektorlinien, die Straßen und die zugehörige Attributtabelle darstellen" title="Vektorlinien, die Straßen und die zugehörige Attributtabelle darstellen" /></p>
+
+<p>Abbildung 8.2 - Vektorlinien, die Straßen darstellen, und die zugehörige Attributtabelle</p>
+
+<p>Straßen stellen ein Netzwerkmodell dar, das im Grunde eine Sammlung von topologisch miteinander verbundenen Punkt- und Linienmerkmalen ist. Die Ergebnisse des Algorithmus, der die Route von Punkt A zu Punkt berechnet, hängen in hohem Maße von der Qualität der Vektoren ab. Sowohl in der Geometrie als auch in den Attributen - wenn eine Straße eine Einbahnstraße ist, muss das angegeben werden, damit das Routing Sie nicht in die falsche Richtung führt.</p>
+
+<h3 id="das-vektordatenmodell">Das Vektordatenmodell</h3>
+
+<p>Wie in Modul 0 vorgestellt, gibt es 2 Datenmodelle, die in einem Geographischen Informationssystem - GIS - verwendet werden: Raster und Vektor. Geodaten enthalten immer eine <strong>Raumkomponente</strong>, die den Ort oder die räumliche Verteilung des betreffenden Phänomens angibt, und eine <strong>Sachkomponente</strong>, die dessen Eigenschaften beschreibt. Die Entscheidung, ob für eine bestimmte Situation das Raster- oder das Vektordatenmodell verwendet wird, hängt von der Quelle der Daten sowie vom Verwendungszweck ab.</p>
+
+<p>Das Vektordatenmodell wird zur Darstellung von Flächen, Linien und Punkten verwendet (Abbildung 8.3).</p>
+
+<p><img src="media/fig83.png" alt="Vektordaten mit Attributtabelle" title="Vektordaten mit Attributtabelle" /></p>
+
+<p>Abbildung 8.3 - Vektordaten mit Attributtabelle</p>
+
+<h3 id="metadaten">Metadaten</h3>
+
+<p>Metadaten sind Daten über Daten. Sie charakterisieren auf verschiedenen Detailebenen den Datensatz, mit dem sie verknüpft sind, einschließlich Kategorien wie: wer ist der Anbieter/Eigentümer des Datensatzes, was ist die Lizenz, in welcher Sprache sind die Attribute geschrieben, welches Koordinatensystem wurde verwendet, welches geografische Gebiet wird beschrieben und was ist das Bezugsjahr, Schlüsselwörter, was sind die bekannten Einschränkungen, Genauigkeitsgrad, was war der ursprüngliche Umfang des Datensatzes und vieles mehr.</p>
+
+<p>Metadaten sind von entscheidender Bedeutung, da ein klares Verständnis der Daten, die in einer bestimmten Analyse verwendet werden sollen, den Unterschied zwischen einer richtigen oder einer voreingenommenen Entscheidung ausmachen kann. Wenn man ermitteln muss, wo ein neues temporäres Krankenhaus platziert werden soll, die Straßendaten aber alt sind und nicht mehr die Realität vor Ort widerspiegeln, dann wird jede darauf basierende Entscheidung ungenau sein.</p>
+
+<p>Aufgrund der Bedeutung von Metadaten folgen ihre Kategorien (ihre Definitionen, Namen, welche Art von Informationen sie speichern können usw.) wohldefinierten und standardisierten Strukturen. Diese gut strukturierten Metadaten können dann in spezielle Kataloge integriert werden, die es Benutzer:innen ermöglichen, geografische Daten anhand gegebener Kriterien zu suchen. Es gibt zahlreiche Metadatenkataloge; wenn diese standardisiert sind, kann innerhalb der GIS-Software auf sie zugegriffen werden. Ein Beispiel dafür wird in Modul 9 QGIS Erweiterungen vorgestellt.</p>
+
+<p>An dieser Stelle sei noch angemerkt, dass Metadaten natürlich keine Besonderheit von Geodaten sind, sondern dass sie für jede Art von Daten zu finden sind.</p>
+
+<h3 id="gründe-für-die-vektorverarbeitung">Gründe für die Vektorverarbeitung</h3>
+
+<p>Die Stärke von GIS liegt in seiner einzigartigen Fähigkeit, geometrische Eigenschaften, die reale Objekte und Phänomene in unserer Welt definieren, und ihre Attribute - entweder beobachtet, gemessen oder berechnet - zu verbinden und durch spezialisierte Softwareoperationen auf ihren Geometrien, auf ihren Attributen oder beidem durchzuführen, um neue Informationen abzuleiten.</p>
+
+<p>Obwohl GIS meist eng mit Karten assoziiert wird, die einfach nur geografische Informationen darstellen, gehen seine Funktionalitäten weit über die Erstellung von kartografischen Darstellungen hinaus, seien sie nun dynamisch oder statisch.</p>
+
+<p><strong>Raumdatenanalyse</strong> (Synonyme: räumliche Analyse, geospatiale Analyse, geografische Analyse, räumliche Interaktion) ist ein allgemeiner Begriff, der sich auf jede Technik bezieht, die darauf abzielt, Muster zu identifizieren, Anomalien zu erkennen und Theorien zu testen, die auf räumlichen Daten basieren. Eine Analyse ist dann und nur dann räumlich, wenn die Ergebnisse sinnvoll mit der Verortung der analysierten Objekte zusammenhängen - einfach ausgedrückt: <strong>Ort spielt eine Rolle</strong>. Mit der Entwicklung der Informationstechnologie begannen Wissenschaftler:innen, verschiedene Methoden aus der Statistik, Geometrie, Topologie und anderen Wissenschaften auf die Analyse geografischer Daten anzuwenden, um Muster und Phänomene auf der Erdoberfläche zu untersuchen.</p>
+
+<p><strong>Geostatistik</strong> ist ein Zweig der Statistik, der sich auf räumliche Daten bezieht. Die am häufigsten verwendeten Methoden beziehen sich auf die Interpolation, ein mathematischer Prozess, der die Schätzung unbekannter Werte auf der Grundlage bekannter Werte ermöglicht.</p>
+
+<p><strong>Topologie</strong> ist ein Zweig der Mathematik, der es der/dem GIS-Anwender:in ermöglicht, die geometrischen Beziehungen zwischen Features zu kontrollieren und die geometrische Integrität zu erhalten. Die Topologie ist am besten als ein Satz von Regeln zu verstehen, der die Qualität räumlicher Daten sicherstellt und auf einen oder mehrere Vektor-Layer angewendet werden kann. Die Regeln sind so gestaltet, dass sie die Beziehungen in der realen Welt respektieren, die die Vektor-Layer darstellen. Zum Beispiel darf es keine Lücken zwischen den Polygonen geben, die Landkreise in einer Region darstellen, oder kein Punkt, der zum Baumlayer gehört, darf in einem Polygon des Gebäudelayers enthalten sein.</p>
+
+<p>GIS-Software bietet Funktionalitäten, die es erlauben, relevante Topologieregeln zu definieren, sowie Algorithmen, um zu prüfen, ob sie zutreffen, und um den Vektor-Layer zu bereinigen, wenn Inkonsistenzen festgestellt werden.</p>
+
+<p>Geoverarbeitung ist ein allgemeiner Begriff, der alle Operationen - Prozesse - definiert, die auf einen geografischen Datensatz angewendet werden, mit dem Ziel, einen abgeleiteten Datensatz zu erhalten, der neue Erkenntnisse über die Daten ermöglicht. Übliche Geoverarbeitungsperationen sind die Überlagerung von geografischen Merkmalen, die Auswahl und Analyse von Merkmalen, die Topologieverarbeitung und die Datenkonvertierung. Geoverarbeitung ermöglicht es, geografische Informationen zu definieren, zu verwalten und zu analysieren, um die Entscheidungsfindung zu unterstützen.</p>
+
+<h2 id="hauptinhalt">Hauptinhalt:</h2>
+
+<h3 id="phase-1-verstehen-ihrer-daten">Phase 1: Verstehen Ihrer Daten.</h3>
+
+<p>Es gibt viele Geoverarbeitungsoperationen, die mit Vektordaten durchgeführt werden können. Zu den gängigsten gehören die Überlagerung von geografischen Merkmalen, die Auswahl und Analyse von Merkmalen, die Topologieverarbeitung und die Datenkonvertierung. In dieser ersten Phase werden wir uns mit einigen von ihnen vertraut machen und verstehen, wie sie funktionieren und welche Ergebnisse wir erwarten können.</p>
+
+<h4 id="schritt-1-bereiten-sie-ihre-arbeitsumgebung-vor"><strong>Schritt 1. Bereiten Sie Ihre Arbeitsumgebung vor.</strong></h4>
+
+<p>Öffnen Sie QGIS, richten Sie das Koordinatenreferenzsystem ein, in dem Sie arbeiten werden - EPSG 25833 - und fügen Sie die folgenden Datenlayer hinzu:</p>
+
+<ul>
+  <li>Polygone - Landkreisausdehnung; Gebäude; Landnutzung;</li>
+  <li>Linien - Straßen, Flüsse;</li>
+  <li>Punkte - Religiöse Orte, Orte von Interesse</li>
+</ul>
+
+<p>An dieser Stelle sollte Ihr QGIS-Kartenfenster wie in Abbildung 8.5 aussehen, natürlich, höchstwahrscheinlich, in anderen Farben.</p>
+
+<p><strong>TIP</strong>: Verwenden Sie räumliche Indizes, um die Verarbeitungszeit zu beschleunigen und zu verbessern. Dies können Sie mit dem Algorithmus <strong>Raumindex erzeugen</strong> tun.</p>
+
+<p><img src="media/starting-workspace.png" alt="Geladene Vektordatensätze: Punkte, Linien und Polygone" title="Geladene Vektordatensätze: Punkte, Linien und Polygone" /></p>
+
+<p>Abbildung 8.5 - Geladene Vektordatensätze: Punkte, Linien und Polygone</p>
+
+<h4 id="schritt-2-verstehen-sie-was-sie-da-sehen"><strong>Schritt 2. Verstehen Sie, was Sie da sehen.</strong></h4>
+
+<p>Zu diesem Zeitpunkt haben wir 7 Vektor Layer in unser QGIS Projekt geladen. Die nächsten Schritte werden uns helfen, unsere Daten zu verstehen.</p>
+
+<ul>
+  <li>
+    <p>Überprüfen Sie, wie viele Features wir in einem Layer haben - es gibt mehrere Möglichkeiten, das zu tun:</p>
+
+    <ul>
+      <li><strong>Doppelklick auf den Layer ‣ Informationen ‣ Objektanzahl</strong>.</li>
+      <li><strong>Öffnen Sie die Attributtabelle des Layers und schauen Sie ganz oben nach</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Bevor wir eine grundlegende Statistik durchführen, wollen wir die Attributtabelle mit einigen geometrischen Attributen vervollständigen (siehe Modul 6 für Details):</p>
+
+<ul>
+  <li>Straßenlayer - berechnen Sie die Länge für jedes Straßensegment und speichern Sie sie in der Attributtabelle: Ausgabefeldname - Länge <code class="language-plaintext highlighter-rouge">round($length, 2)</code></li>
+  <li>Gebäudelayer - berechnet die Fläche für jedes Gebäude und speichert sie in der Attributtabelle; Ausgabefeldname - Fläche <code class="language-plaintext highlighter-rouge">round($area, 2)</code></li>
+</ul>
+
+<p>Nun sind die Attributfelder gefüllt, doch wenn Sie sich nicht sicher sind, in welcher Maßeinheit QGIS die Länge von Straßenabschnitten und Flächen von Gebäuden berechnet hat, dann hilft Ihnen die Überprüfung der Koordinatensystem-Informationen.</p>
+
+<p>Klicken Sie in der rechten unteren Ecke des QGIS-Kartenfensters auf EPSG 25833 und es erscheint ein Fenster wie in Abbildung 8.6.</p>
+
+<p><img src="media/crs-dialog.png" alt="Angaben zum im QGIS-Projekt verwendeten Koordinatenreferenzsystem" title="Angaben zum im QGIS-Projekt verwendeten Koordinatenreferenzsystem" /></p>
+
+<p>Abbildung 8.6 - Angaben zum im QGIS-Projekt verwendeten Koordinatenreferenzsystem</p>
+
+<p>So finden wir heraus, dass die Maßeinheit der Meter ist, daher werden die Längen in Metern und die Flächen in Quadratmetern gemessen.</p>
+
+<ul>
+  <li>
+    <p>Führen Sie grundlegende Statistiken über die geladenen Layer aus, um einen besseren Überblick über Ihre Daten zu erhalten (Abbildung 8.7 ):</p>
+
+    <ul>
+      <li><strong>Vektor ‣ Analyse ‣ Grundstatistik für Felder</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/germany/module8/media/fig87.png" alt="Grundstatistik für Felder" /></p>
+
+<p>Abbildung 8.7 - Grundstatistik für Felder</p>
+
+<p>Die zurückgegebene Statistik hängt vom gewählten Feldtyp ab und wird als HTML-Datei generiert.</p>
+
+<p>Führen wir sie auf unserem Straßen-Layer aus und sehen wir, welche Ergebnisse wir erhalten. Füllen Sie das Fenster aus, wie in Abbildung 8.8.</p>
+
+<p><img src="media/fig88.png" alt="" title="Preparing to run basics statistics for roads layer" /> [Vorbereiten der Grundlagenstatistik für den Layer Straßen)</p>
+
+<p>Abbildung 8.8 - Vorbereiten der Grundlagenstatistik für den Layer Straßen</p>
+
+<p>Die Ausgabedatei ist eine HTML-Datei, die mit jedem Browser (Firefox, Chrome, Safari usw.) geöffnet werden kann und wie folgt aussehen sollte:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Analysiertes Feld: Länge
+Anzahl: 76112
+Eindeutige Werte: 30563
+Fehlende Leerwerte (NULL): 0
+Minimalwert: 0.03
+Maximalwert: 4546.81
+Bereich: 4546.780000000001
+Summe: 11795873.809999991
+Mittelwert: 154.9804736441033
+Median: 62.974999999999994
+Standardabweichung: 257.6998560908621
+Variationskoeffizient: 1.6627891890603153
+Minderheit (am seltensten vorkommender Wert): 0.03
+Mehrheit (am häufigsten auftauchender Wert): 6.95
+Erstes Viertel: 23.61
+Drittes Viertel: 167.46
+Interquartilabstand (IQR): 143.85000000000002
+</code></pre></div></div>
+
+<p>Aus diesen grundlegenden Statistiken finden wir heraus, dass es 76112 Straßensegmente im geladenen Layer gibt, wobei das kürzeste 0,03 m und das längste 4546,81 m lang ist. Wir finden heraus, dass die Summe der Straßen in Mittelsachsen etwa 12.000 km entspricht. Da der Mittelwert größer als der Median ist, sagt uns das, dass die 2. Hälfte des Datensatzes längere Straßenabschnitte enthält und die Straßenabschnitte in der 1. Hälfte überwiegen. Der Median zeigt jedoch, dass die meisten Straßensegmente eine Länge von nur 62m haben.</p>
+
+<p>Wenn wir die Basisstatistiken für die Spalte “type” im Gebäudelayer ausführen, erhalten wir folgende Ergebnisse:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Analysiertes Feld: type
+Anzahl: 154638
+Eindeutige Werte: 113
+Fehlende Leerwerte (NULL): 125119
+Minimalwert: 10
+Maximalwert: yard
+Minimallänge: 0
+Maximallänge: 20
+Mittlere Länge: 1.3095875528654017
+</code></pre></div></div>
+
+<p>Die Ergebnisse sehen nicht gleich aus, wir haben weder Mittelwert, noch Median oder Standardabweichung. Das liegt daran, dass das Attributfeld, auf dem wir den Algorithmus laufen ließen, anders ist, wir haben keine Zahlen, sondern Wörter - Gebäudetypen. Wir finden heraus, dass wir von 154638 Gebäuden in Mittelsachsen für 125119 den Gebäudetyp nicht kennen. Wir finden auch heraus, dass es 113 einzigartige Kategorien gibt.</p>
+
+<h4 id="schritt-3-grundlegende-prüfungen-um-schnell-fehler-in-ihren-daten-zu-finden"><strong>Schritt 3. Grundlegende Prüfungen, um schnell Fehler in Ihren Daten zu finden.</strong></h4>
+
+<p>Perfekte, makellose Datensätze sind das Äquivalent zum idealen Gas in der Physik. So etwas gibt es nicht, aber viele können ihm sehr nahe kommen. Bevor Sie also irgendeine Art von Analyse durchführen, um Informationen zu extrahieren, sind zumindest einige grundlegende Prüfungen notwendig, wie <em>sauber</em> die Daten sind, die wir haben.</p>
+
+<p>Es gibt viele Arten von Fehlern, die die Qualität Ihrer Daten beeinträchtigen können, und je nach Umfang Ihrer Geodatenanalyse kann deren Einfluss auf das Endergebnis mehr oder weniger wichtig sein. Wenn Sie z. B. Geodaten verwenden, um sich mit dem Auto von Punkt A nach Punkt B zu bewegen, dann ist ein Straßen-Layer mit den Attributen, welche Straßen eine Einbahnstraße sind oder für Autos gesperrt sind, unerlässlich, um ein brauchbares Ergebnis zu erhalten.  Wenn Sie jedoch zu Fuß unterwegs sind, sind diese Informationen für Ihr Ergebnis nicht entscheidend.</p>
+
+<p>Wenn von Fehlern in Geodaten die Rede ist, gibt es 2 Hauptbegriffe, die gut verstanden werden müssen:</p>
+
+<p><strong>Genauigkeit</strong> ist der Grad, in dem die Informationen auf einer Karte mit den realen Werten übereinstimmen und bezieht sich sowohl auf die Geometrie als auch auf die Attribute.</p>
+
+<p><strong>Präzision</strong> bezieht sich auf den Grad der Messung und Genauigkeit der Beschreibung in einem Geodatensatz.</p>
+
+<p>Der Begriff <strong>Fehler</strong> umfasst sowohl die Ungenauigkeit von Daten als auch deren Fehlerhaftigkeit. Die <strong>Datenqualität</strong> bezieht sich auf den Grad der Präzision und Genauigkeit der Datensätze und wird meist in Datenqualitätsberichten dokumentiert.</p>
+
+<p>Die Analyse und <em>Bereinigung</em> eines Geodatensatzes kann eine sehr zeitaufwendige und mühsame Aufgabe sein, ist aber - wie im obigen Beispiel gezeigt - unerlässlich. In diesem Abschnitt stellen wir einige GIS-Funktionen vor, mit denen schnelle Prüfungen von Vektordaten durchgeführt und eine Reihe von vorläufigen Schlussfolgerungen über deren Qualität gezogen werden kann.</p>
+
+<p><strong>Topologie-Checks</strong>.</p>
+
+<p>QGIS bietet eine Kernfunktionalität, die es ermöglicht, eine Reihe von topologischen Prüfungen an den geladenen Vektordatensätzen durchzuführen, die sogennannte Topologie-Prüfung. Die Topologie-Prüfung ist eine Kernerweiterung und kann über den Dialog <strong>Erweiterungen verwalten und installieren</strong> aktiviert werden. Öffnen Sie den Dialog “Erweiterungen verwalten und installieren” und stellen Sie sicher, dass das Plugin “Topologie-Prüfung” aktiviert ist (mit einem Häkchen versehen). Sie finden es unter der Registerkarte <strong>Installiert</strong>.</p>
+
+<p><img src="media/fig89_a.png" alt="Topologie-Prüfung-Plugin" title="Topologie-Prüfung-Plugin" /></p>
+
+<p>Abbildung 8.9.a - Topologie-Prüfung-Plugin</p>
+
+<p>Um die Topologie-Prüfung anzuzeigen, aktivieren Sie sie als Bedienfeld unter <strong>Vektor ‣ Topologie-Prüfung</strong> (Abbildung 8.9.b). Sobald sie aktiviert ist, sieht ihr Fenster wie in Abbildung 8.9.c aus.</p>
+
+<p><img src="media/fig89_c.png" alt="Topologie-Prüfungsfenster" title="Topologie-Prüfungsfenster" /></p>
+
+<p>Abbildung 8.9.c - Topologie-Prüfungsfenster</p>
+
+<p>Um die Topologieregeln zu definieren, klicken Sie auf das dritte Symbol <img src="/germany/module8/media/fig810_btn.png" alt="" />, wodurch sich ein Fenster wie in Abbildung 8.10 öffnet.</p>
+
+<p><img src="/germany/module8/media/fig810.png" alt="Topologieregeleinstellungen" /></p>
+
+<p>Abbildung 8.10 - Fenster “Topologieregeleinstellungen”</p>
+
+<p>Wir werden eine Reihe von Regeln für die Layer setzen, die wir in unser QGIS-Projekt geladen haben, unter Berücksichtigung der Objekte der realen Welt, die sie darstellen - Straßen, Gebäude, Wasserwege.</p>
+
+<p>Die Konfiguration der Topologie ist einfach, da die Regeln, die auf Basis des ausgewählten Layers angewendet werden können, bereits in diese Funktionalität eingebettet sind, wie Abbildung 8.11 zeigt.</p>
+
+<p><img src="media/fig811.png" alt="Dropdown-Menü für Topologieregeln auf Basis des ausgewählten Layers" title="Dropdown-Menü für Topologieregeln auf Basis des ausgewählten Layers" /></p>
+
+<p>Abbildung 8.11 - Dropdown-Menü “Topologieregeln” basierend auf dem ausgewählten Layer.</p>
+
+<p>Wählen Sie die Topologieregeln wie in Abbildung 8.12 dargestellt.</p>
+
+<p><img src="media/fig812.png" alt="Zu setzende Topologieregeln" title="Zu setzende Topologieregeln" /></p>
+
+<p>Abbildung 8.12 - Einzustellende Topologieregeln</p>
+
+<p>Klicken Sie auf das erste Symbol <img src="media/fig813_btn.png" alt="Alle prüfen Button" title="Alle prüfen Button" /> im Fenster des Topologieprüfers, um die Prüfung auszuführen, und warten Sie auf die Ergebnisse. Nach dem Ausführen der Topologieprüfung sollte Ihr Kartenfenster wie in Abbildung 8.13 aussehen.</p>
+
+<p><img src="media/fig813.png" alt="Topologieprüfungsergebnisse" title="Topologieprüfungsergebnisse" /></p>
+
+<p>Abbildung 8.13 - Ergebnisse der Topologieprüfung</p>
+
+<p>Im Topologie-Prüfungsfensters werden alle Fehler aufgelistet, die auf der Grundlage der Regeln, die wir in der vorherigen Phase definiert haben, identifiziert wurden. Wenn das Kontrollkästchen Fehler anzeigen aktiviert ist, werden die Fehler in der Karte rot hervorgehoben. Durch einen Doppelklick auf einen markierten Fehler wird die Karte an die entsprechende Stelle verschoben.</p>
+
+<p>Der Prozess der Korrektur von Fehlern in einem Datensatz, sei es in Bezug auf die Geometrie (Duplikate, Lücken etc.) oder in Bezug auf die Attribute (fehlende Werte, Rechtschreibfehler etc.), wird als Bereinigung eines Datensatzes bezeichnet und ist meist ebenso mühsam wie notwendig. Obwohl es Funktionalitäten gibt, die einen halbautomatischen Bereinigungsprozess unterstützen, ist oft eine manuelle Korrektur notwendig. In Abbildung 8.14 haben wir zum Beispiel einen Fehler in unserem Points of Interests Layer eingezoomt, einen doppelten (sogar dreifachen) Punkt. Wie man sieht, gibt es drei Punkte, die ein Café darstellen, der Unterschied liegt in der Attributtabelle, in der einer als Café, einer als Bäckerei und einer als Gaststätte aufgeführt ist.</p>
+
+<p><img src="media/fig814.png" alt="Doppelter Punk im Points Of Interests Layer" title="Doppelter Punk im Points Of Interests Layer" /></p>
+
+<p>Abbildung 8.14 - Doppelter Punk im Points Of Interests Layer</p>
+
+<p>In diesem speziellen Fall wäre die Entscheidung des Anwenders höchstwahrscheinlich, den doppelten Punkt zu entfernen, da er bei der weiteren räumlichen Analyse Fehler verursachen kann. Wenn z.B. ein Stadtbeamter wissen möchte, wie viele Restaurants und Cafés sich in einem bestimmten Viertel befinden, wird der doppelte Punkt einen Fehler in die Ergebnisse einfügen, was letztendlich zu falschen Entscheidungen führen könnte.</p>
+
+<p>Deshalb werden wir mit einer automatischen Entfernung der doppelten Punkte fortfahren. Dazu verwenden wir eine Kernfunktion von QGIS - <strong>Doppelte Geometrien löschen</strong> - zu finden in der Verarbeitungs-Toolbox. Ihr QGIS sollte wie in Abbildung 8.15 aussehen.</p>
+
+<p><img src="/germany/module8/media/fig815.png" alt=" Doppelte Geometrien im Layer Points of Interest löschen" /></p>
+
+<p>Abbildung 8.15 - Doppelte Geometrien im Layer Points of Interest löschen</p>
+
+<p>Nach der Ausführung des Algorithmus präsentiert das Funktionsfenster die Ergebnisse, es hat 127 doppelte Punkte identifiziert - genau wie der Topologie-Checker - und sie gelöscht, so dass der Layer pois mit <strong>12138 Features</strong> übrig bleibt. Benennen Sie diesen Layer in <strong>pois-bereinigt</strong> um. Beachten Sie, dass die Ausgabe ein Layer im Speicher ist, den Sie dauerhaft machen können, indem Sie ihn in einer Datei speichern.</p>
+
+<p><img src="/germany/module8/media/fig816.png" alt="Nach dem Löschen der Duplikate" /></p>
+
+<p>Abbildung 8.16 - Nach dem Löschen der Duplikate</p>
+
+<p>Eine erneute Ausführung der Topologieprüfung führt zu einem Ergebnis von 0 Fehlern in Bezug auf die Topologieregel, dass es keine geometrischen Duplikate für den Layer “Points of Interest” gibt.</p>
+
+<p><strong>Achtung!</strong> Der Algorithmus berücksichtigt <strong>nur Geometrien</strong> und ignoriert das Attribut. Wenn es, wie in unserem Fall, einige Unterschiede im Attribut für die Duplikate gibt, haben Sie keine Kontrolle darüber, welches beibehalten wird. Wenn also alle Informationen beibehalten werden sollen, müssen sie zuerst in alle Geometrien kopiert werden, so dass beim Löschen eines doppelten Features kein Informationsverlust entsteht.</p>
+
+<p>Lassen Sie uns eine weitere Topologieprüfung durchführen, diesmal auf unserem Gebäude-Layer. Konfigurieren Sie die folgenden Regeln:</p>
+
+<ul>
+  <li>darf keine ungültigen Geometrien haben</li>
+  <li>darf keine Duplikate enthalten</li>
+</ul>
+
+<p><img src="/germany/module8/media/fig817_a.png" alt="Topologieprüfung auf dem Gebäude-Vektor-Layer" /></p>
+
+<p>Abbildung 8.17a - Topologieprüfungsregeln auf dem Gebäude-Vektor-Layer</p>
+
+<p>Führen Sie den Algorithmus aus.</p>
+
+<p>Das Ergebnis sollte wie in Abbildung 8.17b aussehen.</p>
+
+<p><img src="/germany/module8/media/fig817_b.png" alt="Ergebnisse der Topologieprüfung auf dem Gebäude-Vektor-Layer" /></p>
+
+<p>Abbildung 8.17b - Ergebnisse der Topologieprüfung auf dem Gebäude-Vektor-Layer</p>
+
+<p>Bereinigen Sie das Duplikat-Feature mit Hilfe des oben angegebenen Verfahrens (Abbildung 8.18a)</p>
+
+<p><img src="/germany/module8/media/fig818_a.png" alt="Entfernen von doppelten Geometrien auf dem Gebäude-Vektor-Layer" /></p>
+
+<p>Abbildung 8.18a - Entfernen von doppelten Geometrien auf dem Gebäude-Vektor-Layer</p>
+
+<p><img src="/germany/module8/media/fig818_b.png" alt="Ausgabe nach dem Entfernen doppelter Geometrien auf dem Gebäude-Vektorlayer" /></p>
+
+<p><img src="/germany/module8/media/fig818_c.png" alt="Ergebnisse des Entfernens doppelter Geometrien auf dem Gebäude-Vektorlayer" /></p>
+
+<p>Abbildung 8.18b - Ergebnisse des Entfernens doppelter Geometrien auf dem Gebäude-Vektor-Layer</p>
+
+<p>Eine vollständige Bereinigung der für dieses Modul verwendeten Vektordatensätze würde den Rahmen sprengen. Seine Komplexität macht es zu einem eigenen, fortgeschritteneren Modul.</p>
+
+<h4 id="schritt-4-genauere-informationen-zu-den-punkten-linien-und-polygonen"><strong>Schritt 4. Genauere Informationen zu den Punkten, Linien und Polygonen</strong></h4>
+
+<p>Führen wir einen weiteren Algorithmus durch, um ein Gefühl dafür zu bekommen, welche Attribute unsere Layer haben. Nachdem wir festgestellt haben, wie viele Features jeder Layer hat, wollen wir sehen, wie viele und welche die eindeutigen Attribute in den folgenden Fällen sind:</p>
+
+<ul>
+  <li>Layer buildings-bereinigt - Attribut type;</li>
+  <li>Layer pois-bereinigt - Attribut fclass;</li>
+  <li>Layer waterways - Attribut fclass;</li>
+  <li>Layer pofw - Attribut fclass;</li>
+  <li>Layer roads - Attribut fclass;</li>
+  <li>Layer landuse - Attribut fclass;</li>
+</ul>
+
+<p>Gehen Sie dazu auf <strong>Vektor ‣ Analyse-Werkzeuge ‣ Eindeutige Werte auflisten</strong> (Abbildung 8.19)</p>
+
+<p><img src="media/fig819_a.png" alt="Eindeutige Werte in einem Vektor Layer auflisten Funktionalität" title="Eindeutige Werte in einem Vektor Layer auflisten Funktionalität" /></p>
+
+<p>Abbildung 8.19a - Eindeutige Werte in einer Vektor-Layer-Funktionalität auflisten</p>
+
+<p>Klicken Sie in dem sich öffnenden Fenster unten auf “Als Batchprozess starten” und geben Sie den Namen und das Attribut jedes Layers ein, das Sie interessiert, wie in der obigen Liste aufgezählt, und Sie sollten die folgenden Ergebnisse erhalten:</p>
+
+<p><img src="/germany/module8/media/fig819_b.png" alt="Eindeutige Werte in einer Vektor-Layer-Funktionalität auflisten (Batch-Verarbeitung)" /></p>
+
+<p>Abbildung 8.19b - Eindeutige Werte in einer Vektor-Layer-Funktionalität auflisten (Batch-Verarbeitung)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layername</th>
+      <th>Anzahl eindeutiger Werte</th>
+      <th>Eindeutige Werte</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>buildings-bereinigt</td>
+      <td>113</td>
+      <td>attached;65b;government;AWO<em>Seniorenzentrum</em>;hall_of_residence;tent;henhouse;parish_hall;toilets;collapsed;college;covered;commercial;yes;grandstand;service;riding_hall;station;manufacture;storage_tank;school;sty;castle;semi_attached;flat_terrace;university;semidetached_house;residential;farm;sports_centre;civic;no;fire_station;static_caravan;winter_garden;house;kindergarten;commercial;pavilion;carport;religious;shelter;10;disused;construction;hut;abandoned;transformer_tower;retail;public;garage;shop;NULL;54;industrial;greenhouse;Pfarrei;parking;church;decaying;substation;stable;G;gym;outbuilding;water_works;allotment_house;biergarten;balcony;bridge;tipi;mill;shed;tech_cab;ruins;hotel;barn;store;roof;terraced_house;cabin;farm_auxiliary;silo;terrace;transformer_house;healthcare;supermarket;apartments;transportation;bungalow;sports_hall;temple;stadium;35;work_shop;kiosk;train_station;20d;wall;chapel;garages;factory;hospital;yard;dormitory;warehouse;office;hangar;electricity;gatehouse;different;detached;villa;cowshed</td>
+    </tr>
+    <tr>
+      <td>pois-bereinigt</td>
+      <td>119</td>
+      <td>wayside_cross;laundry;memorial;travel_agent;garden_centre;outdoor_shop;nightclub;optician;bench;windmill;greengrocer;florist;college;jeweller;swimming_pool;vending_cigarette;veterinary;monument;hostel;camp_site;recycling_paper;arts_centre;drinking_water;fountain;picnic_site;library;clothes;school;guesthouse;castle;department_store;pitch;courthouse;sports_shop;university;furniture_shop;theme_park;telephone;sports_centre;museum;gift_shop;fire_station;atm;chemist;kindergarten;bakery;doityourself;post_office;shelter;community_centre;pub;water_mill;convenience;car_sharing;pharmacy;stationery;artwork;recycling_metal;hairdresser;fast_food;recycling_glass;bicycle_shop;tower;recycling_clothes;bookshop;vending_parking;wayside_shrine;chalet;water_well;nursing_home;butcher;toilet;recycling;archaeological;water_works;computer_shop;biergarten;cinema;vending_any;town_hall;hunting_stand;comms_tower;waste_basket;ruins;hotel;mobile_phone_shop;viewpoint;post_box;bar;playground;dentist;supermarket;shoe_shop;car_rental;newsagent;cafe;beverages;observation_tower;toy_shop;kiosk;tourist_info;wastewater_plant;attraction;hospital;theatre;doctors;public_building;police;caravan_site;ice_rink;restaurant;bank;car_wash;water_tower;battlefield;beauty_shop;car_dealership;camera_surveillance;food_court</td>
+    </tr>
+    <tr>
+      <td>waterway</td>
+      <td>4</td>
+      <td>drain;canal;river;stream</td>
+    </tr>
+    <tr>
+      <td>pofw</td>
+      <td>3</td>
+      <td>christian_lutheran;christian;christian_protestant</td>
+    </tr>
+    <tr>
+      <td>roads</td>
+      <td>24</td>
+      <td>track_grade2;track_grade5;secondary_link;cycleway;primary;track_grade1;residential;steps;track_grade3;tertiary;living_street;track;service;motorway;track_grade4;footway;primary_link;unclassified;motorway_link;secondary;bridleway;path;tertiary_link;pedestrian</td>
+    </tr>
+    <tr>
+      <td>landuse</td>
+      <td>20</td>
+      <td>farmyard;recreation_ground;industrial;meadow;grass;military;residential;scrub;nature_reserve;orchard;commercial;park;forest;farmland;vineyard;heath;cemetery;allotments;quarry;retail</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Tabelle 8.1 - Tabelle der eindeutigen Werte</p>
+
+<p>Für eine weitergehende Analyse der Attribute unserer Layer verwenden wir das Plugin GroupStats. Es wurde entwickelt, um die Berechnung von Statistiken für Objekt-Gruppen in einem Vektor-Layer zu unterstützen, was sehr nützlich ist, um ein besseres Verständnis für Ihre Daten zu erhalten und mögliche Fehler in den Attributen zu erkennen.</p>
+
+<p>Stellen Sie zunächst sicher, dass Sie die GroupStats-Erweiterung installiert und aktiviert haben. Um das GroupStats-Fenster zu öffnen, gehen Sie anschließend zu <strong>Vektor ‣ GroupStats ‣ GroupStats</strong>.</p>
+
+<p><img src="media/fig820_a.png" alt="GroupStats plugin" title="GroupStats plugin" /></p>
+
+<p>Abbildung 8.20a - GroupStats-Plugin</p>
+
+<p>Es sollte sich ein neues Fenster wie das in Abbildung 8.20b öffnen.</p>
+
+<p><img src="media/fig820_b.png" alt="GroupStats-Fenster" title="GroupStats-Fenster" /></p>
+
+<p>Abbildung 8.20b - GroupStats-Fenster</p>
+
+<p>Wie aus der zuvor durchgeführten Analyse hervorgeht, haben wir für den Layer Gebäude 113 verschiedene Gebäudetypen, aber wie viele sind es jeweils und wie groß ist die gesamte bebaute Fläche, die von jeder Kategorie eingenommen wird? Wie viel Fläche für Schulen, für Märkte, für Häuser? GroupStats kann uns helfen, diese Frage zu beantworten. Auf der rechten Seite des Fensters befindet sich das Bedienfeld, in dem wir auswählen, was wir berechnen wollen und wie die Daten angeordnet werden sollen. Folgen Sie per Drag&amp;Drop der Anordnung in Abbildung 8.21 und drücken Sie dann auf “Calculate”.</p>
+
+<p><img src="/germany/module8/media/fig821.png" alt="GroupStats auf dem Gebäudelayer" /></p>
+
+<p>Abbildung 8.21 - GroupStats auf dem Gebäudelayer</p>
+
+<p>Wenn wir uns das Ergebnis ansehen, können wir wichtige Erkenntnisse über unsere Daten gewinnen. Zum Beispiel haben wir für Wohnzwecke (Schlüssel: apartment) 2316 Gebäude mit einer bebauten Gesamtfläche von 570459 Quadratmetern. Wir finden auch heraus, dass das größte 4900   Quadratmeter hat, während das kleinste 23 Quadratmeter hat.</p>
+
+<p>Eine weitere interessante Analyse kann auf dem Straßen-Vektor Layer durchgeführt werden. Abbildung 8.22 zeigt, wie man die Längen von Straßen, kategorisiert nach Straßentyp (Hauptstraße, Wohnstraße, Autobahn usw.) und zulässiger Höchstgeschwindigkeit, berechnen kann.</p>
+
+<p><img src="/germany/module8/media/fig822.png" alt="GroupStats auf dem Straßenlayer" /></p>
+
+<p>Abbildung 8.22 - GroupStats auf dem Straßenlayer</p>
+
+<h4 id="quizfragen"><strong>Quizfragen</strong></h4>
+
+<ol>
+  <li>Sind Metadaten wichtig?
+    <ul>
+      <li><span style="text-decoration:underline;">Ja, denn sie geben einen Einblick in die geografischen Daten, den man sonst nicht erhalten könnte. </span></li>
+      <li>Nein, sie sind nur erweiterter Bürokratieaufwand</li>
+    </ul>
+  </li>
+  <li>Ist die Topologie relevant für die Geometrie oder für die Attributtabelle eines Vektorlayers?
+    <ul>
+      <li>für die Geometrie der Vektorebene</li>
+    </ul>
+  </li>
+  <li>Was ist wichtiger, die Geometrie oder die Attributdaten?
+    <ul>
+      <li>Geometrie</li>
+      <li>Attributdaten</li>
+      <li><span style="text-decoration:underline;">Beides.</span></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="teil-2-einführung-in-die-vektorverarbeitung">Teil 2: Einführung in die Vektorverarbeitung</h3>
+
+<p>Der erste Teil des Vektormoduls gab eine Einführung in die Schritte, die ein grundlegendes Verständnis für die vorliegenden Geodaten schaffen können.</p>
+
+<p>Dieser zweite Teil des Moduls führt Sie in eine tiefergehende Arbeit zur Verarbeitung von Vektordaten ein, um wertvolle Erkenntnisse für die Entscheidungsfindung zu gewinnen. In Anlehnung an die zu Beginn dieses Moduls beschriebenen Konzepte stellt Geoverarbeitung jeden Prozess dar, der auf einen geografischen Datensatz angewendet wird, mit dem Ziel, einen abgeleiteten Datensatz zu erhalten, der neue Erkenntnisse über die Daten eröffnet. Und genau das werden wir im Folgenden tun.</p>
+
+<p>Es gibt viele Operationen, die auf einen oder mehrere Geodatensätze angewendet werden können, und in diesem ersten Schritt werden wir einige der gängigsten ausführen, um zu verstehen, wie sie funktionieren.</p>
+
+<p><strong>Puffer</strong>: Stellen Sie sich vor, Sie müssen ein neues Gesetz analysieren, das vorschreibt, dass in einem Umkreis von 500 Metern um Gotteshäuser keine weiteren Gebäude errichtet werden dürfen. Sie würden sehen wollen, wo genau diese Abgrenzungen sind und vielleicht sogar, wie viele Quadratmeter das für Ihren Bezirk sind. Der erste Schritt besteht darin, einen Puffer um die Gotteshäuser zu definieren: <strong>Vektor ‣ Geoverarbeitsungswerkzeuge ‣ Puffer</strong>. Wenn sich das Pufferfenster öffnet, stellen Sie die Parameter wie in Abbildung 8.23 ein:</p>
+
+<p><img src="/germany/module8/media/fig823.png" alt="Einstellen der Parameter für einen 500 m Puffer um Gotteshäuser" /></p>
+
+<p>Abbildung 8.23 - Einstellen der Parameter für einen 500 m Puffer um Gotteshäuser</p>
+
+<p>Ein Detail des Ergebnisses der Geoverarbeitung ist in Abbildung 8.24 dargestellt:</p>
+
+<p><img src="/germany/module8/media/fig824.png" alt="Ergebnis der Pufferberechnung" /></p>
+
+<p>Abbildung 8.24 - Ergebnis der Pufferberechnung</p>
+
+<p>Um die Ausgangsfrage vollständig zu beantworten, müssen im nächsten Schritt die Flächen für alle Puffer berechnet und aufsummiert werden (siehe Teil 1, Schritt 4) - Abbildung 8.25.</p>
+
+<p><img src="/germany/module8/media/fig825.png" alt="Fläche für den neu erhaltenen Layer, mit GroupStats berechnet" /></p>
+
+<p>Abbildung 8.25 - Fläche für den neu erhaltenen Layer, mit GroupStats berechnet</p>
+
+<p><strong>Zuschneiden</strong>: Stellen Sie sich vor, Sie möchten wissen, wo sich alle abgegrenzten Industriegebiete in Ihrem Bezirk befinden und auch, wie viele Gebäude sich innerhalb dieses Gebiets befinden. Bei der visuellen Inspektion Ihrer Vektordaten stellen Sie fest, dass Sie eine Reihe von Industriegebieten haben, die mehrere Gebäude enthalten. Sie möchten diese Gebäude abgrenzen und weiter verwenden. Als ersten Schritt wählen Sie alle Features im Landnutzungs-Layer aus, die als Attribut Industrie haben (siehe Modul 6, wie das geht). Anschließend gehen Sie auf <strong>Vektor ‣ Geoverarbeitungswerkzeuge ‣ Zuschneiden</strong> und wählen als zu zuzuschneidenen Layer building-bereinigt. Ihr Ergebnis sollte wie in Abbildung 8.27b aussehen.</p>
+
+<p><img src="/germany/module8/media/fig826_a.png" alt="Auswahl der Flächennutzung fclass = industrial" /></p>
+
+<p>Abbildung 8.26a - Auswahl der Flächennutzung fclass = industrial.</p>
+
+<p><img src="/germany/module8/media/fig826_b.png" alt="Ausgewählte Industrieflächen" /></p>
+
+<p>Abbildung 8.26b - Ausgewählte Industrieflächen</p>
+
+<p>Führen Sie den Zuschneiden-Algorithmus aus. Stellen Sie sicher, dass das Kontrollkästchen <strong>Nur ausgewählte Features</strong> für den Overlay Layer (landuse) aktiviert ist. Dadurch wird sichergestellt, dass nur die aktuell ausgewählten Features für das Zuschneidenping verwendet werden und die Berechnungen beschleunigt werden.</p>
+
+<p><img src="/germany/module8/media/fig827_a.png" alt="Ausführen des Zuschneiden-Algorithmus" /></p>
+
+<p>Abbildung 8.27a - Ausführen des Zuschneiden-Algorithmus</p>
+
+<p>Nach der Ausführung des Algorithmus sollten Ihre Ergebnisse wie in Abbildung 8.27b aussehen. Die beschnittenen Gebäude sind grün eingefärbt (die Farbe kann bei Ihnen wie immer eine andere sein). Wie viele Industriegebäude bleiben über und wie groß ist deren Gesamtfläche?</p>
+
+<p><img src="/germany/module8/media/fig827_b.png" alt="Ergebnis der Zuschneiden-Funktionalität" /></p>
+
+<p>Abbildung 8.27b - Ergebnis der Zuschneiden-Funktionalität</p>
+
+<p><strong>Thiessen (Voronoi)-Polygone</strong>: Stellen Sie sich vor, Sie müssen eine Reihe von Verwaltungsentscheidungen in Ihrem Bezirk treffen, die darauf basieren, wie viele Schulen es gibt und welche spezifischen Bereiche sie bedienen. Eine raumbezogene Analyse kann dabei hilfreich sein. Sie können damit beginnen, die Thiessen-Polygone zu berechnen. Ausgehend von einer Fläche, die mindestens zwei Punkte enthält, ist ein Thiessen-Polygon eine 2-dimensionale Form, deren Grenzen den gesamten Raum enthalten, der näher an einem Punkt innerhalb der Fläche liegt als an jedem anderen Punkt außerhalb der Fläche. Ein gutes Anwendungsbeispiel ist die Meteorologie, wo Wetterstationen diskrete Punkte sind, die gesammelten Informationen aber als auf der Fläche gemessen gelten, basierend auf den Thiessen-Polygonen.</p>
+
+<p>Um die obige Frage zu beantworten, werden wir den Algorithmus nur für Punkte ausführen, die das Attribut Schule am Typ haben. Nehmen Sie also die Auswahl wie in Modul 6 beschrieben vor. Sie sollten 88 Features auf dem Layer pois_cleaned ausgewählt haben. Gehen Sie zu <strong>Vektor ‣ Geometrie-Werkzeuge ‣ Voronoi-Polygone..</strong> Nachdem Sie die Parameter eingestellt haben - wählen Sie den Punkt-Layer, für den die Voronoi-Polygone berechnet werden sollen, und eine 30-prozentige Erweiterung, so dass das gesamte Betrachtungsgebiet enthalten ist, sollten Sie ein Ergebnis wie in Abbildung 8.28d sehen. Sollten Sie dabei die Fehlermeldung bekommen, dass die Funktion nur auf Objekte des Typs “Point” und nicht “Multipoint” angewandt werden kann, wählen sie “Vektor &gt; Gemoetrie-Werkzeuge &gt; Mehr- zu eindeutig” und wenden sie den Voronoi-Algorithmus auf den neuen Layer an.</p>
+
+<p><img src="/germany/module8/media/fig828_a.png" alt="Filtern des POI-Layer nach Schulen" /></p>
+
+<p>Abbildung 8.28a - Filtern des POI-Layer nach Schulen</p>
+
+<p><img src="/germany/module8/media/fig828_b.png" alt="Schulen im POI-Layer" /></p>
+
+<p>Abbildung 8.28b - Schulen im POI-Layer</p>
+
+<p><img src="/germany/module8/media/fig828_c.png" alt="Ausführen des Voronoi-Algorithmus" /></p>
+
+<p>Abbildung 8.28c - Ausführen des Voronoi-Algorithmus</p>
+
+<p><img src="/germany/module8/media/fig828_d.png" alt="Ergebnis des Voronoi-Algorithmus" /></p>
+
+<p>Abbildung 8.28d - Ergebnis des Voronoi-Algorithmus</p>
+
+<p>Manchmal ergibt sich die Anforderung, Informationen in kleineren, klar definierten und gleichen Bereichen zu haben und nicht für eine ganze große Region, wie ein Land oder eine Großstadt. Daher müssen die Daten in einer kleineren, klar definierten Weise analysiert und visualisiert werden, um Vergleiche zu ermöglichen, die sich sonst ohne eine gemeinsame Basisreferenz als schwierig erweisen könnten.</p>
+
+<p>Nehmen wir an, dass Sie einen Bericht vorlegen müssen, der Vergleiche für Einheiten von 10X10 km über die Verwaltungseinheit ermöglicht, einschließlich</p>
+
+<ol>
+  <li>Dichte der Grünflächen (Parks, Wälder) im Bericht zur bebauten Fläche pro Einheit</li>
+  <li>Gesamtlänge der Straßen für jede Einheit</li>
+  <li>Gesamtlänge der Wasserwege für jede Einheit</li>
+  <li>Gesamtzahl der öffentlichen Gebäude für jede Einheit (Schulen, Kindergärten, Krankenhäuser, Rathäuser usw.).</li>
+</ol>
+
+<p>Wir haben gesehen, dass es Werkzeuge gibt, die uns bei der Berechnung der Gesamtfläche, die von einer bestimmten Art von Merkmalen eingenommen wird, helfen können, aber der erste Schritt ist die Erstellung unserer 10X10-Einheiten - Zellgitter. Um das zu tun, gehen Sie zu: <strong>Vektor ‣ Forschungswerkzeuge ‣ Gitter erstellen..</strong> Stellen Sie die Parameter auf:</p>
+<ul>
+  <li>Gittertyp - Rechteck (Polygon)</li>
+  <li>Rasterausdehnung - “… &gt; aus Layer berechnen &gt; Mittelsachsen”</li>
+  <li>Horizontaler Abstand - 10 km</li>
+  <li>Vertikaler Abstand - 10 km</li>
+</ul>
+
+<p><img src="media/fig829_a.png" alt="Erstellen eines 10X10km-Vektorgitters" title="Erstellen eines 10X10km-Vektorgitters" /></p>
+
+<p>Abbildung 8.29a - Erstellen eines 10kmx10km-Vektorgitters</p>
+
+<p>Sie sollten ein Ergebnis wie in Abbildung 8.29b erhalten.</p>
+
+<p><img src="media/fig829_b.png" alt="10X10km Vektorgitter" title="10X10km Vektorgitter" /></p>
+
+<p>Abbildung 8.29b - 10X10km-Vektorgitter</p>
+
+<p>Zur weiteren Beantwortung der Fragen in unserer Übung müssen wir Folgendes tun:</p>
+
+<ol>
+  <li>Verhältnis von Grünflächen (Parks, Wälder) und bebauter Fläche pro Einheit:</li>
+</ol>
+
+<p>Grünflächen und bebaute Flächen sind Daten, die im Landnutzungs-Layer enthalten sind. Um genau zu wissen, was die “Grünflächen” sind, müssen wir sehen, welche Kategorien im Datensatz enthalten sind. Dazu führen wir den Algorithmus <strong>Eindeutige Werte auflisten</strong> auf das Attribut “fclass” aus und finden heraus, dass wir die folgenden Grünflächen vorfinden: ‘recreation_ground’, ‘meadow’, ‘grass’, ‘nature_reserve’, ‘orchard’, ‘park’, ‘forest’, ‘farmland’, ‘vineyard’, ‘cemetery’, ‘scrub’, ‘heath’. Außerdem finden wir die folgenden bebauten Flächen: ‘farmyard’, ‘residential’, ‘industrial’, ‘commercial’, ‘allotments’, ‘retail’.
+Abbildung 8.30b zeigt eine Visualisierung unserer Selektionen:</p>
+
+<p><img src="/germany/module8/media/fig830_b.png" alt="Räumliche Verteilung der Grünflächen und bebauten Flächen" /></p>
+
+<p>Abbildung 8.30b - Räumliche Verteilung der Grünflächen und bebauten Flächen (zufällige Farben)</p>
+
+<p>Der zweite Schritt zur Beantwortung der Anforderung besteht darin, zu ermitteln, wie viel Grünfläche und wie viel bebaute Fläche es in jedem 10X10 km gibt. Dazu werden die beiden überlagerten Polygon-Vektor-Layer <strong>vereinigt</strong>. Der Algorithmus extrahiert die überlappenden Teile der Features im Input - dem Landuse Layer und dem Overlay Layer - dem Grid Layer. Gehen Sie zu <strong>Vektor - Geoverarbeitungswerkzeuge - Vereinugngen</strong>. Stellen Sie die Algorithmusparameter wie in Abbildung 8.31 ein. Stellen Sie im anschluss die Symbolisierung für den neuen Layer wie im Screenshot weiter unten zu sehen ein.</p>
+
+<p><img src="/germany/module8/media/fig831.png" alt="Parameter für den Vereinugngen-Algorithmus" /></p>
+
+<p>Abbildung 8.31 -  Parameter für den Vereinugngen-Algorithmus</p>
+
+<p>Das Ergebnis sollte wie in Abbildung 8.32 aussehen.</p>
+
+<p><img src="media/fig832.png&quot;" alt="Ergebnis der Ausführung des Vereinigungen-Algorithmus" /></p>
+
+<p>Abbildung 8.32 - Ergebnis der Ausführung des Vereinigungen-Algorithmus</p>
+
+<p>Jetzt haben wir für jede 10X10 km Einheit die Landnutzungsmerkmale, mit denen wir arbeiten können. Die Attributtabelle speichert auch diese Informationen, da jede Gitterzelle eine eindeutige ID hat, siehe Abbildung 8.33.</p>
+
+<p><img src="/germany/module8/media/fig833.png" alt="Landnutzungsmerkmale, die für jede Rasterzelle ausgeschnitten wurden, und die zugehörige Attributtabelle. " /></p>
+
+<p>Abbildung 8.33 - Landnutzungsmerkmale, die für jede Rasterzelle ausgeschnitten wurden, und die zugehörige Attributtabelle.</p>
+
+<p>Nachdem wir nun alle Landnutzungsmerkmale pro 10X10 km Einheit haben, fahren wir damit fort, die Geometrien derjenigen zu trennen, die die Grünfläche und die bebaute Fläche ausmachen, wie zuvor definiert - für jede Rasterzelle.  So werden wir für die Grünfläche alle Features auswählen, die folgende Attributwert für “fclass” haben: ‘recreation_ground’, ‘meadow’, ‘grass’, ‘nature_reserve’, ‘orchard’, ‘park’, ‘forest’, ‘farmland’, ‘vineyard’, ‘cemetery’, ‘scrub’, ‘heath’. Erstellen Sie dafür folgenden Ausdruck in der Attributstabelle eingeben: <code class="language-plaintext highlighter-rouge">"fclass" in ('recreation_ground', 'meadow', 'grass', 'nature_reserve', 'orchard', 'park', 'forest', 'farmland', 'vineyard', 'cemetery', 'scrub', 'heath')</code>. Exportieren Sie die ausgewählten Features als grünflächen-gitter (siehe Modul 6 für weitere Details). Vergessen Sie nicht, das Häkchen bei <strong>Nur ausgewählte Merkmale speichern</strong> zu setzen. Die neue Ausgabe sollte 25871 Objekte enthalten. Machen Sie dasselbe für die bebaute Fläche. Wählen Sie die Features in landuse aus, die den Attributwert für <code class="language-plaintext highlighter-rouge">fclass</code> wie folgt haben: ‘farmyard’, ‘residential’, ‘industrial’, ‘commercial’, ‘allotments’, ‘retail’. Ihre neue Ausgabe sollte 5570 Features enthalten.</p>
+
+<p>Alternativ können Sie auch einen Filter anstelle einer Auswahl verwenden.</p>
+
+<p><img src="media/fig834_a.png" alt="Auswahl der Grünflächen" title="Auswahl der Grünflächen" /></p>
+
+<p>Abbildung 8.34a - Auswählen der Grünflächen.</p>
+
+<p><img src="media/fig834_b.png" alt="Ausgewählte Grünflächen" title="Ausgewählte Grünflächen" /></p>
+
+<p>Abbildung 8.34b - Ausgewählte Grünflächen.</p>
+
+<p><img src="media/fig834_c.png" alt="Grün- und bebaute Flächen" title="Grün- und bebaute Flächen" /></p>
+
+<p>Abbildung 8.34c - Grünflächen und bebaute Flächen.</p>
+
+<p>Berechnen Sie als nächstes die Fläche, die von jedem Merkmal der 2 Layer eingenommen wird. Gehen Sie in die Attributtabelle jedes Layers und fügen Sie dann die geometrische Spalte Fläche hinzu, indem Sie den Ausdruck <code class="language-plaintext highlighter-rouge">round($area,2) </code> in den Feldrechner einfügen.  (siehe Modul 6 für Details, falls erforderlich). Das 10X10km-Gitter hat jedoch eine bekannte Anzahl von Gitterzellen, und zwar 56. Daher müssen wir die Flächen für alle Arten von Grünflächen (Wälder, Parks etc.) und bebauten Flächen (Gewerbe, Wohnen etc.) zusammenfassen und entsprechend zu allen 56 Gitterzellen verbinden. Dazu werden wir das Plugin <strong>GroupStats</strong> verwenden, um für jede grid_id alle Grünkategorien bzw. alle bebauten Kategorien zusammenzufassen. Für den Layer grünflächen-gitter stellen Sie die Parameter wie in Abbildung 8.34e ein.</p>
+
+<p><img src="/germany/module8/media/fig834_d.png" alt="Berechnung der Fläche jedes Objekts" /></p>
+
+<p>Abbildung 8.34d - Berechnung der Fläche jedes Objekts.</p>
+
+<p><img src="/germany/module8/media/fig834_e.png" alt="GroupStat-Parameter zum Aufsummieren der Grünflächen pro jede 10X10km-Zelle" /></p>
+
+<p>Abbildung 8.34e - GroupStat-Parameter zum Aufsummieren der Grünflächen pro jede 10X10km-Zelle</p>
+
+<p>Speichern Sie anschließend die Ergebnisse als .csv-Datei mit dem Namen “grünflächen-gitter”. Gehen Sie zu <strong>Data ‣ Save all to CSV file.</strong></p>
+
+<p>Führen Sie GroupStats für die bebaute Fläche auf die gleiche Weise aus und speichern Sie die Ergebnisse als CSV-Datei unter dem Namen “bebaute-flächen-gitter”.</p>
+
+<p>Als nächstes bringen wir die 2 mit GroupStat berechneten csv-Dateien in QGIS (<strong>Layer ‣ Layer hinzufügen ‣ Getrennte Textdatei als Layer hinzufügen</strong> - siehe mehr Details in Modul 2).</p>
+
+<p><img src="/germany/module8/media/fig835_a.png" alt="Laden von grünflächen-gitter.csv" /></p>
+
+<p>Abbildung 8.35a - Laden von grünflächen-gitter.csv</p>
+
+<p><img src="/germany/module8/media/fig835_b.png" alt="Die grünflächen-gitter CSV Attributtabelle" /></p>
+
+<p>Abbildung 8.35b - Die grünflächen-gitter CSV Attributtabelle</p>
+
+<p>Als nächstes müssen wir die berechneten Flächen - grün und bebaut - mit jedem 10X10 km-Zellenraster verbinden. Wählen Sie dazu den Gitter -Layer, öffnen Sie das Eigenschaftsfenster und gehen Sie auf <strong>Verbindungen</strong>. Diese Funktionalität erlaubt es Ihnen, über ein gemeinsames Attributfeld, andere zu verbinden. In unserem Fall werden wir über den gemeinsamen grid_id-Wert die Summe der bebauten Flächen und der Grünflächen aus den 2 csv-Dateien verbinden, die wir im vorherigen Schritt erhalten haben.</p>
+
+<p>Klicken Sie im Fenster <strong>Verknüpfungen</strong> auf die grüne Plus-Schaltfläche <img src="/germany/module8/media/add_join_btn.png" alt="" /> und stellen Sie die Parameter wie in Abbildung 8.35, für Grünflächen, ein.</p>
+
+<p><img src="/germany/module8/media/fig835_c.png" alt="Einstellungen um über eine Verkünpfung der Felder grid_id und id die Grünflächngröße zu den Gitterzellen hinzuzufügen" /></p>
+
+<p>Abbildung 8.35c - Einstellungen um über eine Verkünpfung der Felder grid_id und id die Grünflächngröße zu den Gitterzellen hinzuzufügen</p>
+
+<p>Wiederholen Sie den Vorgang für bebaute Flächen.</p>
+
+<p>Die Ergebnisse der beiden Verknüpfungen sind in der Attributtabelle sichtbar, wie in Abbildung 8.36_b zu sehen ist. Wir haben die grid_id in beiden Joins beibehalten, um sicherzugehen, dass keine Fehler aufgetreten sind. Wir können visuell schnell überprüfen, ob die 3 Attributfelder: id, grünflächen_id und bebaute-flächen_id genau gleich sind.</p>
+
+<p><img src="/germany/module8/media/fig836_a.png" alt="Verknüpfungseinstellungen " /></p>
+
+<p>Abbildung 8.36a - Verknüpfungseinstellungen</p>
+
+<p><img src="media/fig836_b.png&quot;" alt="Flächen in der Gitter-Attributtabelle" /></p>
+
+<p>Abbildung 8.36b - Flächen in der Gitter-Attributtabelle</p>
+
+<p>Da wir alle benötigten Informationen für Grün- und bebaute Flächen in der Attributtabelle des Gitter-Layers gesammelt haben, müssen wir nur noch den prozentualen Anteil dieser Flächen innerhalb der 10X10 km Rasterzelle berechnen. Wir berechnen ihn mit Hilfe des Feldrechners, indem wir folgenden Ausdruck verwenden: <code class="language-plaintext highlighter-rouge">round("grünfläche_None" / (10 * 1000 * 10 * 1000), 2)</code> und <code class="language-plaintext highlighter-rouge">round("bebaute-fläche_None" / (10 * 1000 * 10 * 1000), 2)</code> Als nächstes fügen wir ein neues Feld hinzu, in dem wir den Bericht der Grünfläche/Bebauungsfläche berechnen und so die Antwort auf unsere Anfrage erreichen: Grünflächen (Parks, Wälder) bebaute Fläche pro Einheitsverhältnis. An sich könnten wir das erreichen mit `round(“grünfläche_prozent” / “bebaute-fläche_prozent” , 5). Um einen klaren Überblick über unseren Datensatz zu haben, fügen wir in den Fällen, in denen es keine bebaute Fläche in der Gitterzelle gibt, den Wert 1000 in die Attributtabelle ein, in den Fällen, in denen es keine Grünfläche gibt, fügen wir den Wert 999 ein, während wir im Falle, dass beide Werte NULL sind, 1001 einfügen.  Hierfür können wir den Ausdruck verwenden:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CASE 
+WHEN ("grünflächen_prozent" is NULL) and ("bebaute-fläche_prozent" is not NULL) then 999
+WHEN ("bebaute-fläche_prozent" is NULL) and ("grünflächen_prozent" is not NULL) then 1000
+WHEN ("grünflächen_prozent" is NULL) and ("bebaute-fläche_prozent" is NULL) then 1001
+ELSE round("grünflächen_prozent" / "bebaute-fläche_prozent", 5)
+END
+</code></pre></div></div>
+
+<p>Das Endergebnis würde wie in Abbildung 8.37e aussehen.</p>
+
+<p><img src="media/fig837_a.png" alt="Prozentsatz der grünen Fläche im 10km x 10km-Raster" title="Prozentsatz der grünen Fläche im 10km x 10km-Raster" /></p>
+
+<p>Abbildung 8.37a - Prozentualer Anteil der Grünfläche im 10km x 10km-Raster</p>
+
+<p><img src="media/fig837_c.png" alt="Berechnung für das Verhältnis von Grün- und bebauter Fläche" title="Berechnung für das Verhältnis von Grün- und bebauter Fläche" /></p>
+
+<p>Abbildung 8.37c - Berechnung für das Verhältnis von Grün- und bebauter Fläche</p>
+
+<p><img src="media/fig837_d.png" alt="Berechnetes Verhältnis von Grün- und bebauter Fläche" title="Berechnetes Verhältnis von Grün- und bebauter Fläche" /></p>
+
+<p>Abbildung 8.37d - Berechnetes Verhältnis von Grün- und bebauter Fläche</p>
+
+<p><img src="media/fig837_e.png" alt="Verhältnis von Grün- und bebauten Flächen im 10km x 10km Raster" title="Verhältnis von Grün- und bebauten Flächen im 10km x 10km Raster" /></p>
+
+<p>Abbildung 8.37e - Verhältnis von Grünflächen und bebauten Flächen im 10km x 10km-Raster</p>
+
+<h4 id="2-gesamtlänge-der-straßen-und-wasserwege-für-jede-einheit">2. Gesamtlänge der Straßen und Wasserwege für jede Einheit;</h4>
+
+<p>Um diese Aufgabe zu erfüllen, bietet QGIS einen Algorithmus, der einen Polygon-Layer und einen Linien-Layer nimmt und die Gesamtlänge der Linien und die Gesamtzahl der Linien, die jedes Polygon durchqueren, misst. Der resultierende Layer hat die gleichen Eigenschaften wie der Eingabe-Polygon-Layer, aber mit zwei zusätzlichen Attributen, die die Länge und Anzahl der Linien über jedes Polygon enthalten. Gehen Sie zu <strong>Vektor - Analyse-Werkzeuge - Linienlängen summieren</strong> und stellen Sie die Parameter wie folgt ein:</p>
+<ul>
+  <li>Polygone - Gitter</li>
+  <li>Linien - roads</li>
+  <li>Linienlänge Feldname - roads_laenge</li>
+  <li>Linienanzahl Feldname - roads_anzahl</li>
+</ul>
+
+<p>Sie können einen temporären Layer erstellen oder ihn als Datei auf Ihrem Computer speichern. Sie können außerdem die Stilisierungsparameter aus Abbildung 8.38c übernehmen, um die gleiche Kartenansicht zu erhalten.</p>
+
+<p><img src="/germany/module8/media/fig838_a.png" alt="Parameter für &quot;Linienlängen summieren&quot;" /></p>
+
+<p>Abbildung 8.38a - Parameter für “Linienlängen summieren”</p>
+
+<p><img src="/germany/module8/media/fig838_b.png" alt="Straßenlänge- und anzahl pro Gitterzelle" /></p>
+
+<p>Abbildung 8.38b - Straßenlänge- und anzahl pro Gitterzelle</p>
+
+<p><img src="/germany/module8/media/fig838_c.png" alt="Räumliche Verteilung der Straßenkilometer" /></p>
+
+<p>Abbildung 8.38c - Räumliche Verteilung der Straßenkilometer</p>
+
+<p>Dieses Vorgehen können Sie nun analog für die Wasserwege wiederholen.</p>
+
+<h4 id="3-gesamtzahl-der-öffentlichen-gebäude-schulen-kindergärten-krankenhäuser-rathäuser-usw-für-jede-gitterzelle">3. Gesamtzahl der öffentlichen Gebäude (Schulen, Kindergärten, Krankenhäuser, Rathäuser usw.) für jede Gitterzelle</h4>
+
+<p>Um die Gesamtzahl der öffentlichen Gebäude in der 10X10-Einheit zu zählen, verwenden wir pois-bereinigt. Zuerst führen wir <strong>Vektor ‣ Analyse-Werkzeuge ‣ Eindeutige Werte auflisten..</strong> aus und entscheiden, welche Gebäude wir als öffentlich betrachten. Wir wählen aus unserem Vektorpunkt-Daten-Layer (pois) die folgenden Merkmale aus: <code class="language-plaintext highlighter-rouge">"fclass" in ('optician','college','swimming_pool','arts_centre','library','school','courthouse','university','sports_centre','museum','fire_station','kindergarten','post_office','community_centre','nursing_home','biergarten','town_hall','dentist','observation_tower','tourist_info','hospital','theatre','doctors','public_building','police')</code>. Wenn Sie möchten, können Sie natürlich auch eine andere Auswahl wählen. Wählen sie die gezeigt Auswahl sollten, insgesamt 3442 markiert werden.</p>
+
+<p><img src="media/fig840_a.png" alt="" title="Auswählen von öffentlichen POIs" /></p>
+
+<p>Abbildung 8.40a - Auswählen von öffentlichen POIs</p>
+
+<p><img src="media/fig840_b.png" alt="Ausgewählte öffentliche POIS" title="Ausgewählte öffentliche POIS" /></p>
+
+<p>Abbildung 8.40b - Ausgewählte öffentliche POIS</p>
+
+<p>Um unsere Anfrage zu beantworten, verwenden wir den Algorithmus <strong>Vektor ‣ Analyse-Werkzeuge ‣ Punkte in Polygon zählen</strong>. Dieser Algorithmus nimmt einen Punkte-Layer und einen Polygon-Layer und zählt die Anzahl der Punkte aus dem ersten Layer in jedem Polygon des zweiten Layers. Es wird ein neuer Layer “Polygone” erzeugt, der genau den gleichen Inhalt hat wie der eingegebene Layer “Polygone”, aber ein zusätzliches Feld mit der Anzahl der Punkte für jedes Polygon enthält. Setzen Sie den Layer für die Punkte auf pois-bereinigt und den Layer für das Gitter auf den dafür erzeugten Layer. Aktivieren Sie für die Punkte das Kontrollkästchen <strong>Nur gewählte Symbole</strong>, damit der Algorithmus nur die ausgewählten Punkte - die öffentlichen POIs - berechnet. Speichern Sie die Ausgabedatei als grid_info.</p>
+
+<p><img src="/germany/module8/media/fig840_c.png" alt="Anzahl öffentlicher POIS in jeder 10km x 10km Zelle" /></p>
+
+<p>Abbildung 8.40c - Anzahl öffentlicher POIS in jeder 10kmx10km Zelle</p>
+
+<p><img src="/germany/module8/media/fig840_d.png" alt="Räumliche Verteilung öffentlicher POIs pro 10X10km Zelle" /></p>
+
+<p>Abbildung 8.40d - Räumliche Verteilung öffentlicher POIs pro 10X10km Zelle</p>
+
+<h4 id="quizfragen-1"><strong>Quizfragen</strong></h4>
+
+<p>F: Wenn ich 2 Vektor-Layer habe - einer repräsentiert die Ausdehnung der Stadt, in der ich arbeite, und der zweite die bebauten Straßen im gesamten Land - welches Verarbeitungswerkzeug würde ich verwenden, um nur die Straßen in meiner Stadt zu extrahieren: Puffer oder Zuschneiden?</p>
+
+<p>A: Zuschneiden</p>
+
+<p>Q. Ist das Puffer-Werkzeug in folgendem Fall nützlich: Ich habe einen Polygon-Vektor-Layer mit historischen Denkmälern in meiner Region und möchte einen 50m-Schutzbereich um sie herum ziehen?</p>
+
+<p>A: Ja</p>
+
+<p>F: Welches der drei Geoprozessierungswerkzeuge würden Sie verwenden, um zwei ähnliche Vektor-Layer zu verschmelzen? Voronoi-Polygone, Auflösen, Zuschneiden?</p>
+
+<p>A: Auflösen</p>
+
+<h3 id="teil-3-geostatistik-interpolation---schätzung-fehlender-daten">Teil 3: Geostatistik. Interpolation - Schätzung fehlender Daten</h3>
+
+<p>Der letzte Teil des Moduls Vektordaten führt in das Konzept der Datenschätzung ein. Wir sind es gewohnt, fast täglich Schätzungen zu verschiedenen Themen vorzunehmen, z. B. wie viel Zeit wir unter bestimmten Bedingungen für den Weg von zu Hause zur Arbeit benötigen. Wir sind es gewohnt, unsere beste Schätzung abzugeben, basierend auf früheren Erfahrungen und Vermutungen. Bei der Schätzung fehlender Daten wird die beste Schätzung jedoch durch sehr gut definierte mathematische Gleichungen mit bekannten Einschränkungen ersetzt.</p>
+
+<p>Das Thema erfordert erhebliche Kenntnisse in Statistik und die Ergebnisse sollten immer im Lichte ihrer Einschränkungen betrachtet werden.</p>
+
+<p>In diesem Sinne stellen wir ein kurzes Beispiel für die Datenschätzung vor, das den Übergang zum nächsten Modul - der Rasterdatenverarbeitung - bildet.</p>
+
+<p><strong>Interpolation</strong> ist ein mathematischer Prozess, durch den man die fehlenden Werte auf der Grundlage einer begrenzten Anzahl von vorhandenen Werten schätzen kann. Und solche Situationen sind häufig - stellen Sie sich meteorologische Daten vor. Daten über Oberflächentemperaturen und darüber, wie viel Regen gefallen ist, können nur an bestimmten Punkten an kalibrierten Meteostationen gemessen werden, und nicht auf der gesamten Fläche. Auf den Karten, die wir im Wetterbericht sehen, gibt es jedoch keine “blinden Flecken” ohne Temperaturen. Daher werden die restlichen Werte durch Interpolation gewonnen. 
+Die Annahme, auf der die Interpolation basiert, ist, dass räumlich verteilte Objekte räumlich korreliert sind; mit anderen Worten, Dinge, die nahe beieinander liegen, neigen dazu, ähnliche Eigenschaften zu haben.</p>
+
+<p>Es gibt viele Interpolationsmethoden, die in GIS-Software implementiert sind. Die Entscheidung, welche in jedem einzelnen Fall die beste ist, hängt von der Spezifität der Daten ab, was sie repräsentieren und vom geostatistischen Verständnis der Person, die Interpolation durchführt.</p>
+
+<p>Um schnell zu prüfen, welche Interpolationsmethoden in QGIS zur Verfügung stehen, gehen Sie in die Verarbeitungswerkzeuge und geben Sie in die Suchleiste das Stichwort Interpolation ein. Das Ergebnis sollte wie in Abbildung 8.41 aussehen.</p>
+
+<p><img src="media/fig841.png" alt="In QGIS verfügbare Interpolationsmethoden" title="In QGIS verfügbare Interpolationsmethoden" /></p>
+
+<p>Abbildung 8.41 - In QGIS verfügbare Interpolationsmethoden</p>
+
+<p>Wie zu sehen ist, biete QGIS auch Zugang zu anderen Algorithmen, die in GRASS oder SAGA implementiert sind.</p>
+
+<p>Es würde den Rahmen dieses Moduls sprengen, auf die mathematischen Grundlagen der einzelnen Interpolationsalgorithmen einzugehen. Zu Demonstrationszwecken werden wir jedoch die Interpolation von Niederschlagsdaten simulieren, um einen nahtlosen Datensatz über die Menge der gefallenen Niederschläge in unserem Betrachtungsgebiet zu erhalten.</p>
+
+<p>Da die Übung nur zu Demonstrationszwecken dient, werden wir unseren eigenen Satz von Punktdaten erstellen - um die Meteostationen darzustellen, an denen Niederschlagswerte im Laufe einer Woche registriert wurden.</p>
+
+<p>Der erste Schritt ist also die Erstellung eines neuen Punk-Vektor Layers mit zufällig zugewiesenen Punkten innerhalb Mittelsachsen. Dazu gibt es mehrere Möglichkeiten, entweder mit dem Algorithmus <strong>Zufällige Punkte in Polygonen..</strong> oder mit dem Algorithmus <strong>Zufällige Punkte in den Layergrenzen..</strong>. Gehen Sie zu <strong>Vektor ‣ Forschungswerkzeuge ‣ Zufällige Punkte in Polygonen…</strong>. Sie können den Algorithmus auch in der Symbolleiste Verarbeitung oder in der Suchleiste suchen. Wählen Sie als Parameter:</p>
+<ul>
+  <li>93 Punkte</li>
+  <li>mindestens 5 km.</li>
+</ul>
+
+<p>Die Einstellungen sollte wie in Abbildung 8.42 aussehen.</p>
+
+<p><img src="/germany/module8/media/fig842.png" alt="Erzeugen von Zufallspunkten innerhalb eines Polygon-Layers" /></p>
+
+<p>Abbildung 8.42 - Erzeugen von Zufallspunkten innerhalb eines Polygon-Layers</p>
+
+<p>Der resultierende Punkt-Layer sieht ungefähr so aus wie in Abbildung 8.43.</p>
+
+<p><img src="/germany/module8/media/fig843.png" alt="Punktdaten-Layer - zufällig innerhalb der angegebenen Polygone erzeugt" /></p>
+
+<p>Abbildung 8.43 - Punktdaten-Layer - zufällig innerhalb der angegebenen Polygone erzeugt</p>
+
+<p>Da wir nun unsere imaginären Wetterstationen haben, werden wir fiktive Messungen in einem Zeitrahmen von 7 Tagen hinzufügen.</p>
+
+<p>Dazu können wir die von QGIS bereitgestellte Zufallsfunktion verwenden. Öffnen Sie die Attributtabelle des erstellten Punktdaten-Layers und öffnen Sie den Feldrechner. Fügen Sie in ein neu angelegtes Feld (Ganze Zahl) die folgende Formel rand(min, max) ein, wobei min und max durch das folgende Zahlenpaar für die entsprechenden 7 Tage ersetzt werden (siehe Abbildung 8.44):</p>
+
+<ol>
+  <li>0 - 59;</li>
+  <li>2 - 35;</li>
+  <li>10 - 45;</li>
+  <li>0 - 21;</li>
+  <li>5 - 63;</li>
+  <li>0 - 10;</li>
+  <li>0 - 21.</li>
+</ol>
+
+<p><img src="media/fig844.png" alt="Zufallswerte innerhalb vorgegebener Grenzen erzeugen" title="Zufallswerte innerhalb vorgegebener Grenzen erzeugen" /></p>
+
+<p>Abbildung 8.44 - Erzeugen von Zufallswerten innerhalb vorgegebener Grenzen</p>
+
+<p>Nachdem Sie alle 7 Spalten hinzugefügt haben, sollte Ihre Attributtabelle wie in Abbildung 8.45 aussehen.</p>
+
+<p><img src="/germany/module8/media/fig845.png" alt="Fiktive Nierderschlagsmengen in der Attributtabelle" /></p>
+
+<p>Abbildung 8.45 - Fiktive Nierderschlagsmengen in der Attributtabelle</p>
+
+<p>Als nächstes werden wir diese Werte für jeden der 7 Tage interpolieren, um einen nahtlosen Layer zu erhalten, der das gesamte Gebiet abdeckt. Da es sich um einen sich wiederholenden Vorgang handelt, werden wir eine Stapelverabeitung verwenden. Die gewählte Interpolationsmethode, die - rein zu Demonstrationszwecken! - ist IDW - invers abstandsgewichtet. Sie finden diese, indem Sie in den Verarbeitungswerkzeugen nach IDW suchen und dann per Rechtsklick den Stapelprozess auswählen</p>
+
+<p>Stellen Sie die folgenden Parameter ein:</p>
+<ul>
+  <li>Abstandskoeffizient: 2</li>
+  <li>Ausdehnung: Mittelsachsen</li>
+  <li>Größe des Ausgaberasters: 50.</li>
+</ul>
+
+<p>Ihre Parameter sollten wie in der folgenden Abbildung 8.46 aussehen.</p>
+
+<p><img src="/germany/module8/media/fig846.png" alt="Einstellungen im Stapelverarbeitungsfensters zur Interpolation der Niederschlagswerte für alle 7 Tage" /></p>
+
+<p>Abbildung 8.46 - Einstellungen im Stapelverarbeitungsfensters zur Interpolation der Niederschlagswerte für alle 7 Tage</p>
+
+<p>Das Interpolationsergebnis sieht ungefähr so aus wie in Abbildung 8.47.</p>
+
+<p><img src="/germany/module8/media/fig847.png" alt="Interpolierte Datensätze" /></p>
+
+<p>Abbildung 8.47 - Interpolierte Datensätze</p>
+
+<p>Die Wetterstationen sind in der Kartenansicht sichtbar und in der Layerliste sehen Sie alle 7 neu erstellten Rasterdatensätze, die die Niederschlagswerte für jeden Tag darstellen. Sollten die Daten nicht automatisch geladen worden sein, könenn Sie diese wie gewohnt als Layer hinzufügen.</p>
+
+<p>Als nächstes ändern wir die Symbologie der 7 Layer auf eine buntere (<strong>Eigenschaften ‣ Symbolisierung ‣ Einkanalpseudofarbe ‣ Magma</strong>).</p>
+
+<p>Betrachtet man die Punktdaten und die daraus erstellten Rasterdatensätze, so stellt man fest, dass man nun Werte für die gesamte Region hat und nicht nur am gemessenen Ort. Es gibt viele Verarbeitungsalgorithmen, die auf diese Raster angewendet werden können, um Informationen zu extrahieren, aber dazu mehr im nächsten Modul - Verarbeitung und Visualisierung von Rasterdaten.</p>
+
+<p>Da wir jedoch Werte für 7 Tage interpoliert haben, wollen wir eine kurze Animation vorbereiten, wie sich die Niederschlagswerte entwickelt haben.</p>
+
+<p>Öffnen Sie dazu die <strong>Eigenschaften des Rasters wetterstationen_1 ‣ klicken Sie auf die Registerkarte Zeitlich ‣ markieren Sie die Option Zeitlich ‣ wählen Sie Start- und Enddatum</strong>, wie in Abbildung 8.48. Führen Sie das gleiche für alle 7 Raterlayer - jeweils um einen Tag verschoben - durch.</p>
+
+<p><img src="media/fig848.png" alt="Zeitliche Informationen zum Rasterdatensatz setzen (1)" /></p>
+
+<p>Abbildung 8.48 - Einstellen der zeitlichen Informationen zum Rasterdatensatz</p>
+
+<p>Öffnen Sie das Bedienfeld “Zeitsteuerung” (zu finden in <strong>Ansicht ‣ Bedienfelder ‣ Zeitsteuerung</strong>) und stellen Sie die Parameter wie in Abbildung 8.49 ein.</p>
+
+<p><img src="/germany/module8/media/fig849.png" alt="Einstellen der Parameter des Zeitsteuerungsfeldes" /></p>
+
+<p>Abbildung 8.49 - Einstellen der Parameter des Zeitsteuerungsfeldes.</p>
+
+<p>Klicken Sie auf den Play-Button <img src="media/play-btn.png" alt="Play-Button" title="Play-Button" /> und schauen Sie sich an, wie sich die Werte ändern. Sie können auswählen, welche anderen Layer sichtbar sein sollen. In Abbildung 8.50 haben wir den Gebäude-Vektor-Layer hinzugefügt.</p>
+
+<p><img src="/germany/module8/media/fig850.png" alt="Auswählen anderer Layer, die in der zeitlichen Animation sichtbar sein sollen" /></p>
+
+<p>Abbildung 8.50 - Auswählen von anderen Layern, die in der zeitlichen Animation sichtbar sein sollen.</p>
+
+<h5 id="quizfragen-2">Quizfragen</h5>
+
+<ol>
+  <li>Gibt es nur einen Algorithmus zur Interpolation von Daten in QGIS oder mehrere?</li>
+</ol>
+
+<ul>
+  <li>Es sind mehrere Algorithmen implementiert.</li>
+</ul>
+
+<ol>
+  <li>Wozu ist die Interpolation nützlich?</li>
+</ol>
+
+<ul>
+  <li>Interpolation ist nützlich, um Daten auf der Grundlage bekannter Daten zu schätzen.</li>
+</ul>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Módulo 7 - Criando e editando camadas | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank" rel="noopener">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank" rel="noopener">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank" rel="noopener">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Módulo 7 - Criando e editando camadas page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Módulo 7 - Criando e editando camadas">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Products" href="#">Products</a>
+      <ul>
+          
+          
+          
+          <li><a title="News" href="news.html">News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Theme instructions" href="mydoc_introduction.html">Theme instructions</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 1" href="p1_landing_page.html">Product 1</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Product 2" href="p2_landing_page.html">Product 2</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Módulo 7 - Criando e editando camadas</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" rel="noopener" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/brazil/module7/module7.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="módulo-7---criando-e-editando-camadas">Módulo 7 - Criando e editando camadas</h1>
+
+<p><strong>Autor</strong>: Ketty</p>
+
+<h2 id="introdução-pedagógica">Introdução pedagógica</h2>
+
+<p>Este módulo foi desenvolvido para te ensinar como usar as ferramentas QGIS para criar uma nova camada GIS. Nele, você aprenderá conceitos como digitalização e georreferenciamento.</p>
+
+<h2 id="pré-requisitos">Pré-requisitos</h2>
+
+<ul>
+  <li>Um bom conhecimento de todos os módulos anteriores</li>
+  <li>Conhecimento básico de operação de um computador</li>
+</ul>
+
+<h2 id="recursos-adicionais">Recursos adicionais</h2>
+
+<ul>
+  <li>Criação de camadas - <a href="https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_layers.html">https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_layers.html</a></li>
+  <li>Digitalização de áreas florestais - <a href="https://docs. qgis.org/3.16/en/docs/training_manual/forestry/stands_digitazing.html?highlight=digitizing">https://docs.qgis.org/3.16/en/docs/training_manual/forestry/stands_digitazing.html?highlight=digitizing</a></li>
+  <li>Leitura adicional - <a href="https://docs.qgis.org/3.16/en/docs/training_manual/forestry/map_georeferencing.html?highlight=georeferencing">Georreferenciando um mapa</a></li>
+</ul>
+
+<h2 id="introdução-temática">Introdução temática</h2>
+
+<p>Vamos começar com um exemplo:</p>
+
+<p>Vamos imaginar que seu departamento esteja planejando construir novos hospitais para a cidade. Eles podem querer realizar uma pré-avaliação ambiental para o projeto de infraestrutura que foi planejado. A avaliação pode envolver a realização de pesquisas sobre quais dados estão disponíveis. Como você pode imaginar, há uma grande quantidade de dados geográficos disponíveis em formatos que não podem ser integrados imediatamente com outros dados GIS. Alguns desses dados podem estar na forma de mapas antigos, imagens de satélite de alta resolução ou imagens de sensoriamento remoto que costumam ser usadas para fazer mapas digitais como o Google Maps ou OpenStreetMap. É aqui que entra a criação e edição de camadas. Uma maneira pela qual novos dados podem ser criados em um GIS é por meio da digitalização. Outros métodos incluem georreferenciamento, escaneamento e vetorização, recorte, seleção e salvamento. É importante lembrar que os dados criados dependem dos daos originais serem únicos. Por exemplo, a imagem abaixo mostra que cada produto de imagem produzirá um conjunto de dados únicos.</p>
+
+<p><img src="media/rs-images.png" alt="Imagens de sensoriamento remoto de diferentes linhas costeiras" title="Imagens de sensoriamento remoto de diferentes linhas costeiras" /></p>
+
+<p>Figura 7.1: Imagens de sensoriamento remoto de diferentes áreas costeiras. A. Dados interferométricos do radar de abertura sintética (IFSAR) (usando microondas para coletar dados para a criação de imagens representativas), B. dados topográficos e batimétricos LIDAR (dados de altura e elevação representados por cores), C. imagens hiperespectrais (adicionando cor à energia invisível) , e D. fotografia digital (cores visíveis do olho humano representadas como elas próprias)</p>
+
+<h2 id="detalhamento-dos-conceitos">Detalhamento dos conceitos</h2>
+
+<p>Digitalizar em SIG é o processo de “traçar”, de forma geograficamente correta, informações de mídias/mapas. O processo de georreferenciamento conta com a coordenação de pontos na imagem digitalizada (dados a serem georreferenciados) com pontos em dados geograficamente referenciados (dados para os quais a imagem será georreferenciada). Ao “vincular” pontos na imagem com essas mesmas localizações nos dados geograficamente referenciados, você criará uma transformação que converte a localização de toda a imagem na localização geográfica correta.</p>
+
+<p><img src="media/buildings.png" alt="Aqui, os edifícios foram digitalizados (rastreados) sobre uma foto aérea" title="Aqui, os edifícios foram digitalizados (rastreados) sobre uma foto aérea" /></p>
+
+<p>Figura 7.2: Aqui, os edifícios foram digitalizado (traçados) em cima de uma foto aérea</p>
+
+<p>Georreferenciamento, por outro lado, é o processo de obtenção de uma imagem digital, que pode ser por exemplo um mapa geológico digitalizado ou uma imagem de um mapa topográfico, e de adicionar informações geográficas à imagem para que o GIS ou software de mapeamento possam ‘posicionar’ a imagem em seu local correto no mundo real.</p>
+
+<h2 id="conteúdo-principal">Conteúdo principal</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>O QGIS permite que você crie novas camadas em diferentes formatos. Ele fornece ferramentas para criar GeoPackage, Shapefile, SpatiaLite, formato GPX e camadas Temporary Scratch (também conhecidas como camadas de memória). A edição permite adicionar, excluir e modificar recursos em conjuntos de dados vetoriais. A primeira etapa é colocar o conjunto de dados no modo de edição. Selecione a camada no painel Camadas e clique em Camada</td>
+      <td>Alternar edição. Como alternativa, você pode clicar com o botão direito do mouse em uma camada no painel Camadas e escolher Alternar Edição no menu de contexto. Várias camadas podem ser editadas ao mesmo tempo. A camada que está sendo editada atualmente é aquela selecionada no painel Camadas. Uma vez no modo de edição, a barra de ferramentas de digitalização pode ser usada para adicionar, excluir e modificar recursos.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Digitalizar, como você deve ter adivinhado, é a arte (ou ciência) de criar dados vetoriais digitais a partir de outra fonte, como uma imagem raster. Para começar a digitalização, devemos primeiro entrar no modo de edição. O software GIS geralmente requer um modo separado para edição, para evitar que os usuários editem ou apaguem acidentalmente dados importantes. O modo de edição é ativado ou desativado individualmente para cada camada.</p>
+
+<h3 id="título-da-fase-1-criando-uma-nova-camada-geopackage-ou-shapefile">Título da Fase 1: Criando uma nova camada GeoPackage ou Shapefile</h3>
+
+<h4 id="criando-uma-nova-camada-geopackage"><strong>Criando uma nova camada GeoPackage</strong></h4>
+
+<ol>
+  <li>Para criar uma nova camada GeoPackage, pressione o botão Nova Camada GeoPackage <img src="media/geopackage-button.png" alt="Alt_text" title="image_tooltip" />
+ no menu Camada Criar Nova Camada ou na barra de ferramentas do Datasource Manager. A caixa de diálogo Nova Camada GeoPackage será exibida conforme mostrado na Figura 7.3.</li>
+</ol>
+
+<p><img src="media/new-geopackage-dialog.png" alt="Diálogo de nova camada GeoPackage" title="Diálogo de nova camada GeoPackage" /></p>
+
+<p>Figura 7.3: Diálogo de nova camada GeoPackage</p>
+
+<ol>
+  <li>O primeiro passo é indicar a localização do arquivo de banco de dados. Isso pode ser feito pressionando o botão <img src="media/database-file-location.png" alt="Alt_text" title="image_tooltip" /> à direita do campo Banco de dados e selecionando um arquivo GeoPackage existente ou criando um novo. O QGIS adicionará automaticamente a extensão correta ao nome que você fornecer.</li>
+  <li>Digite um nome para a nova camada (“Nome da tabela”)</li>
+  <li>Defina o tipo de geometria. Se não for uma camada sem geometria, você pode especificar se deve incluir dimensão Z e/ou incluir valores M.</li>
+  <li>
+    <p>Especifique o sistema de referência de coordenadas usando o botão <img src="media/mActionSetProjection.png" alt="Alt_text" title="image_tooltip" /></p>
+  </li>
+  <li>
+    <p>Para adicionar campos à camada que você está criando:</p>
+
+    <ol>
+      <li>Insira o Nome do campo</li>
+      <li>Selecione o Tipo de dados . Os tipos suportados são dados de texto, número inteiro (inteiro e inteiro 64), número decimal, data e data e hora, binário (BLOB) e booleano.</li>
+      <li>Dependendo do formato de dados selecionado, insira o Comprimento máximo dos valores.</li>
+      <li>Clique no botão Adicionar à lista de campos <img src="media/mActionNewAttribute.png" alt="Alt_text" title="image_tooltip" /></li>
+    </ol>
+  </li>
+  <li>Reproduza as etapas acima para cada campo que você precisar adicionar</li>
+  <li>Quando estiver satisfeito com os atributos, clique em OK. O QGIS adicionará a nova camada à legenda, e você poderá começar a editá-la.</li>
+</ol>
+
+<h4 id="criando-um-novo-shapefile"><strong>Criando um novo Shapefile</strong></h4>
+
+<ol>
+  <li>Para criar uma nova camada de formato ESRI Shapefile, pressione <img src="mídia /mActionNewVectorLayer.png" alt="Alt_text" title="image_tooltip" /> Novo botão Shapefile Layer… no menu Camada ‣ Criar Nova Camada ‣ ou na barra de ferramentas Data Source Manager. A caixa de diálogo Nova Camada Shapefile será exibida conforme mostrado na Figura 7.4.</li>
+</ol>
+
+<p><img src="media/new-shapefile-dialog.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p>Figura 7.4: Diálogo da nova camada do shapefile</p>
+
+<ol>
+  <li>Forneça um caminho e nome de arquivo usando o botão … próximo ao campo Nome do arquivo. O QGIS adicionará automaticamente a extensão correta ao nome que você fornecer.</li>
+  <li>Em seguida, indique a codificação do arquivo dos dados</li>
+  <li>Escolha o tipo de geometria da camada: Sem geometria (resultando em um arquivo de formato .DBF), ponto, multiponto, linha ou polígono</li>
+  <li>Especifique se a geometria deve ter dimensões adicionais: Nenhum, Z (valores + M) ou valores M</li>
+  <li>
+    <p>Especifique o sistema de referência de coordenadas usando o botão <img src="media/mActionSetProjection.png" alt="Alt_text" title="image_tooltip" />; você pode selecionar o WGS 84 universal que é adequado para projetos de mapeamento web em todo o mundo</p>
+  </li>
+  <li>Para adicionar campos à camada que você está criando:
+    <ol>
+      <li>Insira o Nome do campo</li>
+      <li>Selecione o Tipo de dados. Somente número decimal, número inteiro, dados de texto e data são suportados.</li>
+      <li>Dependendo do formato de dados selecionado, insira o Comprimento e a Precisão.</li>
+      <li>Clique no botão Adicionar campos à lista <img src="media/mActionNewAttribute.png" alt="Alt_text" title="image_tooltip" /></li>
+    </ol>
+  </li>
+  <li>Reproduza as etapas acima para cada campo que você precisar adicionar</li>
+  <li>Quando estiver satisfeito com os atributos, clique em OK. O QGIS adicionará a nova camada à legenda e você poderá editá-la conforme descrito a seguir, ‘Digitalizando uma camada existente’.</li>
+</ol>
+
+<h3 id="título-da-fase-2-digitalizando-uma-camada-existente">Título da fase 2: digitalizando uma camada existente</h3>
+
+<h4 id="conteúdotutorial"><strong>Conteúdo/Tutorial</strong></h4>
+
+<p>Este tutorial mostrará como criar um novo arquivo usando dados auxiliares, como imagens de satélite fornecidas pelo Google. É importante saber qual tipo de feições (geometrias) você gostaria de criar de antemão; por exemplo, seriam pontos, linhas ou polígonos? Quando criamos a camada, devemos definir que tipo de dados ela conterá. O objetivo deste tutorial é criar um tipo de dado que possa ser facilmente manipulado, analisado e armazenado em um sistema GIS, daí a necessidade de criar arquivos vetoriais. Criaremos recursos de polígono como exemplo.</p>
+
+<ol>
+  <li>Antes de adicionar novos dados vetoriais, você precisa de um conjunto de dados vetoriais (uma camada) para adicioná-los. Em nosso caso, começaremos criando uma nova camada de dados e, em seguida, adicionaremos recursos a ela. Primeiro, devemos definir nosso conjunto de dados.</li>
+  <li>Crie um novo projeto no QGIS clicando no ícone <em>Novo Projeto</em> <img src="media/new-project.png" alt="Alt_text" title="image_tooltip" />.</li>
+  <li>Vá para <em>Camada ‣ Criar camada ‣ Nova camada GeoPackage</em>. Crie uma camada como a da imagem a seguir:</li>
+</ol>
+
+<p><img src="media/new-vector.png" alt="Alt_text" title="image_tooltip" /></p>
+
+<p>Figura 7.5: Nova caixa de diálogo GeoPackage</p>
+
+<p>Neste ponto, devemos decidir que tipo de conjunto de dados queremos criar. Lembre-se de que uma camada de dados pode conter apenas feições de pontos, apenas linhas ou apenas polígonos - nunca mais de um tipo na mesma camada. Quando criamos a camada, devemos definir que tipo de dados ela conterá.</p>
+
+<p>Como os polígonos são compostos de pontos e linhas, vamos criar polígonos. Depois de dominar isso, criar um ponto ou uma camada de linha deve ser fácil!</p>
+
+<p>Dentro do diálogo, especifique um nome de arquivo para o novo arquivo, codificação de arquivo, tipo de geometria, o CRS e adicione dados específicos para o Novo Campo. Adicione outros nomes de campo. Isso requer um modelo de dados predefinido que capture adequadamente todas as informações sobre o referido recurso.</p>
+
+<ol>
+  <li>A segunda etapa é adicionar a camada de satélite ESRI World Imagery à tela do mapa QGIS. Adicionamos isso em um módulo anterior e deve estar disponível para uso no <strong>Painel do navegador</strong> em <strong>XYZ Tiles</strong>.</li>
+</ol>
+
+<p><img src="media/xyz-2.png" alt="ESRI World Imagery encontrado no painel do navegador" title="ESRI World Imagery encontrado no painel do navegador" /></p>
+
+<p><img src="media/xyz-3.png" alt="ESRI World Imagery carregado no QGIS" title="ESRI World Imagery carregado no QGIS " /></p>
+
+<p>Figura 7.6.1: Tela QGIS após adicionar a camada ESRI World Imagery</p>
+
+<ol>
+  <li>Amplie a imagem até que você possa ver características como telhados, estradas, árvores, etc. Os telhados podem atuar como um proxy 2D para edifícios, portanto vamos digitalizar a camada de construção recém-criada.</li>
+</ol>
+
+<p><img src="media/digitize-zoom.png" alt="Camada ESRI World Imagery ampliada" title="ESRI World Imagery layer ampliada" /></p>
+
+<p>Figura 7.6.2: Camada ESRI World Imagery ampliada</p>
+
+<ol>
+  <li>Vamos entrar no modo de edição para a camada <em>edificios</em></li>
+  <li>Selecione <em>edificios</em> no painel Layers</li>
+  <li>Clique no botão <em>Alternar Edição</em> <img src="media/edit-layer.png" alt="alt_text" title="image_tooltip" />.</li>
+  <li>Se você não conseguir encontrar este botão, certifique-se de que a barra de ferramentas Digitalização está habilitada. Deve haver uma marca de seleção ao lado da entrada do menu <em>Ver ‣ Barras de ferramentas ‣ Digitalização</em></li>
+  <li>Assim que estiver no modo de edição, as ferramentas de digitalização ficarão ativas</li>
+</ol>
+
+<p><img src="media/digi-toolbar.png" alt="Ferramentas de digitalização" title="Ferramentas de digitalização" /></p>
+
+<p>Figura 7.7: Ferramentas de digitalização</p>
+
+<p>Da esquerda para a direita na imagem acima, são elas:</p>
+
+<ul>
+  <li><strong>Alternar Edição</strong>: ativa/desativa o modo de edição.</li>
+  <li><strong>Salvar edições de camada</strong>: salva as alterações feitas na camada.</li>
+  <li><strong>Adicionar recurso</strong>: comece a digitalizar um novo recurso.</li>
+  <li><strong>Mover recurso(s)</strong>: mover um recurso inteiro.</li>
+  <li><strong>Ferramenta Nó</strong>: mova apenas uma parte de um recurso.</li>
+  <li><strong>Excluir Selecionado</strong>: exclui o recurso selecionado (ativo apenas se um recurso for selecionado).</li>
+  <li><strong>Cortar recursos</strong>: corta o recurso selecionado (ativo apenas se um recurso for selecionado).</li>
+  <li><strong>Copiar recursos</strong>: copia o recurso selecionado (ativo apenas se um recurso for selecionado).</li>
+  <li><strong>Colar recursos</strong>: cole um recurso recortado ou copiado de volta no mapa (ativo apenas se um recurso foi recortado ou copiado).</li>
+</ul>
+
+<p>Queremos adicionar um novo recurso.</p>
+
+<ol>
+  <li>Clique no botão <em>Adicionar feição</em> <img src="media/add-feature.png" alt="Alt_text" title="image_tooltip" /> para iniciar a digitalização. Vamos digitalizar os edifícios</li>
+  <li>Comece clicando em um ponto em algum lugar ao longo da borda do edifício</li>
+  <li>Coloque mais pontos clicando mais ao longo da borda, até que a forma que você está desenhando cubra completamente o campo. Isso é muito semelhante a desenhar um polígono. O vértice inicial e o vértice final devem se tocar, caso contrário, permanece uma linha.</li>
+  <li>Para colocar o último ponto, <strong>clique com o botão direito onde você deseja que ele esteja</strong>. Isso finalizará o recurso e abrirá a caixa de diálogo Atributos.</li>
+  <li>Preencha os valores conforme mostrado aqui</li>
+</ol>
+
+<p><img src="media/digitize-1.png" alt="Digitalizando novo recurso" title="Digitalizando novo recurso" /></p>
+
+<p>Figura 7.8.1: Digitalizando novo recurso</p>
+
+<p><img src="media/digitize-2.png" alt="Preencha os valores de atributo" title="Preencha os valores dos atributos" /></p>
+
+<p>Figura 7.8.2: Adicionando os atributos</p>
+
+<ol>
+  <li>Clique em <em>OK</em>. Você criou um novo recurso!</li>
+</ol>
+
+<p><img src="media/digitize-3.png" alt="Novo recurso criado" title="Novo recurso criado" /></p>
+
+<p>Figura 7.8.3: Novo recurso criado</p>
+
+<p>Se você cometer um erro ao digitalizar um recurso, poderá editá-lo posteriormente. Basta terminar de digitalizar o recurso e seguir estas etapas:</p>
+
+<ul>
+  <li>Selecione o recurso com a ferramenta <em>Select Feature</em></li>
+</ul>
+
+<p><img src="media/select-feature.png" alt="Alt_text" title="image_tooltip" /></p>
+
+<ul>
+  <li>Em seguida, use uma dessas ferramentas para editar o recurso</li>
+</ul>
+
+<table>
+  <tr>
+   <td>
+<img src="media/image186.png" width="" alt="alt_text" title="image_tooltip" />
+   </td>
+   <td> Mover ferramentas de recurso(s)
+   </td>
+   <td>Move todo o(s) recurso(s)
+   </td>
+  </tr>
+  <tr>
+   <td>
+
+<img src="media/image187.png" width="" alt="alt_text" title="image_tooltip" />
+
+   </td>
+   <td> Ferramentas de nó
+   </td>
+   <td>Move apenas um ponto onde você pode ter clicado incorretamente
+   </td>
+  </tr>
+  <tr>
+   <td>
+
+<img src="media/image188.png" largura="" alt="alt_text" title="image_tooltip" />
+
+   </td>
+   <td> Excluir selecionado
+   </td>
+   <td>Elimina totalmente o recurso para que você possa tentar novamente
+   </td>
+  </tr>
+  <tr>
+   <td> Vá para Editar ‣ Desfazer ou pressione Ctrl + Z no teclado
+   </td>
+   <td> Desfazer erros
+   </td>
+   <td>
+   </td>
+  </tr>
+</table>
+
+<ol>
+  <li>Agora tente sozinho, digitalize todos os edifícios na imagem.</li>
+</ol>
+
+<h3 id="título-da-fase-3-georreferenciando-um-mapa-topográfico">Título da Fase 3: Georreferenciando um mapa Topográfico</h3>
+
+<h4 id="conteúdotutorial-1"><strong>Conteúdo/Tutorial</strong></h4>
+
+<p>Para georreferenciar o mapa;</p>
+
+<ol>
+  <li>Abra a ferramenta Georeferenciador, Raster ► Georeferenciador</li>
+  <li>Clique no botão Adicionar raster <img src="media/add-raster.png" alt="Adicionar Raster" title="Adicionar Raster" /> para adicionar o arquivo de imagem do mapa, <a href="data/manhumirim_mg_es.jpeg">Mapa Topográfico de Pampanga</a>, como imagem a georreferenciar. O mapa topográfico será adicionado à tela do georreferenciador. Agora você pode ampliar para ler os detalhes do mapa. Uma maneira de fazer isso é lendo os metadados e as informações de legenda na parte inferior e, em seguida, relacionando-os com os recursos no mapa.</li>
+</ol>
+
+<p><img src="media/georeferencer.png" alt="Mapa na tela do Georeferenciador" title="Mapa na tela do Georeferenciador" /></p>
+
+<p>Figura 7.9: Mapa na tela do Georreferenciador</p>
+
+<p>Em seguida, você deve definir as configurações de transformação para georreferenciar o mapa:</p>
+
+<ol>
+  <li>Abra Configurações ► Configurações de transformação ou clique em Transformação Botão de configurações<img src="media/georef-settings-btn.png" alt="Alt_text" title="image_tooltip" />.</li>
+  <li>Clique no ícone <img src="media/dots.png" alt="Alt_text" title="image_tooltip" /> próximo à caixa Raster de saída, vá para a pasta e crie a pasta ‘dados pampanga’ e nomeie o arquivo como pampanga_georef.tif.</li>
+  <li>Defina o resto dos parâmetros conforme mostrado abaixo</li>
+</ol>
+
+<p><img src="media/transformation-settings.png" alt="Parâmetros de transformação" title="Parâmetros de transformação" /></p>
+
+<p>Figura 7.10: Parâmetros de transformação</p>
+
+<p>Ao selecionar os parâmetros de transformação, os itens a serem considerados são:</p>
+<ul>
+  <li>a complexidade do mapa e distorção (mapas de formato regular normalmente só precisam usar parâmetros de transformação simples)</li>
+  <li>o número de GCPs que você pode obter no mapa - quanto mais complexo o tipo de transformação, mais GCPs são necessários para obter bons resultados.</li>
+  <li>a distribuição de GCPs no mapa - uma distribuição pobre de GCP resulta em mais distorção, especialmente em equações de transformação de ordem superior.</li>
+  <li>mais (ou mais complexo) nem sempre é melhor.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Ordem de Transformação</th>
+      <th style="text-align: right">GCPs mínimos exigidos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">5</td>
+      <td style="text-align: right">21</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">6</td>
+      <td style="text-align: right">28</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">7</td>
+      <td style="text-align: right">36</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Por segurança, tenha sempre pelo menos um a mais do que o mínimo para adicionar redundância.</p>
+
+<ol>
+  <li>Clique em OK.</li>
+  <li>O mapa contém várias retículas marcando as coordenadas no mapa, usaremos esses para georreferenciar esta imagem. Você pode usar as ferramentas de zoom e panorâmica como costuma fazer no QGIS para inspecionar a imagem na janela do Georreferenciador.</li>
+  <li>Aproxime o zoom no canto inferior esquerdo do mapa e observe que há um par de coordenadas, X e Y, que como mencionado antes estão no CRS EPSG:4225, conforme a legenda do mapa topográfico.</li>
+  <li>Clique no botão Adicionar ponto<img src="media/add-point.png" alt="Adicionar ponto" title="Adicionar ponto" /> e clique na interseção do canto inferior esquerdo do mapa.</li>
+  <li>Na caixa de diálogo Insira as coordenadas do mapa, escreva as coordenadas que aparecem no mapa (Y: -20 30 00.00 e X: -42 00 00.00).</li>
+</ol>
+
+<p><img src="media/georef-1.png" alt="Selecionar GCP" title="Selecionar GCP" /></p>
+
+<p>Figura 7.11.1: Insira as coordenadas do mapa</p>
+
+<p><img src="media/georef-2.png" alt="Insira as coordenadas do mapa" title="Insira as coordenadas do mapa" /></p>
+
+<p>Figura 7.11.2 : Insira as coordenadas do mapa</p>
+
+<ol>
+  <li>Clique em OK.</li>
+</ol>
+
+<p>A primeira coordenada para o georreferenciamento está pronta. Abaixo está uma captura de tela do que esperar neste ponto</p>
+
+<p><img src="media/georef-3.png" alt="Primeira coordenada para o georreferenciamento" title="Primeira coordenada para o georreferenciamento" /></p>
+
+<p>Figura 7.12: Primeira coordenada para o georreferenciamento</p>
+
+<ol>
+  <li>
+    <p>Digitalize pelo menos mais três pontos de controle de solo (GCPs) da mesma maneira que você fez o primeiro. Dica: Certifique-se de que os pontos estejam distribuídos de forma justa pela imagem, por exemplo, nos quatro cantos da imagem ou em distâncias iguais entre si. Isso afeta o desempenho do algoritmo de transformação.</p>
+  </li>
+  <li>
+    <p>Com três pontos de controle de solo já digitalizados, você poderá ver o erro de georreferenciamento como uma linha vermelha saindo dos pontos. O erro em pixels pode ser visto também na tabela GCP nas colunas dX [pixels] e dY [pixels]. Os residuais não devem ser maiores do que um limite que você definiu. Se forem, você deve revisar os pontos digitalizados e as coordenadas inseridas para descobrir qual é o problema. Você pode usar a imagem acima como um guia.</p>
+  </li>
+  <li>Adicione mais pontos de controle até ficar satisfeito com os resultados esperados.</li>
+  <li>Você pode salvar o arquivo de GCPs <strong>Arquivo ► Salvar pontos de GCP como…</strong>.</li>
+  <li>Finalmente, georreferencie seu mapa com <strong>Arquivo ► Iniciar georreferenciamento</strong> ou o botão Iniciar Georreferenciamento <img src="media/georef-start-btn.png" alt="Botão Iniciar Georreferenciamento" title="botão Iniciar Georreferenciamento" />.</li>
+</ol>
+
+<p><img src="media/georef-4.png" alt="GCPs adicionados" title="GCPs adicionados" /></p>
+
+<p>Figura 7.13: GCPs adicionados</p>
+
+<p><img src="media/georef-5.png" alt="Mapa georreferenciado carregado no QGIS" title="Mapa georreferenciado carregado no QGIS" /></p>
+
+<p>Figura 7.14: Mapa carregado no QGIS e georreferenciado</p>
+
+<p>Nota: Para verificar se seus dados estão georreferenciados corretamente, você pode abrir o mapa topográfico. Seu mapa e esta imagem devem corresponder muito precisamente. Defina a transparência do mapa para 75% e compare-a com a imagem aérea.</p>
+
+<h4 id="perguntas-do-questionário"><strong>Perguntas do questionário</strong></h4>
+
+<ol>
+  <li>O que é digitalização em GIS? (caixas de seleção)</li>
+  <li>Qual dos seguintes conjuntos de dados auxiliares suportará a digitalização? (caixas de seleção)</li>
+  <li>Quais fatores podem afetar a precisão dos dados durante a digitalização? (botão de opção)</li>
+  <li>O que pode ser feito para melhorar a precisão? (caixas de seleção)</li>
+  <li>Por que um modelo de dados é importante ao criar novos dados? (botão de opção)</li>
+</ol>
+
+<h4 id="respostas-do-questionário">Respostas do questionário</h4>
+
+<ol>
+  <li>
+    <p>a. o processo de conversão de dados geográficos de uma imagem digitalizada ou imagem digital em dados vetoriais traçando as suas características</p>
+
+    <p>b. descreve a conversão pura de analógico para digital de dados e documentos existentes</p>
+
+    <p>c. processo pelo qual as coordenadas de um mapa, imagem ou outras fontes de dados são convertidas em um formato digital em um <em>GIS</em></p>
+
+    <p>d. refere-se à criação de uma representação digital de objetos físicos ou atributos</p>
+  </li>
+  <li>
+    <p>a. Pontos de dados GPS</p>
+
+    <p>b. Mapas topográficos</p>
+
+    <p>c. Imagem de satélite</p>
+
+    <p>d. Gráficos e tabelas</p>
+  </li>
+  <li>
+    <p>a. Resolução dos dados (espacial, temporal, radiométrico)</p>
+
+    <p>b. Iluminação</p>
+
+    <p>c. Localização do recurso</p>
+
+    <p>d. Tipo de recurso</p>
+  </li>
+  <li>
+    <p>a. obter fontes de dados precisas</p>
+
+    <p>b. definir metas de qualidade de dados</p>
+
+    <p>c. revise os dados e reedite ou reverta as edições</p>
+  </li>
+  <li>
+    <p>a. permite capturar informações abrangentes sobre o recurso</p>
+
+    <p>b. automatiza o processo</p>
+
+    <p>c. captura erros de digitalização</p>
+  </li>
+</ol>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2021 Your company. All rights reserved. <br />
+ Site last generated: Mar 31, 2021 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>
