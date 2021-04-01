@@ -1,7 +1,8 @@
 # Module 10 - QGIS plugins
 
-**Author**: Codrina, Ben Hur
+**Author**: Codrina
 
+**Editor**: Ben Hur
 
 ## Pedagogical Introduction
 
