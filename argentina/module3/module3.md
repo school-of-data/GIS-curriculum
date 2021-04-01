@@ -242,7 +242,7 @@ Los datos HRSL encontrados en HDX vienen en formato GeoTIFF (raster) y CSV (vect
 
 1. Carga el archivo ráster **HRSL_SantaFe_poblacion** en QGIS.
 
-![The HRSL for Santa Fe, Argentina](media/hrsl-1.png "The HRSL for Pampanga, Philippines")
+![The HRSL for Santa Fe, Argentina](media/hrsl-1.png "The HRSL for Santa Fe, Argentina")
 
 Figura 10: El HRSL para Santa Fe, Argentina
 
@@ -267,7 +267,7 @@ El uso de una consulta Overpass le permite crear una selección de las caracter�
 
 1. Abre el complemento QuickOSM y coloca los parámetros que utilizamos para la consulta de comida rápida.
 
-![QuickOSM parameters for loading fast foods in Pampanga](media/quickosm-5.png "QuickOSM parameters for loading fast foods in Pampanga")
+![QuickOSM parameters for loading fast foods in Santa Fe](media/quickosm-6.png "QuickOSM parameters for loading fast foods in Santa Fe")
 
 Consulta rápida para cargar todos los servicios etiquetados como comida rápida
 

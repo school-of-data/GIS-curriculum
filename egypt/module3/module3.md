@@ -306,7 +306,7 @@ Figure 10: في الإسكندرية ، مصر HRSL الـ
 1. افتح البرنامج المساعد QuickOSM وأدخل المعلّمات التي استخدمناها للاستعلام عن جميع الأطعمة السريعة.
 
 
-![QuickOSM parameters for loading fast foods](media/quickosm-5.png "QuickOSM parameters for loading fast foods")
+![QuickOSM parameters for loading fast foods](media/quickosm-6.png "QuickOSM parameters for loading fast foods")
 
 استعلام سريع لتحميل جميع وسائل الراحة تم وضع علامة عليها كوجبات سريعة
 

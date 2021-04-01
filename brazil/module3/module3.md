@@ -255,7 +255,7 @@ O uso de uma consulta Overpass permite criar uma seleção de recursos mais comp
 
 1. Abra o plugin QuickOSM e insira os parâmetros que usamos para consultar todos os fast foods.
 
-![Parâmetros QuickOSM para carregar fast food no Rio de Janeiro](media/quickosm-5.png "Parâmetros QuickOSM para carregar fast food no Rio de Janeiro")
+![Parâmetros QuickOSM para carregar fast food no Rio de Janeiro](media/quickosm-6.png "Parâmetros QuickOSM para carregar fast food no Rio de Janeiro")
 
 Consulta rápida para carregar todas as comodidades marcadas como fast food
 

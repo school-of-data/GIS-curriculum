@@ -46,7 +46,7 @@ In addition you’ll have learned the following skills;
 
 Let’s start with an example: 
 
-To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Bangalore district in the Philippines. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
+To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Bangalore district in India. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
 
 ### Breakdown of the concepts
 
@@ -88,7 +88,7 @@ Figure 5.3: Map canvas exported as image
 
 #### **Second method: Export the map canvas to the print layout**
 
-1. In this tutorial, we’ll make a map showing the 1.) location of health centres and 2.) population density of Bangalore district in the Philippines. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data.
+1. In this tutorial, we’ll make a map showing the 1.) location of health centres and 2.) population density of Bangalore district in India. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data.
 
 ![Creating new Print Layout](media/new-print-layout.png "Creating new Print Layout")
 
@@ -204,7 +204,7 @@ Figure 5.11: Exported map as imgage
 
 #### **Content/Tutorial**
 
-If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different states and union territories of the Philippines as an example, here’s Administrative Boundaries for the 36 states and union territories;
+If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different states and union territories of India as an example, here’s Administrative Boundaries for the 36 states and union territories;
 
 ![Coverage layer](media/atlas-coverage.png "Coverage layer")
 

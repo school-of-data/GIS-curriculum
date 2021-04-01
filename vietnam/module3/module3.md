@@ -259,7 +259,7 @@ Sử dụng một truy vấn Overpass cho phép tạo truy vấn đối tượng
 
 1. Mở QuickOSM plugin và nhập các tham số mà chúng ta đã nhập bên trên để truy vấn tất cả các nhà hàng thức ăn nhanh.
 
-![Các tham số QuickOSM để tải các nhà hàng fast food ở HCMC](media/quickosm-5.png "Các tham số QuickOSM để tải các nhà hàng fast food ở HCMC")
+![Các tham số QuickOSM để tải các nhà hàng fast food ở HCMC](media/quickosm-6.png "Các tham số QuickOSM để tải các nhà hàng fast food ở HCMC")
 
 Quick query để tải tất cả các điểm tiện ích được gắn thẻ fast_food 
 

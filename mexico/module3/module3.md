@@ -266,7 +266,7 @@ La API Overpass ([https://wiki.openstreetmap.org/wiki/Overpass_API](https://wiki
 El uso de una consulta Overpass le permite crear una selección de las características más complejas en QuickOSM. Por ejemplo, volvamos a cargar todas las comidas rápidas dentro de la extensión de limite_estadual_JALISCO pero esta vez solo obtengamos las ramas de Okuma. Si observa la tabla de atributos de la capa de comida rápida, notará que tiene el campo nombre. Los campos en la tabla de atributos de datos cargados desde OSM corresponden a las claves de etiqueta, por lo que si queremos seleccionar todas las ramas de comida rápida de Okuma, necesitamos agregar un filtro que seleccione una característica si tiene un **clave:valor** de **nombre: Okuma**. Este filtro puede agregarse fácilmente con una API Overpass.
 1. Abre el complemento QuickOSM y coloca los parámetros que utilizamos para la consulta de comida rápida.
 
-![QuickOSM parameters for loading fast foods in Pampanga](media/quickosm-5.png "QuickOSM parameters for loading fast foods in Pampanga")
+![QuickOSM parameters for loading fast foods in Pampanga](media/quickosm-6.png "QuickOSM parameters for loading fast foods in Pampanga")
 
 Consulta rápida para cargar todos los servicios etiquetados como comida rápida
 
