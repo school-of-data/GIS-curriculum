@@ -801,7 +801,7 @@ Remember that this raster layer had only 2 values - 0 and 1, so choose as the pa
 
 Figure 9.33b - Raster to vector conversion parameters
 
-Your result should look like in figure 9.34. 
+Note that it's possible that you will have multiple features in the vectorized layer instead of just 2. In order to just have 2 features, you can run the **Dissolve** algorithm and choose **DN** as the Dissolve Field. This will result in having just 2 features in the layer. Also, don't forget to fix invalide geometries using the **Fix invalid geometries** algorithm if you encounter some geometry issues. Your result should look like in figure 9.34. 
 
 ![Result of converting a raster dataset to a vector dataset](media/fig934.png "Result of converting a raster dataset to a vector dataset")
 

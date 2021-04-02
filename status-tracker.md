@@ -10,9 +10,9 @@ _*_ For checking / pushing to repo
 
 **T: For translation** - translation (and localisation) still needed
 
-**COMPLETE (including those for checking): 132/176, 75%**
+**COMPLETE (including those for checking): 133/176, 75%**
 
-**LOCALISATION: 40/176, 23%**
+**LOCALISATION: 39/176, 23%**
 
 **TRANSLATION + LOCALISATION: 4/176, 2%**
 
@@ -23,7 +23,7 @@ _*_ For checking / pushing to repo
 | **Bangladesh**   |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     L    |     L    |     L    |     L    |     L     |
 | **Brazil**       |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |   **C**   |   **C**   |    **C**   |
 | **Egypt**        |   **C**   |   **C**   |   **C**   |   **C**   |   **C**   |   **C**   |   **C**   |   **C**   |   C*   |   C*   |    C*   |
-| **Ethiopia**     |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     L    |     **C**     |
+| **Ethiopia**     |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **Germany**      |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |
 | **Ghana**        |     C*    |     C*    |     C*    |     C*    |     C*    |     C*    |     C*    |     L    |     L    |     L    |     L     |
 | **India**        |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**    |     **C**     |

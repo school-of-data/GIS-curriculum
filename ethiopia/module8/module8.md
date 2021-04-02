@@ -37,7 +37,7 @@ and acquire the following skills:
    * buildings (polygon)
    * landuse (polygon)
    * admin_boundary (polygon)
-* The coordinate reference system used is the WGS84 / UTM Zone 37N, EPSG 32637. As it is a projected coordinate system, it allows geometric calculations. 
+* The coordinate reference system used is WGS84 / UTM Zone 37N, EPSG 32637. As it is a projected coordinate system, it allows geometric calculations. We can also use Adidan / UTM Zone 37N, EPSG 20137 if the other CRS does not work.
 
 
 ## Prerequisites
@@ -135,7 +135,7 @@ There are many geoprocessing operations that can be performed on vector data, mo
 
 #### **Step 1. Prepare your working environment.**
 
-Open QGIS, set up the coordinate reference system you will work in - EPSG 32637 -  and add the following data layers:
+Open QGIS, set up the coordinate reference system you will work in - EPSG 32637 or 20137 -  and add the following data layers:
 
 * Polygons - administrative boundaries; buildings; land use;
 * Lines - roads, rivers;
@@ -150,7 +150,7 @@ At this point, your QGIS map window should look like in figure 8.5, of course, m
 
 Figure 8.5 - Loaded vector data sets: points, line and polygons
 
-**Check!** All layers are in the same coordinate system (EPSG 32637) by looking in the right down side corner. If it is so, then you are looking at 7 vector data layers overlaid. 
+**Check!** All layers are in the same coordinate system (EPSG 32637 or 20137) by looking in the right down side corner. If it is so, then you are looking at 7 vector data layers overlaid. 
 
 #### **Step 2. Understand what you are looking at.** 
 
@@ -169,7 +169,7 @@ Before running any basic statistics, let us complete the attribute table with so
 
 Now, the attribute fields are filled, yet if you are not certain in which measurement unit QGIS has calculated the length of roads segments and areas of buildings, then checking the coordinate system information will help you. 
 
-Click on the down right corner of the QGIS map window, on EPSG 32637 and a window as the one in figure 8.6 will appear. 
+Click on the down right corner of the QGIS map window, on EPSG 32637 or 20137 and a window as the one in figure 8.6 will appear. 
 
 
 ![Specifications of the coordinate reference system used in the QGIS project](media/fig86.png "Specifications of the coordinate reference system used in the QGIS project")
