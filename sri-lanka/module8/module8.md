@@ -1,6 +1,8 @@
 # **Module 8 - Vector processing and analysis**
 
-**Author**: Codrina, Ben Hur
+**Author**: Codrina
+
+**Editor**: Ben Hur
 
 ## Pedagogical Introduction
 
@@ -561,7 +563,7 @@ Let us assume that you have to present a report that will allow comparisons done
 
 We’ve seen that there are tools that can assist us in calculating the total surface occupied by a certain type of feature, however the first step is to create our 10X10 units - cell grids. To do that, go to: **Vector ‣ Research Tools ‣ Create grid..** Set the parameters to: 
 - Grid type - Rectangle (polygon)
-- Grid extent - Colombo_admin_boundary layer
+- Grid extent - LKA_Colombo
 - Horizontal spacing - 10 km
 - Vertical spacing - 10 km 
 

@@ -1,6 +1,8 @@
 # Module 6 - Layer attributes
 
-**Author**: Ketty, Ben Hur
+**Author**: Ketty
+
+**Editor**: Ben Hur
 
 ## Pedagogical Introduction
 
