@@ -515,9 +515,8 @@ A0DC00
 
 ![Loaded raster datasets](media/fig96.png "Loaded raster datasets")
 
-مجموعات البيانات النقطية المحمّلة - Figure 9.6 
-
-
+Figure 9.6 - مجموعات البيانات النقطية المحمّلة
+ 
 <h4><strong>
 الخطوة 2. فهم ما تنظر إليه.
 </strong></h4>
