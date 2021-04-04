@@ -642,7 +642,7 @@ Figure 9.15.d - إعادة إسقاط النقطية المدمجة
 
 ![Batch process to extract information in a separate HTML file for multiple raster layers](media/fig916.png "Batch process to extract information in a separate HTML file for multiple raster layers")
 
-Figure 9.16  - في ملف HTML منفصل لعدّة طبقات نقطية عمليّة الدفعة لاستخراج المعلومات
+Figure 9.16  -عمليّة الدّفعة لاستخراج المعلومات في ملف HTML منفصل لعدّة طبقات نقطيّة 
  
 يجب أن يظهر ملف HTML للمعلومات النقطية بالشكل التالي. يمكن فتح ملف HTML باستخدام أي محرر نصوص أو متصفح ويب من اختيارك.
 
