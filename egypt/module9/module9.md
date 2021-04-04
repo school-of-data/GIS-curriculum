@@ -563,8 +563,7 @@ Figure 9.9.b - HRSL إعادة إسقاط طبقة
 ![Resample method - nearest neighbour](media/fig910.png "Resample method - nearest neighbour")
 
 Figure 9.10 - طريقة إعادة إنشاء العينة - (الجار الأقرب)
-(ILWIS-الصورة الفوتوغرافية: من وثائق  
-
+الصورة الفوتوغرافية: من وثائق ILWIS
 <a href="http://spatial-analyst.net/ILWIS/htm/ilwisapp/resample_functionality.htm">(http://spatial-analyst.net/ILWIS/htm/ilwisapp/resample_functionality.htm</a>)
 
 يتم تمثيل وحدات البكسل المدخلة بخطوط سوداء متقطعة وإحداثياتها بنقاط سوداء؛ ويتم تمثيل وحدات البكسل الناتجة بخطوط صلبة حمراء وإحداثياتها بعلامات حمراء زائد. تشير الأسهم الرمادية إلى كيفية تحديد قيم المخرجات. يمكن رؤية ذلك في Figure 9.10، يمكن استخدام بعض قيم خريطة الإدخال مرتين في خريطة الإخراج، بينما قد لا يتم استخدام قيم الإدخال الأخرى على الإطلاق. لهذا السبب، على الرغم من أنها واحدة من أسرع الطرق لإعادة إنشاء العيّنة، إلا أنها ليست مناسبة في حالتنا، لأننا نعمل مع البيانات الرقمية - بيانات السكان. هذه الطريقة في إعادة إنشاء العيّنة مناسبة للبيانات الفئوية - مثل قيم الغطاء الأرضي.
@@ -573,8 +572,8 @@ Figure 9.10 - طريقة إعادة إنشاء العينة - (الجار الأ
 
 ![Resample method - bilinear](media/fig911.png "Resample method - bilinear")
 
-Figure 9.11 - "bilinear" طريقة إعادة إنشاء العينة 
-ILWIS الصورة الفوتوغرافية: من وثائق  
+Figure 9.11 - طريقة إعادة إنشاء العيّنة bilinear
+الصورة الفوتوغرافية: من وثائق ILWIS
 <a href="http://spatial-analyst.net/ILWIS/htm/ilwisapp/resample_functionality.htm">(http://spatial-analyst.net/ILWIS/htm/ilwisapp/resample_functionality.htm</a>)
 
 تحدد طريقة ثنائية الخطوط القيمة الجديدة للخلية بناءً على متوسط المسافة الموزونة لأقرب أربعة مراكز لخلايا الإدخال. هذه الطريقة مفيدة في حالة البيانات المستمرة وستؤدي إلى بعض التجانس بين البيانات.
