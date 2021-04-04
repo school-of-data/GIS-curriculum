@@ -611,13 +611,13 @@ Figure 8.27.d - نتائج تطبيق خوارزمية مضلعات  Thiessen Vo
 
 ![Creating a 10X10km vector grid](media/fig829_a.png "Creating a 10X10km vector grid")
 
-Figure 8.28.a - إنشاء شبكة متجه لمدينة القاهرة 10كم x 10كم
+Figure 8.28.a - إنشاء شبكة متجه لمدينة القاهرة 10kmX10km
 
 يجب أن تحصل على نتيجة كما في Figure 8.28.b.
 
 ![10X10km vector grid](media/fig829_b.png "10X10km vector grid")
 
-Figure 8.28.b - شبكة متجه لمدينة القاهرة 10كم x 10كم
+Figure 8.28.b - شبكة متجه لمدينة القاهرة 10kmX10km 
 
 للمضي قدمًا في الإجابة عن الأسئلة في تمريننا، نحتاج إلى القيام بما يلي:
 
@@ -737,7 +737,7 @@ Figure 8.34.b - جدول السمات لملف green_spaces_gridded CSV
 
 ![Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit](media/fig835_c.png "Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit")
 
-Figure 8.34.c - 10 كم x 10كم عن طريق الحقل المشترك  grid_id/id إعداد المعايير لـ "ضم" مجموع المساحات الخضراء والمبنية لكل خلية شبكية
+Figure 8.34.c -إعداد العايير لـ "ضمّ" مجموع المساحات الخضراء والمبنية لكل خلية شبكية 10kmX10km عن طريق الحقل المشترك grid_id/id
 
 كرر هذه الخطوة للمساحات المبنية.
 
