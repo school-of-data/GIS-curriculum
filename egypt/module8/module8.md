@@ -3,7 +3,7 @@
 الوحدة 8 - معالجة وتحليل المتجهات
 </h1>
 
-المؤلفة: Codrina, Ben Hur, Ali, Samah
+المؤلفين: Codrina, Ben Hur, Ali Rebaie, Samah Hijazi
 
 
 <h2>
