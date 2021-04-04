@@ -1013,13 +1013,13 @@ URL: https://tiles.maps.eox.at/wms?service=wms&request=getcapabilities
 
 ![alt_text](media/fig939.png "image_tooltip")
 
-Figure 9.39 -QGIS إلى WMS  إضافة طبقة
+Figure 9.39 - إضافة طبقة WMS  إلى QGIS
 
 بعد الاتصال بطبقة WMS المضافة حديثًا، سنقوم بتحميل الطبقة المسماة Sentinel-2 الطبقة غير السحابية لعام 2019 بواسطة EOX - 4326 في QGIS. بعد تكبير منطقة الاهتمام، يجب أن تبدو نافذة الخريطة كما في Figure 9.40.
 
 ![alt_text](media/fig940.png "image_tooltip")
 
-Figure 9.40 - القاهرة EOX - 4326 - لعام 2019 Sentinel-2 طبقة غير سحابية
+Figure 9.40 - طبقة غير سحابية Sentinel-2 لعام 2019 - 4326 -EOX القاهرة
 
 على الرغم من الحصول على منتجات LandCover باستخدام بيانات الأقمار الصناعية الأخرى (Proba-V)، فلنقارن الطبقتين حتى نتمكن من فهم معنى الدقة المختلفة. تذكر أن منتج LandCover يبلغ ارتفاعه 100 متر وصور Sentinel-2 على ارتفاع 10 أمتار. لتحقيق ذلك، سنفتح Clipped_Reprojected_LandCover 2019 وطبقة WMS. لإجراء مقارنات بين طبقتين، سنستخدم برنامجاً مساعداً جديدًا يجب عليك تثبيته. لذلك، انتقل إلى Plugins -> manage and install plugins واكتب في مربع البحث <strong><code>MapSwipe Tool</code></strong>. بمجرد تثبيته، يجب أن يظهر رسم تخطيطي جديد خاص به في شريط الأدوات (![MapSwipe Tool button](media/mapswipe-btn.png "MapSwipe Tool button")).
 
