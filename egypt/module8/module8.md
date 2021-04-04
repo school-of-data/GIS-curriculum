@@ -74,7 +74,7 @@
 
 ![Getting from point A to B using Openstreetmap](media/fig81.png "Getting from point A to B using Openstreetmap")
 
-Figure 8.1: Openstreetmap  الإنتقال من النقطة أ الى النقطة ب باستخدام 
+Figure 8.1 - الإنتقال من النقطة أ الى النقطة ب باستخدام Openstreetmap 
 
 
 <h2>
@@ -87,7 +87,7 @@ Figure 8.1: Openstreetmap  الإنتقال من النقطة أ الى النق
 
 ![Vector lines representing streets and the associated attribute table](media/fig82.png "Vector lines representing streets and the associated attribute table")
 
-Figure 8.2: خطوط المتجه التي تمثّل الشوارع وجدول البيانات المرتبط بها
+Figure 8.2 - خطوط المتجه التي تمثّل الشوارع وجدول البيانات المرتبط بها
 
 تمثل الشوارع نموذجًا للشبكة وهي في الأساس مجموعة من الميزات النقطية والخطية المترابطة طوبولوجيًا. تعتمد نتائج الخوارزمية التي تحسب المسار من النقطة "أ" إلى النقطة "ب"، في حالتنا من المطار إلى الفندق، اعتمادًا كبيرًا على جودة المتجهات، سواء في الهندسة، حيث يتم احترام قواعد الهيكل، أو في السمات، إذا كانت الطريق أحادية الاتجاه ويجب الإشارة إليها حتى لا يقودك التوجيه إلى الطريق الخطأ.
 
@@ -102,7 +102,7 @@ Figure 8.2: خطوط المتجه التي تمثّل الشوارع وجدول 
 
 ![vector data with attribute table](media/fig83.png "vector data with attribute table")
 
-Figure 8.3:  بيانات المتجه مع جدول السمات
+Figure 8.3 - بيانات المتجه مع جدول السمات
 
 
 <h3>
@@ -138,7 +138,7 @@ Figure 8.3:  بيانات المتجه مع جدول السمات
 
 ![elements of a geoprocessing operation](media/fig84.png "elements of a geoprocessing operation")
 
-Figure 8.4: عناصر عملية المعالجة الجيولوجية
+Figure 8.4 - عناصر عملية المعالجة الجيولوجية
 
 تلميح: يمكنك الوصول إلى خوارزميات المعالجة (مثل تلك المستخدمة في هذه الوحدة) في مربع أدوات المعالجة أو شريط محدد المواقع (Processing Toolbox or Locator Bar).
 
@@ -198,7 +198,7 @@ Figure 8.5 - مجموعات بيانات المتجه المحملة: النقا
 
 ![Specifications of the coordinate reference system used in the QGIS project](media/fig86.png "Specifications of the coordinate reference system used in the QGIS project")
 
-Figure 8.6: QGIS مواصفات النظام المرجعي للإحداثيات المستخدم في مشروع 
+Figure 8.6 - مواصفات النظام المرجعي للإحداثيات المستخدم في مشروع QGIS
 
 وهكذا نجد أن وحدة القياس هي المتر، وبالتالي تقاس الأطوال بالمتر والمساحات بالمتر المربع.
 
@@ -208,7 +208,7 @@ Figure 8.6: QGIS مواصفات النظام المرجعي للإحداثيات
 
 ![Preparing to run basics statistics for roads layer](media/fig88.png "Preparing to run basics statistics for roads layer")
 
-Figure 8.7: إحصائيات أساسيات للحقول
+Figure 8.7 - إحصائيات أساسيات للحقول
 
 تعتمد الإحصائيات التي تم إرجاعها على نوع الحقل الذي نختاره ويتم إنشاؤها كملف HTML.
 
@@ -216,7 +216,7 @@ Figure 8.7: إحصائيات أساسيات للحقول
 
 ![Preparing to run basics statistics for roads layer](media/fig88.png "Preparing to run basics statistics for roads layer")
 
-Figure 8.8: الإعداد لتشغيل الإحصائيات الأساسية لطبقة الطرق
+Figure 8.8 - الإعداد لتشغيل الإحصائيات الأساسية لطبقة الطرق
 
 ملف الإخراج عبارة عن html يمكن فتحه باستخدام أي متصفح (Firefox و Chrome و Safari وما إلى ذلك) يجب أن يبدو كما يلي:
 
@@ -287,7 +287,7 @@ Mean length: 1.8350318471337579
 
 ![Topology checker plugin](media/fig89_a.png "Topology checker plugin")
 
-Figure 8.9.a - Topology checker البرنامج المساعد 
+Figure 8.9.a - البرنامج المساعد  Topology checker
 
 لإظهار مدقق الطبولوجيا، قم بتمكينه كلوحة ضمن عرض -> اللوحات -> فاحص الطبولوجيا View ‣ Panels ‣ Topology Checker ) Figure 8.9.b). إذا لم يظهر في قائمة اللوحات، فيمكنك تمكينه بالنقر فوق الزر فاحص الطبولوجيا  ![Topology checker button](media/fig89_btn.png "Topology checker button")  على شريط أدوات البرامج المساعدة Plugins toolbar. بمجرد تفعيلها، تبدو النافذة كما في الشكل Figure 8.9.c.
 
@@ -397,8 +397,7 @@ Figure 8.18.a - قائمة القيم الفريدة في وظيفة طبقة ا
 
 ![List unique values in a vector layer functionality (Batch Processing)](media/fig819_b.png "List unique values in a vector layer functionality (Batch Processing)")
 
-Figure 8.18.b - (Batch Processing) قائمة القيم الفريدة في وظيفة طبقة المتجه
-
+Figure 8.18.b - قائمة القيم الفريدة في وظيفة طبقة المتجه (Batch Processing)
 
 <table>
   <tr>
@@ -487,19 +486,19 @@ Table 8.1 - جدول يظهر عدد القيم الفريدة للسمات ال
 
 ![GroupStats plugin](media/fig820_a.png "GroupStats plugin")
 
-GroupStats ملحق  -  Figure 8.19.a
+Figure 8.19.a - ملحق GroupStats
 
 يجب فتح نافذة جديدة مثل تلك الموجودة في  Figure 8.19.b.
 
 ![GroupStats window](media/fig820_b.png "GroupStats window")
 
-Figure 8.19.b - GroupStats نافذة
+Figure 8.19.b - نافذة GroupStats
 
 وفقًا للتحليل الذي تم إجراؤه مسبقًا، رأينا أنه بالنسبة لمباني الطبقات لدينا 32 نوعًا مختلفًا من المباني، ولكن كم عدد كل منها وما هو إجمالي المساحة البناء التي اتخذتها كل فئة؟ ما هي مساحة المدارس والأسواق والمنازل؟ يمكن أن تساعدنا GroupStats في الإجابة على هذه الأسئلة. على الجانب الأيمن من النافذة، توجد لوحة التحكم، حيث نختار ما نريد حسابه، وكذلك كيفية ترتيب البيانات. باستخدام drag&drop، اتبع الترتيب الموضح في Figure 8.20، ثم اضغط على "حساب".
 
 ![Running GroupStats on the building layer](media/fig821.png "Running GroupStats on the building layer")
 
-Figure 8.20 -على طبقة المبنى GroupStats تشغيل 
+Figure 8.20 - تشغيل GroupStats  على طبقة المباني
 
 بالنظر إلى النتيجة، يمكننا استخراج رؤى مهمة بخصوص بياناتنا. على سبيل المثال، للأغراض السكنية في القاهرة، لدينا 1543 مبنى بمساحة إجمالية تبلغ 652608 مترًا مربعًا، تقريبًا. 65 هكتارا. نكتشف أيضًا أن أكبر مساحة لهذه المباني السكنية تبلغ 25103.1 مترًا مربعًا وأصغرها تبلغ 120.53 مترًا مربعًا. ويمكن للمرء أن يواصل التحليل للحصول على مزيد من المعلومات القيمة.
 
@@ -507,7 +506,7 @@ Figure 8.20 -على طبقة المبنى GroupStats تشغيل
 
 ![Running GroupStats on the roads layer](media/fig822.png "Running GroupStats on the roads layer")
 
-Figure 8.21 - على طبقة الطرق GroupStats تشغيل 
+Figure 8.21 - تشغيل GroupStats على طبقة الطرق
 
 
 <h4><strong>
@@ -540,25 +539,25 @@ Figure 8.21 - على طبقة الطرق GroupStats تشغيل
 
 ![Setting the parameters for a 500 m buffer around the places of worship](media/fig823.png "Setting the parameters for a 500 m buffer around the places of worship")
 
-Figure 8.22 -حول أماكن العبادة buffer تحديد معايير المساحة  إلى 500 م 
+Figure 8.22 - تحديد معايير المساحة إلى 500م buffer حول أماكن العبادة
 
 يوضح Figure 8.23 تفاصيل نتيجة المعالجة الجيولوجية:
 
 ![Running buffer on a point vector layer](media/fig824.png "Running buffer on a point vector layer")
 
-Figure 8.23 - على طبقة متجه نقطية Buffer تشغيل 
+Figure 8.23 - تشغيل buffer  على طبقة متجه نقطية
 
 للإجابة الكاملة على السؤال الأولي، فإن الخطوة التالية هي حساب المناطق لجميع المخازن المؤقتة وتلخيصها (انظرالى المرحلة 1، الخطوة 4) - Figure 8.24.
 
 ![Calculate area for the newly obtained layer, then calculate using GroupStats the total sum](media/fig825.png "Running buffer on Calculate area for the newly obtained layer, then calculate using GroupStats the total sum point vector layer")
 
-Figure 8.24 - GroupStats احسب مساحة الطبقة التي تم الحصول عليها حديثًا، ثم احسب المجموع الإجمالي باستخدام
+Figure 8.24 - احسب مساحة الطبقة التي م الحصول عليها حديثاً، ثم احسب المجموع الإجمالي باستخدام GroupStats
 
 <strong>قصّ أو clip.</strong> تخيل أنك تريد أن تعرف مكان كل المناطق الصناعية المحددة في منطقتك وأيضًا عدد المباني الموجودة داخل هذا المحيط. عند الفحص البصري لبيانات المتجه، تلاحظ أن لديك عددًا من المناطق الصناعية التي تحتوي على العديد من المباني. تريد فصل تلك المباني واستخدامها بشكل أكبر. تتمثل الخطوة الأولى في تحديد جميع الميزات في طبقة استخدام الأرض (landuse) التي لها سمة صناعية (انظر الوحدة 6 لمعرفة كيفية القيام بذلك). بعد ذلك، تذهب إلى  متّجه -> أدوات معالجة جغرافية -> قصّ (Vector ‣ Geoprocessing tools ‣ Clip) اختر الطبقة المراد قصها buildings. يجب أن تظهر نتائجك في Figure 8.26.b.
 
 ![Figure 8.26a - Select landuse fclass = industrial](media/fig826_a.png "Figure 8.26a - Select landuse fclass = industrial")
 
-Figure 8.25.a - fclass = industrial حدد استخدام الأرض حيث
+Figure 8.25.a - حدد استخدام الأرض حيث fclass= industrial 
 
 ![Reduced selection of a few buildings and industrial landuse, so the computation can finish faster](media/fig826_b.png "Reduced selection of a few buildings and industrial landuse, so the computation can finish faster")
 
@@ -568,7 +567,7 @@ Figure 8.25.b - تم اختيار عدد قليل من المباني واستخ
 
 ![Running the Clip algorithm](media/fig827_a.png "Running the Clip algorithm")
 
-Figure 8.26.a -Clip تشغيل خوارزمية 
+Figure 8.26.a - تشغيل خوارزمية  Clip
 
 ![Results of the clip functionality](media/fig827_b.png "Results of the clip functionality")
 
@@ -580,19 +579,19 @@ Figure 8.26.b - نتائج وظيفة القصّ
 
 ![Filtering the poi layer to get all schools](media/fig828_a.png "Filtering the poi layer to get all schools")
 
-تصفية طبقة pois للحصول على جميع المدارس - Figure 8.27.a 
+Figure 8.27.a - تصفية طبقة pois للحصول على جميع المدارس 
 
 ![All schools in the poi layer](media/fig828_b.png "All schools in the poi layer")
 
-Figure 8.27.b -pois جميع المدارس في طبقة 
+Figure 8.27.b - جميع المدارس في بقة  pois
 
 ![Running the Voronoi polygon algorithm](media/fig828_c.png "Running the Voronoi polygon algorithm")
 
-Figure 8.27.c -Voronoi polygons تشغيل خوارزمية
+Figure 8.27.c - تشغيل خوارزمية  voronoi polygons
 
 ![Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer](media/fig828_d.png "Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer")
 
-Figure 8.27.d - على طبقة متجهية نقطية Thiessen Voronoi  نتائج تطبيق خوارزمية مضلعات 
+Figure 8.27.d - نتائج تطبيق خوارزمية مضلعات  Thiessen Voronoi على طبقة متجهية نقطية 
 
 في بعض الأحيان، تفرض الضرورات شرط الحصول على معلومات في مناطق أصغر ومحددة بوضوح ومتساوية وليس لمنطقة كبيرة بأكملها، مثل بلد أو مدينة كبيرة. لذلك، يجب تحليل البيانات وتصورها بطريقة مقسمة ومحددة جيدًا، مما يسمح بإجراء مقارنة قد تكون صعبة بدون مرجع أساسي مشترك.
 
@@ -612,13 +611,13 @@ Figure 8.27.d - على طبقة متجهية نقطية Thiessen Voronoi  نتا
 
 ![Creating a 10X10km vector grid](media/fig829_a.png "Creating a 10X10km vector grid")
 
-Figure 8.28.a -10كم  x إنشاء شبكة متجه لمدينة القاهرة 10كم 
+Figure 8.28.a - إنشاء شبكة متجه لمدينة القاهرة 10كم x 10كم
 
 يجب أن تحصل على نتيجة كما في Figure 8.28.b.
 
 ![10X10km vector grid](media/fig829_b.png "10X10km vector grid")
 
-Figure 8.28.b - -10كم  x شبكة متجه لمدينة القاهرة 10كم
+Figure 8.28.b - شبكة متجه لمدينة القاهرة 10كم x 10كم
 
 للمضي قدمًا في الإجابة عن الأسئلة في تمريننا، نحتاج إلى القيام بما يلي:
 
@@ -647,13 +646,13 @@ Figure 8.29.b - التوزيع المكاني للمساحات الخضراء و
 
 ![Parameters for the intersect algorithm](media/fig831.png "Parameters for the intersect algorithm")
 
-Figure 8.8.30 -(intersect) معايير خوارزمية التقاطع
+Figure 8.30 - معايير خوارزمية التقاطع (intersect)
 
 يجب أن تبدو النتيجة كما في الشكل Figure 8.8.31. 
 
 ![Result of running the intersection algorithm to clip the landuse vector polygons to the grid layer](media/fig832.png "Result of running the intersection algorithm to clip the landuse vector polygons to the grid layer")
 
-نتيجة تشغيل خوارزمية التقاطع لقص مضلعات استخدام الأرض المتجهية على طبقة الشبكة  - Figure 8.31
+Figure 8.31 - نتيجة تشغيل خوارزمية التقاطع لقص مضلعات استخدام الأرض المتجهية على طبقة الشبكة 
 
 الآن لكل وحدة 10x10 كم ، لدينا ميزات استخدام الأرض التي يمكننا العمل بها. يخزّن جدول البيانات أيضًا هذه المعلومات، حيث أن كل خلية شبكة - وحدة - لها معرّف فريد، انظر إلى Figure 8.32.
 
@@ -714,7 +713,7 @@ Figure 8.33.d - حساب مساحة كل ميزة
 
 ![GroupStat parameters setup to sum up the green areas per each 10X10km grid cell](media/fig834_e.png "GroupStat parameters setup to sum up the green areas per each 10X10km grid cell")
 
-Figure 8.33.e - لجمع المساحات الخضراء في كل خلية  GroupStat إعداد معايير 
+Figure 8.33.e - إعداد معايير GroupStat لجمع المساحات الخضراء في كل خليّة
 
 الآن، احفظ النتائج كملف csv. باسم <code>green_spaces_gridded</code>. انتقل إلى البيانات ‣ حفظ الكل في ملف  CSV.
 
@@ -726,11 +725,11 @@ Figure 8.33.e - لجمع المساحات الخضراء في كل خلية  Gro
 
 ![Loading green_spaces_gridded CSV](media/fig835_a.png "Loading green_spaces_gridded CSV")
 
-Figure 8.34.a - green_spaces_gridded CSVتحميل 
+Figure 8.34.a - تحميل green_spaces_gridded CSV
 
 ![The green_spaces_gridded CSV attribute table](media/fig835_b.png "The green_spaces_gridded CSV attribute table")
 
-Figure 8.34.b - green_spaces_gridded CSV جدول السمات لملف
+Figure 8.34.b - جدول السمات لملف green_spaces_gridded CSV
 
 للمضي قدمًا، نحتاج إلى ضم "join" المساحات المحسوبة - الخضراء والمبنية - إلى كل شبكة خلايا 10x10 كم. لذلك، حدد طبقة متجه الشبكة 10 كيلومترات في جدول المحتويات، وافتح نافذة الخصائص وانتقل إلى الضمّ. تسمح هذه الوظيفة "بالانضمام" من خلال حقل سمة مشترك. في حالتنا، باستخدام قيمة Grid_id المشتركة لنقوم بضمّ مجموع المساحات المبنية والمساحات الخضراء من ملفي csv اللذين تم الحصول عليهما في الخطوة السابقة.
 
@@ -738,7 +737,7 @@ Figure 8.34.b - green_spaces_gridded CSV جدول السمات لملف
 
 ![Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit](media/fig835_c.png "Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit")
 
-Figure 8.34.c - إعداد المعايير لـ "ضم" مجموع المساحات الخضراء والمبنية لكل خلية شبكية - 10x10km وحدة عن طريق الحقل المشترك grid_id / id 
+Figure 8.34.c - 10 كم x 10كم عن طريق الحقل المشترك  grid_id/id إعداد المعايير لـ "ضم" مجموع المساحات الخضراء والمبنية لكل خلية شبكية
 
 كرر هذه الخطوة للمساحات المبنية.
 
