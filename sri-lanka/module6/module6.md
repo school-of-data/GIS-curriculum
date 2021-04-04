@@ -1,6 +1,8 @@
 # Module 6 - Layer attributes
 
-**Author**: Ketty, Ben Hur
+**Author**: Ketty
+
+**Editor**: Ben Hur
 
 ## Pedagogical Introduction
 
@@ -28,8 +30,8 @@ You’ll use the field calculator and qgis expression engine to run mathematical
 *   QGIS 3.16 and above
 *   Colombo administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
 *   Colombo clinics (inside [module6.gpkg](data/module6.gpkg))
-*   LKA provinces (inside [module6.gpkg](data/module6.gpkg))
-*   [Colombo High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   LKA districts (inside [module6.gpkg](data/module6.gpkg))
+*   [Colombo High Resolution Settlement Layer](data/HRSL_Colombo_Population.tif)
 
 
 ## Prerequisites
@@ -48,7 +50,7 @@ You’ll use the field calculator and qgis expression engine to run mathematical
 
 Let’s start with an example: 
 
-In some cases, for instance for infrastructure planning purposes, you may want to know the area of the polygons in a layer. If you have one polygon, this would not be a problem. But what if you have many polygons/areas in the layer? To calculate each area one by one is almost impossible. The Philippines administrative boundary vector layer has many polygons which means it would be a good dataset for this tutorial. We are going to calculate the area for each polygon using an automated way. In total, the area of 81 provinces will be calculated. 
+In some cases, for instance for infrastructure planning purposes, you may want to know the area of the polygons in a layer. If you have one polygon, this would not be a problem. But what if you have many polygons/areas in the layer? To calculate each area one by one is almost impossible. The Sri Lanka administrative boundary vector layer has many polygons which means it would be a good dataset for this tutorial. We are going to calculate the area for each polygon using an automated way. In total, the area of 25 districts will be calculated. 
 
 
 ## Breakdown of the concepts
@@ -56,7 +58,6 @@ In some cases, for instance for infrastructure planning purposes, you may want t
 Much of the work you do when making a map involves working with layer attributes. Whether you’re drawing the layer, configuring a popup, performing analysis or visualising you need some level of knowledge of the layer’s fields and the values they contain. If it’s your own layer, you know and understand its attributes. But if it isn’t, how do you gain that knowledge? Likely, you inspect the field names and examine field values for some clues. And if you’re lucky, you’ll find some documentation that describes the layer’s attributes.
 
 The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.Specifically, there are two new field properties that describe the values contained in a field;
-
 
 *   **Field description** –  a few words, a sentence, or a paragraph of text that describes the values in the field. 
 *   **Field value type** – a keyword that categorizes the type of values contained in the field. The keyword helps people understand how to use the values and allows QGIS and other client applications to make smarter suggestions for working with them, for example, the values types in the field may be integer, string, boolean, double or floating point
@@ -110,12 +111,11 @@ In addition, other concepts like the field calculator functionality in the attri
 The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.
 
 
-1. Load the LKA districts vector layer (found inside [module6.gpkg](data/module6.gpkg)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 81 features corresponding to 25 districts.
+1. Load the LKA districts vector layer (found inside [module6.gpkg](data/module6.gpkg)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 25 features corresponding to 25 districts.
 
 ![Several polygons](media/many-polygons.png "Several polygons")
 
 Figure 6.1: Several polygons
-
 
 2. The next step is to explore the attribute table interface. Open the attribute table by **Right-clicking on the layer on the Layers Panel ‣ Open Attribute Table**. You can also click the **Open Attribute Table button** ![Open attribute table button](media/open-attribute-btn.png "Open attribute table button") from the Attributes Toolbar. This is what the attribute table looks like. The tool bar has a range of buttons, hover over each button to see the embedded functionality.
 
@@ -130,7 +130,7 @@ If you don't want the attribute table to be a floating window but rather dock it
 Figure 6.3: Docked attribute table
 
 
-3. For area calculations, the Coordinate Reference System should be a projected one. This allows you to calculate distances correctly. Remember, our interest is to automatically calculate the area for each of the 81 provinces. Check the Coordinate Reference System of the vector layer. If it’s a geographic coordinate reference system, then reproject the layer to a projected coordinate system. Check for different projections on the [EPSG](https://epsg.io/?q=Philippines%20kind%3APROJCRS) website. This is Sri Lanka, we’ll use [SLD99 / Sri Lanka Grid 1999](https://epsg.io/5235), EPSG:5235. From previous modules where map projections are extensively discussed, you may already know that map projections are applied relative to a given location on earth. 
+3. For area calculations, the Coordinate Reference System should be a projected one. This allows you to calculate distances correctly. Remember, our interest is to automatically calculate the area for each of the 25 districts. Check the Coordinate Reference System of the vector layer. If it’s a geographic coordinate reference system, then reproject the layer to a projected coordinate system. Check for different projections on the [EPSG](https://epsg.io/?q=Sri Lanka%20kind%3APROJCRS) website. This is Sri Lanka, we’ll use [SLD99 / Sri Lanka Grid 1999](https://epsg.io/5235), EPSG:5235. From previous modules where map projections are extensively discussed, you may already know that map projections are applied relative to a given location on earth. 
 
 4. Check the project Settings; Go to: **Project ‣ Properties Properties ‣ General**.
 
@@ -144,7 +144,7 @@ Figure 6.4: General settings
 $area / 1000000
 ```
 
- You can find this expression under **Geometry**. Click OK and it will automatically calculate the area for each polygon. Take note that the area computation is dependent on the coordinate reference system used so you may have different results depending on what CRS you used. You can also search and find information about expressions on the right side of the Field Calculator or Expression Builder.
+You can find this expression under **Geometry**. Click OK and it will automatically calculate the area for each polygon. Take note that the area computation is dependent on the coordinate reference system used so you may have different results depending on what CRS you used. You can also search and find information about expressions on the right side of the Field Calculator or Expression Builder.
 
 ![Field calculator dialogue](media/fieldcalc.png "Field calculator dialogue")
 
@@ -179,12 +179,12 @@ Figure 6.6: New attribute table with new field and attributes
 
 At this point, you might notice that the attribute table stores both spatial and non-spatial data. In this tutorial you’ll discover ways of working with attribute table data. For example, Using expressions, select Clinics in Colombo with an emergency facility, all using data from the attribute table. 
 
-1. Add the following datasets of the Philippines to the QGIS map canvas; 
+1. Add the following datasets of the Sri Lanka to the QGIS map canvas; 
 
 *   Colombo administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
 *   Colombo clinics (inside [module6.gpkg](data/module6.gpkg))
-*   LKA provinces (inside [module6.gpkg](data/module6.gpkg))
-*   [Colombo High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   LKA districts (inside [module6.gpkg](data/module6.gpkg))
+*   [Colombo High Resolution Settlement Layer](data/HRSL_Colombo_Population.tif)
 
 ![Add different layers](media/add-layers.png "Add different layers")
 
@@ -212,7 +212,6 @@ Figure 6.9: Selected clinic/feature is highlighted (yellow)
 ![alt_text](media/selected-attr.png "image_tooltip")
 
 Figure 6.10: Selected clinic/feature is highlighted (blue)
-
 
 It’s also possible to make selections by clicking a feature  within the map canvas. 
 

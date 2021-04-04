@@ -19,9 +19,8 @@ Este módulo está diseñado para enseñarle cómo cambiar la apariencia visual 
 *   Computadora de trabajo
 *   conexión a Internet
 *   QGIS 3.16 o posterior
-*   Capa de la Provincia de Sanata Fe, Argentina (dentro del modulo4_santafe.gpkg )
-*   Hospitales de Santa Fe (dentro del modulo4_santafe.gpkg )
-*   Capa de Alta Resolución de Asentamientos de Santa Fe
+*   Capa de los límites administrativos de Jalisco (dentro del modulo4.gpkg )
+*   Clinicas de Jalisco (dentro del modulo4.gpkg)
 
 ## Prerrequisitos
 
@@ -126,7 +125,7 @@ La simbología de datos vectoriales puede variar según la transparencia, el col
 
 #### **Ejemplo 1: renderizado vectorial**
 
-1. Para demostrar este ejemplo, usaremos dos conjuntos de datos de ejemplo; 1. Hospitales y 2. Límite administrativo de la provincia de Santa Fe
+1. Para demostrar este ejemplo, usaremos dos conjuntos de datos de ejemplo;  1. Clínicas y 2. Límite administrativo del Estado de Jalisco.
 2. Agregue las dos capas vectoriales en qgis; Haga clic en el botón Agregar capa vectorial ![alt_text](media/add-vector.png "image_tooltip") o use el panel del navegador.
 3. Así es como se renderizan por defecto. Notarás que tenemos un polígono y una capa de puntos. El siguiente paso es cambiar la simbología de cada uno de ellos. Los colores de relleno pueden no ser los mismos, pero eso no es un problema porque QGIS selecciona colores al azar para diferentes instancias de la aplicación.
 
@@ -135,7 +134,7 @@ La simbología de datos vectoriales puede variar según la transparencia, el col
 
 Figura 4.3: Render predeterminado
 
-4. Haga doble clic en la capa vectorial poligonal, que también es la capa límite administrativa de la provincia de Santa Fe, Argentina
+4. Haga doble clic en la capa vectorial poligonal, que también es la capa límite administrativa de la provincia de Jalisco, México
 5. Seleccione la pestaña Simbología en el menú que aparece
 6. Cambie el color de relleno a relleno transparente. Sugerencia: haga clic en la flecha desplegable debajo de Color de relleno
 7. El resultado debería ser el siguiente. Puede notar que la opción sin relleno no tiene color
@@ -173,11 +172,11 @@ Figura 4.6: Renderizado vectorial final
 
 Figura 4.7: Menú Simbología
 
-4. Especifique la interpolación, la rampa de color y el modo. Haga clic en Classify. El resultado es un mapa de coropletas que muestra la densidad de población en la provincia de Santa Fe, Argentina.
+4. Especifique la interpolación, la rampa de color y el modo. Haga clic en Classify. El resultado es un mapa de coropletas que muestra la densidad de población en la provincia de Jalisco, México.
 
-![Population density of Santa Fe, Argentina](media/hrsl-style.png "Population density of Santa Fe, Argentina")
+![Population density of Jalisco, México](media/hrsl-style.png "Population density of Jalisco, México")
 
-Figura 4.8: Densidad de población de la provincia de Santa Fe, Argentina
+Figura 4.8: Densidad de población de la provincia de Jalisco, México
 
 5. Acerca la imagen para ver el nuevo mapa con más detalle.
 

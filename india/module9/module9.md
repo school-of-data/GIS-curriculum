@@ -22,7 +22,7 @@ By the end of this module, learners will have the basic understanding of the fol
 
 *   This module has been prepared using [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
 *   [module9.gpkg](data/module9.gpkg)
-    *   Bangalore_admin_boundary
+    *   IND_Bangalore
 *   [High Resolution Settlement Layer](data/HRSL_Bangalore_Population.tif)
 *   [SRTM Digital Elevation Model](data/SRTM_DEM)
 *   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
@@ -709,7 +709,7 @@ As you may have noticed, due to the raster data model structure, the layers we h
 
 As you have noticed by now, the datasets we load into a GIS - in our case into QGIS - can be processed together even if they are of different nature, such as joining csv tables to vector layers to add information to geometries. The same applies to raster and vector data, as we will see. 
 
-To work only with raster layers that are relevant to our Bangalore district, we will use the vector extent layer (Bangalore_admin_boundary) to cut/clip all relevant raster layers. Go to **Raster ‣ Extraction ‣ Clip Raster by Mask Layer** (see figure 9.22). Similarly, you can search for Clip in the Processing Toolbar or the Locator bar.
+To work only with raster layers that are relevant to our Bangalore district, we will use the vector extent layer (IND_Bangalore) to cut/clip all relevant raster layers. Go to **Raster ‣ Extraction ‣ Clip Raster by Mask Layer** (see figure 9.22). Similarly, you can search for Clip in the Processing Toolbar or the Locator bar.
 
 
 ![Using a vector mask to extract the raster data on a specific region](media/fig922.png "Using a vector mask to extract the raster data on a specific region")
@@ -726,7 +726,7 @@ Your batch processing window setup should look like in figure 9.23.
 Figure 9.23 - Batch process cliping all required raster layers by Bangalore Province geometry
 
 The parameters setup are the following:
-* mask layer: Bangalore_admin_boundary
+* mask layer: IND_Bangalore
 * both source and target CRS is EPSG 24383
 * select yes to: `match the extent of the clipped raster to the mask layer` and `keep resolution of input layer`. 
 * Be aware, for the DSM_mosaic we will also select yes` to create an output alpha band`. Load layers at completion. 
@@ -844,7 +844,7 @@ Remember that this raster layer had only 2 values - 0 and 1, so choose as the pa
 
 Figure 9.33a - Raster to vector conversion parameters
 
-Your result should look like in figure 9.34. 
+Note that it's possible that you will have multiple features in the vectorized layer instead of just 2. In order to just have 2 features, you can run the **Dissolve** algorithm and choose **DN** as the Dissolve Field. This will result in having just 2 features in the layer. Also, don't forget to fix invalide geometries using the **Fix invalid geometries** algorithm if you encounter some geometry issues. Your result should look like in figure 9.34. 
 
 
 ![Result of converting a raster dataset to a vector dataset](media/fig934.png "Result of converting a raster dataset to a vector dataset")

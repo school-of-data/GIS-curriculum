@@ -1,6 +1,8 @@
 # Module 7 - Creating and Editing Layers
 
-**Author**: Ketty, Ben Hur
+**Author**: Ketty
+
+**Editor**: Ben Hur
 
 ## Pedagogical Introduction
 
@@ -8,6 +10,7 @@ This module is designed to teach you how to use QGIS tools to create a new GIS l
 
 *   Digitizing 
 *   Georeferencing
+
 
 ## Required tools and resources
 *   Working computer
@@ -81,8 +84,8 @@ Figure 7.3: New GeoPackage Layer dialogue
 
     1. Enter the Name of the field
     2. Select the data Type. Supported types are Text data, Whole number (both integer and integer64), Decimal number, Date and Date and time, Binary (BLOB) and Boolean.
-    4. Depending on the selected data format, enter the Maximum length of values.
-    5. Click on the Add to Fields List ![alt_text](media/mActionNewAttribute.png "image_tooltip") button
+    3. Depending on the selected data format, enter the Maximum length of values.
+    4. Click on the Add to Fields List ![alt_text](media/mActionNewAttribute.png "image_tooltip") button
 
 7. Reproduce the steps above for each field you need to add
 8. Once you are happy with the attributes, click OK. QGIS will add the new layer to the legend, and you can edit it as described in section
@@ -316,8 +319,8 @@ Figure 7.12: First coordinate for the georeferencing
 13. With already three digitized ground control points you will be able to see the georeferencing error as a red line coming out of the points. The error in pixels can be seen also in the GCP table in the dX[pixels] and dY[pixels] columns. The residuals should not be higher than a threshold that you set, if it is you should review the points you have digitized and the coordinates you have entered to find what the problem is. You can use the image above as a guide.
 
 14. Add more control points until you are happy with the expected results.
-14. You can save the GCPs vial **File ► Save GCP points as…**.
-15. Finally, georeference your map with **File ► Start georeferencing** or the Start Georeferencing button ![Start Georeferencing button](media/georef-start-btn.png "Start Georeferencing button").
+15. You can save the GCPs vial **File ► Save GCP points as…**.
+16. Finally, georeference your map with **File ► Start georeferencing** or the Start Georeferencing button ![Start Georeferencing button](media/georef-start-btn.png "Start Georeferencing button").
 
 ![GCPs added](media/georef-4.png "GCPs added")
 

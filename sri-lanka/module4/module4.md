@@ -1,6 +1,8 @@
 # Module 4 - Styling Layers
 
-**Author**: Ketty, Ben Hur
+**Author**: Ketty
+
+**Editor**: Ben Hur
 
 ## Pedagogical Introduction
 
@@ -58,14 +60,14 @@ Besides avoiding you dealing with the modal and blocking dialog of the layer pro
 From a drop-down list of current layers in the layer panel, select an item and:
 
 *   set its symbology, transparency, and histogram in the case of a raster layer. These options are the same available in Raster Properties Dialog ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog)). 
-    * Access the Raster Properties Dialogue by Double Clicking the Raster Layer->General 
+    * Access the Raster Properties Dialogue by Double Clicking the Raster Layer ‣ General 
 *   set its symbology, and labels. These options are the same available in The Vector Properties Dialog ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog)). 
-    * Access the Vector Properties Dialogue by Double Clicking the Vector Layer->General 
+    * Access the Vector Properties Dialogue by Double Clicking the Vector Layer ‣ General 
 *   follow the whole history of changes you applied to the layer style in the current project; you can therefore cancel or restore to any state by selecting it in the list and Click Apply.
 
 Another powerful feature of this panel is the Live update checkbox. Tick it and your changes are automatically rendered in the map canvas as you go on. You no longer need to Click the Apply button.
 
-To activate the panel, Click View->Panels, then tick Layer styling.
+To activate the panel, Click View ‣ Panels, then tick Layer styling.
 
 
 ![alt_text](media/layer-styling.png "image_tooltip")
@@ -75,7 +77,7 @@ Figure 4.1: Layer Styling Panel
 
 #### **Symbology Tab in the Layers Properties**
 
-To access the Symbology Tab, Double Click the Layer to Open the Layer Properties-> Click Symbology
+To access the Symbology Tab, Double Click the Layer to Open the Layer Properties ‣ Click Symbology
 
 Here, you can specify the band rendering settings like, the render type, band, mix/max values, color rendering and resampling. In the screenshots below, you can see the symbology tabs for vector and raster datasets, respectively;
 
@@ -101,7 +103,7 @@ QGIS offers four different Render types. The choice of renderer depends on the d
 
 #### **Vector rendering**
 
-When you load spatial data layers into QGIS Desktop, they are styled with a random Single Symbol rendering. To change this click on Layer->Properties->Style.
+When you load spatial data layers into QGIS Desktop, they are styled with a random Single Symbol rendering. To change this click on Layer ‣ Properties ‣ Style.
 
 There are several rendering choices available from the menu in the upper left corner:
 
@@ -127,16 +129,15 @@ Vector data symbology may vary by transparency, color, rotation, and size.
 
 #### **Example 1: Vector rendering**
 
-1. To demonstrate this example, we’ll use two example datasets; 1. [Clinics](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing) and 2. [Administrative boundary](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing) of Pampanga province 
-2. Add the two vector layers into qgis; Click the Add vector layer button ![alt_text](media/add-vector.png "image_tooltip")
- or use the browser panel. 
+1. To demonstrate this example, we’ll use two example datasets; 1. Clinics and 2. Administrative boundary of Colombo district 
+2. Add the two vector layers into qgis; Click the Add vector layer button ![alt_text](media/add-vector.png "image_tooltip") or use the browser panel. 
 3. This is how they render by default. You’ll notice we have a polygon and point layer. The next step is to change the symbology for each of them. Fill colors may not be the same, but that’s not a problem because QGIS selects colors randomly for different instances of the application.
 
 ![Default render](media/default-vector-render.png "Default render")
 
 Figure 4.3: Default render
 
-4. Double click the polygon vector layer, which is also the administrative boundary layer of Pampanga province in the Philippines
+4. Double click the polygon vector layer, which is also the administrative boundary layer of Colombo district in the Sri Lanka
 5. Select the **Symbology Tab** in the menu that appears
 6. Change the **Fill color** to **Transparent fill. Tip:** Click the drop down arrow under Fill color
 7. The result should be as below. You may notice that the no fill option has no color
@@ -158,8 +159,6 @@ Figure 4.5: Layer Properties dialogue
 
 Figure 4.6: Final vector render
 
-
-
 11.  Remember to arrange the layers in the **Layer Panel** in such a way that the polygon layer is below the point layer. This makes the point layer visible.
 
 
@@ -173,11 +172,11 @@ Figure 4.6: Final vector render
 
 Figure 4.7: Symbology menu
 
-4. Specify the interpolation, color ramp and mode. Click classify. The result is a choropleth map showing population density across Pampanga province in the Philippines.
+4. Specify the interpolation, color ramp and mode. Click classify. The result is a choropleth map showing population density across Colombo district in the Sri Lanka.
 
-![Population density of Pampanga Province, Philippines](media/hrsl-style.png "Population density of Pampanga Province, Philippines")
+![Population density of Colombo Province, Sri Lanka](media/hrsl-style.png "Population density of Colombo Province, Sri Lanka")
 
-Figure 4.8: Population density of Pampanga Province, Philippines
+Figure 4.8: Population density of Colombo Province, Sri Lanka
 
 5.  Zoom in to see the new map in finer detail.
 
@@ -230,7 +229,7 @@ Figure 4.9: Zoomed-in map
 
 Figure 4.10: The expected initial workspace
 
-2. Open the Layer Properties window, then click the Symbology menu item for the administrative boundaries layer. Tip: Do this by double clicking the layer or use the layer styling panel. Enable the layer styling panel by clicking: View -> Panels -> Layer Styling. 
+2. Open the Layer Properties window, then click the Symbology menu item for the administrative boundaries layer. Tip: Do this by double clicking the layer or use the layer styling panel. Enable the layer styling panel by clicking: View ‣ Panels ‣ Layer Styling. 
 
 At the bottom of the Symbology menu, there’s a checkbox for Draw effects. Let’s enable that, and then click the customise effects button ![alt_text](media/customise-effects-button.png "image_tooltip") to its right:
 
@@ -305,8 +304,7 @@ Figure 4.17: Centroid operation on administrative boundary layer
 
 Figure 4.18: Point layer
 
-4. Note that an alternative and easier way of writing spatial queries is using the ‘Expressions dialogue’. Click the ![alt_text](media/expression.png "image_tooltip")
- expressions  button to open the 'Expression string builder' dialogue box. Here you’ll have access to an extensive function reference. You can search for a function by name. For example, type centroid in the search bar.
+4. Note that an alternative and easier way of writing spatial queries is using the ‘Expressions dialogue’. Click the ![alt_text](media/expression.png "image_tooltip") expressions  button to open the 'Expression string builder' dialogue box. Here you’ll have access to an extensive function reference. You can search for a function by name. For example, type centroid in the search bar.
 5. With the Geometry generator symbology you can really go over the edge of normal symbology.
 6. If you want to go further, write a spatial query to calculate a buffer zone around the point, line or polygon layer. 
 

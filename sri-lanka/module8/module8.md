@@ -1,6 +1,8 @@
 # **Module 8 - Vector processing and analysis**
 
-**Author**: Codrina, Ben Hur
+**Author**: Codrina
+
+**Editor**: Ben Hur
 
 ## Pedagogical Introduction
 
@@ -59,7 +61,6 @@ As part of this module, you will learn how to efficiently work with vector geogr
 
 Let’s start with an example: You have just landed for your city break in Colombo, Sri Lanka and you need to get from the airport to your hotel. You have no knowledge of where the airport is situated with respect to the city, nor where the hotel is, so the first thing you do is open a map to help you navigate through this new and excited city! You take your phone out, open a map app and you select the start point - the airport - and the end point - your hotel - then ask for the route, by foot, car or public transport. In a matter of seconds, the routing app offers you the best solution for you to get from point A to point B and it highlights it by drawing a distinct line following streets and alleys, as visible in figure 8.1.
 
-
 ![Getting from point A to B using Openstreetmap](media/fig81.png "Getting from point A to B using Openstreetmap")
 
 Figure 8.1 - Getting from point A to B using Openstreetmap
@@ -82,7 +83,6 @@ Streets represent a network model that is basically a collection of topologicall
 As presented in module 0, there are 2 data models used in a geographical information system - GIS: raster and vector. Geospatial data always includes a **spatial** component indicating the location or the spatial distribution of the phenomenon at hand and an **attribute** component that describes its properties. The choice between using the raster or the vector data model for a particular situation depends on the source of the data as well as its intended use. 
 
 The vector data model is used to represent areas, lines and points (Figure 8.1). 
-
 
 ![vector data with attribute table](media/fig83.png "vector data with attribute table")
 
@@ -115,7 +115,6 @@ Although most oftenly, GIS is closely associated with maps that simply display g
 GIS software offers functionalities allowing the user to define relevant topology rules, as well as algorithms to check if they apply and to clean the vector layer where inconsistencies are identified. 
 
 Geoprocessing is a general term used to define any operation - process - applied to a geographical dataset, with the scope of obtaining a derived dataset opening new insights on the data. Common geoprocessing operations are geographic feature overlay, feature selection and analysis, topology processing and data conversion. Geoprocessing allows one to define, manage, and analyze geographic information to support decision making. 
-
 
 ![elements of a geoprocessing operation](media/fig84.png "elements of a geoprocessing operation")
 
@@ -181,7 +180,6 @@ Thus, we find out that the measurement unit is the meter, therefore the lengths 
     * **Vector menu ‣ Analysis Tools ‣ Basic statistics for fields**
     * **Processing toolbox window ‣ search for 'stats'**
 
-
 ![Basics statistics for fields](media/fig87.png "Basics statistics for fields")
 
 Figure 8.7 - Basics statistics for fields
@@ -189,7 +187,6 @@ Figure 8.7 - Basics statistics for fields
 The statistics returned depend on the field type we choose and are generated as an HTML file.
 
 Let’s run it on our roads layer and see what results we get. Complete the window, like in figure 8.8. 
-
 
 ![Preparing to run basics statistics for roads layer](media/fig88.png "Preparing to run basics statistics for roads layer")
 
@@ -218,11 +215,9 @@ Third quartile: 30.0
 Interquartile Range (IQR): 30.0
 ```
 
-
 From these basic statistics, we find out that there are 26703 road segments in the loaded layer, where the minimum speed is 0.0 and the maximum speed is 120.0. 
 
 Running the basic statistics on the layer Buildings for the type category, we obtain the followings: 
-
 
 ```
 Analyzed field: type
@@ -235,7 +230,6 @@ Minimum length: 0
 Maximum length: 20
 Mean length: 0.2018044164037855
 ```
-
 
 The results don’t look the same, we don’t have mean, nor median or standard deviation. That is because the attribute field we ran the algorithm on is different, we don’t have numbers but words - types of buildings. We find out that out of 158500 buildings in Colombo, for 153511 we don’t know the type of the building. We also find out that there are 55 unique categories. 
 
@@ -266,11 +260,9 @@ Figure 8.9.a - Topology checker plugin
 
 To show the Topology Checker, enable it as a panel under **View ‣ Panels ‣ Topology Checker** (figure 8.9.b). If it does not appear in the Panels menu, you can enable it by clicking the Topology Checker button ![Topology checker button](media/fig89_btn.png "Topology checker button") on the Plugins toolbar. Once activated it’s window looks like in figure 8.9.c.  
 
-
 ![Topology checker panel](media/fig89_b.png "Topology checker panel")
 
 Figure 8.9.b - Topology checker panel
-
 
 ![Topology checker window](media/fig89_c.png "Topology checker window")
 
@@ -278,7 +270,6 @@ Figure 8.9.c - Topology checker window
 
 
 To define the topology rules, click on the third icon ![Topology rule settings button](media/fig810_btn.png "Topology rule settings button"), opening a window as in figure 8.10. 
-
 
 ![Topology rule settings window](media/fig810.png "Topology rule settings window")
 
@@ -289,20 +280,17 @@ We will set a number of rules for the layers we have loaded in our QGIS project,
 
 The configuration of the topology is straightforward, as the rules that can be applied based on the selected layer are already embedded in this functionality, as figure 8.11 depicts. 
 
-
 ![Topology rules dropdown menu based on the selected layer](media/fig811.png "Topology rules dropdown menu based on the selected layer")
 
 Figure 8.11 - Topology rules dropdown menu based on the selected layer.
 
 Choose the topology rules as depicted in figure 8.12. 
 
-
 ![Topology rules to be set](media/fig812.png "Topology rules to be set")
 
 Figure 8.12 - Topology rules to be set 
 
 Click on the first icon ![Validate rules button](media/fig813_btn.png "Validate rules button") on the Topology Checker window to run and wait for the results. After running the topology check, your map windows should look like in figure 8.13. 
-
 
 ![Topology check results](media/fig813.png "Topology check results")
 
@@ -312,7 +300,6 @@ In the down right side corner, the topology checker window lists all errors iden
 
 The process of correcting the errors in a dataset, be it geometry related (duplicates, gaps etc.) or in the attribute related  (missing values, misspelled etc.) is called cleaning a dataset and it is most times as cumbersome as it is necessary. Although there are functionalities to support a semi-automatically cleaning process, the user’s input is often necessary. For example, in figure 8.14, we have zoomed in an error in our points of interest layer, a duplicated point. As it can be seen, there are 2 point depicting one cafe, the difference being in the attribute table where one is listed as a cafe and one as a “doityourself” - which one can assume might be a popular name for cafes where you prepare your own coffee. 
 
-
 ![Duplicate point error in points of interest vector layer](media/fig814.png "sDuplicate point error in points of interest vector layer")
 
 Figure 8.14 - Duplicate point error in points of interest vector layer
@@ -321,13 +308,11 @@ In this particular case, the decision of the user would most probably be to remo
 
 Therefore, we will proceed with an automatic removal of the duplicate points. To do it, we will use a core functionality of QGIS - **Delete duplicate geometries** - found in the processing toolbox. Your QGIS should look as in figure 8.15. 
 
-
 ![ Delete duplicate geometries on layer points of interest](media/fig815.png " Delete duplicate geometries on layer points of interest")
 
 Figure 8.15 - Delete duplicate geometries on layer points of interest
 
 After running the algorithm, the functionality window presents the results, it has identified 6 duplicate points, just as the topology checker, and it informs the user that it has deleted them all, leaving the points of interest layer with **394 features**. Rename this layer to **pois_cleaned**. Note that the output is a layer in memory, you can make it permanent by saving it to a file.
-
 
 ![Result of running delete duplicate geometries](media/fig816.png "Result of running delete duplicate geometries")
 
@@ -362,7 +347,6 @@ Clean the duplicate feature by using the process indicated above (figure 8.18a)
 
 Figure 8.18a - Remove duplicate geometries on the buildings vector layer
 
-
 ![Results of remove duplicate geometries on the buildings vector layer](media/fig818_b.png "Results of remove duplicate geometries on the buildings vector layer")
 
 ![Results of Delete duplicate geometries](media/fig818_c.png "Results of Delete duplicate geometries")
@@ -386,13 +370,11 @@ Let's run one more algorithm to get a sense of what the attributes for our Colom
 
 For that, go to **Vector ‣ Analysis Tools ‣ List unique values** (figure 8.19)
 
-
 ![List unique values in a vector layer functionality](media/fig819_a.png "List unique values in a vector layer functionality")
 
 Figure 8.19a - List unique values in a vector layer functionality
 
 In the window that opens, insert each layer's name and attribute of interest as enumerated in the list above and you should have the following results: 
-
 
 ![List unique values in a vector layer functionality (Batch Processing)](media/fig819_b.png "List unique values in a vector layer functionality (Batch Processing)")
 
@@ -470,13 +452,11 @@ Figure 8.20a - GroupStats plugin
 
 A new window like the one in figure 8.20b should open. 
 
-
 ![GroupStats window](media/fig820_b.png "GroupStats window")
 
 Figure 8.20b - GroupStats window
 
 As per the analysis done earlier, we have seen that for the layer buildings we have 74 different types of buildings, but how many each and what is the total built area taken by each category? How much space for schools, for markets, houses? GroupStats can help us answer this question. On the right side of the window, there is the control panel, where we choose what we want to calculate, as well as how the data should be arranged. Using drag&drop, follow the arrangement in figure 8.21, then press calculate. 
-
 
 ![Running GroupStats on the building layer](media/fig821.png "Running GroupStats on the building layer")
 
@@ -485,7 +465,6 @@ Figure 8.21 - Running GroupStats on the building layer.
 Looking at the result, we can extract important insights regarding our data. For example, for residential purposes in the Colombo district, we have 303 buildings with a total surface area built of 72955.2 square meters, approx. 7.2 hectares. We also find out that the largest has 11347.6 square meters as the smallest has 15.2371 square meters. And one can continue the analysis for further valuable information. 
 
 Another interesting analysis can be run on the roads vector layer. Figure 8.22 shows how to calculate the lengths of roads categorised by type of road (primary, residential, motorway etc.) and maximum speed allowed. 
-
 
 ![Running GroupStats on the roads layer](media/fig822.png "Running GroupStats on the roads layer")
 
@@ -515,13 +494,11 @@ There are many operations that can be performed on one or more geospatial datase
 
 **Buffer.** Imagine that you need to analyse a new piece of legislation that asks that on an area of 500 meters around places of worship there can be no other construction built. You would want to see where exactly those delinations are and maybe even how many square meters that is for your district. First step is to define a buffer around the places of worship: **Vector ‣ geoprocessing tools ‣ Buffer**. When the buffer window opens, set the parameters like in figure 8.23: 
 
-
 ![Setting the parameters for a 500 m buffer around the places of worship](media/fig823.png "Setting the parameters for a 500 m buffer around the places of worship")
 
 Figure 8.23 - Setting the parameters for a 500 m buffer around the places of worship
 
 A detail of the result of the geoprocessing is depicted in figure 8.24: 
-
 
 ![Running buffer on a point vector layer](media/fig824.png "Running buffer on a point vector layer")
 
@@ -529,25 +506,21 @@ Figure 8.24 - Running buffer on a point vector layer
 
 To completely answer the initial question, the next step is to calculate the areas for all buffers and sum them up (see Phase 1, step 4) - figure 8.25. 
 
-
 ![Calculate area for the newly obtained layer, then calculate using GroupStats the total sum](media/fig825.png "Running buffer on Calculate area for the newly obtained layer, then calculate using GroupStats the total sum point vector layer")
 
 Figure 8.25 - Calculate area for the newly obtained layer, then calculate using GroupStats the total sum.
 
 **Clip.** Imagine you want to know where all the industrial delineated areas are in your district and also how many buildings are within that perimeter. Visual inspecting your vector data, you notice that you have a number of industrial areas that contain several buildings. You want to separate those buildings and to use them further. First step is to select all features in the landuse layer that have as attribute industrial (see module 6 for how to do that). Afterwards, you go to **Vector ‣ Geoprocessing tools ‣ Clip** and choose as the layer to be clipped buildings_cleaned. Your results should look like in figure 8.27b. 
 
-
 ![Figure 8.26a - Select landuse fclass = industrial](media/fig826_a.png "Figure 8.26a - Select landuse fclass = industrial")
 
 Figure 8.26a - Select landuse fclass = industrial. 
-
 
 ![Reduced selection of a few buildings and industrial landuse, so the computation can finish faster](media/fig826_b.png "Reduced selection of a few buildings and industrial landuse, so the computation can finish faster")
 
 Figure 8.26b - Reduced selection of a few buildings and industrial landuse, so the computation can finish faster. 
 
 Run the Clip algorithm. Make sure to check **Selected features only** box for the Overlay layer (landuse). This will ensure that only the currently selected features will be used for clipping and speed up the computations.
-
 
 ![Running the Clip algorithm](media/fig827_a.png "Running the Clip algorithm")
 
@@ -563,21 +536,17 @@ Figure 8.27b - Results of the clip functionality
 
 To respond to the above question, we will run the algorithm only for points that have the attribute school at type. Thus, make the selection as instructed in module 6. You should have 88 features selected on layer pois_cleaned. Go to **Vector ‣ Geometry Tools ‣ Voronoi Polygons..** After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Colombo district is contained, you should see a result like in figure 8.28d. 
 
-
 ![Filtering the poi layer to get all schools](media/fig828_a.png "Filtering the poi layer to get all schools")
 
 Figure 8.28a - Filtering the poi layer to get all schools
-
 
 ![All schools in the poi layer](media/fig828_b.png "All schools in the poi layer")
 
 Figure 8.28b - All schools in the poi layer
 
-
 ![Running the Voronoi polygon algorithm](media/fig828_c.png "Running the Voronoi polygon algorithm")
 
 Figure 8.28c - Running the Voronoi polygon algorithm
-
 
 ![Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer](media/fig828_d.png "Results of applying Thiessen (Voronoi) polygons algorithm to a point vector layer")
 
@@ -594,17 +563,15 @@ Let us assume that you have to present a report that will allow comparisons done
 
 We’ve seen that there are tools that can assist us in calculating the total surface occupied by a certain type of feature, however the first step is to create our 10X10 units - cell grids. To do that, go to: **Vector ‣ Research Tools ‣ Create grid..** Set the parameters to: 
 - Grid type - Rectangle (polygon)
-- Grid extent - Colombo_admin_boundary layer
+- Grid extent - LKA_Colombo
 - Horizontal spacing - 10 km
 - Vertical spacing - 10 km 
-
 
 ![Creating a 10X10km vector grid for the Colombo district](media/fig829_a.png "Creating a 10X10km vector grid for the Colombo district")
 
 Figure 8.29a - Create 10kmx10km vector grid for Colombo district
 
 You should get a result like in figure 8.29b. 
-
 
 ![10X10km vector grid for the Colombo district](media/fig829_b.png "10X10km vector grid for the Colombo district")
 
@@ -620,13 +587,11 @@ Green spaces and built-up spaces is data contained by the landuse vector layer, 
 
 Figure 8.30a - Filtering green areas and built-up space in Colombo 
 
-
 ![Spatial distribution of the green areas and built-up space in Colombo](media/fig830_b.png "Spatial distribution of the green areas and built-up space in Colombo")
 
 Figure 8.30b - Spatial distribution of the green areas and built-up space in Colombo 
 
 The second step to answer the requirement, is to identify how much green space and how much built-up space there is in each 10X10 km. To obtain that we will **intersect** the 2 overlaid polygon vector layers. The algorithm extracts the overlapping portions of features in the Input - the landuse layer and Overlay layer - the grid layer. Go to **Vector - Geoprocessing Tools - Intersection** or look for **Intersection in the Processing Toolbox or Locator Bar** Set the algorithm parameters as in figure 8.31.
-
 
 ![Parameters for the intersect algorithm](media/fig831.png "Parameters for the intersect algorithm")
 
@@ -640,7 +605,6 @@ Figure 8.32 - Result of running the intersection algorithm to clip the landuse v
 
 Now for each 10X10 km unit, we have the landuse features that we can work with. The attribute table also stores this information, as each grid cell - unit - has a unique id, see figure 8.33. 
 
-
 ![Landuse features clipped per each grid cell and it's associated attribute table](media/fig833.png "Landuse features clipped per each grid cell and it's associated attribute table")
 
 Figure 8.33 - Landuse features clipped per each grid cell and it's associated attribute table. 
@@ -649,23 +613,19 @@ Now, that we have all landuse features per 10X10 km unit, we will continue with 
 
 Alternatively, you can also use a filter instead of a selection.
 
-
 ![Selecting the green spaces](media/fig834_a.png "Selecting the green spaces")
 
 Figure 8.34a - Selecting the green spaces.
 
-
 ![Selected green spaces](media/fig834_b.png "Selected green spaces")
 
 Figure 8.34b - Selected green spaces.
-
 
 ![Green and Built-up spaces](media/fig834_c.png "Green and Built-up spaces")
 
 Figure 8.34c - Green and Built-up spaces.
 
 Next, calculate the area occupied by each feature of the 2 layers. Go to the attribute table of each layer and then add the geometric column area by inserting the expression `round($area,2) `in the field calculator.  (see module 6 for details, if needed). However, the 10X10km grid of the Colombo district has a known number of grid cells, and that is 42. Therefore, we need to summarise the areas for all types of green spaces (forests, parks etc.) an built-up spaces (commercial, residential etc.) and join it accordingly to all of the 42 grid cells. To do this, we will use the **GroupStats** plugin to sum up for each grid_id all the green categories, respectively all the built-up categories. For the green_spaced_gridded vector layer, set the parameters as in figure 8.34e. 
-
 
 ![Computing the area of each feature](media/fig834_d.png "Computing the area of each feature")
 
@@ -681,11 +641,9 @@ Run GroupStats for the built-up space in the same manner and then save it as a c
 
 Next, we will bring the 2 csv files calculated with GroupStat into QGIS  (**Layer ‣ Add layer ‣ Add delimited text layer** - see more details in module 2). 
 
-
 ![Loading green_spaces_gridded CSV](media/fig835_a.png "Loading green_spaces_gridded CSV")
 
 Figure 8.35a - Loading green_spaces_gridded CSV
-
 
 ![The green_spaces_gridded CSV attribute table](media/fig835_b.png "The green_spaces_gridded CSV attribute table")
 
@@ -695,7 +653,6 @@ Moving forward, we need to join the calculated spaces - green and built-up - to 
 
 In the **Join** window, push on the green plus button below ![Add join layer button](media/add_join_btn.png "Add join layer button") and set the parameters like in figure 8.35, for green spaces.
 
-
 ![Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit](media/fig835_c.png "Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit")
 
 Figure 8.35c - Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit.
@@ -704,16 +661,13 @@ Repeat for built-up spaces.
 
 The results of the two joins are visible in the attribute table, as can be seen in figure 8.36_b. We have kept the grid_id in both joins, to be sure no mistakes occurred. We can visually quickly check to make sure the 3 attribute fields: id, builtupgrid_id and greengrid_id are exactly the same. 
 
-
 ![Green and built-up CSV joined to Grid](media/fig836_a.png "Green and built-up CSV joined to Grid")
 
 Figure 8.36a - Green and built-up CSV joined to Grid. 
 
-
 ![Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces](media/fig836_b.png "Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces")
 
 Figure 8.36b - Attribute table of the grid10km vector layer containing the total areas for green and built-up spaces. 
-
 
 As we have gathered all the needed information for green and built-up spaces in the attribute table of the grid layer, all we need to do is calculate the percentage of these spaces within the 10X10 km grid cell. We will calculate it using the field calculator, using the following expression: `round(100*green_None/100000000, 5)` and `round(100*builtup_None/100000000, 5).` Next, we add a new field in which we calculate the report of the GreenPre/BuilupPer, and thus reaching the answer to our request: green spaces (parks, forests) built-up space per unit ratio: `round( "greenPer" / "builtupPer" , 5).` To have a clear overview of our dataset, in cases where there is no built-up space in the grid cell - we insert the value 1000 in the attribute table, in cases where there is no green space, we will insert value 999, while in case both values are NULL then we insert 1001. For this we can use the expression:
 
@@ -728,31 +682,25 @@ END
 
 The final result would look like in figure 8.37e. 
 
-
 ![Percentage of green area in the 10km x 10km grid](media/fig837_a.png "Percentage of green area in the 10km x 10km grid")
 
 Figure 8.37a - Percentage of green area in the 10km x 10km grid
-
 
 ![Computed percentage of green and built-up area](media/fig837_b.png "Computed percentage of green and built-up area")
 
 Figure 8.37b - Computed percentage of green and built-up area
 
-
 ![Computing for the ratio of green and built-up areas](media/fig837_c.png "Computing for the ratio of green and built-up areas")
 
 Figure 8.37c - Computing for the ratio of green and built-up areas
-
 
 ![Computed ratio of green and built-up areas](media/fig837_d.png "Computed ratio of green and built-up areas")
 
 Figure 8.37d - Computed ratio of green and built-up areas
 
-
 ![Ratio of green and built-up areas in the 10km x 10km grid](media/fig837_e.png "Ratio of green and built-up areas in the 10km x 10km grid")
 
 Figure 8.37e - Ratio of green and built-up areas in the 10km x 10km grid
-
 
 2. total length of streets and waterways for each unit;
 
@@ -764,23 +712,19 @@ To accomplish this task, QGIS offers an algorithm that takes a polygon layer and
 
 You can create a temporary layer or save it as a file on your computer. If for representation, you use natural breaks, your map should look like in figure 8.38c. 
 
-
 ![Sum Line Lengths parameters](media/fig838_a.png "Sum Line Lengths parameters")
 
 Figure 8.38a - Sum Line Lengths parameters
 
-
 ![Road lengths and counts per Grid cell](media/fig838_b.png "Road lengths and counts per Grid cell")
 
 Figure 8.38b - Road lengths and counts per Grid cell
-
 
 ![Spatial distribution of 10X10km units with most roads](media/fig838_c.png "Spatial distribution of 10X10km units with most roads")
 
 Figure 8.38c - Spatial distribution of 10X10km units with most roads
 
 Now, repeat the same processing for waterways lengths in each grid cell. Running the process on the grid file obtained earlier will help you in having all information obtained so far attached to the same geometry. We advise you save this file on your computer with line_lengths_gridded.  If for representation, you use natural breaks, your map should look like în figure 8.39.
-
 
 ![Spatial distribution of 10X10km units with most waterways](media/fig839.png "Spatial distribution of 10X10km units with most waterway")
 
@@ -790,11 +734,9 @@ Figure 8.39 -  Spatial distribution of 10X10km units with most waterways
 
 To count the total number of towns and cities in the 10X10 unit, we will use the pois_cleaned. First, we run **Vector ‣ Analysis Tools ‣ List unique values..** amd select from our vector point data layer (pois) the following features: `"fclass" = 'town' or "fclass" = 'city'` Similarly, you can just type `"fclass" in ('town', 'city')`. Your selection should have 32 features in total. 
 
-
 ![Selecting towns and cities POIs](media/fig840_a.png "Selecting towns and cities POIs")
 
 Figure 8.40a - Selecting towns and cities POI
-
 
 ![Selected towns and cities POIs](media/fig840_b.png "Selected towns and cities POIs")
 
@@ -802,14 +744,11 @@ Figure 8.40b - Selected towns and cities POIs
 
 To answer our request, we will use **Vector ‣ Analysis Tools ‣ Count points in polygon** algorithm. This algorithm takes a points layer and a polygon layer and counts the number of points from the first one in each polygons of the second one. A new polygons layer is generated, with the exact same content as the input polygons layer, but containing an additional field with the points count corresponding to each polygon. Set the point layer to pois_cleand and the polygon Grid layer with the calculated information in the previous round. For the points, check the **Selected features only** checkbox, so the algorithm calculates only the selected points - the towns and cities POIs. Save the output file as grid_info. 
 
-
 ![Count towns and cities POIs in each 10km x 10km grid](media/fig840_c.png "Count towns and cities POIs in each 10km x 10km grid")
 
 Figure 8.40c - Count towns and cities POIs in each 10km x 10km grid
 
-
 ![Spatial distribution of towns and cities POIs density per unit 10X10km](media/fig840_d.png "Spatial distribution of towns and cities POIs density per unit 10X10km")
-
 
 Figure 8.40d - Spatial distribution of towns and cities POIs density per unit 10X10km
 
@@ -844,7 +783,6 @@ There are many interpolation methods implemented in GIS software packages, decid
 
 To make a quick check on what interpolation methods are available in QGIS, go to the Processing Toolbox and write in the search bar the keyword interpolation. The result should look like in figure 8.41. 
 
-
 ![Interpolation methods available in QGIS](media/fig841.png "Interpolation methods available in QGIS")
 
 Figure 8.41 - Interpolation methods available in QGIS
@@ -857,11 +795,11 @@ Diving into the math behind each interpolation algorithm is beyond the scope of 
 As the exercise is purely for showing purposes, we will create our own set of point data - to represent the meteo stations where precipitation values have been registered for the course of one week. 
 
 Thus, the first step is creating a new vector layer - point type - with points randomly assigned inside the extent of the Colombo district. There are several ways to do that, either with the algorithm of **Random points in polygons..** or with the algorithm **Random points in layer bounds..**. Go to **Vector ‣ Research Tools ‣ Random points in polygons…**. You may also search for the algorithm in the Processing Toolbox or Locator bar. Choose as parameters: 
+
 * 93 points
 * minimum 5 km.
 
 The result should look like in figure 8.42. 
-
 
 ![Creating random points inside a polygon layer](media/fig842.png "Creating random points inside a polygon layer")
 
@@ -887,7 +825,6 @@ To do that, we can use the random function provided by QGIS. Open the attribute 
 6. 0 - 10;
 7. 0 - 21. 
 
-
 ![Creating random values within specified limits](media/fig844.png "Creating random values within specified limits")
 
 Figure 8.44 - Creating random values within specified limits
@@ -908,13 +845,11 @@ Set the following parameters:
 
 Your parameters should look like in the following figure 8.46.
 
-
 ![Setting up the batch processing window to interpolate the precipitation values for all 7 days](media/fig846.png "Setting up the batch processing window to interpolate the precipitation values for all 7 days")
 
 Figure 8.46 - Setting up the batch processing window to interpolate the precipitation values for all 7 days
 
 The interpolation result will look approximately like in figure 8.47. 
-
 
 ![Interpolated datasets](media/fig847.png "Interpolated datasets")
 
@@ -930,27 +865,21 @@ However, as we have interpolated values for 7 days, let us prepare a short anima
 
 To do that, open the **Properties dialog of test_meteo_stations_1 raster ‣ click on the Temporal tab ‣ tick the Temporal option ‣ select start and end date**, like in figure 8.48. Do the same for all 7 raster layers. 
 
-
 ![Setting temporal information to the raster dataset (1)](media/fig848_a.png "Setting temporal information to the raster dataset (1)")
 
-
 ![Setting temporal information to the raster dataset (2)](media/fig848_b.png "Setting temporal information to the raster dataset (2)")
-
 
 ![Setting temporal information to the raster dataset (7)](media/fig848_c.png "Setting temporal information to the raster dataset (7)")
 
 Figure 8.48 - Setting temporal information to the raster dataset (1, 2, 7).
 
-
 Open Temporal Controller Panel (can be found in **View ‣ Panels ‣ Temporal Controller Panel**) and set the parameters as in figure 8.49. 
-
 
 ![Set the parameters of the Time Controller Panel](media/fig849.png "Set the parameters of the Time Controller Panel")
 
 Figure 8.49 - Set the parameters of the Time Controller Panel. 
 
 Click on the play button ![Play button](media/play-btn.png "Play button") and see how the values change. You can choose what other layers to be visible. In figure 8.50, we added the buildings vector layer. 
-
 
 ![Selecting other layers to be visible in the temporal animation](media/fig850.png "Selecting other layers to be visible in the temporal animation")
 

@@ -96,18 +96,18 @@ Por lo general, la comunidad OSM y las comunidades locales acuerdan ciertas comb
 
 #### **Ejercicio 1: carga de datos OSM en QGIS usando el complemento QuickOSM
 
-Para este ejercicio, cargaremos los datos de la red de carreteras y las ubicaciones de las cadenas de comida rápida de OSM que se pueden encontrar en la provincia de Santa Fe, Argentina utilizando el complemento QuickOSM.
+Para este ejercicio, cargaremos los datos de la red de carreteras y las ubicaciones de las cadenas de comida rápida de OSM que se pueden encontrar en la provincia de Jalisco, Mexico utilizando el complemento QuickOSM.
 
 QuickOSM funciona consultando las etiquetas (claves y valores) de las funciones en OSM. Para obtener más información sobre cómo usar la clave / valor en QuickOSM, ve a:
 
 [https://wiki.openstreetmap.org/wiki/Mapfeatures](https://wiki.openstreetmap.org/wiki/Mapfeatures).
 
 
-1. Carga las capas vectoriales limite_provincial_stanta_fe y santafe_rosario que se encuentran en el geopackage santafe_limites.
+1. Carga las capas vectoriales limite_estadual_JALISCO y regiones_JALISCO.
 
-![Santa Fe layers loaded in QGIS](media/quickosm-1.png "Santa Fe layers loaded in QGIS")
+![Jalisco layers loaded in QGIS](media/quickosm-1.png "Jalisco layers loaded in QGIS")
 
-Figura 2. Las capas de Santa Fe cargadas en QGIS
+Figura 2. Las capas de Jalisco cargadas en QGIS
 
 2. Asegúrate de que el complemento QuickOSM esté instalado y activado. Debería aparecer  en el Menú en **Vectorial -> QuickOSM**. Si no aparece, instálalo y actívalo con el cuadro de diálogo Manage and Install Complementos.
 3. Abre el complemento QuickOSM (**Vector -> QuickOSM -> QuickOSM**). Debería abrirse un cuadro de diálogo con cinco pestañas:
@@ -133,18 +133,18 @@ Figura 2. Las capas de Santa Fe cargadas en QGIS
 
 Figura 3. Complemento QuickOSM
 
-4. Carga todas las carreteras dentro de la extensión de la capa santafe_rosario
-    6. Clave: carretera
-    7. Valor: <en blanco>  (significa TODOS)
-    8. Extensión de la Capa: santafe_rosario
-    9. Avanzado:
-        7. Seleccionar: Nodo, Vía, Líneas, Multilinestrings
+4. Carga todas las carreteras dentro de la extensión de la capa limite_estadual_Jalisco
+
+   - Clave: carretera
+   - Valor: <en blanco>  (significa TODOS) 
+   - Extensión de la Capa: limite_estadual_Jalisco
+   - Avanzado:
+        - Seleccionar: Node, Way, Relation, Lines, Multilinestrings
 
 
-![Load all highways in the santafe_rosario layer extent](media/quickosm-3.png "Load all highways in the santafe_rosario layer extent")
+![Load all highways in the limite_estadual_Jalisco layer extent](media/quickosm-3.png "Load all highways in the limite_estadual_Jalisco layer extent")
 
-Figura 4. Carga todas las carreteras en la extensión de la capa santafe_rosario
-
+Figura 4. Carga todas las carreteras en la extensión de la capa limite_estadual_Jalisco
 
 
 5. Haz clic en Ejecutar Consulta. Básicamente, lo que le estamos diciendo a QuickOSM es que todas las funciones de línea o multilínea se etiqueten con una clave de carretera y se carguen en QGIS. Cuando el complemento termine de cargar la capa, su mapa debería verse como a continuación:
@@ -169,7 +169,7 @@ Figura 6. La versión Overpass de la Consulta rápida para cargar carreteras
         * Seleccionar: Nodo, Puntos
 
 
-![Load amenities (points) tagged as fast_food in the santafe_rosario layer extent](media/quickosm-6.png "Load amenities (points) tagged as fast_food in the santafe_rosario layer extent")
+![Load amenities (points) tagged as fast_food in the limite_estadual_Jalisco layer extent](media/quickosm-6.png "Load amenities (points) tagged as fast_food in the limite_estadual_Jalisco layer extent")
 
 Figura 7: Cargar servicios (puntos) etiquetados como fast_food en la extensión de la capa santafe_limites
 
@@ -240,11 +240,11 @@ Mapeando la población mundial de a un edificio por vez - [https://arxiv.org/abs
 
 Los datos HRSL encontrados en HDX vienen en formato GeoTIFF (raster) y CSV (vector). Los CSV son ubicaciones puntuales con los valores de población correspondientes. Para este ejercicio, ya se preparó un subconjunto de los datos de su país, pero siempre puedes descargar el dataset completo o incluso otros para probar.
 
-1. Carga el archivo ráster **HRSL_SantaFe_poblacion** en QGIS.
+1. Carga el archivo ráster **HRSL_Jalisco_Population** en QGIS.
 
-![The HRSL for Santa Fe, Argentina](media/hrsl-1.png "The HRSL for Pampanga, Philippines")
+![The HRSL for Jalisco, Mexico](media/hrsl-1.png "The HRSL for Jalisco, Mexico")
 
-Figura 10: El HRSL para Santa Fe, Argentina
+Figura 10: El HRSL para Jalisco, Mexico
 
 2. Revisa las propiedades de la capa.
 3. También puedes editar la simbología y el estilo del ráster (los veremos más adelante)  
@@ -263,11 +263,10 @@ Figura 10: El HRSL para Santa Fe, Argentina
 
 La API Overpass ([https://wiki.openstreetmap.org/wiki/Overpass_API](https://wiki.openstreetmap.org/wiki/Overpass_API)), anteriormente conocida como OSM Server Side Scripting, o OSM3S antes de 2011, es una API de solo lectura que ofrece partes seleccionadas personalizadas de los datos del mapa de OSM. A diferencia de la API principal, que está optimizada para la edición, la API Overpass está optimizada para que los consumidores de datos obtengan un pequeño subconjunto de los aproximadamente 10 millones de elementos en OpenStreetMap. Estos subconjuntos se pueden seleccionar por criterios de búsqueda como ubicación, tipo de objetos, propiedades de etiqueta, proximidad o combinaciones de ellos. La API Overpass sirve como backend para otros servicios basados en OSM como el complemento QuickOSM.
 
-El uso de una consulta Overpass le permite crear una selección de las características más complejas en QuickOSM. Por ejemplo, volvamos a cargar todas las comidas rápidas dentro de la extensión de limite_provincial_stanta_fe pero esta vez solo obtengamos las ramas de Jollibee. Si observa la tabla de atributos de la capa de comida rápida, notará que tiene el campo **nombre**. Los campos en la tabla de atributos de datos cargados desde OSM corresponden a las claves de etiqueta, por lo que si queremos seleccionar todas las Pizzerías, necesitamos agregar un filtro que seleccione una característica si tiene un **clave:valor** de **cuisine: pizza**. Este filtro puede agregarse fácilmente con una API Overpass.
-
+El uso de una consulta Overpass le permite crear una selección de las características más complejas en QuickOSM. Por ejemplo, volvamos a cargar todas las comidas rápidas dentro de la extensión de limite_estadual_JALISCO pero esta vez solo obtengamos las ramas de Okuma. Si observa la tabla de atributos de la capa de comida rápida, notará que tiene el campo nombre. Los campos en la tabla de atributos de datos cargados desde OSM corresponden a las claves de etiqueta, por lo que si queremos seleccionar todas las ramas de comida rápida de Okuma, necesitamos agregar un filtro que seleccione una característica si tiene un **clave:valor** de **nombre: Okuma**. Este filtro puede agregarse fácilmente con una API Overpass.
 1. Abre el complemento QuickOSM y coloca los parámetros que utilizamos para la consulta de comida rápida.
 
-![QuickOSM parameters for loading fast foods in Pampanga](media/quickosm-5.png "QuickOSM parameters for loading fast foods in Pampanga")
+![QuickOSM parameters for loading fast foods in Pampanga](media/quickosm-6.png "QuickOSM parameters for loading fast foods in Pampanga")
 
 Consulta rápida para cargar todos los servicios etiquetados como comida rápida
 
@@ -277,15 +276,16 @@ Consulta rápida para cargar todos los servicios etiquetados como comida rápida
 
 Overpass para cargar todos los servicios etiquetados como comida rápida
 
-3. Edita la consulta y agrega la línea **<has-kv k="cuisine" v="pizza"/>** luego de cada línea que diga <has-kv k="amenity" v="fast_food"/>.
+3. Edita la consulta y agrega la línea **<has-kv k="name" v="Okuma"/>** luego de cada línea que diga <has-kv k="amenity" v="fast_food"/>.
 
-![Overpass query to load only fast foods named Jollibee](media/overpass-2.png "Overpass query to load only fast foods named Jollibee")
 
-Consulta Overpass para cargar todos los servicios etiquetados como comida rápida cuyo nombre es Jollibee
+![Overpass query to load only fast foods named Okuma](media/overpass-2.png "Overpass query to load only fast foods named Okuma")
 
-4. Haz clic en Ejecutar consulta. Esto debería cargar solo los servicios etiquetados como fast_food con el nombre Jollibee. El nombre de la capa será OsmConsulta.
+Consulta Overpass para cargar todos los servicios etiquetados como comida rápida cuyo nombre es Okuma
 
-![Amenities tagged as fast food whose name is Jollibee loaded from OSM](media/overpass-3.png "Amenities tagged as fast food whose name is Jollibee loaded from OSM")
+4. Haz clic en Ejecutar consulta. Esto debería cargar solo los servicios etiquetados como fast_food con el nombre Okuma. El nombre de la capa será OsmConsulta.
+
+![Amenities tagged as fast food whose name is Okuma loaded from OSM](media/overpass-3.png "Amenities tagged as fast food whose name is Okuma loaded from OSM")
 
 Servicios etiquetados como comida rápida de Pizza cargados desde OSM
 
