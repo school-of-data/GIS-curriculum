@@ -562,7 +562,7 @@ Figure 9.9.b - HRSL إعادة إسقاط
 
 ![Resample method - nearest neighbour](media/fig910.png "Resample method - nearest neighbour")
 
-Figure 9.10 - (ILWIS -  طريقة إعادة إنشاء العينة - (الجار الأقرب) (الصورة الفوتوغرافية: من وثائق  
+Figure 9.10 - (ILWIS - طريقة إعادة إنشاء العينة - (الجار الأقرب) (الصورة الفوتوغرافية: من وثائق  
 
 <a href="http://spatial-analyst.net/ILWIS/htm/ilwisapp/resample_functionality.htm">(http://spatial-analyst.net/ILWIS/htm/ilwisapp/resample_functionality.htm</a>)
 
@@ -586,7 +586,7 @@ Figure 9.11 - bilinear - طريقة إعادة إنشاء العينة
 
 ![Batch processing tab on a QGIS functionality window](media/fig912.png "Batch processing tab on a QGIS functionality window")
 
-Figure 9.12 - QGIS علامة تبويب “معالجة الدُفعة” في نافذة وظائف
+Figure 9.12 - علامة تبويب “معالجة الدُفعة” في نافذة الوظائف
 
 بالنسبة للطبقات النقطية الخمس للغطاء الأرضي، سوف نستخدم معالجة الدُفعات. سنقوم أيضاً باستخدام "أقرب جار" كطريقة إعادة إنشاء العيّنة. لإضافة طبقة جديدة، انقر فوق  الرسم التخطيطي "+". لتعبئة معايير CRS وطريقة إعادة إنشاء العيّنة تلقائيًا، انقر فوق زر الملء التلقائي (autofill button) أعلى الأعمدة المختارة وحدد Fill down. أعد تسمية  البيانات النقطية المعاد إسقاطها عن طريق إضافة "Reprojected" في بداية الاسم، على سبيل المثال LandCover2015، سيصبح Reprojected_landCover2015ٌ. اضبط المعايير كما في Figure 9.13 : المصدر CRS: EPSG: 3857، الهدف CRS EPSG 22992، "طريقة إعادة إنشاء العيّنة المستخدمة" : "أقرب جار" (أوضحنا السبب في الفقرة أعلاه)، قيمة "nodata" لنطاقات الإخراج: 255 (من نافذة المعلومات، نرى نوع البيانات - yte - عدد صحيح بدون إشارة 8 بت - مما يعني أن القيمة القصوى يمكن أن تكون 255) ، دقة الإخراج: 100 متر (مثل البيانات النقطية الأولية للغطاء الأرضي). بعد تعيين جميع المعايير، حدد المربع الموجود في الزاوية اليسرى من النافذة -<strong> قم بتحميل الطبقات عند الانتهاء (Load layers on completion) </strong>وانقر فوق تشغيل.
 
