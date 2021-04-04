@@ -1,0 +1,77 @@
+@id,amenity,name,website,wikidata,wikipedia,addr_city,addr_stree,addr_house,addr_postc,operator,email,opening_ho,phone,name_en,denominati,descriptio,religion,accessibil,building_c,building_l,building_m,building_r,contact_ad,contact_em,contact_ph,education_,educatio_1,educatio_2,educatio_3,educatio_4,educatio_5,educatio_6,educatio_7,educatio_8,educatio_9,educatio10,educatio11,educatio12,educatio13,educatio14,educatio15,educatio16,educatio17,educatio18,educatio19,educatio20,educatio21,educatio22,educatio23,educatio24,educatio25,educatio26,educatio27,educatio28,educatio29,educatio30,educatio31,educatio32,educatio33,electricit,image_clas,image_comp,image_sign,operator_d,operator_t,toilet_pre,toilets_fe,toilets_ha,toilets_ma,toilets_te,water_sour,educatio34,educatio35,educatio36,educatio37,educatio38,educatio39,x,y
+node/588006388,school,Limuru Girls School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.68,-1.11
+node/711491752,school,Mang'u High School,http://www.manguhigh.com/,Q6748567,en:Mang'u High School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.05,-1.07
+node/1045131871,school,New Light Academy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.93,-1.20
+node/1045131916,school,Wendani Topmark Academy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.93,-1.20
+node/1045131944,school,AA of Kenya Driving School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.93,-1.19
+node/1045132244,school,Wendani Junior Academy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.93,-1.20
+node/1460334555,school,St. James Primary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.10,-1.17
+node/1717357039,school,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.97,-1.14
+node/2108765326,school,Word of Faith Community College,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.83,-1.17
+node/2122225566,school,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.74,-1.18
+node/2122225567,school,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.74,-1.18
+node/2379045376,school,karatina_pri,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.77,-1.00
+node/2413017758,school,kamahindu_primary,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.70,-1.01
+node/2413017771,school,nyanduma_polytechnic,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.76,-1.00
+node/2413133320,school,kangirima_primary_school,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.74,-0.96
+node/2415843848,school,Bathi Secondary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.63,-0.98
+node/2454275058,school,Limuru Agricultural Youth Centre,,,,Kiambu,Limuru Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.73,-1.15
+node/2481076006,school,Kijabe Boys High school,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.60,-0.95
+node/2481076010,school,Kijabe_girls,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.60,-0.95
+node/2481076014,school,Kijabe Primary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.60,-0.95
+node/2481087435,school,Matathia primary,,,,Matathia,,"160","00221",Government,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.62,-0.98
+node/2481087453,school,takinya_community_nursery,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.63,-0.96
+node/2481110771,school,Munyaka Primary,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.64,-0.95
+node/2900960968,school,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.61,-0.99
+node/4098677019,school,Mukeu School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.64,-0.99
+node/4380058189,school,Midas international boys high school,,,,,Thika-Mang'u Road,04th door,,,daverono6@gmail.com,24/7,"0717546493",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.03,-1.06
+node/4622162195,school,Well watered garden demonstration site,http://kenya.careofcreation.net,,,,Kijabe Road,,,Care of Creation Kenya,,,,Cafe of Creation Kenya,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.59,-0.95
+node/4681402889,school,Rift Valley Academy,,Q7333287,,Kijabe,Kijabe Top Road,,,,,,,Rift Valley Academy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.60,-0.94
+node/4973742584,school,Mukoma Mixed Secondary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.59,-1.08
+node/4973895050,school,Mirithu Primary School,,,,Limuru,Kwa Njoki Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.61,-1.15
+node/5163268483,school,St. Gabriel Mixed Primary School,,,,,Kenyatta Road,,,Mutomo Catholic Mission,,,"+254723281855",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.92,-1.03
+node/5232810921,school,Bristar girls high school,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.01,-1.14
+node/5296930921,school,St. Paul's University,,Q30294242,,Limuru,Limuru Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.67,-1.15
+node/5327794349,school,Golf View Primary School,,,,,,,,Mrs. Wachira Ngugi,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.84,-1.17
+node/5327794350,school,Sts. Peter & Paul Catholic Church Nursey School,,,,,,,,Sts. Peter & Paul Catholic Church Parish,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.83,-1.17
+node/5327878503,school,Riabai High School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.85,-1.16
+node/5327878505,school,Chief Wandie Primary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.85,-1.16
+node/5327878506,school,Maciri Primary,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.85,-1.16
+node/5327912236,school,Kiambu Primary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.83,-1.17
+node/5329697497,school,Tulivu Junior Academy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.84,-1.16
+node/5329703569,school,Ndumberi Secondary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.81,-1.16
+node/5329734349,school,Kiuu River Primary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.87,-1.17
+node/5329743158,school,St Anne's Lioki School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.84,-1.15
+node/5331561433,school,Ndenderu Primary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.74,-1.19
+node/5331570283,school,Muya Primary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.75,-1.19
+node/5331573169,school,Aloe Vera Primary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.73,-1.19
+node/5331578567,school,Karura Primary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.73,-1.19
+node/5336236341,school,Zawadi School,,,,Kirigiti,Githunguri-Riabai Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.84,-1.17
+node/5724321267,school,Rironi Primary Schoool,,,,Rironi,Eldoret-Malaba Road,,,,,,,,neo-pentecostal,Elementary- Middle School.,christian,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.64,-1.15
+node/5747470567,school,Rironi Primary School,,,,,,,,,,,,,pentecostal,,christian,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.64,-1.15
+node/5747475430,school,Kaandura Primary School,,,,,,,,,,,,,presbyterian,,christian,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.63,-1.13
+node/5747483567,school,Nyoro Primary School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.64,-1.16
+node/6054455494,school,Muthiga Primary School,,,,Kiambu,Gatundu-Juja Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.93,-1.02
+node/6063334938,school,Bridge International Academies,,,,Kiambu,Kiambu Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.65,-1.11
+node/6116638611,school,Limuru Nursery and Primary School,,,,Redhill,Limuru Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.71,-1.17
+node/6116638649,school,Muguku Tumaini School,,,,,Dharamshi-Raini Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.72,-1.17
+node/6124942690,school,Kamirithu Polytechnic,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.63,-1.12
+node/6138142786,school,Ngenia High School,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.63,-1.13
+node/6200899854,school,Nova Pioneer,,,,Ruiru,Kamiti Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.90,-1.16
+node/6200899877,school,Kiambu Road Primary School,,,,Ruiru,Kamiti Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.94,-1.15
+node/6207571848,school,Juja Preparatory School,,,,Thika,Thika Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.00,-1.12
+node/6207691325,school,Compuera Girls School,,,,Thika,Thika Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.05,-1.06
+node/6207691341,school,Braeburn Imani International School,,,,Thika,Thika-Mang'u Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.03,-1.04
+node/6209964959,school,Gatuma - Ini Primary & E. C. D Centre,,,,Thika,Workshop Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.07,-1.04
+node/6210018131,school,"Thika Technical Training Institute, Plumbing",,,,Thika,General Kago Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.08,-1.04
+node/6210240732,school,Mount kenya university thika,,,,Thika,Garissa Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.14,-1.06
+node/6210240735,school,International Centre of Technology,,,,Thika,Garissa Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.16,-1.06
+node/6210240737,school,Gatuanyaga Primary School,,,,Thika,Garissa Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.18,-1.06
+node/6210240742,school,Salvation Army High School For The Blind,,,,Thika,Workshop Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.07,-1.03
+node/6249723267,school,Sukari Presbyterian Senior School,,,,Nairobi,5th North Avenue,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.94,-1.19
+node/6251534664,school,Victorian Girls High School,,,,Ruiru,Eastern Bypass,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.96,-1.17
+node/6251561028,school,St. Johns ACK Church,,,,Riara Ridge,Limuru Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.68,-1.15
+node/6251561043,school,Site View Primary School,,,,Kerwa,Eldoret-Malaba Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.64,-1.18
+node/6251561045,school,Westgate Shield School,,,,Kerwa,Eldoret-Malaba Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.65,-1.19
+node/6257535845,school,Bridge International Academy - King'eero,,,,Nairobi,King'eero hopping Centre Main Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.71,-1.23
+node/6257535857,school,St Hellen Primary School,,,,Nairobi,Getathuru Road,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.73,-1.22
