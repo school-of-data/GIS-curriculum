@@ -3,7 +3,7 @@
 الوحدة 9 - معالجة وتحليل البيانات النقطية
 </h1>
 
-المؤلفين : Codrina, Ben Hur
+المؤلفين : Codrina, Ben Hur, Ali Rebaie, Samah Hijazi
 
 
 <h2>
