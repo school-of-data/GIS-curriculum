@@ -546,13 +546,13 @@ Figure 9.8 - وظائف إعادة إسقاط المشروع
 
 ![Warp (reproject) QGIS window](media/fig99_a.png "Warp (reproject) QGIS window")
 
-Figure 9.9.a -(Warp) لإعادة الإسقاط QGIS نافذة 
+Figure 9.9.a - (Warp) نافذة إعادة الإسقاط 
 
 إذا حددت الإخراج ليكون [حفظ في ملف مؤقت] ، فستكون هناك طبقة نقطية تسمى Reprojected في لوحة الطبقات. هذه طبقة ذاكرة ويمكنك إعادة تسمية هذه الطبقة إلى Reprojected_HRSL_cairo_population وحفظها لجعلها ثابتة.
 
 ![Reprojected HRSL](media/fig99_b.png "Reprojected HRSL")
 
-Figure 9.9.b - HRSL إعادة إسقاط 
+Figure 9.9.b - HRSL إعادة إسقاط طبقة 
 
 ستلاحظ أنه على عكس ما حدث عند إعادة إسقاط مجموعات البيانات المتجهة، هناك معلمة جديدة يمكنك تعيين "طريقة إعادة إنشاء العيّنة المستخدمة" (Resampling method to use).
 
