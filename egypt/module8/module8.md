@@ -36,8 +36,8 @@
 
 *   تم إعداد هذه الوحدة باستخدام [QGIS الإصدار 3.16 - هانوفر](https://qgis.org/en/site/forusers/download.html)
 *   [module8.gpkg](https://drive.google.com/file/d/1we6K5vbIPHQRyrLZIZS4Eo8tklHFpFWq/view?usp=sharing) والتي تحتوي على الطبقات التالية:
-    *   pois (نقطة)
-    *   pofw (نقطة)
+    *   مراكز الإهتمام - pois (نقطة)
+    *   أماكن العبادة- pofw (نقطة)
     *   طريق - road  (خط)
     *   مجاري مائية - waterways  (خط)
     *   المباني - buildings  (المضلع)
@@ -425,7 +425,7 @@ Figure 8.18.b - (Batch Processing) قائمة القيم الفريدة في و�
   </tr>
   <tr>
    <td>
-pois_cleaned
+pois_cleaned - مراكز الإهتمام
 
    </td>
    <td>
@@ -446,7 +446,7 @@ pois_cleaned
    </td>
   </tr>
   <tr>
-   <td>pofw
+   <td>pofw - أماكن العبادة
    </td>
    <td>
 7
