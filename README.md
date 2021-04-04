@@ -8,6 +8,7 @@
 - [**Germany**](germany/)
 - [**Ethiopia** (in English)](ethiopia/)
 - [**India** (in English)](india/)
+- [**Kenya** (in English)](kenya/)
 - [**Mexico**](mexico/)
 - [**Philippines**](philippines/)
 - [**Sri Lanka** (in English)](sri-lanka/)
