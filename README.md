@@ -12,6 +12,7 @@
 - [**Kenya** (in English)](kenya/)
 - [**Mexico**](mexico/)
 - [**Philippines**](philippines/)
+- [**South Africa** (in English)](south-africa/)
 - [**Sri Lanka** (in English)](sri-lanka/)
 - [**Vietnam**](vietnam/)
 
