@@ -82,7 +82,7 @@ Figura 5.2: Exportando o mapa
 
 3. Clique em **Salvar**. O mapa na tela do QGIS será salvo como um documento PDF ou imagem. Navegue até o local onde o arquivo foi salvo e agora você pode imprimir ou compartilhar o mapa.
 
-![Tela do mapa exportada como imagem](media/export-map-canvas.png "Tela do mapa exportada como imagem")
+![Tela do mapa exportada como imagem](media/exported-map-canvas.png "Tela do mapa exportada como imagem")
 
 Figura 5.3: Tela do mapa exportada como imagem
 

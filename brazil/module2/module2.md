@@ -393,36 +393,27 @@ Para conectar a um servidor de tiles:
 3. Adicione o seguinte:
 
 ```
-    Nome: PGP Basemap
-    URL: https://basemapserver.geoportal.gov.ph/tiles/v2/PGP/{z}/{x}/{y}.png
+    Nome: ESRI World Imagery
+    URL: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
 ```
 
 4. Clique em OK.
 
-! [Adicionando uma conexão XYZ no QGIS](media/xyz-1.png "Adicionando uma conexão XYZ no QGIS")
+![Adicionando uma conexão XYZ no QGIS](media/xyz-1.png "Adicionando uma conexão XYZ no QGIS")
 
 Figura 2.18. Adicionando uma conexão XYZ no QGIS
 
-5. Isso deve adicionar um item PGP Basemap em XYZ Tiles no painel do navegador.
+5. Isso deve adicionar um item ESRI World Imagery em XYZ Tiles no painel do navegador.
 
-![Servidor PGP Basemap Tile adicionado ao Painel do Navegador](media/xyz-2.png "Servidor PGP Basemap Tile adicionado ao Painel do Navegador")
+![Servidor ESRI World Imagery Tile adicionado ao Painel do Navegador](media/xyz-2.png "Servidor ESRI World Imagery Tile adicionado ao Painel do Navegador")
 
-Figura 2.19. Servidor PGP Basemap Tile adicionado ao Painel do Navegador
+Figura 2.19. Servidor ESRI World Imagery Tile adicionado ao Painel do Navegador
 
 6. Você pode carregar a camada de mosaico XYZ como qualquer outra camada do Painel do Navegador.
 
 ![Camada do mapa base OpenStreetMap carregada no QGIS](media/xyz-3.png "Camada do mapa base OpenStreetMap carregada no QGIS")
 
 Figura 2.20. Camada OpenStreetMap carregada no QGIS
-
-7. Tente adicionar a camada ESRI World Imagery também.
-
-```
-    Nome: ESRI World Imagery
-    URL: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
-```
-
-![Adicionando ESRI Imagens mundiais como tiles XYZ](media/xyz2-1.png "Adicionando imagens mundiais da ESRI como tiles XYZ")
 
 
 
