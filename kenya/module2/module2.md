@@ -154,13 +154,13 @@ Figure 2.3. The Module files in the Browser Panel
 
 6. There are 5 files under the data folder: 
 
-    1. a GeoPackage (Philippines_NCR.gpkg) which contains a vector (NCR_Jollibee) and raster file (NCR_SRTM_DEM); 
-    2. a GeoJSON (NCR_districts.geojson); 
-    3. a flatgeobuf file (NCR_municities.fgb);
-    4. a shapefile (NCR_admin_boundary.shp); and
-    5. a comma-separated value (CSV) file (NCR_McDonalds.csv).
+    1. a GeoPackage (kiambu.gpkg) which contains a vector (kiambu_clinics) and raster file (kenya_kiambu_SRTM_DEM); 
+    2. a GeoJSON (kiambu_sub_counties.geojson); 
+    3. a flatgeobuf file (kiambu_counties.fgb);
+    4. a shapefile (kiambu_admin_boundary.shp); and
+    5. a comma-separated value (CSV) file (kiambu_schools.csv).
 
-7. Right click on NCR_admin_boundary.shp and click Layer Properties (Figure 2.4). This opens the layer properties window (Figure 2.5). Notice the information provided in the window. What is the geometry of the layer? What CRS is used? How many features are in the layer?
+7. Right click on kiambu_admin_boundary.shp and click Layer Properties (Figure 2.4). This opens the layer properties window (Figure 2.5). Notice the information provided in the window. What is the geometry of the layer? What CRS is used? How many features are in the layer?
 
 
 ![Checking Layer Properties](media/qgis-browser-3.png "Checking Layer Properties")
@@ -179,7 +179,7 @@ Figure 2.5. Layer Properties from Browser Panel
     2. **right-clicking the layer ‣ Add Layer to Project**
     3. **dragging the layer to the Map Canvas** 
 
-10. Try to load the **NCR_admin_boundary**, **NCR_districts**, and **NCR_municities** layers using any of the methods above.
+10. Try to load the **kiambu_admin_boundary**, **kiambu_counties**, and **kiambu_sub_counties** layers using any of the methods above.
 
 ![The vector layers loaded in QGIS](media/vector-layers-loaded-1.png "The vector layers loaded in QGIS")
 
@@ -257,12 +257,12 @@ The importance of metadata is that it not only promotes transparency but also fa
 
 #### **Exercise 01.2: Adding Metadata**
 
-1. Open the Layer Properties of the NCR_admin_boundary layer.
+1. Open the Layer Properties of the kiambu_admin_boundary layer.
 2. Check the information shown in the Information tab and look at the information shown. Is it complete? Can we add more information?
 
-![Information properties of the NCR_admin_boundary layer](media/metadata-1.png "Information properties of the NCR_admin_boundary layer")
+![Information properties of the kiambu_admin_boundary layer](media/metadata-1.png "Information properties of the kiambu_admin_boundary layer")
 
-Figure 2.9. Information properties of the NCR_admin_boundary layer
+Figure 2.9. Information properties of the kiambu_admin_boundary layer
 
 3. Go to the Metadata tab and try adding more information about the layer such as the extent, data category, license, etc. Click OK when done.
 
@@ -305,10 +305,10 @@ Figure 2.12. The Data Source Manager
 2. **Loading Vectors**
 
     1. To load vectors, go to the Vector tab. Files, files within a Directory, a Database, and even remote files via a Protocol like HTTP, cloud, etc can be loaded.
-    2. Let’s load the vector file (NCR_Jollibee) found inside the Philippines_NCR geopackage. This layer is a point layer of the locations of fast food restaurant Jollibee in NCR.
+    2. Let’s load the vector file (kiambu_clinics) found inside the kiambu geopackage. This layer is a point layer of the locations of clinics in Kiambu county.
 
         1. Source Type: File
-        2. Source: Select the Philippines_NCR geopackage using the ![Search button](media/data-source-manager-search.png "Search button") button
+        2. Source: Select the kiambu geopackage using the ![Search button](media/data-source-manager-search.png "Search button") button
         3. Click Add
         4. If there are more than 1 vector file inside the geopackage, QGIS will ask you to select which ones to load.
 
@@ -318,10 +318,10 @@ Figure 2.13. Loading a vector inside a GeoPackage
 
 3. **Loading Rasters**
 
-    1. To load a raster, go to the Raster tab. Files and remote files via a Protocol like HTTP, cloud, etc can be loaded. There is a raster (NCR_SRTM_DEM) inside the Philippines_NCR geopackage. This raster is a digital elevation model of the NCR region. To load it:
+    1. To load a raster, go to the Raster tab. Files and remote files via a Protocol like HTTP, cloud, etc can be loaded. There is a raster (kenya_kiambu_SRTM_DEM) inside the kiambu geopackage. This raster is a digital elevation model of the Kiambu county. To load it:
 
         1. Source Type: File
-        2. Source: Select the Philippines_NCR geopackage using the ![Search button](media/data-source-manager-search.png "Search button") button
+        2. Source: Select the kiambu geopackage using the ![Search button](media/data-source-manager-search.png "Search button") button
         3. Click Add
         4. If there are more than 1 raster file inside the geopackage, QGIS will ask you to select which ones to load
 
@@ -339,10 +339,10 @@ Figure 2.14. Loading a raster inside a GeoPackage
         3. If you encounter problems with preserving data types for your delimited texts (specifically CSVs), you can use what’s called a CSVT file.  You can read more about loading CSVs in QGIS at the following link:  [https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html ](https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html)
 
     3. CSVs and spreadsheets can be loaded in QGIS with or without spatial or geometry information. When they are loaded with spatial information, they are treated as vector data. When they are loaded without, they are treated as normal tabular data.
-    4. There is a CSV file in the data folder named NCR_McDonalds.csv which contains point locations of McDonald’s branches in NCR. To load it:
+    4. There is a CSV file in the data folder named kiambu_schools.csv which contains point locations of schools in Kiambu county. To load it:
 
         1. Go to the Delimited Text tab
-        2. File name: Select the NCR_McDonalds CSV using the ![Search button](media/data-source-manager-search.png "Search button") button
+        2. File name: Select the kiambu_schools CSV using the ![Search button](media/data-source-manager-search.png "Search button") button
         3. File Format: CSV
         4. Record and Fields Options: keep default
         5. Geometry definition: 
@@ -395,8 +395,8 @@ To connect to a tile server:
 3. Add the following:
 
 ```
-    Name: PGP Basemap
-    URL: https://basemapserver.geoportal.gov.ph/tiles/v2/PGP/{z}/{x}/{y}.png
+    Name: ESRI World Imagery
+    URL: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
 ```
 4. Click OK.
 
@@ -404,28 +404,17 @@ To connect to a tile server:
 
 Figure 2.18. Adding an XYZ connection in QGIS
 
-5. This should add a PGP Basemap item under XYZ Tiles in the Browser Panel.
+5. This should add a ESRI World Imagery item under XYZ Tiles in the Browser Panel.
 
-![PGP Basemap Tile server added to the Browser Panel](media/xyz-2.png "PGP Basemap Tile server added to the Browser Panel")
+![ESRI World Imagery added to the Browser Panel](media/xyz-2.png "ESRI World Imagery added to the Browser Panel")
 
-Figure 2.19. PGP Basemap Tile server added to the Browser Panel
+Figure 2.19. ESRI World Imagery server added to the Browser Panel
 
 6. You can load the XYZ tile layer as you would any other layer from the Browser Panel.
 
-![PGP Basemap layer loaded in QGIS](media/xyz-3.png "PGP Basemap layer loaded in QGIS")
+![ESRI World Imagery layer loaded in QGIS](media/xyz-3.png "ESRI World Imagery layer loaded in QGIS")
 
-Figure 2.20. PGP Basemap layer loaded in QGIS
-
-7. Try to add the ESRI World Imagery layer as well.
-
-```
-    Name: ESRI World Imagery
-    URL: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
-```
-
-![Adding ESRI World Imagery as XYZ Tiles](media/xyz2-1.png "Adding ESRI World Imagery as XYZ Tiles")
-
-
+Figure 2.20. ESRI World Imagery Basemap layer loaded in QGIS
 
 
 **BONUS:**  If you want to add several basemaps under XYZ Tiles in the Browser Panel, you can follow the instructions in this post: [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
@@ -446,8 +435,9 @@ To connect to a WMS:
 3. Add the following:
 
 ```
-Name: LiPAD 100-year Flood Hazard
-URL: https://api.mapbox.com/styles/v1/osmph/cjqrynb300m522sper0emmgs6/wmts?access_token=sk.eyJ1Ijoib3NtcGgiLCJhIjoiY2pxbjF6czN2MGllbTQ4bXVuOW44ZDlpbSJ9.pUqHal3xOR1yZUaM6LbLkg
+Name: EOX Sentinel-2
+URL: https://tiles.maps.eox.at/wms
+
 ```
 4. Click Add
 
@@ -455,17 +445,17 @@ URL: https://api.mapbox.com/styles/v1/osmph/cjqrynb300m522sper0emmgs6/wmts?acces
 
 Figure 2.21. Creating a new WMS/WMTS Connection
 
-5. This should add a LiPAD 100-year Flood Hazard item under the WMS/WMTS and OWS connections in the Browser Panel.
+5. This should add a EOX Sentinel-2 item under the WMS/WMTS and OWS connections in the Browser Panel.
 
-![The LiPAD 100-year Flood Hazard WMS added in the Browser Panel](media/wms-2.png "The LiPAD 100-year Flood Hazard WMS added in the Browser Panel")
+![The EOX Sentinel-2 WMS added in the Browser Panel](media/wms-2.png "The The EOX Sentinel-2 WMS added in the Browser Panel")
 
-Figure 2.22. The LiPAD 100-year Flood Hazard WMS added in the Browser Panel
+Figure 2.22. The EOX Sentinel-2 WMS added in the Browser Panel
 
 6. You can load the WMS layers as you would any other layer from the Browser Panel.
 
-![Flood hazard map from WMS loaded in QGIS](media/wms-3.png "Flood hazard map from WMS loaded in QGIS")
+![The EOX Sentinel-2 map from WMS loaded in QGIS](media/wms-3.png "The EOX Sentinel-2 map from WMS loaded in QGIS")
 
-Figure 2.23. Flood hazard map from WMS loaded in QGIS
+Figure 2.23. EOX Sentinel map from WMS loaded in QGIS
 
 7. Connecting to WFS follows the same procedure.
 
@@ -572,7 +562,6 @@ URL: [http://ihp-wins.unesco.org/](http://ihp-wins.unesco.org/)
 ![Connect to GeoNode](media/connect-geonode.png "Connect to GeoNode")
 
 You can learn more about connecting QGIS to remote services at: [https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html](https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html)
-
 
 #### **Exercise/Tutorial on Virtual Layers**
 
