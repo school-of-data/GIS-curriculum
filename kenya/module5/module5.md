@@ -173,7 +173,7 @@ Figure 5.10: Add attribution to the map
 
 ![Exported map as imgage](media/exported-map.png "Exported map as imgage")
 
-Figure 5.11: Exported map as imgage
+Figure 5.11: Exported map as image
 
 #### **Quiz questions**
 
@@ -205,7 +205,7 @@ Figure 5.12: Coverage layer
 
 Figure 5.13: Attribute table
 
-1. This layer will serve as out coverage layer which means that the QGIS Atlas will 1 map for each of the features in this coverage layer. All in all, 81 maps will be generated.
+1. This layer will serve as out coverage layer which means that the QGIS Atlas will 1 map for each of the features in this coverage layer. All in all, 47 maps will be generated.
 
 2. Open or create a new Print Layout and add a map.
 
@@ -220,7 +220,7 @@ Figure 5.14: Atlas Print Layout
 
 Figure 5.15: Atlas Generation
 
-3. The next step is to choose the coverage layer; The coverage layer is the index layer used to create each page. One map/page for the Atlas will be generated for each feature in the coverage layer. In our case, using the PHL_provinces coverage layer will create a map for each of the 81 provinces. QGIS Atlas dynamically changes the view-extent to each feature in the coverage layer. You can opt to make the coverage layer hidden in the maps that you create (i.e. the coverage layer will not be visible in the Print Layout) and select what to name each page of your Atlas. You can also perform some filtering and sorting of the coverage layer if you need to. For the **Output**, you can opt to have a single file as an output by checking the **Singe file export when possible** checkbox. If unchecked, you will generate 1 file per map.
+3. The next step is to choose the coverage layer; The coverage layer is the index layer used to create each page. One map/page for the Atlas will be generated for each feature in the coverage layer. In our case, using the kenya_counties_admin_boundaries coverage layer will create a map for each of the 47 counties. QGIS Atlas dynamically changes the view-extent to each feature in the coverage layer. You can opt to make the coverage layer hidden in the maps that you create (i.e. the coverage layer will not be visible in the Print Layout) and select what to name each page of your Atlas. You can also perform some filtering and sorting of the coverage layer if you need to. For the **Output**, you can opt to have a single file as an output by checking the **Singe file export when possible** checkbox. If unchecked, you will generate 1 file per map.
 
 ![Select Coverage Layer](media/coverage-layer.png "Select Coverage Layer")
 
