@@ -177,7 +177,7 @@ Figure 6.6: New attribute table with new field and attributes
 
 #### **Content/Tutorial**
 
-At this point, you might notice that the attribute table stores both spatial and non-spatial data. In this tutorial you’ll discover ways of working with attribute table data. For example, Using expressions, select Clinics in Pampanga with an emergency facility, all using data from the attribute table. 
+At this point, you might notice that the attribute table stores both spatial and non-spatial data. In this tutorial you’ll discover ways of working with attribute table data. For example, Using expressions, select Clinics in Kiambu county with a wheelchair facility, all using data from the attribute table. 
 
 1. Add the following datasets of Kenya to the QGIS map canvas; 
 
@@ -193,7 +193,7 @@ Figure 6.7: Add different layers
 2. The selection will be applied to the Clinics layer, therefore Open the attribute table for the Clinic layer. Click the select features using expression ![alt_text](media/select_features_button.png "image_tooltip") button and type the following expression in the expression builder;
 
 ```
-"amenity" = 'clinic' AND "emergency" = 'yes'
+"amenity" = 'clinic' AND "wheelchair" = 'yes'
 ```
 
 You’ll notice that the expression has a number of predicates like the comparison sign (=), the logical predicate (AND) and a string which is enclosed in single quotes (‘ ‘). There are also two attribute names(amenity, emergency) and their values (clinic,yes). 
@@ -202,7 +202,7 @@ You’ll notice that the expression has a number of predicates like the comparis
 
 Figure 6.8: Select by Expression builder dialogue
 
-3. One Clinic is selected. You can see the selection highlighted in yellow. The selected clinic is also highlighted in the attribute table. Now we know there’s only one clinic with an emergency facility in Pampanga province.
+3. Four Clinics are selected. You can see the selection highlighted in yellow. The selected clinics are also highlighted in the attribute table. Now we know there are four clinics with wheelchair facility in Kiambu county.
 
 ![alt_text](media/selected-canvas.png "image_tooltip")
 
