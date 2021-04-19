@@ -195,7 +195,7 @@ Figure 5.11: Exported map as imgage
 
 #### **Content/Tutorial**
 
-If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different counties of Kenya as an example, here’s Administrative Boundaries for the 81 provinces;
+If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different counties of Kenya as an example, here’s Administrative Boundaries for the 47 counties;
 
 ![Coverage layer](media/atlas-coverage.png "Coverage layer")
 
