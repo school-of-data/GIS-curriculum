@@ -58,28 +58,28 @@ The data used in the modules for each country can be found below:
 ## Team
 ### Module Authors
 
-- [Ben Hur Pintor](@benhur07b) - Modules 0 - 3
-- [Ketty Adoch](@kettyadoch) - Modules 4 - 7
-- [Codrina Maria Ilie](@Codrina) - Modules 8 - 10
+- [Ben Hur Pintor](https://github.com/benhur07b) - Modules 0 - 3
+- [Ketty Adoch](https://github.com/kettyadoch) - Modules 4 - 7
+- [Codrina Maria Ilie](https://github.com/Codrina) - Modules 8 - 10
 
 ### Editor
 
-- [Ben Hur Pintor](@benhur07b)
+- [Ben Hur Pintor](https://github.com/benhur07b)
 
 ### Translation and Localization
 
-- Australia - [Codrina Maria Ilie](@Codrina)
-- Argentina - Ines Alberico, Malena Libman, and [Hernan Casaubon](@Hercasau)
-- Bangladesh - [Codrina Maria Ilie](@Codrina)
-- Brazil - [Bernardo Loureiro](@bplmp)
-- Egypt - [Ali Rebaie](@AliRebaie) and [Samah Hijazi](@Smhhjz)
-- Ethiopia - [Ben Hur Pintor](@benhur07b)
-- Germany - [Knut Hühne](@k-nut)
-- Ghana - [Ketty Adoch](@kettyadoch)
-- India - [Ben Hur Pintor](@benhur07b)
-- Kenya - [Ketty Adoch](@kettyadoch)
-- Mexico - Ines Alberico, Malena Libman, and [Hernan Casaubon](@Hercasau)
-- Philippines - [Ben Hur Pintor](@benhur07b), [Codrina Maria Ilie](@Codrina), and [Ketty Adoch](@kettyadoch)
-- South Africa - [Ketty Adoch](@kettyadoch)
-- Sri Lanka - [Ben Hur Pintor](@benhur07b)
-- Vietnam - [Quach Dong Thang](@thangqd)
+- Australia - [Codrina Maria Ilie](https://github.com/Codrina)
+- Argentina - Ines Alberico, Malena Libman, and [Hernan Casaubon](https://github.com/Hercasau)
+- Bangladesh - [Codrina Maria Ilie](https://github.com/Codrina)
+- Brazil - [Bernardo Loureiro](https://github.com/bplmp)
+- Egypt - [Ali Rebaie](https://github.com/AliRebaie) and [Samah Hijazi](https://github.com/Smhhjz)
+- Ethiopia - [Ben Hur Pintor](https://github.com/benhur07b)
+- Germany - [Knut Hühne](https://github.com/k-nut)
+- Ghana - [Ketty Adoch](https://github.com/kettyadoch)
+- India - [Ben Hur Pintor](https://github.com/benhur07b)
+- Kenya - [Ketty Adoch](https://github.com/kettyadoch)
+- Mexico - Ines Alberico, Malena Libman, and [Hernan Casaubon](https://github.com/Hercasau)
+- Philippines - [Ben Hur Pintor](https://github.com/benhur07b), [Codrina Maria Ilie](https://github.com/Codrina), and [Ketty Adoch](https://github.com/kettyadoch)
+- South Africa - [Ketty Adoch](https://github.com/kettyadoch)
+- Sri Lanka - [Ben Hur Pintor](https://github.com/benhur07b)
+- Vietnam - [Quach Dong Thang](https://github.com/thangqd)
