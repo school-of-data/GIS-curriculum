@@ -376,7 +376,7 @@ A complete cleaning of the vector datasets used for this module is out of scope.
 Let's run one more algorithm to get a sense of what the attributes for our Kiambu layers are. After we’ve identified how many features each layer has, let’s see how many and which are the unique attributes in the following cases: 
 
 * layer buildings_cleaned - attribute type;
-* layer pois_cleaned - attribute fclass;
+* layer schools_cleaned - attribute fclass;
 * layer waterways - attribute fclass;
 * layer pofw - attribute fclass;
 * layer roads -attribute fclass;
@@ -559,7 +559,7 @@ Figure 8.27b - Results of the clip functionality
 
 **Thiessen (Voronoi) polygons.** Imagine you have to make a series of administrative decisions in your district based on how many schools there are and what specific areas they serve. Geospatial analysis can be of assistance. You can start by calculating the Thiessen polygons. Based on an area containing at least two points, a Thiessen Polygon is a 2-dimensional shape which boundaries contain all space which is closer to a point within the area than any other point without the area. A good use example is in meteorology, where weather stations are discrete points, yet the information collected is considered to be measured out on the surface based on the thiessen polygons. 
 
-To respond to the above question, we will run the algorithm only for points that have the attribute school at type. Thus, make the selection as instructed in module 6. You should have 88 features selected on layer pois_cleaned. Go to **Vector ‣ Geometry Tools ‣ Voronoi Polygons..** After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Kiambu county is contained, you should see a result like in figure 8.28d. 
+To respond to the above question, we will run the algorithm only for points that have the attribute school at type. Thus, make the selection as instructed in module 6. You should have 75 features selected on layer schools_cleaned. Go to **Vector ‣ Geometry Tools ‣ Voronoi Polygons..** After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Kiambu county is contained, you should see a result like in figure 8.28d. 
 
 
 ![Filtering the poi layer to get all schools](media/fig828_a.png "Filtering the poi layer to get all schools")
@@ -569,7 +569,7 @@ Figure 8.28a - Filtering the poi layer to get all schools
 
 ![All schools in the poi layer](media/fig828_b.png "All schools in the poi layer")
 
-Figure 8.28b - All schools in the poi layer
+Figure 8.28b - All schools in the schools_cleaned layer
 
 
 ![Running the Voronoi polygon algorithm](media/fig828_c.png "Running the Voronoi polygon algorithm")
@@ -597,7 +597,7 @@ We’ve seen that there are tools that can assist us in calculating the total su
 - Vertical spacing - 10 km 
 
 
-![Creating a 10X10km vector grid for the Pampanga province](media/fig829_a.png "Creating a 10X10km vector grid for the Kiambu county")
+![Creating a 10X10km vector grid for Kiambu county](media/fig829_a.png "Creating a 10X10km vector grid for the Kiambu county")
 
 Figure 8.29a - Create 10kmx10km vector grid for Kiambu county
 
@@ -662,7 +662,7 @@ Figure 8.34b - Selected green spaces.
 
 Figure 8.34c - Green and Built-up spaces.
 
-Next, calculate the area occupied by each feature of the 2 layers. Go to the attribute table of each layer and then add the geometric column area by inserting the expression `round($area,2) `in the field calculator.  (see module 6 for details, if needed). However, the 10X10km grid of Kiambu county has a known number of grid cells, and that is 42. Therefore, we need to summarise the areas for all types of green spaces (forests, parks etc.) an built-up spaces (commercial, residential etc.) and join it accordingly to all of the 42 grid cells. To do this, we will use the **GroupStats** plugin to sum up for each grid_id all the green categories, respectively all the built-up categories. For the green_spaced_gridded vector layer, set the parameters as in figure 8.34e. 
+Next, calculate the area occupied by each feature of the 2 layers. Go to the attribute table of each layer and then add the geometric column area by inserting the expression `round($area,2) `in the field calculator.  (see module 6 for details, if needed). However, the 10X10km grid of Kiambu county has a known number of grid cells, and that is 12. Therefore, we need to summarise the areas for all types of green spaces (forests, parks etc.) an built-up spaces (commercial, residential etc.) and join it accordingly to all of the 12 grid cells. To do this, we will use the **GroupStats** plugin to sum up for each grid_id all the green categories, respectively all the built-up categories. For the green_spaced_gridded vector layer, set the parameters as in figure 8.34e. 
 
 
 ![Computing the area of each feature](media/fig834_d.png "Computing the area of each feature")
@@ -786,30 +786,30 @@ Figure 8.39 -  Spatial distribution of 10X10km units with most waterways
 
 3. total number of public buildings (schools, kindergartens, hospitals , town halls etc.) for each grid cell
 
-To count the total number of public buildings in the 10X10 unit, we will use the pois_cleaned. First, we run **Vector ‣ Analysis Tools ‣ List unique values..** and decide which building we consider public. We will select from our vector point data layer (pois) the following features: `"fclass" = 'town_hall' or "fclass" = 'kindergarten' or "fclass" = 'hospital' or "fclass" = 'doctors' or "fclass" = 'fire_station' or "fclass" = 'community_centre' or "fclass" = 'stadium' or "fclass" = 'museum' or "fclass" = 'school' or "fclass" = 'theatre'.` Similarly, you can just type `"fclass" in ('town_hall', 'kindegarten', 'hospital', 'doctors', 'fire_station', 'community_centre', 'stadium', 'museum', 'school', 'theatre')`. Your selection should have 227 features in total. 
+To count the total number of public buildings in the 10X10 unit, we will use the schools_cleaned. First, we run **Vector ‣ Analysis Tools ‣ List unique values..** and decide which building we consider public. We will select from our vector point data layer (schools_cleaned) the following features: `"fclass" = 'town_hall' or "fclass" = 'kindergarten' or "fclass" = 'hospital' or "fclass" = 'doctors' or "fclass" = 'fire_station' or "fclass" = 'community_centre' or "fclass" = 'stadium' or "fclass" = 'museum' or "amenity" = 'school' or "fclass" = 'theatre'.` Similarly, you can just type `"fclass" in ('town_hall', 'kindegarten', 'hospital', 'doctors', 'fire_station', 'community_centre', 'stadium', 'museum', 'school', 'theatre')`. Your selection should have 75 features in total. 
 
 
-![Selecting public POIs](media/fig840_a.png "Selecting public POIs")
+![Selecting schools](media/fig840_a.png "Selecting public schools")
 
-Figure 8.40a - Selecting public POIs
-
-
-![Selected public POIS](media/fig840_b.png "Selected public POIS")
-
-Figure 8.40b - Selected public POIS
-
-To answer our request, we will use **Vector ‣ Analysis Tools ‣ Count points in polygon** algorithm. This algorithm takes a points layer and a polygon layer and counts the number of points from the first one in each polygons of the second one. A new polygons layer is generated, with the exact same content as the input polygons layer, but containing an additional field with the points count corresponding to each polygon. Set the point layer to pois_cleand and the polygon Grid layer with the calculated information in the previous round. For the points, check the **Selected features only** checkbox, so the algorithm calculates only the selected points - the public POIs. Save the output file as grid_info. 
+Figure 8.40a - Selecting schools
 
 
-![Count public POIS in each 10km x 10km grid](media/fig840_c.png "Count public POIS in each 10km x 10km grid")
+![Selected schools](media/fig840_b.png "Selected schools")
 
-Figure 8.40c - Count public POIS in each 10km x 10km grid
+Figure 8.40b - Selected schools
+
+To answer our request, we will use **Vector ‣ Analysis Tools ‣ Count points in polygon** algorithm. This algorithm takes a points layer and a polygon layer and counts the number of points from the first one in each polygons of the second one. A new polygons layer is generated, with the exact same content as the input polygons layer, but containing an additional field with the points count corresponding to each polygon. Set the point layer to schools_cleaned and the polygon Grid layer with the calculated information in the previous round. For the points, check the **Selected features only** checkbox, so the algorithm calculates only the selected points - the schools. Save the output file as grid_info. 
 
 
-![Spatial distribution of public POIs density per unit 10X10km](media/fig840_d.png "Spatial distribution of public POIs density per unit 10X10km")
+![Count schools in each 10km x 10km grid](media/fig840_c.png "Count schools in each 10km x 10km grid")
+
+Figure 8.40c - Count public schools in each 10km x 10km grid
 
 
-Figure 8.40d - Spatial distribution of public POIs density per unit 10X10km
+![Spatial distribution of schools density per unit 10X10km](media/fig840_d.png "Spatial distribution of schools density per unit 10X10km")
+
+
+Figure 8.40d - Spatial distribution of schools density per unit 10X10km
 
 
 #### **Quiz questions**
