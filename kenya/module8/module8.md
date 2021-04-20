@@ -192,23 +192,26 @@ The output file is an html which can be opened with any browser (Firefox, Chrome
 
 
 ```
-Analyzed field: length
-Count: 64473
-Unique values: 33106
-NULL (missing) values: 0
-Minimum value: 0.04
-Maximum value: 19690.45
-Range: 19690.41
-Sum: 13927358.250000086
-Mean value: 216.01846121632445
-Median value: 111.18
-Standard deviation: 372.48583667812585
-Coefficient of Variation: 1.724324090546652
-Minority (rarest occurring value): 0.04
-Majority (most frequently occurring value): 0.55
-First quartile: 51.03
-Third quartile: 239.99
-Interquartile Range (IQR): 188.96
+Execution completed in 0.62 seconds
+Results:
+{'COUNT': 9281,
+'CV': 2.3680670648863815,
+'EMPTY': 0,
+'FILLED': 9281,
+'FIRSTQUARTILE': 0.001,
+'IQR': 0.002,
+'MAJORITY': 0.001,
+'MAX': 0.362,
+'MEAN': 0.0033273354164423644,
+'MEDIAN': 0.002,
+'MIN': 0.0,
+'MINORITY': 0.033,
+'OUTPUT_HTML_FILE': 'C:/Users/kat/AppData/Local/Temp/processing_KGfXjc/de568f2c8f134188a2548b11a84fa195/OUTPUT_HTML_FILE.html',
+'RANGE': 0.362,
+'STD_DEV': 0.007879353413507175,
+'SUM': 30.881000000001585,
+'THIRDQUARTILE': 0.003,
+'UNIQUE': 67}
 ```
 
 
@@ -218,15 +221,17 @@ Running the basic statistics on the layer Buildings for the type category, we ob
 
 
 ```
-Analyzed field: type
-Count: 827657
-Unique values: 74
-NULL (missing) values: 773210
-Minimum value: Brgy. San Vicente
-Maximum value: yes;house
-Minimum length: 0
-Maximum length: 20
-Mean length: 0.3669563599413767
+{'COUNT': 297,
+'EMPTY': 0,
+'FILLED': 297,
+'MAX': 'yes',
+'MAX_LENGTH': 6,
+'MEAN_LENGTH': 3.01010101010101,
+'MIN': 'school',
+'MIN_LENGTH': 3,
+'OUTPUT_HTML_FILE': 'C:/Users/kat/AppData/Local/Temp/processing_KGfXjc/3f19fdcd6d4c415990b439e3aa6c070f/OUTPUT_HTML_FILE.html',
+'UNIQUE': 2}
+
 ```
 
 
