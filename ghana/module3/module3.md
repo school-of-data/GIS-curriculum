@@ -23,7 +23,7 @@ The required tools and resources for this module are:
 *   working computer
 *   internet connection
 *   QGIS 3.16 installed in the computer ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
-*   Pampanga_province and Pampanga_SanFernando vector layers (inside [module3.gpkg](module3.gpkg)).
+*   Ashanti region and Ashanti-Kumasi vector layers (inside [module3.gpkg](module3.gpkg)).
 
 
 ## Prerequisites
@@ -96,7 +96,7 @@ Usually, the OSM community and local communities agree on certain key and value 
 
 #### **Exercise 1: Loading OSM data in QGIS using the QuickOSM plugin**
 
-or this exercise, we will load road network data and locations of fast food chains from OSM that can be found in the province of Pampanga using the QuickOSM plugin.
+or this exercise, we will load road network data and locations of fast food chains from OSM that can be found in the Ashanti region using the QuickOSM plugin.
 
 QuickOSM works by querying the tags (keys and values) of the features in OSM. For more information about how to use the key/value in QuickOSM, go to: [https://wiki.openstreetmap.org/wiki/Mapfeatures](https://wiki.openstreetmap.org/wiki/Mapfeatures.).
 
@@ -164,7 +164,7 @@ Figure 3.6. The Overpass query version of the Quick query to load highways
     * Advanced:
         * Check Node, Way, Relation, Points
 
-![Load amenities (points) tagged as fast_food in the Ashanti region layer extent](media/quickosm-6.png "Load amenities (points) tagged as fast_food in the Pampanga_province layer extent")
+![Load amenities (points) tagged as fast_food in the Ashanti region layer extent](media/quickosm-6.png "Load amenities (points) tagged as fast_food in the Ashanti region layer extent")
 
 Figure 3.7: Load amenities (points) tagged as fast_food in the Ashanti region layer extent
 
