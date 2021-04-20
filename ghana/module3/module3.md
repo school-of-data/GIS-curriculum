@@ -102,11 +102,11 @@ QuickOSM works by querying the tags (keys and values) of the features in OSM. Fo
 
 
 
-1. Load the Pampanga_province and Pampanga_SanFernando vector layers found inside the module3 geopackage.
+1. Load the Ashanti region and Ashanti Kumasi vector layers found inside the module3 geopackage.
 
-![Pampanga layers loaded in QGIS](media/quickosm-1.png "Pampanga layers loaded in QGIS")
+![Ashanti layers loaded in QGIS](media/quickosm-1.png "Ashanti layers loaded in QGIS")
 
-Figure 3.2. Pampanga layers loaded in QGIS
+Figure 3.2. Ashanti layers loaded in QGIS
 
 2. Make sure that the QuickOSM plugin is installed and activated. It should appear under **Vector ‣ QuickOSM** in the Menu bar. If not, install and activate the plugin first using the Manage and Install Plugins dialog.
 3. Open the QuickOSM plugin (**Vector ‣ QuickOSM ‣ QuickOSM**). A dialog should open with five tabs:
@@ -131,17 +131,17 @@ Figure 3.2. Pampanga layers loaded in QGIS
 
 Figure 3.3. QuickOSM plugin
 
-4. Load all highways inside the extent of the Pampanga_SanFernando layer.
+4. Load all highways inside the extent of the Ashanti-Kumasi layer.
 
     * Key: highway
     * Value: &lt;blank> (blank means ALL)
-    * Layer Extent: Pampanga_SanFernando
+    * Layer Extent: Ashanti Kumasi
     * Advanced:
         * Check Node, Way, Relation, Lines, Multilinestrings
 
-![Load all highways in the Pampanga_SanFernando layer extent](media/quickosm-3.png "Load all highways in the Pampanga_SanFernando layer extent")
+![Load all highways in the Ashanti Kumasi layer extent](media/quickosm-3.png "Load all highways in the Ashanti Kumasi layer extent")
 
-Figure 3.4. Load all highways in the Pampanga_SanFernando layer extent
+Figure 3.4. Load all highways in the Ashanti Kumasi layer extent
 
 5. Click Run query. Basically what we’re telling QuickOSM is to get all line or multilinestring features tagged with a highway key and load it in QGIS. When the plugin is done loading the layer, your map should look like below:
 
@@ -156,17 +156,17 @@ Figure 3.5. Highway data loaded from OSM
 
 Figure 3.6. The Overpass query version of the Quick query to load highways
 
-8. Next, let’s load all fast food restaurant locations in the Pampanga_province layer extent. Open the QuickOSM plugin and put the following parameters in the Quick query tab:
+8. Next, let’s load all fast food restaurant locations in the ashanti region layer extent. Open the QuickOSM plugin and put the following parameters in the Quick query tab:
 
     * Key: amenity
     * Value: fast_food
-    * Layer Extent: Pampanga_province
+    * Layer Extent: Ashanti region
     * Advanced:
         * Check Node, Way, Relation, Points
 
-![Load amenities (points) tagged as fast_food in the Pampanga_province layer extent](media/quickosm-6.png "Load amenities (points) tagged as fast_food in the Pampanga_province layer extent")
+![Load amenities (points) tagged as fast_food in the Ashanti region layer extent](media/quickosm-6.png "Load amenities (points) tagged as fast_food in the Pampanga_province layer extent")
 
-Figure 3.7: Load amenities (points) tagged as fast_food in the Pampanga_province layer extent
+Figure 3.7: Load amenities (points) tagged as fast_food in the Ashanti region layer extent
 
 9. The output should look something like below:
 
@@ -229,11 +229,11 @@ Mapping the world population one building at a time - [https://arxiv.org/abs/171
 
 The HRSL data found on HDX comes in GeoTIFF (raster) and CSV (vector) format. The CSV are point locations with corresponding population values. For this exercise, a subset of the data for your country has already been prepared but you can always download the whole dataset or even other datasets to try.
 
-1. Load the **HRSL_Pampanga_Population** raster file in QGIS.
+1. Load the **HRSL_Ashanti_Population** raster file in QGIS.
 
-![The HRSL for Pampanga, Philippines](media/hrsl-1.png "The HRSL for Pampanga, Philippines")
+![The HRSL for Ashanti region, Ghana](media/hrsl-1.png "The HRSL for Ashanti, Ghana")
 
-Figure 3.10: The HRSL for Pampanga, Philippines
+Figure 3.10: The HRSL for Ashanti, Ghana
 
 2. Check the Properties of the layer.
 3. You can also edit the Symbology and Style of the raster (will be discussed in a future module)
@@ -255,7 +255,7 @@ Using an Overpass query allows you to create more complex feature selection in Q
 
 1. Open the QuickOSM plugin and input the parameters we used for querying all fast foods.
 
-![QuickOSM parameters for loading fast foods in Pampanga](media/quickosm-5.png "QuickOSM parameters for loading fast foods in Pampanga")
+![QuickOSM parameters for loading fast foods in Ashanti](media/quickosm-5.png "QuickOSM parameters for loading fast foods in Ashanti")
 
 Quick query to load all amenities tagged as fast food
 
@@ -267,13 +267,13 @@ Overpass to load all amenities tagged as fast food
 
 3. Edit the query and add the line **&lt;has-kv k="name" v="Jollibee"/>** after each &lt;has-kv k="amenity" v="fast_food"/> line.
 
-![Overpass query to load only fast foods named Jollibee](media/overpass-2.png "Overpass query to load only fast foods named Jollibee")
+![Overpass query to load only fast foods named KFC](media/overpass-2.png "Overpass query to load only fast foods named KFC")
 
-Overpass query to load all amenities tagged as fast food whose name is Jollibee
+Overpass query to load all amenities tagged as fast food whose name is KFC
 
-4. Click Run query. This should load just the amenities tagged as fast_food with the name Jollibee. The layer name will be OsmQuery.
+4. Click Run query. This should load just the amenities tagged as fast_food with the name KFC. The layer name will be OsmQuery.
 
-![Amenities tagged as fast food whose name is Jollibee loaded from OSM](media/overpass-3.png "Amenities tagged as fast food whose name is Jollibee loaded from OSM")
+![Amenities tagged as fast food whose name is KFC loaded from OSM](media/overpass-3.png "Amenities tagged as fast food whose name is KFC loaded from OSM")
 
 Amenities tagged as fast food whose name is Jollibee loaded from OSM
 
