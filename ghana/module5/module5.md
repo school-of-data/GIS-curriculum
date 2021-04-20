@@ -23,10 +23,10 @@ In addition you’ll have learned the following skills;
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
-*   Pampanga administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
-*   Pampanga clinics (inside [module5.gpkg](data/module5.gpkg))
-*   PHL provinces (inside [module5.gpkg](data/module5.gpkg))
-*   [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   Ashanti administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
+*   Ashanti clinics (inside [module5.gpkg](data/module5.gpkg))
+*   Ghana regions (inside [module5.gpkg](data/module5.gpkg))
+*   [Ashanti High Resolution Settlement Layer](data/ashanti_population_density.tif)
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ In addition you’ll have learned the following skills;
 
 Let’s start with an example: 
 
-To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Pampanga province in the Philippines. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
+To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Ashanti region of Ghana. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
 
 Breakdown of the concepts
 
@@ -88,13 +88,13 @@ Figure 5.3: Map canvas exported as image
 
 #### **Second method: Export the map canvas to the print layout**
 
-1. In this tutorial, we’ll make a map showing the 1.) location of health centres and 2.) population density of Pampanga Province in the Philippines. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data.
+1. In this tutorial, we’ll make a map showing the 1.) location of health centres and 2.) population density of Ashanti region in Ghana. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data.
 
 ![Creating new Print Layout](media/new-print-layout.png "Creating new Print Layout")
 
 Figure 5.4: Creating new Print Layout
 
-2. The map canvas can now be exported to the print Layout. Click the ‘new print layout layout button’ ![New Print Layout](media/newprint_composer.png "New Print Layout"). This can be accessed via the tool bar. Alternatively, access using the ‘Projects’ menu bar. A title dialogue will open, prompting you to type the title of the Print Layout. Type ‘Pampanga’ and Click OK.
+2. The map canvas can now be exported to the print Layout. Click the ‘new print layout layout button’ ![New Print Layout](media/newprint_composer.png "New Print Layout"). This can be accessed via the tool bar. Alternatively, access using the ‘Projects’ menu bar. A title dialogue will open, prompting you to type the title of the Print Layout. Type ‘Asahnti Region’ and Click OK.
 
 ![Naming the Print Layout](media/new-print-layout-name.png "Naming the Print Layout")
 
@@ -195,7 +195,7 @@ Figure 5.11: Exported map as imgage
 
 #### **Content/Tutorial**
 
-If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different provinces of the Philippines as an example, here’s Administrative Boundaries for the 81 provinces;
+If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different regions of Ghana as an example, here’s Administrative Boundaries for the 16 regions;
 
 ![Coverage layer](media/atlas-coverage.png "Coverage layer")
 
@@ -205,7 +205,7 @@ Figure 5.12: Coverage layer
 
 Figure 5.13: Attribute table
 
-1. This layer will serve as out coverage layer which means that the QGIS Atlas will 1 map for each of the features in this coverage layer. All in all, 81 maps will be generated.
+1. This layer will serve as out coverage layer which means that the QGIS Atlas will 1 map for each of the features in this coverage layer. All in all, 16 maps will be generated.
 
 2. Open or create a new Print Layout and add a map.
 
@@ -220,7 +220,7 @@ Figure 5.14: Atlas Print Layout
 
 Figure 5.15: Atlas Generation
 
-3. The next step is to choose the coverage layer; The coverage layer is the index layer used to create each page. One map/page for the Atlas will be generated for each feature in the coverage layer. In our case, using the PHL_provinces coverage layer will create a map for each of the 81 provinces. QGIS Atlas dynamically changes the view-extent to each feature in the coverage layer. You can opt to make the coverage layer hidden in the maps that you create (i.e. the coverage layer will not be visible in the Print Layout) and select what to name each page of your Atlas. You can also perform some filtering and sorting of the coverage layer if you need to. For the **Output**, you can opt to have a single file as an output by checking the **Singe file export when possible** checkbox. If unchecked, you will generate 1 file per map.
+3. The next step is to choose the coverage layer; The coverage layer is the index layer used to create each page. One map/page for the Atlas will be generated for each feature in the coverage layer. In our case, using the PHL_provinces coverage layer will create a map for each of the 16 regions. QGIS Atlas dynamically changes the view-extent to each feature in the coverage layer. You can opt to make the coverage layer hidden in the maps that you create (i.e. the coverage layer will not be visible in the Print Layout) and select what to name each page of your Atlas. You can also perform some filtering and sorting of the coverage layer if you need to. For the **Output**, you can opt to have a single file as an output by checking the **Singe file export when possible** checkbox. If unchecked, you will generate 1 file per map.
 
 ![Select Coverage Layer](media/coverage-layer.png "Select Coverage Layer")
 
@@ -232,13 +232,13 @@ Figure 5.16: Select Coverage Layer
 
 Figure 5.17: Make sure that the map extent is controlled by the Atlas
 
-5. To preview your Atlas, click on the Preview Atlas button ![Preview Atlas button](media/atlas-preview-btn.png "Preview Atlas button") on the Atlas Toolbar. This will show you the 81 maps that you generated. Use the Atlas toolbar ![Atlas toolbar](media/atlas-toolbar-nav.png "Atlas toolbar") to navigate the Atlas maps. 
+5. To preview your Atlas, click on the Preview Atlas button ![Preview Atlas button](media/atlas-preview-btn.png "Preview Atlas button") on the Atlas Toolbar. This will show you the 16 maps that you generated. Use the Atlas toolbar ![Atlas toolbar](media/atlas-toolbar-nav.png "Atlas toolbar") to navigate the Atlas maps. 
 
 ![Atlas Preview](media/atlas-preview.png "Atlas Preview")
 
 Figure 5.18: Atlas Preview
 
-6. You can export the Atlas maps via the **Export Atlas** button ![Export Atlas button](media/atlas-export-btn.png "Export Atlas button") either as images or PDFs. Select **Export Atlas as Image**. You should have 81 maps generated wher each map shows the extent of the province.
+6. You can export the Atlas maps via the **Export Atlas** button ![Export Atlas button](media/atlas-export-btn.png "Export Atlas button") either as images or PDFs. Select **Export Atlas as Image**. You should have 16 maps generated wher each map shows the extent of the region.
 
 
 ![Atlas Outputs](media/atlas-outputs.png "Atlas Outputs")
