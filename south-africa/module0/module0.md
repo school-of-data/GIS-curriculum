@@ -261,12 +261,12 @@ Prior to QGIS 3.X, QGIS had an option to activate what’s called “OTF” or �
 
 You may notice that some Coordinate Reference Systems are referred to by their EPSG Code. This code refers to the CRS’ code in the EPSG Geodetic Parameter Dataset which is a  registry of geodetic datums, spatial reference systems, Earth ellipsoids, coordinate transformations and related units of measurement. Most GIS, including QGIS, refer to the EPSG code to identify coordinate reference systems, projections, and perform transformations between these systems.
 
-Common EPSG Codes include:
+Common EPSG Codes used in South Africa include:
 
 *   **EPSG:4326** - WGS 84, latitude/longitude coordinate system based used by the Global Positioning System (GPS) among others.
 *   **EPSG:3857** - Web Mercator projection used for display by many web-based mapping tools such as OpenStreetMap and Google Maps
-*   **EPSG:32650 to EPSG 32653** - WGS 84 / Universal Transverse Mercator (UTM) Zone 50N to 53N. UTM zones used in the Philippines
-*   **EPSG:4683** - Philippine Reference System of 1992
+*   **EPSG:102022** - Afica Albers Equal Area Conic
+*   Othe EPSG codes can be found at the following link: https://epsg.io/?q=south+africa
 
 
 #### **Quiz questions**
