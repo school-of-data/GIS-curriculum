@@ -154,13 +154,13 @@ Figure 2.3. The Module files in the Browser Panel
 
 6. There are 5 files under the data folder: 
 
-    1. a GeoPackage (Philippines_NCR.gpkg) which contains a vector (NCR_Jollibee) and raster file (NCR_SRTM_DEM); 
-    2. a GeoJSON (NCR_districts.geojson); 
-    3. a flatgeobuf file (NCR_municities.fgb);
-    4. a shapefile (NCR_admin_boundary.shp); and
-    5. a comma-separated value (CSV) file (NCR_McDonalds.csv).
+    1. a GeoPackage (southafrica_gauteng.gpkg) which contains a vector (NCR_Jollibee) and raster file (NCR_SRTM_DEM); 
+    2. a GeoJSON (sa_districts.geojson); 
+    3. a flatgeobuf file (sa_municities.fgb);
+    4. a shapefile (sa_admin_boundary.shp); and
+    5. a comma-separated value (CSV) file (gauteng_schools.csv).
 
-7. Right click on NCR_admin_boundary.shp and click Layer Properties (Figure 2.4). This opens the layer properties window (Figure 2.5). Notice the information provided in the window. What is the geometry of the layer? What CRS is used? How many features are in the layer?
+7. Right click on sa_admin_boundary.shp and click Layer Properties (Figure 2.4). This opens the layer properties window (Figure 2.5). Notice the information provided in the window. What is the geometry of the layer? What CRS is used? How many features are in the layer?
 
 
 ![Checking Layer Properties](media/qgis-browser-3.png "Checking Layer Properties")
@@ -179,7 +179,7 @@ Figure 2.5. Layer Properties from Browser Panel
     2. **right-clicking the layer ‣ Add Layer to Project**
     3. **dragging the layer to the Map Canvas** 
 
-10. Try to load the **NCR_admin_boundary**, **NCR_districts**, and **NCR_municities** layers using any of the methods above.
+10. Try to load the **sa_admin_boundary**, **sa_provinces**, and **sa_districts** layers using any of the methods above.
 
 ![The vector layers loaded in QGIS](media/vector-layers-loaded-1.png "The vector layers loaded in QGIS")
 
