@@ -265,9 +265,10 @@ Common EPSG Codes include:
 
 *   **EPSG:4326** - WGS 84, latitude/longitude coordinate system based used by the Global Positioning System (GPS) among others.
 *   **EPSG:3857** - Web Mercator projection used for display by many web-based mapping tools such as OpenStreetMap and Google Maps
-*   **EPSG:32650 to EPSG 32653** - WGS 84 / Universal Transverse Mercator (UTM) Zone 50N to 53N. UTM zones used in the Philippines
-*   **EPSG:4683** - Philippine Reference System of 1992
-
+*   **EPSG:21097** - Arc 1960 / UTM zone 37N, used  north of equator and east of 36°E.  
+*   **EPSG:21037** - Arc 1960 / UTM zone 37S , used south of the equator and east of 36°E
+*   **EPSG:21096** - Arc 1960 / UTM zone 36N , used north of equator and west of 36°E; 
+*   **EPSG:21036** - Arc 1960 / UTM zone 36S , used north of equator and west of 36°E
 
 #### **Quiz questions**
 
