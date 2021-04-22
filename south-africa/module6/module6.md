@@ -48,7 +48,7 @@ You’ll use the field calculator and qgis expression engine to run mathematical
 
 Let’s start with an example: 
 
-In some cases, for instance for infrastructure planning purposes, you may want to know the area of the polygons in a layer. If you have one polygon, this would not be a problem. But what if you have many polygons/areas in the layer? To calculate each area one by one is almost impossible. The Philippines administrative boundary vector layer has many polygons which means it would be a good dataset for this tutorial. We are going to calculate the area for each polygon using an automated way. In total, the area of 81 provinces will be calculated. 
+In some cases, for instance for infrastructure planning purposes, you may want to know the area of the polygons in a layer. If you have one polygon, this would not be a problem. But what if you have many polygons/areas in the layer? To calculate each area one by one is almost impossible. The Gauteng administrative boundary vector layer has many polygons which means it would be a good dataset for this tutorial. We are going to calculate the area for each polygon using an automated way. In total, the area of 9 provinces will be calculated. 
 
 
 ## Breakdown of the concepts
@@ -130,7 +130,7 @@ If you don't want the attribute table to be a floating window but rather dock it
 Figure 6.3: Docked attribute table
 
 
-3. For area calculations, the Coordinate Reference System should be a projected one. This allows you to calculate distances correctly. Remember, our interest is to automatically calculate the area for each of the 81 provinces. Check the Coordinate Reference System of the vector layer. If it’s a geographic coordinate reference system, then reproject the layer to a projected coordinate system. Check for different projections on the [EPSG](https://epsg.io/?q=Philippines%20kind%3APROJCRS) website. This is the Philippines, we’ll use [PRS92 / Philippines Zone 3](https://epsg.io/3123), EPSG:3123. From previous modules where map projections are extensively discussed, you may already know that map projections are applied relative to a given location on earth. 
+3. For area calculations, the Coordinate Reference System should be a projected one. This allows you to calculate distances correctly. Remember, our interest is to automatically calculate the area for each of the 81 provinces. Check the Coordinate Reference System of the vector layer. If it’s a geographic coordinate reference system, then reproject the layer to a projected coordinate system. Check for different projections on the [EPSG](https://epsg.io/south+africa) website. This is South Africa, we’ll use [Africa Albers Equal Area Projection](https://epsg.io/102022), EPSG:102022. From previous modules where map projections are extensively discussed, you may already know that map projections are applied relative to a given location on earth. 
 
 4. Check the project Settings; Go to: **Project ‣ Properties Properties ‣ General**.
 
@@ -179,7 +179,7 @@ Figure 6.6: New attribute table with new field and attributes
 
 At this point, you might notice that the attribute table stores both spatial and non-spatial data. In this tutorial you’ll discover ways of working with attribute table data. For example, Using expressions, select Clinics in Gauteng whose phone number is availabe, all using data from the attribute table. 
 
-1. Add the following datasets of the Philippines to the QGIS map canvas; 
+1. Add the following datasets of South Africa to the QGIS map canvas; 
 
 *   Gauteng administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
 *   Gauteng clinics (inside [module6.gpkg](data/module6.gpkg))
