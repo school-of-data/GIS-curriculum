@@ -664,7 +664,7 @@ Now for each 10X10 km unit, we have the landuse features that we can work with. 
 
 Figure 8.33 - Landuse features clipped per each grid cell and it's associated attribute table. 
 
-Now, that we have all landuse features per 10X10 km unit, we will continue with separating the geometries of the ones that make up the green space and built-up space as defined earlier - for each grid cell.  Thus, for green space, we will select all features that have the attribute value for `fclass: `meadow, grass, nature_reserve, park, forest. In attribute table, in the expression filed write down: ` "fclass" =  'meadow' or  "fclass" =  'grass' or  "fclass" =  'nature_reserve' or  "fclass" =  'park' or  "fclass"  =  'forest'`. Similarly, you can just type: `"fclass" in ('meadow', 'grass', 'nature_reserve', 'park', 'forest')`. Export the selected features as green_spaces_gridded  (see module 6 for more details). Don't forget to check **Save only selected features**. The new output should have 621 features. Do the same for the built-up space. Select the features in landuse that have the attribute value for `fclass` the following: retail, commercial, industrial,  residential, by writing the following expression in the Expression based filter window: `"fclass" =  'retail' or  "fclass" =  'commercial' or  "fclass" =  'industrial' or  "fclass" =  'residential'.` Select the filtered geometries and export as builtup_spaces_gridded. Your new output should have 3849 features. 
+Now, that we have all landuse features per 10X10 km unit, we will continue with separating the geometries of the ones that make up the green space and built-up space as defined earlier - for each grid cell.  Thus, for green space, we will select all features that have the attribute value for `landuse: `meadow, grass, nature_reserve, park, forest. In attribute table, in the expression filed write down: ` "landuse" =  'farmland' or  "landuse" =  'grass'. Similarly, you can just type: `"landuse" in ('farmland', 'grass')`. Export the selected features as green_spaces_gridded  (see module 6 for more details). Don't forget to check **Save only selected features**. The new output should have 4 features. Do the same for the built-up space. Select the features in landuse that have the attribute value for `landuse` the following: retail, commercial, industrial,  residential, by writing the following expression in the Expression based filter window: `"landuse" =  'retail' or  "landuse" =  'commercial' or  "landuse" =  'industrial' or  "landuse" =  'residential'.` Select the filtered geometries and export as builtup_spaces_gridded. Your new output should have 18 features. 
 
 Alternatively, you can also use a filter instead of a selection.
 
@@ -807,30 +807,30 @@ Figure 8.39 -  Spatial distribution of 10X10km units with most waterways
 
 3. total number of public buildings (schools, kindergartens, hospitals , town halls etc.) for each grid cell
 
-To count the total number of public buildings in the 10X10 unit, we will use the pois_cleaned. First, we run **Vector ‣ Analysis Tools ‣ List unique values..** and decide which building we consider public. We will select from our vector point data layer (pois) the following features: `"fclass" = 'town_hall' or "fclass" = 'kindergarten' or "fclass" = 'hospital' or "fclass" = 'doctors' or "fclass" = 'fire_station' or "fclass" = 'community_centre' or "fclass" = 'stadium' or "fclass" = 'museum' or "fclass" = 'school' or "fclass" = 'theatre'.` Similarly, you can just type `"fclass" in ('town_hall', 'kindegarten', 'hospital', 'doctors', 'fire_station', 'community_centre', 'stadium', 'museum', 'school', 'theatre')`. Your selection should have 227 features in total. 
+To count the total number of public buildings in the 10X10 unit, we will use the pois_cleaned. First, we run **Vector ‣ Analysis Tools ‣ List unique values..** and decide which building we consider public. We will select from our vector point data layer (pois) the following features: `"addr_stree" = 'Evans Street' or "addr_stree" = 'Tweety Street'.` Similarly, you can just type `"addr+_stree" in ('Evans Street', 'Tweety Street')`. Your selection should have 2 features in total. 
 
 
-![Selecting public POIs](media/fig840_a.png "Selecting public POIs")
+![Selecting school](media/fig840_a.png "Selecting schools along specific streets")
 
-Figure 8.40a - Selecting public POIs
-
-
-![Selected public POIS](media/fig840_b.png "Selected public POIS")
-
-Figure 8.40b - Selected public POIS
-
-To answer our request, we will use **Vector ‣ Analysis Tools ‣ Count points in polygon** algorithm. This algorithm takes a points layer and a polygon layer and counts the number of points from the first one in each polygons of the second one. A new polygons layer is generated, with the exact same content as the input polygons layer, but containing an additional field with the points count corresponding to each polygon. Set the point layer to pois_cleand and the polygon Grid layer with the calculated information in the previous round. For the points, check the **Selected features only** checkbox, so the algorithm calculates only the selected points - the public POIs. Save the output file as grid_info. 
+Figure 8.40a - Selecting schools along specific streets
 
 
-![Count public POIS in each 10km x 10km grid](media/fig840_c.png "Count public POIS in each 10km x 10km grid")
+![Selected schools](media/fig840_b.png "Selected schools")
 
-Figure 8.40c - Count public POIS in each 10km x 10km grid
+Figure 8.40b - Selected schools
+
+To answer our request, we will use **Vector ‣ Analysis Tools ‣ Count points in polygon** algorithm. This algorithm takes a points layer and a polygon layer and counts the number of points from the first one in each polygons of the second one. A new polygons layer is generated, with the exact same content as the input polygons layer, but containing an additional field with the points count corresponding to each polygon. Set the point layer to pois_cleand and the polygon Grid layer with the calculated information in the previous round. For the points, check the **Selected features only** checkbox, so the algorithm calculates only the selected points - the schools. Save the output file as grid_info. 
 
 
-![Spatial distribution of public POIs density per unit 10X10km](media/fig840_d.png "Spatial distribution of public POIs density per unit 10X10km")
+![Count schools in each 10km x 10km grid](media/fig840_c.png "Count schools in each 10km x 10km grid")
+
+Figure 8.40c - Count schools in each 10km x 10km grid
 
 
-Figure 8.40d - Spatial distribution of public POIs density per unit 10X10km
+![Spatial distribution of schools density per unit 10X10km](media/fig840_d.png "Spatial distribution of schools density per unit 10X10km")
+
+
+Figure 8.40d - Spatial distribution of schools density per unit 10X10km
 
 
 #### **Quiz questions**
