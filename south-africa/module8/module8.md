@@ -28,7 +28,7 @@ and acquire the following skills:
 
 * This module has been prepared using [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
 * The datasets used for all exercises detailed in this module are presented in the table below:
-* The coordinate reference system used is the PRS92 / Philippines zone 3, EPSG 3123. As it is a projected coordinate system, it allows geometric calculations. 
+* The coordinate reference system used is the Africa Albers Equal Area Conic, EPSG 102022. As it is a projected coordinate system, it allows geometric calculations. 
 
 
 ## Prerequisites
@@ -50,7 +50,7 @@ As part of this module, you will learn how to efficiently work with vector geogr
 
 ## Thematic introduction
 
-Let’s start with an example: You have just landed for your city break in Angeles, Pampanga, Philippines and you need to get from the airport to your hotel. You have no knowledge of where the airport is situated with respect to the city, nor where the hotel is, so the first thing you do is open a map to help you navigate through this new and excited city! You take your phone out, open a map app and you select the start point - the airport - and the end point - your hotel - then ask for the route, by foot, car or public transport. In a matter of seconds, the routing app offers you the best solution for you to get from point A to point B and it highlights it by drawing a distinct line following streets and alleys, as visible in figure 8.1.
+Let’s start with an example: You have just landed for your city break in Gauteng, South Africa and you need to get from the airport to your hotel. You have no knowledge of where the airport is situated with respect to the city, nor where the hotel is, so the first thing you do is open a map to help you navigate through this new and excited city! You take your phone out, open a map app and you select the start point - the airport - and the end point - your hotel - then ask for the route, by foot, car or public transport. In a matter of seconds, the routing app offers you the best solution for you to get from point A to point B and it highlights it by drawing a distinct line following streets and alleys, as visible in figure 8.1.
 
 
 ![Getting from point A to B using Openstreetmap](media/fig81.png "Getting from point A to B using Openstreetmap")
@@ -126,11 +126,11 @@ There are many geoprocessing operations that can be performed on vector data, mo
 
 #### **Step 1. Prepare your working environment.**
 
-Open QGIS, set up the coordinate reference system you will work in - EPSG 3123 -  and add the following data layers:
+Open QGIS, set up the coordinate reference system you will work in - EPSG 102022 -  and add the following data layers:
 
 * Polygons - administrative boundaries; buildings; land use;
 * Lines - roads, rivers;
-* Points - places of worship, places of interest
+* Points - places of worship, schools
 
 At this point, your QGIS map window should look like in figure 8.5, of course, most probably, in other colours. 
 
@@ -212,7 +212,7 @@ Interquartile Range (IQR): 188.96
 ```
 
 
-From these basic statistics, we find out that there are 64473 road segments in the loaded layer, where the shortest has 0.04m and the longest 19690.45m - almost 20 km. We find out that the sum of roads in Pampanga is almost 14k km (13927.358 km). Given that the mean is greater than the median, it tells us that the 2nd half of the dataset contains longer road segments and that it outweighs the road segments in the 1st half. However, the median shows that most road segments have length around 500 m. 
+From these basic statistics, we find out that there are 64473 road segments in the loaded layer, where the shortest has 0.04m and the longest 19690.45m - almost 20 km. We find out that the sum of roads in Gauteng is almost 14k km (13927.358 km). Given that the mean is greater than the median, it tells us that the 2nd half of the dataset contains longer road segments and that it outweighs the road segments in the 1st half. However, the median shows that most road segments have length around 500 m. 
 
 Running the basic statistics on the layer Buildings for the type category, we obtain the followings: 
 
@@ -230,7 +230,7 @@ Mean length: 0.3669563599413767
 ```
 
 
-The results don’t look the same, we don’t have mean, nor median or standard deviation. That is because the attribute field we ran the algorithm on is different, we don’t have numbers but words - types of buildings. We find out that out of 827657 buildings in Pampanga, for 773210 we don’t know the type of the building. We also find out that there are 74 unique categories. 
+The results don’t look the same, we don’t have mean, nor median or standard deviation. That is because the attribute field we ran the algorithm on is different, we don’t have numbers but words - types of buildings. We find out that out of 827657 buildings in Gauteng, for 773210 we don’t know the type of the building. We also find out that there are 74 unique categories. 
 
 
 #### **Step 3. Basic checks to quickly find errors in your data.**
@@ -278,7 +278,7 @@ To define the topology rules, click on the third icon ![Topology rule settings b
 Figure 8.10 - Topology rule settings window
 
 
-We will set a number of rules for the layers we have loaded in our QGIS project, considering the real world objects they depict- roads, buildings, waterways in the district of Pampanga. 
+We will set a number of rules for the layers we have loaded in our QGIS project, considering the real world objects they depict- roads, buildings, waterways in the Gauteng. 
 
 The configuration of the topology is straightforward, as the rules that can be applied based on the selected layer are already embedded in this functionality, as figure 8.11 depicts. 
 
@@ -368,7 +368,7 @@ A complete cleaning of the vector datasets used for this module is out of scope.
 
 #### **Step 4. Take a closer look at the information attached to the points, lines and polygons.**
 
-Let's run one more algorithm to get a sense of what the attributes for our Pampanga layers are. After we’ve identified how many features each layer has, let’s see how many and which are the unique attributes in the following cases: 
+Let's run one more algorithm to get a sense of what the attributes for our Gauteng layers are. After we’ve identified how many features each layer has, let’s see how many and which are the unique attributes in the following cases: 
 
 * layer buildings_cleaned - attribute type;
 * layer pois_cleaned - attribute fclass;
@@ -475,7 +475,7 @@ As per the analysis done earlier, we have seen that for the layer buildings we h
 
 Figure 8.21 - Running GroupStats on the building layer. 
 
-Looking at the result, we can extract important insights regarding our data. For example, for residential purposes in the Pampanga province, we have 3270 buildings with a total surface area built of 405937 square meters, approx. 40 hectares. We also find out that the largest has 1474 square meters as the smallest has 10 square meters. And one can continue the analysis for further valuable information. 
+Looking at the result, we can extract important insights regarding our data. For example, for residential purposes in Gauteng, we have 3270 buildings with a total surface area built of 405937 square meters, approx. 40 hectares. We also find out that the largest has 1474 square meters as the smallest has 10 square meters. And one can continue the analysis for further valuable information. 
 
 Another interesting analysis can be run on the roads vector layer. Figure 8.22 shows how to calculate the lengths of roads categorised by type of road (primary, residential, motorway etc.) and maximum speed allowed. 
 
@@ -554,7 +554,7 @@ Figure 8.27b - Results of the clip functionality
 
 **Thiessen (Voronoi) polygons.** Imagine you have to make a series of administrative decisions in your district based on how many schools there are and what specific areas they serve. Geospatial analysis can be of assistance. You can start by calculating the Thiessen polygons. Based on an area containing at least two points, a Thiessen Polygon is a 2-dimensional shape which boundaries contain all space which is closer to a point within the area than any other point without the area. A good use example is in meteorology, where weather stations are discrete points, yet the information collected is considered to be measured out on the surface based on the thiessen polygons. 
 
-To respond to the above question, we will run the algorithm only for points that have the attribute school at type. Thus, make the selection as instructed in module 6. You should have 88 features selected on layer pois_cleaned. Go to **Vector ‣ Geometry Tools ‣ Voronoi Polygons..** After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Pampanga province is contained, you should see a result like in figure 8.28d. 
+To respond to the above question, we will run the algorithm only for points that have the attribute school at type. Thus, make the selection as instructed in module 6. You should have 88 features selected on layer pois_cleaned. Go to **Vector ‣ Geometry Tools ‣ Voronoi Polygons..** After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Gauteng is contained, you should see a result like in figure 8.28d. 
 
 
 ![Filtering the poi layer to get all schools](media/fig828_a.png "Filtering the poi layer to get all schools")
@@ -587,21 +587,21 @@ Let us assume that you have to present a report that will allow comparisons done
 
 We’ve seen that there are tools that can assist us in calculating the total surface occupied by a certain type of feature, however the first step is to create our 10X10 units - cell grids. To do that, go to: **Vector ‣ Research Tools ‣ Create grid..** Set the parameters to: 
 - Grid type - Rectangle (polygon)
-- Grid extent - Pampanga_admin_boundary layer
+- Grid extent - gauteng_admin_boundary layer
 - Horizontal spacing - 10 km
 - Vertical spacing - 10 km 
 
 
-![Creating a 10X10km vector grid for the Pampanga province](media/fig829_a.png "Creating a 10X10km vector grid for the Pampanga province")
+![Creating a 10X10km vector grid Gauteng](media/fig829_a.png "Creating a 10X10km vector grid for the Gauteng")
 
-Figure 8.29a - Create 10kmx10km vector grid for Pampanga province
+Figure 8.29a - Create 10kmx10km vector grid for Gauteng
 
 You should get a result like in figure 8.29b. 
 
 
-![10X10km vector grid for the Pampanga province](media/fig829_b.png "10X10km vector grid for the Pampanga province")
+![10X10km vector grid for Gauteng](media/fig829_b.png "10X10km vector grid for Gauteng")
 
-Figure 8.29b - 10X10km vector grid for the Pampanga province
+Figure 8.29b - 10X10km vector grid for Gauteng
 
 Going further in answering the questions in our exercise, we need to do the following:
 
@@ -609,14 +609,14 @@ Going further in answering the questions in our exercise, we need to do the foll
 
 Green spaces and built-up spaces is data contained by the landuse vector layer, polygon type. To know exactly what are the ‘green spaces’ we need to see what are the categories enclosed in the dataset. For that, we run **List unique values** algorithm on the `fclass` attribute and find out that we have the following ‘green’ classes: meadow, grass, nature_reserve, park, forest and the following ‘built-up space’ classes: retail, commercial, industrial,  residential.  Figure 8.30b presents a visualisation of our selections: 
 
-![Filtering green areas and built-up space in Pampanga](media/fig830_a.png "Filtering green areas and built-up space in Pampanga ")
+![Filtering green areas and built-up space in Gauteng](media/fig830_a.png "Filtering green areas and built-up space in Gauteng ")
 
-Figure 8.30a - Filtering green areas and built-up space in Pampanga 
+Figure 8.30a - Filtering green areas and built-up space in Gauteng
 
 
-![Spatial distribution of the green areas and built-up space in Pampanga](media/fig830_b.png "Spatial distribution of the green areas and built-up space in Pampanga")
+![Spatial distribution of the green areas and built-up space in Gauteng](media/fig830_b.png "Spatial distribution of the green areas and built-up space in Gauteng")
 
-Figure 8.30b - Spatial distribution of the green areas and built-up space in Pampanga 
+Figure 8.30b - Spatial distribution of the green areas and built-up space in Gauteng 
 
 The second step to answer the requirement, is to identify how much green space and how much built-up space there is in each 10X10 km. To obtain that we will **intersect** the 2 overlaid polygon vector layers. The algorithm extracts the overlapping portions of features in the Input - the landuse layer and Overlay layer - the grid layer. Go to **Vector - Geoprocessing Tools - Intersection** or look for **Intersection in the Processing Toolbox or Locator Bar** Set the algorithm parameters as in figure 8.31.
 
@@ -657,7 +657,7 @@ Figure 8.34b - Selected green spaces.
 
 Figure 8.34c - Green and Built-up spaces.
 
-Next, calculate the area occupied by each feature of the 2 layers. Go to the attribute table of each layer and then add the geometric column area by inserting the expression `round($area,2) `in the field calculator.  (see module 6 for details, if needed). However, the 10X10km grid of the Pampanga province has a known number of grid cells, and that is 42. Therefore, we need to summarise the areas for all types of green spaces (forests, parks etc.) an built-up spaces (commercial, residential etc.) and join it accordingly to all of the 42 grid cells. To do this, we will use the **GroupStats** plugin to sum up for each grid_id all the green categories, respectively all the built-up categories. For the green_spaced_gridded vector layer, set the parameters as in figure 8.34e. 
+Next, calculate the area occupied by each feature of the 2 layers. Go to the attribute table of each layer and then add the geometric column area by inserting the expression `round($area,2) `in the field calculator.  (see module 6 for details, if needed). However, the 10X10km grid of the Gauteng has a known number of grid cells, and that is 42. Therefore, we need to summarise the areas for all types of green spaces (forests, parks etc.) an built-up spaces (commercial, residential etc.) and join it accordingly to all of the 42 grid cells. To do this, we will use the **GroupStats** plugin to sum up for each grid_id all the green categories, respectively all the built-up categories. For the green_spaced_gridded vector layer, set the parameters as in figure 8.34e. 
 
 
 ![Computing the area of each feature](media/fig834_d.png "Computing the area of each feature")
