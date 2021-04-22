@@ -110,7 +110,8 @@ In addition, other concepts like the field calculator functionality in the attri
 The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.
 
 
-1. Load the PHL provinces vector layer (found inside [module6.gpkg](data/module6.gpkg)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 81 features corresponding to 81 provinces.
+1. Load the PHL provinces vector layer (found inside [module6.gpkg](data/module6.gpkg)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 
+features corresponding to 9 provinces.
 
 ![Several polygons](media/many-polygons.png "Several polygons")
 
@@ -130,7 +131,7 @@ If you don't want the attribute table to be a floating window but rather dock it
 Figure 6.3: Docked attribute table
 
 
-3. For area calculations, the Coordinate Reference System should be a projected one. This allows you to calculate distances correctly. Remember, our interest is to automatically calculate the area for each of the 81 provinces. Check the Coordinate Reference System of the vector layer. If it’s a geographic coordinate reference system, then reproject the layer to a projected coordinate system. Check for different projections on the [EPSG](https://epsg.io/south+africa) website. This is South Africa, we’ll use [Africa Albers Equal Area Projection](https://epsg.io/102022), EPSG:102022. From previous modules where map projections are extensively discussed, you may already know that map projections are applied relative to a given location on earth. 
+3. For area calculations, the Coordinate Reference System should be a projected one. This allows you to calculate distances correctly. Remember, our interest is to automatically calculate the area for each of the 9 provinces. Check the Coordinate Reference System of the vector layer. If it’s a geographic coordinate reference system, then reproject the layer to a projected coordinate system. Check for different projections on the [EPSG](https://epsg.io/south+africa) website. This is South Africa, we’ll use [Africa Albers Equal Area Projection](https://epsg.io/102022), EPSG:102022. From previous modules where map projections are extensively discussed, you may already know that map projections are applied relative to a given location on earth. 
 
 4. Check the project Settings; Go to: **Project ‣ Properties Properties ‣ General**.
 
