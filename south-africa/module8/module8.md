@@ -141,7 +141,7 @@ At this point, your QGIS map window should look like in figure 8.5, of course, m
 
 Figure 8.5 - Loaded vector data sets: points, line and polygons
 
-**Check!** All layers are in the same coordinate system (EPSG 3123) by looking in the right down side corner. If it is so, then you are looking at 7 vector data layers overlaid. 
+**Check!** All layers are in the same coordinate system (EPSG 102022) by looking in the right down side corner. If it is so, then you are looking at 7 vector data layers overlaid. 
 
 #### **Step 2. Understand what you are looking at.** 
 
@@ -160,7 +160,7 @@ Before running any basic statistics, let us complete the attribute table with so
 
 Now, the attribute fields are filled, yet if you are not certain in which measurement unit QGIS has calculated the length of roads segments and areas of buildings, then checking the coordinate system information will help you. 
 
-Click on the down right corner of the QGIS map window, on EPSG 3123 and a window as the one in figure 8.6 will appear. 
+Click on the down right corner of the QGIS map window, on EPSG 102022 and a window as the one in figure 8.6 will appear. 
 
 
 ![Specifications of the coordinate reference system used in the QGIS project](media/fig86.png "Specifications of the coordinate reference system used in the QGIS project")
