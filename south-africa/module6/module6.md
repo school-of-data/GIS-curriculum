@@ -26,10 +26,10 @@ You’ll use the field calculator and qgis expression engine to run mathematical
 *   Working computer
 *   Internet connection
 *   QGIS 3.16 and above
-*   Pampanga administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
-*   Pampanga clinics (inside [module6.gpkg](data/module6.gpkg))
-*   PHL provinces (inside [module6.gpkg](data/module6.gpkg))
-*   [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   Gauteng administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
+*   Gauteng clinics (inside [module6.gpkg](data/module6.gpkg))
+*   South Africa provinces (inside [module6.gpkg](data/module6.gpkg))
+*   [Gauteng High Resolution Settlement Layer](data/HRSL_Gauteng_Population.tif)
 
 
 ## Prerequisites
@@ -177,14 +177,14 @@ Figure 6.6: New attribute table with new field and attributes
 
 #### **Content/Tutorial**
 
-At this point, you might notice that the attribute table stores both spatial and non-spatial data. In this tutorial you’ll discover ways of working with attribute table data. For example, Using expressions, select Clinics in Pampanga with an emergency facility, all using data from the attribute table. 
+At this point, you might notice that the attribute table stores both spatial and non-spatial data. In this tutorial you’ll discover ways of working with attribute table data. For example, Using expressions, select Clinics in Gauteng whose phone number is availabe, all using data from the attribute table. 
 
 1. Add the following datasets of the Philippines to the QGIS map canvas; 
 
-*   Pampanga administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
-*   Pampanga clinics (inside [module6.gpkg](data/module6.gpkg))
-*   PHL provinces (inside [module6.gpkg](data/module6.gpkg))
-*   [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   Gauteng administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
+*   Gauteng clinics (inside [module6.gpkg](data/module6.gpkg))
+*   South Africa provinces (inside [module6.gpkg](data/module6.gpkg))
+*   [Gauteng High Resolution Settlement Layer](data/HRSL_Gauteng_Population.tif)
 
 ![Add different layers](media/add-layers.png "Add different layers")
 
@@ -193,7 +193,7 @@ Figure 6.7: Add different layers
 2. The selection will be applied to the Clinics layer, therefore Open the attribute table for the Clinic layer. Click the select features using expression ![alt_text](media/select_features_button.png "image_tooltip") button and type the following expression in the expression builder;
 
 ```
-"amenity" = 'clinic' AND "emergency" = 'yes'
+"amenity" = 'clinic' AND phone != ''
 ```
 
 You’ll notice that the expression has a number of predicates like the comparison sign (=), the logical predicate (AND) and a string which is enclosed in single quotes (‘ ‘). There are also two attribute names(amenity, emergency) and their values (clinic,yes). 
@@ -202,7 +202,7 @@ You’ll notice that the expression has a number of predicates like the comparis
 
 Figure 6.8: Select by Expression builder dialogue
 
-3. One Clinic is selected. You can see the selection highlighted in yellow. The selected clinic is also highlighted in the attribute table. Now we know there’s only one clinic with an emergency facility in Pampanga province.
+3. Six Clinics are selected. You can see the selection highlighted in yellow. The selected clinic is also highlighted in the attribute table. Now we know there’re six clinics with a phone number in Gauteng province.
 
 ![alt_text](media/selected-canvas.png "image_tooltip")
 
