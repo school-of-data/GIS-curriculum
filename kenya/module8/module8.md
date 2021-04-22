@@ -539,9 +539,9 @@ Figure 8.25 - Calculate area for the newly obtained layer, then calculate using 
 **Clip.** Imagine you want to know where all the industrial delineated areas are in your district and also how many buildings are within that perimeter. Visual inspecting your vector data, you notice that you have a number of industrial areas that contain several buildings. You want to separate those buildings and to use them further. First step is to select all features in the landuse layer that have as attribute industrial (see module 6 for how to do that). Afterwards, you go to **Vector ‣ Geoprocessing tools ‣ Clip** and choose as the layer to be clipped buildings_cleaned. Your results should look like in figure 8.27b. 
 
 
-![Figure 8.26a - Select landuse fclass = industrial](media/fig826_a.png "Figure 8.26a - Select landuse fclass = industrial")
+![Figure 8.26a - Select landuse,  landuse = industrial](media/fig826_a.png "Figure 8.26a - Select landuse landuse = industrial")
 
-Figure 8.26a - Select landuse fclass = industrial. 
+Figure 8.26a - Select landuse,  landuse = industrial. 
 
 
 ![Reduced selection of a few buildings and industrial landuse, so the computation can finish faster](media/fig826_b.png "Reduced selection of a few buildings and industrial landuse, so the computation can finish faster")
@@ -566,12 +566,12 @@ Figure 8.27b - Results of the clip functionality
 To respond to the above question, we will run the algorithm only for points that have the attribute school at type. Thus, make the selection as instructed in module 6. You should have 75 features selected on layer schools_cleaned. Go to **Vector ‣ Geometry Tools ‣ Voronoi Polygons..** After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Kiambu county is contained, you should see a result like in figure 8.28d. 
 
 
-![Filtering the poi layer to get all schools](media/fig828_a.png "Filtering the poi layer to get all schools")
+![Filtering the schools layer to get all schools](media/fig828_a.png "Filtering the poi layer to get all schools")
 
 Figure 8.28a - Filtering the poi layer to get all schools
 
 
-![All schools in the poi layer](media/fig828_b.png "All schools in the poi layer")
+![All schools in the schools layer](media/fig828_b.png "All schools in the poi layer")
 
 Figure 8.28b - All schools in the schools_cleaned layer
 
@@ -616,7 +616,7 @@ Going further in answering the questions in our exercise, we need to do the foll
 
 1. green spaces (parks, forests) built-up space per unit ratio:
 
-Green spaces and built-up spaces is data contained by the landuse vector layer, polygon type. To know exactly what are the ‘green spaces’ we need to see what are the categories enclosed in the dataset. For that, we run **List unique values** algorithm on the `fclass` attribute and find out that we have the following ‘green’ classes: meadow, grass, nature_reserve, park, forest and the following ‘built-up space’ classes: retail, commercial, industrial,  residential.  Figure 8.30b presents a visualisation of our selections: 
+Green spaces and built-up spaces is data contained by the landuse vector layer, polygon type. To know exactly what are the ‘green spaces’ we need to see what are the categories enclosed in the dataset. For that, we run **List unique values** algorithm on the `landuse` attribute and find out that we have the following ‘green’ classes: meadow, grass, nature_reserve, park, forest and the following ‘built-up space’ classes: retail, commercial, industrial,  residential.  Figure 8.30b presents a visualisation of our selections: 
 
 ![Filtering green areas and built-up space in Kiambu county](media/fig830_a.png "Filtering green areas and built-up space in Kiambu ")
 
