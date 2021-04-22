@@ -126,11 +126,11 @@ There are many geoprocessing operations that can be performed on vector data, mo
 
 #### **Step 1. Prepare your working environment.**
 
-Open QGIS, set up the coordinate reference system you will work in - EPSG 3123 -  and add the following data layers:
+Open QGIS, set up the coordinate reference system you will work in - EPSG 21037 -  and add the following data layers:
 
 * Polygons - administrative boundaries; buildings; land use;
 * Lines - roads, rivers;
-* Points - places of worship, places of interest
+* Points - places of worship, schools
 
 At this point, your QGIS map window should look like in figure 8.5, of course, most probably, in other colours. 
 
@@ -141,7 +141,7 @@ At this point, your QGIS map window should look like in figure 8.5, of course, m
 
 Figure 8.5 - Loaded vector data sets: points, line and polygons
 
-**Check!** All layers are in the same coordinate system (EPSG 3123) by looking in the right down side corner. If it is so, then you are looking at 7 vector data layers overlaid. 
+**Check!** All layers are in the same coordinate system (EPSG 21037) by looking in the right down side corner. If it is so, then you are looking at 7 vector data layers overlaid. 
 
 #### **Step 2. Understand what you are looking at.** 
 
@@ -192,50 +192,54 @@ The output file is an html which can be opened with any browser (Firefox, Chrome
 
 
 ```
-Execution completed in 0.62 seconds
-Results:
-{'COUNT': 9281,
-'CV': 2.3680670648863815,
-'EMPTY': 0,
-'FILLED': 9281,
-'FIRSTQUARTILE': 0.001,
-'IQR': 0.002,
-'MAJORITY': 0.001,
-'MAX': 0.362,
-'MEAN': 0.0033273354164423644,
-'MEDIAN': 0.002,
-'MIN': 0.0,
-'MINORITY': 0.033,
-'OUTPUT_HTML_FILE': 'C:/Users/kat/AppData/Local/Temp/processing_KGfXjc/de568f2c8f134188a2548b11a84fa195/OUTPUT_HTML_FILE.html',
-'RANGE': 0.362,
-'STD_DEV': 0.007879353413507175,
-'SUM': 30.881000000001585,
-'THIRDQUARTILE': 0.003,
-'UNIQUE': 67}
+Analyzed field: highway
+
+Count: 9281
+
+Unique values: 15
+
+NULL (missing) values: 0
+
+Minimum value: footway
+
+Maximum value: unclassified
+
+Minimum length: 4
+
+Maximum length: 14
+
+Mean length: 10.34672987824588
 ```
 
 
-From these basic statistics, we find out that there are 64473 road segments in the loaded layer, where the shortest has 0.04m and the longest 19690.45m - almost 20 km. We find out that the sum of roads in Kiambu is almost 14k km (13927.358 km). Given that the mean is greater than the median, it tells us that the 2nd half of the dataset contains longer road segments and that it outweighs the road segments in the 1st half. However, the median shows that most road segments have length around 500 m. 
+From these basic statistics, we find out that there are 9281 road segments in the loaded layer, where the shortest has 4m and the longest 14m.Given that the mean is greater than the median, it tells us that the 2nd half of the dataset contains longer road segments and that it outweighs the road segments in the 1st half. How
 
 Running the basic statistics on the layer Buildings for the type category, we obtain the followings: 
 
 
 ```
-{'COUNT': 297,
-'EMPTY': 0,
-'FILLED': 297,
-'MAX': 'yes',
-'MAX_LENGTH': 6,
-'MEAN_LENGTH': 3.01010101010101,
-'MIN': 'school',
-'MIN_LENGTH': 3,
-'OUTPUT_HTML_FILE': 'C:/Users/kat/AppData/Local/Temp/processing_KGfXjc/3f19fdcd6d4c415990b439e3aa6c070f/OUTPUT_HTML_FILE.html',
-'UNIQUE': 2}
+Analyzed field: building
+
+Count: 297
+
+Unique values: 2
+
+NULL (missing) values: 0
+
+Minimum value: school
+
+Maximum value: yes
+
+Minimum length: 3
+
+Maximum length: 6
+
+Mean length: 3.01010101010101
 
 ```
 
 
-The results don’t look the same, we don’t have mean, nor median or standard deviation. That is because the attribute field we ran the algorithm on is different, we don’t have numbers but words - types of buildings. We find out that out of 827657 buildings in Kiambu, for 773210 we don’t know the type of the building. We also find out that there are 74 unique categories. 
+The results don’t look the same, we don’t have median or standard deviation. That is because the attribute field we ran the algorithm on is different, we don’t have numbers but words - types of buildings. We find out that there are 297 buildings in Kiambu, we know all the building type. We also find out that there are 2 unique categories. 
 
 
 #### **Step 3. Basic checks to quickly find errors in your data.**
