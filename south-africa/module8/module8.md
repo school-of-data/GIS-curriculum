@@ -193,44 +193,70 @@ The output file is an html which can be opened with any browser (Firefox, Chrome
 
 ```
 Analyzed field: length
-Count: 64473
-Unique values: 33106
+
+Count: 19636
+
+Unique values: 1479
+
 NULL (missing) values: 0
-Minimum value: 0.04
-Maximum value: 19690.45
-Range: 19690.41
-Sum: 13927358.250000086
-Mean value: 216.01846121632445
-Median value: 111.18
-Standard deviation: 372.48583667812585
-Coefficient of Variation: 1.724324090546652
-Minority (rarest occurring value): 0.04
-Majority (most frequently occurring value): 0.55
-First quartile: 51.03
-Third quartile: 239.99
-Interquartile Range (IQR): 188.96
+
+Minimum value: 2.0
+
+Maximum value: 8251.0
+
+Range: 8249.0
+
+Sum: 4922774.0
+
+Mean value: 250.70146669382765
+
+Median value: 139.0
+
+Standard deviation: 400.040214799466
+
+Coefficient of Variation: 1.5956835836466015
+
+
 ```
 
 
-From these basic statistics, we find out that there are 64473 road segments in the loaded layer, where the shortest has 0.04m and the longest 19690.45m - almost 20 km. We find out that the sum of roads in Gauteng is almost 14k km (13927.358 km). Given that the mean is greater than the median, it tells us that the 2nd half of the dataset contains longer road segments and that it outweighs the road segments in the 1st half. However, the median shows that most road segments have length around 500 m. 
+From these basic statistics, we find out that there are 19636 road segments in the loaded layer, where the shortest has 2.0 m and the longest 8251.0m - almost 8 km. We find out that the sum of roads in Gauteng is almost 4922774 km (4923 km). Given that the mean is greater than the median, it tells us that the 2nd half of the dataset contains longer road segments and that it outweighs the road segments in the 1st half. However, the median shows that most road segments have length around 139 m. 
 
 Running the basic statistics on the layer Buildings for the type category, we obtain the followings: 
 
 
 ```
-Analyzed field: type
-Count: 827657
-Unique values: 74
-NULL (missing) values: 773210
-Minimum value: Brgy. San Vicente
-Maximum value: yes;house
+Analyzed field: building
+
+Count: 300
+
+Unique values: 21
+
+NULL (missing) values: 2
+
+Minimum value: apartments
+
+Maximum value: yes;commercial
+
 Minimum length: 0
-Maximum length: 20
-Mean length: 0.3669563599413767
+
+Maximum length: 14
+
+Mean length: 4.306666666666667
+
+Minority (rarest occurring value): 543.0
+
+Majority (most frequently occurring value): 50.0
+
+First quartile: 57.0
+
+Third quartile: 291.0
+
+Interquartile Range (IQR): 234.0
 ```
 
 
-The results don’t look the same, we don’t have mean, nor median or standard deviation. That is because the attribute field we ran the algorithm on is different, we don’t have numbers but words - types of buildings. We find out that out of 827657 buildings in Gauteng, for 773210 we don’t know the type of the building. We also find out that there are 74 unique categories. 
+The results don’t look the same, we don’t have mean, nor median or standard deviation. That is because the attribute field we ran the algorithm on is different, we don’t have numbers but words - types of buildings. We find out that out of 300 buildings in Gauteng, for 2 we don’t know the type of the building. We also find out that there are 21 unique categories. 
 
 
 #### **Step 3. Basic checks to quickly find errors in your data.**
@@ -371,9 +397,9 @@ A complete cleaning of the vector datasets used for this module is out of scope.
 Let's run one more algorithm to get a sense of what the attributes for our Gauteng layers are. After we’ve identified how many features each layer has, let’s see how many and which are the unique attributes in the following cases: 
 
 * layer buildings_cleaned - attribute type;
-* layer pois_cleaned - attribute fclass;
+* layer schools_cleaned - attribute fclass;
 * layer waterways - attribute fclass;
-* layer pofw - attribute fclass;
+* layer pow - attribute fclass;
 * layer roads -attribute fclass;
 * layer landuse - attribute fclass;
 
