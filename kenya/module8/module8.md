@@ -643,7 +643,7 @@ Now for each 10X10 km unit, we have the landuse features that we can work with. 
 
 Figure 8.33 - Landuse features clipped per each grid cell and it's associated attribute table. 
 
-Now, that we have all landuse features per 10X10 km unit, we will continue with separating the geometries of the ones that make up the green space and built-up space as defined earlier - for each grid cell.  Thus, for green space, we will select all features that have the attribute value for `fclass: `meadow, grass, nature_reserve, park, forest. In attribute table, in the expression filed write down: ` "landuse" =  'farmland' or  "landuse" =  'forest' or  "landuse" = 'meadow' or "landuse" = 'orchard' or "landuse" = 'grass'`. Similarly, you can just type: `"landuse" in ('farmland', 'forest', 'meadow', 'orchard', 'grass')`. Export the selected features as green_spaces_gridded  (see module 6 for more details). Don't forget to check **Save only selected features**. The new output should have 621 features. Do the same for the built-up space. Select the features in landuse that have the attribute value for `fclass` the following: retail, commercial, industrial,  residential, by writing the following expression in the Expression based filter window: `"landuse" =  'retail' or  "landuse" =  'commercial' or  "landuse" =  'industrial' or  "landuse" =  'residential'.` Select the filtered geometries and export as builtup_spaces_gridded. Your new output should have 3849 features. 
+Now, that we have all landuse features per 10X10 km unit, we will continue with separating the geometries of the ones that make up the green space and built-up space as defined earlier - for each grid cell.  Thus, for green space, we will select all features that have the attribute value for `landuse  : `meadow, grass, nature_reserve, park, forest. In attribute table, in the expression filed write down: ` "landuse" =  'farmland' or "landuse" = 'grass'`. Similarly, you can just type: `"landuse" in ('farmland', 'grass')`. Export the selected features as green_spaces_gridded  (see module 6 for more details). Don't forget to check **Save only selected features**. The new output should have 4 features. Do the same for the built-up space. Select the features in landuse that have the attribute value for `landuse` the following: retail, commercial, industrial,  residential, by writing the following expression in the Expression based filter window: `"landuse" =  'retail' or  "landuse" =  'commercial' or  "landuse" =  'industrial' or  "landuse" =  'residential'.` Select the filtered geometries and export as builtup_spaces_gridded. Your new output should have 18 features. 
 
 Alternatively, you can also use a filter instead of a selection.
 
@@ -786,12 +786,12 @@ Figure 8.39 -  Spatial distribution of 10X10km units with most waterways
 
 3. total number of public buildings (schools, kindergartens, hospitals , town halls etc.) for each grid cell
 
-To count the total number of public buildings in the 10X10 unit, we will use the schools_cleaned. First, we run **Vector ‣ Analysis Tools ‣ List unique values..** and decide which building we consider public. We will select from our vector point data layer (schools_cleaned) the following features: `"fclass" = 'town_hall' or "fclass" = 'kindergarten' or "fclass" = 'hospital' or "fclass" = 'doctors' or "fclass" = 'fire_station' or "fclass" = 'community_centre' or "fclass" = 'stadium' or "fclass" = 'museum' or "amenity" = 'school' or "fclass" = 'theatre'.` Similarly, you can just type `"fclass" in ('town_hall', 'kindegarten', 'hospital', 'doctors', 'fire_station', 'community_centre', 'stadium', 'museum', 'school', 'theatre')`. Your selection should have 75 features in total. 
+To count the total number of public buildings in the 10X10 unit, we will use the schools_cleaned. First, we run **Vector ‣ Analysis Tools ‣ List unique values..** and decide which building we consider public. We will select from our vector point data layer (schools_cleaned) the following features: `"addr_stree" = 'Evans Street' or "addr_stree" = 'Tweety Street' .` Similarly, you can just type `"addr_stree" in ('Evans Street', 'Tweety Street')`. Your selection should have 2 features in total. 
 
 
 ![Selecting schools](media/fig840_a.png "Selecting public schools")
 
-Figure 8.40a - Selecting schools
+Figure 8.40a - Selecting schools located along the two streets above
 
 
 ![Selected schools](media/fig840_b.png "Selected schools")
