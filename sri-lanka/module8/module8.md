@@ -82,11 +82,11 @@ Streets represent a network model that is basically a collection of topologicall
 
 As presented in module 0, there are 2 data models used in a geographical information system - GIS: raster and vector. Geospatial data always includes a **spatial** component indicating the location or the spatial distribution of the phenomenon at hand and an **attribute** component that describes its properties. The choice between using the raster or the vector data model for a particular situation depends on the source of the data as well as its intended use. 
 
-The vector data model is used to represent areas, lines and points (Figure 8.1). 
+The vector data model is used to represent areas, lines and points (Figure 8.3). 
 
 ![vector data with attribute table](media/fig83.png "vector data with attribute table")
 
-Figure 8.1 - vector data with attribute table
+Figure 8.3 - vector data with attribute table
 
 
 ### Metadata
@@ -167,7 +167,6 @@ Before running any basic statistics, let us complete the attribute table with so
 Now, the attribute fields are filled, yet if you are not certain in which measurement unit QGIS has calculated the length of roads segments and areas of buildings, then checking the coordinate system information will help you. 
 
 Click on the down right corner of the QGIS map window, on EPSG 5235 and a window as the one in figure 8.6 will appear. 
-
 
 ![Specifications of the coordinate reference system used in the QGIS project](media/fig86.png "Specifications of the coordinate reference system used in the QGIS project")
 
@@ -268,13 +267,11 @@ Figure 8.9.b - Topology checker panel
 
 Figure 8.9.c - Topology checker window
 
-
 To define the topology rules, click on the third icon ![Topology rule settings button](media/fig810_btn.png "Topology rule settings button"), opening a window as in figure 8.10. 
 
 ![Topology rule settings window](media/fig810.png "Topology rule settings window")
 
 Figure 8.10 - Topology rule settings window
-
 
 We will set a number of rules for the layers we have loaded in our QGIS project, considering the real world objects they depict- roads, buildings, waterways in the district of Colombo. 
 
@@ -342,7 +339,6 @@ Figure 8.17b - Results of topology check on the buildings vector layer
 
 Clean the duplicate feature by using the process indicated above (figure 8.18a)
 
-
 ![Remove duplicate geometries on the buildings vector layer](media/fig818_a.png "Remove duplicate geometries on the buildings vector layer")
 
 Figure 8.18a - Remove duplicate geometries on the buildings vector layer
@@ -368,7 +364,7 @@ Let's run one more algorithm to get a sense of what the attributes for our Colom
 * layer roads -attribute fclass;
 * layer landuse - attribute fclass;
 
-For that, go to **Vector ‣ Analysis Tools ‣ List unique values** (figure 8.19)
+For that, go to **Vector ‣ Analysis Tools ‣ List unique values** (figure 8.19a)
 
 ![List unique values in a vector layer functionality](media/fig819_a.png "List unique values in a vector layer functionality")
 
