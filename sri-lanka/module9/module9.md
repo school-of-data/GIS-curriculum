@@ -30,7 +30,7 @@ By the end of this module, learners will have the basic understanding of the fol
 *   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
 *   The coordinate reference system used is the SLD 99 / Sri Lanka Grid 1999, EPSG 5235. 
 
-## Prerequisites: 
+## Prerequisites 
 
 *   Basic knowledge of operating a computer
 *   A robust understanding of modules 0, 1, 2, 6 and 8 of this curriculum. 
@@ -48,7 +48,7 @@ A raster is a regular matrix of values, as in figure 9.1.
 
 Figure 9.1 - A matrix of values
 
-Values can be assigned either to** grid points**, mostly to the centroids, and in this case the raster can be referred to as a lattice. The second option is for the values to be assigned to the whole of the **grid cell **- called pixels (see figure 9.2). For the first case, the raster usually represents a continuous field, such as elevation, temperature, precipitations, chemical concentrations etc. For the second case, when the values are assigned to the entire area of the pixel, the raster usually represents an image - a satellite image, a scanned map, converted vector maps (see Phase 2). It must be noted that this data model is not particularly efficient for networks and other types of data heavily dependent on lines, such as property boundaries. 
+Values can be assigned either to **grid points**, mostly to the centroids, and in this case the raster can be referred to as a lattice. The second option is for the values to be assigned to the whole of the **grid cell** - called pixels (see figure 9.2). For the first case, the raster usually represents a continuous field, such as elevation, temperature, precipitations, chemical concentrations etc. For the second case, when the values are assigned to the entire area of the pixel, the raster usually represents an image - a satellite image, a scanned map, converted vector maps (see Phase 2). It must be noted that this data model is not particularly efficient for networks and other types of data heavily dependent on lines, such as property boundaries. 
 
 ![On the left side, the values are assigned to centroids. On the right, values are assigned to the grid cell area - the pixel.](media/fig92.png "On the left side, the values are assigned to centroids. On the right, values are assigned to the grid cell area - the pixel.")
 
@@ -113,7 +113,7 @@ In the last two decades, the number of satellites capturing data from Earth has 
 
 #### **Step 1. Prepare your working environment.** 
 
-We will strat by adding to your QGIS project all the raster datasets that we will be working with, as follows: 
+We will start by adding to your QGIS project all the raster datasets that we will be working with, as follows: 
 
 *   High Resolution Settlement Layer Data 
 *   Shuttle Radar Topography Mission (SRTM) Digital Elevation Model (DEM)
@@ -688,7 +688,6 @@ Given that we will work with 7 raster layers - the 5 Land Cover layers - the dig
 
 Your batch processing window setup should look like in figure 9.23. 
 
-
 ![Batch process cliping all required raster layers by Colombo district geometry](media/fig923.png "Batch process cliping all required raster layers by Colombo district geometry")
 
 Figure 9.23 - Batch process cliping all required raster layers by Colombo district geometry
@@ -885,7 +884,7 @@ Although the LandCover products have been obtained using other satellite data (P
 
 Figure 9.41 - Comparing 2 raster layers using MapSwipe Tool plugin 
 
-To activate the MapSwipe tool, click on it while the raster layer you want to drape is selected in the Layers Panel. The resolution differences are obvious, as well as the fact that the satellite product (Land Cover) has been developed using a satellite image (PROBA-V) of a coarser resolution. However, the general larger classes are well identified, as can be seen in figure 9.42. 
+To activate the MapSwipe tool, click on it while the raster layer you want to drape is selected in the Layers Panel. The resolution differences are obvious, as well as the fact that the satellite product (Land Cover) has been developed using a satellite image (PROBA-V)d of a coarser resolution. However, the general larger classes are well identified, as can be seen in figure 9.42. 
 
 ![alt_text](media/fig942.png "image_tooltip")
 
@@ -927,7 +926,7 @@ Figure 9.45 - Resampling the Land Cover layer
 
 Follow the exact steps, except that for resample method parameter choose Mode. Save the output layer as LC2019_Mode.  
 
-Now, let’s compare results - see figure 9.45 and 9.46. 
+Now, let’s compare results - see figure 9.46a and 9.46b. 
 
 ![alt_text](media/fig946_a.png "image_tooltip")
 
@@ -979,7 +978,7 @@ Attaching the same styling as for the raster and we will notice the same vector 
 
 ![alt_text](media/fig951.png "image_tooltip")
 
-Figure 9.51 - LC2019_Mode polygonez 
+Figure 9.51 - LC2019_Mode polygons 
 
 As we can observe, the HRSL’s pixels are, as expected, not perfectly contained in a polygon of the land cover product (see picture 9.52).
 
