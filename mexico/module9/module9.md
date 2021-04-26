@@ -10,7 +10,7 @@ Este módulo se centra en un tipo específico de modelo de datos geográficos: g
 Al final de este módulo, los alumnos tendrán la comprensión básica de los siguientes conceptos:
 
 *   modelo de datos ráster
-*   punto de la cuadrícula vs celda de la cuadrícula
+*   punto de la cuadrícula **vs** celda de la cuadrícula
 *   bandas de un conjunto de datos ráster
 *   álgebra de mapas
 *   las cuatro resoluciones de un ráster (espacial, temporal, espectral y radiométrica)
@@ -26,7 +26,7 @@ Al final de este módulo, los alumnos tendrán la comprensión básica de los si
 *   High Resolution Settlement Layer
 *   SRTM Digital Elevation Model
 *   Global Land Cover Map 2015-2019
-*   The coordinate reference system used is the SLD 99 / Sri Lanka Grid 1999, EPSG 5235. 
+*   El sistema de referencia de coordenadas utilizado es el ITRF92 / México zona 13N, EPSG 4486.
 
 
 ## Requisitos previos
@@ -110,13 +110,13 @@ Figura 9.5 - Ejemplo de un histograma, donde x es una capa ráster
 En las últimas dos décadas, la cantidad de satélites que captan datos de la Tierra ha crecido exponencialmente. Además, una política de acceso a datos abiertos que ha sido adoptada por diferentes agencias espaciales, como la NASA para el [programa Landsat](https://www.usgs.gov/core-science-systems/nli/landsat/landsat-data-access?qt-science_support_page_related_con=0#qt-science_support_page_related_con) o la Agencia Espacial Europea para el [programa Copernicus](https://www.copernicus.eu/en/access-data), lo cual ha abierto la puerta a un flujo abrumador de datos de observación de la Tierra. Como consecuencia natural, el progreso científico de los algoritmos, las metodologías y el desarrollo de herramientas más poderosas para procesar datos ráster, especialmente imágenes satelitales, ha sido impresionante y extenso en campos como la agricultura, la silvicultura, el desarrollo urbano, las actividades humanitarias, el océano y el mar. monitoreo de agua, seguridad y muchos más. En las siguientes 3 fases, presentaremos algunas de las técnicas de procesamiento más comunes y qué resultados esperar de ellas.
 
 
-#### **Paso 1. Prepare su entorno de trabajo.**
+#### Paso 1. Prepare su entorno de trabajo.
 
 Comenzaremos agregando a su proyecto QGIS todos los conjuntos de datos ráster con los que trabajaremos, de la siguiente manera:
 
 *   Datos de capa de asentamiento de alta resolución
-*   Modelo de superficie digital global ALOS "ALOS World 3D - 30m (AW3D30)"[^1]
-*   Cobertura terrestre dinámica moderada: las 5 épocas disponibles 2015, 2016, 2017, 2018 y 2019.[^2]
+*   Modelo de superficie digital global ALOS "ALOS World 3D - 30m (AW3D30)"
+*   Cobertura terrestre dinámica moderada: las 5 épocas disponibles 2015, 2016, 2017, 2018 y 2019.
 
 Como los datos de la capa de asentamiento de alta resolución se presentaron en un módulo anterior, también detallaremos información sobre los otros 2 conjuntos de datos que emplearemos en este módulo.
 
@@ -385,9 +385,9 @@ Tabla 2: tabla de valores de la banda forest_type (tipo de bosque)
 </table>
 
 
-Para organizar mejor sus capas, agrúpelas por categoría, de la siguiente manera: para las 5 capas ráster de cobertura terrestre, cree un grupo denominado Cobertura terrestre (en la tabla de contenidos, haga clic en el pictograma Agregar grupo). Para el modelo de superficie digital, cree un grupo llamado JAXA DSM.
+Para organizar mejor sus capas, agrúpelas por categoría, de la siguiente manera: para las 5 capas ráster de cobertura terrestre, cree un grupo denominado Cobertura terrestre (en la tabla de contenidos, haga clic en el pictograma Agregar grupo). Para el modelo de superficie digital, cree un grupo llamado JAXA [^ 3] DSM.
 
-No olvide agregar también el límite del área de trabajo, provincia de Santa Fe, que es un conjunto de datos vectoriales.
+No olvide agregar también el límite del área de trabajo, Estado de Jalisco, que es un conjunto de datos vectoriales.
 
 Su ventana de mapa QGIS debería verse como en la figura 9.6, tal vez en colores ligeramente diferentes.
 
@@ -396,15 +396,15 @@ Su ventana de mapa QGIS debería verse como en la figura 9.6, tal vez en colores
 Figura 9.6 - conjuntos de datos ráster cargados
 
 
-#### **Paso 2. Comprenda lo que está viendo.**
+#### Paso 2. Comprenda lo que está viendo.
 
 A continuación, utilizaremos una serie de herramientas que nos permitirán tener una idea de los datos con los que estamos trabajando.
 
-Después de cargar todos los conjuntos de datos, verificaremos el sistema de referencia de coordenadas en el que se encuentran todos nuestros conjuntos de datos. Como sabemos por módulos anteriores, QGIS ofrece la posibilidad de reproyectar todos los conjuntos de datos cargados en el proyecto sobre la marcha, sin embargo, eso podría conducir a problemas en un geoprocesamiento. Así, aunque todas las capas estén correctamente superpuestas, como se puede ver por inspección visual, procederemos a reproyectarlas todas en el sistema de coordenadas oficial de nuestra región de interés, provincia de Santa Fe - EPSG: 5347.
+Después de cargar todos los conjuntos de datos, verificaremos el sistema de referencia de coordenadas en el que se encuentran todos nuestros conjuntos de datos. Como sabemos por módulos anteriores, QGIS ofrece la posibilidad de reproyectar todos los conjuntos de datos cargados en el proyecto sobre la marcha, sin embargo, eso podría conducir a un geoprocesamiento. problemas en el camino. Así, aunque todas las capas estén correctamente superpuestas, como se puede decir por inspección visual, procederemos a reproyectarlas todas en el sistema de coordenadas oficial de nuestra región de interés, Estado de Jalisco - EPSG: 3123.
 
-Hay varias formas de obtener información de las capas cargadas en QGIS, algunas proporcionan al usuario más detalles que otras. Para obtener una descripción general rápida de los metadatos de un conjunto de datos, se debe seleccionar la capa, hacer doble clic y abrir `Propiedades ‣ Información.`
+Hay varias formas de obtener información. en las capas cargadas en QGIS, algunas proporcionan al usuario más detalles que otras. Para obtener una descripción general rápida de los metadatos de un conjunto de datos, se debe seleccionar la capa, hacer doble clic y abrir `Propiedades ‣ Información.`
 
-Para la capa HRSL_SantaFe_poblacion, la ventana de información se vería como en la figura 9.7.
+Para la capa hrsl_phl_pop, la ventana de información se vería como en la figura 9.7.
 
 ![Extracting basic metadata from a raster layer](media/fig97.png "Extracting basic metadata from a raster layer")
 
@@ -412,29 +412,29 @@ Figura 9.7 - Extracción de metadatos básicos de una capa ráster
 
 Con respecto a nuestra primera pregunta sobre qué CRS se está utilizando para los conjuntos de datos que hemos cargado, podemos observar que incluso si el HRSL está correctamente superpuesto, la proyección del conjunto de datos nativo es EPSG 4326 - WGS 84 - Geográfico, con unidades medidas en grados. También identificamos que esta capa ráster específica tiene solo una banda, sin embargo, el tamaño de píxel es difícil de leer ya que la medición está en grados y no en metros, lo que la haría más fácil de entender.
 
-Por lo tanto, lo primero que debe hacer es reproyectar todos los conjuntos de datos con los que trabajaremos en el mismo sistema de coordenadas - EPSG 5347.
+Por lo tanto, lo primero que debe hacer es reproyectar todos los conjuntos de datos con los que trabajaremos en el mismo sistema de coordenadas - EPSG 3123.
 
-Comenzando con los conjuntos de datos HRSL, vamos a `Ráster ‣ Proyecciones ‣ Combar (Reproyectar) `(ver figura 9.8).
+Comenzando con los conjuntos de datos HRSL, vamos a `Ráster ‣ Proyecciones ‣ Deformar (Reproyectar) `(ver figura 9.8).
 
 ![Reproject functionality in QGIS](media/fig98.png "Reproject functionality in QGIS")
 
 Figura 9.8 - Funcionalidad de reproyección en QGIS
 
-Después de seleccionar la funcionalidad Combar, aparecerá una nueva ventana que le permitirá al usuario configurar los parámetros correctos (ver figura 9.9).
+Después de seleccionar la funcionalidad Deformación, aparecerá una nueva ventana que le permitirá al usuario configurar los parámetros correctos (ver figura 9.9).
 
 ![Warp (reproject) QGIS window](media/fig99_a.png "Warp (reproject) QGIS window")
 
-Figura 9.9 - Ventana de Combar (reproyectar) QGIS
+Figura 9.9a - Ventana de deformación (reproyectar) QGIS
 
-If you selected the output to be **[Save to temporary file]** then there will be a raster layer named `Reprojected` in the Layers Panel. This is a memory layer and you can rename this layer to Reprojected_HRSL_Santa Fe_Population and save it to make it persistent.
+If you selected the output to be **[Save to temporary file]** then there will be a raster layer named `Reprojected` in the Layers Panel. This is a memory layer and you can rename this layer to Reprojected_HRSL_Jalisco_Population and save it to make it persistent.
 
 ![Reprojected HRSL](media/fig99_b.png "Reprojected HRSL")
 
 Figure 9.9b - Reprojected HRSL
 
-Notará que, a diferencia de cuando reproyectó conjuntos de datos vectoriales, hay un nuevo parámetro que puede configurar como "Método de muestreo para usar".
+Notará que, a diferencia de cuando reproyectó conjuntos de datos vectoriales, hay un nuevo parámetro que puede configurar como "Método de remuestreo para usar".
 
-**Muestreo** representa la interpolación de los valores de la celda para que transforme el ráster como lo indica el usuario. Hay varios métodos de remuestreo disponibles dentro de la funcionalidad Deformación, cada uno con su propio soporte matemático. Sin embargo, las explicaciones detalladas sobre cada uno no son el alcance de este ejercicio. La lectura adicional está disponible en las referencias.
+**Remuestreo** representa la interpolación de los valores de la celda para que transforme el ráster como lo indica el usuario. Hay varios métodos de remuestreo disponibles dentro de la funcionalidad Deformación, cada uno con su propio soporte matemático. Sin embargo, las explicaciones detalladas sobre cada uno no son el alcance de este ejercicio. La lectura adicional está disponible en las referencias.
 
 En este caso particular, queremos reproyectar datos de población - valores numéricos. Y según el método de remuestreo seleccionado (vecino más cercano), la coordenada de cada píxel de salida se utilizará para calcular un nuevo valor a partir de los valores de píxel cercanos en la capa de entrada (ver figura 9.10).
 
@@ -452,7 +452,7 @@ Figura 9.11 Método de remuestreo - bilineal (crédito de la foto: ILWIS documen
 
 El método bilineal determina el nuevo valor de una celda basado en un promedio de distancia ponderado de los cuatro centros de celda de entrada más cercanos. Es útil para datos continuos y suavizará los datos.
 
-Procedemos a verificar el CRS de los conjuntos de datos de cobertura terrestre que hemos cargado en nuestro proyecto QGIS. Al acceder a la `información de Propiedades de capa ‣`, podemos ver que las capas de cobertura terrestre se proyectan en EPSG: 4326 - WGS 84. Una solución sería utilizar la herramienta Reproyectar y configurar para cada capa individualmente. Sin embargo, una forma más rápida es utilizar la función de reproyección que se ejecuta como un _procesamiento por lotes_.
+Procedemos a verificar el CRS de los 5 conjuntos de datos de cobertura terrestre que hemos cargado en nuestro proyecto QGIS. Al acceder a la `información de Propiedades de capa ‣`, podemos ver que las 5 capas de cobertura terrestre se proyectan en EPSG: 3857 - WGS 84 / Pseudo-Mercator. Una solución sería utilizar la herramienta Reproyectar y configurar para cada capa individualmente. Sin embargo, una forma más rápida es utilizar la función de reproyección que se ejecuta como un _procesamiento por lotes_.
 
 El procesamiento por lotes es la capacidad de ejecutar procesos repetitivos en datos, con una mínima interacción del usuario. La mayoría de las funcionalidades de QGIS tienen esta opción disponible y se puede activar en la ventana del proceso cambiando a la pestaña Ejecutar procesamiento por lotes (ver figura 9.12).
 
@@ -460,7 +460,7 @@ El procesamiento por lotes es la capacidad de ejecutar procesos repetitivos en d
 
 Figura 9.12 - Pestaña de procesamiento por lotes en una ventana de funcionalidad QGIS
 
-Para las capas ráster de cobertura terrestre, usaremos el procesamiento por lotes y como método de remuestreo del vecino más cercano. Para agregar una nueva capa, haga clic en el pictograma +. Para llenar automáticamente el CRS y los parámetros del método de remuestreo, haga clic en el botón de autocompletar en la parte superior de las columnas correspondientes y seleccione `Rellenar`. Cambie el nombre de los rásteres reproyectados agregando el código EPSG al final del nombre, por ejemplo, LandCover2015, se convertirá en landCover2015_5347. Configure sus parámetros como en la figura 9.13: CRS de origen: EPSG: 4326, CRS de destino EPSG 5347, método de remuestreo a utilizar: vecino más cercano (explicamos en el párrafo anterior por qué), valor de nodata para las bandas de salida: 255 (de la ventana de información, vemos el tipo de datos - yte - entero sin signo de 8 bits - lo que significa que el valor máximo puede ser 255), resolución de salida: 100 m (como los rásteres de cobertura terrestre iniciales). Después de configurar todos los parámetros, marque la casilla en la esquina izquierda de la ventana -` Cargar capas al finalizar.` Pulsa `Ejecutar`.
+Para las 5 capas ráster de cobertura terrestre, usaremos el procesamiento por lotes y como método de remuestreo del vecino más cercano. Para agregar una nueva capa, haga clic en el pictograma +. Para llenar automáticamente el CRS y los parámetros del método de remuestreo, haga clic en el botón de autocompletar en la parte superior de las columnas correspondientes y seleccione `Rellenar`. Cambie el nombre de los rásteres reproyectados agregando el código EPSG al final del nombre, por ejemplo, LandCover2015, se convertirá en landCover2015_4486. Configure sus parámetros como en la figura 9.13: CRS de origen: EPSG: 4486, CRS de destino EPSG 4486, método de remuestreo a utilizar: vecino más cercano (explicamos en el párrafo anterior por qué), valor de nodata para las bandas de salida: 255 (de la ventana de información, vemos el tipo de datos - yte - entero sin signo de 8 bits - lo que significa que el valor máximo puede ser 255), resolución de salida: 100 m (como los rásteres de cobertura terrestre iniciales). Después de configurar todos los parámetros, marque la casilla en la esquina izquierda de la ventana -` Cargar capas al finalizar.` Pulsa `Ejecutar`.
 
 ![Batch processing to reproject the land cover rasters](media/fig913_a.png "Batch processing to reproject the land cover rasters")
 
@@ -476,7 +476,7 @@ Figure 9.13c - Reprojected land cover rasters
 
 Luego vienen los rásteres del modelo de superficie digital. Como se puede observar, para cubrir nuestra región de interés, necesitábamos varios _mosaicos ráster_. Cuando los archivos ráster se vuelven demasiado grandes, imagine un solo archivo DSM a 30m para Europa, que tiene más de 10 millones de kilómetros cuadrados, se dividen en **mosaicos** porque, en áreas más pequeñas, son más fáciles de administrar.
 
-Aunque podríamos usar la herramienta de ajuste en modo por lotes para reproyectar todos los archivos ráster DSM, en una inspección visual, también se puede notar que las delimitaciones entre cada mosaico son bastante visibles, lo que lo hace, al menos, visualmente poco atractivo. Lo que sería útil es tener una visión completa del terreno, como un fenómeno continuo, como es, de hecho, sin interrupciones artificiales. Para obtenerlo, usaremos la herramienta de fusión GDAL, disponible en la barra de herramientas de Procesamiento para fusionar todos los rásteres DSM. Para abrirlo, vaya a `Procesamiento ‣ Caja de herramientas `y en la barra de búsqueda escriba combinar (ver figura 9.14)`.`
+Aunque podríamos usar la herramienta de ajuste en modo por lotes para reproyectar todos los archivos ráster DSM, en una inspección visual, también se puede notar que las delimitaciones entre cada mosaico son bastante visibles, lo que lo hace, al menos, visualmente poco atractivo. Lo que sería útil es tener una visión completa del terreno, como un fenómeno continuo, como es, de hecho, sin interrupciones artificiales. Para obtenerlo, usaremos la herramienta de fusión GDAL, disponible en la barra de herramientas de Procesamiento para fusionar todos los rásteres DSM. Para abrirlo, vaya a `Procesamiento ‣ Caja de herramientas `y en la barra de búsqueda escriba fusionar (ver figura 9.14)`.`
 
 ![Finding the GDAL merge tool in the Processing Toolbox](media/fig914.png "Finding the GDAL merge tool in the Processing Toolbox")
 
@@ -496,21 +496,21 @@ Figure 9.15b - Parameters of the Merge processing algorithm
 
 Figura 9.15c - Mosaico de todos los archivos DSM correspondientes a nuestra región de trabajo
 
-Ahora, podemos proceder a reproyectar el mosaico - un archivo, en lugar de todos los archivos. Vaya a `Ráster ‣ proyección ‣ Envoltura (reproyectar)` y configure los parámetros conocidos: 
+Ahora, podemos proceder a reproyectar el mosaico - un archivo, en lugar de 6 archivos. Vaya a `Ráster ‣ proyección ‣ Envoltura (reproyectar)` y configure los parámetros conocidos: 
 
 * Fuente CRS EPSG 4326, 
-* Objetivo CRS: EPSG: 5347, 
+* Objetivo CRS: EPSG: 3123, 
 * Método de remuestreo: Vecino más cercano, 
 * resolución de archivo de salida - 30 m. 
-* Guarde el resultado como DSM_mosaico_5347.
+* Guarde el resultado como DSM_mosaico_4486.
 
-En este punto, deberíamos tener todas las capas en el mismo CRS - EPSG 5347.
+En este punto, deberíamos tener todas las capas en el mismo CRS - EPSG 4486.
 
 ![Reproject Merged raster](media/fig915_d.png "Reproject Merged raster")
 
 Figure 9.15d - Reproject Merged raster
 
-Podemos hacer otra verificación para asegurarnos de que todos los rásteres con los que estamos trabajando estén proyectados y obtener información adicional sobre los datos ejecutando un proceso por lotes de Información de trama sobre todos. Para abrir la ventana de funciones, vaya a `Ráster ‣ Miscelaneos ‣ Información de ráster`. La ventana de información ráster de procesamiento por lotes debe verse como en la figura 9.16.
+Podemos hacer otra verificación para asegurarnos de que todos los rásteres con los que estamos trabajando estén proyectados y obtener información adicional sobre los datos ejecutando un proceso por lotes de Información de trama sobre todos. Para abrir la ventana de funciones, vaya a `Ráster ‣ Varios ‣ Información de ráster`. La ventana de información ráster de procesamiento por lotes debe verse como en la figura 9.16.
 
 ![Batch process to extract information in a separate HTML file for multiple raster layers](media/fig916.png "Batch process to extract information in a separate HTML file for multiple raster layers")
 
@@ -521,71 +521,71 @@ Un archivo HTML de información ráster debería verse como a continuación. Un 
 
 ```
 Driver: GTiff/GeoTIFF
-Files: /home/malena/docus/okfn/capacitaciones/modulo9/modulo9_capas_qgis/DSM_mosaico_5347.tif
-Size is 16546, 29702
+Files: C:\\Users\\herca\\Documents\\03 Trabajo\\Cursos\\OKF\\modulo2_capas_qgis\\Mexico\\MDE_JALISCO_4486.tif
+Size is 15566, 13656
 Coordinate System is:
-PROJCRS["POSGAR 2007 / Argentina 5",
-    BASEGEOGCRS["POSGAR 2007",
-        DATUM["Posiciones Geodesicas Argentinas 2007",
-            ELLIPSOID["GRS 1980",6378137,298.257222101,
-                LENGTHUNIT["metre",1]]],
-        PRIMEM["Greenwich",0,
-            ANGLEUNIT["degree",0.0174532925199433]],
-        ID["EPSG",5340]],
-    CONVERSION["Argentina zone 5",
-        METHOD["Transverse Mercator",
-            ID["EPSG",9807]],
-        PARAMETER["Latitude of natural origin",-90,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8801]],
-        PARAMETER["Longitude of natural origin",-60,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8802]],
-        PARAMETER["Scale factor at natural origin",1,
-            SCALEUNIT["unity",1],
-            ID["EPSG",8805]],
-        PARAMETER["False easting",5500000,
-            LENGTHUNIT["metre",1],
-            ID["EPSG",8806]],
-        PARAMETER["False northing",0,
-            LENGTHUNIT["metre",1],
-            ID["EPSG",8807]]],
-    CS[Cartesian,2],
-        AXIS["northing (X)",north,
-            ORDER[1],
-            LENGTHUNIT["metre",1]],
-        AXIS["easting (Y)",east,
-            ORDER[2],
-            LENGTHUNIT["metre",1]],
-    USAGE[
-        SCOPE["unknown"],
-        AREA["Argentina - 61.5°W to 58.5°W onshore"],
-        BBOX[-39.06,-61.51,-23.37,-58.5]],
-    ID["EPSG",5347]]
-Data axis to CRS axis mapping: 2,1
-Origin = (5202154.917641102336347,7014336.020335459150374)
-Pixel Size = (30.000000000000000,-30.000000000000000)
+PROJCRS["Mexico ITRF92 / UTM zone 13N",
+BASEGEOGCRS["Mexico ITRF92",
+DATUM["Mexico ITRF92",
+ELLIPSOID["GRS 1980",6378137,298.257222101,
+LENGTHUNIT["metre",1]]],
+PRIMEM["Greenwich",0,
+ANGLEUNIT["degree",0.0174532925199433]],
+ID["EPSG",4483]],
+CONVERSION["UTM zone 13N",
+METHOD["Transverse Mercator",
+ID["EPSG",9807]],
+PARAMETER["Latitude of natural origin",0,
+ANGLEUNIT["degree",0.0174532925199433],
+ID["EPSG",8801]],
+PARAMETER["Longitude of natural origin",-105,
+ANGLEUNIT["degree",0.0174532925199433],
+ID["EPSG",8802]],
+PARAMETER["Scale factor at natural origin",0.9996,
+SCALEUNIT["unity",1],
+ID["EPSG",8805]],
+PARAMETER["False easting",500000,
+LENGTHUNIT["metre",1],
+ID["EPSG",8806]],
+PARAMETER["False northing",0,
+LENGTHUNIT["metre",1],
+ID["EPSG",8807]]],
+CS[Cartesian,2],
+AXIS["(E)",east,
+ORDER[1],
+LENGTHUNIT["metre",1]],
+AXIS["(N)",north,
+ORDER[2],
+LENGTHUNIT["metre",1]],
+USAGE[
+SCOPE["unknown"],
+AREA["Mexico - 108°W to 102°W"],
+BBOX[14.05,-108,31.79,-102]],
+ID["EPSG",4486]]
+Data axis to CRS axis mapping: 1,2
+Origin = (426831.833299999998417,2519690.029300000052899)
+Pixel Size = (28.626103674675573,-31.007709973637965)
 Metadata:
-  AREA_OR_POINT=Area
+AREA_OR_POINT=Area
 Image Structure Metadata:
-  INTERLEAVE=BAND
+INTERLEAVE=BAND
 Corner Coordinates:
-Upper Left  ( 5202154.918, 7014336.020) ( 62d59'56.94"W, 26d58' 5.06"S)
-Lower Left  ( 5202154.918, 6123276.020) ( 63d15'42.51"W, 34d59'35.07"S)
-Upper Right ( 5698534.918, 7014336.020) ( 58d 0' 0.86"W, 26d59' 8.89"S)
-Lower Right ( 5698534.918, 6123276.020) ( 57d49'29.65"W, 35d 1' 2.75"S)
-Center      ( 5450344.918, 6568806.020) ( 60d31'12.08"W, 31d 1' 7.19"S)
-Band 1 Block=16546x1 Type=Float32, ColorInterp=Gray
-    Computed Min/Max=-76.000,251.000
-  Minimum=-76.000, Maximum=251.000, Mean=72.929, StdDev=29.775
-  NoData Value=255
-  Metadata:
-    STATISTICS_MAXIMUM=251
-    STATISTICS_MEAN=72.929210388133
-    STATISTICS_MINIMUM=-76
-    STATISTICS_STDDEV=29.774935127844
-    STATISTICS_VALID_PERCENT=67.29
+Upper Left ( 426831.833, 2519690.029) (105d42'46.14"W, 22d46'59.30"N)
+Lower Left ( 426831.833, 2096248.742) (105d41'41.98"W, 18d57'26.34"N)
+Upper Right ( 872425.763, 2519690.029) (101d22'28.01"W, 22d44'36.75"N)
+Lower Right ( 872425.763, 2096248.742) (101d27'53.56"W, 18d55'29.68"N)
+Center ( 649628.798, 2307969.386) (103d33'42.02"W, 20d51'57.04"N)
+Band 1 Block=15566x1 Type=Float32, ColorInterp=Gray
 ```
+
+
+
+
+
+
+
+
+
 
 
 Después de preparar los ráster reproyectándolos en los CRS que estamos trabajando y leyendo sus metadatos para comprender mejor los archivos, es hora de profundizar en los datos reales. Para lograrlo, calcularemos e interpretaremos los histogramas (consulte la sección Desglose de conceptos para obtener más detalles) de nuestros rásteres.
@@ -604,7 +604,7 @@ Para volver a la vista completa, haga clic en la izquierda.
 
 ![Zooming in on the DSM_mosaic_5235 computed histogram](media/fig918.png "Zooming in on the DSM_mosaic_5235 computed histogram")
 
-Figura 9.18 - Ampliación del histograma calculado HRSL_SantaFe_poblacion_5347
+Figura 9.18 - Ampliación del histograma calculado DSM_mosaico_4486
 
 Más que simplemente ver la distribución de los valores numéricos de los píxeles, el histograma permite al usuario reclasificar los valores para la visualización del ráster. Para ello, utilice las 2 herramientas para señalar en el histograma los nuevos valores mínimo y máximo (consulte la figura 9.19).
 
@@ -620,24 +620,24 @@ Vaya a` Complemento ‣ Administrar e instalar complementos,` busque el compleme
 
 ![The Value Tool Panel](media/fig920.png "The Value Tool Panel")
 
-Figure 9.20 - The Value Tool Panel
+Figura 9.20 - Disponibilidad de paneles y barras de herramientas en QGIS
 
 La practicidad de esta herramienta reside en su simplicidad de uso, con solo unos pocos clics, uno puede extraer muy fácilmente celdas de valor en las áreas exactas de interés. Además, permite esto para todas las capas ráster cargadas.
 
-Value Tool tiene 3 pestañas: Table, Graph, Options (consulte la figura 9.21).
+Value Tool tiene 3 pestañas: Tabla, Gráfico, Opciones (consulte la figura 9.21).
 
 ![Loaded value tool - highlight on first tab - Table](media/fig921.png "Loaded value tool - highlight on first tab - Table")
 
-Figura 9.21 - Value Tool cargado - resaltar en la primera pestaña - Table
+Figura 9.21 - Value Tool cargado - resaltar en la primera pestaña - Tabla
 
-La primera pestaña - Table - presenta una lista de todas las capas ráster cargadas y los valores de las celdas, a medida que el usuario mueve el mouse. También existe la posibilidad de seleccionar con cuántos decimales se deben mostrar los valores. Si el mouse se desplaza fuera de la extensión de una capa ráster, en lugar de un valor, se mostrará un mensaje: "out of extent".
+La primera pestaña - Tabla - presenta una lista de todas las capas ráster cargadas y los valores de las celdas, a medida que el usuario mueve el mouse. También existe la posibilidad de seleccionar con cuántos decimales se deben mostrar los valores. Si el mouse se desplaza fuera de la extensión de una capa ráster, en lugar de un valor, se mostrará un mensaje: "fuera de extensión".
 
-La segunda pestaña, Graph, muestra en un gráfico unido todos los valores que lee en la posición del mouse. Permite al usuario insertar valores para mínimo y máximo en el eje Y, que es el eje de los valores de celda. El eje X enumera todas las bandas del ráster que muestra en la tabla, con los números de orden correspondientes: la banda que tiene el número 1 en la primera pestaña, también será la número 1 en el gráfico.
+La segunda pestaña, Gráfico, muestra en un gráfico unido todos los valores que lee en la posición del mouse. Permite al usuario insertar valores para mínimo y máximo en el eje Y, que es el eje de los valores de celda. El eje X enumera todas las bandas del ráster que muestra en la tabla, con los números de orden correspondientes: la banda que tiene el número 1 en la primera pestaña, también será la número 1 en el gráfico.
 
 La tercera pestaña permite al usuario personalizar lo que `Value Tool` muestra: qué capas (todas, solo las visibles o las seleccionadas) y qué bandas mostrar.
 
 
-#### **Preguntas de evaluación**
+#### Preguntas de evaluación
 
 1. ¿Se pueden reproyectar capas ráster en otros sistemas de coordenadas?
 *   Sí.
@@ -654,44 +654,44 @@ La tercera pestaña permite al usuario personalizar lo que `Value Tool` muestra:
 
 Ahora que hemos aprendido cómo extraer información básica en los conjuntos de datos ráster cargados, continuaremos con un procesamiento de datos ráster más detallado para obtener nuevos rásteres derivados y, en consecuencia, más información.
 
-Como habrá notado, debido a la estructura del modelo de datos ráster, las capas que hemos cargado se están expandiendo sobre nuestra región de interés: la provincia de Pampanga. Eso no es deseable debido a varias razones, pero principalmente porque termina procesando más datos de los que realmente necesita, lo que se traduce en mayores necesidades de almacenamiento y procesamiento informático. Por eso, antes de seguir adelante con cualquier otro paso, nos aseguraremos de procesar exactamente la cantidad de datos que necesitamos. **Tenga en cuenta**, dado que comenzará a trabajar en sus propios conjuntos de datos, que el tamaño de sus archivos es un factor importante cuando se trata de tiempos de procesamiento. Cuanto más grandes sean los archivos, se requerirá más tiempo. Debido a la estructura de datos del modelo (ráster frente a vector), los archivos ráster suelen ser mucho más grandes.
+Como habrá notado, debido a la estructura del modelo de datos ráster, las capas que hemos cargado se están expandiendo sobre nuestra región de interés: la Estado de Jalisco. Eso no es deseable debido a varias razones, pero principalmente porque termina procesando más datos de los que realmente necesita, lo que se traduce en mayores necesidades de almacenamiento y procesamiento informático. Por eso, antes de seguir adelante con cualquier otro paso, nos aseguraremos de procesar exactamente la cantidad de datos que necesitamos. **Tenga en cuenta**, dado que comenzará a trabajar en sus propios conjuntos de datos, que el tamaño de sus archivos es un factor importante cuando se trata de tiempos de procesamiento. Cuanto más grandes sean los archivos, se requerirá más tiempo. Debido a la estructura de datos del modelo (ráster frente a vector), los archivos ráster suelen ser mucho más grandes.
 
 Como ya habrá notado, los conjuntos de datos que cargamos en un SIG, en nuestro caso en QGIS, se pueden procesar juntos incluso si son de diferente naturaleza, como unir tablas csv a capas vectoriales para agregar información a las geometrías. Lo mismo se aplica a los datos ráster y vectoriales, como veremos.
 
-Para trabajar solo con capas ráster que son relevantes para nuestra provincia de Santa Fe, usaremos la capa de extensión vectorial (limite_provincial_santafe) para cortar / recortar todas las capas ráster relevantes. Vaya a` Ráster ‣ Extracción ‣ Recortar ráster por capa de máscara` (consulte la figura 9.22)`.`
+Para trabajar solo con capas ráster que son relevantes para nuestro Estado de Jalisco, usaremos la capa de extensión vectorial (Jalisco4486) para cortar / recortar todas las capas ráster relevantes. Vaya a` Ráster ‣ Extracción ‣ Recortar ráster por capa de máscara` (consulte la figura 9.22)`.`
 
 ![Using a vector mask to extract the raster data on a specific region](media/fig922.png "Using a vector mask to extract the raster data on a specific region")
 
 Figura 9.22 - Usando una máscara vectorial para extraer los datos ráster en una región específica
 
-Dado que trabajaremos con 12 capas ráster - las 10 capas de Cobertura Terrestre, el modelo de superficie digital y el HRSLl, usaremos el procesamiento por lotes para recortar todas las capas en una vez. Tenga en cuenta que si ha omitido el paso de reproyección, tiene capas en diferentes proyecciones y el algoritmo no funcionará o producirá resultados inesperados.
+Dado que trabajaremos con 7 capas ráster - las 5 capas de Cobertura Terrestre - el modelo de superficie digital y el HRSLl, usaremos el procesamiento por lotes para recortar todas las capas en una vez. Tenga en cuenta que si ha omitido el paso de reproyección, tiene capas en diferentes proyecciones y el algoritmo no funcionará o producirá resultados inesperados.
 
 La configuración de la ventana de procesamiento por lotes debería verse como en la figura 9.23.
 
-![Batch process cliping all required raster layers by Santa Fe geometry](media/fig923.png "Batch process cliping all required raster layers by Santa Fe geometry")
+![Batch process cliping all required raster layers by Jalisco geometry](media/fig923.png "Batch process cliping all required raster layers by Jalisco geometry")
 
-Figura 9.23 - Procesamiento por lotes recortando todas las capas ráster requeridas por geometría de la provincia de Santa Fe
+Figura 9.23 - Procesamiento por lotes recortando todas las capas ráster requeridas por geometría del Estado de Jalisco
 
 La configuración de los parámetros es la siguiente: 
-* capa de máscara: limite_provincial_santafe, 
-* tanto el CRS de origen como el de destino es EPSG 5347, 
+* capa de máscara: Jalisco, 
+* tanto el CRS de origen como el de destino es EPSG 4486, 
 * seleccione sí para: `hacer coincidir la extensión del ráster recortado con la capa de máscara` y `mantener la resolución de la capa de entrada`. 
 * Tenga en cuenta que para DSM_mosaico también seleccionaremos sí` para crear una banda alfa de salida`. Cargue las capas al finalizar.
 
 Si todo salió bien, su ventana principal de QGIS debería verse como en la figura 9.24.
 
-![Raster layers clipped by Santa Fe contour](media/fig924.png "Raster layers clipped by Santa Fe contour")
+![Raster layers clipped by Jalisco contour](media/fig924.png "Raster layers clipped by Jalisco contour")
 
-Figura 9.24 - Capas ráster recortadas por el contorno de la provincia de Santa Fe.
+Figura 9.24 - Capas ráster recortadas por el contorno del Estado de Jalisco.
 
-Ahora, imagine que tiene que presentar un informe sobre dónde vive la mayoría de las personas, pero teniendo en cuenta la altitud [^ 4]. Debes saber cuántas personas viven entre 0 y 100 m de altitud en la provincia de Santa Fe. Hay algunos elementos a considerar. En primer lugar, cuáles son los datos que utilizaremos y cuáles son sus características. Para la población, tenemos los datos de la capa de asentamiento de alta resolución y para el alivio, tenemos el ALOS World 3D - 30m (AW3D30). Ambas capas ráster tienen una resolución espacial de 30 m, lo que nos permite pasar a otras consideraciones. El alivio es un fenómeno continuo, la expansión de la población no lo es, sin embargo, el informe no tendría sentido que lo hiciera el píxel de 30 metros. Necesitamos identificar todos los píxeles con valores de celda de 0 a 100. Considerando el histograma de DSM_mosaico para nuestra región de interés, hemos visto que la mayoría de los valores de celda están entre 0 y 100 m. Podemos proceder a realizar un mapa de relieve básico en base a las siguientes divisiones:
+Ahora, imagine que tiene que presentar un informe sobre dónde vive la mayoría de las personas, pero teniendo en cuenta la altitud [^ 4]. Debes saber cuántas personas viven entre 0 y 200 m de altitud en el Estado de Jalisco. Hay algunos elementos a considerar. En primer lugar, cuáles son los datos que utilizaremos y cuáles son sus características. Para la población, tenemos los datos de la capa de asentamiento de alta resolución y para el alivio, tenemos el ALOS World 3D - 30m (AW3D30). Ambas capas ráster tienen una resolución espacial de 30 m, lo que nos permite pasar a otras consideraciones. El alivio es un fenómeno continuo, la expansión de la población no lo es, sin embargo, el informe no tendría sentido que lo hiciera el píxel de 30 metros. Necesitamos identificar todos los píxeles con valores de celda de 0 a 200. Considerando el histograma de DSM_mosaico para nuestra región de interés, hemos visto que la mayoría de los valores de celda están entre 0 y 200 m. Podemos proceder a realizar un mapa de relieve básico en base a las siguientes divisiones:
 
-1. 0 - 25m
-2. 26 - 50m
-3. 51 - 75m
-4. 76 - 100m
-5. 101m++.
-
+1. 0 - 200m
+2. 51 - 100m
+3. 101 - 1200m
+4. 151 - 200m
+5. 250 - 600m
+6. 600 - 1300m
 
 Usando sus conocimientos adquiridos en el módulo 4, puede diseñar la capa DSM por estas categorías. Su mapa debería verse como en la figura 9.25.
 
@@ -699,7 +699,7 @@ Usando sus conocimientos adquiridos en el módulo 4, puede diseñar la capa DSM 
 
 Figura 9.25 - Representación DSM_mosaico_recortado
 
-Para calcular el número de personas en base a los datos raster HRSL que viven hasta 50 metros de altura en la provincia de Santa Fe, debemos ver qué píxeles caen en cada una de esas categorías. Para hacer eso, usaremos Raster Calculator. Esta es una funcionalidad que permite al usuario realizar cálculos sobre la base de los valores de píxeles de la trama existentes. Los resultados se escriben en una nueva capa ráster en un formato compatible con GDAL [^ 5].
+Para calcular el número de personas en base a los datos raster HRSL que viven hasta 200 metros en la Estado de Jalisco, debemos ver qué píxeles caen en cada una de esas categorías. Para hacer eso, usaremos Raster Calculator. Esta es una funcionalidad que permite al usuario realizar cálculos sobre la base de los valores de píxeles de la trama existentes. Los resultados se escriben en una nueva capa ráster en un formato compatible con GDAL [^ 5].
 
 There are several ways to open the raster calclulator in QGIS. You can do so from the Menu bar **Raster ‣ Raster Calculator** or by searching raster calculator on the Processing Toolbox or Locator bar. If we run the Raster Calculator under Raster analysis in the Processing Toolbox, the window in Figure 9.26b should appear. 
 
@@ -711,13 +711,13 @@ Figure 9.26a - Opening the Raster calculator
 
 Figura 9.26b - Calculadora ráster
 
-En esta ventana podemos reconocer las operaciones detalladas en la sección Conceptos, sustracciones, adiciones, comparaciones y todas las demás (ver página 3). A continuación, 'cortaremos' nuestra capa ráster cortado_DSM_mosaico_5347 para extraer solo los píxeles con valores de hasta 50 metros. Sabemos que las celdas de valor de cortado_DSM_mosaico_5347 representan datos numéricos continuos (no valores discretos, como LandCover). Por lo tanto, la operación que debemos emplear en este caso es una comparación de valores de una celda &lt;50 metros. Para obtenerlo, escribiremos lo siguiente en la Calculadora: 
+En esta ventana podemos reconocer las operaciones detalladas en la sección Conceptos, sustracciones, adiciones, comparaciones y todas las demás (ver página 3). A continuación, 'cortaremos' nuestra capa ráster DSM_mosaico_recortado para extraer solo los píxeles con valores de hasta 200 metros. Sabemos que las celdas de valor de DSM_mosaico_recortado representan datos numéricos continuos (no valores discretos, como LandCover). Por lo tanto, la operación que debemos emplear en este caso es una comparación de valores de una celda &lt;200 metros. Para obtenerlo, escribiremos lo siguiente en la Calculadora: 
 
 ```
-"cortado_DSM_mosaico_5347@1" <= 50
+"DSM_mosaico_recortado @ 1" <= 200.
 ```
 
-Se puede observar la convención de nomenclatura para los rásteres: lo que viene antes de @ es el nombre de la capa ráster, lo que viene después de @ es el número de la banda. Guarde el resultado de la calculadora como DSM_menos50.tiff. Su calculadora de ráster debería verse como en la figura 9.27.
+Se puede observar la convención de nomenclatura para los rásteres: lo que viene antes de @ es el nombre de la capa ráster, lo que viene después de @ es el número de la banda. Guarde el resultado de la calculadora como DSM_recortado500.tiff. Su calculadora de ráster debería verse como en la figura 9.27.
 
 ![Inserting a formula into the Raster Calculator](media/fig927.png "Inserting a formula into the Raster Calculator")
 
@@ -725,45 +725,45 @@ Figura 9.27 - Insertar una fórmula en la Calculadora ráster.
 
 Su resultado debería verse como en la figura 9.28.
 
-![Result of identify all pixel values that are below 50 meters using the Raster Calculator](media/fig928.png "Result of identify all pixel values that are below 50 meters using the Raster Calculator")
+![Result of identify all pixel values that are below 200 meters using the Raster Calculator](media/fig928.png "Result of identify all pixel values that are below 200 meters using the Raster Calculator")
 
-Figura 9.28 - Resultado de identificar todos los valores de píxeles que están por debajo de 50 metros usando la Calculadora Ráster
+Figura 9.28 - Resultado de identificar todos los valores de píxeles que están por debajo de 500 metros usando la Calculadora Ráster.
 
-Como podemos ver en la Tabla de Contenidos, la capa ráster que hemos obtenido tiene solo 2 valores: 0 y 1. Eso es porque hemos usado una operación racional, una comparación, por lo tanto, cada píxel que está por debajo de 50 metros recibió un valor = 1 y todos los anteriores, un valor = 0. Podemos probar esto usando `Value Tool`. La figura 9.29 presenta solo píxeles de valor 1, en otras palabras, los píxeles que nos interesan para nuestro ejercicio.
+Como podemos ver en la Tabla de Contenidos, la capa ráster que hemos obtenido tiene solo 2 valores: 0 y 1. Eso es porque hemos usado una operación racional, una comparación, por lo tanto, cada píxel que está por debajo de 200 metros recibió un valor = 1 y todos los anteriores, un valor = 0. Podemos probar esto usando `Value Tool`. La figura 9.29 presenta solo píxeles de valor 1, en otras palabras, los píxeles que nos interesan para nuestro ejercicio.
 
-![Spatial distribution of all pixels of value 1, meaning with altitude lower than 50 meters](media/fig929.png "Spatial distribution of all pixels of value 1, meaning with altitude lower than 50 meters")
+![Spatial distribution of all pixels of value 1, meaning with altitude lower than 200 meters](media/fig929.png "Spatial distribution of all pixels of value 1, meaning with altitude lower than 200 meters")
 
 Figura 9.29 - Distribución espacial de todos los píxeles de valor 1, es decir, con una altitud inferior a 200 metros
 
-Yendo más allá, podemos mostrar la distribución espacial de la población a la resolución espacial de 30 m solo en esta región geográfica específica que hemos seleccionado - provincia de Santa Fe , por debajo de 50 m. Para hacer eso, volvemos a emplear la Calculadora ráster.
+Yendo más allá, podemos mostrar la distribución espacial de la población a la resolución espacial de 30 m solo en esta región geográfica específica que hemos seleccionado - Estado de Jalisco , por debajo de 200 m. Para hacer eso, volvemos a emplear la Calculadora ráster.
 
 La fórmula es bastante simple, dado que todos los valores de celda DSM que nos interesan tienen el valor 1.
 
 Abra la Calculadora e inserte la siguiente fórmula: 
 
 ```
-"dsm_menos50@1"*"HRSL_SantaFe_poblacion_5347@1"
+"DSM_recortado200 @ 1" * "hsrl_recortado @ 1"
 ```
 
-![Using raster calculator to identify population distribution classes based on altitude of up to 50m](media/fig930.png "Using raster calculator to identify population distribution classes based on altitude of up to 50m")
+![Using raster calculator to identify population distribution classes based on altitude of up to 200m](media/fig930.png "Using raster calculator to identify population distribution classes based on altitude of up to 200m")
 
-Figura 9.30 - Uso de la calculadora ráster para identificar la distribución de la población clases basadas en una altitud de hasta 50 m
+Figura 9.30 - Uso de la calculadora ráster para identificar la distribución de la población clases basadas en una altitud de hasta 500 m
 
-A diferencia del uso anterior de la calculadora ráster, hemos utilizado 2 conjuntos de datos ráster diferentes para obtener el resultado deseado, sin embargo, observará que incluso si hay píxeles que caen fuera de DSM_menos50.tiff en el resultado, su valor es 0. Utilice Value Tool para comprobar (consulte la figura 9.31).
+A diferencia del uso anterior de la calculadora ráster, hemos utilizado 2 conjuntos de datos ráster diferentes para obtener el resultado deseado, sin embargo, observará que incluso si hay píxeles que caen fuera de MDE_menor500.tif en el resultado, su valor es 0. Utilice Value Tool para comprobar (consulte la figura 9.31).
 
 ![Using Value Tool to check results of Raster Calculator](media/fig931.png "Using Value Tool to check results of Raster Calculator")
 
 Figura 9.31 - Usando Value Tool para verificar los resultados de la Calculadora ráster
 
-Puede ver que incluso si hrsl_menos50 tiene valores en esta ubicación específica del mouse, el ráster obtenido con la Calculadora ráster tiene el valor 0.
+Puede ver que incluso si hrsl_recortado tiene valores en esta ubicación específica del mouse, el ráster obtenido con la Calculadora ráster hrsl_dsm_recortado tiene el valor 0.
 
-A continuación, presentamos la distribución espacial de la población que vive por debajo de 50 m en la provincia de Santa Fe. Para elegir una clasificación adecuada, calculamos el histograma. Podemos notar que la mayoría de los valores se encuentran entre 0,1 y 8,7 personas por 30 m. La clasificación que hemos elegido es visible en la figura 9.32.
+A continuación, presentamos la distribución espacial de la población que vive por debajo de 500 m en el Estado de Jalisco. Para elegir una clasificación adecuada, calculamos el histograma. Podemos notar que la mayoría de los valores se encuentran entre 0,1 y 200 personas por 30 m. La clasificación que hemos elegido es visible en la figura 9.32.
 
 ![Distribution of population that lives below 50 in Colombo district, represented at a 30m resolution](media/fig932.png "Distribution of population that lives below 200m in Colombo district, represented at a 30m resolution")
 
-Figura 9.32 - Distribución de la población que vive por debajo de los 50 m en la provincia de Santa Fe, representada con una resolución de 30 m.
+Figura 9.32 - Distribución de la población que vive por debajo de los 200 m en el Estado de Jalisco, representada con una resolución de 30 m.
 
-Si estamos interesados ​​en el número total de personas que viven por debajo de 50 m en la provincia de Santa Fe y no en la distribución geográfica por 30 m de resolución espacial, entonces necesitamos sumar todos los valores de píxeles de la capa ráster hrsl_menos50. Una forma de obtener este número es transformar el dsm_menos50 de ráster a vector y luego [....]
+Si estamos interesados ​​en el número total de personas que viven por debajo de 200 m en la Estado de Jalisco y no en la distribución geográfica por 30 m de resolución espacial, entonces necesitamos sumar todos los valores de píxeles de la capa ráster hrsl_dsm_recortado. Una forma de obtener este número es transformar el MDE_menor500 de ráster a vector. 
 
 Para hacer eso, vaya a `Ráster ‣ Conversión Poligonizar (Ráster a Vector) `(ver figura 9.33).
 
@@ -771,7 +771,7 @@ Para hacer eso, vaya a `Ráster ‣ Conversión Poligonizar (Ráster a Vector) `
 
 Figura 9.33a - Conversión de ráster a vector
 
-Recuerde que esta capa ráster tenía solo 2 valores - 0 y 1, así que elija como parámetro por el cual construir el vector el DN (número digital).
+Recuerde que esta capa ráster tenía solo 2 valores - 0 y 1, así que elija como parámetro por el cual construir el vector el DN (número digital). 
 
 ![Raster to vector conversion parameters](media/fig933_b.png "Raster to vector conversion parameters")
 
@@ -785,7 +785,7 @@ Figura 9.34 - Resultado de convertir un conjunto de datos ráster en uno vectori
 
 Elimina la geometría de valor 0.
 
-Para encontrar nuestra respuesta usaremos `Estadísticas de zona`. Para encontrar rápidamente esta funcionalidad, abra la Caja de herramientas de procesamiento y escriba en el cuadro de búsqueda "zonal" (consulte la figura 9.35).
+Para encontrar nuestra respuesta usaremos `Estadísticas zonales`. Para encontrar rápidamente esta funcionalidad, abra la Caja de herramientas de procesamiento y escriba en el cuadro de búsqueda "zonal" (consulte la figura 9.35).
 
 ![Identifying Zonal Statistics in the Processing Toolbox](media/fig935.png "Identifying Zonal Statistics in the Processing Toolbox")
 
@@ -803,7 +803,7 @@ La capa resultante es una capa vectorial que tiene como atributos las estadísti
 
 Figura 9.37 - Capa vectorial resultante de Estadísticas zonales
 
-Y con este paso final, respondimos a nuestro ejercicio, cuántas personas (y dónde) viven por debajo de los 50 m en la provincia de Santa Fe.
+Y con este paso final, respondimos a nuestro ejercicio, cuántas personas (y dónde) viven por debajo de los 200 m en la Estado de Jalisco.
 
 
 #### **Preguntas de evaluación**
@@ -819,7 +819,7 @@ Y con este paso final, respondimos a nuestro ejercicio, cuántas personas (y dó
 *   _No._
 
 
-### **Fase 3: Trabajo con datos raster y vectoriales.**
+### Fase 3: Trabajo con datos raster y vectoriales.
 
 En la fase anterior, hemos visto cómo podemos procesar 2 conjuntos de datos ráster para derivar nueva información. Hemos utilizado el modelo de superficie digital y la capa de asentamiento de alta resolución para averiguar cuántas personas viven por debajo de los 200m en la provincia de Pampanga. Antes de hacer cualquier análisis, nos aseguramos de que los conjuntos de datos estuvieran en la misma proyección y, además, si los rásteres tienen la misma resolución espacial para que los resultados que obtuvimos sean viables. Al referirse al sistema de referencia de coordenadas, el razonamiento es claro, pero ¿por qué la misma resolución espacial?
 
@@ -835,7 +835,7 @@ Figura 9.38 - Ejemplo de diferentes resoluciones específicas para diferentes im
 
 Figura 9.38 detalla la relación entre la resolución de las imágenes satelitales y la información de cobertura terrestre extraída de estas imágenes capturadas. Recuerde como detallamos al principio que el valor de la celda de píxel se atribuye a toda el área que cubre, pero eso no significa que esa sea la realidad en el terreno. Estas representan decisiones tomadas por los expertos de EO que derivan varios productos basados ​​en imágenes de observación de la Tierra, todos documentados en artículos revisados ​​por pares y descripciones de algoritmos. Más explicaciones están más allá del alcance de este módulo, pero es importante tener en cuenta la relación entre lo que un sensor a bordo de un satélite captura y los productos que utilizamos.
 
-Volviendo a nuestra región de interés, la provincia de Santa Fe, podemos probar estas diferencias con los datos que tenemos a mano. Hemos cargado en nuestro proyecto QGIS las 5 capas ráster de LandCover durante 5 años: 2015, 2016, 2017, 2018 y 2019. A continuación, cargaremos un mosaico de imágenes Sentinel-2 [^ 6]. Cargaremos la capa WMS EOX Sentinel-2 sin nubes, disponible [aquí](https://s2maps.eu/). Recordando el módulo 2, para agregar una capa WMS, vaya a Capa ‣ Agregar capa ‣ Agregar capa WMS / WMTS.
+Volviendo a nuestra región de interés, el Estado de Jalisco, podemos probar estas diferencias con los datos que tenemos a mano. Hemos cargado en nuestro proyecto QGIS las 5 capas ráster de LandCover durante 5 años: 2015, 2016, 2017, 2018 y 2019. A continuación, cargaremos un mosaico de imágenes Sentinel-2 [^ 6]. Cargaremos la capa WMS EOX Sentinel-2 sin nubes, disponible [aquí](https://s2maps.eu/). Recordando el módulo 2, para agregar una capa WMS, vaya a Capa ‣ Agregar capa ‣ Agregar capa WMS / WMTS.
 
 Cuando se abra la ventana de agregar, use los siguientes parámetros:
 
@@ -852,9 +852,9 @@ Después de conectarnos a la capa WMS recién agregada, cargaremos la capa llama
 
 ![alt_text](media/fig940.png "image_tooltip")
 
-Figura 9.40 - Capa sin nubes Sentinel-2 para 2019 por EOX - 4326 para la provincia de Santa Fe
+Figura 9.40 - Capa sin nubes Sentinel-2 para 2019 por EOX - 4326 para el Estado de Jalisco
 
-Aunque los productos LandCover se han obtenido utilizando otros datos satelitales (Proba-V), compararemos las 2 capas para que podamos tener una idea de las diferentes resoluciones significar. Recuerde que el producto LandCover está a 100 m y las imágenes de Sentinel 2 a 10m. Para lograrlo, abriremos cortado_LandCover2019_5347 y la capa WMS. Para hacer comparaciones entre 2 capas, usaremos un nuevo plugin que deberás instalar. Por lo tanto, vaya a Complementos ‣ administrar e instalar complementos y escriba en el cuadro de búsqueda MapSwipe Tool. Una vez que lo instale, debería aparecer como un nuevo pictograma en su barra de herramientas (![MapSwipe Tool button](media/mapswipe-btn.png "MapSwipe Tool button")).
+Aunque los productos LandCover se han obtenido utilizando otros datos satelitales (Proba-V), compararemos las 2 capas para que podamos tener una idea de las diferentes resoluciones significar. Recuerde que el producto LandCover está a 100 m y las imágenes de Sentinel 2 a 10m. Para lograrlo, abriremos cortado_LandCover2019_5347 y la capa WMS. Para hacer comparaciones entre 2 capas, usaremos un nuevo plugin que deberás instalar. Por lo tanto, vaya a Complementos ‣ administrar e instalar complementos y escriba en el cuadro de búsqueda MapSwipe Tool. Una vez que lo instale, debería aparecer como un nuevo pictograma en su barra de herramientas ((![MapSwipe Tool button](media/mapswipe-btn.png "MapSwipe Tool button"))).
 
 ![alt_text](media/fig941.png "image_tooltip")
 
@@ -864,7 +864,7 @@ Para activar la herramienta MapSwipe, haga clic en ella mientras la capa ráster
 
 ![alt_text](media/fig942.png "image_tooltip")
 
-Figura 9.42 - LandCover2019 obtenido de PROBA-V (100 m) en la parte superior del mosaico Sentinel 2 (30 m)
+Figura 9.42 - LandCover2019 obtenido de PROBA-V (100 m) y Sentinel 2 (30 m).
 
 Al agregar el HRSL al mapa, se mostrará una buena coincidencia entre HRSL y LandCover. El espacio urbano está representado en rojo y, como se puede ver en la figura 9.43, está cubierto casi por completo por la capa HRSL.
 
@@ -876,7 +876,7 @@ Sin embargo, al hacer zoom, puede ver la diferencia en la resolución entre los 
 
 ![alt_text](media/fig944.png "image_tooltip")
 
-Figura 9.44 - Diferencia en la resolución espacial entre HRSL (30m - blanco) y cortado_LandCover2019_5347 (100m - colores verde, naranja y violeta)
+Figura 9.44 - Diferencia en la resolución espacial entre HRSL (30m - blanco) y cortado_LandCover2019 (100m - colores verde, naranja y violeta)
 
 Ahora, si se hiciera algún análisis usando estos rásteres, estos resultados no serían viables, porque estaríamos comparando valores que se aplican a diferentes resoluciones. Como fase de preprocesamiento, el usuario debe volver a muestrear uno de los 2 para que coincida.
 
@@ -888,12 +888,12 @@ Debe destacarse una diferencia entre los 2 productos: el producto LandCover cubr
 
 Para volver a muestrear, vaya a Ráster ‣ Proyecciones ‣ Ajustar (reproyectar). En la ventana de funcionalidad, configure los siguientes parámetros:
 
-*   capa de entrada: cortado_LandCover2019_5347,
-*   CRS de origen y CRS de destino: EPSG: 5347,
+*   capa de entrada: cortado_LandCover2019
+*   CRS de origen y CRS de destino: EPSG:4486,
 *   Método de remuestreo: Vecino más próximo,
 *   Sin datos: 255, resolución de archivo de salida: 30,
 *   Tipo de datos de salida: usar datos de capa de entrada tipo,
-*   extensión de georeferencia: seleccione la capa cortado_LandCover2019_5347.
+*   extensión de georeferencia: seleccione la capa cortado_LandCover2019_4486.
 
 Guarde la capa de salida como LC2019_NearestNeighbour.
 
@@ -903,7 +903,7 @@ Figura 9.45 - Remuestreo de la capa de Cobertura Terrestre
 
 Siga los pasos exactos, excepto que para el parámetro del método de remuestreo elija Modo. Guarde la capa de salida como LC2019_Mode.
 
-Ahora, comparemos los resultados: consulte las figuras 9.46a y 9.46b.
+Ahora, comparemos los resultados: consulte las figuras 9.45 y 9.46.
 
 ![alt_text](media/fig946_a.png "image_tooltip")
 
@@ -975,7 +975,7 @@ Figura 9.53a - Píxeles ráster a puntos
 
 Figura 9.53b - Ejecución del algoritmo Píxeles ráster a puntos
 
-Teniendo en cuenta la extensión de su área de estudio, esta operación puede prolongarse significativamente en el tiempo. La Figura 9.54 muestra cuántos puntos hemos obtenido para la provincia de Santa Fe.
+Teniendo en cuenta la extensión de su área de estudio, esta operación puede prolongarse significativamente en el tiempo. La Figura 9.54 muestra cuántos puntos hemos obtenido para la Estado de Jalisco.
 
 ![alt_text](media/fig954.png "image_tooltip")
 
@@ -993,7 +993,7 @@ Después de exportar, cargue todos los mosaicos ráster en su proyecto QGIS. El 
 
 Figura 9.56 - Mosaicos ráster para la HRSL del departamento de Rosario 
 
-A continuación, volveremos a ejecutar el algoritmo de píxeles ráster a puntos para cada uno de los mosaicos ráster. Debido a que tenemos varios mosaicos, usaremos la función de procesamiento por lotes (ver figura 9.57).[^3] 
+A continuación, volveremos a ejecutar el algoritmo de píxeles ráster a puntos para cada uno de los mosaicos ráster. Debido a que tenemos varios mosaicos, usaremos la función de procesamiento por lotes (ver figura 9.57).[^1] 
 
 ![alt_text](media/fig957.png "image_tooltip")
 
@@ -1011,7 +1011,7 @@ Al observar más de cerca los resultados del algoritmo, podemos ver que los punt
 
 Figura 9.59 - Verificación de los valores de los datos vectoriales de puntos frente a los valores de los píxeles de la trama
 
-Para resolver el ejercicio, se debe calcular la suma de los valores de los puntos extraídos del producto HRSL que se encuentran dentro de cada polígono del producto de cobertura terrestre. Para hacer eso, usaremos una función que está disponible en la Calculadora de campo: aggregate(). Esta función es bastante poderosa ya que hace uniones espaciales sobre la marcha permitiendo varios cálculos. En nuestro caso, la función debe identificar los puntos que caen en cada polígono y luego sumar los valores de esos puntos. Para hacer eso, vaya a la tabla de atributos del conjunto de datos vectoriales LC2019_Mode[^4] y abra la calculadora de campo. Creando un nuevo campo, introduzca la siguiente expresión:
+Para resolver el ejercicio, se debe calcular la suma de los valores de los puntos extraídos del producto HRSL que se encuentran dentro de cada polígono del producto de cobertura terrestre. Para hacer eso, usaremos una función que está disponible en la Calculadora de campo: aggregate(). Esta función es bastante poderosa ya que hace uniones espaciales sobre la marcha permitiendo varios cálculos. En nuestro caso, la función debe identificar los puntos que caen en cada polígono y luego sumar los valores de esos puntos. Para hacer eso, vaya a la tabla de atributos del conjunto de datos vectoriales LC2019_Mode[^2] y abra la calculadora de campo. Creando un nuevo campo, introduzca la siguiente expresión:
 
 aggregate(
     layer:= 'hrsl_rosario1',
@@ -1082,15 +1082,7 @@ Métodos de remuestreo: [https://gisgeography.com/raster-resampling/](https://gi
 ## Notes
 
 [^1]:
-
-     [https://www.eorc.jaxa.jp/ALOS/en/aw3d30/data/index.htm](https://www.eorc.jaxa.jp/ALOS/en/aw3d30/data/index.htm) 
-
-[^2]:
-
-     [https://lcviewer.vito.be/download](https://lcviewer.vito.be/download) 
-
-[^3]:
      Se recomienda hacer el proceso por lotes en sólo una porción del territorio de la provincia para evitar procesar demasiadas capas (Departamento de Rosario)
 
-[^4]:
+[^2]:
      Se puede usar un recorte por departamento al igual que los píxel a raster
