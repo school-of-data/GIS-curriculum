@@ -251,7 +251,7 @@ Figure 3.10: The HRSL for Ashanti, Ghana
 
 The Overpass API ([https://wiki.openstreetmap.org/wiki/Overpass_API](https://wiki.openstreetmap.org/wiki/Overpass_API)), formerly known as OSM Server Side Scripting, or OSM3S before 2011, is a read-only API that serves up custom selected parts of the OSM map data. Unlike the main API, which is optimized for editing, Overpass API is optimized for data consumers to get a small subset of the roughly 10 million elements in OpenStreetMap. These subsets can be selected by search criteria such as location, type of objects, tag properties, proximity, or combinations of them. The Overpass API serves as the backend for other OSM-based services like the QuickOSM plugin.
 
-Using an Overpass query allows you to create more complex feature selection in QuickOSM. For example, let’s load all fast foods again inside the extent of Pampanga_province but this time let’s just get the branches of Jollibee. If you look at the attribute table of fast food layer, you will notice that it has a **name **field. The fields in the attribute table of data loaded from OSM correspond to the tag keys so if we want to just select all Jollibee fast food branches, we need to add a filter that selects a feature if it has a **key:value** of **name: Jollibee**. This filter can easily be added in an Overpass API.
+Using an Overpass query allows you to create more complex feature selection in QuickOSM. For example, let’s load all fast foods again inside the extent of Pampanga_province but this time let’s just get the branches of KFC. If you look at the attribute table of fast food layer, you will notice that it has a **name **field. The fields in the attribute table of data loaded from OSM correspond to the tag keys so if we want to just select all KFC fast food branches, we need to add a filter that selects a feature if it has a **key:value** of **name: KFC**. This filter can easily be added in an Overpass API.
 
 1. Open the QuickOSM plugin and input the parameters we used for querying all fast foods.
 
@@ -265,7 +265,7 @@ Quick query to load all amenities tagged as fast food
 
 Overpass to load all amenities tagged as fast food
 
-3. Edit the query and add the line **&lt;has-kv k="name" v="Jollibee"/>** after each &lt;has-kv k="amenity" v="fast_food"/> line.
+3. Edit the query and add the line **&lt;has-kv k="name" v="KFC"/>** after each &lt;has-kv k="amenity" v="fast_food"/> line.
 
 ![Overpass query to load only fast foods named KFC](media/overpass-2.png "Overpass query to load only fast foods named KFC")
 
@@ -275,7 +275,7 @@ Overpass query to load all amenities tagged as fast food whose name is KFC
 
 ![Amenities tagged as fast food whose name is KFC loaded from OSM](media/overpass-3.png "Amenities tagged as fast food whose name is KFC loaded from OSM")
 
-Amenities tagged as fast food whose name is Jollibee loaded from OSM
+Amenities tagged as fast food whose name is KFC loaded from OSM
 
 5. Try it with other fast food chains.
 
