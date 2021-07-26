@@ -26,7 +26,7 @@ By the end of this module, learners will have the basic understanding of the fol
 *   [High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
 *   [SRTM Digital Elevation Model](data/SRTM_DEM)
 *   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
-*   The coordinate reference system used is the PRS92 / Philippines zone 3, EPSG 3123. 
+*   The coordinate reference system used is the Arc 1960 / UTM zone 37S, EPSG 21037. 
 
 ## Prerequisites: 
 
@@ -705,11 +705,12 @@ The third tab allows the user to customize what the `Value Tool` displays: what 
 
 Now that we’ve learned how to extract basic information on the loaded raster datasets, we will continue with a more in-depth raster data processing in order to obtain new derived rasters and, in consequence, more information.
 
-As you may have noticed, due to the raster data model structure, the layers we have loaded are expanding over our region of interest - Pampanga province. That is undesirable due to several reasons but mainly because you end up processing more data than you actually need, which translates in bigger storage and computer processing needs. That is why, before moving forward to any other steps, we will make sure that we process exactly as much data as we need. **Be aware **as you will start working on your own datasets, that the size of your files is an important factor when it comes to processing times. The bigger the files, more time will be required. Because of the model data structure - raster vs vector - raster files are usually much larger. 
+As you may have noticed, due to the raster data model structure, the layers we have loaded are expanding over our region of interest - Kiambu County. That is undesirable due to several reasons but mainly because you end up processing more data than you actually need, which translates in bigger storage and computer processing needs. That is why, before moving forward to any other steps, we will make sure that we process exactly as much data as we need. **Be aware **as you will start working on your own datasets, that the size of your files is an important factor when it comes to processing times. The bigger the files, more time will be required. Because of the model data structure - raster vs vector - raster files are usually much larger. 
 
 As you have noticed by now, the datasets we load into a GIS - in our case into QGIS - can be processed together even if they are of different nature, such as joining csv tables to vector layers to add information to geometries. The same applies to raster and vector data, as we will see. 
 
-To work only with raster layers that are relevant to our Pampanga province, we will use the vector extent layer (Pampanga_admin_boundary) to cut/clip all relevant raster layers. Go to **Raster ‣ Extraction ‣ Clip Raster by Mask Layer** (see figure 9.22). Similarly, you can search for Clip in the Processing Toolbar or the Locator bar.
+To work only with raster layers that are relevant to 
+County, we will use the vector extent layer (kiambu_admin_boundary) to cut/clip all relevant raster layers. Go to **Raster ‣ Extraction ‣ Clip Raster by Mask Layer** (see figure 9.22). Similarly, you can search for Clip in the Processing Toolbar or the Locator bar.
 
 
 ![Using a vector mask to extract the raster data on a specific region](media/fig922.png "Using a vector mask to extract the raster data on a specific region")
@@ -721,24 +722,24 @@ Given that we will work with 7 raster layers - the 5 Land Cover layers - the dig
 Your batch processing window setup should look like in figure 9.23. 
 
 
-![Batch process cliping all required raster layers by Pampanga Province geometry](media/fig923.png "Batch process cliping all required raster layers by Pampanga Province geometry")
+![Batch process cliping all required raster layers by Kiambu County geometry](media/fig923.png "Batch process cliping all required raster layers by Kiambu County geometry")
 
-Figure 9.23 - Batch process cliping all required raster layers by Pampanga Province geometry
+Figure 9.23 - Batch process cliping all required raster layers by Kiambu County geometry
 
 The parameters setup are the following:
-* mask layer: Pampanga_admin_boundary
-* both source and target CRS is EPSG 3123
+* mask layer: kiambu_admin_boundary
+* both source and target CRS is EPSG 21037
 * select yes to: `match the extent of the clipped raster to the mask layer` and `keep resolution of input layer`. 
 * Be aware, for the DSM_mosaic we will also select yes` to create an output alpha band`. Load layers at completion. 
 
 If everything went smoothly, your QGIS main window should look like in figure 9.24. 
 
 
-![Raster layers clipped by Pampanga province contour](media/fig924.png "Raster layers clipped by Pampanga province contour")
+![Raster layers clipped by Kiambu County contour](media/fig924.png "Raster layers clipped by Kiambu County contour")
 
-Figure 9.24 - Raster layers clipped by Pampanga province contour.  
+Figure 9.24 - Raster layers clipped by Kiambu County contour.  
 
-Now, imagine that you have to present a report on where most people are living but with consideration to the altitude[^4]. You must know how many people live between 0 and 200 m altitude in the Pampanga province. There are a few elements to consider. Firstly, what is the data we will use and what are its characteristics. For population, we have the High Resolution Settlement Layer Data and for relief, we have the ALOS World 3D - 30m (AW3D30). Both raster layers have a spatial resolution of 30m, which allows us to proceed to other considerations. Relief is a continuous phenomena, the spread of the population is not, yet the report would make no sense to be done by the 30m pixel. We need to identify all the pixels with cell values from 0 to 200. Considering the histogram of the DSM_mosaic for our region of interest, we’ve seen that most cell values are between 0 and 200m. We can proceed to making a basic relief map based on the following divisions: 
+Now, imagine that you have to present a report on where most people are living but with consideration to the altitude[^4]. You must know how many people live between 0 and 200 m altitude in the Kiambu County. There are a few elements to consider. Firstly, what is the data we will use and what are its characteristics. For population, we have the High Resolution Settlement Layer Data and for relief, we have the ALOS World 3D - 30m (AW3D30). Both raster layers have a spatial resolution of 30m, which allows us to proceed to other considerations. Relief is a continuous phenomena, the spread of the population is not, yet the report would make no sense to be done by the 30m pixel. We need to identify all the pixels with cell values from 0 to 200. Considering the histogram of the DSM_mosaic for our region of interest, we’ve seen that most cell values are between 0 and 200m. We can proceed to making a basic relief map based on the following divisions: 
 
 1. 0 - 50m
 2. 51 - 100m
@@ -754,7 +755,7 @@ Using your knowledge acquired in module 4, you can style the DSM layer by these 
 
 Figure 9.25 - DSM_mosaic_clipped representation
 
-In order to calculate the number of people based on the raster data HRSL that live up to 200 meters in Pampanga province, we must see which pixels fall in each of those categories. To do that, we will use **Raster Calculator**. This is a functionality allowing the user to perform calculations on the basis of existing raster pixel values. The results are written to a new raster layer in a GDAL[^5]-supported format.
+In order to calculate the number of people based on the raster data HRSL that live up to 200 meters in Kiambu County, we must see which pixels fall in each of those categories. To do that, we will use **Raster Calculator**. This is a functionality allowing the user to perform calculations on the basis of existing raster pixel values. The results are written to a new raster layer in a GDAL[^5]-supported format.
 
 There are several ways to open the raster calclulator in QGIS. You can do so from the Menu bar **Raster ‣ Raster Calculator** or by searching raster calculator on the Processing Toolbox or Locator bar. If we run the Raster Calculator under Raster analysis in the Processing Toolbox, the window in Figure 9.26b should appear. 
 
@@ -797,14 +798,14 @@ The result will be named `Output`. You can rename this to `< 200`. As we can see
 
 Figure 9.29 - Spatial distribution of all pixels of value 1, meaning with altitude lower than 200 meters 
 
-Going further, we can show the spatial distribution of population at the 30 m spatial resolution only in this specific geographical region, we’ve selected - Pampanga province, below 200m. To do that, we again employ Raster Calculator. 
+Going further, we can show the spatial distribution of population at the 30 m spatial resolution only in this specific geographical region, we’ve selected - Kiambu County province, below 200m. To do that, we again employ Raster Calculator. 
 
 The formula is fairly simple, given that all DSM cell values we are interested in have value 1. 
 
 Open the Calculator and insert the following formula: 
 
 ```
-"< 200@1"*"Reprojected_HRSL_Pampanga_Population@1"
+"< 200@1"*"Reprojected_HRSL_Kiambu_Population@1"
 ```
 
 
@@ -819,16 +820,16 @@ As opposed to previous raster calculator use, we have used 2 different raster da
 
 Figure 9.31 - Using Value Tool to check results of Raster Calculator
 
-You can see that even if Reprojected_HRSL_Pampanga_Population has values in this specific mouse location, the raster obtained with Raster Calculator HRSL_DSM has value 0. 
+You can see that even if Reprojected_HRSL_Kiambu_Population has values in this specific mouse location, the raster obtained with Raster Calculator HRSL_DSM has value 0. 
 
-Next, we present the spatial distribution of the population that lives below 200m in Pampanga province. To choose an appropriate classification, we calculate the histogram. We can notice that most values are between 0.1 and 200 people per 30m. The classification we’ve chosen is visible in figure 9.32. 
+Next, we present the spatial distribution of the population that lives below 200m in Kiambu County. To choose an appropriate classification, we calculate the histogram. We can notice that most values are between 0.1 and 200 people per 30m. The classification we’ve chosen is visible in figure 9.32. 
 
 
-![Distribution of population that lives below 200m in Pampanga province, represented at a 30m resolution](media/fig932.png "Distribution of population that lives below 200m in Pampanga province, represented at a 30m resolution")
+![Distribution of population that lives below 200m in Kiambu County, represented at a 30m resolution](media/fig932.png "Distribution of population that lives below 200m in Kiambu County, represented at a 30m resolution")
 
-Figure 9.32 - Distribution of population that lives below 200m in Pampanga province, represented at a 30m resolution. 
+Figure 9.32 - Distribution of population that lives below 200m in Kiambu County, represented at a 30m resolution. 
 
-If we are interested in the total number of people living below 200m in Pampanga province and not the geographical distribution per 30 m spatial resolution, then we need to sum up all pixel values of the raster layer HRSL_DSM. One way to obtain this number is to transform the DSM_clipped200 from raster to vector and them [....]
+If we are interested in the total number of people living below 200m in Kiambu County and not the geographical distribution per 30 m spatial resolution, then we need to sum up all pixel values of the raster layer HRSL_DSM. One way to obtain this number is to transform the DSM_clipped200 from raster to vector and them [....]
 
 To do that go to **Raster ‣ Conversion ‣ Polygonize (Raster to Vector)** (see figure 9.33). 
 
@@ -874,7 +875,7 @@ The resulting layer is a vector layer that has as attributes the statistics that
 
 Figure 9.37 - Resulting vector layer of Zonal Statistics
 
-And with this final step, we answered our exercise, how many people (and where) are living below 200m in Pampanga province. 
+And with this final step, we answered our exercise, how many people (and where) are living below 200m in Kimabu County. 
 
 
 #### **Quiz questions**
@@ -892,7 +893,7 @@ And with this final step, we answered our exercise, how many people (and where) 
 
 ### **Phase 3: Working with raster and vector data.**
 
-In the previous phase, we have seen how we can process 2 raster datasets in order to derive new information. We have used the digital surface model and the High Resolution Settlement Layer to find out how many people live below 200m in Pampanga province. Before doing any analysis, we made sure that the datasets were in the same projection and, furthermore if the rasters have the same spatial resolution so that the results we obtained are viable. When referring to the coordinate reference system, the reasoning is clear, but why the same spatial resolution? 
+In the previous phase, we have seen how we can process 2 raster datasets in order to derive new information. We have used the digital surface model and the High Resolution Settlement Layer to find out how many people live below 200m in Kiambu County. Before doing any analysis, we made sure that the datasets were in the same projection and, furthermore if the rasters have the same spatial resolution so that the results we obtained are viable. When referring to the coordinate reference system, the reasoning is clear, but why the same spatial resolution? 
 
 Remembering spatial resolution, it is the size of the ground surface measured in units of length, in other words, the size of the pixel measured on ground. If a raster has a 30m resolution, that means that the smallest linear object we could detect on that image is of 30 m, any smaller and we could not detect it. Continuing the analogy, we can compare it with the scale of a map. If a map has a scale of 1:25000, that means that 1 unit of length on the map represents 25000 units on the ground, that is 1 cm is 25000cm, 1 cm on the map equals 250m on the ground. For example, a 2km road would have 8 cm on the map.
 
@@ -908,7 +909,7 @@ http://www.planning4adaptation.eu/_
 
 Figure 9.38 details the relation between the resolution of the satellite imagery and the land cover information extracted from these images captured. Remember as we detailed at the beginning that the value of the pixel cell is attributed to the entire area it covers, yet that does not mean that is the reality on the ground. These represent decisions made by the EO experts that derive various products based on Earth Observation imagery - all documented in peer-reviewed papers and algorithm descriptions. Further explanations are beyond the scope of this module, but it is important to keep in mind the relation between what a sensor onboard a satellite captures and the products we use. 
 
-Coming back to our region of interest - Pampanga province - we can test these differences with the data that we have at hand. We have loaded into our QGIS project the 5 raster layers of LandCover for 5 years: 2015, 2016, 2017, 2018 and 2019. Next, we will load a mosaic of Sentinel-2[^6] imagery. We will load the WMS layer EOX Sentinel-2 cloudless, available [here](https://s2maps.eu/). Remembering from module 2, to add a WMS layer, go to **Layer ‣ Add layer ‣ Add WM/WMTS Layer..**
+Coming back to our region of interest - Kiambu County - we can test these differences with the data that we have at hand. We have loaded into our QGIS project the 5 raster layers of LandCover for 5 years: 2015, 2016, 2017, 2018 and 2019. Next, we will load a mosaic of Sentinel-2[^6] imagery. We will load the WMS layer EOX Sentinel-2 cloudless, available [here](https://s2maps.eu/). Remembering from module 2, to add a WMS layer, go to **Layer ‣ Add layer ‣ Add WM/WMTS Layer..**
 
 When the add window opens, use the following parameters:
 ```
@@ -926,7 +927,7 @@ After connecting to the newly WMS layer added, we will load the layer named Sent
 
 ![alt_text](media/fig940.png "image_tooltip")
 
-Figure 9.40  - Sentinel-2 cloudless layer for 2019 by EOX - 4326 for Pampanga province
+Figure 9.40  - Sentinel-2 cloudless layer for 2019 by EOX - 4326 for Kiambu County
 
 Although the LandCover products have been obtained using other satellite data (Proba-V), let us compare the 2 layers so we can get a sense of what different resolutions mean. Remember that the LandCover product is at 100m and Sentinel 2 imagery is at 10m. To accomplish that, we will open the Clipped_Reprojected_LandCover 2019 and the WMS layer. To make comparisons between 2 layers, we will use a new plugin that you must install. Therefore, go to **Plugins ‣ manage and install plugins** and write in the search box `MapSwipe Tool`. Once you install it, it should appear as a new pictogram in your toolbar (![MapSwipe Tool button](media/mapswipe-btn.png "MapSwipe Tool button")). 
 
@@ -960,7 +961,7 @@ Now, if any analysis would be made using these rasters, these results would not 
 
 **Resampling** refers to changing the cell values due to changes in the raster cell grid and there are only 2 options: (1) **upsampling** refers to cases where we are converting to higher resolution/smaller cells and (2) **downsampling** is resampling to lower resolution/larger cell sizes. 
 
-Let us imagine the following exercise. We need to identify the population numbers for each category of land cover we have defined in the Pampanga province. As explained above, we need to _pre-process_ the data we have in order to get viable results from our analysis, i.e. in our case, we need to bring both our raster datasets to the same spatial resolution. As detailed above, we can either increase or decrease the pixels’ dimensions. It must be highlighted that resample, with up or downscale, will involve an interpolation process (see page 12 for more details) - so the result introduces a statistical error. The usual practice is to resample all rasters to correspond to the raster with the lower resolution, but again this decision must be taken with consideration to all factors. Detailing the decision making process for resampling raster layers far exceeds the scope of this curriculum. 
+Let us imagine the following exercise. We need to identify the population numbers for each category of land cover we have defined in the Kiambu County. As explained above, we need to _pre-process_ the data we have in order to get viable results from our analysis, i.e. in our case, we need to bring both our raster datasets to the same spatial resolution. As detailed above, we can either increase or decrease the pixels’ dimensions. It must be highlighted that resample, with up or downscale, will involve an interpolation process (see page 12 for more details) - so the result introduces a statistical error. The usual practice is to resample all rasters to correspond to the raster with the lower resolution, but again this decision must be taken with consideration to all factors. Detailing the decision making process for resampling raster layers far exceeds the scope of this curriculum. 
 
 A difference between the 2 products must be highlighted: the LandCover product covers the **entire area** of the considered extent, as opposed to the HSRL product, where the raster layer contains strictly the cell where values above 0 exist. This situation poses issues when interpolation cell values to resample, because no matter the interpolation method chosen, that would take into consideration the surrounding pixels, following a specific well-defined algorithm and in this particular situation, the edge pixels are not at the edge of the study region, but within it. Therefore, in our demonstrative case, we will consider upsampling the Land Cover product from 100m to 30m resolution to match the LandCover product resolution. The resampling method we choose is crucial, as results can vary significantly. For the purpose of demonstration, we will resample the LandCover product using 2 different methods - Nearest Neighbour and Mode. 
 
@@ -1021,7 +1022,7 @@ At this point, your map windows should look like in figure 9.49.
 
 Figure 9.49 - The 2 raster products: Land Cover 2019 and HRSL overlaid. 
 
-Going back to our exercise, the requirements was to identify the population numbers for each category of land cover we have defined in the Pampanga province. At this point, we have pre-processed our raster data, as to have it in the same coordinate system, with the same spatial resolution. We will continue with a conversion algorithm, we will transform the raster dataset Land Cover into a vector dataset - polygon type. This will allow us to more easily identify the population count for each land cover category. 
+Going back to our exercise, the requirements was to identify the population numbers for each category of land cover we have defined in the Kiambu County. At this point, we have pre-processed our raster data, as to have it in the same coordinate system, with the same spatial resolution. We will continue with a conversion algorithm, we will transform the raster dataset Land Cover into a vector dataset - polygon type. This will allow us to more easily identify the population count for each land cover category. 
 
 For conversions, from raster to polygon, as well as from vector to polygon, go to **Raster ‣ Conversion** and here we have more options. We will choose **Polygonize (Raster to vector)..** We will convert to vector the latest raster dataset that we have obtained: LC2019_Mode. Your result should look like in figure 9.50b. 
 
@@ -1065,7 +1066,7 @@ Figure 9.53a - Raster pixels to points
 
 Figure 9.53b - Running Raster pixels to points algorithm
 
-Considering the extent of your study area, this operation can be significantly lengthy in time. Figure 9.54 shows how many points we have obtained for Pampanga province.
+Considering the extent of your study area, this operation can be significantly lengthy in time. Figure 9.54 shows how many points we have obtained for Kiambu County.
 
 
 ![alt_text](media/fig954.png "image_tooltip")
@@ -1084,7 +1085,7 @@ After exporting, load all the raster tiles into your QGIS project. The result sh
 
 ![alt_text](media/fig956.png "image_tooltip")
 
-Figure 9.56 - Raster tiles for the Pampanga province HRSL 
+Figure 9.56 - Raster tiles for the Kiambu County HRSL 
 
 Next, we will re-run the **Raster pixels to points** algorithm for each of the raster tiles. Because we have several tiles, we will use the batch processing function (see figure 9.57).
 
