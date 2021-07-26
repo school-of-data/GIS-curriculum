@@ -22,7 +22,7 @@ By the end of this module, learners will have the basic understanding of the fol
 
 *   This module has been prepared using [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
 *   [module9.gpkg](data/module9.gpkg)
-    *   Pampanga_admin_boundary
+    *   Kiambu_admin_boundary
 *   [High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
 *   [SRTM Digital Elevation Model](data/SRTM_DEM)
 *   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
