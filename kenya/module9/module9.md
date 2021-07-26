@@ -543,8 +543,9 @@ A raster information HTML file should look like below. A HTML file can be open w
 
 
 ```
-       Driver: GTiff/GeoTIFF
+      Driver: GTiff/GeoTIFF
 Files: J:/ke_landcover/Reprojected_LandCover2018.tif
+       J:/ke_landcover/Reprojected_LandCover2018.tif.aux.xml
 Size is 7608, 6464
 Coordinate System is:
 PROJCRS["Arc 1960 / UTM zone 37S",
@@ -600,10 +601,34 @@ Lower Right (  407426.392, 9784798.219) ( 38d10' 3.47"E,  1d56'49.07"S)
 Center      (  293632.120, 9881481.469) ( 37d 8'43.66"E,  1d 4'18.50"S)
 Band 1 Block=7608x1 Type=Byte, ColorInterp=Red
   Description = discrete_classification
+  Min=0.000 Max=126.000   Computed Min/Max=0.000,126.000
+  Minimum=0.000, Maximum=126.000, Mean=47.999, StdDev=30.730
+  Metadata:
+    STATISTICS_MAXIMUM=126
+    STATISTICS_MEAN=47.998719796319
+    STATISTICS_MINIMUM=0
+    STATISTICS_STDDEV=30.729525418216
+    STATISTICS_VALID_PERCENT=100
 Band 2 Block=7608x1 Type=Byte, ColorInterp=Green
   Description = forest_type
+  Min=0.000 Max=4.000   Computed Min/Max=0.000,4.000
+  Minimum=0.000, Maximum=4.000, Mean=0.164, StdDev=0.555
+  Metadata:
+    STATISTICS_MAXIMUM=4
+    STATISTICS_MEAN=0.16373434588135
+    STATISTICS_MINIMUM=0
+    STATISTICS_STDDEV=0.55515780052434
+    STATISTICS_VALID_PERCENT=100
 Band 3 Block=7608x1 Type=Byte, ColorInterp=Blue
   Description = urban-coverfraction
+  Min=0.000 Max=100.000   Computed Min/Max=0.000,100.000
+  Minimum=0.000, Maximum=100.000, Mean=2.784, StdDev=13.823
+  Metadata:
+    STATISTICS_MAXIMUM=100
+    STATISTICS_MEAN=2.7844823526369
+    STATISTICS_MINIMUM=0
+    STATISTICS_STDDEV=13.822989465199
+    STATISTICS_VALID_PERCENT=100
 ```
 
 
