@@ -391,7 +391,7 @@ Tabel 2 forest_type band value table
 
 To organize your layers better, group them by category, as follows: for the land cover 5 raster layers, make one group named Land Cover (in the Layers Panel, click on the Add Group button ![Add Group Button](media/add-group-btn.png "Add Group Button")). For the digital surface model, make one group named SRTM DEM. 
 
-Don’t forget to also add the boundary of the working area, province of Pampanga, which is a vector dataset. 
+Don’t forget to also add the boundary of the working area, Kiambu County, which is a vector dataset. 
 
 Your QGIS map window should look like in figure 9.6, maybe in slightly different colors. 
 
@@ -405,11 +405,11 @@ Figure 9.6 - Loaded raster datasets
 
 Next, we will use a series of tools that will allow us to get a sense of the data we are working with. 
 
-After loading all the datasets, we will check the coordinate reference system in which all our datasets are in.  As we know from previous modules, QGIS offers the possibility to reproject all datasets loaded into the project on the fly, however that could lead to geoprocessing issues along the way. Thus, even if all layers are correctly overlaid, as can one say by visual inspection, we will proceed in reprojecting them all in the official coordinate system of our region of interest, Pampanga province - EPSG: 3123. 
+After loading all the datasets, we will check the coordinate reference system in which all our datasets are in.  As we know from previous modules, QGIS offers the possibility to reproject all datasets loaded into the project on the fly, however that could lead to geoprocessing issues along the way. Thus, even if all layers are correctly overlaid, as can one say by visual inspection, we will proceed in reprojecting them all in the official coordinate system of our region of interest, Kiambu County - EPSG: 21037. 
 
 There are several ways to get information on the loaded layers in QGIS, some providing the user with more details than others. For a quick overview of a dataset’s metadata, **double-click the layer and open Properties ‣ Information**.
 
-For layer HRSL_Pampanga_Population, the information window would look like in figure 9.7. 
+For layer HRSL_Kiambu_Population, the information window would look like in figure 9.7. 
 
 
 ![Extracting basic metadata from a raster layer](media/fig97.png "Extracting basic metadata from a raster layer")
@@ -434,7 +434,7 @@ After selecting the Warp functionality, a new window will appear allowing the us
 
 Figure 9.9a - Warp (reproject) QGIS window
 
-If you selected the output to be **[Save to temporary file]** then there will be a raster layer named `Reprojected` in the Layers Panel. This is a memory layer and you can rename this layer to Reprojected_HRSL_Pampanga_Population and save it to make it persistent.
+If you selected the output to be **[Save to temporary file]** then there will be a raster layer named `Reprojected` in the Layers Panel. This is a memory layer and you can rename this layer to Reprojected_HRSL_Kiambu_Population and save it to make it persistent.
 
 
 ![Reprojected HRSL](media/fig99_b.png "Reprojected HRSL")
@@ -543,94 +543,67 @@ A raster information HTML file should look like below. A HTML file can be open w
 
 
 ```
-        Driver: GTiff/GeoTIFF
-        Files: /Users/codrinamariailie/Google Drive/02_OK/Gov_Geospatial_Trainings/Data/module9/Reprojected_LandCover2019.tif
-        Size is 678, 570
-        Coordinate System is:
-        PROJCRS["PRS92 / Philippines zone 3",
-            BASEGEOGCRS["PRS92",
-                DATUM["Philippine Reference System 1992",
-                    ELLIPSOID["Clarke 1866",6378206.4,294.978698213898,
-                        LENGTHUNIT["metre",1]]],
-                PRIMEM["Greenwich",0,
-                    ANGLEUNIT["degree",0.0174532925199433]],
-                ID["EPSG",4683]],
-            CONVERSION["Philippines zone III",
-                METHOD["Transverse Mercator",
-                    ID["EPSG",9807]],
-                PARAMETER["Latitude of natural origin",0,
-                    ANGLEUNIT["degree",0.0174532925199433],
-                    ID["EPSG",8801]],
-                PARAMETER["Longitude of natural origin",121,
-                    ANGLEUNIT["degree",0.0174532925199433],
-                    ID["EPSG",8802]],
-                PARAMETER["Scale factor at natural origin",0.99995,
-                    SCALEUNIT["unity",1],
-                    ID["EPSG",8805]],
-                PARAMETER["False easting",500000,
-                    LENGTHUNIT["metre",1],
-                    ID["EPSG",8806]],
-                PARAMETER["False northing",0,
-                    LENGTHUNIT["metre",1],
-                    ID["EPSG",8807]]],
-            CS[Cartesian,2],
-                AXIS["easting (X)",east,
-                    ORDER[1],
-                    LENGTHUNIT["metre",1]],
-                AXIS["northing (Y)",north,
-                    ORDER[2],
-                    LENGTHUNIT["metre",1]],
-            USAGE[
-                SCOPE["unknown"],
-                AREA["Philippines - zone III"],
-                BBOX[3,119.7,21.62,122.21]],
-            ID["EPSG",3123]]
-        Data axis to CRS axis mapping: 1,2
-        Origin = (430713.282723263022490,1690115.897022359305993)
-        Pixel Size = (100.000000000000000,-100.000000000000000)
-        Metadata:
-          AREA_OR_POINT=Area
-        Image Structure Metadata:
-          INTERLEAVE=PIXEL
-        Corner Coordinates:
-        Upper Left  (  430713.283, 1690115.897) (120d21'17.68"E, 15d16'55.47"N)
-        Lower Left  (  430713.283, 1633115.897) (120d21'23.24"E, 14d46' 0.88"N)
-        Upper Right (  498513.283, 1690115.897) (120d59'10.17"E, 15d16'58.81"N)
-        Lower Right (  498513.283, 1633115.897) (120d59'10.29"E, 14d46' 4.10"N)
-        Center      (  464613.283, 1661615.897) (120d40'15.34"E, 15d 1'30.61"N)
-        Band 1 Block=678x4 Type=Byte, ColorInterp=Red
-          Description = discrete_classification
-            Computed Min/Max=0.000,200.000
-          Minimum=0.000, Maximum=200.000, Mean=67.557, StdDev=35.613
-          NoData Value=255
-          Metadata:
-            STATISTICS_MAXIMUM=200
-            STATISTICS_MEAN=67.556567003835
-            STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=35.612833384649
-            STATISTICS_VALID_PERCENT=99.72
-        Band 2 Block=678x4 Type=Byte, ColorInterp=Green
-          Description = forest_type
-            Computed Min/Max=0.000,2.000
-          Minimum=0.000, Maximum=2.000, Mean=0.473, StdDev=0.850
-          NoData Value=255
-          Metadata:
-            STATISTICS_MAXIMUM=2
-            STATISTICS_MEAN=0.47292184572588
-            STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=0.84981681513547
-            STATISTICS_VALID_PERCENT=99.72
-        Band 3 Block=678x4 Type=Byte, ColorInterp=Blue
-          Description = urban-coverfraction
-            Computed Min/Max=0.000,100.000
-          Minimum=0.000, Maximum=100.000, Mean=14.485, StdDev=30.631
-          NoData Value=255
-          Metadata:
-            STATISTICS_MAXIMUM=100
-            STATISTICS_MEAN=14.484993486711
-            STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=30.631074729814
-            STATISTICS_VALID_PERCENT=99.72
+       Driver: GTiff/GeoTIFF
+Files: J:/ke_landcover/Reprojected_LandCover2018.tif
+Size is 7608, 6464
+Coordinate System is:
+PROJCRS["Arc 1960 / UTM zone 37S",
+    BASEGEOGCRS["Arc 1960",
+        DATUM["Arc 1960",
+            ELLIPSOID["Clarke 1880 (RGS)",6378249.145,293.465,
+                LENGTHUNIT["metre",1]]],
+        PRIMEM["Greenwich",0,
+            ANGLEUNIT["degree",0.0174532925199433]],
+        ID["EPSG",4210]],
+    CONVERSION["UTM zone 37S",
+        METHOD["Transverse Mercator",
+            ID["EPSG",9807]],
+        PARAMETER["Latitude of natural origin",0,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8801]],
+        PARAMETER["Longitude of natural origin",39,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8802]],
+        PARAMETER["Scale factor at natural origin",0.9996,
+            SCALEUNIT["unity",1],
+            ID["EPSG",8805]],
+        PARAMETER["False easting",500000,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8806]],
+        PARAMETER["False northing",10000000,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8807]]],
+    CS[Cartesian,2],
+        AXIS["(E)",east,
+            ORDER[1],
+            LENGTHUNIT["metre",1]],
+        AXIS["(N)",north,
+            ORDER[2],
+            LENGTHUNIT["metre",1]],
+    USAGE[
+        SCOPE["unknown"],
+        AREA["Africa - Kenya and Tanzania - south of equator and east of 36°E"],
+        BBOX[-11.75,36,0,41.6]],
+    ID["EPSG",21037]]
+Data axis to CRS axis mapping: 1,2
+Origin = (179837.849079965439159,9978164.719747163355350)
+Pixel Size = (29.914372036796852,-29.914372036796852)
+Metadata:
+  AREA_OR_POINT=Area
+Image Structure Metadata:
+  INTERLEAVE=PIXEL
+Corner Coordinates:
+Upper Left  (  179837.849, 9978164.720) ( 36d 7'26.52"E,  0d11'50.35"S)
+Lower Left  (  179837.849, 9784798.219) ( 36d 7'20.65"E,  1d56'40.92"S)
+Upper Right (  407426.392, 9978164.720) ( 38d10' 5.17"E,  0d11'51.17"S)
+Lower Right (  407426.392, 9784798.219) ( 38d10' 3.47"E,  1d56'49.07"S)
+Center      (  293632.120, 9881481.469) ( 37d 8'43.66"E,  1d 4'18.50"S)
+Band 1 Block=7608x1 Type=Byte, ColorInterp=Red
+  Description = discrete_classification
+Band 2 Block=7608x1 Type=Byte, ColorInterp=Green
+  Description = forest_type
+Band 3 Block=7608x1 Type=Byte, ColorInterp=Blue
+  Description = urban-coverfraction
 ```
 
 
