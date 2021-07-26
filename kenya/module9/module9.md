@@ -418,7 +418,7 @@ Figure 9.7 - Extracting basic metadata from a raster layer
 
 With regard to our first question on what CRS is being used for the datasets we have loaded, we can observe that even if the HRSL is correctly overlaid, the dataset native’s projection is EPSG 4326 - WGS 84 - Geographic, with units measured in degrees. We also identify that this specific raster layer has only one band, yet the pixel size is difficult to read as the measurement is in degrees and not meters, which would make it easier to understand. 
 
-Thus, the first thing to do is to reproject all datasets we will work with in the same coordinate system - EPSG 3123.
+Thus, the first thing to do is to reproject all datasets we will work with in the same coordinate system - EPSG 21037.
 
 Starting with the HRSL datasets, we go to **Raster ‣ Projections ‣ Warp (Reproject)** (see figure 9.8).
 
@@ -473,7 +473,7 @@ We proceed in checking the CRS of the 5 land cover datasets that we have loaded 
 Figure 9.12 - Batch processing tab on a QGIS functionality window
 
 
-For the 5 land cover raster layers, we will use the batch processing and as resample method nearest neighbour. To add a new layer, click on the + pictogram. To automatically fill the CRS and resampling method parameters, click on autofill button on top of the corresponding columns and select `Fill down`. Rename the reprojected rasters by adding the EPSG code at the end of the name, for example LandCover2015, will become landCover2015_3123. Set your parameters as in figure 9.13: source CRS: EPSG: 3857, target CRS EPSG 3123, resampling method to use: nearest neighbour (we explained in the paragraph above why), nodata value for output bands: 255 (from the information window, we see the data type - yte - 8bit unsigned integer - which means that the maximum value can be 255), output resolution:100 m (as the initial land cover rasters). After setting all parameters, check the box in the left corner of the window - **Load layers on completion** and click **Run**. 
+For the 5 land cover raster layers, we will use the batch processing and as resample method nearest neighbour. To add a new layer, click on the + pictogram. To automatically fill the CRS and resampling method parameters, click on autofill button on top of the corresponding columns and select `Fill down`. Rename the reprojected rasters by adding the EPSG code at the end of the name, for example LandCover2015, will become landCover2015_21037. Set your parameters as in figure 9.13: source CRS: EPSG: 3857, target CRS EPSG 21037, resampling method to use: nearest neighbour (we explained in the paragraph above why), nodata value for output bands: 255 (from the information window, we see the data type - yte - 8bit unsigned integer - which means that the maximum value can be 255), output resolution:100 m (as the initial land cover rasters). After setting all parameters, check the box in the left corner of the window - **Load layers on completion** and click **Run**. 
 
 
 ![Batch processing to reproject the land cover rasters](media/fig913_a.png "Batch processing to reproject the land cover rasters")
@@ -520,11 +520,11 @@ Figure 9.15c - Mosaic of all DSM files corresponding to our work region
 Now, we can proceed to reprojecting the mosaic - one file, instead of 6 files. Go to **Raster ‣ projection ‣ Wrap (reproject)** and set the known parameters: 
 
    * Source CRS EPSG 4326
-   * Target CRS: EPSG:3123 
+   * Target CRS: EPSG:21037 
    * Resampling method: Nearest neighbour
    * Output file resolution - 30 m. 
 
-At his point, we should have all layers in the same CRS - EPSG 3123. 
+At his point, we should have all layers in the same CRS - EPSG 21037. 
 
 
 ![Reproject Merged raster](media/fig915_d.png "Reproject Merged raster")
@@ -648,9 +648,9 @@ After computing the histogram, we can see that the mouse turns into a loupe. It 
 To go back to full view, click left. 
 
 
-![Zooming in on the DSM_mosaic_3123 computed histogram](media/fig918.png "Zooming in on the DSM_mosaic_3123 computed histogram")
+![Zooming in on the DSM_mosaic_21037 computed histogram](media/fig918.png "Zooming in on the DSM_mosaic_21037 computed histogram")
 
-Figure 9.18 - Zooming in on the DSM_mosaic_3123 computed histogram
+Figure 9.18 - Zooming in on the DSM_mosaic_21037 computed histogram
 
 More than just seeing the distribution of the numerical values of the pixels, the histogram allows the user to reclassify the values for visualisation of the raster. To do that use the 2 tools to pinpoint on the histogram the new min and max values (see figure 9.19). 
 
@@ -721,6 +721,10 @@ Your batch processing window setup should look like in figure 9.23.
 
 
 ![Batch process cliping all required raster layers by Kiambu County geometry](media/fig923.png "Batch process cliping all required raster layers by Kiambu County geometry")
+
+
+
+
 
 Figure 9.23 - Batch process cliping all required raster layers by Kiambu County geometry
 
@@ -965,7 +969,7 @@ A difference between the 2 products must be highlighted: the LandCover product c
 
 To resample, go to **Raster ‣ Projections ‣ Wrap (reproject).** In the functionality window set the following parameters: 
 * input layer: Clipped_Reprojected_LandCover 2019, 
-* Source CRS and Target CRS: EPSG: 3123, 
+* Source CRS and Target CRS: EPSG: 21037, 
 * Resampling method: Nearest Neighbour, 
 * No data: 255, output file resolution: 30, 
 * Output data type: use input layer data type, 
@@ -1071,7 +1075,7 @@ Considering the extent of your study area, this operation can be significantly l
 
 Figure 9.54 - Loading point vector data obtained
 
-The number of features is considerably high and without importing it into a database, any kind of processing or visualisation would require too much time. In these types of situations, the reasonable solution is to divide the datasets we have to process into manageable chunks. Therefore, we will consider processing the necessary calculations on smaller well-defined areas. To split the HRSL layer we will use the option to create a VRT. Select the HRSl layer and choose **Export as..** In the new window, tick on the **Create VRT** option and set the following parameters: browse to a folder where the splitted raster will be exported to, CRS: EPSG:3123, VRT tiles: max columns 1000, max rows: 1000 (see figure 9.55).
+The number of features is considerably high and without importing it into a database, any kind of processing or visualisation would require too much time. In these types of situations, the reasonable solution is to divide the datasets we have to process into manageable chunks. Therefore, we will consider processing the necessary calculations on smaller well-defined areas. To split the HRSL layer we will use the option to create a VRT. Select the HRSl layer and choose **Export as..** In the new window, tick on the **Create VRT** option and set the following parameters: browse to a folder where the splitted raster will be exported to, CRS: EPSG:21037, VRT tiles: max columns 1000, max rows: 1000 (see figure 9.55).
 
 
 ![alt_text](media/fig955.png "image_tooltip")
