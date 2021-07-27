@@ -1017,7 +1017,7 @@ Attaching the same styling as for the raster and we will notice the same vector 
 
 ![alt_text](media/fig951.png "image_tooltip")
 
-Figure 9.51 - LC2019_Mode polygonez 
+Figure 9.51 - LC2019_Mode polygones 
 
 As we can observe, the HRSL’s pixels are, as expected, not perfectly contained in a polygon of the land cover product (see picture 9.52).
 
@@ -1040,7 +1040,7 @@ Figure 9.53a - Raster pixels to points
 
 Figure 9.53b - Running Raster pixels to points algorithm
 
-Considering the extent of your study area, this operation can be significantly lengthy in time. Figure 9.54 shows how many points we have obtained for Pampanga province.
+Considering the extent of your study area, this operation can be significantly lengthy in time. Figure 9.54 shows how many points we have obtained for Ashanti region.
 
 
 ![alt_text](media/fig954.png "image_tooltip")
