@@ -23,10 +23,10 @@ In addition you’ll have learned the following skills;
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
-*   Pampanga administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
-*   Pampanga clinics (inside [module5.gpkg](data/module5.gpkg))
-*   PHL provinces (inside [module5.gpkg](data/module5.gpkg))
-*   [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   Lagos administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
+*   Lagos clinics (inside [module5.gpkg](data/module5.gpkg))
+*   Nigeria provinces (inside [module5.gpkg](data/module5.gpkg))
+*   [Lagos High Resolution Settlement Layer](data/HRSL_Lagos_Population.tif)
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ In addition you’ll have learned the following skills;
 
 Let’s start with an example: 
 
-To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Pampanga province in the Philippines. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
+To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Lagos, Nigeria'. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
 
 Breakdown of the concepts
 
@@ -88,13 +88,13 @@ Figure 5.3: Map canvas exported as image
 
 #### **Second method: Export the map canvas to the print layout**
 
-1. In this tutorial, we’ll make a map showing the 1.) location of health centres and 2.) population density of Pampanga Province in the Philippines. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data.
+1. In this tutorial, we’ll make a map showing the 1.) location of health centres and 2.) population density of Lagos, Nigeria. The data layers should already be added to the QGIS canvas. The layers can then be styled to communicate information in your data.
 
 ![Creating new Print Layout](media/new-print-layout.png "Creating new Print Layout")
 
 Figure 5.4: Creating new Print Layout
 
-2. The map canvas can now be exported to the print Layout. Click the ‘new print layout layout button’ ![New Print Layout](media/newprint_composer.png "New Print Layout"). This can be accessed via the tool bar. Alternatively, access using the ‘Projects’ menu bar. A title dialogue will open, prompting you to type the title of the Print Layout. Type ‘Pampanga’ and Click OK.
+2. The map canvas can now be exported to the print Layout. Click the ‘new print layout layout button’ ![New Print Layout](media/newprint_composer.png "New Print Layout"). This can be accessed via the tool bar. Alternatively, access using the ‘Projects’ menu bar. A title dialogue will open, prompting you to type the title of the Print Layout. Type ‘Lagos’ and Click OK.
 
 ![Naming the Print Layout](media/new-print-layout-name.png "Naming the Print Layout")
 
@@ -171,7 +171,7 @@ Figure 5.10: Add attribution to the map
 
 Figure 5.10: Add attribution to the map
 
-![Exported map as imgage](media/exported-map.png "Exported map as imgage")
+![Exported map as image](media/exported-map.png "Exported map as imgage")
 
 Figure 5.11: Exported map as imgage
 
