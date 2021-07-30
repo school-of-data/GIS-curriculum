@@ -1,3 +1,22 @@
+#ignore data folders
+argentina/**/data
+bangladesh/**/data
+brazil/**/data
+egypt/**/data
+ethiopia/**/data
+germany/**/data
+ghana/**/data
+india/**/data
+kenya/**/data
+mexico/**/data
+nigeria/**/data
+philippines/**/data
+south-africa/**/data
+sri-lanka/**/data
+vietnam/**/data
+
+
+#old
 philippines/module8/data/module8.gpkg*
 india/module8/data/module8.gpkg*
 india/module9/data/module9.gpkg*
