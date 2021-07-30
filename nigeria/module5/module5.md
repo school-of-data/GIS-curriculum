@@ -195,7 +195,7 @@ Figure 5.11: Exported map as imgage
 
 #### **Content/Tutorial**
 
-If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different provinces of the Philippines as an example, here’s Administrative Boundaries for the 81 provinces;
+If your organization publishes printed or online maps, you often would need to create many maps with the same template - usually one for each administrative unit or a region of interest. Creating these maps manually can take a long time and if you want to update these on a regular basis, it can turn into a chore. QGIS has a tool called Atlas that can help you create a map template and easily publish a large number of maps for different geographic regions. We’ll take the different states of Nigeria as an example, here’s Administrative Boundaries for the 36 states of Nigeria;
 
 ![Coverage layer](media/atlas-coverage.png "Coverage layer")
 
@@ -238,7 +238,7 @@ Figure 5.17: Make sure that the map extent is controlled by the Atlas
 
 Figure 5.18: Atlas Preview
 
-6. You can export the Atlas maps via the **Export Atlas** button ![Export Atlas button](media/atlas-export-btn.png "Export Atlas button") either as images or PDFs. Select **Export Atlas as Image**. You should have 81 maps generated wher each map shows the extent of the province.
+6. You can export the Atlas maps via the **Export Atlas** button ![Export Atlas button](media/atlas-export-btn.png "Export Atlas button") either as images or PDFs. Select **Export Atlas as Image**. You should have 36 maps generated wher each map shows the extent of the province.
 
 
 ![Atlas Outputs](media/atlas-outputs.png "Atlas Outputs")
