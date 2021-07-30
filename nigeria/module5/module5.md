@@ -25,7 +25,7 @@ In addition you’ll have learned the following skills;
 *   QGIS 3.16 or later
 *   Lagos administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
 *   Lagos clinics (inside [module5.gpkg](data/module5.gpkg))
-*   Nigeria provinces (inside [module5.gpkg](data/module5.gpkg))
+*   Nigeria states (inside [module5.gpkg](data/module5.gpkg))
 *   [Lagos High Resolution Settlement Layer](data/HRSL_Lagos_Population.tif)
 
 ## Prerequisites
