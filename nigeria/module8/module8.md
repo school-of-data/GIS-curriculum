@@ -28,7 +28,7 @@ and acquire the following skills:
 
 * This module has been prepared using [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
 * The datasets used for all exercises detailed in this module are presented in the table below:
-* The coordinate reference system used is the PRS92 / Philippines zone 3, EPSG 3123. As it is a projected coordinate system, it allows geometric calculations. 
+* The coordinate reference system used is the Minna / Nigeria Mid Belt, EPSG 26392. As it is a projected coordinate system, it allows geometric calculations. 
 
 
 ## Prerequisites
@@ -50,7 +50,7 @@ As part of this module, you will learn how to efficiently work with vector geogr
 
 ## Thematic introduction
 
-Let’s start with an example: You have just landed for your city break in Angeles, Pampanga, Philippines and you need to get from the airport to your hotel. You have no knowledge of where the airport is situated with respect to the city, nor where the hotel is, so the first thing you do is open a map to help you navigate through this new and excited city! You take your phone out, open a map app and you select the start point - the airport - and the end point - your hotel - then ask for the route, by foot, car or public transport. In a matter of seconds, the routing app offers you the best solution for you to get from point A to point B and it highlights it by drawing a distinct line following streets and alleys, as visible in figure 8.1.
+Let’s start with an example: You have just landed for your city break in Lagos, Nigeria and you need to get from the airport to your hotel. You have no knowledge of where the airport is situated with respect to the city, nor where the hotel is, so the first thing you do is open a map to help you navigate through this new and excited city! You take your phone out, open a map app and you select the start point - the airport - and the end point - your hotel - then ask for the route, by foot, car or public transport. In a matter of seconds, the routing app offers you the best solution for you to get from point A to point B and it highlights it by drawing a distinct line following streets and alleys, as visible in figure 8.1.
 
 
 ![Getting from point A to B using Openstreetmap](media/fig81.png "Getting from point A to B using Openstreetmap")
