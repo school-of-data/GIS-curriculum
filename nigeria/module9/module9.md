@@ -22,7 +22,7 @@ By the end of this module, learners will have the basic understanding of the fol
 
 *   This module has been prepared using [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
 *   [module9.gpkg](data/module9.gpkg)
-    *   Pampanga_admin_boundary
+    *   Lagos_admin_boundary
 *   [High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
 *   [SRTM Digital Elevation Model](data/SRTM_DEM)
 *   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
@@ -779,7 +779,7 @@ The formula is fairly simple, given that all DSM cell values we are interested i
 Open the Calculator and insert the following formula: 
 
 ```
-"< 200@1"*"Reprojected_HRSL_Pampanga_Population@1"
+"< 200@1"*"Reprojected_HRSL_Lagos_Population@1"
 ```
 
 
@@ -794,16 +794,16 @@ As opposed to previous raster calculator use, we have used 2 different raster da
 
 Figure 9.31 - Using Value Tool to check results of Raster Calculator
 
-You can see that even if Reprojected_HRSL_Pampanga_Population has values in this specific mouse location, the raster obtained with Raster Calculator HRSL_DSM has value 0. 
+You can see that even if Reprojected_HRSL_Lagos_Population has values in this specific mouse location, the raster obtained with Raster Calculator HRSL_DSM has value 0. 
 
-Next, we present the spatial distribution of the population that lives below 200m in Pampanga province. To choose an appropriate classification, we calculate the histogram. We can notice that most values are between 0.1 and 200 people per 30m. The classification we’ve chosen is visible in figure 9.32. 
+Next, we present the spatial distribution of the population that lives below 200m in Lagos state. To choose an appropriate classification, we calculate the histogram. We can notice that most values are between 0.1 and 200 people per 30m. The classification we’ve chosen is visible in figure 9.32. 
 
 
-![Distribution of population that lives below 200m in Pampanga province, represented at a 30m resolution](media/fig932.png "Distribution of population that lives below 200m in Pampanga province, represented at a 30m resolution")
+![Distribution of population that lives below 200m in Lagos state, represented at a 30m resolution](media/fig932.png "Distribution of population that lives below 200m in Lagos state, represented at a 30m resolution")
 
-Figure 9.32 - Distribution of population that lives below 200m in Pampanga province, represented at a 30m resolution. 
+Figure 9.32 - Distribution of population that lives below 200m in Lagos state, represented at a 30m resolution. 
 
-If we are interested in the total number of people living below 200m in Pampanga province and not the geographical distribution per 30 m spatial resolution, then we need to sum up all pixel values of the raster layer HRSL_DSM. One way to obtain this number is to transform the DSM_clipped200 from raster to vector and them [....]
+If we are interested in the total number of people living below 200m in Lagos state and not the geographical distribution per 30 m spatial resolution, then we need to sum up all pixel values of the raster layer HRSL_DSM. One way to obtain this number is to transform the DSM_clipped200 from raster to vector and them [....]
 
 To do that go to **Raster ‣ Conversion ‣ Polygonize (Raster to Vector)** (see figure 9.33). 
 
@@ -849,7 +849,7 @@ The resulting layer is a vector layer that has as attributes the statistics that
 
 Figure 9.37 - Resulting vector layer of Zonal Statistics
 
-And with this final step, we answered our exercise, how many people (and where) are living below 200m in Pampanga province. 
+And with this final step, we answered our exercise, how many people (and where) are living below 200m in Lagos state. 
 
 
 #### **Quiz questions**
