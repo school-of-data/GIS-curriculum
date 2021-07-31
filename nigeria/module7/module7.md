@@ -1,6 +1,6 @@
 # Module 7 - Creating and Editing Layers
 
-**Author**: Ketty, Ben Hur
+**Author**: Ketty
 
 ## Pedagogical Introduction
 
@@ -11,7 +11,7 @@ This module is designed to teach you how to use QGIS tools to create a new GIS l
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
-*   [Topo Map of Guagua, Pampanga](data/guagua-topo.jpeg)
+*   [Topo Map of Kaduna, Nigeria](data/guagua-topo.jpeg)
 
 
 ## Prerequisites
@@ -250,7 +250,7 @@ If you make a mistake while digitising a feature, you can always edit it later. 
 To georeference the map;
 
 1. Open the Georeferencer tool, Raster ► Georeferencer 
-2. Click the Add raster button ![Add Raster](media/add-raster.png "Add Raster") to add the map image file, [Topo Map of Pampanga ](data/guagua-topo.jpeg), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
+2. Click the Add raster button ![Add Raster](media/add-raster.png "Add Raster") to add the map image file, [Topo Map of Kaduna ](data/guagua-topo.jpeg), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
 
 ![Map in Georeferencer canvas](media/georeferencer.png "Map in Georeferencer canvas")
 
