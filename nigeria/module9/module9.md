@@ -1,6 +1,6 @@
 # **Module 9 - Raster processing and analysis**
 
-**Author**: Codrina, Ben Hur
+**Author**: Codrina
 
 ## Pedagogical Introduction
 
@@ -26,7 +26,7 @@ By the end of this module, learners will have the basic understanding of the fol
 *   [High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
 *   [SRTM Digital Elevation Model](data/SRTM_DEM)
 *   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
-*   The coordinate reference system used is the PRS92 / Philippines zone 3, EPSG 3123. 
+*   The coordinate reference system used is the Minna / Nigeria Mid Belt, EPSG 26392. 
 
 ## Prerequisites: 
 
@@ -391,7 +391,7 @@ Tabel 2 forest_type band value table
 
 To organize your layers better, group them by category, as follows: for the land cover 5 raster layers, make one group named Land Cover (in the Layers Panel, click on the Add Group button ![Add Group Button](media/add-group-btn.png "Add Group Button")). For the digital surface model, make one group named SRTM DEM. 
 
-Don’t forget to also add the boundary of the working area, province of Pampanga, which is a vector dataset. 
+Don’t forget to also add the boundary of the working area, Lagos state, which is a vector dataset. 
 
 Your QGIS map window should look like in figure 9.6, maybe in slightly different colors. 
 
@@ -405,11 +405,11 @@ Figure 9.6 - Loaded raster datasets
 
 Next, we will use a series of tools that will allow us to get a sense of the data we are working with. 
 
-After loading all the datasets, we will check the coordinate reference system in which all our datasets are in.  As we know from previous modules, QGIS offers the possibility to reproject all datasets loaded into the project on the fly, however that could lead to geoprocessing issues along the way. Thus, even if all layers are correctly overlaid, as can one say by visual inspection, we will proceed in reprojecting them all in the official coordinate system of our region of interest, Pampanga province - EPSG: 3123. 
+After loading all the datasets, we will check the coordinate reference system in which all our datasets are in.  As we know from previous modules, QGIS offers the possibility to reproject all datasets loaded into the project on the fly, however that could lead to geoprocessing issues along the way. Thus, even if all layers are correctly overlaid, as can one say by visual inspection, we will proceed in reprojecting them all in the official coordinate system of our region of interest, Lagos state - EPSG: 3123. 
 
 There are several ways to get information on the loaded layers in QGIS, some providing the user with more details than others. For a quick overview of a dataset’s metadata, **double-click the layer and open Properties ‣ Information**.
 
-For layer HRSL_Pampanga_Population, the information window would look like in figure 9.7. 
+For layer HRSL_Lagos_Population, the information window would look like in figure 9.7. 
 
 
 ![Extracting basic metadata from a raster layer](media/fig97.png "Extracting basic metadata from a raster layer")
@@ -418,7 +418,7 @@ Figure 9.7 - Extracting basic metadata from a raster layer
 
 With regard to our first question on what CRS is being used for the datasets we have loaded, we can observe that even if the HRSL is correctly overlaid, the dataset native’s projection is EPSG 4326 - WGS 84 - Geographic, with units measured in degrees. We also identify that this specific raster layer has only one band, yet the pixel size is difficult to read as the measurement is in degrees and not meters, which would make it easier to understand. 
 
-Thus, the first thing to do is to reproject all datasets we will work with in the same coordinate system - EPSG 3123.
+Thus, the first thing to do is to reproject all datasets we will work with in the same coordinate system - EPSG 26392.
 
 Starting with the HRSL datasets, we go to **Raster ‣ Projections ‣ Warp (Reproject)** (see figure 9.8).
 
@@ -434,7 +434,7 @@ After selecting the Warp functionality, a new window will appear allowing the us
 
 Figure 9.9a - Warp (reproject) QGIS window
 
-If you selected the output to be **[Save to temporary file]** then there will be a raster layer named `Reprojected` in the Layers Panel. This is a memory layer and you can rename this layer to Reprojected_HRSL_Pampanga_Population and save it to make it persistent.
+If you selected the output to be **[Save to temporary file]** then there will be a raster layer named `Reprojected` in the Layers Panel. This is a memory layer and you can rename this layer to Reprojected_HRSL_Lagos_Population and save it to make it persistent.
 
 
 ![Reprojected HRSL](media/fig99_b.png "Reprojected HRSL")
@@ -520,11 +520,11 @@ Figure 9.15c - Mosaic of all DSM files corresponding to our work region
 Now, we can proceed to reprojecting the mosaic - one file, instead of 6 files. Go to **Raster ‣ projection ‣ Wrap (reproject)** and set the known parameters: 
 
    * Source CRS EPSG 4326
-   * Target CRS: EPSG:3123 
+   * Target CRS: EPSG:26392 
    * Resampling method: Nearest neighbour
    * Output file resolution - 30 m. 
 
-At his point, we should have all layers in the same CRS - EPSG 3123. 
+At his point, we should have all layers in the same CRS - EPSG 26392. 
 
 
 ![Reproject Merged raster](media/fig915_d.png "Reproject Merged raster")
@@ -543,94 +543,69 @@ A raster information HTML file should look like below. A HTML file can be open w
 
 
 ```
-        Driver: GTiff/GeoTIFF
-        Files: /Users/codrinamariailie/Google Drive/02_OK/Gov_Geospatial_Trainings/Data/module9/Reprojected_LandCover2019.tif
-        Size is 678, 570
-        Coordinate System is:
-        PROJCRS["PRS92 / Philippines zone 3",
-            BASEGEOGCRS["PRS92",
-                DATUM["Philippine Reference System 1992",
-                    ELLIPSOID["Clarke 1866",6378206.4,294.978698213898,
-                        LENGTHUNIT["metre",1]]],
-                PRIMEM["Greenwich",0,
-                    ANGLEUNIT["degree",0.0174532925199433]],
-                ID["EPSG",4683]],
-            CONVERSION["Philippines zone III",
-                METHOD["Transverse Mercator",
-                    ID["EPSG",9807]],
-                PARAMETER["Latitude of natural origin",0,
-                    ANGLEUNIT["degree",0.0174532925199433],
-                    ID["EPSG",8801]],
-                PARAMETER["Longitude of natural origin",121,
-                    ANGLEUNIT["degree",0.0174532925199433],
-                    ID["EPSG",8802]],
-                PARAMETER["Scale factor at natural origin",0.99995,
-                    SCALEUNIT["unity",1],
-                    ID["EPSG",8805]],
-                PARAMETER["False easting",500000,
-                    LENGTHUNIT["metre",1],
-                    ID["EPSG",8806]],
-                PARAMETER["False northing",0,
-                    LENGTHUNIT["metre",1],
-                    ID["EPSG",8807]]],
-            CS[Cartesian,2],
-                AXIS["easting (X)",east,
-                    ORDER[1],
-                    LENGTHUNIT["metre",1]],
-                AXIS["northing (Y)",north,
-                    ORDER[2],
-                    LENGTHUNIT["metre",1]],
-            USAGE[
-                SCOPE["unknown"],
-                AREA["Philippines - zone III"],
-                BBOX[3,119.7,21.62,122.21]],
-            ID["EPSG",3123]]
-        Data axis to CRS axis mapping: 1,2
-        Origin = (430713.282723263022490,1690115.897022359305993)
-        Pixel Size = (100.000000000000000,-100.000000000000000)
-        Metadata:
-          AREA_OR_POINT=Area
-        Image Structure Metadata:
-          INTERLEAVE=PIXEL
-        Corner Coordinates:
-        Upper Left  (  430713.283, 1690115.897) (120d21'17.68"E, 15d16'55.47"N)
-        Lower Left  (  430713.283, 1633115.897) (120d21'23.24"E, 14d46' 0.88"N)
-        Upper Right (  498513.283, 1690115.897) (120d59'10.17"E, 15d16'58.81"N)
-        Lower Right (  498513.283, 1633115.897) (120d59'10.29"E, 14d46' 4.10"N)
-        Center      (  464613.283, 1661615.897) (120d40'15.34"E, 15d 1'30.61"N)
-        Band 1 Block=678x4 Type=Byte, ColorInterp=Red
-          Description = discrete_classification
-            Computed Min/Max=0.000,200.000
-          Minimum=0.000, Maximum=200.000, Mean=67.557, StdDev=35.613
-          NoData Value=255
-          Metadata:
-            STATISTICS_MAXIMUM=200
-            STATISTICS_MEAN=67.556567003835
-            STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=35.612833384649
-            STATISTICS_VALID_PERCENT=99.72
-        Band 2 Block=678x4 Type=Byte, ColorInterp=Green
-          Description = forest_type
-            Computed Min/Max=0.000,2.000
-          Minimum=0.000, Maximum=2.000, Mean=0.473, StdDev=0.850
-          NoData Value=255
-          Metadata:
-            STATISTICS_MAXIMUM=2
-            STATISTICS_MEAN=0.47292184572588
-            STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=0.84981681513547
-            STATISTICS_VALID_PERCENT=99.72
-        Band 3 Block=678x4 Type=Byte, ColorInterp=Blue
-          Description = urban-coverfraction
-            Computed Min/Max=0.000,100.000
-          Minimum=0.000, Maximum=100.000, Mean=14.485, StdDev=30.631
-          NoData Value=255
-          Metadata:
-            STATISTICS_MAXIMUM=100
-            STATISTICS_MEAN=14.484993486711
-            STATISTICS_MINIMUM=0
-            STATISTICS_STDDEV=30.631074729814
-            STATISTICS_VALID_PERCENT=99.72
+       Driver: GTiff/GeoTIFF
+Files: J:/nigeria/landcover/Reprojected_LandCover_2019.tif
+Size is 7403, 2171
+Coordinate System is:
+PROJCRS["Minna / Nigeria Mid Belt",
+    BASEGEOGCRS["Minna",
+        DATUM["Minna",
+            ELLIPSOID["Clarke 1880 (RGS)",6378249.145,293.465,
+                LENGTHUNIT["metre",1]]],
+        PRIMEM["Greenwich",0,
+            ANGLEUNIT["degree",0.0174532925199433]],
+        ID["EPSG",4263]],
+    CONVERSION["Nigeria Mid Belt",
+        METHOD["Transverse Mercator",
+            ID["EPSG",9807]],
+        PARAMETER["Latitude of natural origin",4,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8801]],
+        PARAMETER["Longitude of natural origin",8.5,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8802]],
+        PARAMETER["Scale factor at natural origin",0.99975,
+            SCALEUNIT["unity",1],
+            ID["EPSG",8805]],
+        PARAMETER["False easting",670553.98,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8806]],
+        PARAMETER["False northing",0,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8807]]],
+    CS[Cartesian,2],
+        AXIS["(E)",east,
+            ORDER[1],
+            LENGTHUNIT["metre",1]],
+        AXIS["(N)",north,
+            ORDER[2],
+            LENGTHUNIT["metre",1]],
+    USAGE[
+        SCOPE["unknown"],
+        AREA["Nigeria - 6.5°E to 10.5°E"],
+        BBOX[3.57,6.5,13.53,10.51]],
+    ID["EPSG",26392]]
+Data axis to CRS axis mapping: 1,2
+Origin = (28404.082355680060573,309408.260429952468257)
+Pixel Size = (29.892787021978464,-29.892787021978464)
+Corner Coordinates:
+Upper Left  (   28404.082,  309408.260) (  2d41'58.85"E,  6d45'51.03"N)
+Lower Left  (   28404.082,  244511.020) (  2d42'22.91"E,  6d10'48.58"N)
+Upper Right (  249700.385,  309408.260) (  4d41'41.24"E,  6d47' 2.20"N)
+Lower Right (  249700.385,  244511.020) (  4d41'57.08"E,  6d11'53.56"N)
+Center      (  139052.234,  276959.640) (  3d41'57.58"E,  6d28'57.35"N)
+Band 1 Block=7403x1 Type=Byte, ColorInterp=Red
+  Description = discrete_classification
+    Computed Min/Max=0.000,200.000
+  Minimum=0.000, Maximum=200.000, Mean=128.479, StdDev=61.640
+Band 2 Block=7403x1 Type=Byte, ColorInterp=Green
+  Description = forest_type
+    Computed Min/Max=0.000,4.000
+  Minimum=0.000, Maximum=4.000, Mean=0.250, StdDev=0.662
+Band 3 Block=7403x1 Type=Byte, ColorInterp=Blue
+  Description = urban-coverfraction
+    Computed Min/Max=0.000,100.000
+  Minimum=0.000, Maximum=100.000, Mean=10.128, StdDev=28.714
 ```
 
 
@@ -650,9 +625,9 @@ After computing the histogram, we can see that the mouse turns into a loupe. It 
 To go back to full view, click left. 
 
 
-![Zooming in on the DSM_mosaic_3123 computed histogram](media/fig918.png "Zooming in on the DSM_mosaic_3123 computed histogram")
+![Zooming in on the DSM_mosaic_26392 computed histogram](media/fig918.png "Zooming in on the DSM_mosaic_26392 computed histogram")
 
-Figure 9.18 - Zooming in on the DSM_mosaic_3123 computed histogram
+Figure 9.18 - Zooming in on the DSM_mosaic_26392 computed histogram
 
 More than just seeing the distribution of the numerical values of the pixels, the histogram allows the user to reclassify the values for visualisation of the raster. To do that use the 2 tools to pinpoint on the histogram the new min and max values (see figure 9.19). 
 
@@ -727,7 +702,7 @@ Figure 9.23 - Batch process cliping all required raster layers by Pampanga Provi
 
 The parameters setup are the following:
 * mask layer: Pampanga_admin_boundary
-* both source and target CRS is EPSG 3123
+* both source and target CRS is EPSG 26392
 * select yes to: `match the extent of the clipped raster to the mask layer` and `keep resolution of input layer`. 
 * Be aware, for the DSM_mosaic we will also select yes` to create an output alpha band`. Load layers at completion. 
 
@@ -892,7 +867,7 @@ And with this final step, we answered our exercise, how many people (and where) 
 
 ### **Phase 3: Working with raster and vector data.**
 
-In the previous phase, we have seen how we can process 2 raster datasets in order to derive new information. We have used the digital surface model and the High Resolution Settlement Layer to find out how many people live below 200m in Pampanga province. Before doing any analysis, we made sure that the datasets were in the same projection and, furthermore if the rasters have the same spatial resolution so that the results we obtained are viable. When referring to the coordinate reference system, the reasoning is clear, but why the same spatial resolution? 
+In the previous phase, we have seen how we can process 2 raster datasets in order to derive new information. We have used the digital surface model and the High Resolution Settlement Layer to find out how many people live below 200m in Lagos state. Before doing any analysis, we made sure that the datasets were in the same projection and, furthermore if the rasters have the same spatial resolution so that the results we obtained are viable. When referring to the coordinate reference system, the reasoning is clear, but why the same spatial resolution? 
 
 Remembering spatial resolution, it is the size of the ground surface measured in units of length, in other words, the size of the pixel measured on ground. If a raster has a 30m resolution, that means that the smallest linear object we could detect on that image is of 30 m, any smaller and we could not detect it. Continuing the analogy, we can compare it with the scale of a map. If a map has a scale of 1:25000, that means that 1 unit of length on the map represents 25000 units on the ground, that is 1 cm is 25000cm, 1 cm on the map equals 250m on the ground. For example, a 2km road would have 8 cm on the map.
 
@@ -908,7 +883,7 @@ http://www.planning4adaptation.eu/_
 
 Figure 9.38 details the relation between the resolution of the satellite imagery and the land cover information extracted from these images captured. Remember as we detailed at the beginning that the value of the pixel cell is attributed to the entire area it covers, yet that does not mean that is the reality on the ground. These represent decisions made by the EO experts that derive various products based on Earth Observation imagery - all documented in peer-reviewed papers and algorithm descriptions. Further explanations are beyond the scope of this module, but it is important to keep in mind the relation between what a sensor onboard a satellite captures and the products we use. 
 
-Coming back to our region of interest - Pampanga province - we can test these differences with the data that we have at hand. We have loaded into our QGIS project the 5 raster layers of LandCover for 5 years: 2015, 2016, 2017, 2018 and 2019. Next, we will load a mosaic of Sentinel-2[^6] imagery. We will load the WMS layer EOX Sentinel-2 cloudless, available [here](https://s2maps.eu/). Remembering from module 2, to add a WMS layer, go to **Layer ‣ Add layer ‣ Add WM/WMTS Layer..**
+Coming back to our region of interest - Lagos state - we can test these differences with the data that we have at hand. We have loaded into our QGIS project the 5 raster layers of LandCover for 5 years: 2015, 2016, 2017, 2018 and 2019. Next, we will load a mosaic of Sentinel-2[^6] imagery. We will load the WMS layer EOX Sentinel-2 cloudless, available [here](https://s2maps.eu/). Remembering from module 2, to add a WMS layer, go to **Layer ‣ Add layer ‣ Add WM/WMTS Layer..**
 
 When the add window opens, use the following parameters:
 ```
@@ -926,7 +901,7 @@ After connecting to the newly WMS layer added, we will load the layer named Sent
 
 ![alt_text](media/fig940.png "image_tooltip")
 
-Figure 9.40  - Sentinel-2 cloudless layer for 2019 by EOX - 4326 for Pampanga province
+Figure 9.40  - Sentinel-2 cloudless layer for 2019 by EOX - 4326 for Lagos state
 
 Although the LandCover products have been obtained using other satellite data (Proba-V), let us compare the 2 layers so we can get a sense of what different resolutions mean. Remember that the LandCover product is at 100m and Sentinel 2 imagery is at 10m. To accomplish that, we will open the Clipped_Reprojected_LandCover 2019 and the WMS layer. To make comparisons between 2 layers, we will use a new plugin that you must install. Therefore, go to **Plugins ‣ manage and install plugins** and write in the search box `MapSwipe Tool`. Once you install it, it should appear as a new pictogram in your toolbar (![MapSwipe Tool button](media/mapswipe-btn.png "MapSwipe Tool button")). 
 
@@ -960,13 +935,13 @@ Now, if any analysis would be made using these rasters, these results would not 
 
 **Resampling** refers to changing the cell values due to changes in the raster cell grid and there are only 2 options: (1) **upsampling** refers to cases where we are converting to higher resolution/smaller cells and (2) **downsampling** is resampling to lower resolution/larger cell sizes. 
 
-Let us imagine the following exercise. We need to identify the population numbers for each category of land cover we have defined in the Pampanga province. As explained above, we need to _pre-process_ the data we have in order to get viable results from our analysis, i.e. in our case, we need to bring both our raster datasets to the same spatial resolution. As detailed above, we can either increase or decrease the pixels’ dimensions. It must be highlighted that resample, with up or downscale, will involve an interpolation process (see page 12 for more details) - so the result introduces a statistical error. The usual practice is to resample all rasters to correspond to the raster with the lower resolution, but again this decision must be taken with consideration to all factors. Detailing the decision making process for resampling raster layers far exceeds the scope of this curriculum. 
+Let us imagine the following exercise. We need to identify the population numbers for each category of land cover we have defined in the Lagos state. As explained above, we need to _pre-process_ the data we have in order to get viable results from our analysis, i.e. in our case, we need to bring both our raster datasets to the same spatial resolution. As detailed above, we can either increase or decrease the pixels’ dimensions. It must be highlighted that resample, with up or downscale, will involve an interpolation process (see page 12 for more details) - so the result introduces a statistical error. The usual practice is to resample all rasters to correspond to the raster with the lower resolution, but again this decision must be taken with consideration to all factors. Detailing the decision making process for resampling raster layers far exceeds the scope of this curriculum. 
 
 A difference between the 2 products must be highlighted: the LandCover product covers the **entire area** of the considered extent, as opposed to the HSRL product, where the raster layer contains strictly the cell where values above 0 exist. This situation poses issues when interpolation cell values to resample, because no matter the interpolation method chosen, that would take into consideration the surrounding pixels, following a specific well-defined algorithm and in this particular situation, the edge pixels are not at the edge of the study region, but within it. Therefore, in our demonstrative case, we will consider upsampling the Land Cover product from 100m to 30m resolution to match the LandCover product resolution. The resampling method we choose is crucial, as results can vary significantly. For the purpose of demonstration, we will resample the LandCover product using 2 different methods - Nearest Neighbour and Mode. 
 
 To resample, go to **Raster ‣ Projections ‣ Wrap (reproject).** In the functionality window set the following parameters: 
 * input layer: Clipped_Reprojected_LandCover 2019, 
-* Source CRS and Target CRS: EPSG: 3123, 
+* Source CRS and Target CRS: EPSG: 26392, 
 * Resampling method: Nearest Neighbour, 
 * No data: 255, output file resolution: 30, 
 * Output data type: use input layer data type, 
@@ -1021,7 +996,7 @@ At this point, your map windows should look like in figure 9.49.
 
 Figure 9.49 - The 2 raster products: Land Cover 2019 and HRSL overlaid. 
 
-Going back to our exercise, the requirements was to identify the population numbers for each category of land cover we have defined in the Pampanga province. At this point, we have pre-processed our raster data, as to have it in the same coordinate system, with the same spatial resolution. We will continue with a conversion algorithm, we will transform the raster dataset Land Cover into a vector dataset - polygon type. This will allow us to more easily identify the population count for each land cover category. 
+Going back to our exercise, the requirements was to identify the population numbers for each category of land cover we have defined in the Lagos state. At this point, we have pre-processed our raster data, as to have it in the same coordinate system, with the same spatial resolution. We will continue with a conversion algorithm, we will transform the raster dataset Land Cover into a vector dataset - polygon type. This will allow us to more easily identify the population count for each land cover category. 
 
 For conversions, from raster to polygon, as well as from vector to polygon, go to **Raster ‣ Conversion** and here we have more options. We will choose **Polygonize (Raster to vector)..** We will convert to vector the latest raster dataset that we have obtained: LC2019_Mode. Your result should look like in figure 9.50b. 
 
@@ -1065,14 +1040,14 @@ Figure 9.53a - Raster pixels to points
 
 Figure 9.53b - Running Raster pixels to points algorithm
 
-Considering the extent of your study area, this operation can be significantly lengthy in time. Figure 9.54 shows how many points we have obtained for Pampanga province.
+Considering the extent of your study area, this operation can be significantly lengthy in time. Figure 9.54 shows how many points we have obtained for Lagos state.
 
 
 ![alt_text](media/fig954.png "image_tooltip")
 
 Figure 9.54 - Loading point vector data obtained
 
-The number of features is considerably high and without importing it into a database, any kind of processing or visualisation would require too much time. In these types of situations, the reasonable solution is to divide the datasets we have to process into manageable chunks. Therefore, we will consider processing the necessary calculations on smaller well-defined areas. To split the HRSL layer we will use the option to create a VRT. Select the HRSl layer and choose **Export as..** In the new window, tick on the **Create VRT** option and set the following parameters: browse to a folder where the splitted raster will be exported to, CRS: EPSG:3123, VRT tiles: max columns 1000, max rows: 1000 (see figure 9.55).
+The number of features is considerably high and without importing it into a database, any kind of processing or visualisation would require too much time. In these types of situations, the reasonable solution is to divide the datasets we have to process into manageable chunks. Therefore, we will consider processing the necessary calculations on smaller well-defined areas. To split the HRSL layer we will use the option to create a VRT. Select the HRSl layer and choose **Export as..** In the new window, tick on the **Create VRT** option and set the following parameters: browse to a folder where the splitted raster will be exported to, CRS: EPSG:26392, VRT tiles: max columns 1000, max rows: 1000 (see figure 9.55).
 
 
 ![alt_text](media/fig955.png "image_tooltip")
@@ -1084,7 +1059,7 @@ After exporting, load all the raster tiles into your QGIS project. The result sh
 
 ![alt_text](media/fig956.png "image_tooltip")
 
-Figure 9.56 - Raster tiles for the Pampanga province HRSL 
+Figure 9.56 - Raster tiles for the Lagos state HRSL 
 
 Next, we will re-run the **Raster pixels to points** algorithm for each of the raster tiles. Because we have several tiles, we will use the batch processing function (see figure 9.57).
 
