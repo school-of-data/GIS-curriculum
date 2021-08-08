@@ -326,7 +326,7 @@ Therefore, we will proceed with an automatic removal of the duplicate points. To
 
 Figure 8.15 - Delete duplicate geometries on layer points of interest
 
-After running the algorithm, the functionality window presents the results, it has identified 6 duplicate points, just as the topology checker, and it informs the user that it has deleted them all, leaving the points of interest layer with **2727 features**. Rename this layer to **pois_cleaned**. Note that the output is a layer in memory, you can make it permanent by saving it to a file.
+After running the algorithm, the functionality window presents the results, it has identified 1 duplicate point, just as the topology checker, and it informs the user that it has deleted them all, leaving the points of interest layer with **112 features**. Rename this layer to **schools_cleaned**. Note that the output is a layer in memory, you can make it permanent by saving it to a file.
 
 
 ![Result of running delete duplicate geometries](media/fig816.png "Result of running delete duplicate geometries")
@@ -561,17 +561,17 @@ Figure 8.27b - Results of the clip functionality
 
 **Thiessen (Voronoi) polygons.** Imagine you have to make a series of administrative decisions in your district based on how many schools there are and what specific areas they serve. Geospatial analysis can be of assistance. You can start by calculating the Thiessen polygons. Based on an area containing at least two points, a Thiessen Polygon is a 2-dimensional shape which boundaries contain all space which is closer to a point within the area than any other point without the area. A good use example is in meteorology, where weather stations are discrete points, yet the information collected is considered to be measured out on the surface based on the thiessen polygons. 
 
-To respond to the above question, we will run the algorithm only for points that have the attribute school at type. Thus, make the selection as instructed in module 6. You should have 88 features selected on layer pois_cleaned. Go to **Vector ‣ Geometry Tools ‣ Voronoi Polygons..** After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Ashanti region is contained, you should see a result like in figure 8.28d. 
+To respond to the above question, we will run the algorithm only for points that have the attribute private at operator. Thus, make the selection as instructed in module 6. You should have 5 features selected on layer schools_cleaned. Go to **Vector ‣ Geometry Tools ‣ Voronoi Polygons..** After setting the parameters - select the point layer for which we want the Voronoi polygons calculated and a 30% extension so that the entire Ashanti region is contained, you should see a result like in figure 8.28d. 
 
 
-![Filtering the poi layer to get all schools](media/fig828_a.png "Filtering the poi layer to get all schools")
+![Filtering the schools_cleaned layer to get all private schools](media/fig828_a.png "Filtering the poi layer to get all schools")
 
-Figure 8.28a - Filtering the poi layer to get all schools
+Figure 8.28a - Filtering the schools_cleaned layer to get all private schools
 
 
-![All schools in the poi layer](media/fig828_b.png "All schools in the poi layer")
+![All private schools in the schools_cleaned layer](media/fig828_b.png "All schools in the poi layer")
 
-Figure 8.28b - All schools in the poi layer
+Figure 8.28b - All private schools in the schools_cleaned layer
 
 
 ![Running the Voronoi polygon algorithm](media/fig828_c.png "Running the Voronoi polygon algorithm")
@@ -645,7 +645,7 @@ Now for each 10X10 km unit, we have the landuse features that we can work with. 
 
 Figure 8.33 - Landuse features clipped per each grid cell and it's associated attribute table. 
 
-Now, that we have all landuse features per 10X10 km unit, we will continue with separating the geometries of the ones that make up the green space and built-up space as defined earlier - for each grid cell.  Thus, for green space, we will select all features that have the attribute value for `fclass: `meadow, grass, nature_reserve, park, forest. In attribute table, in the expression filed write down: ` "fclass" =  'meadow' or  "fclass" =  'grass' or  "fclass" =  'nature_reserve' or  "fclass" =  'park' or  "fclass"  =  'forest'`. Similarly, you can just type: `"fclass" in ('meadow', 'grass', 'nature_reserve', 'park', 'forest')`. Export the selected features as green_spaces_gridded  (see module 6 for more details). Don't forget to check **Save only selected features**. The new output should have 621 features. Do the same for the built-up space. Select the features in landuse that have the attribute value for `fclass` the following: retail, commercial, industrial,  residential, by writing the following expression in the Expression based filter window: `"fclass" =  'retail' or  "fclass" =  'commercial' or  "fclass" =  'industrial' or  "fclass" =  'residential'.` Select the filtered geometries and export as builtup_spaces_gridded. Your new output should have 3849 features. 
+Now, that we have all landuse features per 10X10 km unit, we will continue with separating the geometries of the ones that make up the green space and built-up space as defined earlier - for each grid cell.  Thus, for green space, we will select all features that have the attribute value for `fclass: `meadow, grass, nature_reserve, park, forest. In attribute table, in the expression filed write down: ` "fclass" =  'meadow' or  "fclass" =  'grass' or  "fclass" =  'nature_reserve' or  "fclass" =  'park' or  "fclass"  =  'forest'`. Similarly, you can just type: `"fclass" in ('meadow', 'grass', 'nature_reserve', 'park', 'forest')`. Export the selected features as green_spaces_gridded  (see module 6 for more details). Don't forget to check **Save only selected features**. The new output should have 7 features. Do the same for the built-up space. Select the features in landuse that have the attribute value for `fclass` the following: retail, commercial, industrial,  residential, by writing the following expression in the Expression based filter window: `"fclass" =  'retail' or  "fclass" =  'commercial' or  "fclass" =  'industrial' or  "fclass" =  'residential'.` Select the filtered geometries and export as builtup_spaces_gridded. Your new output should have 20 features. 
 
 Alternatively, you can also use a filter instead of a selection.
 
@@ -786,20 +786,19 @@ Now, repeat the same processing for waterways lengths in each grid cell. Running
 
 Figure 8.39 -  Spatial distribution of 10X10km units with most waterways 
 
-3. total number of public buildings (schools, kindergartens, hospitals , town halls etc.) for each grid cell
+3. total number of schools with a defined operator (Private, Government of Ghana,  , town halls etc.) for each grid cell
 
-To count the total number of public buildings in the 10X10 unit, we will use the pois_cleaned. First, we run **Vector ‣ Analysis Tools ‣ List unique values..** and decide which building we consider public. We will select from our vector point data layer (pois) the following features: `"fclass" = 'town_hall' or "fclass" = 'kindergarten' or "fclass" = 'hospital' or "fclass" = 'doctors' or "fclass" = 'fire_station' or "fclass" = 'community_centre' or "fclass" = 'stadium' or "fclass" = 'museum' or "fclass" = 'school' or "fclass" = 'theatre'.` Similarly, you can just type `"fclass" in ('town_hall', 'kindegarten', 'hospital', 'doctors', 'fire_station', 'community_centre', 'stadium', 'museum', 'school', 'theatre')`. Your selection should have 227 features in total. 
+To count the total number of schools with a defined operator in the 10X10 unit, we will use the schools_cleaned. First, we run **Vector ‣ Analysis Tools ‣ List unique values..** and decide which building we consider public. We will select from our vector point data layer (schools) the following features: ` "operator"  =  'Anansu Township' or  "operator" = 'Ghana Education Service' or  "operator" =  'Government of Ghana' or  "operator" =  'Private' .` Similarly, you can just type `"operator" in ('Anansu Township', 'Ghana Education Service', 'Government of Ghana', 'Private')`. Your selection should have 9 features in total. 
 
 
-![Selecting public POIs](media/fig840_a.png "Selecting public POIs")
+![Selecting schools with a defined operator](media/fig840_a.png "Selecting public POIs")
 
-Figure 8.40a - Selecting public POIs
+Figure 8.40a - Selecting schools with a defined operator
 
 
 ![Selected public POIS](media/fig840_b.png "Selected public POIS")
 
-Figure 8.40b - Selected public POIS
-
+Figure 8.40b - Selected schools with a defined operator
 To answer our request, we will use **Vector ‣ Analysis Tools ‣ Count points in polygon** algorithm. This algorithm takes a points layer and a polygon layer and counts the number of points from the first one in each polygons of the second one. A new polygons layer is generated, with the exact same content as the input polygons layer, but containing an additional field with the points count corresponding to each polygon. Set the point layer to pois_cleand and the polygon Grid layer with the calculated information in the previous round. For the points, check the **Selected features only** checkbox, so the algorithm calculates only the selected points - the public POIs. Save the output file as grid_info. 
 
 
