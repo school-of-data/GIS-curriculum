@@ -23,10 +23,10 @@ In addition you’ll have learned the following skills;
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
-*   Ashanti administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
-*   Ashanti clinics (inside [module5.gpkg](data/module5.gpkg))
-*   Ghana regions (inside [module5.gpkg](data/module5.gpkg))
-*   [Ashanti High Resolution Settlement Layer](data/ashanti_population_density.tif)
+*   Ashanti administrative boundary layer (inside [module5.gpkg](https://drive.google.com/drive/folders/1DafQtTG8MPDTMwQnZKygcSKT8Dae2Ga0?usp=sharing))
+*   Ashanti clinics (inside [module5.gpkg](https://drive.google.com/drive/folders/1DafQtTG8MPDTMwQnZKygcSKT8Dae2Ga0?usp=sharing))
+*   Ghana regions (inside [module5.gpkg](https://drive.google.com/drive/folders/1DafQtTG8MPDTMwQnZKygcSKT8Dae2Ga0?usp=sharing))
+*   [Ashanti High Resolution Settlement Layer](https://drive.google.com/drive/folders/1DafQtTG8MPDTMwQnZKygcSKT8Dae2Ga0?usp=sharing)
 
 ## Prerequisites
 
