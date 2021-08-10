@@ -26,10 +26,10 @@ You’ll use the field calculator and qgis expression engine to run mathematical
 *   Working computer
 *   Internet connection
 *   QGIS 3.16 and above
-*   Ashanti administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
-*   Ashanti clinics (inside [module6.gpkg](data/module6.gpkg))
-*   Ghana regions (inside [module6.gpkg](data/module6.gpkg))
-*   [Ashanti High Resolution Settlement Layer](data/ashanti_population_density.tif)
+*   Ashanti administrative boundary layer (inside [module6.gpkg](https://drive.google.com/drive/folders/1WzEj7aTbUyJMn9BPz896B_XfKTEp2Qmm?usp=sharing))
+*   Ashanti clinics (inside [module6.gpkg](https://drive.google.com/drive/folders/1WzEj7aTbUyJMn9BPz896B_XfKTEp2Qmm?usp=sharing))
+*   Ghana regions (inside [module6.gpkg](https://drive.google.com/drive/folders/1WzEj7aTbUyJMn9BPz896B_XfKTEp2Qmm?usp=sharing))
+*   [Ashanti High Resolution Settlement Layer](https://drive.google.com/drive/folders/1WzEj7aTbUyJMn9BPz896B_XfKTEp2Qmm?usp=sharing)
 
 
 ## Prerequisites
@@ -110,7 +110,7 @@ In addition, other concepts like the field calculator functionality in the attri
 The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.
 
 
-1. Load the Ghana regions vector layer (found inside [module6.gpkg](data/module6.gpkg)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 16 features corresponding to 16 regions.
+1. Load the Ghana regions vector layer (found inside [module6.gpkg](https://drive.google.com/drive/folders/1WzEj7aTbUyJMn9BPz896B_XfKTEp2Qmm?usp=sharing)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 16 features corresponding to 16 regions.
 
 ![Several polygons](media/many-polygons.png "Several polygons")
 
