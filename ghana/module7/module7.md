@@ -11,7 +11,7 @@ This module is designed to teach you how to use QGIS tools to create a new GIS l
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
-*   [Topo Map of Accra,Ghana](data/guagua-topo.jpeg)
+*   [Topo Map of Accra,Ghana](https://drive.google.com/drive/folders/1uxfarcjMpD_n4c852Mn5bxtVwntG7Lde?usp=sharing)
 
 
 ## Prerequisites
@@ -188,7 +188,7 @@ Figure 7.8.2: Adding the attributes
 
 Figure 7.8.3: New feature created
 
-If you make a mistake while digitising a feature, you can always edit it later. Simply finish     digitising the feature and then follow these steps:
+If you make a mistake while digitising a feature, you can always edit it later. Simply finish digitising the feature and then follow these steps:
 
 * Select the feature with the _Select Feature_ tool
 
@@ -250,7 +250,7 @@ If you make a mistake while digitising a feature, you can always edit it later. 
 To georeference the map;
 
 1. Open the Georeferencer tool, Raster ► Georeferencer 
-2. Click the Add raster button ![Add Raster](media/add-raster.png "Add Raster") to add the map image file, [Topo Map of Accra ](data/guagua-topo.jpeg), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
+2. Click the Add raster button ![Add Raster](media/add-raster.png "Add Raster") to add the map image file, [Topo Map of Accra ](https://drive.google.com/drive/folders/1uxfarcjMpD_n4c852Mn5bxtVwntG7Lde?usp=sharing), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
 
 ![Map in Georeferencer canvas](media/georeferencer.png "Map in Georeferencer canvas")
 
