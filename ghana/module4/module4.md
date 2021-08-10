@@ -17,10 +17,10 @@ This module is designed to teach you how to change the visual appearance of a ma
 *   Working computer
 *   Internet connection
 *   QGIS 3.16 or later
-*   Ashanti administrative boundary layer (inside [module4.gpkg](data/module4.gpkg))
-*   Ashanti clinics (inside [module4.gpkg](data/module4.gpkg))
-*   [Ashanti High Resolution Settlement Layer](data/HRSL_Ashanti_Population.tif)
-
+*   Ashanti administrative boundary layer
+*   Ashanti clinics 
+*   Ashanti High Resolution Settlement Layer
+*   All data is located at : https://drive.google.com/drive/folders/1jBg7aRPbPxWeGe3YKD8GOAY9veAEnlRF?usp=sharing
 ## Prerequisites
 
 *   Basic knowledge of operating a computer
