@@ -23,7 +23,7 @@ The required tools and resources for this module are:
 *   working computer
 *   internet connection
 *   QGIS 3.16 installed in the computer ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
-*   Pampanga_province and Pampanga_SanFernando vector layers (inside [(https://drive.google.com/drive/folders/1ZjrI-uUfhY2Dn7jJu-bH4v_vCt2pVNmr?usp=sharing]((https://drive.google.com/drive/folders/1ZjrI-uUfhY2Dn7jJu-bH4v_vCt2pVNmr?usp=sharing)).
+*   Pampanga_province and Pampanga_SanFernando vector layers inside [(https://drive.google.com/drive/folders/1ZjrI-uUfhY2Dn7jJu-bH4v_vCt2pVNmr?usp=sharing]((https://drive.google.com/drive/folders/1ZjrI-uUfhY2Dn7jJu-bH4v_vCt2pVNmr?usp=sharing)).
 
 
 ## Prerequisites
