@@ -23,7 +23,7 @@ The required tools and resources for this module are:
 *   working computer
 *   internet connection
 *   QGIS 3.16 installed in the computer ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
-*   Pampanga_province and Pampanga_SanFernando vector layers (inside [module3.gpkg](module3.gpkg)).
+*   Pampanga_province and Pampanga_SanFernando vector layers (inside [(https://drive.google.com/drive/folders/1ZjrI-uUfhY2Dn7jJu-bH4v_vCt2pVNmr?usp=sharing]((https://drive.google.com/drive/folders/1ZjrI-uUfhY2Dn7jJu-bH4v_vCt2pVNmr?usp=sharing)).
 
 
 ## Prerequisites
@@ -74,9 +74,9 @@ According to OpenStreetMap, it “is open data, licensed under the Open Data Com
 
 One of the core values of OpenStreetMap is the ability to collect, edit, and share map data which can be used for many different purposes. Such is the freedom provided by the ObDL. Because OpenStreetMap allows users to utilize its data with very few restrictions, there is a wide variety of applications, services, and use-cases that are built, being built, or can be built with OpenStreetMap. OpenStreetMap is used for creating maps, routing services, education, and even humanitarian and advocacy purposes. 
 
-In fact, there exists HOT or the Humanitarian OpenStreetMap Team ([https://www.hotosm.org/](https://www.hotosm.org/)) which is an international team dedicated to humanitarian action and community development through open mapping. 
+In fact, there exists the OpenStreetMap local community called OSM Ghana([https://www.osmghana.org/](https://www.osmghana.org/)) which is a community of volunteers growing OpenStreetMap in Ghana. In addition, there's HOT or the Humanitarian OpenStreetMap Team ([https://www.hotosm.org/](https://www.hotosm.org/)) which is an international team dedicated to humanitarian action and community development through open mapping. 
 
-OpenStreetMap is also a crucial part of some advocacy mapping communities such as MapBeks ([https://wiki.openstreetmap.org/wiki/MapBeks](https://wiki.openstreetmap.org/wiki/MapBeks)) -- an online LGBT mapping community, based in the Philippines, that advocates for diversity inclusion and representation focused specifically for Lesbians, Gays, Bisexuals, Transgender, Queer, Intersex, etc. (LGBTQI+) on OpenStreetMap; and Mental Health AWHEREness ([https://mentalhealthawhereness.com/](https://mentalhealthawhereness.com/)) -- a volunteer-organized online platform and map that shows the locations of mental health facilities and services that offer help to people on their mental health within the Philippines.
+OpenStreetMap is also a crucial part of the World Bank's work ([https://opendri.org/tag/openstreetmap/](https://opendri.org/tag/openstreetmap/)) -- for example OpenStreetMap data had been used for disaster and risk planning for areas where flooding has been a plague. For exampe, HOT worked with Mobile Web Ghana and OpenStreetMap Ghana to develop data on local buildings.
 
 A list of OpenStreetMap-based services can be found at [https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services](https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services).
 
