@@ -26,10 +26,10 @@ You’ll use the field calculator and qgis expression engine to run mathematical
 *   Working computer
 *   Internet connection
 *   QGIS 3.16 and above
-*   Kiambu administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
-*   Kiambu clinics (inside [module6.gpkg](data/module6.gpkg))
-*   Kenya counties (inside [module6.gpkg](data/module6.gpkg))
-*   [Kiambu High Resolution Settlement Layer](data/kiambu_population_density.tif)
+*   Kiambu administrative boundary layer (inside [module6.gpkg](https://drive.google.com/file/d/1jQdeAsR0v3AmYZwlsyPDQQiUDfbKKpZr/view?usp=sharing))
+*   Kiambu clinics (inside [module6.gpkg](https://drive.google.com/file/d/1jQdeAsR0v3AmYZwlsyPDQQiUDfbKKpZr/view?usp=sharing))
+*   Kenya counties (inside [module6.gpkg](https://drive.google.com/file/d/1jQdeAsR0v3AmYZwlsyPDQQiUDfbKKpZr/view?usp=sharing))
+*   [Kiambu High Resolution Settlement Layer](https://drive.google.com/file/d/1NTCwshHDmZu534iRfaZtflrvPeIpdEN6/view?usp=sharing)
 
 
 ## Prerequisites
