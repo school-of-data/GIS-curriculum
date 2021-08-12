@@ -110,7 +110,7 @@ In addition, other concepts like the field calculator functionality in the attri
 The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.
 
 
-1. Load the Kenya counties vector layer (found inside [module6.gpkg](data/module6.gpkg)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 47 features corresponding to 47 counties.
+1. Load the Kenya counties vector layer (found inside [module6.gpkg](https://drive.google.com/file/d/1jQdeAsR0v3AmYZwlsyPDQQiUDfbKKpZr/view?usp=sharing)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 47 features corresponding to 47 counties.
 
 ![Several polygons](media/many-polygons.png "Several polygons")
 
@@ -181,10 +181,10 @@ At this point, you might notice that the attribute table stores both spatial and
 
 1. Add the following datasets of Kenya to the QGIS map canvas; 
 
-*   Kiambu administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
-*   Kiambu clinics (inside [module6.gpkg](data/module6.gpkg))
-*   Kenya counties (inside [module6.gpkg](data/module6.gpkg))
-*   [Kiambu High Resolution Settlement Layer](data/kiambu_population_density.tif)
+*   Kiambu administrative boundary layer (inside [module6.gpkg](https://drive.google.com/file/d/1jQdeAsR0v3AmYZwlsyPDQQiUDfbKKpZr/view?usp=sharing))
+*   Kiambu clinics (inside [module6.gpkg](https://drive.google.com/file/d/1jQdeAsR0v3AmYZwlsyPDQQiUDfbKKpZr/view?usp=sharing))
+*   Kenya counties (inside [module6.gpkg](https://drive.google.com/file/d/1jQdeAsR0v3AmYZwlsyPDQQiUDfbKKpZr/view?usp=sharing))
+*   [Kiambu High Resolution Settlement Layer](https://drive.google.com/file/d/1NTCwshHDmZu534iRfaZtflrvPeIpdEN6/view?usp=sharing)
 
 ![Add different layers](media/add-layers.png "Add different layers")
 
@@ -237,8 +237,8 @@ Developing a functional expression starts with understanding your data; for exam
 
 The Expression builder dialog offers access to the:
 
-* Expression tab ([https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions-list](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions-list)) which, thanks to a list of predefined functions, helps to write and check the expression to use;
-* Function Editor tab ([https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor)) which helps to extend the list of functions by creating custom ones.
+* Expression tab ([https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html?highlight=vector%20expressions](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html)) which, thanks to a list of predefined functions, helps to write and check the expression to use;
+* Function Editor tab ([https://docs.qgis.org/3.10/en/docs/user_manual/working_with_vector/expression.html](https://docs.qgis.org/3.10/en/docs/user_manual/working_with_vector/expression.html)) which helps to extend the list of functions by creating custom ones.
 
 
 #### **Content/Tutorial**
