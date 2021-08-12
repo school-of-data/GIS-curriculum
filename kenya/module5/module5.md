@@ -23,10 +23,10 @@ In addition you’ll have learned the following skills;
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
-*   Kiambu administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
-*   Kiambu clinics (inside [module5.gpkg](data/module5.gpkg))
-*   Kiambu counties (inside [module5.gpkg](data/module5.gpkg))
-*   [Kiambu High Resolution Settlement Layer](data/kiambu_population_density.tif)
+*   Kiambu administrative boundary layer (inside [module5.gpkg](https://drive.google.com/drive/folders/1Q0o6buTXhbQQBDuYvbscYLwMku4vOl3T?usp=sharing))
+*   Kiambu clinics (inside [module5.gpkg](https://drive.google.com/drive/folders/1Q0o6buTXhbQQBDuYvbscYLwMku4vOl3T?usp=sharing))
+*   Kiambu counties (inside [module5.gpkg](https://drive.google.com/drive/folders/1Q0o6buTXhbQQBDuYvbscYLwMku4vOl3T?usp=sharing))
+*   [Kiambu High Resolution Settlement Layer](https://drive.google.com/drive/folders/1Q0o6buTXhbQQBDuYvbscYLwMku4vOl3T?usp=sharing)
 
 ## Prerequisites
 
