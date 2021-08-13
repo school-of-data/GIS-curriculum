@@ -21,11 +21,11 @@ By the end of this module, learners will have the basic understanding of the fol
 ## Required Tools and Resources
 
 *   This module has been prepared using [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
-*   [module9.gpkg](data/module9.gpkg)
-    *   Kiambu_admin_boundary
-*   [High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
-*   [SRTM Digital Elevation Model](data/SRTM_DEM)
-*   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
+*    Kiambu_admin_boundary [module9.gpkg]( https://drive.google.com/drive/folders/1nX36_DiVEJwWJCoQoLbSnDY0ebaLc9hf?usp=sharing)
+   
+*   [High Resolution Settlement Layer](https://drive.google.com/drive/folders/1nX36_DiVEJwWJCoQoLbSnDY0ebaLc9hf?usp=sharing)
+*   [SRTM Digital Elevation Model](https://drive.google.com/drive/folders/1nX36_DiVEJwWJCoQoLbSnDY0ebaLc9hf?usp=sharing)
+*   [Global Land Cover Map 2015-2019](https://drive.google.com/drive/folders/1nX36_DiVEJwWJCoQoLbSnDY0ebaLc9hf?usp=sharing)
 *   The coordinate reference system used is the Arc 1960 / UTM zone 37S, EPSG 21037. 
 
 ## Prerequisites: 
