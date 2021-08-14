@@ -21,11 +21,11 @@ By the end of this module, learners will have the basic understanding of the fol
 ## Required Tools and Resources
 
 *   This module has been prepared using [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
-*   [module9.gpkg](data/module9.gpkg)
+*   [module9.gpkg](https://drive.google.com/drive/folders/1-i0mHVQuFVjwVpwJV803qoe5NaFuXeJP?usp=sharing)
     *   Ashanti_admin_boundary
-*   [High Resolution Settlement Layer](data/HRSL_Ashanti_Population.tif)
-*   [SRTM Digital Elevation Model](data/SRTM_DEM)
-*   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
+*   [High Resolution Settlement Layer](https://drive.google.com/drive/folders/1-i0mHVQuFVjwVpwJV803qoe5NaFuXeJP?usp=sharing)
+*   [SRTM Digital Elevation Model](https://drive.google.com/drive/folders/1-i0mHVQuFVjwVpwJV803qoe5NaFuXeJP?usp=sharing)
+*   [Global Land Cover Map 2015-2019](https://drive.google.com/drive/folders/1-i0mHVQuFVjwVpwJV803qoe5NaFuXeJP?usp=sharing)
 *   The coordinate reference system used is the Accra / Ghana National Grid, EPSG 2136. 
 
 ## Prerequisites: 
