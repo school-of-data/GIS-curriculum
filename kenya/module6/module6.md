@@ -238,7 +238,7 @@ Developing a functional expression starts with understanding your data; for exam
 The Expression builder dialog offers access to the:
 
 * Expression tab ([https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/expressions.html?highlight=vector%20expressions](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html)) which, thanks to a list of predefined functions, helps to write and check the expression to use;
-* Function Editor tab ([https://docs.qgis.org/3.10/en/docs/user_manual/working_with_vector/expression.html](https://docs.qgis.org/3.10/en/docs/user_manual/working_with_vector/expression.html)) which helps to extend the list of functions by creating custom ones.
+* Function Editor tab ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html)) which helps to extend the list of functions by creating custom ones.
 
 
 #### **Content/Tutorial**
