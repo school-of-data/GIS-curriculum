@@ -181,10 +181,10 @@ At this point, you might notice that the attribute table stores both spatial and
 
 1. Add the following datasets of Ghana to the QGIS map canvas; 
 
-*   Ashanti administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
-*   Ashanti clinics (inside [module6.gpkg](data/module6.gpkg))
-*   Ghana regions (inside [module6.gpkg](data/module6.gpkg))
-*   [Ashanti High Resolution Settlement Layer](data/ashanti_population_density.tif)
+*   Ashanti administrative boundary layer (inside [module6.gpkg](https://drive.google.com/file/d/1qgiGpdoEMV0Np2xHnf__Fq0N-KlIPl1N/view?usp=sharing))
+*   Ashanti clinics (inside [module6.gpkg](https://drive.google.com/file/d/1qgiGpdoEMV0Np2xHnf__Fq0N-KlIPl1N/view?usp=sharing))
+*   Ghana regions (inside [module6.gpkg](https://drive.google.com/file/d/1qgiGpdoEMV0Np2xHnf__Fq0N-KlIPl1N/view?usp=sharing))
+*   [Ashanti High Resolution Settlement Layer](https://drive.google.com/drive/folders/1WzEj7aTbUyJMn9BPz896B_XfKTEp2Qmm?usp=sharing)
 
 ![Add different layers](media/add-layers.png "Add different layers")
 
