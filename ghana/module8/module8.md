@@ -27,7 +27,7 @@ and acquire the following skills:
 ## Required tools and resources
 
 * This module has been prepared using [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
-* [module8.gpkg](data/module8.gpkg) which contains the following layers:
+* [module8.gpkg](https://drive.google.com/file/d/1y8Vl-qxFwY4vSpqm8pFAVdnIlkAGcFv9/view?usp=sharing) which contains the following layers:
    * pois (point)
    * pofw (point)
    * road (line)
