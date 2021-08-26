@@ -94,7 +94,7 @@ Figure 5.3: Map canvas exported as image
 
 Figure 5.4: Creating new Print Layout
 
-2. The map canvas can now be exported to the print Layout. Click the ‘new print layout layout button’ ![New Print Layout](media/newprint_composer.png "New Print Layout"). This can be accessed via the tool bar. Alternatively, access using the ‘Projects’ menu bar. A title dialogue will open, prompting you to type the title of the Print Layout. Type ‘Lagos’ and Click OK.
+2. The map canvas can now be exported to the print Layout. Click the ‘new print layout layout button’ ![New Print Layout](media/newprint-composer.png "New Print Layout"). This can be accessed via the tool bar. Alternatively, access using the ‘Projects’ menu bar. A title dialogue will open, prompting you to type the title of the Print Layout. Type ‘Lagos’ and Click OK.
 
 ![Naming the Print Layout](media/new-print-layout-name.png "Naming the Print Layout")
 
