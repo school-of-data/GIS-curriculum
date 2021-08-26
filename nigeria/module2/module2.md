@@ -154,13 +154,13 @@ Figure 2.3. The Module files in the Browser Panel
 
 6. There are 5 files under the data folder: 
 
-    1. a GeoPackage (Philippines_NCR.gpkg) which contains a vector (NCR_Jollibee) and raster file (NCR_SRTM_DEM); 
-    2. a GeoJSON (NCR_districts.geojson); 
-    3. a flatgeobuf file (NCR_municities.fgb);
-    4. a shapefile (NCR_admin_boundary.shp); and
-    5. a comma-separated value (CSV) file (NCR_McDonalds.csv).
+    1. a GeoPackage (nigeria_lagos.gpkg) which contains a vector (lagos_clinic) and raster file (lagos_population_density); 
+    2. a GeoJSON (lagos_states.geojson); 
+    3. a flatgeobuf file (nigeria_LGA.fgb);
+    4. a shapefile (lagos_admin_boundary.shp); and
+    5. a comma-separated value (CSV) file (lagos_KFC.csv).
 
-7. Right click on NCR_admin_boundary.shp and click Layer Properties (Figure 2.4). This opens the layer properties window (Figure 2.5). Notice the information provided in the window. What is the geometry of the layer? What CRS is used? How many features are in the layer?
+7. Right click on lagos_admin_boundary.shp and click Layer Properties (Figure 2.4). This opens the layer properties window (Figure 2.5). Notice the information provided in the window. What is the geometry of the layer? What CRS is used? How many features are in the layer?
 
 
 ![Checking Layer Properties](media/qgis-browser-3.png "Checking Layer Properties")
@@ -179,7 +179,7 @@ Figure 2.5. Layer Properties from Browser Panel
     2. **right-clicking the layer ‣ Add Layer to Project**
     3. **dragging the layer to the Map Canvas** 
 
-10. Try to load the **NCR_admin_boundary**, **NCR_districts**, and **NCR_municities** layers using any of the methods above.
+10. Try to load the **lagos_admin_boundary**, **nigeria_states**, and **nigeria_LGA** layers using any of the methods above.
 
 ![The vector layers loaded in QGIS](media/vector-layers-loaded-1.png "The vector layers loaded in QGIS")
 
@@ -257,12 +257,12 @@ The importance of metadata is that it not only promotes transparency but also fa
 
 #### **Exercise 01.2: Adding Metadata**
 
-1. Open the Layer Properties of the NCR_admin_boundary layer.
+1. Open the Layer Properties of the lagos_admin_boundary layer.
 2. Check the information shown in the Information tab and look at the information shown. Is it complete? Can we add more information?
 
-![Information properties of the NCR_admin_boundary layer](media/metadata-1.png "Information properties of the NCR_admin_boundary layer")
+![Information properties of the lagos_admin_boundary layer](media/metadata-1.png "Information properties of the lagos_admin_boundary layer")
 
-Figure 2.9. Information properties of the NCR_admin_boundary layer
+Figure 2.9. Information properties of the lagos_admin_boundary layer
 
 3. Go to the Metadata tab and try adding more information about the layer such as the extent, data category, license, etc. Click OK when done.
 
@@ -305,10 +305,10 @@ Figure 2.12. The Data Source Manager
 2. **Loading Vectors**
 
     1. To load vectors, go to the Vector tab. Files, files within a Directory, a Database, and even remote files via a Protocol like HTTP, cloud, etc can be loaded.
-    2. Let’s load the vector file (NCR_Jollibee) found inside the Philippines_NCR geopackage. This layer is a point layer of the locations of fast food restaurant Jollibee in NCR.
+    2. Let’s load the vector file (lagos_clinics) found inside the nigeria_lagos geopackage. This layer is a point layer of the locations of clinics in Lagos.
 
         1. Source Type: File
-        2. Source: Select the Philippines_NCR geopackage using the ![Search button](media/data-source-manager-search.png "Search button") button
+        2. Source: Select the nigeria_lagos geopackage using the ![Search button](media/data-source-manager-search.png "Search button") button
         3. Click Add
         4. If there are more than 1 vector file inside the geopackage, QGIS will ask you to select which ones to load.
 
@@ -318,10 +318,10 @@ Figure 2.13. Loading a vector inside a GeoPackage
 
 3. **Loading Rasters**
 
-    1. To load a raster, go to the Raster tab. Files and remote files via a Protocol like HTTP, cloud, etc can be loaded. There is a raster (NCR_SRTM_DEM) inside the Philippines_NCR geopackage. This raster is a digital elevation model of the NCR region. To load it:
+    1. To load a raster, go to the Raster tab. Files and remote files via a Protocol like HTTP, cloud, etc can be loaded. There is a raster (lagos_SRTM_DEM) inside the lagos_nigeria geopackage. This raster is a digital elevation model of Lagos. To load it:
 
         1. Source Type: File
-        2. Source: Select the Philippines_NCR geopackage using the ![Search button](media/data-source-manager-search.png "Search button") button
+        2. Source: Select the nigeria_lagos geopackage using the ![Search button](media/data-source-manager-search.png "Search button") button
         3. Click Add
         4. If there are more than 1 raster file inside the geopackage, QGIS will ask you to select which ones to load
 
@@ -339,10 +339,10 @@ Figure 2.14. Loading a raster inside a GeoPackage
         3. If you encounter problems with preserving data types for your delimited texts (specifically CSVs), you can use what’s called a CSVT file.  You can read more about loading CSVs in QGIS at the following link:  [https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html ](https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html)
 
     3. CSVs and spreadsheets can be loaded in QGIS with or without spatial or geometry information. When they are loaded with spatial information, they are treated as vector data. When they are loaded without, they are treated as normal tabular data.
-    4. There is a CSV file in the data folder named NCR_McDonalds.csv which contains point locations of McDonald’s branches in NCR. To load it:
+    4. There is a CSV file in the data folder named lagos_KFC.csv which contains point locations of KFC’s branches in Lagos. To load it:
 
         1. Go to the Delimited Text tab
-        2. File name: Select the NCR_McDonalds CSV using the ![Search button](media/data-source-manager-search.png "Search button") button
+        2. File name: Select the lagos_KFC CSV using the ![Search button](media/data-source-manager-search.png "Search button") button
         3. File Format: CSV
         4. Record and Fields Options: keep default
         5. Geometry definition: 
