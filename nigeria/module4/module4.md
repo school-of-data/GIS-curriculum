@@ -17,9 +17,9 @@ This module is designed to teach you how to change the visual appearance of a ma
 *   Working computer
 *   Internet connection
 *   QGIS 3.16 or later
-*   Lagos administrative boundary layer (inside [module4.gpkg](data/module4.gpkg))
-*   Lagos clinics (inside [module4.gpkg](data/module4.gpkg))
-*   [Lagos High Resolution Settlement Layer](data/HRSL_Lagos_Population.tif)
+*   Lagos administrative boundary layer (inside [module4.gpkg](https://drive.google.com/file/d/1JtI2ZPTfBiMRphkN5TXJVDrcbje9P57u/view?usp=sharing))
+*   Lagos clinics (inside [module4.gpkg](https://drive.google.com/file/d/1JtI2ZPTfBiMRphkN5TXJVDrcbje9P57u/view?usp=sharing))
+*   [Lagos High Resolution Settlement Layer](https://drive.google.com/file/d/1c4qzF54SDHNBtfvQxwiZsw5t8qKjJfPB/view?usp=sharing)
 
 ## Prerequisites
 
