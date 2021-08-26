@@ -23,10 +23,10 @@ In addition you’ll have learned the following skills;
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
-*   Lagos administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
-*   Lagos clinics (inside [module5.gpkg](data/module5.gpkg))
-*   Nigeria states (inside [module5.gpkg](data/module5.gpkg))
-*   [Lagos High Resolution Settlement Layer](data/HRSL_Lagos_Population.tif)
+*   Lagos administrative boundary layer (inside [module5.gpkg](https://drive.google.com/file/d/16YFRdZAwIi2q0d7iR2_GA2nPSbmSx9jg/view?usp=sharing))
+*   Lagos clinics (inside [module5.gpkg](https://drive.google.com/file/d/16YFRdZAwIi2q0d7iR2_GA2nPSbmSx9jg/view?usp=sharing))
+*   Nigeria states (inside [module5.gpkg](https://drive.google.com/file/d/16YFRdZAwIi2q0d7iR2_GA2nPSbmSx9jg/view?usp=sharing))
+*   [Lagos High Resolution Settlement Layer](https://drive.google.com/file/d/1GvDR6-PTxWc9XlhdGOiDIA6S3F9YcVxh/view?usp=sharing)
 
 ## Prerequisites
 
