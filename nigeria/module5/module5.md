@@ -141,7 +141,7 @@ Figure 5.7: Add map to Print Layout
 
 Now that the styled map has been added to print layout, it’s now time to add the relevant map elements like the title, scale, legend, grid, metadata etc to the print layout. Most of the buttons are located to the left of the print layout.
 
-1. Click the ‘Add label’ ![alt_text](media/add_title.png "image_tooltip")
+1. Click the ‘Add label’ ![alt_text](media/add-title.png "image_tooltip")
 button, hold down the left mouse button and draw a rectangle where you’d like to place the title of the map. Type the title under the ‘Main properties’ menu on the right side of the print layout. The font properties can be changed under the ‘Appearance’ menu item.
 
 ![Add title of the map](media/print-layout-with-title.png "Add title of the map")
