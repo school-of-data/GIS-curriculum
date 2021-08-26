@@ -241,7 +241,7 @@ Figure 5.18: Atlas Preview
 6. You can export the Atlas maps via the **Export Atlas** button ![Export Atlas button](media/atlas-export-btn.png "Export Atlas button") either as images or PDFs. Select **Export Atlas as Image**. You should have 36 maps generated wher each map shows the extent of the province.
 
 
-![Atlas Outputs](media/atlas-outputs.png "Atlas Outputs")
+![Atlas Outputs](media/atlas-output.png "Atlas Outputs")
 
 Figure 5.18: Atlas Outputs
 
