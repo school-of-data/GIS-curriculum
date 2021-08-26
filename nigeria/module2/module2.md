@@ -395,8 +395,8 @@ To connect to a tile server:
 3. Add the following:
 
 ```
-    Name: PGP Basemap
-    URL: https://basemapserver.geoportal.gov.ph/tiles/v2/PGP/{z}/{x}/{y}.png
+      Name: ESRI World Imagery
+    URL: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
 ```
 4. Click OK.
 
@@ -406,27 +406,15 @@ Figure 2.18. Adding an XYZ connection in QGIS
 
 5. This should add a PGP Basemap item under XYZ Tiles in the Browser Panel.
 
-![PGP Basemap Tile server added to the Browser Panel](media/xyz-2.png "PGP Basemap Tile server added to the Browser Panel")
+![ESRI World Imagery Tile server added to the Browser Panel](media/xyz-2.png "PGP Basemap Tile server added to the Browser Panel")
 
 Figure 2.19. PGP Basemap Tile server added to the Browser Panel
 
 6. You can load the XYZ tile layer as you would any other layer from the Browser Panel.
 
-![PGP Basemap layer loaded in QGIS](media/xyz-3.png "PGP Basemap layer loaded in QGIS")
+![ESRI World Imagery layer loaded in QGIS](media/xyz-3.png "PGP Basemap layer loaded in QGIS")
 
-Figure 2.20. PGP Basemap layer loaded in QGIS
-
-7. Try to add the ESRI World Imagery layer as well.
-
-```
-    Name: ESRI World Imagery
-    URL: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
-```
-
-![Adding ESRI World Imagery as XYZ Tiles](media/xyz2-1.png "Adding ESRI World Imagery as XYZ Tiles")
-
-
-
+Figure 2.20. ESRI World Imagery layer loaded in QGIS
 
 **BONUS:**  If you want to add several basemaps under XYZ Tiles in the Browser Panel, you can follow the instructions in this post: [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
 
@@ -446,8 +434,8 @@ To connect to a WMS:
 3. Add the following:
 
 ```
-Name: LiPAD 100-year Flood Hazard
-URL: https://api.mapbox.com/styles/v1/osmph/cjqrynb300m522sper0emmgs6/wmts?access_token=sk.eyJ1Ijoib3NtcGgiLCJhIjoiY2pxbjF6czN2MGllbTQ4bXVuOW44ZDlpbSJ9.pUqHal3xOR1yZUaM6LbLkg
+Name: EOX Sentinel-2
+URL: https://tiles.maps.eox.at/wms
 ```
 4. Click Add
 
@@ -455,9 +443,9 @@ URL: https://api.mapbox.com/styles/v1/osmph/cjqrynb300m522sper0emmgs6/wmts?acces
 
 Figure 2.21. Creating a new WMS/WMTS Connection
 
-5. This should add a LiPAD 100-year Flood Hazard item under the WMS/WMTS and OWS connections in the Browser Panel.
+5. This should add a EOX Sentinel-2 item under the WMS/WMTS and OWS connections in the Browser Panel.
 
-![The LiPAD 100-year Flood Hazard WMS added in the Browser Panel](media/wms-2.png "The LiPAD 100-year Flood Hazard WMS added in the Browser Panel")
+![The EOX Sentinel-2 WMS added in the Browser Panel](media/wms-2.png "The LiPAD 100-year Flood Hazard WMS added in the Browser Panel")
 
 Figure 2.22. The LiPAD 100-year Flood Hazard WMS added in the Browser Panel
 
@@ -465,8 +453,7 @@ Figure 2.22. The LiPAD 100-year Flood Hazard WMS added in the Browser Panel
 
 ![Flood hazard map from WMS loaded in QGIS](media/wms-3.png "Flood hazard map from WMS loaded in QGIS")
 
-Figure 2.23. Flood hazard map from WMS loaded in QGIS
-
+Figure 2.23. Sentinel-2 cloudless layer map from WMS loaded in QGIS
 7. Connecting to WFS follows the same procedure.
 
 
