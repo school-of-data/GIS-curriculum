@@ -259,7 +259,7 @@ Figure 7.9: Map in Georeferencer canvas
 Next you should define the transformation settings for georeferencing the map:
 
 3. Open Settings ► Transformation settings or click the Transformation Settings button ![alt_text](media/georef-settings-btn.png "image_tooltip").
-4. Click the ![alt_text](media/dots.png "image_tooltip") icon next to the Output raster box, go to the folder and create the folder 'pampanga data’ and name the file as pampanga_georef.tif.
+4. Click the ![alt_text](media/dots.png "image_tooltip") icon next to the Output raster box, go to the folder and create the folder 'kaduna data’ and name the file as kaduna_georef.tif.
 5. Set the rest of parameters as shown below
 
 ![Transformation parameters](media/transformation-settings.png "Transformation parameters")
