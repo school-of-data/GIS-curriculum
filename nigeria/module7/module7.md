@@ -11,7 +11,7 @@ This module is designed to teach you how to use QGIS tools to create a new GIS l
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
-*   [Topo Map of Kaduna, Nigeria](data/guagua-topo.jpeg)
+*   [Topo Map of Kaduna, Nigeria](https://drive.google.com/drive/folders/1fOjVB2nDNZuj3qXbPtABDaP1c7M655Mb?usp=sharing)
 
 
 ## Prerequisites
@@ -250,7 +250,7 @@ If you make a mistake while digitising a feature, you can always edit it later. 
 To georeference the map;
 
 1. Open the Georeferencer tool, Raster ► Georeferencer 
-2. Click the Add raster button ![Add Raster](media/add-raster.png "Add Raster") to add the map image file, [Topo Map of Kaduna ](data/guagua-topo.jpeg), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
+2. Click the Add raster button ![Add Raster](media/add-raster.png "Add Raster") to add the map image file, [Topo Map of Kaduna ](https://drive.google.com/drive/folders/1fOjVB2nDNZuj3qXbPtABDaP1c7M655Mb?usp=sharing), as the image to georeference. The topographic map will be added to the georeferencer canvas. You may now zoom in to read the details of the map. One way to do this is by reading the metadata and legend information at the bottom and then relating it to the features on the map.
 
 ![Map in Georeferencer canvas](media/georeferencer.png "Map in Georeferencer canvas")
 
@@ -287,7 +287,8 @@ Just to be safe, always have at least one more than the minimum to add redundanc
 
 6. Click OK.
 7. The map contains several cross-hairs marking the coordinates in the map, we will use those to georeference this image. You can use the zooming and panning tools as you usually do in QGIS to inspect the image in the Georeferencer’s window.
-8. Zoom in to the left lower corner of the map and note that there is a cross-hair with a coordinate pair, X and Y, that as mentioned before are in the CRS, PRS 1992 also written as PRS 92, as referenced in the legend of the topo map.
+8. Zoom in to the left lower corner of the map and note that there is a cross-hair with a coordinate pair, X and Y, that as mentioned before are in the CRS, 
+Minna / Nigeria East Belt - EPSG:26393 as referenced in the legend of the topo map.
 9. Click the Add point button ![Add Point](media/add-point.png "Add Point") and click in the intersection of the cross-hairs (pan and zoom as needed).
 10. In the Enter map coordinates dialogue write the coordinates that appear in the map (Y: 14° 45’ 00’’ and X: 120° 30’ 00’’).
 
