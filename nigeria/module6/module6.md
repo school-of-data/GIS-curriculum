@@ -26,10 +26,10 @@ You’ll use the field calculator and qgis expression engine to run mathematical
 *   Working computer
 *   Internet connection
 *   QGIS 3.16 and above
-*   Lagos administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
-*   Lagos clinics (inside [module6.gpkg](data/module6.gpkg))
-*   Nigeria states (inside [module6.gpkg](data/module6.gpkg))
-*   [Lagos High Resolution Settlement Layer](data/HRSL_Lagos_Population.tif)
+*   Lagos administrative boundary layer (inside [module6.gpkg](https://drive.google.com/file/d/15cSibo21KLwdBouX8UxE9YW_Nb7W2oct/view?usp=sharing))
+*   Lagos clinics (inside [module6.gpkg](https://drive.google.com/file/d/15cSibo21KLwdBouX8UxE9YW_Nb7W2oct/view?usp=sharing))
+*   Nigeria states (inside [module6.gpkg](https://drive.google.com/file/d/15cSibo21KLwdBouX8UxE9YW_Nb7W2oct/view?usp=sharing))
+*   [Lagos High Resolution Settlement Layer](https://drive.google.com/file/d/1BX00aeotno_AqxqwAeDUITyohzuXkOV7/view?usp=sharing)
 
 
 ## Prerequisites
@@ -110,7 +110,7 @@ In addition, other concepts like the field calculator functionality in the attri
 The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.
 
 
-1. Load the PHL provinces vector layer (found inside [module6.gpkg](data/module6.gpkg)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 81 features corresponding to 81 provinces.
+1. Load the Nigeria states vector layer (found inside [module6.gpkg](https://drive.google.com/file/d/15cSibo21KLwdBouX8UxE9YW_Nb7W2oct/view?usp=sharing)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 36 features corresponding to 36 states.
 
 ![Several polygons](media/many-polygons.png "Several polygons")
 
@@ -181,10 +181,10 @@ At this point, you might notice that the attribute table stores both spatial and
 
 1. Add the following datasets of Nigeria to the QGIS map canvas; 
 
-*   Lagos administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
-*   Lagos clinics (inside [module6.gpkg](data/module6.gpkg))
-*   Nigeria states (inside [module6.gpkg](data/module6.gpkg))
-*   [Lagos High Resolution Settlement Layer](data/HRSL_Lagos_Population.tif)
+*   Lagos administrative boundary layer (inside [module6.gpkg](https://drive.google.com/file/d/15cSibo21KLwdBouX8UxE9YW_Nb7W2oct/view?usp=sharing))
+*   Lagos clinics (inside [module6.gpkg](https://drive.google.com/file/d/15cSibo21KLwdBouX8UxE9YW_Nb7W2oct/view?usp=sharing))
+*   Nigeria states (inside [module6.gpkg](https://drive.google.com/file/d/15cSibo21KLwdBouX8UxE9YW_Nb7W2oct/view?usp=sharing))
+*   [Lagos High Resolution Settlement Layer](https://drive.google.com/file/d/1BX00aeotno_AqxqwAeDUITyohzuXkOV7/view?usp=sharing)
 
 ![Add different layers](media/add-layers.png "Add different layers")
 
