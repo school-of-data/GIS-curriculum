@@ -27,7 +27,15 @@ and acquire the following skills:
 ## Required tools and resources
 
 * This module has been prepared using [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
-* The datasets used for all exercises detailed in this module are presented in the table below:
+* The datasets used for all exercises detailed in this module are listed below:
+* [module8.gpkg](https://drive.google.com/file/d/1cWNFcGGI_undZiecot8DVkWigm1qw09Z/view?usp=sharing) which contains the following layers:
+   * schools (point)
+   * pofw (point)
+   * road (line)
+   * waterways (line)
+   * buildings (polygon)
+   * landuse (polygon)
+   * lagos_admin_boundary (polygon)
 * The coordinate reference system used is the Minna / Nigeria Mid Belt, EPSG 26392. As it is a projected coordinate system, it allows geometric calculations. 
 
 
