@@ -154,7 +154,7 @@ Figure 2.3. The Module files in the Browser Panel
 
 6. There are 5 files under the data folder: 
 
-    1. a GeoPackage (sa_gauteng.gpkg) which contains a vector (gauteng_schools) and raster file (SA_gauteng_SRTM_DEM); 
+    1. a GeoPackage (sa_gauteng.gpkg) which contains a vector (gauteng_schools) and raster file (SA_Gauteng_SRTM_DEM); 
     2. a GeoJSON (sa_districts.geojson); 
     3. a flatgeobuf file (sa_municities.fgb);
     4. a shapefile (sa_admin_boundary.shp); and
@@ -339,10 +339,11 @@ Figure 2.14. Loading a raster inside a GeoPackage
         3. If you encounter problems with preserving data types for your delimited texts (specifically CSVs), you can use what’s called a CSVT file.  You can read more about loading CSVs in QGIS at the following link:  [https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html ](https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html)
 
     3. CSVs and spreadsheets can be loaded in QGIS with or without spatial or geometry information. When they are loaded with spatial information, they are treated as vector data. When they are loaded without, they are treated as normal tabular data.
-    4. There is a CSV file in the data folder named NCR_McDonalds.csv which contains point locations of McDonald’s branches in NCR. To load it:
+    4. There is a CSV file in the data folder named 
+    gauteng_schools.csv which contains point locations of schools in Gauteng province. To load it:
 
         1. Go to the Delimited Text tab
-        2. File name: Select the NCR_McDonalds CSV using the ![Search button](media/data-source-manager-search.png "Search button") button
+        2. File name: Select the gauteng_schools CSV using the ![Search button](media/data-source-manager-search.png "Search button") button
         3. File Format: CSV
         4. Record and Fields Options: keep default
         5. Geometry definition: 
