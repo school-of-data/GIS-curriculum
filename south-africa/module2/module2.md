@@ -155,9 +155,9 @@ Figure 2.3. The Module files in the Browser Panel
 6. There are 5 files under the data folder: 
 
     1. a GeoPackage [sa_gauteng.gpkg](https://drive.google.com/file/d/1HGtlJDKle3nuDpftcsg7e7KjAUwa0_bC/view?usp=sharing) which contains a vector (gauteng_schools) and raster file (SA_Gauteng_SRTM_DEM); 
-    2. a GeoJSON [sa_states.geojson] (https://drive.google.com/file/d/1uwPwDxG52Wuff-WvxQddRvtyUsKfE0Ih/view?usp=sharing); 
+    2. a GeoJSON [sa_states.geojson](https://drive.google.com/file/d/1uwPwDxG52Wuff-WvxQddRvtyUsKfE0Ih/view?usp=sharing); 
     3. a flatgeobuf file [sa_districts.fgb](https://drive.google.com/file/d/1zw1_xroIRlPEvyRot-Ca85TsohLWTa-A/view?usp=sharing);
-    4. a shapefile [sa_admin_boundary.shp] (); and
+    4. a shapefile [sa_admin_boundary.shp](https://drive.google.com/drive/folders/1HCbxLNRWQdTh1fN39wlQg1h3U-Ce17W7?usp=sharing); and
     5. a comma-separated value (CSV) file [gauteng_schools.csv](https://drive.google.com/file/d/1n32c18_Bi4e4cPB-BRy-mLiq-t6odWmb/view?usp=sharing).
 
 7. Right click on sa_admin_boundary.shp and click Layer Properties (Figure 2.4). This opens the layer properties window (Figure 2.5). Notice the information provided in the window. What is the geometry of the layer? What CRS is used? How many features are in the layer?
