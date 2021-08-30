@@ -23,7 +23,7 @@ The required tools and resources for this module are:
 *   working computer
 *   internet connection
 *   QGIS 3.16 installed in the computer ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
-*   gauteng_admin_boundary and city_of_tswane vector layers (inside [module3.gpkg](module3.gpkg)).
+*   gauteng_admin_boundary and city_of_tswane vector layers (inside [module3.gpkg](https://drive.google.com/file/d/1yX-bdSWu5RuVsYlX_4rQMDOiBgAvrUSV/view?usp=sharing)).
 
 
 ## Prerequisites
@@ -74,9 +74,7 @@ According to OpenStreetMap, it “is open data, licensed under the Open Data Com
 
 One of the core values of OpenStreetMap is the ability to collect, edit, and share map data which can be used for many different purposes. Such is the freedom provided by the ObDL. Because OpenStreetMap allows users to utilize its data with very few restrictions, there is a wide variety of applications, services, and use-cases that are built, being built, or can be built with OpenStreetMap. OpenStreetMap is used for creating maps, routing services, education, and even humanitarian and advocacy purposes. 
 
-In fact, there exists HOT or the Humanitarian OpenStreetMap Team ([https://www.hotosm.org/](https://www.hotosm.org/)) which is an international team dedicated to humanitarian action and community development through open mapping. 
-
-OpenStreetMap is also a crucial part of some advocacy mapping communities such as MapBeks ([https://wiki.openstreetmap.org/wiki/MapBeks](https://wiki.openstreetmap.org/wiki/MapBeks)) -- an online LGBT mapping community, based in the Philippines, that advocates for diversity inclusion and representation focused specifically for Lesbians, Gays, Bisexuals, Transgender, Queer, Intersex, etc. (LGBTQI+) on OpenStreetMap; and Mental Health AWHEREness ([https://mentalhealthawhereness.com/](https://mentalhealthawhereness.com/)) -- a volunteer-organized online platform and map that shows the locations of mental health facilities and services that offer help to people on their mental health within the Philippines.
+In fact, there exists the local South African OpenStreetMap community(https://wiki.openstreetmap.org/wiki/South_Africa) which has been actively mapping different states with focus on visual collection of street names and verification of one way streets.In addition, there's also HOT or the Humanitarian OpenStreetMap Team ([https://www.hotosm.org/](https://www.hotosm.org/)) which is an international team dedicated to humanitarian action and community development through open mapping. 
 
 A list of OpenStreetMap-based services can be found at [https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services](https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services).
 
