@@ -21,11 +21,11 @@ By the end of this module, learners will have the basic understanding of the fol
 ## Required Tools and Resources
 
 *   This module has been prepared using [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
-*   [module9.gpkg](data/module9.gpkg)
+*   [module9.gpkg](https://drive.google.com/file/d/1j5L138sJF3qaJ09w0NKqvy7HbBCdxz2X/view?usp=sharing)
     *   Lagos_admin_boundary
-*   [High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
-*   [SRTM Digital Elevation Model](data/SRTM_DEM)
-*   [Global Land Cover Map 2015-2019](data/Global_Land_Cover_Map)
+*   [High Resolution Settlement Layer](https://drive.google.com/file/d/1Qd4pFsKSAmAJHTizjd8NnM_B6H2e6_qF/view?usp=sharing)
+*   [SRTM Digital Elevation Model](https://drive.google.com/drive/folders/1QWxzRhO6vD-6lRfVb7C6233Wun3HluLV?usp=sharing)
+*   [Global Land Cover Map 2015-2019](https://drive.google.com/drive/folders/1b54zM0_nAcMrJx1FRkIh0c4SgiigxTRj?usp=sharing)
 *   The coordinate reference system used is the Minna / Nigeria Mid Belt, EPSG 26392. 
 
 ## Prerequisites: 
