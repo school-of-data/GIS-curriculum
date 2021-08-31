@@ -23,10 +23,10 @@ In addition you’ll have learned the following skills;
 *   Working computer
 *   Internet access
 *   QGIS 3.16 or later
-*   Gauteng administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
-*   Gauteng clinics (inside [module5.gpkg](data/module5.gpkg))
-*   South Africa provinces (inside [module5.gpkg](data/module5.gpkg))
-*   [Gauteng High Resolution Settlement Layer](data/HRSL_Gauteng_Population.tif)
+*   Gauteng administrative boundary layer (inside [module5.gpkg](https://drive.google.com/file/d/1Kj_VpPpaktItVMc2ST6W0Tk2x505RXF3/view?usp=sharing))
+*   Gauteng clinics (inside [module5.gpkg](https://drive.google.com/file/d/1Kj_VpPpaktItVMc2ST6W0Tk2x505RXF3/view?usp=sharing))
+*   South Africa provinces (inside [module5.gpkg](https://drive.google.com/file/d/1Kj_VpPpaktItVMc2ST6W0Tk2x505RXF3/view?usp=sharing))
+*   [Gauteng High Resolution Settlement Layer](https://drive.google.com/file/d/1JZtCwQr_6DiEq9QFyjsV3yevL4MJNNGM/view?usp=sharing)
 
 ## Prerequisites
 
@@ -94,7 +94,7 @@ Figure 5.3: Map canvas exported as image
 
 Figure 5.4: Creating new Print Layout
 
-2. The map canvas can now be exported to the print Layout. Click the ‘new print layout layout button’ ![New Print Layout](media/newprint_composer.png "New Print Layout"). This can be accessed via the tool bar. Alternatively, access using the ‘Projects’ menu bar. A title dialogue will open, prompting you to type the title of the Print Layout. Type ‘Pampanga’ and Click OK.
+2. The map canvas can now be exported to the print Layout. Click the ‘new print layout layout button’ ![New Print Layout](media/newprint_composer.png "New Print Layout"). This can be accessed via the tool bar. Alternatively, access using the ‘Projects’ menu bar. A title dialogue will open, prompting you to type the title of the Print Layout. Type ‘Gauteng’ and Click OK.
 
 ![Naming the Print Layout](media/new-print-layout-name.png "Naming the Print Layout")
 
