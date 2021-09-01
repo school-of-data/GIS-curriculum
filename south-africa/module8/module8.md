@@ -27,7 +27,14 @@ and acquire the following skills:
 ## Required tools and resources
 
 * This module has been prepared using [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
-* The datasets used for all exercises detailed in this module are presented in the table below:
+* [module8.gpkg](https://drive.google.com/file/d/1xjooGuo_lw-1YiC-gyhS1FF9fLlhBpC9/view?usp=sharing) which contains the following layers:
+    pow (point)
+    gauteng_schools (point)
+    road (line)
+    waterways (line)
+    buildings (polygon)
+    landuse (polygon)
+    gauteng_admin_boundary (polygon)
 * The coordinate reference system used is the Africa Albers Equal Area Conic, EPSG 102022. As it is a projected coordinate system, it allows geometric calculations. 
 
 
