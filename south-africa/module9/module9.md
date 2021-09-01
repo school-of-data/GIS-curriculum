@@ -23,7 +23,7 @@ By the end of this module, learners will have the basic understanding of the fol
 *   This module has been prepared using [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
 *   [module9.gpkg](https://drive.google.com/file/d/1RFhi4uHkk4dKyhNjQgNaT0c-LZalm-GD/view?usp=sharing)
     *   Gauteng_admin_boundary
-*   [High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   [High Resolution Settlement Layer](https://drive.google.com/file/d/1i4fkm-Qv0p2SIfvLeGbLXiM3fRTEcP6Z/view?usp=sharing)
 *   [SRTM Digital Elevation Model](https://drive.google.com/drive/folders/1a3Rp-aeUOAlueUWcFJiTVgSjylLMYbx0?usp=sharing)
 *   [Global Land Cover Map 2015-2019](https://drive.google.com/drive/folders/17UWNlNpbhCymJ3-IolecoRnTMk5-UJTN?usp=sharing)
 *   The coordinate reference system used is the Africa Albers Equal Area Conic, EPSG 102022. 
