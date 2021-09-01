@@ -26,10 +26,10 @@ You’ll use the field calculator and qgis expression engine to run mathematical
 *   Working computer
 *   Internet connection
 *   QGIS 3.16 and above
-*   Gauteng administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
-*   Gauteng clinics (inside [module6.gpkg](data/module6.gpkg))
-*   South Africa provinces (inside [module6.gpkg](data/module6.gpkg))
-*   [Gauteng High Resolution Settlement Layer](data/HRSL_Gauteng_Population.tif)
+*   Gauteng administrative boundary layer (inside [module6.gpkg](https://drive.google.com/file/d/14HK0oIK2qrPifa3t7cjUenHkVwrlrQ3l/view?usp=sharing))
+*   Gauteng clinics (inside [module6.gpkg](https://drive.google.com/file/d/14HK0oIK2qrPifa3t7cjUenHkVwrlrQ3l/view?usp=sharing))
+*   South Africa provinces (inside [module6.gpkg](https://drive.google.com/file/d/14HK0oIK2qrPifa3t7cjUenHkVwrlrQ3l/view?usp=sharing))
+*   [Gauteng High Resolution Settlement Layer](https://drive.google.com/file/d/1LlnXJReo3GToGKKZfRF8zGUOZ7D2mGzX/view?usp=sharing)
 
 
 ## Prerequisites
@@ -110,7 +110,7 @@ In addition, other concepts like the field calculator functionality in the attri
 The attribute table displays information on features of a selected layer. Each row in the table represents a feature (with or without geometry), and each column contains a particular piece of information about the feature. Features in the table can be searched, selected, moved or even edited.
 
 
-1. Load the PHL provinces vector layer (found inside [module6.gpkg](data/module6.gpkg)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 
+1. Load the South Africa provinces vector layer (found inside [module6.gpkg](https://drive.google.com/file/d/14HK0oIK2qrPifa3t7cjUenHkVwrlrQ3l/view?usp=sharing)) in QGIS. You can know how many features are in the current feature by **Right-clicking on the layer on the Layers Panel ‣ Show Feature Count**. As you can see below, the vector layer has many features. In total, there are 
 features corresponding to 9 provinces.
 
 ![Several polygons](media/many-polygons.png "Several polygons")
@@ -182,10 +182,10 @@ At this point, you might notice that the attribute table stores both spatial and
 
 1. Add the following datasets of South Africa to the QGIS map canvas; 
 
-*   Gauteng administrative boundary layer (inside [module6.gpkg](data/module6.gpkg))
-*   Gauteng clinics (inside [module6.gpkg](data/module6.gpkg))
-*   South Africa provinces (inside [module6.gpkg](data/module6.gpkg))
-*   [Gauteng High Resolution Settlement Layer](data/HRSL_Gauteng_Population.tif)
+*   Gauteng administrative boundary layer (inside [module6.gpkg](https://drive.google.com/file/d/14HK0oIK2qrPifa3t7cjUenHkVwrlrQ3l/view?usp=sharing))
+*   Gauteng clinics (inside [module6.gpkg](https://drive.google.com/file/d/14HK0oIK2qrPifa3t7cjUenHkVwrlrQ3l/view?usp=sharing))
+*   South Africa provinces (inside [module6.gpkg](https://drive.google.com/file/d/14HK0oIK2qrPifa3t7cjUenHkVwrlrQ3l/view?usp=sharing))
+*   [Gauteng High Resolution Settlement Layer](https://drive.google.com/file/d/1LlnXJReo3GToGKKZfRF8zGUOZ7D2mGzX/view?usp=sharing)
 
 ![Add different layers](media/add-layers.png "Add different layers")
 
@@ -238,8 +238,8 @@ Developing a functional expression starts with understanding your data; for exam
 
 The Expression builder dialog offers access to the:
 
-* Expression tab ([https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions-list](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#functions-list)) which, thanks to a list of predefined functions, helps to write and check the expression to use;
-* Function Editor tab ([https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor](https://docs.qgis.org/2.18/en/docs/user_manual/working_with_vector/expression.html#function-editor)) which helps to extend the list of functions by creating custom ones.
+* Expression tab ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/expression.html)) which, thanks to a list of predefined functions, helps to write and check the expression to use;
+* Function Editor tab ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/functions_list.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/functions_list.html)) which helps to extend the list of functions by creating custom ones.
 
 
 #### **Content/Tutorial**
