@@ -76,7 +76,7 @@ One of the core values of OpenStreetMap is the ability to collect, edit, and sha
 
 In fact, there exists HOT or the Humanitarian OpenStreetMap Team ([https://www.hotosm.org/](https://www.hotosm.org/)) which is an international team dedicated to humanitarian action and community development through open mapping. 
 
-OpenStreetMap is also a crucial part of some advocacy mapping communities such as MapBeks ([https://wiki.openstreetmap.org/wiki/MapBeks](https://wiki.openstreetmap.org/wiki/MapBeks)) -- an online LGBT mapping community, based in the Philippines, that advocates for diversity inclusion and representation focused specifically for Lesbians, Gays, Bisexuals, Transgender, Queer, Intersex, etc. (LGBTQI+) on OpenStreetMap; and Mental Health AWHEREness ([https://mentalhealthawhereness.com/](https://mentalhealthawhereness.com/)) -- a volunteer-organized online platform and map that shows the locations of mental health facilities and services that offer help to people on their mental health within the Philippines.
+OpenStreetMap Nigeria is a local community in Nigeria which voluntarily contributes data to the OpenStreetMap platform with a particular focus on Nigeria. Other local activities are documented on the Wiki: https://wiki.openstreetmap.org/wiki/WikiProject_Nigeria 
 
 A list of OpenStreetMap-based services can be found at [https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services](https://wiki.openstreetmap.org/wiki/List_of_OSM-based_services).
 
