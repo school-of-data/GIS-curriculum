@@ -23,7 +23,7 @@ The required tools and resources for this module are:
 *   working computer
 *   internet connection
 *   QGIS 3.16 installed in the computer ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
-*   lagos_admin_boundary and nigeria_provinces vector layers (inside [module3.gpkg](module3.gpkg)).
+*   lagos_admin_boundary and nigeria_provinces vector layers (inside [module3.gpkg](https://drive.google.com/file/d/1LG0x5WaikJ6LdQsV8PNHoXAPRsnZ_iUN/view?usp=sharing)).
 
 
 ## Prerequisites
