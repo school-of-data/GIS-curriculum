@@ -131,7 +131,7 @@ Figure 3.2. Lagos layers loaded in QGIS
 
 Figure 3.3. QuickOSM plugin
 
-4. Load all highways inside the extent of the lagos_SanFernando layer.
+4. Load all highways inside the extent of the lagos_admin_boundary layer.
 
     * Key: highway
     * Value: &lt;blank> (blank means ALL)
