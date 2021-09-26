@@ -17,9 +17,9 @@ This module is designed to teach you how to change the visual appearance of a ma
 *   Working computer
 *   Internet connection
 *   QGIS 3.16 or later
-*   Pampanga administrative boundary layer (inside [module4.gpkg](data/module4.gpkg))
-*   Pampanga clinics (inside [module4.gpkg](data/module4.gpkg))
-*   [Pampanga High Resolution Settlement Layer](data/HRSL_Pampanga_Population.tif)
+*   Gauteng administrative boundary layer (inside [module4.gpkg](https://drive.google.com/file/d/1TT_QyufQkKjLXaTwH-kTTLfX_X-kd1XM/view?usp=sharing))
+*   Gauteng clinics (inside [module4.gpkg](https://drive.google.com/file/d/1TT_QyufQkKjLXaTwH-kTTLfX_X-kd1XM/view?usp=sharing))
+*   [Gauteng High Resolution Settlement Layer](https://drive.google.com/file/d/1MgwC9T4wLW6lwJMIGYQLIWGUUrv4IHSy/view?usp=sharing)
 
 ## Prerequisites
 
@@ -126,7 +126,7 @@ Vector data symbology may vary by transparency, color, rotation, and size.
 
 #### **Example 1: Vector rendering**
 
-1. To demonstrate this example, we’ll use two example datasets; 1. [Clinics](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing) and 2. [Administrative boundary](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing) of Pampanga province 
+1. To demonstrate this example, we’ll use two example datasets; 1. [Clinics](https://drive.google.com/file/d/1iJQ1nP0ulA96OhyT9wakRheahYKnNmjc/view?usp=sharing) and 2. [Administrative boundary](https://drive.google.com/file/d/1GiFmr4As5e-yn-4lCqotAzUBHzXU1NS_/view?usp=sharing) of Gauteng province 
 2. Add the two vector layers into qgis; Click the Add vector layer button ![alt_text](media/add-vector.png "image_tooltip")
  or use the browser panel. 
 3. This is how they render by default. You’ll notice we have a polygon and point layer. The next step is to change the symbology for each of them. Fill colors may not be the same, but that’s not a problem because QGIS selects colors randomly for different instances of the application.
@@ -135,7 +135,7 @@ Vector data symbology may vary by transparency, color, rotation, and size.
 
 Figure 4.3: Default render
 
-4. Double click the polygon vector layer, which is also the administrative boundary layer of Pampanga province in the Philippines
+4. Double click the polygon vector layer, which is also the administrative boundary layer of Gauteng province in South Africa
 5. Select the **Symbology Tab** in the menu that appears
 6. Change the **Fill color** to **Transparent fill. Tip:** Click the drop down arrow under Fill color
 7. The result should be as below. You may notice that the no fill option has no color
@@ -172,11 +172,11 @@ Figure 4.6: Final vector render
 
 Figure 4.7: Symbology menu
 
-4. Specify the interpolation, color ramp and mode. Click classify. The result is a choropleth map showing population density across Pampanga province in the Philippines.
+4. Specify the interpolation, color ramp and mode. Click classify. The result is a choropleth map showing population density across Gauteng province in South Africa.
 
-![Population density of Pampanga Province, Philippines](media/hrsl-style.png "Population density of Pampanga Province, Philippines")
+![Population density of Gauteng Province, South Africa](media/hrsl-style.png "Population density of Gauteng Province, South Africa")
 
-Figure 4.8: Population density of Pampanga Province, Philippines
+Figure 4.8: Population density of Gauteng Province, South Africa
 
 5.  Zoom in to see the new map in finer detail.
 
