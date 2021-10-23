@@ -177,7 +177,7 @@ Figure 6.6: New attribute table with new field and attributes
 
 #### **Content/Tutorial**
 
-At this point, you might notice that the attribute table stores both spatial and non-spatial data. In this tutorial you’ll discover ways of working with attribute table data. For example, Using expressions, select Clinics in Rajshahi with an emergency facility, all using data from the attribute table. 
+At this point, you might notice that the attribute table stores both spatial and non-spatial data. In this tutorial you’ll discover ways of working with attribute table data. For example, Using expressions, select Clinics in Rajshahi with an internet facility, all using data from the attribute table. 
 
 1. Add the following datasets of Bangladesh to the QGIS map canvas; 
 
