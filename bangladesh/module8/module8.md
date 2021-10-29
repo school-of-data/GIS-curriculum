@@ -254,7 +254,7 @@ When referring to geospatial data errors, there are 2 main terms that need to be
 
 **An error** encompasses both the imprecision of data and its inaccuracies. **Data quality** refers to the level of precision and accuracy of the datasets and it is most often documented in data quality reports. 
 
-Analysing and _cleaning _a geospatial dataset can be a very time consuming and cumbersome task, however - as shown in the example above - it is essential. In this section, we present a few GIS functionalities that allow a user to perform fast checks on vector data and draw a set of preliminary conclusions on its quality. 
+Analysing and _cleaning_ a geospatial dataset can be a very time consuming and cumbersome task, however - as shown in the example above - it is essential. In this section, we present a few GIS functionalities that allow a user to perform fast checks on vector data and draw a set of preliminary conclusions on its quality. 
 
 **Topology checks.**
 
