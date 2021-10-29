@@ -219,7 +219,7 @@ Interquartile Range (IQR): 470.0
 ```
 
 
-From these basic statistics, we find out that there are 16793 road segments in the loaded layer, where the longest is 41513.0m - about 41 km. We find out that the sum of roads in Rajshahi is almost 11k km (11432486 m). Given that the mean is greater than the median, it tells us that the 2nd half of the dataset contains longer road segments and that it outweighs the road segments in the 1st half. However, the median shows that most road segments have length around 76 m. 
+From these basic statistics, we find out that there are 16793 road segments in the loaded layer, where the longest is 41513.0m - about 41 km. We find out that the sum of roads in Rajshahi is almost 11k km (11432486 m). Given that the mean is greater than the median, it tells us that the 2nd half of the dataset contains longer road segments and that it outweighs the road segments in the 1st half. The 'Majority (most frequently occurring value)' value shows that most road segments have length around 48 m. 
 
 Running the basic statistics on the layer Landuse for the fclass category, we obtain the followings: 
 
@@ -252,7 +252,7 @@ When referring to geospatial data errors, there are 2 main terms that need to be
 
 **Precision** refers to the level of measurement and exactness of description in a geospatial dataset.
 
-**An error** encompasses both the imprecision of data and its inaccuracies. **Data quality **refers to the level of precision and accuracy of the datasets and it is most often documented in data quality reports. 
+**An error** encompasses both the imprecision of data and its inaccuracies. **Data quality** refers to the level of precision and accuracy of the datasets and it is most often documented in data quality reports. 
 
 Analysing and _cleaning _a geospatial dataset can be a very time consuming and cumbersome task, however - as shown in the example above - it is essential. In this section, we present a few GIS functionalities that allow a user to perform fast checks on vector data and draw a set of preliminary conclusions on its quality. 
 
