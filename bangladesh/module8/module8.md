@@ -86,7 +86,7 @@ The vector data model is used to represent areas, lines and points (Figure 8.3).
 
 ![vector data with attribute table](media/fig83.png "vector data with attribute table")
 
-Figure 8.1 - vector data with attribute table
+Figure 8.3 - Vector data with attribute table
 
 
 ### Metadata
