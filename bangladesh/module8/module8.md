@@ -692,7 +692,7 @@ Figure 8.35b - The green_spaces_gridded CSV attribute table
 
 Moving forward, we need to join the calculated spaces - green and built-up - to each 10X10 km cell grid. For that, select the grid10km vector layer in the TOC, open the properties window and go to **Joins**. This functionality allows you to join by a common attribute field, others. In our case, using the common grid_id value we will join, the sum of the built-up areas and green spaces fro the 2 csv files obtained in the previous stage.
 
-In the **Join** window, push on the green plus button below ![Add join layer button](media/add_join_btn.png "Add join layer button") and set the parameters like in figure 8.35, for green spaces.
+In the **Join** window, push on the green plus button below ![Add join layer button](media/add_join_btn.png "Add join layer button") and set the parameters like in figure 8.35c, for green spaces.
 
 
 ![Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit](media/fig835_c.png "Setting the parameters to join by common field grid_id/id the sums of green and built-up spaces for each grid cell - 10X10km unit")
@@ -701,7 +701,7 @@ Figure 8.35c - Setting the parameters to join by common field grid_id/id the sum
 
 Repeat for built-up spaces. 
 
-The results of the two joins are visible in the attribute table, as can be seen in figure 8.36_b. We have kept the grid_id in both joins, to be sure no mistakes occurred. We can visually quickly check to make sure the 3 attribute fields: id, builtupgrid_id and greengrid_id are exactly the same. 
+The results of the two joins are visible in the attribute table, as can be seen in figure 8.36a. We have kept the grid_id in both joins, to be sure no mistakes occurred. We can visually quickly check to make sure the 3 attribute fields: id, builtupgrid_id and greengrid_id are exactly the same. 
 
 
 ![Green and built-up CSV joined to Grid](media/fig836_a.png "Green and built-up CSV joined to Grid")
