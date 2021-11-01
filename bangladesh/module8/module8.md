@@ -859,7 +859,7 @@ Thus, the first step is creating a new vector layer - point type - with points r
 * 93 points
 * minimum 5 km.
 
-The result should look like in figure 8.42. 
+The result should look like in figure 8.43. 
 
 
 ![Creating random points inside a polygon layer](media/fig842.png "Creating random points inside a polygon layer")
