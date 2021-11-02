@@ -1,8 +1,7 @@
 # **Module 9 - Raster processing and analysis**
 
-**Author**: Codrina
+**Author**: Codrina Ilie
 
-**Editor**: Ben Hur
 
 ## Pedagogical Introduction
 
