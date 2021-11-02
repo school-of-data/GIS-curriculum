@@ -732,7 +732,7 @@ Figure 9.25 - clipped_SRTM_3106 representation
 
 In order to calculate the number of people based on the raster data HRSL that live up to 20 meters in Rajshahi division, we must see which pixels fall in each of those categories. To do that, we will use **Raster Calculator**. This is a functionality allowing the user to perform calculations on the basis of existing raster pixel values. The results are written to a new raster layer in a GDAL[^5]-supported format.
 
-There are several ways to open the raster calclulator in QGIS. You can do so from the Menu bar **Raster ‣ Raster Calculator** or by searching raster calculator on the Processing Toolbox or Locator bar. If we run the Raster Calculator under Raster analysis in the Processing Toolbox, the window in Figure 9.26b should appear. 
+There are several ways to open the raster calculator in QGIS. You can do so from the Menu bar **Raster ‣ Raster Calculator** or by searching raster calculator on the Processing Toolbox or Locator bar. If we run the Raster Calculator under Raster analysis in the Processing Toolbox, the window in Figure 9.26b should appear. 
 
 
 ![Opening the Raster calculator](media/fig926_a.png "Opening the Raster calculator")
