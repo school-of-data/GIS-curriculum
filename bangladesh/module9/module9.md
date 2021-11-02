@@ -764,7 +764,7 @@ Your result should look like in figure 9.28.
 
 ![Result of identify all pixel values that are below 20 meters using the Raster Calculator](media/fig928.png "Result of identify all pixel values that are below 20 meters using the Raster Calculator")
 
-Figure 9.28 - Result of identify all pixel values that are below 200 meters using the Raster Calculator
+Figure 9.28 - Result of identify all pixel values that are below 20 meters using the Raster Calculator
 
 The result will be named `Output`. You can rename this to `< 20`. As we can see in the Layers Panel, the raster layer we have obtained has only 2 values 0 and 1. That is because we have used a rational operation, a comparison, therefore every pixel that is below 20 meters received value = 1 and all above, value = 0. We can test this by using the `Value Tool`. Figure 9.29 presents only pixels of value 1, in other words the pixels we are interested in for our exercise. 
 
