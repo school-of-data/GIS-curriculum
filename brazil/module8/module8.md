@@ -1,6 +1,6 @@
 # **Módulo 8 - Processamento e análise vetorial**
 
-**Autores**: Codrina, Ben Hur
+**Autores**: Codrina Ilie
 
 ## Introdução pedagógica
 
