@@ -1,6 +1,6 @@
 # **Modul 9 - Rasterverarbeitung und -analyse**
 
-**Autor:in**: Codrina
+**Autor:in**: Codrina Ilie
 
 ## Pädagogische Einführung
 
