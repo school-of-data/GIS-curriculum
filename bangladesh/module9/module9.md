@@ -804,7 +804,7 @@ Next, we present the spatial distribution of the population that lives below 20m
 
 Figure 9.32 - Distribution of population that lives below 20m in Rajshahi division, represented at a 30m resolution. 
 
-If we are interested in the total number of people living below 20m in Rajshahi division and not the geographical distribution per 30 m spatial resolution, then we need to sum up all pixel values of the raster layer output. One way to obtain this number is to transform the output from raster to vector and them [....]
+If we are interested in the total number of people living below 20m in Rajshahi division and not the geographical distribution per 30 m spatial resolution, then we need to sum up all pixel values of the raster layer output.
 
 To do that go to **Raster ‣ Conversion ‣ Polygonize (Raster to Vector)** (see figure 9.33a). 
 
