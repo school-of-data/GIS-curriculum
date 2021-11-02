@@ -786,7 +786,7 @@ output@1" * "clipped_Reprojected_HRSL_BGD_Rajshahi_Population@1"
 
 ![Using raster calculator to identify population distribution classes based on altitude of up to 20m](media/fig930.png "Using raster calculator to identify population distribution classes based on altitude of up to 20m")
 
-Figure 9.30 - Using raster calculator to identify population distribution classes based on altitude of up to 200m
+Figure 9.30 - Using raster calculator to identify population distribution classes based on altitude of up to 20m
 
 As opposed to previous raster calculator use, we have used 2 different raster datasets to obtain the desired result, yet you will observe that even if there are pixels that fall outside the DMS_clipped200.tif in the result, their value is 0. Use Value Tool to check (see figure 9.31). 
 
