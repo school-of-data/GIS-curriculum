@@ -1,8 +1,6 @@
 # **Module 8 - Vector processing and analysis**
 
-**Author**: Codrina
-
-**Editor**: Ben Hur
+**Author**: Codrina Ilie
 
 ## Pedagogical Introduction
 
