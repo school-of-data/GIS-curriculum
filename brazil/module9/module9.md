@@ -1,7 +1,6 @@
 # **Módulo 9 - Processamento e análise raster**
 
-**Autor**: Codrina, Ben Hur
-
+**Autor**: Codrina Ilie
 ## Introdução pedagógica
 
 Este módulo está focado em um tipo específico de modelo de dados geográficos: geodados raster.
