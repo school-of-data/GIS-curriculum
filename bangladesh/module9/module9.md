@@ -490,7 +490,7 @@ Figure 9.13b - Autofill output names
 
 Figure 9.13c - Reprojected land cover rasters
 
-Next comes the digital surface model rasters. As one can observe, to cover our region of interest, we needed several _raster tiles_. When raster files become too large - imagine one single DSM file at 30 m for Europe which has over 10 million square kilometers - they are splitted into **tiles **because, in smaller areas, they are more easily manageable. 
+Next comes the digital surface model rasters. As one can observe, to cover our region of interest, we needed several _raster tiles_. When raster files become too large - imagine one single DSM file at 30 m for Europe which has over 10 million square kilometers - they are splitted into **tiles** because, in smaller areas, they are more easily manageable. 
 
 Although we could use the wrap tool in batch mode to reproject all the DSM raster files, at a visual inspection, one can also notice that the delimitations between each tile is fairly visible, making it, at least, visually unattractive. What would be useful is to have a complete overview of the terrain, as a continuous phenomena - as it is, in fact - without artificial disruptions. To obtain that, we will use the GDAL merge tool, available in the Processing toolbar to merge all DSM rasters together. To open it, go to **Processing ‣ Toolbox** and in the search bar write **Merge** (see figure 9.14). Alternatively, you can search for Merge in the Locator Bar.
 
