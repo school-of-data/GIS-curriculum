@@ -1,6 +1,6 @@
 # **Module 9 - Xử lý và phân tích dữ liệ Raster**
 
-**Tác giả**: Codrina
+**Tác giả**: Codrina Ilie
 
 **Biên dịch và bản địa hoá**: Quách Đồng Thắng
 
