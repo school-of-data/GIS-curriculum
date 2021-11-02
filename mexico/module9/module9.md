@@ -1,6 +1,6 @@
 # Módulo 9 - Procesamiento y análisis de ráster
 
-Autor: Codrina
+Autor: Codrina Ilie
 
 
 ## Introducción pedagógica
