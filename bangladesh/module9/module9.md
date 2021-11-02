@@ -677,7 +677,7 @@ The third tab allows the user to customize what the `Value Tool` displays: what 
 *   No. 
 
 
-### Phase 2: Working Intro to working with raster data
+### Phase 2: Intro to working with raster data
 
 Now that we’ve learned how to extract basic information on the loaded raster datasets, we will continue with a more in-depth raster data processing in order to obtain new derived rasters and, in consequence, more information.
 
