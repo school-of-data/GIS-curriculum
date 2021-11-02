@@ -1,6 +1,6 @@
 # Módulo 8 - Procesamiento y análisis de vectores
 
-Autor: Codrina
+Autor: Codrina Ilie
 
 ## Introducción pedagógica
 
