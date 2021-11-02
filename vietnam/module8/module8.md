@@ -1,6 +1,6 @@
 # **Module 8 - Xử lý và phân tích dữ liệu Vector**
 
-**Tác giả**: Codrina
+**Tác giả**: Codrina Ilie
 
 **Biên dịch và bản địa hoá**: Quách Đồng Thắng
 
