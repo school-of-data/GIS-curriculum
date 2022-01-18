@@ -1,7 +1,7 @@
 ## Ethiopia (Amharic)
 
-### [Module 0: Gentle Introduction to GIS concepts](module0/module0.html)
-### [Module 1: Introduction to QGIS](module1/module1.html)
+### [ሞጁል 0 - ለ GIS ጽንሰ ሀሳቦች ቀላል መግቢያ](module0/module0.html)
+### [ሞጁል 1. የQGIS መግቢያ](module1/module1.html)
 ### [Module 2: Layers in QGIS](module2/module2.html)
 ### [Module 3: Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)](module3/module3.html)
 ### [Module 4: Layer Styling and Symbology](module4/module4.html)

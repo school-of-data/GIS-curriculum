@@ -1,415 +1,407 @@
 
-# Module 1 - Introduction to QGIS
+# ሞጁል 1. የQGIS መግቢያ
 
-**Author**: Ben Hur
+**ፀሃፊ፡-**: ቤን ሁር
 
-## Pedagogical Introduction
+## ትምህርታዊ መግቢያ
 
-This module serves as an introduction to QGIS. At the end of this module, learners should be familiar with:
+ይህ ሞጁል ለQGIS እንደመግቢያ በመሆን ያገለግላል። በዚህ ሞጁል መጨረሻ ላይ ተማሪዎች የሚከተሉትን ያውቃሉ-
 
-*   what QGIS is
-*   QGIS interface
-*   QGIS settings
-*   QGIS plugins
+*   QGIS ምንድን ነው
+*   የQGIS በይነ ገጽ
+*   የQGIS ቅንብሮች
+*   የQGIS ተሰኪዎች
 
-They should also learn:
+እንዲሁም የሚከተሉትን መማር መቻል አለባቸው፤
 
-*   how to install and open QGIS
-*   the different parts and features of the QGIS interface
-*   how to edit the interface layout and theme
-*   the different QGIS settings, how to change them, and how they affect QGIS
-*   what user profiles are and how use them
-*   what plugins are and how to install them
+*   QGIS ን እንዴት መጫን እና መክፈት ይቻላል
+*   የQGIS በይነ-ገጽ ጭብጥ የተለያዩ ክፍሎች እና ገጽታዎች
+*   የበይነ-ገጹን አቀራረብ እና ጭብጥ እንዴት ማስተካከል ይቻላል
+*   የተለያዩ የQGIS ቅንጅቶች ፡እንዴት መለወጥ ይቸላል እንዲሁም እንዴት QGIS ላይ ተጽዕኖ ያመጣሉ
+*   የተጠቃሚ መገለጫዎች ምንድን ናቸው እንዴትስ እንጠቀምባቸዋለን
+*   ተሰኪዎች ምንድን ናቸው እንዴትስ መጫን እንችላለን
 
-The module will also discuss some nuances of QGIS and what makes it unique or different from other GIS such as QGIS file formats.
-
-
-## Required tools and resources
-
-The required tools and resources for this module are:
-
-*   working computer
-*   internet connection
-*   QGIS 3.16 installed in the computer ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
+ይህ ሞጁል ጥቂት የQGIS ልዩነቶች ምን እንደሆኑ እና ከሌሎቹ የ GIS ለምሣሌ ከQGIS ማህደር አይነቶች የተለየ የሚያደርገው እና የራሱ የሆነው ገጽታ ምን እንደሆነ ለማብራራት ይሞክራል
 
 
-## Prerequisites
+## አስፈላጊ መሣሪያዎች እና መርጃዎች 
 
-*   basic knowledge of operating a computer
+ለዚህ ሞጁል የሚያስፈልጉ መሳሪያዎች እና መርጃዎች:
 
-## Additional resources
+*   የሚሰራ ኮምፒውተር
+*   የበይነመረብ ግንኙነት
+*   በኮምፒተር ውስጥ የተጫነ QGIS 3.16 ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
 
-* QGIS User Guide - [https://docs.qgis.org/3.16/en/docs/user_manual/](https://docs.qgis.org/3.16/en/docs/user_manual/)
-* QGIS Training Manual - [https://docs.qgis.org/3.16/en/docs/training_manual/index.html](https://docs.qgis.org/3.16/en/docs/training_manual/index.html)
+
+## ቅድመ ሁኔታዎች 
+
+*   ኮምፒውተርን የመጠቀም መሰረታዊ እውቀት
+
+## ተጨማሪ መርጃዎች
+
+* QGIS የተጠቃሚ መመሪያ - [https://docs.qgis.org/3.16/en/docs/user_manual/](https://docs.qgis.org/3.16/en/docs/user_manual/)
+* QGIS የስልጠና መመሪያ - [https://docs.qgis.org/3.16/en/docs/training_manual/index.html](https://docs.qgis.org/3.16/en/docs/training_manual/index.html)
 
 
-## Thematic introduction
+## የጭብጥ መግቢያ
 
-The map below ([https://flic.kr/p/2jFfGJP](https://flic.kr/p/2jFfGJP)) shows parts of the City of Bogota in Columbia made in the style of Vincent van Gogh’s “Starry Starry Night” by Andrés Felipe Lancheros Sánchez.
+ከዚህ በታች ያለው ካርታ ([https://flic.kr/p/2jFfGJP](https://flic.kr/p/2jFfGJP)) በቪንሰንት ቫንጎህ የ “Starry Starry Night” ቅጥ በአንድሬስ ፌሊፔ ላንቼሮስ ሳንቼዝ የተሰራውን በኮሎምቢያ የምትገኘውን የቦጎታን ከተማ የተወሰነ ክፍል ያሣያል።
 
 ![Map of Bogota, Columbia in the style of Starry Starry Night](media/sample-1.jpg "Map of Bogota, Columbia in the style of Starry Starry Night")
 
-
-This next map ([https://flic.kr/p/2jAsphv](https://flic.kr/p/2jAsphv)) shows storm trace data from NOAA between 1851 to 2020 made by Fajr Alim.
+ይህ የሚቀጥለው ካርታ ([https://flic.kr/p/2jAsphv](https://flic.kr/p/2jAsphv)) በ ፋጅር አሊም የተሰራውን ከ1851 እስከ 2020 ከNOAA የተገኘውን የዓውሎነፋስ ዱካን ያመለክታል።
 
 ![Storm trace data between 1851 to 2020](media/sample-2.jpg "Storm trace data between 1851 to 2020")
 
-
-This next one ([https://flic.kr/p/FA9TiR](https://flic.kr/p/FA9TiR)) is a map of Kerguelen Island by Heinrich Lingnau Schneider.
+ይህ የሚቀጥለው ካርታ  ([https://flic.kr/p/FA9TiR](https://flic.kr/p/FA9TiR)) በሄንሪክ ሊናኡ ሺናይደር የተሰራ የኬርጉሊን ደሴት ካርታ ነው።
 
 ![Map of Kerguelen Island](media/sample-3.jpg "Map of Kerguelen Island")
 
-
-This last one ([https://flic.kr/p/2kqVzsg](https://flic.kr/p/2kqVzsg)) is of field goal attempts and points scored per attempt during the UAAP Men’s Basketball Tournament Season 81 in the Philippines by Ben Hur Pintor.
+የመጨረሻው ([https://flic.kr/p/2kqVzsg](https://flic.kr/p/2kqVzsg)) በቤን ሁር ፒንቶር ፊሊፒንስ ውስጥ በ UAAP የወንዶች ቅርጫት ኳስ ውድድር ክፍል 81 ላይ ያለው የሜዳ ግብ ሙከራዎች እና በአንድ ሙከራ የሚቆጠሩ ነጥቦች ነው።
 
 ![Field goal attempts and points scored in UAAP Season 81](media/sample-4.jpg "Field goal attempts and points scored in UAAP Season 81")
 
 
-What do all these maps have in common? For one, they were all made using QGIS.
+እነዚህ ካርታዎች በሙሉ የጋራ የሆነ ምን አላቸው ? እደኛ ሁሉም የተሰሩት QGISን በመጠቀም ነው።
 
 
-## Breakdown of the concepts
+## የጽንሰ ሃሳቦቹ ማብራሪያ
 
-The maps shown above were all created in QGIS ([https://qgis.org/en/site/](https://qgis.org/en/site/)), a free and open source Geographic Information System (GIS). QGIS can be used with all kinds of spatial data (such as basketball data in the last example) and not just with earth-related geospatial data. 
+ከላይ የተመለከቱት ካርታዎች በሙሉ ([https://qgis.org/en/site/](https://qgis.org/en/site/)) ነጻ እና ክፍት ምንጭ የጂኦግራፊያዊ መረጃ ስርአት በሆነው በQGIS የተፈጠሩ ናቸው። QGISን ለሁሉም አይነት የቦታ ውሂብ (በመጨረሻው ምሳሌ እንዳለው የቅርጫት ኳስ ውሂብ አይነት) መጠቀም ይቻላል እና ከመሬት ጋር ለተያያዘ ጂኦስፓሻል ውሂብ ብቻ አይደለም።
 
-People are able to create wonderful and amazing maps such as the examples above because QGIS is free, open source, and has powerful data management, analysis, and presentation capabilities.
-
-
-## Main content
-
-### Phase 1 title: Introduction to QGIS and the QGIS Interface
-
-#### **What is QGIS**
-
-**QGIS**, known as Quantum GIS prior to its 2.X release, is a mature, cross-platform, free and open source Geospatial Information System (GIS).
-
-It is an enterprise ready GIS that has features for collecting, storing, analysing, presenting, and managing spatial & non-spatial data. It also integrates well with other existing geospatial technologies and serves as an integral part of any FOSS4G (Free and Open Source Software for Geospatial) stack.
-
-Being cross-platform, QGIS runs on GNU/Linux, macOS, Windows, and even Android.
+ሰዎች ከላይ እንዳሉት ምሳሌዎች ድንቅ እና አስገራሚ ካርታዎችን መስራት ይችላሉ ምክንያቱም QGIS ነጻ፣ ክፍት ምንጭ እና ሀይለኛ የውሂብ ቁጥጥር፣ ትንተና እና ገለጻ ችሎታዎች ያለው ነው።
 
 
-#### **Release cycle and versions**
+## ዋና ይዘት 
 
-QGIS releases and development follow a time based schedule/roadmap ([https://www.qgis.org/en/site/getinvolved/development/roadmap.html](https://www.qgis.org/en/site/getinvolved/development/roadmap.html)).
+### ደረጃ 1 ርዕስ: የQGIS እና የQGIS በይነ-ገጽ መግቢያ 
 
-A QGIS release is specified by three numbers (X.Y.Z). For example, QGIS 3.16.4.
+#### QGIS ምንድን ነው
 
-*   X refers to the main version. In this case, QGIS 3.
-*   Y refers to the release version. In this case release version 16. Release versions are always even numbers since odd numbers are reserved for development versions.
-*   Z refers to the Point Release (PR) of that version. For 3.16.4, that means it is the 4th point release of the 3.16 version.
+**QGIS**, 2.X ከመውጣቱ በፊት Quantum GIS ተብሎ የሚታወቀው በሳል፣ ለብዙ ነገሮች መጠቀም የሚቻል መድረክ፣ ነጻ እና ክፍት ምንጭ የጂኦስፓሻል መረጃ ስርአት (GIS) ነው።
 
-There are three main branches of QGIS that users can install. These are the **Long Term Release (LTR)** branch, **Latest Release (LR)** branch, and the **Development (Nightly)** branch.
+ለድርጅት ዝግጁ የሆነ GIS ሲሆን ይህ የቦታ እና የቦታ ያልሆነ ውሂብን የመሰብሰቢያ፣ የማስቀመጫ፣ የመተንተኛ፣ የማቅረቢያ እና የመቆጣጠሪያ ባህርያት አሉት። ከሌሎች የጂኦስፓሻል ቴክኖሎጂዎች ጋር በጥሩ ሁኔታ ይስማማል እንዲሁም ለማንኛውም የ FOSS4G (ለጂኦስፓሻል ነጻ እና ክፍት ምንጭ ሶፍትዌር) ክምችት ዋና ክፍል ሆኖ ያገለግላል።
 
-*   **Long Term Release (LTR)** is named that way because it is maintained and receives bug fixes until the next LTR is released. Currently, that means one (1) year. As of February 2021, the current LTR is 3.16.4. This is scheduled to be replaced by QGIS 3.22.4 in February 2022.
-*   **Latest Release (LR)** refers to the release version of QGIS that contains the most recent or latest features. A new LR is released every four (4) months. For example, a new 3.18 LR was released this February 2021. The next LR (3.20) will be released 4 months from now which is in June 2021. Currently, every 3rd LR becomes the next LTR. For example, the LTR this February 2021 is the 3.16 release. The 3rd LR from 3.16 is 3.22  therefore the next LTR will be based on the 3.22 release version. 
-*   **Development/Nightly** is based on the most recent version of the QGIS source code but is useful if you want to test, debug, or help in the development of QGIS.f the QGIS source code but is useful if you want to test, debug, or help in the development of QGIS.
+ለብዙ ነገሮች መጠቀም የሚቻል መድረክ በመሆኑ፣ QGIS በ GNU/Linux፣ macOS፣ Windows፣ እና Android ላይ ራሱ ይሰራል።
 
-So which version should you use? It depends. If you need a version that is maintained for a longer time and you don’t necessarily need new features as they are released then the LTR version might be for you. If you need to have the most recent features and don’t mind doing an upgrade every few months, the LR version just might be for you. Sometimes it’s also good to take a look at the development or nightly versions especially if you are curious or excited about the upcoming features in QGIS.
+#### የፈጠራ ኡደት እና ስሪቶች
 
-For more information, visit: [https://bnhr.xyz/2020/10/26/about-qgis-versions-release-cycle-english.html](https://bnhr.xyz/2020/10/26/about-qgis-versions-release-cycle-english.html)
+የQGIS ፈጠራ እና አዲስ ስሪት የጊዜ እቅድን/መመሪያን ይከተላል ([https://www.qgis.org/en/site/getinvolved/development/roadmap.html](https://www.qgis.org/en/site/getinvolved/development/roadmap.html)).
+
+የQGIS አዲስ ስሪት በሶስት ቁጥሮች ይገለጻል። ለምሣሌ፡ QGIS 3.16.4
+
+*   X ዋንኛውን ስሪት ያመለክታል በዚህ መሰረት፡QGIS 3
+*   Yየተለቀቀውን ስሪት ያመለክታል በዚህ መሰረት ስሪት 16 ተለቋል ጎዶሎ ቁጥሮች በአዲስ ስራ ስሪቶች ስለተያዙ የፈጠራ ስሪቶች ሁልጊዜ ሙሉ ቁጥሮች ናቸው።
+*   Z የስሪቱ የፈጠራ ነጥብን (PR) ያሳያል። ለ 3.16.4፣ ይህ ማለት የ 3.16 ስሪት 4ኛ የፈጠራ ነጥብ ነው ማለት ነው።
+
+ተጠቃሚዎች መጫን የሚችሏቸው የQGIS ሶስት ዋና ቅርንጫፎች አሉ። እነዚህ **የረጅም ጊዜ ፈጠራ (LTR)** ቅርንጫፍ፣ **የቅርብ ጊዜ ፈጠራ (LR)** ቅርንጫፍ እና **የስሪት (የምሽት)** ቅርንጫፍ ናቸው።
+
+*   የሚቀጥለው LTR እስኪለቀቅ ድረስ የተስተካከለ እና የሳንካ ጥገናዎችን ስለሚቀበል **የረጅም ጊዜ ፈጠራ (LTR)** በዚያ መንገድ ተሰየመ። አሁን ባለው ሁኔታ አንድ(1) ዓመት ማለት ነው። ከፌብሯሪ 2021 ጀምሮ፣ አሁን ያለው LTR 3.16.4.ነው። ይህ በፌብሯሪ 2022 በQGIS 3.22.4 እንዲተካ መርሃግብር ተይዞለታል።
+*   **የቅርብ ጊዜ ልቀት (LR)** በጣም የቅርብ ጊዜ ወይም የቅርብ ጊዜ ባህሪያትን የያዘውን የQGIS ልቀትን ስሪት ያመለክታል። አዲስ LR በየአራት (4) ወሩ ይወጣል። ለምሳሌ፦ አዲስ 3.18 LR በዚህ ፌብሯሪ 2021 ተለቋል። ቀጣዩ LR (3.20) ከጁን 2021 ጀምሮ ከ4 ወራት በኋላ ይለቀቃል። በአሁኑ ጊዜ እያንዳንዱ 3ኛ LR ቀጣዩ LTR ይሆናል። ለምሳሌ፦ LTR በዚህ ፌብሯሪ 2021 የ3.16 ፈጠራ ነው። 3ኛው LR ከ3.16 3.22 ነው ስለዚህ የሚቀጥለው LTR በ3.22 የፈጠራ ስሪት ላይ የተመሠረተ ይሆናል።
+*   **ስሪት/ማታ ማታ** በጣም የቅርብ ጊዜውን የQGIS ምንጭ ኮድ መሠረት ያደረገ ነው ነገር ግን የQGIS ምንጭ ኮድን ለመፈተሽ፣ ለማረም ወይም ለመርዳት ከፈለጉ ጠቃሚ ነው፤ ግን መሞከር ከፈለጉ፣ ማረም ፣ ወይም የ QGIS አሰራር ላይ ያግዙ።
+
+ስለዚህ የትኛውን ስሪት መጠቀም አለብዎት? እሱ ይወሰናል። ረዘም ላለ ጊዜ የሚቆይ ስሪት ከፈለጉ እና እንደ ተለቀቁ አዲስ ባህሪያትን የግድ የማይፈልጉ ከሆነ የLTR ስሪት ለእርስዎ ሊሆን ይችላል። በጣም የቅርብ ጊዜዎቹ ባህሪዎች እንዲኖሩዎት ከፈለጉ እና በየጥቂት ወራቶች ማሻሻልን ለማከናወን ግድ የሌሎት ከሆነ፣ የLR ስሪት ለእርስዎ አሪፍ ሊሆን ይችላል። አንዳንድ ጊዜ የስራ ወይም የማታ ስሪቶችን ማየትም ጥሩ ነው፤ በተለይም በQGIS ውስጥ ስለ መጪዎቹ ባህሪዎች ጉጉት ካለዎት።
+
+ለበለጠ መረጃ፦ [https://bnhr.xyz/2020/10/26/about-qgis-versions-release-cycle-english.html](https://bnhr.xyz/2020/10/26/about-qgis-versions-release-cycle-english.html) ን ይጎብኙ
 
 
-#### **Examples of QGIS maps in the wild**
+#### በዱር ውስጥ የQGIS ካርታዎች ምሳሌዎች
 
 
 ![QGIS Map Showcase](media/qgis-map-showcase.png "QGIS Map Showcase")
 
-Figure 1.1. QGIS Map Showcase
+ምስል 1.1. :- የQGIS ካርታ ማሳያ
 
-For more maps created with QGIS, visit: [https://www.flickr.com/groups/2244553@N22/pool/with/50355460063/](https://www.flickr.com/groups/2244553@N22/pool/with/50355460063/)
-
-
-#### **Installing QGIS**
-
-QGIS is cross-platform and works on Linux, Windows, and macOS. Being open source, you can build and install QGIS from its source code available at [https://github.com/qgis/QGIS/](https://github.com/qgis/QGIS/).
-
-Installers and installation instructions are also available at [https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html) or [https://qgis.org/en/site/forusers/alldownloads.html](https://qgis.org/en/site/forusers/alldownloads.html).
-
-For **Linux (or GNU/Linux)**, QGIS is usually available from your distribution’s package manager. For Debian/Ubuntu users, QGIS has repositories for the LR, LTR, and Development branches as well as versions of QGIS with dependencies from the ubuntugis-unstable PPA. QGIS is also available as a Flatpak package or in Conda.
-
-For **Windows**, users can choose between the OSGeo4W Network Installer or the Standalone installers. There’s one Standalone installer for the LTR and LR version.
-
-The Standalone installers are the easiest to install and are recommended for beginners. Multiple versions of QGIS can be installed in your computer at once. This means that you can have both the QGIS 3.16 and 3.18 versions installed.
-
-The OSGeo4W Network Installer is a bit more advanced and complex than the standalone installers but it also gives you the ability to update and upgrade your QGIS version in-place which means that you won’t need to uninstall an older version if you want to install a newer one.
-
-In some cases, you would need administrator rights to install QGIS so if you are installing it on a computer where your user does not have administrator rights, you might need to ask your IT or office administrator to install QGIS for you.
-
-The installation in Windows also comes with QGIS with GRASS (another Free and Open Source GIS).
-
-Note that QGIS is [slowly removing 32-bit support for Windows](https://blog.qgis.org/2020/10/15/phasing-out-32-bit-support-in-qgis/) so it is best to install QGIS on a computer that runs a 64-bit operating system.
-
-For **macOS**, there are official All-in-one signed installers for macOS High Sierra (10.13) and newer. QGIS is not yet notarized as required by macOS Catalina (10.15) security rules. On first launch, please right-click on the QGIS app icon, hold down the Option key, then choose Open.
+በQGIS ለተፈጠሩ ተጨማሪ ካርታዎች፦ [https://www.flickr.com/groups/2244553@N22/pool/with/50355460063/](https://www.flickr.com/groups/2244553@N22/pool/with/50355460063/) ን ይጎብኙ
 
 
-#### **Parts of the QGIS Interface**
+#### QGISን መጫን 
 
-After installing QGIS, you can run or open it as you would any program in your computer. Upon opening QGIS, you will be greeted with the default User Interface (UI) which would look something like below.
+QGIS ብዙ የሚያስተናግድ መድረክ ሲሆን በLinux፣ Windows፣ እና macOS ላይ ይሠራል። ክፍት ምንጭ መሆንዎ QGISን በ [https://github.com/qgis/QGIS/](https://github.com/qgis/QGIS/) ላይ ከሚገኘው ምንጭ ኮድ መስራትና እና መጫን ይችላሉ።
+
+ጫኚዎች እና የመጫኛ መመሪያዎች እንዲሁ በ [https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html) or [https://qgis.org/en/site/forusers/alldownloads.html](https://qgis.org/en/site/forusers/alldownloads.html) ላይ ይገኛሉ።
+
+**ለ Linux (ወይም GNU/Linux)፣** QGIS ብዙውን ጊዜ ከእርስዎ የስርጭት ጥቅል ሥራ አስኪያጅ ጋር ይገኛል። ለ Debian/Ubuntu ተጠቃሚዎች፣ QGIS ለLR፣ ለLTR እና ለስራ ቅርንጫፎች ማከማቻዎች እንዲሁም ከ ubuntugis-nonstable PPA የመጡ ጥገኛዎች ያላቸው የQGIS ስሪቶች አሉት። QGIS እንዲሁ እንደ Flatpak package ወይም በ Conda ውስጥ እንዳለው ይገኛል።
+
+**ለ Windows፣** ተጠቃሚዎች በOSGeo4W አውታረ መረብ ጫኚ ወይም በገለልተኛ ጫኚዎች መካከል መምረጥ ይችላሉ። ለ LTR እና ለ LR ስሪት አንድ ራሱን የቻለ ጫኝ አለ።
+
+ገለልተኛ ጫኚዎችን ለመጫን በጣም ቀላሉ እና ለጀማሪዎች የሚመከሩ ናቸው። በርካታ የQGIS ስሪቶች በአንድ ጊዜ በኮምፒተርዎ ውስጥ ሊጫኑ ይችላሉ። ይህ ማለት ሁለቱም የQGIS 3.16 እና 3.18 ስሪቶች ሊጫኑ ይችላሉ ማለት ነው።
+
+የ OSGeo4W አውታረ መረብ ጫኝ ከተለየ ጫኚዎች ይልቅ ትንሽ የላቀ እና ውስብስብ ነው ነገር ግን የQGIS ስሪትዎን በቦታው ውስጥ የማዘመን እና የማሻሻል ችሎታ ይሰጥዎታል ይህም ማለት አንደ አዲስ መጫን ከፈለጉ የቆየውን ስሪት ማጥፋት አያስፈልግዎትም ማለት ነው ።
+
+በአንዳንድ ሁኔታዎች QGIS ን ለመጫን የአስተዳዳሪ መብቶች ያስፈልጉዎታል ስለዚህ ተጠቃሚው የአስተዳዳሪ መብቶች በማይኖርበት ኮምፒተር ላይ የሚጭኑ ከሆነ የ IT ወይም የቢሮ አስተዳዳሪዎ QGIS ን እንዲጭን መጠየቅ ያስፈልግዎታል።
+
+በ Windows ውስጥ መጫኑም ከQGIS ጋር ከGRASS (ሌላ ነፃ እና ክፍት ምንጭ GIS) ጋር አብሮት ይመጣል።
+
+ልብ ይበሉ QGIS ለ [Windows32 ቢት ድጋፍን በቀስታ ያስወግዳል](https://blog.qgis.org/2020/10/15/phasing-out-32-bit-support-in-qgis/) ስለሆነም QGIS ን 64 ቢት ኦፐሬቲንግ ሲስተም በሚሰራ ኮምፒተር ላይ መጫን የተሻለ ነው።
+
+**ለmacOS፣** ለmacOS High Sierra (10.13) እና ለአዳዲስ ይፋ የተደረጉ ሁሉም-በአንድ-የተፈረሙ ጫኚዎች አሉ። QGIS በmacOS ካታሊና (10.15) የደህንነት ህጎች እንደአስፈላጊነቱ ገና አልተለወጠም። በመጀመሪያ ጅምር ላይ እባክዎ በQGIS መተግበሪያ አዶ ላይ በቀኝ ጠቅ ያድርጉ፣ የአማራጭ ቁልፍን ይያዙ፣ ከዚያ ክፈት የሚለውን ይምረጡ።
+
+#### የQGIS በይነገጽ ክፍሎች
+
+QGISን ከጫኑ በኋላ በኮምፒተርዎ ውስጥ እንደማንኛውም ፕሮግራም ማሄድ ወይም መክፈት ይችላሉ። QGIS ን ሲከፍቱ ከዚህ በታች የሆነ ነገር ከሚመስለው ነባሪው የተጠቃሚ በይነገጽ (UI) ጋር ሰላምታ ይሰጡዎታል።
 
 
 ![The QGIS interface](media/qgis-interface.png "The QGIS interface")
 
-Figure 1.2. The QGIS Interface on a fresh install
+ምስል 1.2.:- በአዲስ ጭነት ላይ የ“QGIS” በይነገጽ
 
-There are six main parts of the QGIS User Interface -- the Menu Bar, Map Canvas, Toolbars, Panels, Status Bar, and the Locator. 
+የQGIS ተጠቃሚ በይነ ገጽ ስድስት ዋና ክፍሎች አሉ -- የማውጫ አሞሌ፣ የካርታ ሸራ፣ የእሳሪያ አሞሌዎች፣ ፓናሎች፣ የሁኔታ ሞሌ እና ቦታ አመልካች።
 
-At the center of the UI is a Map Canvas. Panels and Toolbars can be positioned around this canvas. Panels can also be docked together to create a multi-tab Panel. There are also other parts of the UI such as the Python Interface, plugin windows, etc.
+የ UI ማእከል ላይ የካርታው ሸራ አለ። ፓነሎች እና የመሳሪያ አሞሌዎች በእነዚህ ሸራዎች ዙሪያ ሊቀመጡ ይችላሉ። ፓነሎች ባለብዙ ትር ፓነል ለመፍጠር በአንድ ላይ ሊሆኑ ይችላሉ። ፓይተን በይነ ገጽ፣ ተሰኪ መስኮቶች፣ ወዘተ የመሳሰሉ ሌሎች የ UI ክፍሎች አሉ።
 
-**Menu Bar** - the Menu bar is a simple hierarchical menu that provides access to QGIS functions and commands. It is usually located at the top of the UI.
+**የማውጫ አሞሌ** - የማውጫ አሞሌ ቀላል ቅደም ተከተል ያለው ሲሆን ለQGIS ስራዎች እና ትእዛዞች ተደራሽነት ይሰጣል። ብዙ ጊዜ UI ላይ ይገኛል።
 
-**Map Canvas** - the Map Canvas is where layers loaded in QGIS are shown. This is also where filters, selects, and symbologies created by the user are reflected. More than one map canvas can be present at any time. A user can zoom, pan, and even rotate the map canvas. A map canvas can also show 3D data.
+**የካርታ ሸራ** - የካርታ ሸራ QGIS ውስጥ የተጫኑት ንብርብሮች የሚታዩበት ነው። በተጠቃሚው የተፈጠሩ ማጣሪያዎች፣ መምረጫዎች፣ እና ምልክቶች የሚንጸባረቁበት ነው። በማንኛውም ሰአት ከአንድ በላይ የካርታ ሸራ ሊኖር ይችላል፣ ተጠቃሚው የካርታ ሸራውን ማቅረብ፣ ማንቀሳቀስ፣ ማሽከርከር ሁሉ ይችላል። የካራታ ሸራ የ 3D ውሂብ ሁሉ ሊያሳይ ይችላል።
 
-**Toolbars** - toolbars show click-and-run buttons. They allow easy access to QGIS commands, features, plugins, etc. They can be moved and docked around the Map Canvas. The list of toolbars can be found, activated, and deactivated from the Menu bar under **View ‣ Toolbars**. Examples of toolbars are the Attributes Toolbar and the Digitizing Toolbar.
+**የመሳሪያ አሞሌዎች** - የመሳሪያ አሞሌዎች የመጫን-እና-ማስጀመሪያ ቁልፎችን ያሳያሉ። ለ QGIS ትእዛዞች፣ ባህሪያት፣ ተሰኪዎች፣ ወዘተ ቀላል ተደራሽነት እንዲኖር ያስችላሉ። በካርታ ሸራው ዙሪያ ሊንቀሳቀሱ እና ሊቀመጡ ይችላሉ። የመሳሪያ አሞሌዎች ዝርዝር በመሳሪያ **አሞሌዎች‣ እይታ** ስር ከማውጫ አሞሌ ሊገኙ፣ ስራ ሊጀምሩ እና ሊጠፉ ይችላሉ። የመሳሪያ አሞሌዎች ምሳሌዎች Attributes Toolbar እና Digitizing Toolbar ናቸው።
 
-**Panels** - panels are similar to toolbars but instead of buttons, they provide an interface to more complex functions and features. The Layer Panel and the Browser Panel are examples. Similar to toolbars, they can be moved and docked around the Map Canvas. The list of panels can be found, activated, and deactivated from the Menu bar under **View ‣ Panels**. 
+**ፓነሎች** - ፓነሎች ከመሳሪያ አሞሌዎች ጋር ተመሳሳይ ናቸው ነገር ግን በቁልፎች ፋንታ፣ ለውስብስብ ስራዎች እና ባህሪያት በይነ ገጽ ያቀርባሉ። የንብርብር ፓነል እና አሳሽ ፓነል ምሳሌዎች ናቸው። ከመሳሪያ አሞሌዎች ጋር በተመሳሳይ፣ በካርታ ሸራዎች ዙሪያ ሊንቀሳቀሱ እና ሊቀመጡ ይችላሉ። የፓነሎች ዝርዝር **በፓነሎች‣ እይታ** ስር ከማውጫ አሞሌ ሊገኙ፣ ስራ ሊጀምሩ እና ሊጠፉ ይችላሉ።
 
-**Status Bar** - the Status Bar is commonly found at the bottom of the UI and shows relevant information such as the CRS, scale, notifications, etc.
+**የሁኔታ አሞሌ** - የሁኔታ አሞሌ ብዙ ጊዜ ከUI በታች የሚገኝ ሲሆን CRS፣ ልኬት፣ ማሳወቂያ፣ ወዘተ… የመሳሰሉ ጠቃሚ መረጃዎችን ያሳያል።
 
-**Locator Bar** - the Locator bar is found on the bottom left corner of the QGIS interface. It allows the user to easily access layers, fields, processing algorithms, and other things in QGIS. This is one of the most powerful features of QGIS.
-
+**አመልካች አሞሌ** - አመልካች አሞሌ በQGIS በይነ ገጽ በታችኛው የግራ ጥግ ላይ ይገኛል። ተጠቃሚዎች በቀላሉ ንብርብሮችን፣ መስኮችን፣ ስልተ ቀመሮች፣ እና QGIS ውስጥ ያሉ ሌሎች ነገሮችን እንድናገኝ ያስችላል። ይህ ከQGIS በጣም ሀይለኛ ባህሪያት መካከል አንዱ ነው።
 
 ![Parts of the QGIS Interface](media/qgis-interface-parts.png "Parts of the QGIS Interface")
 
-Figure 1.3. Parts of the QGIS Interface
+ምስል 1.3.፡- የQGIS በይነገጽ ክፍሎች
 
-One of the beauties of QGIS is the customizability that it provides its users. This customizability starts with the User Interface. By editing some settings and moving some parts of the interface, you can have a QGIS that looks like the one below:
-
+የQGIS አንዱ ደስ የሚለው ነገር ለተጠቃሚዎቹ የሚሰጠው መስተካከል መቻሉ ነው። ይህ መስተካከል መቻል ከተጠቃሚ በይነ ገጽ ይጀምራል። የተወሰኑ ቅንብሮችን በማስተካከል እና የተወሰኑ የበይነ ገጽ ክፍሎችን በማንቀሳቀስ፣ ከታች ያለውን የሚመስል QGIS ሊኖርዎት ይችላል፦
 
 ![QGIS interface with some customizations](media/qgis-interface-custom.png "QGIS interface with some customizations")
 
-Figure 1.4. The QGIS Interface with some customizations
+ምስል 1.4. የተወሰነ ማስተካከያ የተደረገለት የQGIS በይነ ገጽ
 
 
-#### **Tutorial/Exercise 1: Changing the look and layout of the QGIS Interface
+#### ቱቶሪያል/መልመጃ 1: የQGIS በይነ ገጽን እይታ እና አቀራረብ መቀየር
 
-1. Open **QGIS**
-2. Click the **View** menu
+1. QGISን ክፈት
+2. ይመልከቱ የሚለውን ማውጫ ተጫን
 
 ![Open QGIS and click on View menu](media/ex01-01.png "Open QGIS and click on View menu")
 
-3. Observe the **Panels** menu
+3. ይመልከቱ የሚለውን ማውጫ ተጫን
 
 ![Observe the Panels menu](media/ex01-02.png "Observe the Panels menu")
 
-4. Observe the **Toolbars** menu
+4. የመሣሪያ አሞሌዎችን ማውጫ ተመልከት
 
 ![Observe the Toolbars menu](media/ex01-03.png "Observe the Toolbars menu")
 
-5. Select the **Toolbars** and **Panels** you want to show in the user interface. Some of the useful Panels include the **Layer Styling** and **Processing Toolbox**. 
-6. Move the **Toolbars** and **Panels** to the positions that make the most sense for you
+5. በተጠቃሚው በይነ ገጽ ማሳየት የሚፈልጉትን የመሳሪያ አሞሌዎች እና ፓነሎች ይምረጡ። ከጠቃሚ ፓነሎቹ መካከል Layer Styling እና Processing Toolbox ይካተታሉ።
+6. የመሳሪያ አሞሌዎች እና ፓነሎችን ለእርስዎ ስሜት ወደሚሰጥዎት ቦታዎች ያንቀሳቅሱ
 
-**Resetting the QGIS Interface**
+**የQGIS በይነገጽን እንደገና ማቀናበር**
 
-To reset your display to the default settings, go to**: Settings ‣ Options ‣ System Tab ‣ Settings ‣ Reset** button and restart QGIS
-
-
-#### **Quiz questions
-
-1. True or False:
-    1. You can have multiple map canvases -- ***True***
-    2. You can show or hide panels and toolbars -- ***True***
-    3. You can only put Panels on the left or right side of the Map Canvas -- ***False (you can also put panels above or below the Map Canvas)***
+እይታዎን ወደ ነባር ቅንብሮች ለመቀየር፣ ወደ ሚከተለው ይሂዱ **፦ ቅንብሮች ‣ አማራጮች ‣ የስርአት ትር ‣ ቅንብሮች ‣ እንደገና ያቀናብሩ** ቁልፍ እና QGIS ን እንደገና ያስጀምሩ
 
 
-### Phase 2 title: QGIS Plugins
+#### የፈተና ጥያቄዎች 
 
-The ability to add, create, and extend QGIS’ functionality via plugins is one of its most powerful features.
+1. እውነት ወይም ሃሰት፦
+    1. ብዙ አይነት የካርታ ሸራዎች ሊኖርዎት ይችላል -- ***እውነት***
+    2. ፓነሎች እና የመሳሪያ አሞሌዎችን ማሳየት ወይም መደበቅ ይችላሉ -- ***እውነት***
+    3. ፓነሎችን በካርታ ሸራው በግራ ወይም በቀኝ ጎን ብቻ ማስቀመጥ ይችላሉ -- ***ሐሰት (ፓነሎችን ከካርታ ሸራው ከላይ ወይም ከታች ማስቀመጥ ይችላሉ)***
 
-As of QGIS 3.16.3, there are more than 700 plugins available for the user to download and improve upon. These plugins range in function from the complex to the mundane.
 
-QGIS plugins can be classified as:
+### ደረጃ 2 ርእስ፡ የQGIS ተሰኪዎች
 
-*   **Core plugins** - built-in to your version of QGIS, cannot be uninstalled
-*   **External plugins** - manually installed by fetching from an external repository (i.e. QGIS Official Plugin Repository) or via the source code.
+የQGISን የመስራት አቅም በተሰኪዎች የመጨመር፣ የመፍጠር እና የማራዘም ችሎታ ከሀይለኛ ባህሪያቱ መካከል አንዱ ነው።
 
-Plugins can be installed in three (3) ways:
+ከQGIS 3.16.3 ጀምሮ፣ ተጠቃሚዎች ማውረድ እና ማሻሻል እንዲችሉ ከ700 በላይ ተሰኪዎች አሉ። እነዚህ ተሰኪዎች በስራቸው ከውስብስብ እስከ ተራ ይመደባሉ።
 
-1. Via the Manage and Install Plugins Dialog (**Plugins ‣ Manage and Install Plugins**)
-2. Installing from ZIP which can be accessed under the** Install from ZIP** tab in the Manage and Install Plugins dialog.
-3. Manually adding the source code in your QGIS profile’s plugins folder. This folder can usually be found at: 
+የQGIS ተሰኪዎች እንደሚከተለው ሊከፋፈሉ ይችላሉ፦
+
+*   **ዋና ተሰኪዎች** - የእርስዎ አይነት QGIS ላይ የተሰራ፣ አለመጫን አይቻልም፣
+*   **የውጪ ተሰኪዎች** - ከውጪ ሪፓዚተሪ (ምሳሌ፦ የQGIS ህጋዊ የተሰኪ ሪፓዚተሪ) ወይም ከምንጭ ኮድ በመውሰድ በእጅ የተጫነ።
+
+ተሰኪዎች በሶስት (3) መንገድ ሊጫኑ ይችላሉ፦
+
+1. በቁጥጥር እና መጫኛ መገናኛ በኩል (**ተሰኪዎች ‣ ተሰኪዎችን ይቆጣጠሩ እና ይጫኑ**)
+2. ተሰኪዎችን ይቆጣጠሩ እና ይጫኑ መገናኛ ውስጥ ካለው ** ከ ZIP ይጫኑ** ትር ስር ከሚገኘው ZIP መጫን።
+3. በQGIS ገጽታዎ የተሰኪዎች ማህደር ውስጥ የምንጭ ኮዱን በእጅ መጨመር። ይህ ማህደር ብዙ ጊዜ የሚገኘው፦ 
     1. **Linux**: .local/share/QGIS/QGIS3/profiles/default/python/plugins
     2. **Mac OS X**: Library/Application/Support/QGIS/QGIS3/profiles/default/python/plugins
-    3. **Windows: **C:\\Users<User>\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins
+    3. **Windows**: **C:\\Users<User>\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins
 
 ![Manage and Install Plugins menu](media/plugins-menu.png "Manage and Install Plugins menu")
 
-Figure 1.5. Accessing the Manage and Install Plugins dialog
+ምስል 1.5. ተሰኪዎችን ይቆጣጠሩ እና ይጫኑ መገናኛ መጠቀም መቻል
 
-**Manage and Install Plugins Dialog**
+**ተሰኪዎችን ይቆጣጠሩ እና ይጫኑ መገናኛ**
 
-The Manage and Install Plugins Dialog connects to the QGIS Official Plugin repository (or any repository that you indicate in the Settings Tab) to fetch plugins available for your version of QGIS. It has five (5) tabs:
+ለእርስዎ የQGIS ስሪት የሚገኙትን ተሰኪዎች ለመውሰድ ተሰኪዎችን ይቆጣጠሩ እና ይጫኑ መገናኛ ከQGIS ህጋዊ የተሰኪ ሪፓዚተሪ (ወይም በቅንብሮች ትር ውስጥ ከሚያመለክቱት ማንኛውም ሪፖዚተሪ) ጋር ይገናኛል። አምስት(5) ትር አለው፡
 
-*   **All Tab** – shows ALL the plugins available for your QGIS version including those that are already installed on your machine
-*   **Installed Tab** – shows only the plugins installed on your machine
-*   **Not installed Tab** – shows the plugins that are not installed on your machine
-*   **Install from ZIP** – allows you to install plugins from a ZIP file
-*   **Settings Tab** – gives you options on when to check for plugin updates, whether or not to include experimental and deprecated plugins, or add/change the repository to fetch plugins from
+*   **ሁሉም ትር** – የእርስዎ ማሽን ላይ የተጫኑትን ጨምሮ ለእርስዎ QGIS ስሪት የሚገኙትን ሁሉንም ተሰኪዎች ያሳያል።
+*   **የተጫነ ትር** – ማሽንዎ ላይ የተጫኑትን ተሰኪዎች ብቻ ያሳያል።
+*   **ያልተጫነ ትር** – ማሽንዎ ላይ ያልተጫኑትን ተሰኪዎች ያሳያል።
+*   **ከ ZIP ይጫኑ** – ከZIP ማህደር ወስደው ተሰኪዎችን እንዲጭኑ ያስችልዎታል።
+*   **የቅንብሮች ትር** – መቼ የተሰኪዎች አዲስ መረጃዎችን ማየት እንዳለብዎት፣ የሙከራ እና ርካሽ ተሰኪዎችን ማካተት ወይም አለማካተት፣ ወይም ተሰኪዎች የሚወሰዱበትን ሪፓዚተሪ መጨመር/መለወጥ የሚችሉበትን አማራጭ ይሰጥዎታል።
 
-If the plugin you are looking for is tagged as experimental or deprecated, you need to check **Show experimental plugins** and **Show deprecated** plugins from the Settings tab.
+እርስዎ የሚፈልጉት ተሰኪዎች የሙከራ ወይም ርካሽ ተብለው ምልክት ከተደረገባቸው፣ ከቅንብሮች ት**ር የሙከራ ተሰኪዎችን አሳይ እና ርካሽ ተሰኪዎችን አሳይ** የሚሉትን ማረጋገጥ አለብዎት።
 
-The **Search Bar** allows you to search for plugins found in the plugin repository/ies that you are connected to.
+**የፍለጋ ትር** እርስዎ ግንኙነት ካልዎት የተሰኪ ሪፓዚተሪ/ዎች ውስጥ የሚገኙ ተሰኪዎችን ለመፈለግ ያስችልዎታል።
 
 ![Manage and Install Plugins dialog](media/manage-and-install-plugins-dialog.png "Manage and Install Plugins dialog")
 
-Figure 1.6. The Manage and Install Plugins dialog
+ምስል 1.6.:- የቁጥጥር እና መጫኛ መገናኛ
 
 
-#### **Tutorial/Exercise 2: Installing a QGIS Plugin**
+#### ቱቶሪያል/መልመጃ 2፦ የQGIS ተሰኪን መጫን
 
-1. Open the **Manage and Install Plugins dialog** from **Plugins ‣ Manage and Install Plugins** from the Menu bar. This will open the Manage and Install Plugins dialog.
+1.**ከተሰኪዎች ተሰኪዎችን ይቆጣጠሩ እና ይጫኑ መገናኛን** ይክፈቱ‣ ከማውጫ አሞሌ **ተሰኪዎችን ይቆጣጠሩ እና ይጫኑ።** ይህ ተሰኪዎችን ይቆጣጠሩ እና ይጫኑ የሚለውን መገናኛ ይከፍታል።
 
 ![Open Manage and Install Plugins dialog](media/plugins-menu-2.png "Open Manage and Install Plugins dialog")
 
 ![Manage and Install Plugins dialog](media/manage-and-install-plugins-dialog.png "Manage and Install Plugins dialog")
 
-2. Install the following plugins by searching for them in the **All tab** and clicking **Install Plugin** in the bottom right corner of the Manage and Install plugins dialog.
-   - Memory Layer Saver
+2. የሚከተሉትን ተሰኪዎች **በሁሉም ትር** ውስጥ በመፈለግ ይጫኑ እና የተሰኪዎችን ይቆጣጠሩ እና ይጫኑ መገናኛ የታችኛው የቀኝ ጥግ ላይ **ተሰኪ ይጫኑ** የሚለውን ይጫኑ።
+   - የማስታወሻ ንብርብር አስቀማጭ
 
 ![Install Memory Layer Saver plugin](media/memory-layer-saver-plugin.png "Install Memory Layer Saver plugin")
 
-   - QuickOSM
+   - ፈጣንOSM
 
 ![Install QuickOSM plugin](media/quickosm-plugin.png "Install QuickOSM plugin")
 
-3. Check if the plugins are successfully installed. The Memory Layer Saver plugin should be available at **Plugins ‣ Memory Layer Saver** in the Menu bar while the QuickOSM plugin should be available from **Vector ‣ QuickOSM** in the Menu bar.
+3. ተሰኪዎች በስኬታማ መንገድ እንደተጫኑ አረጋግጥ። የማስታወሻ ንብርብር አስቀማጭ ተሰኪ በማውጫ ትር ውስጥ ያለው **በተሰኪዎች‣ የማስታወሻ ንብርብር አስቀማጭ** ላይ መኖር አለበት የ ፈጣንOSM ተሰኪ ደግሞ ከማውጫ ትሩ ውስጥ **ከቬክተር ‣ ፈጣንOSM** መኖር አለበት።
 
 
-#### **Quiz questions**
+#### የፈተና ጥያቄዎች
 
-1. True or False
-    1. You can remove or uninstall Core plugins -- ***False***
-    2. You can add plugins that are not found in the Official QGIS Plugin Repository -- ***True***
+1. እውነት ወይም ሐሰት
+    1. ዋነኛ ተሰኪዎችን ማስወገድ ወይም አለመጫን ትችላለህ – **ሐሰት** 
+    2. በህጋዊ የQGIS ተሰኪ ሪፓዚተሪ ውስጥ የሌሉ ተሰኪዎችን መጨምር ይችላሉ – **እውነት**
 
 
-### Phase 3 title: QGIS Settings
+### ደረጃ 3. ርዕስ  የQGIS ቅንጅቶች
 
-**System and Project Settings**
+**የሲስተም እና የፕሮጀክት ቅንጅቶች**
 
-QGIS Settings allow you to edit and manage different things about QGIS such as user profiles, styles, coordinate reference systems, keyboard shortcuts, the user interface, default colors, etc. System settings can be found in the **Settings **menu and are the default settings used by QGIS unless they are overridden by a Project’s settings. Project Settings can be found in **Project ‣ Properties** and pertain to settings or properties for the current project. These values override the system defaults.
+የQGIS ቅንብሮች የተጠቃሚ ገጽታ፣ ቅጥዖች፣ የመጋጠሚያ ማጣቀሻ ስርአቶች፣ የቁልፍ ሰሌዳ አቋራጮችም የተጠቃሚ በይነ ገጽ፣ ነባር ቀለሞች፣ ወዘተ… የመሳሰሉ ስለQGIS ያሉ የተለያዩ ነገሮችን እንዲያርሙ እና እንዲቆጣጠሩ ያስችልዎታል። የስርአቱ ቅንጅቶች **በቅንጅቶች** ማውጫ ስር ሊገኝ ይችላል እንዲሁም በፕሮጀክቱ ቅንብሮች እስካልተሰረዙ ድረስ በQGIS ጥቅም ላይ የሚውሉ ነባር ቅንጅቶች ናቸው። የፕሮጀክት ቅንብሮች **ፕሮጀክት ‣ ባህሪያት** ላይ ሊገኙ ይችላሉ እንዲሁም የወቅታዊውን ፕሮጀክት ቅንጅቶች እና ባህሪያት ይሳያሉ። እነዚህ እሴቶች የስርአቱን ነባሮች ያስወግዳሉ።
 
 ![The System Settings](media/settings-1.png "The System Settings")
 
-Figure 1.7. The System Settings
+ምስል 1.7:-  የሲስተም ቅንጅቶች
 
 
 ![Project Settings](media/settings-2.png "Project Settings")
 
-Figure 1.8. Project Settings
+ምስል 1.8 የፕሮጀክት ቅንጅቶች
 
-**Changing the QGIS Theme**
+**የQGISን ጭብጥ መቀየር**
 
-You can change the look-and-feel of QGIS under **Settings ‣ Options ‣ General** Tab.
+የQGIS ን ገጽታ እና ስሜት **በቅንብሮች ‣ አማራጮች ‣ አጠቃላይ** ትር ስር መለወጥ ይችላሉ።
 
-You can choose between three themes -- default, Blend of Gray, and Night Mapping. You can also change the size of the icons, the font used by QGIS, and other system defaults.
+ከሶስት ጭብጦች መካከል መምረጥ ይችላሉ -- ነባር፣ የግራጫ ውህድ እና የምሻት ካርታ ዝግጅት። የአዶዎችን መጠን፣ QGIS የሚጠቀመውን የአጻጻፍ ዘይቤ፣ እና ሌሎች የስርአቱ ነባሮችን መለወጥ ይችላሉ።
 
 ![General Settings of QGIS](media/change-theme.png "General Settings of QGIS")
 
-Figure 1.9. General Settings of QGIS
+ምስል 1.9. አጠቃላይ የQGIS ቅንጅቶች
 
-For some settings in QGIS, you might need to restart the application for them to take effect.
+QGIS ውስጥ ላሉ የተወሰኑ ቅንብሮች፣ ተግባራዊ እንዲሆኑ መተግበሪያውን እንደገና ማስጀመር ሊያስፈልግዎት ይችላል።
 
-**User Profiles**
+**የተጠቃሚ መገለጫዎች**
 
-QGIS 3.X introduced the concept of QGIS User Profiles.
+QGIS 3.X በQGIS የተጠቃሚ መገለጫዎችን ጽንሰ ሀሳብ አስተዋውቋል።
 
-A User Profile is a collection of settings for plugins installed, toolbars enabled, arrangement of the User Interface, and other settings. QGIS comes with a default User Profile named default. User profiles allow the user to create different settings for specific analyses (e.g. a user profile specific for water resource management, digitizing data, cartography, etc.), particular projects, or even clients.
+የተጠቃሚ መገለጫ ለተጫኑ ተሰኪዎች፣ ለሚሰሩ የመሳሪያ አሞሌዎች፣ ለተጠቃሚ በይነገጽ ማስተካከያ፣ እና ለሌሎች ቅንብሮች የቅንብሮች ስብስብ ነው። QGIS ከነባር የተጠቃሚ መገለጫ ጋር ነባር ተብሎ ተሰይሞ ይመጣል። የተጠቃሚ መገለጫዎች ለልዩ ትንተናዎች (ምሳሌ፦ ለውሀ ሀብት አስተዳደር፣ ውሂብን ዲጂታላይዝ ለማድረግ፣ ለካርቶግራፊ፣ ወዘተ የተጠቃሚ መገለጫ)፣ ለልዩ እቃዎች ወይም ለደንበኞች ራሱ ተጠቃሚዎች የተለያዩ ቅንብሮችን እንዲፈጥሩ ያስችላል።
 
-User Profiles can be created and accessed from the menu bar under: **Settings ‣ User Profiles**.
+የተጠቃሚ መገለጫዎች በሚከተሉት ስር ከማውጫ አሞሌው ሊፈጥዕሩ እና ሊገኙ ይችላሉ፦ **ቅንጅቶች ‣የተጠቃሚ መገለጫዎች::**
 
-The active user profile is shown with [User Profile] in the title bar.
+የሚሰራው የተጠቃሚ መገለጫ በርእስ አሞሌው ውስጥ [የተጠቃሚ መገለጫ] ተብሎ ይታያሉ።
 
 ![Accessing User Profiles](media/user-profiles-1.png "Accessing User Profiles")
 
-Figure 1.10. Accessing User Profiles
+ምስል 1.10. :  የተጠቃሚ መገለጫዎችን ማግኘት
 
-User profiles are saved in a directory on your computer which can be accessed by clicking **Settings ‣ User Profiles ‣ Open Active Profile Folder**.
+የተጠቃሚ መገለጫዎች ኮምፒውተርዎ ላይ በዳይሬክተሪ ይቀመጣሉ ይህም የሚከተሉትን በመንካት ይገኛል **ቅንብሮች ‣ የተጠቃሚ መገለጫዎች ‣ የሚሰራ መገለጫ ማህደርን ክፈት።**
 
-#### **Tutorial/Exercise 03: Creating a User Profile** 
+#### ቱቶሪያል/መልመጃ 03: የተጠቃሚ መገለጫዎችን መፍጠር  
 
-1. Go to **Settings ‣ User Profiles ‣ New Profile...**
+1. ወደ **ቅንጅቶች** ይሂዱ **‣የተጠቃሚ መገለጫዎች‣አዲስ መገለጫዎች** 
 
 ![alt_text](media/user-profiles-2.png "image_tooltip")
 
 
-2. Give your new user profile a name.
+2. ለአዲሱ የተጠቃሚ መገለጫዎ ስም ይስጡ።
 
 ![alt_text](media/user-profiles-3.png "image_tooltip")
 
-3. A new QGIS window should open with your new user profile. Notice that your profile name is shown in the QGIS title bar.
+3. ከአዲስ የተጠቃሚ መገለጫዎ ጋር አዲስ የQGIS መስኮት መከፈት አለበት። የመገለጫ ስምዎ የQGIS ርእስ አሞሌ ውስጥ መታየቱን ያስተውሉ።
 
-4. Do you notice any difference in the new user profile? Check the user interface, plugins, and settings of the old profile and the new profile you created.
-
-
-#### **Quiz questions**
-
-1. True or False
-    1. You can only have one user profile in QGIS. -- ***False (you can have multiple user profiles)***
-    2. You can’t override the system settings and properties. -- ***False***
+4. በአዲሱ የተጠቃሚ መገለጫ ውስጥ ማንኛውንም የተለየ ነገር አስተውለዋል? የድሮውን መገለጫ እና አዲስ የፈጠሩትን መገለጫ የተጠቃሚ በይነ ገጽ፣ ተሰኪዎች እና ቅንብሮችን ይመልከቱ።
 
 
-### Phase 4 title (additional): QGIS File Formats
+#### የፈተና ጥያቄዎች
 
-#### **QGIS Project File (QGS/QGZ)**
-
-QGIS Projects are to QGIS as .mxd files are to ArcMap. These files come either as **QGS (.qgs)** or **QGZ (.qgz)**. The main difference between the two is that the QGZ format is a compressed (zip) archive containing a QGS file and a QGD file. The QGS format is an XML format for storing QGIS projects. The QGD file is the associated sqlite database of the qgis project that contains auxiliary data for the project. If there are no auxiliary data, the QGD file will be empty.
-
-A QGIS Project File contains everything that is needed for storing a QGIS project, including:
-
-*   project title
-*   project CRS
-*   the layer tree
-*   snapping settings
-*   relations
-*   the map canvas extent
-*   project models
-*   legend
-*   mapview docks (2D and 3D)
-*   the layers with links to the underlying datasets (data sources) and other layer properties including extent, SRS, joins, styles, renderer, blend mode, opacity and more.
-*   project properties
-
-QGIS Project files can be saved in a GeoPackage or a PostGIS database. Saving the project file together with the style file and corresponding layers in a single GeoPackage makes it easy to share QGIS projects.
+1. እውነት ወይም ሐሰት
+    1. በአንድ QGIS ላይ የአንድ ተጠቃሚ መገለጫ ብቻ ነው ሊኖርህ የሚችለው።--**ሐሰት (ከአንድ በላይ የተጠቃሚ መገለጫ ሊኖርህ ይችላል)**
+    2. የስርአቱን አሰራር እና ባህሪያት ልትቀይረው አትችልም።--**ሐሰት**
 
 
-#### **QGIS Layer Definition (QLR)**
+### ደረጃ 4 ርዕስ (ተጨማሪ): የQGIS ማህደር ቅርጸቶች 
 
-A QGIS Layer Definition file (**QLR**) is an XML file that contains a pointer to the layer data source in addition to QGIS style information for the layer. Currently, a QLR file corresponds to a single layer only.
+#### የQGIS ፕሮጀክት ማህደር (QGS/QGZ)
 
-The use case for this file is simple: To have a single file for opening a data source and bringing in all the related style information. QLR files also allow you to mask the underlying datasource in an easy to open file.
+የQGIS ፕሮጀክቶች QGIS ናቸው ለ ArcMap .mxd ማህደሮች እንደሆኑት ማለት ነው። ማህደሮች ወይ **QGS (.qgs)** ወይም **QGZ (.qgz)** ሆነው ይመጣሉ። በሁለቱ መካከል ያለው ዋና ልዩነት የ QGZ ቅርጸት የ QGS ማህደር እና የ QGD ማህደር የሚይዝ የታመቀ (zip) መዝገብ ነው። የ QGS ቅርጸት የ XML ቅርጸት ሲሆን የQGIS ፕሮጀክቶችን ለማከማቸት ይጠቅማል። የ QGD ማህደር የqgis ፕሮጀክት የተያያዘ የ sqlite የመረጃ ቋት ሲሆን ለፕሮጀክቱ ተጨማሪ ውሂብን ይይዛል። ተጨማሪ ውሂቦች ከሌሉ፣ QGD ፋይል ባዶ ይሆናል።
 
-An example of QLR usage is for opening a layer from a PostGIS database. Instead of connecting to the database, finding the layer, and applying a filter, you can just open a .qlr file that points to the correct PostGIS layer with its corresponding style and filter.
+የQGIS ፕሮጀክት ማህደር የQGIS ፕሮጀክትን ለማስቀመጥ የሚያስፈልጉትን ሁሉንም ነገሮች ይይዛል፤ የሚከተሉትን ያካትታል፦
 
+*   የፕሮጀክቱ ርዕስ
+*   የውጥን ሥራ CRS
+*   የንብርብር ቅጥልትሎሽ
+*   ቅንጥብ ቅንብሮች
+*   rግንኙነቶች
+*   የካርታው ሸራ መጠን
+*   የፕሮጀክቶች ማሣያ
+*   አፈ ታሪክ
+*   የካርታ እይታ ማስቀመጫዎች (2D እና 3D)
+*   ከያዙት የውሂብ ስብስቦች (የውሂብ ምንጮች) እና መጠን፣ SRS፣ መቀለቀሎች፣ ቅጦች፣ ሰጪዎች፣ ውህድ ሞድ፣ ብርሀን አስተላላፊነት እና ሌሎች ነገሮችንም የሚያካትቱ የንብርብር ባህርያትን የያዘ ንብርብር ከሊንክ ጋር።
+*   የፕሮጀክቱ ባህሪያት
 
-#### **QGIS Style File (QML)**
-
-**QML** is an XML format for storing layer styling. A QML file (.qml) contains all the information that tells QGIS how to render feature geometries which includes symbol definitions, sizes and rotations, labelling, opacity, blend mode, and more.
-
-A .qml file should have the same name as the data source it corresponds to. When it is found in the same directory or folder as the data source, loading the data source will also automatically load its style as defined in the .qml file.
-
-For example, if you have a GeoJSON named regions.geojson and a QML file named regions.qml, loading regions.geojson in QGIS will apply the styles defined in regions.qml in the loaded layer.
-
-When using GeoPackages (.gpkg), a .qml file is oftentimes not needed since you can save a layer’s style directly in the geopackage.
-
-
-### If you want to go further:  
-
-You can try to create your own QGIS plugin.  If there’s no plugin that does what you want then you can always make one yourself.
-
-The **Plugin Builder**is a plugin that creates a template that can serve as the starting point for QGIS plugin development so you won’t have to create one from scratch. You can install it from the Manage and Install Plugins Dialog.
-
-Of course, you can always create a plugin from scratch. If you are interested in creating your own plugin, you can check the Official QGIS documentation ([https://documentation.qgis.org/](https://documentation.qgis.org/)). For Python plugins, it’s a good idea to check out the PyQGIS Developer Cookbook ([https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/](https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/)).
-
-For more information, see: [https://bnhr.xyz/2018/10/08/qgis-plugins-3.0.html](https://bnhr.xyz/2018/10/08/qgis-plugins-3.0.html)
+የQGIS ፕሮጀክት ማህደሮች GeoPackage ወይም የ PostGIS የመረጃ ቋት ውስጥ ሊቀመጡ ይችላሉ። የፕሮጀክቱን ማህደር ከቅጥ ማህደር እና ተመሳሳይ ንብርብሮች ጋር በአንድ GeoPackage ማስቀመጥ የ QGIS ፕሮጀክቶችን ለማጋራት ቀላል ያደርገዋል።
 
 
-### To practice your new skills, try to…
+#### የQGIS ንብርብር ፍቺ (QLR)
 
-*   Change the theme and look of the QGIS user interface to suit your preference.
-*   Install other QGIS plugins.
-*   Change other QGIS settings.
-    *   create a custom coordinate reference system
-    *   add a custom splash screen ([https://bnhr.xyz/2020/09/05/custom-splash-screen-qgis.html](https://bnhr.xyz/2020/09/05/custom-splash-screen-qgis.html))
+የQGIS ንብርብር ፍቺ ማህደር **(QLR)** የ XML ማህደር ሲሆን ለንብርብሩ ካለው የQGIS ቅጥ መረጃ በተጨማሪ ወደ ንብርብር ውሂብ ምንጭ ጠቋሚን ይይዛል። በአሁኑ ሰአት፣ QLR ማህደር ከነጠላ ንብርብር ጋር ብቻ ይዛመዳል።
+
+የዚህ ማህደር የአጠቃቀም ሁኔታ እንደሚከተለው ቀላል ነው፦ የውሂብ ምንጩን ለመክፈት ነጠላ ማህደር እንዲኖር እና ሁሉንም ተያያዥ የቅጥ መረጃ ለማምጣት ቀላል ነው። QLR ማህደሮች ዋናውን የውሂብ ምንጭ ለመክፈት ቀላል በሆነ ማህደር ውስጥ ለመሽፈን ያስችላሉ።
+
+የ QLR አጠቃቀም ምሳሌ ከ PostGIS የመረጃ ቋት ንብርብርን ለመክፈት ነው። ከመረጃ ቋቱ ጋር ከመገናኘት፣ ንብርብር ከመፈለግ፣ እና ማጣሪያ ከማድረግ ይልቅ፣ ከሚዛመደው ቅጥ እና ማጣሪያ ጋር የ PostGIS ን ንብርብር ለማስተካከል የሚጠቁመውን የ .qlr ማህደር መክፈት ይችላሉ።
 
 
-### Tips 
+#### QGIS የቅጥ ማህደር (QML)
 
-N/A
+**QML** የንብርብር ቅጦችን ለማስቀመጥ የሚሆን የ XML ቅርጸት ነው። QML ማህደር (.qml) QGIS ን እንዴት የወደፊት ጂኦሜትሪዎችን እንደሚሰጥ የሚነግሩ ሁሉንም መረጃዎች የያዘ ሲሆን የምልክት ፍቺዎችን፣መጠን እና አዙሪቶችን፣ ስያሜ፣ ብርሀን አስተላላፊነት፣ የውህድ ሞዴሎች እና ሌሎች ብዙዎችን ያካትታል።
+
+.qml ማህደር ከሚዛመደው የውሂብ ምንጭ ጋር ተመሳሳይ ስም ሊኖረው ይገባል። እንደ ውሂብ ምንጩ በተመሳሳይ ዳይሬክተሪ ወይም ማህደር ውስጥ ሲገኝ፣ የውሂብ ምንጩን መጫን በራሱ .qml ማህደር ውስጥ እንደተገለጸው የራሱን ቅጥ ይጭናል።
+
+ለምሳሌ፣ regions.geojson የተባለ GeoJSON እና regions.qml የተባለ QML ማህደሩ ቢኖርዎት፣ QGIS ውስጥ regions.geojson ን መጫን በ regions.qml ውስጥ በተጫነው ንብርብር ውስጥ የተገለጹ ቅጦችን ተግባራዊ ያደርጋል።
+
+GeoPackages (.gpkg) ን በሚጠቀሙበት ሰዓት፣ የ .qml ማህደር ብዙ ጊዜ አያስፈልግህም ምክንያቱም የንብርብሩን ገጽታ በቀጥታ ከ geopackage ማግኘት ትችላለህ።
+
+
+### ይበልጥ ማወቅ ከፈለጉ፡
+
+የራስዎን የQGISተሰኪዎችን መፍጠር ሊሞክሩ ይችላሉ። ማድረግ የምትፈልገውን ለያከናውንልህ የሚችል ተሰኪ ከሌለ ለራስህ አንድ መፍጠር ትችላለህ።
+
+**የተሰኪ ገንቢ** ለ QGIS ተሰኪ ፈጠራ እንደመጀመሪያ የሚያገለግል ንድግ የሚፈጥር ተሰኪ ሲሆን ስለዚህ ከመጀመሪያ ጀምሮ እንደአዲስ መፍጠር አይጠበቅብዎትም። ተሰኪዎችን ተቆጣጠር እና ጫን የተግባቦት ገጽ ማውረድ ትችላለህ።
+
+ልክነው ፣ ሁልጊዜ ተሰኪዎችን ከመጀመሪያ ጀምሮ መፍጠር ትችላለህ። የራስህን ተሰኪ ለመፍጠር ከፈለግክ፣ የQGISን ህጋዊ ሰነዶች ተመልከት (https://documentation.qgis.org/)። ለማህደሮች ተሰኪዎች፣ የ PyQGIS ማዳበሪያ ፈጣን ማጣቀሻ መጽሐፍን ማጣቀስ መልካም ሃሣብ ነው (https://docs.qgis.org/3.16/en/docs/pyqgis_developer_cookbook/)።
+
+ለበለጠ መረጃ፣ https://bnhr.xyz/2018/10/08/qgis-plugins-3.0.html ይመልከቱ።
+
+### አዲሱን ክህሎትዎትን ለመለማመድ ይህንን ይሞክሩ…. 
+
+*   ምርጫህን ይስማማ ዘንድ የQGIS ተጠቃሚ በይነ ገጽን ጭብጥ ወይም ሁኔታ ለውጥ።
+*   ሌሎች የQGIS ተሰኪዎችን ይጫኑ።
+* ሌሎች የQGIS ቅንጅቶችን ይለውጡ።
+    *   ምቹ የሆኑ የስርዓት ማስተባበሪያ ይፍጠሩ።
+    *   የብጁ ስፕላሽ ገጽ ይፍጠሩ (https://bnhr.xyz/2020/09/05/custom-splash-screen-qgis.html)
+
+
+### ጠቃሚ ምክሮች  
+
+አይገኝም
