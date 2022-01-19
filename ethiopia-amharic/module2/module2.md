@@ -1,558 +1,549 @@
-# Module 2 - Layers in QGIS
+# ሞጁል 2 - በQGIS ውስጥ ንብርብሮች
 
-**Author**: Ben Hur
+**ፀሃፊ፦** ቤን ሁር
 
-## Pedagogical Introduction
+## ትምህርታዊ መግቢያ
 
-This module will teach you the basic concepts of layers in QGIS and how to load them. At the end of this module, learners should be familiar with:
+ይህ ሞጁል በQGIS ውስጥ ያሉትን የንብርብሮች መሰረታዊ ፅንሰ-ሀሳቦች እና እንዴት እንደሚጫኑ ያስተምርዎታል። በዚህ ሞጁል መጨረሻ ላይ፣ ተማሪዎች በደንብ ሊያውቋቸው የሚገቡ ነገሮች፦
 
-*   the different data sources and file formats that can be loaded in QGIS
-*  the different ways that data can be loaded in QGIS
-*   some common data file formats
+* በQGIS ውስጥ ሊጫኑ የሚችሉ የተለያዩ የውሂብ ምንጮች እና የ**ማህደር** ቅርጸቶች
+* ውሂብ በQGIS ውስጥ ሊጫኑ የሚችሉባቸውን የተለያዩ መንገዶች
+* አንዳንድ የተለመዱ የውሂብ ፋይል ቅርጸቶች
 
-They should also be able to:
+እንዲሁም የሚከተሉትን ማድረግ መቻል አለባቸው፦
 
-*   load layers (both vectors and rasters) using the Browser Panel and the Data Source Manager
-*   connect QGIS to remote services
-*   work with temporary and virtual layers
-*   install some plugins that will load other datasets in QGIS
-*   show layer properties such as metadata information
-*   save and export layers
-
-
-## Required tools and resources
-
-The required tools and resources for this module are:
-
-*   working computer
-*   internet connection
-*   QGIS 3.16 installed in the computer ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
+* የአሳሽ ፓነልን እና የውሂብ ምንጭ አቀናባሪን በመጠቀም ንብርብሮችን (ሁለቱም ቬክተሮች እና ራስተሮች) መጫን
+* QGISን ሩቅ ከሆኑ አገልግሎቶች ጋር ያገናኙ
+* ጊዜያዊ እና ምናባዊ ንብርብሮች ጋር ይስሩ
+* በQGIS ውስጥ ሌሎች የውሂብ ስብስቦችን የሚጭኑ አንዳንድ ማገናኛዎችን ይጫኑ
+* እንደ ሜታውሂብ መረጃ ያሉ የንብርብር ባህሪያትን ያሳዩ
+* ንብርብሮችን ያስቀምጡ እና ወደ ውጭ ይላኩ
 
 
-## Prerequisites
+## አስፈላጊ መሣሪያዎች እና ግብአቶች
+ለዚህ ሞጁል አስፈላጊ መሣሪያዎች እና ግብአቶች፦
 
-*   basic knowledge of operating a computer
-*   familiarity with spatial data formats and the QGIS interface (completion of Modules 0 and 1)
-
-
-## Additional resources
-
-* QGIS User Guide - [https://docs.qgis.org/3.16/en/docs/user_manual/](https://docs.qgis.org/3.16/en/docs/user_manual/)
-* QGIS Training Manual - [https://docs.qgis.org/3.16/en/docs/training_manual/index.html](https://docs.qgis.org/3.16/en/docs/training_manual/index.html)
-* Basemaps in QGIS  -  [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
-* Connecting QGIS to Remote Services -[https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html](https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html)
-* Spreadsheet Layers Plugin -  [https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html](https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html)
+* የሚሰራ ኮምፒተር
+* የበይነመረብ ግንኙነት
+* በኮምፒተር ውስጥ የተጫነ QGIS 3.16 ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
 
 
+## ቅድመ ሁኔታዎች
 
-## Thematic introduction
+* የኮምፒተር አጠቃቀም መሠረታዊ እውቀት
+* ከቦታ ውሂብ ቅርጸቶች እና ከ QGIS በይነገጽ ጋር መተዋወቅ (የሞጁል 0 እና 1 መጠናቀቅ)
+
+
+## ተጨማሪ ግብአቶች
+
+* የ QGIS የተጠቃሚ መመሪያ - [https://docs.qgis.org/3.16/en/docs/user_manual/ ](https://docs.qgis.org/3.16/en/docs/user_manual/)
+* የ QGIS ሥልጠና መመሪያ - [https://docs.qgis.org/3.16/en/docs/training_manual/index.html](https://docs.qgis.org/3.16/en/docs/training_manual/index.html)
+* ቤዝ ካርታዎች በQGIS -[https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
+* QGISን ከሩቅ አገልግሎቶች ጋር ማገናኘት - [https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html](https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html)
+* የስፕሪድ ገጽ ንብርብሮች ማገናኛ - [https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html](https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html)
+
+
+## የጭብጥ መግቢያ
 
 ![Multiple layer analysis in GIS](media/spatial-layers.jpg "Multiple layer analysis in GIS")
 
-Figure 2.1. A map overlay containing different layers and data types ([https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s11-02-multiple-layer-analysis.html](https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s11-02-multiple-layer-analysis.html))
+ምስል 2.1.:- የተለያዩ ንብርብሮችን እና የውሂብ ዓይነቶችን የያዘ የካርታ ሽፋን (https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s11-02-multiple-layer-analysis.html)
 
-We learned from the previous modules that spatial data models such as vectors and rasters are models of real-world objects and phenomena and while it is perfectly okay to have a single layer that models one thing (e.g. elevation, temperature, household locations, zoning, etc.), in practice if we want to perform useful analysis or create a model that reflects the real-world better then we would need to use several data and layers together. Overlaying multiple thematic maps of the same area by putting them on top of each other is one of the oldest and most common geographic analysis techniques.
-
-
-## Breakdown of the concepts
-
-The picture above gives us a simple and concrete example of this. Imagine being a GIS consultant tasked with finding the best location for a new franchise restaurant (e.g. Jollibee or McDonalds). In order to do this, you would need to gather the relevant information that would help you decide. This can include information on the city streets, parcels of land, location and distribution of possible customers, the topography of the area, land use, etc. 
-
-These datasets can come in different types and formats. Some could be vector files while others can be rasters. Some can be in the same coordinate reference system while others can be in different coordinate reference systems. Some can be local files found in your computer while others can only be loaded via the internet. Because of the many possibilities as to what kind of data you would need for your spatial analysis, a good GIS should be able to handle and manage a variety of data sources. 
+ከቀደሙት ሞጁሎች እንደ ቬክተር እና ራስተር ያሉ የቦታ ውሂብ ሞዴሎች የእውነተኛ ዓለም ነገሮች እና ክስተቶች ሞዴሎች እንደሆኑ የተማርን ሲሆን አንድ ነገርን (ለምሳሌ ከፍታ፣ ሙቀት፣ የቤተሰብ ስፍራዎች፣ ክለላ፣ ወዘተ…) የሚመስል የአንድ ንብርብር መኖር ምንም ችግር ባይኖርበትም፣ በተግባር ግን ጠቃሚ ትንታኔዎችን ማካሄድ ወይም የእውነተኛውን ዓለም በተሻለ የሚያንፀባርቅ ሞዴል መፍጠር ከፈለግን ብዙ ውሂቦችን እና ንብርብሮችን በአንድ ላይ መጠቀም ያስፈልገናል። በተመሳሳይ አካባቢ በርካታ ጭብጣዊ ገጽታ ያላቸው ካርታዎችን እርስ በእርሳቸው በማስቀመጥ መደርደር ጥንታዊ እና በጣም ከተለመዱ የጂኦግራፊያዊ ትንተና ዘዴዎች መካከል አንዱ ነው።
 
 
-## Main content
+## የፅንሰ-ሀሳቦች ትንታኔ
 
-### Phase 1 title: Data Types, File Formats, the Browser Panel, and the Layers Panel
+ከላይ ያለው ስዕል ለዚህ ቀላል እና ተጨባጭ ምሳሌ ይሰጠናል። ለአዲስ የፍራንቻይዝ ምግብ ቤት (ለምሳሌ፡- ጆሊቢ ወይም ማክዶናልድስ) ምርጥ ቦታን ለማግኘት  የGIS አማካሪ ሆነው እንደቶሾሙ አድርገው ያስቡ። ይህንን ለማድረግ፣ እርስዎ እንዲወስኑ የሚረዳዎትን ተገቢውን መረጃ መሰብሰብ ያስፈልግዎታል። ይህ በከተማው ጎዳናዎች፣ በመሬት ንጣፎች፣ ደንበኞች ሊሆኑ የሚችሉ የሚገኙበት ቦታና ስርጭትን፣ የአከባቢው የመሬት አቀማመጥ፣ የመሬት አጠቃቀም፣ ወዘተ… መረጃዎችን ሊያካትት ይችላል።
 
-#### **Common Data Types and File Formats**
-
-Aside from the spatial data models (rasters and vectors) discussed in the first module, familiarity with geospatial file formats and their pros and cons is also important for anyone doing spatial analysis.
-
-Most people who are new to GIS usually get introduced to spatial data via shapefiles. Most people never outgrow this and use shapefile to mean all types and forms of vector data. This is similar to how a specific brand like Coca Cola starts to get used as the general term for soft drinks. This isn’t necessarily wrong but is rather unfortunate since shapefiles are but one of the many kinds of vector data format. In fact, in some cases, other vector formats like geopackage, geojson, topojson, and flatgeobuf. The shapefile format, while ubiquitous, has some significant limitations such as: 
-
-*   It is not just 1 file. A shapefile actually consists of several files, 3 of which are mandatory: .shp, .shx, .dbf. All other files are called sidecar files.
-*   It has a 2GB size limit for each individual file.
-*   Field names are limited to 10 characters.
-*   Attribute columns are limited to 255 columns.
-*   There is no support for some data types such as time.
-*   It does not explicitly store topology.
-
-Other data formats such as GeoPackage, GeoJSON, TopoJSON, and flatgeobuff remedy these limitations of shapefiles. In fact, QGIS and GRASS GIS have switched to GeoPackage as the default vector file format when importing or exporting layers and although GeoPackage also has some limitations, being a completely open format allows the community to help shape the future of the format.
-
-So, if not shapefiles, what should you use?
-
-There’s nothing wrong with using shapefiles especially if it fits your use-case. If you don’t need a dataset that goes beyond 2GB; if you’re okay with having a limit of 10 characters to your field names; or if you’re working with a small number of files locally, a shapefile is completely fine. 
-
-However, if you want to package your QGIS project together with all the layers (vectors, rasters), styling, and models; or you want to share multiple types of layers and spatial data in a single file, a GeoPackage is worth a look. GeoPackages and GeoJSONs are also web-friendly and can be used directly by web mapping libraries such as Mapbox and Leaflet. 
-
-You can read more in the link below: [https://bnhr.xyz/2018/12/12/i-choose-geopackage.html](https://bnhr.xyz/2018/12/12/i-choose-geopackage.html)
-
-Meanwhile, any format that can be represented as a grid of pixels or cells can be read by QGIS as raster data. This includes image formats such as PNG (.png) and JPEG (.jpg). It’s worth noting that although all image file formats can be read as rasters, not all of them are georeferenced or contain geospatial information that allows us to locate them properly on the earth. For instances like this, we can use what’s known as a world file ([https://en.wikipedia.org/wiki/World_file](https://en.wikipedia.org/wiki/World_file)). . A world file is a separate, plaintext data file whose name is the same as the raster file it pertains to and whose file extension has the letter w added to the end. For example, the world file for **world.png** will be named **world.pngw **or **world.pgw**.
-
-Some image file formats contain explicit georeferencing and information and do not need a world file. Some examples are GeoTIFFs (.tif or tiff) and ERDAS Imagine file format (.img).
-
-For more information about file formats you can also check out: [https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html](https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html)
-
-Geospatial data can also come in the form of geospatial databases. These can be enterprise-level databases like the free and open source Postgres with PostGIS extension ([https://postgis.net/](https://postgis.net/)) or ESRI’s proprietary ArcSDE. There are also file geodatabases that can store different types of data (e.g. vectors and rasters) inside them. Some examples are the free and open OGC GeoPackage (.gpkg) ([https://www.geopackage.org/](https://www.geopackage.org/)) and the proprietary File Geodatabase format by ESRI (.gdb).
+እነዚህ የውሂብ ስብስቦች በተለያዩ ዓይነቶች እና ቅርፀቶች ሊመጡ ይችላሉ። አንዳንዶቹ የቬክተር ፋይሎች ሊሆኑ ይችላሉ ሌሎቹ ደግሞ ራስተር ሊሆኑ ይችላሉ። አንዳንዶቹ በአንድ ተመሳሳይ የመጋጠሚያ ማጣቀሻ ሥርዓት ውስጥ ሊሆኑ ይችላሉ ሌሎቹ ደግሞ በተለያዩ የመጋጠሚያ ማጣቀሻ ሥርዓቶች ውስጥ ሊሆኑ ይችላሉ። አንዳንዶቹ በኮምፒተርዎ ውስጥ የሚገኙ አካባቢያዊ ፋይሎች ሊሆኑ ይችላሉ ሌሎቹ ደግሞ በበይነመረብ በኩል ብቻ ሊጫኑ ይችላሉ። ለቦታዎ ትንተና ምን ዓይነት ውሂብ እንደሚያስፈልግዎት ብዙ ዕድሎች ስላሉ፣ ጥሩ የሆነ GIS የተለያዩ የውሂብ ምንጮችን ማስተናገድ እና ማስተዳደር መቻል አለበት።
 
 
-#### **Types of Data Sources**
+## ዋና ይዘት
 
-One of the most powerful features of QGIS is its ability to connect, load, and use different spatial and non-spatial data from a variety of sources. QGIS can open:
+### ደረጃ 1 ርዕስ፦ የውሂብ አይነቶች፣ የማህደር ቅርጸቶች፣ የአሳሽ ፓነል እና የንብርብሮች ፓነል
 
-*   local raster and vector files
-*   local databases
-*   files and databases on the internet via their uniform resource identifier (URI) or uniform resource locator (URL), 
-*   web services (OSGeo web services and ArcGIS web services), tile services, and data portals such as GeoNode
-*   and many more...
+#### የተለመዱ የውሂብ ዓይነቶች እና የየማህደር ቅርጸቶች
 
-QGIS can also connect and load data from services such as NASA’s SRTM data, Planet imagery,  SentinelHub, Google Earth Engine, and OpenStreetMap through the power of plugins. 
+በመጀመሪያው ሞጁል ውስጥ ከተወያዩበት የቦታ ውሂብ ሞዴሎች (ራስተሮች እና ቬክተሮች) በተጨማሪ የጂኦስፓሻል **የማህደር** ቅርፀቶች እና የእነሱ ጥቅሞች እና ጉዳቶች መተዋወቅ የቦታ ትንተና ለሚያደርግ ሁሉ አስፈላጊ ነው።
 
-This makes QGIS an integral component for any spatial data infrastructure or workflow.
+ለ GIS አዲስ የሆኑ ብዙ ሰዎች ብዙውን ጊዜ በሼፕፋይልስ (shapefiles) አማካኝነት ከቦታ ውሂብ ጋር ይተዋወቃሉ። ብዙ ሰዎች ይህን አያሳድጉትም እና ሁሉንም የቬክተር ውሂብ ዓይነት እና ቅርጾችን ለማመልከት ሼፕፋይልን ይጠቀማሉ። ይህ እንደ ኮካ ኮላ ያለ አንድ የተወሰነ የምርት ስም ለለስላሳ መጠጦች አጠቃላይ ቃል መጠቀሙን ከጀመረው ጋር ተመሳሳይ ነው። ይህ የግድ ስህተት አይደለም ግን የሼፕፋይልስ ግን ከብዙ ዓይነቶች የቬክተር ውሂብ ቅርፀቶች አንዱ ስለሆነ የሚያሳዝን ነው። በእውነቱ፣ በአንዳንድ ሁኔታዎች፣ እንደ geopackage፣ geojson፣ topojson፣ እና flatgeobuf ያሉ ሌሎች የቬክተር ቅርፀቶች። የሼፕፋይልስ ቅርጸት፣ በሁሉም ቦታ የሚገኝ ቢሆንም፣ አንዳንድ ነገሮች ግን ይገድቡታል፣ ለምሳሌ፦
+
+* እሱ 1 **የማህደር** ብቻ አይደለም። የሼፕፋይል በእውነቱ በርካታ ፋይሎችን ያካተተ ሲሆን፣ ከእነዚህ ውስጥ 3ቱ አስገዳጅ ናቸው፦.shp፣ .shx፣ .dbf. ሁሉም ሌሎች ማህደሮች ሳይድካር (sidecar) ማህደሮች ይባላሉ።
+* ለእያንዳንዱ **ማህደር** 2 GB የመጠን ገደብ አለው።
+* የመስክ ስሞች በ10 ፊደሎች ተወስነዋል።
+* የባህሪ አምዶች በ 255 አምዶች የተገደቡ ናቸው።
+* እንደ ጊዜ ላሉት አንዳንድ የውሂብ አይነቶች ድጋፍ የለም።
+* ቶፖሎጂን በግልፅ አያስቀምጥም።
+
+እንደ GeoPackage፣ GeoJSON፣ TopoJSON፣ እና flatgeobuff ያሉ ሌሎች የውሂብ ቅርፀቶች እነዚህን የሼፕፋይልስ ውስንነቶች ያስተካክላሉ። በእርግጥ፣ QGIS እና GRASS GIS ንብርብሮችን ሲያስገቡ ወይም ወደ ውጭ ሲያወጡ እንደ ነባሪው የቬክተር **የማህደር** ቅርጸት ወደ GeoPackage ቀይረዋል ምንም እንኳን GeoPackage አንዳንድ ውስንነቶች ቢኖሩትም ሙሉ በሙሉ ክፍት ቅርፀት መሆኑ ማህበረሰቡ የቅርፀቱን የወደፊት ቅርፅ ለመቅረፅ እንዲረዳ ያስችለዋል።
+
+ስለዚህ፣ ሼፕፋይልስ ካልሆነ፣ ምን መጠቀም አለብዎት?
+
+ሼፕፋይልስን መጠቀሙ በተለይ ከእርስዎ ጉዳይ ጋር የሚስማማ ከሆነ ምንም ስህተት የለውም። ከ 2 ጊባ በላይ የሚያልፍ የውሂብ ስብስብ የማይፈልጉ ከሆነ፣ ለመስክ ስሞችዎ የ 10 ፊደሎች ገደብ እንዲኖርዎት ከተስማሙ፣ ወይም በአከባቢዎ አነስተኛ ቁጥር ያላቸውን ፋይሎች እየሰሩ ከሆነ ሼፕፋይልስን መጠቀምዎ፣ ሙሉ በሙሉ ችግር የለውም።
+
+ሆኖም የ QGIS ፕሮጀክትዎን ከሁሉም ንብርብሮች (ቬክተር፣ ራስተር)፣ ቅጥ እና ሞዴሎች ጋር በአንድ ላይ ለማሸግ ከፈለጉ፣ ወይም በአንድ ነጠላ **የማህደር** ውስጥ ብዙ የንብርብሮች እና የቦታ ውሂብ ዓይነቶችን ለማጋራት ይፈልጋሉ፣ GeoPackage መታየት የሚገባው ነው። እንዲሁም GeoPackage እና GeoJSON  ለድር ተስማሚ ናቸው እና እንደ Mapbox እና Leaflet በመሳሰሉ የድር ካርታ ቤተመፃህፍት በቀጥታ ሊጠቀሙባቸው ይችላሉ።
+
+ከዚህ በታች ባለው ማስፈንጠርያ ውስጥ የበለጠ ማንበብ ይችላሉ፦ [https://bnhr.xyz/2018/12/12/i-choose-geopackage.html](https://bnhr.xyz/2018/12/12/i-choose-geopackage.html)
+
+ይህ በእንዲህ እንዳለ፣ እንደ ፒክስል ወይም ህዋስ ፍርግርግ ሊወከል የሚችል ማንኛውም ቅርጸት በQGIS እንደ ራስተር ውሂብ ሊነበብ ይችላል። ይህ እንደ PNG (.png) እና JPEG (.jpg) ያሉ የምስል ቅርፀቶችን ያካትታል። ምንም እንኳን ሁሉም የምስል **የማህደር** ቅርፀቶች እንደ ራስተሮች ሊነበቡ ቢችሉም፣ ሁሉም በጂኦግራፊያዊነት የሚጠቀሱ አይደሉም ወይም በምድር ላይ በትክክል ለመፈለግ የሚያስችለንን የጂኦስፓሻል መረጃ የያዙ አይደሉም። እንደዚህ ላሉት አጋጣሚዎች፣ እኛ ወርልድ **ማህደር** ተብሎ የሚጠራውን ([https://am.wikipedia.org/wiki/World_file](https://en.wikipedia.org/wiki/World_file)) ልንጠቀምበት እንችላለን። አንድ ወርልድ **ማህደር** ስሙ ከሚመለከተው የራስተር ፋይል ጋር ተመሳሳይ የሆነ እና የ**ማህደር** ቅጥያው መጨረሻ ላይ w ፊደል የተጨመረበት የተለየ፣ የሚነበብ የውሂብ ፋይል ነው። ለምሳሌ፣ ለ **world.png** ያለው ወርልድ **ማህደር** ** world.pngw ** ወይም **world.pgw** ተብሎ ይጠራል።
+
+አንዳንድ የምስል **ማህደር** ቅርፀቶች ግልፅ የሆነ የመሬት አቀማመጥ እና መረጃን ይይዛሉ እናም ወርልድ **የማህደር** አያስፈልጋቸውም። አንዳንድ ምሳሌዎች GeoTIFFs (.tif or tiff) እና ERDAS Imagine file format (.img) ናቸው።
+
+ስለ**ማህደር** ቅርፀቶች የበለጠ መረጃ ለማግኘት የሚከተሉትን ማየትም ይችላሉ ፦ [https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html](https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html)
+
+የጂኦስፓሻል ውሂብ እንዲሁ በጂኦግራፊያዊ የውሂብ ቋቶች መልክ ሊመጣ ይችላል። እነዚህ እንደ ነፃ እና ክፍት ምንጭ Postgres ከ PostGIS ቅጥያ ([https://postgis.net/](https://postgis.net/)) ጋር ወይም የ ESRI ንብረት የሆነው እንደ ArcSDE ያሉ በድርጅት ደረጃ ያሉ የውሂብ ቋቶች ሊሆኑ ይችላሉ። በውስጣቸው የተለያዩ የውሂብ አይነቶችን (ለምሳሌ ቬክተር እና ራስተር) ሊያከማቹ የሚችሉ የ**ማህደር** ጂዮዳታቤዞች አሉ። አንዳንድ ምሳሌዎች ነፃ እና ክፍት የ OGC GeoPackage (.gpkg) ([https://www.geopackage.org/](https://www.geopackage.org/)) እና የባለቤትነት ፋይል ጂኦዳታቤዝ ቅርጸት በ ESRI (.gdb) ናቸው።
 
 
-#### **Loading Layers in QGIS**
+#### የመረጃ ምንጭ ዓይነቶች
 
-There are several ways to load layers in QGIS. These include:
+የ QGIS በጣም ጠቃሚ ከሆኑ ባህሪዎች አንዱ ከተለያዩ ምንጮች የተገኙ የተለያዩ የቦታ እና የቦታ ያልሆኑ ውሂቦችን የማገናኘት፣ የመጫን እና የመጠቀም ችሎታ ነው። QGIS ሊከፍት የሚችለው፦
 
-1. **Drag-and-drop** the layer in the QGIS Map Canvas or Layer Panel. This might be the easiest way to load a layer in QGIS but is not the recommended approach as there are gotchas when using this approach like when loading non-spatial tabular data like CSVs.
-2. Using the **Browser Panel**.
-3. Using the **Data Source Manager**.
-4. Using the **Data Source Manager toolbar** and the **Manage Layers toolbar**.
+* የአከባቢ ራስተር እና የቬክተር ፋይሎች
+* አካባቢያዊ የውሂብ ቋቶች
+* በይነመረብ ላይ ያሉ ፋይሎችን እና የውሂብ ቋቶች በራሳቸው uniform resource identifier (URI) ወይም uniform resource locator (URL)፣
+* የድር አገልግሎቶች (OSGeo የድር አገልግሎቶች እና ArcGIS የድር አገልግሎቶች)፣ የሰድር አገልግሎቶች እና እንደ  GeoNode ያሉ የውሂብ መግቢያዎች
+* እና ሌሎችም ...
 
-**NOTE:** _When loading layers, the default colors of your layers may be different than the default colors shown in this module._
+በተጨማሪም QGIS እንደ NASA የ SRTM ውሂብ፣ የፕላኔት ምስሎችን፣ SentinelHub፣ Google Earth Engine እና OpenStreetMap ከመሳሰሉ አገልግሎቶች በሚሰኩ ኃይሎች አማካኝነት ውሂቦችን ማገናኘት እና መጫን ይችላል።
 
-
-#### **The Browser Panel**
-
-The** Browser Panel **displays a file tree that shows your computer's files and folders as well as connections to databases and web servers. By default, it is docked on the left side of the QGIS user interface together with the Layers Panel.
-
-The Browser Panel exposes a lot of functionalities to connect, load, and show information about layers. You can also create connections to Favorite directories and Spatial Bookmarks in the Browser Panel.
-
-To learn more about the Browser Panel, go to: [https://docs.qgis.org/3.16/en/docs/user_manual/introduction/browser.html](https://docs.qgis.org/3.16/en/docs/user_manual/introduction/browser.html)
+ይህ QGISን ለማንኛውም የቦታ መረጃ መሠረተ ልማት ወይም የስራ ፍሰት ወሳኝ አካል ያደርገዋል።
 
 
-#### **Exercise 01.1: The Browser Panel**
+#### በQGIS ውስጥ ንብርብሮችን  መጫን
 
-1. Open QGIS.
-2. Check the Browser Pane (Figure 2.2). If you can’t find the Browser Panel, you can make it visible under **View ‣ Panels ‣ Browser Panel** in the Menu bar.
+በQGIS ውስጥ ንብርብሮችን ለመጫን በርካታ መንገዶች አሉ። እነዚህም የሚከተሉትን ያካትታሉ፦
+
+1. በQGIS ካርታ ሸራ ወይም ንብርብር ፓነል ውስጥ ንብርብሩን **ጎትት እና ጣል**። በQGIS ውስጥ አንድ ንብርብር ለመጫን ይህ ቀላሉ መንገድ ሊሆን ይችላል ግን እንደ CSVs ያሉ ቦታ-ነክ ያልሆኑ የሠንጠረዥ ውሂቦች ሲጫኑ gotchas ስላሉ እንደዚህ አይነት አካሄድ ሲጠቀሙ የሚመከር አካሄድ አይደለም።
+2. **የአሳሽ ፓነልን** በመጠቀም።
+3. **የውሂብ ምንጭ አቀናባሪውን** በመጠቀም።
+4. **የውሂብ ምንጭ አቀናባሪ** የ**መሣሪያ አሞሌን **እና **የንብርብሮች የመሣሪያ አሞሌን **በመጠቀም ያቀናብሩ።
+
+**ማስታወሻ፦ _ንብርብሮችን በሚጭኑበት ጊዜ የንብርብሮችዎ ነባር ቀለሞች በዚህ ሞጁል ውስጥ ከሚታዩት ነባር ቀለሞች የተለዩ ሊሆኑ ይችላሉ።_**
+
+
+#### የአሳሽ ፓነል
+
+**የአሳሽ ፓነል** የኮምፒተርዎን ፋይሎች እና ማህደሮች እንዲሁም ከውሂብ ቋቶች እና ከድር ሰርቨር ጋር ግንኙነቶችን የሚያሳይ የ**ማህደር** ዘንጎችን ያሳያል። በነባሪነት፣ ከ QGIS የተጠቃሚ በይነገጽ በግራ በኩል ከንብርብር ፓነል ጋር ተያይዘዋል።
+
+የአሳሽ ፓነል ስለ ንብርብሮች መረጃን ለማገናኘት፣ ለመጫን እና ለማሳየት ብዙ አሰራሮችን ያሳያል። እንዲሁም በአሳሽ ፓነል ውስጥ ከሚወዷቸው ማውጫዎች እና የቦታ ዕልባቶች ጋር ግንኙነቶችን መፍጠር ይችላሉ።
+
+ስለ አሳሽ ፓነል የበለጠ ለመረዳት ወደ፦ [https://docs.qgis.org/3.16/en/docs/user_manual/introduction/browser.html](https://docs.qgis.org/3.16/en/docs/user_manual/introduction/browser.html) ይሂዱ።
+
+
+#### መልመጃ 01.1፦ የአሳሽ ፓነል
+
+1. QGISን ይክፈቱ።
+2. የአሳሽ ፓነልን ይፈትሹ (ምስል 2.2)። የአሳሽ ፓነልን ማግኘት ካልቻሉ በዝርዝሩ አሞሌ ውስጥ ባለው የእይታ **‣** **ፓነሎች** **‣** **የአሳሽ ፓነል** እይታ ስር እንዲታይ ማድረግ ይችላሉ።
 
 ![The QGIS Browser Panel](media/qgis-browser-1.png "The QGIS Browser Panel")
 
-Figure 2.2. The Browser Panel
+ምስል 2.2. የአሳሽ ፓነል
 
-3. Notice how the drives and folders can be expanded to show the subfolders inside them.
-4. Locate the **Module 2 - Layers in QGIS** folder (Figure 2.3) in the file tree (note where you saved or downloaded the file). You should be able to see the necessary data for this workbook. In my example on the right, I linked the aforementioned folder as one of my Favorites so I can easily go to it from the Browser Panel. You can add a favorite directory to the Browser Panel by right-clicking on Favorites and adding the directory.
-5. Check the files inside the folder (Figure 2.3). There are several of them. From the file tree itself, we can already get an idea of the files and layers that we can load in QGIS. The icons on the left of the names indicate whether the data is a vector ![Vector symbol](media/symbol-vector.png "Vector symbol")
-, a raster ![Raster symbol](media/symbol-raster.png "Raster symbol"), a database ![Database symbol](media/symbol-db.png "Database symbol"), or simple tabular data ![Table symbol](media/symbol-table.png "Table symbol"). 
+3. በውስጣቸው ያሉትን ንዑስ ማህደሮች ለማሳየት ድራይቮች እና ማህደሮች እንዴት መስፋፋት እንደሚችሉ ያስተውሉ።
+4. በፋይሉ ዛፍ ውስጥ **ሞጁል  2 -በQGIS ውስጥ ያሉ ንብርብሮች **የሚለውን** **ማህደር (ምስል 2.3) ያግኙ (ፋይሉን የት እንዳስቀመጡ ወይም እንዳወረዱ ያስተውሉ)። ለዚህ የሥራ መጽሐፍ አስፈላጊ ውሂቦችን ማየት መቻል አለብዎት። በቀኝ በኩል ባለው ምሳሌዬ፣ ከላይ የተጠቀሰውን አቃፊ እንደ የእኔ Favorites አርጌ አስቀመጥኩትና አገናኘሁት ስለዚህ ከአሳሽ ፓነል በቀላሉ ወደ እሱ መሄድ እችላለሁ። በ Favorites ላይ በቀኝ ጠቅ በማድረግ እና ማውጫውን በማከል በአሳሽ ፓነል ውስጥ የፌቨራይት ማውጫን ማከል ይችላሉ።
+5.በማህደሩ ውስጥ ያሉትን ፋይሎች ይፈትሹ (ምስል 2.3)። በርካቶች አሉ። ከእራሱ የ**ማህደር** ዛፍ፣ በQGIS ውስጥ ልንጭናቸው የምንችላቸውን ፋይሎች እና ንብርብሮች ቀድሞውኑ ሀሳብ ማግኘት እንችላለን። ከስሞቹ በስተግራ ያሉት አዶዎች ውሂቡ ቬክተር ![Vector symbol](media/symbol-vector.png "Vector symbol")
+፣ ራስተር  ![Raster symbol](media/symbol-raster.png "Raster symbol")፣ የውሂብ ቋት  ![Database symbol](media/symbol-db.png "Database symbol")፣ ወይም ቀላል የሰንጠረዥ ውሂብ ![Table symbol](media/symbol-table.png "Table symbol") መሆን አለመሆኑን ያመለክታሉ።. 
 
 
 ![Module 2 files in the Browser Panel](media/qgis-browser-2.png "Module 2 files in the Browser Panel")
 
-Figure 2.3. The Module files in the Browser Panel
+ምስል 2.3.፡- በአሳሽ ፓነል ውስጥ ያሉ የሞጁል ፋይሎች
 
 6. There are 5 files under the data folder: 
 
-    1. a GeoPackage (ETH_Addis_Ababa.gpkg) which contains a vector (Addis_Ababa_hospitals) and raster file (ETH_Addis_Ababa_SRTM_DEM); 
-    2. a GeoJSON (ETH_states.geojson); 
-    3. a flatgeobuf file (ETH_zones.fgb);
-    4. a shapefile (ETH_admin_boundary.shp); and
-    5. a comma-separated value (CSV) file (Addis_Ababa_schools.csv).
+    1. ቬክተር (ddis_Ababa_hospitals) እና የራስተር **ማህደር**ን (ETH_Addis_Ababa_SRTM_DEM) የያዘ GeoPackage (ETH_Addis_Ababa.gpkg)፤
+    2. አንድ GeoJSON (ETH_states.geojson)፤
+    3. አንድ flatgeobuf **ማህደር** (ETH_zones.fgb)፤
+    4. አንድ shapefile (ETH_admin_boundary.shp)፤ እና
+    5. በጭረት የተለዩ እሴት (comma-separated value፡CSV) **ማህደር** (Addis_Ababa_schools.csv)።
 
-7. Right click on ETH_admin_boundary.shp and click Layer Properties (Figure 2.4). This opens the layer properties window (Figure 2.5). Notice the information provided in the window. What is the geometry of the layer? What CRS is used? How many features are in the layer?
+7. በ ETH_admin_boundary.shp በቀኝ በኩል ጠቅ ያድርጉ እና የንብርብር ባህርያት የሚለውን ጠቅ ያድርጉ (ምስል 2.4)። ይህ የንብርብር ባህርያት መስኮትን ይከፍታል (ምስል 2.5)። በመስኮቱ ውስጥ የቀረበውን መረጃ ልብ ይበሉ። የንብርብሩ ጂኦሜትሪ ምንድነው? ምን አይነት CRS ጥቅም ላይ ውሏል? በንብርብሩ ውስጥ ምን ያክል ባህሪዎች አሉ?
 
 
 ![Checking Layer Properties](media/qgis-browser-3.png "Checking Layer Properties")
 
-Figure 2.4.Checking Layer Properties
+ምስል 2.4:- የንብርብር ባህርያትን መፈተሽ
 
 ![Layer Properties from Browser Panel](media/qgis-browser-layer-properties.png "Layer Properties from Browser Panel")
 
-Figure 2.5. Layer Properties from Browser Panel
+ምስል 2.5.:- የንብርብሮች ባህርያት ከአሳሽ ፓነል
 
 
-8. Aside from providing metadata on the layers, you can also preview the geometry and attributes of the layer in the layer properties window.
-9. You can load a layer from the Browser Panel by:
+8. በንብርብሮች ላይ ሜታ ውሂብ ከመስጠት ባሻገር የንብርብሩንም ጂኦሜትሪ እና ባህርያት በንብርብሮች ባህሪዎች መስኮት ውስጥ አስቀድመው ማየት ይችላሉ።
+9. ንብርብርን ከአሳሹ ፓነል እንዲጀምር ማረግ ይችላሉ በ፦
 
-    1. **double-clicking the layer**
-    2. **right-clicking the layer ‣ Add Layer to Project**
-    3. **dragging the layer to the Map Canvas** 
+    1. **ንብርብርን ሁለቴ ጠቅ ማድረግ**
+    2. **ንብርብሩን በቀኝ ጠቅ ማድረግ  ‣  ንብርብርን ወደ ፕሮጀክት ይጨምሩ**
+    3. **ንብርብሩን ወደ ካርታው ሸራ መጎተት**
 
-10. Try to load the **ETH_admin_boundary**, **ETH_states**, and **ETH_zones** layers using any of the methods above.
+3. ከላይ ያሉትን ማናቸውም ዘዴዎች በመጠቀም **ETH_admin_boundary**፣ **ETH_states**እና **ETH_zones **ንብርብሮችን ለመጫን ይሞክሩ።
 
 ![The vector layers loaded in QGIS](media/vector-layers-loaded-1.png "The vector layers loaded in QGIS")
 
-Figure 2.6. The vector layers loaded in QGIS
+ምስል 2.6. በQGIS ውስጥ የተጫኑ የቬክተር ንብርብሮች
 
 
-#### **The Layers Panel**
+#### የንብርብሮች ፓነል
 
-The Layers Panel lists all the current layers in the project. It helps manage their visibility, order, and can be used to show Layer Properties. The Layers Panel can be activated from **View ‣ Panels ‣ Layers Panel** or using the shortcut **CTRL+1**. It is also called the Map Legend. If you’ve loaded all the vectors from the previous exercise, your Layers Panel should appear like below:
+የንብርብሮች ፓነል በፕሮጀክቱ ውስጥ ያሉትን ሁሉንም ወቅታዊ ንብርብሮች ይዘረዝራል። የእነሱን እይታና ቅደም ተከተል ለማስተዳደር እና የንብርብር ባህርያትን ለማሳየት ሊያገለግል ይችላል። የንብርብሮች ፓነል **ከእይታ** **‣** **ፓነሎች** **‣ የንብርብሮች ፓነል** ወይም አቋራጭ **CTRL+1** ን በመጠቀም ሊሰራ ይችላል። የካርታ መፍቻ ተብሎም ይጠራል። ካለፈው መልመጃ ሁሉንም ቬክተር ከጫኑ፣ የንብርብሮች ፓነልዎ ከዚህ በታች እንደሚታየው መታየት አለበት፦
 
 
 ![altThe Layers Panel_text](media/layers-panel-1.png "The Layers Panel")
 
-Figure 2.7. The Layers Panel
+ምስል 2.7.: የንብርብሮች ፓነል
 
-The visibility of a layer can be controlled by checking or unchecking the box on the left of the Layer Name. By dragging the layers up or down in the Layers Panel, their Z-ordering can be changed. Similar to image manipulation software like GIMP or Photoshop, the layers listed near the top are drawn over layers listed lower down. So if two layers show the same area, the layer that is higher in the Layers Panel will be drawn on top of the lower layer and may not make the lower layer visible in the Map Canvas. This is worth noting because there can be instances where we think a layer does not appear in QGIS when in reality it is being covered or hidden by a layer on top of it. 
+የንብርብር እይታን በንብርብሩ ስም በግራ በኩል ባለው ሳጥን ላይ ምልክት በማድረግ ወይም ባለማድረግ ቁጥጥር ማድረግ ይቻላል። በንብርብሮች ፓነል ውስጥ ያሉትን ንብርብሮች ወደ ላይ ወይም ወደ ታች በመጎተት፣ የ Z ቅደም ተከተል ሊቀየር ይችላል። እንደ GIMP ወይም Photoshop ካሉ ከምስል መቆጣጣሪያ ሶፍትዌሮች ጋር ተመሳሳይ ሲሆን ከላይ በአጠገብ የተዘረዘሩት ንብርብሮች ከታች ወደታች በተዘረዘሩት ንብርብሮች ይቀመጡ። ስለዚህ ሁለት ንብርብሮች አንድ ቦታ ካሳዩ፣ በንብርብሮች ፓነል ውስጥ ከፍ ያለ የሆነው ንጣፍ ከታችኛው ንብርብር ላይ ይሳባል እና በካርታው ሸራ ላይ ዝቅተኛውን ንብርብር እንዲታይ አያደርገውም። ይህ ልብ ሊባል የሚገባው ነው ምክንያቱም በእውነታው አንድ ሽፋን በላዩ ላይ በሚሸፈንበት ወይም በሚደበቅበት ጊዜ አንድ ንብርብር በQGIS ውስጥ አይታይም ብለን የምናስብባቸው አጋጣሚዎች ሊኖሩ ይችላሉ።
 
-**NOTE:** The Z-ordering of layers in the Layers Panel can be overridden by the **Layer Order Panel**.
+**ማስታወሻ፦** በንብርብሮች ፓነል ውስጥ ያሉ የንብርብሮች የ Z- ቅደም ተከተል **በንብርብር ቅደም ተከተል ፓነል** ሊሻር ይችላል።
 
-The Layers Panel also allows the user to rename and remove layers, filter layer visibility, create and manage layer groups and map views.
+የንብርብሮች ፓነል ተጠቃሚው ንብርብሮችን እንደገና እንዲሰይምና እንዲያስወግድ፣ የንብርብር እይታን ለማጣራት፣ የንብርብር ቡድኖችን እና የካርታ እይታዎችን እንዲፈጥሩ እና እንዲያስተዳድሩ ያስችላቸዋል።
 
-The attribute table of a vector layer can also be opened from the Layers Panel by **right-clicking on the layer ‣ Open attribute table**.
+የቬክተር ንብርብር የባህሪ ሰንጠረዥ በተጨማሪ በንብርብሮች **‣** **የባህሪ ሰንጠረዥ ክፈት ላይ በቀኝ ጠቅ በማድረግ ከንብርብሮች ፓነል **ሊከፈት ይችላል።
 
-To learn more about the Layers Panel, go to: [https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel](https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel)
+ስለ የንብርብሮች ፓነል የበለጠ ለመረዳት ወደ፦[https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel](https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel) ይሂዱ
 
 
-#### **Layer Properties**
+#### የንብርብር ባህርያት
 
-Right-clicking on a layer in the Layers Panel and selecting Layer Properties will open the Layer Properties dialog.
+በንብርብሮች ፓነል ውስጥ ባለው ንብርብር ላይ በቀኝ ጠቅ ማድረግ እና የንብርብር ባህሪያትን በመምረጥ የንብርብር ባህሪያት መገናኛን ይከፍታል።
 
 ![The Layer Properties dialog](media/layer-properties.png "The Layer Properties dialog")
 
-Figure 2.8. The Layer Properties dialog
+ምስል 2.8.:- የንብርብር ባህሪዎች መገናኛ
 
-There are several tabs in the Layer Properties dialog that allows the user to see information and even edit/modify properties related to the layer. 
+በንብርብር ባህሪዎች መገናኛው ውስጥ ተጠቃሚው መረጃን እንዲያይ እና ከንብርብሩ ጋር የሚዛመዱ ባህሪያትን እንኳን እንዲያሻሽል/እንዲያስተካክል የሚያስችሉት በርካታ ትሮች አሉ።
 
-The Information tab shows a read-only representation of summarized information and metadata on the current layer, including:
+የመረጃ ትሩ አሁን ባለው ንብርብር ላይ የተጠቃለለ መረጃ እና ሜታውሂብ የንባብ-ብቻ ገለጻን ያሳያል፣ የሚከተሉትን ጨምሮ፦
 
-*   data provider
-*   filled metadata
-*   geometry or field information
+* የመረጃ አቅራቢ
+* የተሞላ ሜታውሂብ
+* ጂኦሜትሪ ወይም የመስክ መረጃ
 
 The Source tab shows general settings for a vector layer.
 
-Tabs such as Symbology, Labels, Masks, and 3D View allows the user to modify the symbology and style of the layer.
+የምንጭ ትሩ ለቬክተር ንብርብር አጠቃላይ ቅንብሮችን ያሳያል።
 
-Other tabs allow users to perform joins with the Layer (Join), get information about the attribute fields (Fields), add custom Forms for adding new data (Attribute Forms), and many more.
+እንደ Symbology, Labels, Masks, and 3D View(ሶስት ማእዘን እይታ) ያሉ ትሮች ተጠቃሚው የንብርብሩን ተምሳሌታዊነት እና ዘይቤን እንዲያስተካክል ያስችለዋል። \
 
-Another tab worth mentioning is the Metadata tab that provides the user with the ability to create and edit a metadata report on the layer. This includes information on:
+ሌሎች ትሮች ተጠቃሚዎች ከንብርብሩ ጋር ተቀላቅለው እንዲሰሩ (ይቀላቀሉ)፣ ስለ ባህሪ መስኮች መረጃ እንዲያገኙ (መስኮች)፣ አዲስ ውሂብ ለማከል ብጁ ቅጾችን (የባህሪ ቅጾችን) እና ሌሎች ብዙዎችን እንዲያክሉ ያስችላቸዋል።
 
-*   Data identification: basic attribution of the dataset (parent, identifier, title, abstract, language…);
-*   Categories the data belongs to such as ISO categories and custom ones;
-*   Keywords to retrieve the data and associated concepts following a standard based vocabulary;
-*   Access to the dataset (licenses, rights, fees, and constraints);
-*   Extent of the dataset, either spatial one (CRS, map extent, altitudes) or temporal;
-*   Contact of the owner(s) of the dataset;
-*   Links to ancillary resources and related information; and
-*   History of the dataset.
+ሌላው ሊጠቀስ የሚገባው ትር ለተጠቃሚው በደረጃው ላይ የሜታውሂብ ሪፖርትን የመፍጠር እና የማስተካከል ችሎታ የሚሰጠው የሜታውሂብ ትር ነው። ይህ የሚከተሉት ላይ ያለ መረጃን ያካትታል፦
 
-A summary of the filled information is provided in the Validation tab and helps identify potential issues related to the metadata form. Currently, metadata is saved in the project file but they can also be saved in a separate .qmd file alongside the file based layers or in a local .sqlite database for remote layers.
+* የውሂብ መታወቂያ፦ የውሂብ ስብስብ መሠረታዊ ጥቅም (ወላጅ፣ መለያ፣ርዕስ፣ ረቂቅ፣ ቋንቋ…)፤
+* እንደ ISO ምድቦች እና ብጁዎች ውሂቡን ይመድባል።
+* ደረጃውን የጠበቀ የቃላት ዝርዝርን ተከትሎ ውሂቦችን እና ተጓዳኝ ፅንሰ ሀሳቦችን ለማምጣት የሚያስችሉ ቁልፍ ቃላት፤
+* የውሂብ ስብስብ (ፈቃዶች፣ መብቶች፣ ክፍያዎች እና ገደቦች) መዳረሻ፤
+* የውሂብ ስብስቡ ስፋት፣ ወይ የቦታ (CRS፣ የካርታ መጠን፣ ከፍታዎች) ወይም ጊዜያዊ፤
+* የውሂብ ስብስቡ ባለቤት (ቶች) መገኛ፣
+* የረዳት ሀብቶች እና ተዛማጅ መረጃዎች ሊንኮች፤ እና
+* የውሂብ ስብስብ ታሪክ።
 
-To learn more about vector layer properties, go to: [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html)
+የተሞላው መረጃ ማጠቃለያ በማረጋገጫ ታብ ውስጥ የቀረበ ሲሆን ከሜታውሂብ ቅፅ ጋር የሚዛመዱ ጉዳዮችን ለመለየት ይረዳል ፡፡ በአሁኑ ጊዜ፣ ሜታውሂብ በፕሮጀክቱ **ማህደር** ውስጥ ይቀመጣል ነገር ግን በ**ማህደር** ላይ ከተመሠረቱ ንብርብሮች ጎን ለጎን ወይም ሩቅ ለሆኑ ንብርብሮች በአካባቢያዊ .sqlite የውሂብ ቋት ውስጥ በተለየ .qmd **ማህደር** ውስጥ ሊቀመጡ ይችላሉ።
 
-To learn more about raster layer properties, go to: [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html)
+ስለ ቬክተር ንጣፍ ባህሪዎች የበለጠ ለመረዳት ወደ፦ [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html) ይሂዱ
 
-
-#### **Geospatial Metadata**
-
-Metadata is simply data about the data. It answers the who, what, when, where and how of the dataset and comes in all shapes and sizes. For GIS purposes, we are usually concerned with geospatial metadata. Geospatial metadata is described the the U.S. Federal Geographic Data Committee (FGDC) as:
-
-_“a file of information, usually presented as an XML document, which captures the basic characteristics of a data or information resource. It represents the who, what, when, where, why and how of the resource. Geospatial metadata commonly document geographic digital data such as Geographic Information System (GIS) files, geospatial databases, and earth imagery but can also be used to document geospatial resources including data catalogs, mapping applications, data models and related websites. Metadata records include core library catalog elements such as Title, Abstract, and Publication Data; geographic elements such as Geographic Extent and Projection Information; and database elements such as Attribute Label Definitions and Attribute Domain Values.”_
-
-The importance of metadata is that it not only promotes transparency but also facilitates data and information sharing. This is why it is important to always add metadata to our datasets. When adding metadata, it is equally important to follow standards -- widely promoted, accepted, and followed rules and practices -- so that the metadata we create are interoperable. One such standard is the ISO 19115:2014 “Geographic Information -- Metadata” from ISO/TC 211 ([https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en](https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en))
+ስለ ራስተር ንብርብር ባህሪዎች የበለጠ ለመረዳት ወደ፦ [https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html) ይሂዱ
 
 
-#### **Exercise 01.2: Adding Metadata**
+#### ጂኦስፓሻል ሜታውሂብ
 
-1. Open the Layer Properties of the ETH_admin_boundary layer.
-2. Check the information shown in the Information tab and look at the information shown. Is it complete? Can we add more information?
+ሜታውሂብ በቀላሉ ስለ ውሂብ ውሂብ ነው። የውሂቡ ስብስብ ማን፣ ምን፣ መቼ እና እንዴት እና በሁሉም ቅርጾች እና መጠኖች እንደሚመጣ ይመልሳል። ለ GIS ዓላማዎች፣ ብዙውን ጊዜ እኛ የምንመለከተው በጂኦግራፊያዊ ሜታውሂብ ነው። ጂኦስፓሻል ሜታውሂብ U.S.  የፌዴራል የጂኦግራፊ ውሂብ ኮሚቴ (FGDC) እንደ፦
+
+_“የመረጃ**ማህደር**፣ እንደ XML ሰነድ ሆኖ ይቀርባል፤ ይህም የውሂብ ወይም የመረጃ ሃብት መሰረታዊ ባህሪያትን ይይዛል። ሀብቱን ማን፣ ምን፣ መቼ፣ የት፣ ለምን እና እንዴት እንደሆነ ይወክላል። ጂኦስፓሻል ሜታውሂብ እንደ ጂኦግራፊያዊ የመረጃ ስርዓት (GIS) ፋይሎች፣ የጂኦግራፊያዊ የውሂብ ቋቶች እና የምድር ምስሎች ያሉ የጂኦግራፊያዊ ዲጂታል ውሂቦችን በመደበኛነት ይመዘግባል ነገር ግን የውሂብ ካታሎጎችን፣  የካርታ መተግበሪያዎችን፣ የውሂብ ሞዴሎችን እና ተዛማጅ ድረገጾችን ጨምሮ የጂኦስፓሻል ሀብቶችን ለመመዝገብ ሊያገለግል ይችላል። የሜታውሂብ መዝገቦች እንደ አርእስት፣ ረቂቅ እና የህትመት ውሂቦች ያሉ ዋና የቤተ-መጽሐፍት ካታሎግ አካላትን፣ እንደ ጂኦግራፊያዊ ስፋት እና የትወራ መረጃ ያሉ ጂኦግራፊያዊ አካላት፣ እንደ የመለያ ስያሜ ትርጓሜዎች እና የጎራ እሴቶችን አይነታ የመሳሰሉ የመረጃ ቋት አካላትን ያካትታሉ። ”_
+
+የሜታውሂብ አስፈላጊነት ግልፅነትን ከማሳደግ ባሻገር ውሂቦችን እና መረጃዎችን መጋራትንም የሚያመቻች መሆኑ ነው። ለዚህም ነው ሁልጊዜ ሜታውሂብን ወደ የውሂብ ስብስቦቻችን ማከል አስፈላጊ የሆነው። ሜታውሂብ በሚታከልበት ጊዜ፣ ደረጃዎችን መከተል አስፈላጊ ነው -- በስፋት ተዋውቋል፣ ተቀባይነት አግኝቷል፣ እንዲሁም ህጎችን ይከተላል -- ስለዚህ እኛ የምንፈጥረው ሜታውሂብ እርስ በእርሱ የሚተባበሩ እንዲሆኑ ይጠቅማል። ከእንደዚህ ዓይነቶቹ መመዘኛዎች አንዱ ISO ነው 9115:2014 “Geographic Information -- Metadata”  “ጂኦግራፊያዊ መረጃ -- ሜታውሂብ” ከ ISO/TC 211 ([https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en](https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en))
+
+
+#### መልመጃ 01.2፦ ሜታውሂብን ማከል
+
+1. የ ETH_admin_boundary ንብርብር የንብርብር ባህርያትን ይክፈቱ።
+2. በመረጃ ትሩ ላይ የሚታየውን መረጃ ይፈትሹ እና የታየውን መረጃ ይመልከቱ። ተጠናቅቋል? ተጨማሪ መረጃዎችን ማከል እንችላለን?
 
 ![Information properties of the ETH_admin_boundary layer](media/metadata-1.png "Information properties of the ETH_admin_boundary layer")
 
-Figure 2.9. Information properties of the ETH_admin_boundary layer
+ምስል 2.9.:- የ ETH_admin_boundary ንብርብር የመረጃ ባህሪያት
 
-3. Go to the Metadata tab and try adding more information about the layer such as the extent, data category, license, etc. Click OK when done.
+3. ወደ ሜታውሂብ ትሩ ይሂዱ እና እንደ ስፋቱ፣ የውሂብ ምድብ፣ ፈቃድ፣ወዘተ የመሳሰሉ ስለ ንብርብሩ ተጨማሪ መረጃ ለማከል ይሞክሩ። ሲጨርሱ OK ን ጠቅ ያድርጉ።
 
 ![Editing some metadata](media/metadata-2.png "Editing some metadata")
 
-Figure 2.10. Editing some metadata
+ምስል 2.10.:- የተወሰነ ሜታውሂብን ማስተካከል
 
-4. Go to the Information tab again and see if anything changed.
+4. እንደገና ወደ መረጃ ትሩ ይሂዱ እና የሆነ ነገር እንደተለወጠ ይመልከቱ።
 
 ![The Information tab after editing some metadata](media/metadata-3.png "The Information tab after editing some metadata")
 
-Figure 2.11. The Information tab after editing some metadata
+ምስል 2.11.:- የመረጃ ትሩ የተወሰኑ ሜታውሂቦችን ካስተካከለ በኋላ 
 
 
-#### Quiz questions
+#### የፈተና ጥያቄዎች
 
-1. True or False:
+1. እውነት ወይም ሐሰት፦
 
-    1. All vector files are shapefiles. -- ***False (a shapefile is a file format of a vector file. other vector data file formats include geopackage, geojson, and flatgeobuf)***
-    2. When rendered on the Map Canvas, a layer that is higher in the Layers Panel will always cover or appear on top of a layer that is lower in the Layers Panel. -- ***False (when activated, the ordering on the Layer Order Panel will override the ordering in the Layers Panel)***
-    3. You can check metadata information about a layer from the Layers Panel and the Browser Panel. -- ***True***
+    1. ሁሉም የቬክተር ፋይሎች shapefiles ናቸው። -- **_ሐሰት (shapefile የቬክተር _ማህደር_ የ_ማህደር_ ቅርጸት ነው። ሌሎች የቬክተር የውሂብ ፋይል ቅርፀቶች geopackage፣ geojson፣ እና flatgeobuf ን ያካትታሉ)_**
+    2. በካርታው ሸራ ላይ በሚሰጥበት ጊዜ፣ በንብርብሮች ፓነል ውስጥ ከፍ ያለ ንብርብር ሁልጊዜ በሚሸፈነው ፓነል ውስጥ ዝቅተኛ በሆነ ሽፋን ላይ ይሸፍናል ወይም ይታያል።-- **_ሐሰት (መስራት በሚጀምርበት ጊዜ፣ ንብርብር ቅደም ተከተል ፓነል ላይ ያለው ቅደም ተከተል በንብርብሮች ፓነል ውስጥ ያለውን ቅደም ተከተል ይሽራል)_**
+    3. ስለ ንብርብር እና ስለ አሳሽ ፓነል ንብርብሮች የሜታውሂብ መረጃን ማረጋገጥ ይችላሉ። -- **_እውነት_ **
 
 
-### Phase 2 title: The Data Source Manager and Connecting to Remote Services
+### ደረጃ 2 ርዕስ፦ የውሂብ ምንጭ ማኔጀር እና ከሩቅ አገልግሎቶች ጋር መገናኘት
 
-#### **The Data Source Manager**
+#### የውሂብ ምንጭ ማኔጀር
 
-If you don’t want to use the Browser Panel to load layers, you can always use the **Data Source Manager**.
+ንብርብሮችን ለመጫን የአሳሽ ፓነልን መጠቀም የማይፈልጉ ከሆነ ሁልጊዜ **የውሂብ ምንጭ ማኔጀሩን** መጠቀም ይችላሉ።
 
-The **Data Source Manager** was introduced with the release of QGIS 3. It is a “one-stop-shop” for adding and loading layers from different data sources in QGIS. Prior to its introduction, there were separate windows for loading different data sources (i.e. one for rasters, one for vectors, etc.). It can be accessed via **Layers ‣ Data Source Manager** or **CTRL + L**.
+**የውሂብ ምንጭ ማኔጀር** ከ QGIS 3 መለቀቅ ጋር አብሮ ተዋውቋል። በQGIS ውስጥ ካሉ የተለያዩ የውሂብ ምንጮች ንብርብሮችን ለመጨመር እና ለመጫን “ሁሉም-የሚገኝበት-ሱቅ” ነው። ከመግቢያው በፊት፣ የተለያዩ የውሂብ ምንጮችን (ማለትም አንድ ለራስተሮች፣ አንዱ ለቬክተሮች ወዘተ) ለመጫን የተለያዩ መስኮቶች ነበሩ። **በንብርብሮች** **‣** **የውሂብ ምንጭ ማኔጀር** አማካኝነት ወይም **CTRL + L **በኩል ሊደረስበት ይችላል።
 
 ![Data Source Manager](media/data-source-manager-1.png "Data Source Manager")
 
-Figure 2.12. The Data Source Manager
+ምስል 2.12.:- የውሂብ ምንጭ ማኔጀር
 
 
-#### **Exercise 02.1: The Data Source Manager**
+#### መልመጃ 02.1፦ የውሂብ ምንጭ ማኔጀር
 
-1. Open the **Data Source Manager**. It contains tabs on the right side that pertains to the kind of data source you want to load or connect to. Similar to the Browser, you can load and connect several kinds of data from the Data Source Manager.
-2. **Loading Vectors**
+1. **የውሂብ ምንጭ ማኔጀሩን** ይክፈቱ። እርስዎ ሊጭኗቸው ወይም ሊያገናኙዋቸው የሚፈልጓቸውን ዓይነት የውሂብ ምንጭ የሚመለከቱ ትሮች በቀኝ በኩል ይይዛል። ከአሳሹ ጋር በተመሳሳይ፣ ከውሂብ ምንጭ ማኔጀሩ ብዙ አይነት ውሂቦችን መጫን እና ማገናኘት ይችላሉ።
+2. **ቬክተሮችን መጫን**
 
-    1. To load vectors, go to the Vector tab. Files, files within a Directory, a Database, and even remote files via a Protocol like HTTP, cloud, etc can be loaded.
-    2. Let’s load the vector file (Addis_Ababa_hospitals) found inside the ETH_Addis_Ababa geopackage. This layer is a point layer of the locations of fast food restaurant Jollibee in NCR.
+    1. ቬክተሮችን ለመጫን፣ ወደ ቬክተር ትሩ ይሂዱ። እንደ HTTP፣ cloud፣ ወዘተ ባለ ፕሮቶኮል በኩል ፋይሎች፣ በማውጫ፣ በውሂብ ቋት እና በሩቅ ፋይሎች ውስጥ ያሉ ፋይሎች ሊጫኑ ይችላሉ።
+    2. በ ETH_Addis_Ababa geopackage ውስጥ የተገኘውን የቬክተር **ማህደር** (Addis_Ababa_hospitals) እንጫን። ይህ ንብርብር በ NCR ውስጥ የፈጣን ምግብ ቤት ጆሊቢ ሥፍራዎች አንድ የቦታ ንብርብር ነው።
 
-        1. Source Type: File
-        2. Source: Select the ETH_Addis_Ababa geopackage using the ![Search button](media/data-source-manager-search.png "Search button") button
-        3. Click Add
-        4. If there are more than 1 vector file inside the geopackage, QGIS will ask you to select which ones to load.
+        1. የምንጭ ዓይነት፦ **ማህደር**
+        2. ምንጭ፦ ![Search button](media/data-source-manager-search.png "Search button") አዝራሩን በመጠቀም የ ETH_Addis_Ababa geopackage ን ይምረጡ
+        3. ይጨምሩ የሚለውን ጠቅ ያድርጉ
+        4. በ geopackage ውስጥ ከ 1 በላይ የቬክተር **ማህደር** ካለ፣ QGIS የትኞቹ እንደሚጫኑ እንዲመርጡ ይጠይቃል።
 
 ![Loading a vector inside a GeoPackage](media/data-source-manager-vector.png "Loading a vector inside a GeoPackage")
 
-Figure 2.13. Loading a vector inside a GeoPackage
+ምስል 2.13.:- በ GeoPackage ውስጥ ያለን ቬክተር መጫን
 
-3. **Loading Rasters**
+3. **ራስተርን መጫን**
 
-    1. To load a raster, go to the Raster tab. Files and remote files via a Protocol like HTTP, cloud, etc can be loaded. There is a raster (ETH_Addis_Ababa_SRTM_DEM) inside the ETH_Addis_Ababa geopackage. This raster is a digital elevation model of the NCR region. To load it:
+    1. ራስተር ለመጫን፣ ወደ ራስተር ትር ይሂዱ። እንደ HTTP፣ cloud፣ ወዘተ ባለ ፕሮቶኮል በኩል ፋይሎች እና የዋና ፋይሎች ሊጫኑ ይችላሉ። በ ETH_Addis_Ababa geopackage ውስጥ ራስተር (ETH_Addis_Ababa_SRTM_DEM) አለ። ይህ ራስተር የ NCR ክልል የዲጂታል ከፍታ ሞዴል ነው ፡፡ እሱን ለመጫን፦
 
-        1. Source Type: File
-        2. Source: Select the ETH_Addis_Ababa geopackage using the ![Search button](media/data-source-manager-search.png "Search button") button
-        3. Click Add
-        4. If there are more than 1 raster file inside the geopackage, QGIS will ask you to select which ones to load
+        1. የምንጭ ዓይነት፦ **ማህደር**
+        2. ምንጭ፦ ![Search button](media/data-source-manager-search.png "Search button") አዝራሩን በመጠቀም የ ETH_Addis_Ababa geopackage ን ይምረጡ
+        3. ይጨምሩ የሚለውን ጠቅ ያድርጉ
+        4. በ geopackage ውስጥ ከ1 በላይ የራስተር **ማህደር** ካለ QGIS የትኞቹ እንደሚጫኑ እንዲመርጡ ይጠይቅዎታል
 
 ![Loading a raster inside a GeoPackage](media/data-source-manager-raster.png "Loading a raster inside a GeoPackage")
 
-Figure 2.14. Loading a raster inside a GeoPackage
+ምስል 2.14. በ geopackage ውስጥ ራስተርን መጫን
 
-4. **Loading CSV and other Delimited Text Files**  
+4. **CSV እና ሌሎች ውስን የሆኑ የጽሑፍ ፋይሎችን መጫን**
 
-    1. Aside from vectors and rasters, another common file used by GIS people are CSVs and spreadsheets. Luckily, it’s relatively easy to load these files in QGIS.
-    2. CSVs and other delimited text files can be loaded via the Delimited Text tab in the Data Source Manager, adding them from the Browser Panel, and even just dragging them into the Map Canvas. However, a few things should be considered if the CSV you have contains geometry information (i.e. point locations). The rule of thumb is:
+    1. ከቬክተሮች እና ራስተሮች በተጨማሪ፣ የGIS ሰዎች የሚጠቀሙበት ሌላ የተለመደ **ማህደር** CSVዎች እና ስፕሪድሺቶች ናቸው። እንደ እድል ሆኖ፣ እነዚህን ፋይሎች በQGIS ውስጥ ለመጫን በአንፃራዊነት ቀላል ነው።
+    2. CSVዎች እና ሌሎች የተወሰኑ የጽሑፍ ፋይሎች በውሂብ ምንጭ አቀናባሪው ውስጥ ባለው የተወሰነ የጽሑፍ ትር በኩል ከአሳሹ ፓነል ውስጥ በማከል፣ እና እንዲያውም ወደ ካርታ ሸራ እየጎተቱ ሊጫኑ ይችላሉ። ሆኖም፣ ያልዎት CSV የጂኦሜትሪ መረጃን (ማለትም የነጥብ ሥፍራዎችን) የያዘ ከሆነ ጥቂት ነገሮች ከግምት ውስጥ መግባት አለባቸው። መመሪያው የሚከተለው ነው፦
 
-        1. Use the Data Source Manager for loading CSVs whether or not they contain geometry information.
-        2. If CSVs will be loaded via the Browser Panel or by dragging, make sure that there is a corresponding CSVT file to preserve the field data types.
-        3. If you encounter problems with preserving data types for your delimited texts (specifically CSVs), you can use what’s called a CSVT file.  You can read more about loading CSVs in QGIS at the following link:  [https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html ](https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html)
+        1. ጂኦሜትሪ መረጃዎችን ይኑሩ አይኑሩ CSV ዎችን ለመጫን የውሂብ ምንጭ አቀናባሪውን ይጠቀሙ።
+        2. CSVዎች በአሳሽ ፓነል በኩል ወይም በመጎተት የሚጫኑ ከሆነ፣ የመስክ ውሂብ ዓይነቶችን ለማቆየት ተጓዳኝ የ CSVT **ማህደር** መኖሩን ያረጋግጡ።
+        3. ለተወሰኑ ጽሑፎችዎ (በተለይም ለ CSVዎች) የውሂብ አይነቶችን ማስጠበቅ ላይ ችግሮች ካጋጠምዎት፣ የ CSVT **ማህደር** ተብሎ የሚጠራውን መጠቀም ይችላሉ። QGIS ውስጥ CSVዎችን ስለ መጫን በሚከተለው አገናኝ ላይ የበለጠ ማንበብ ይችላሉ፦ [https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html](https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html)
 
-    3. CSVs and spreadsheets can be loaded in QGIS with or without spatial or geometry information. When they are loaded with spatial information, they are treated as vector data. When they are loaded without, they are treated as normal tabular data.
-    4. There is a CSV file in the data folder named Addis_Ababa_schools.csv which contains point locations of McDonald’s branches in NCR. To load it:
+    3. CSVዎች እና ስፕሪድሺቶች በQGIS ውስጥ በቦታ ወይም በጂኦሜትሪ መረጃ ወይም ያለእነሱ ሊጫኑ ይችላሉ። በመገኛ ቦታ መረጃ ሲጫኑ፣ እንደ ቬክተር መረጃ ይቆጠራሉ። ያለ እነሱ ሲጫኑ፣ እንደ መደበኛ የሰንጠረዦች ውሂብ ይቆጠራሉ።
+    4. በ NCR ውስጥ የማክዶናልድ ቅርንጫፎች የመገኛ ሥፍራዎችን የያዘ Addis_Ababa _schools.csv በተባለው የውሂብ ማህደር ውስጥ አንድ የ CSV **ማህደር** አለ። እሱን ለመጫን፦
 
-        1. Go to the Delimited Text tab
-        2. File name: Select the Addis_Ababa_schools CSV using the ![Search button](media/data-source-manager-search.png "Search button") button
-        3. File Format: CSV
-        4. Record and Fields Options: keep default
-        5. Geometry definition: 
+        1. ወደ ተወሰነው የጽሑፍ ትር ይሂዱ
+        2. የ**ማህደር** ስም፦ ![Search button](media/data-source-manager-search.png "Search button") ቁልፉን በመጠቀም የ Addis_Ababa _Schools CSV ን ይምረጡ
+        3. የ**ማህደር** ቅርጸት፦ CSV
+        4. የመዝገብ እና የመስክ አማራጮች፦ ነባሪውን ያቆዩ
+        5. የጂኦሜትሪ ትርጉም፦
+            * የነጥብ መጋጠሚያዎች
+            * የ X መስክ፦ ኬንትሮስ
+            * የ Y መስክ፦ ኬክሮስ
+            * ጂኦሜትሪ CRS፦ EPSG: 4326 - WGS 84
 
-            * Point coordinates
-            * X field: longitude
-            * Y field: latitude
-            * Geometry CRS: EPSG: 4326 - WGS 84
-
-        6. Layer settings: Check Watch file and Use spatial index
-
-            * When Watch file is checked, updates to the local CSV are automatically reflected in the layer loaded in QGIS.
-            * Use spatial index adds as spatial index to the loaded layer which makes vector processing faster.
+        6. የንብርብር ቅንብሮች፦ የመመልከቻ **ማህደሩ**ን ይፈትሹ እና የቦታ መረጃ ጠቋሚ ይጠቀሙ
+            * የመመልከቻ **ማህደር** ሲፈተሽ፣ በአከባቢው CSV ላይ ያሉ አዲስ ነገሮች በQGIS ውስጥ በተጫነው ንብርብር ውስጥ በራስ-ሰር ይንፀባርቃሉ።
+            * የቦታ ጠቋሚ ጭማሪዎችን  የቬክተር ማቀነባበሪያውን በፍጥነት እንዲጨምር በሚያደርገው በተጫነው ንብርብር ላይ እንደ የቦታ መረጃ ጠቋሚ ይጠቀሙ።
 
 
 ![Loading a CSV file](media/data-source-manager-csv.png "Loading a CSV file")
 
-Figure 2.15. Loading a CSV file
+ምስል 2.15. የ CSV **ማህደሩን**ን መጫን
 
-Once all the layers in the previous exercises are loaded, the Layers Panel should look something like below:
-
+በቀደሙት መልመጃዎች ውስጥ ያሉት ሁሉም ንብርብሮች ከተጫኑ በኋላ፣ የንብርብሮች ፓነል ከዚህ በታች የሆነ ነገር መምሰል አለበት።
 ![Layers Panel with all layers loaded](media/layers-panel-2.png "Layers Panel with all layers loaded")
 
-Figure 2.16. Layers Panel with all layers loaded
+ምስል 2.16.:- የንብርብሮች ፓነል ከሁሉም ንብርብሮች ጋር ተጭኗል
 
 
-The Map Canvas should look something like:
+የካርታው ሸራ ሊመስል የሚገባው፦
 
 ![QGIS Interface with all layers loaded](media/map-canvas-1.png "QGIS Interface with all layers loaded")
 
-Figure 2.17. QGIS Interface with all layers loaded
+ምስል 2.17.:-  የQGIS በይነገጽ ከሁሉም ንብርብሮች ጋር ተጭኗል
 
 
-Feel free to rearrange the layers in the Layer Panel.
+በንብርብሮች ፓነል ውስጥ ያሉትን ንብርብሮች እንደገና ለማቀናበር ነፃነት ይሰማዎት።
 
 
-#### **Connecting QGIS to Remote Services**
+#### QGISን ከሩቅ አገልግሎቶች ጋር ማገናኘት
 
-Aside from vector and raster files, QGIS can also connect to remote services such as tile servicers, OGC Web Services (WMS, WFS), and even ESRI ArcGIS Web Services. This connection can be created from the Browser Panel or the Data Source Manager.
+ከቬክተር እና ከራስተር ፋይሎች በተጨማሪ፣ QGIS እንደ የሰድር አገልግሎት ሰጪዎች፣ OGC የድር አገልግሎቶች (WMS፣ WFS)፣ እና የ ESRI ArcGIS ድር አገልግሎቶች ካሉ የርቀት አገልግሎቶች ጋር ሳይቀር መገናኘት ይችላል። ይህ ግንኙነት ከአሳሽ ፓነል ወይም ከውሂብ ምንጭ ሥራ አስኪያጅ ጋር ሊፈጠር ይችላል።
 
+#### መልመጃ 02.2 የ XYZ ሰድሮች ጋር መገናኘት
 
-#### **Exercise 02.2: Connecting to XYZ tiles**
+የ XYZ ሰድሮች ብዙውን ጊዜ እንደ ቤዝ ካርታዎች ያገለግላሉ እና በዴስክቶፕ መተግበሪያዎች ብቻ ሳይሆን፣ በጣም በብዛት፣ በድር መተግበሪያዎች ውስጥ ጥቅም ላይ ይውላሉ።
 
-XYZ tiles are usually used as basemaps and are utilized not just in desktop applications, but more commonly, in web applications. 
+ከሰድር ሠርቨር ጋር ለመገናኘት፦
 
-To connect to a tile server:
-
-1. Go to the **Browser Panel**
-2. **Right-click XYZ Tiles ‣ New Connection** 
-3. Add the following:
+1. ወደ **የአሳሽ ፓነል** ይሂዱ
+2. **የ XYZ ሰድሮችን በቀኝ ጠቅ ያድርጉ ‣ አዲስ ግንኙነት**
+3. የሚከተሉትን ያክሉ፦
 
 ```
-    Name: ESRI World Imagery
+    ስም፦ ESRI የዓለም ምስል
     URL: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
 ```
-4. Click OK.
+4. OK ን ጠቅ ያድርጉ።
 
 ![Adding an XYZ connection in QGIS](media/xyz-1.png "Adding an XYZ connection in QGIS")
 
-Figure 2.18. Adding an XYZ connection in QGIS
+ምስል 2.18. በQGIS ውስጥ የ XYZ ግንኙነትን ማከል/መጨመር
 
-5. This should add a ESRI World Imagery item under XYZ Tiles in the Browser Panel.
+5. ይህ በአሳሹ ፓነል ውስጥ በ XYZ ሰድሮች ስር የ ESRI የዓለም ምስል ንጥልን ማከል አለበት።
 
 ![ESRI World Imagery Tile server added to the Browser Panel](media/xyz-2.png "ESRI World Imagery Tile server added to the Browser Panel")
 
-Figure 2.19. ESRI World Imagery Tile server added to the Browser Panel
+ምስል 2.19.:- የESRI የዓለም ምስሎች ሰድር ሰርቨር ወደ የአሳሽ ፓነል ታክሏል
 
-6. You can load the XYZ tile layer as you would any other layer from the Browser Panel.
+6. ከአሳሹ ፓነል እንደማንኛውም ንብርብር የ XYZ ንብርብርን መጫን ይችላሉ።
 
 ![ESRI World Imagery layer loaded in QGIS](media/xyz-3.png "ESRI World Imagery layer loaded in QGIS")
 
-Figure 2.20. ESRI World Imagery layer loaded in QGIS
+ምስል 2.20. የESRI የዓለም ምስል ንብርብር በQGIS ውስጥ ተጭኗል
 
 
-**BONUS:**  If you want to add several basemaps under XYZ Tiles in the Browser Panel, you can follow the instructions in this post: [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
+**ተጨማሪ፦** በአሳሽ ፓነል ውስጥ በ XYZ ትሮች ስር በርካታ ቤዝ ካርታዎችን ማከል ከፈለጉ በዚህ ልጥፍ ውስጥ ያሉትን መመሪያዎች መከተል ይችላሉ፦ [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
 
-**BONUS #2:** You can add the URLs of the tileservers found in the Leaflet Providers website ([https://leaflet-extras.github.io/leaflet-providers/preview/](https://leaflet-extras.github.io/leaflet-providers/preview/)) as XYZ Tiles in the Browser Panel. 
+**ተጨማሪ # 2፦** በአሳሹ ፓነል ውስጥ እንደ XYZ ሰድሮች በራሪ ወረቀት አቅራቢዎች ድረገጽ ([ https://leaflet-extras.github.io/leaflet-providers/preview/ ](https://leaflet-extras.github.io/leaflet-providers/preview/)) ውስጥ የሚገኙትን የሰድር ሰርቨሮች URLs ን ማከል ይችላሉ።
 
 
-#### **Exercise 02.3: Connecting to WMS/WMTS and WFS**
+#### መልመጃ 02.3፦ ከ WMS/WMTS እና WFS ጋር መገናኘት
 
-WMS or Web Map Service is an Open Geospatial Consortium (OGC) ([https://www.ogc.org/](https://www.ogc.org/)) complaint web service standard for serving images (raster tiles) over the internet. When data is served  via WMS, the user cannot directly edit the information underneath it nor style it.
+WMS ወይም የድር ካርታ አገልግሎት በይነመረብ ላይ ምስሎችን (የራስተር ሰድሮችን) ለማገልገል የክፍት የጂኦስፓሻል ኮንሶርቲየም (OGC) ([https://www.ogc.org/](https://www.ogc.org/)) የቅሬታ ድር አገልግሎት መስፈርት ነው። በ WMS በኩል ውሂብ በሚቀርብበት ጊዜ፣ ተጠቃሚው ከስር ያለውን መረጃ በቀጥታ ማረምም ሆነ ቅጥ ማድረግ አይችልም።
 
-Meanwhile, WFS or Web Feature Services is another OGC-compliant web service for serving features (vectors) over the internet. When data is served via WFS, the user has access to the underlying attributes and geometry thus allowing him to style, edit, and use the layer for vector analysis.
+ይህ በእንዲህ እንዳለ፣ WFS ወይም የድር ባህሪ አገልግሎቶች በበይነመረብ ላይ ባህሪያትን (ቬክተሮችን) ለማገልገል ሌላ የ OGC- ቅሬታ የድር አገልግሎት ነው። መረጃ በWFS በኩል በሚቀርብበት ጊዜ፣ ተጠቃሚው መሰረታዊ ባህሪያቱን እና ጂኦሜትሪውን ማግኘት ስለሚችል ለቬክተር ትንተና ንብርብሩን ለመቅረጽ፣ ለማረም እና ለመጠቀም ያስችለዋል።
 
-To connect to a WMS:
+ከ WMS ጋር ለመገናኘት፦
 
-1. Go to the **Browser Panel**
-2. **Right-click WMS/WMTS ‣ New Connection** 
-3. Add the following:
+1. ወደ **የአሳሽ ፓነል** ይሂዱ
+2. **WMS/WMTS በቀኝ ጠቅ ያድርጉ ‣ አዲስ ግንኙነት**
+3. የሚከተሉትን ያክሉ፦
 
 ```
-Name: EOX Sentinel-2
+ስም፦ EOX Sentinel-2
 URL: https://tiles.maps.eox.at/wms
 ```
-4. Click Add
+4. ይጨምሩ የሚለውን ጠቅ ያድርጉ
 
 ![Creating a new WMS/WMTS Connection](media/wms-1.png "Creating a new WMS/WMTS Connection")
 
-Figure 2.21. Creating a new WMS/WMTS Connection
+ምስል 2.21.:-   አዲስ የWMS/WMTS ግንኙነት መፍጠር
 
-5. This should add a EOX Sentinel-2 item under the WMS/WMTS and OWS connections in the Browser Panel.
+5. ይህ በአሳሽ ፓነል ውስጥ በ WMS/WMTS እና OWS ግንኙነቶች ስር የ “EOX Sentinel-2” ንጥልን ማከል አለበት።.
 
 ![The EOX Sentinel-2 WMS added in the Browser Panel](media/wms-2.png "The EOX Sentinel-2 WMS added in the Browser Panel")
 
-Figure 2.22. The EOX Sentinel-2 WMS added in the Browser Panel
+ምስል 2.22.:- የ EOX Sentinel-2 WMS በአሳሽ ፓነል ውስጥ ታክሏል
 
-6. You can load the WMS layers as you would any other layer from the Browser Panel.
+6. ከአሳሽ ፓነል ውስጥ እንደማንኛውም ንብርብር የ WMS ን ንብርብሮች መጫን ይችላሉ።
 
 ![Sentinel-2 cloudless layer map from WMS loaded in QGIS](media/wms-3.png "Sentinel-2 cloudless layer map from WMS loaded in QGIS")
 
-Figure 2.23. Sentinel-2 cloudless layer map from WMS loaded in QGIS
+ምስል 2.23. QGIS ውስጥ ከተጫነው WMS የSentinel-2 cloud የሌለው ንብርብር ካርታ
 
-7. Connecting to WFS follows the same procedure.
-
-
-#### **Quiz questions**
-
-1. True or False:
-
-    1. You can only load local files in QGIS -- ***False (you can also load remote files such as those stored online or served by web services)***
+7. ከ WFS ጋር መገናኘት ተመሳሳይ አሰራርን ይከተላል።
 
 
-### Phase 3 title: Exporting Layers, Layers in Memory (Temporary), and Virtual Layers
+#### የፈተና ጥያቄዎች
 
-#### **Exporting Layers from QGIS**
+1. እውነት ወይም ሐሰት፦
+    1. አካባቢያዊ ፋይሎችን በQGIS ብቻ መጫን ይችላሉ-- **_ሐሰት (እንዲሁም ኦንላይን የተከማቹ ወይም በድር አገልግሎት የሚሰጡ የሩቅ ፋይሎችን መጫን ይችላሉ)_**
 
-Exporting layers (or saving layers to files) is straightforward in QGIS. Simply **Right-click on the layer ‣ Export** to view the export options for the layer.
+
+### ደረጃ 3 ርዕስ፦ ንብርብሮችን ወደ ውጭ ማውጣት፣ ማስታወሻ  ውስጥ ያሉ ንብርብሮች (ጊዜያዊ) እና ምናባዊ ንብርብሮች
+
+#### ከ QGIS ንብርብሮችን ወደ ውጭ ማውጣት
+
+ንብርብሮችን ወደ ውጭ ማውጣት (ወይም ንብርብሮችን በፋይሎች ማስቀመጥ) QGIS ውስጥ ቀጥተኛ ነው። ለንብርብሩ ወደ ውጪ የማውጫ አማራጮችን ለማየት በቀላሉ **የንብርብሩ ማስወጫ ላይ በቀኝ ጠቅ ‣** **ያድርጉ**።
 
 ![Exporting a layer from QGIS](media/exporting-layers.png "Exporting a layer from QGIS")
 
-Figure 2.24. Exporting a layer from QGIS
+ምስል 2.24. አንድ ንብርብር ከQGIS ወደ ውጭ ማውጣት
 
-*   **Save Features As…** allows you to save the raster or vector layer.
+* **ባህሪያትን ያስቀምጡ…** የሚለው የራስተር ወይም የቬክተር ንብርብሮችን እንዲያስቀምጡ ያስችልዎታል።
+    * በቬክተር ሽፋኑ ላይ **ማጣሪያው **በሚሠራበት ጊዜ፣ የተጣሩ ባህያት (በካርታው ሸራ ላይ የሚታዩት) ብቻ ወደ ውጭ ይወጣሉ።
+* **የተመረጡትን ባህሪያትን ያስቀምጡ ...** የሚለው አሁን የተመረጡትን ባህሪያት ብቻ እንዲያስቀምጡ የሚያስችልዎ የቬክተር ንብርብሮች አማራጭ ነው።
+* **የንብርብር ፍቺ ማህደሩን ያስቀምጡ…** የሚለው ለንብርብሩ የ QLR **ማህደሩ**ን ይፈጥራል (የሞጁል 1፣ የ QGIS **ማህደር** ቅርፀቶችን ይመልከቱ)
+* **የ QGIS ንብርብር ቅጥ ማህደሩን ያስቀምጡ…** የሚለው የ QML **ማህደሩ**ን ያስቀምጣል (የሞጁል 1 ፣ የQGIS **ማህደር** ቅርፀቶችን ይመልከቱ)
 
-    *   When a **filter** is active on the vector layer, only the filtered features (those appearing on the map canvas) are exported.
-
-*   **Save Selected Features As...** is an option for vector layers that allows you to save only the features currently selected.
-*   **Save as Layer Definition File…** creates a QLR file (see Module 1, QGIS File Formats) for the layer
-*   **Save as QGIS Layer Style File…** saves a QML file (see Module 1, QGIS File Formats) for the layer
-
-When exporting a layer, QGIS gives you the option to select the output file format, the fields to include (if a vector file), the output coordinate reference system, and other options. This means that you can perform coordinate projection by exporting a layer.
+አንድ ንብርብርን ሲያወጡ፣ QGIS የውጤት **ማህደር** ቅርጸት፣ የሚካተቱባቸው መስኮች (የቬክተር**ማህደር** ከሆነ)፣ የውጤት መጋጠሚያ የማጣቀሻ ስርዓትን እና ሌሎች አማራጮችን የመምረጥ አማራጭ ይሰጥዎታል። ይህ ማለት አንድ ንብርብርን ወደ ውጭ በማውጣት የመጋጠሚያ ትወራን ማከናወን ይችላሉ ማለት ነው።
 
 ![Save Vector Layer dialog](media/save-vector.png "Save Vector Layer dialog")
 
-Figure 2.25. Save Vector Layer dialog
+ምስል 2.25. የቬክተር ንብርብር መገናኛን ያስቀምጡ
 
-For more information on how to save a layer from an existing file, go to: [https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_layers.html#save-layer-from-an-existing-file](https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_layers.html#save-layer-from-an-existing-file)
+አንድ ንብርብር ከአንድ ነባር **ማህደር** እንዴት እንደሚያስቀምጡ ተጨማሪ መረጃ ለማግኘት፣ ወደ [https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_layers.html#save-layer-from- an-existing-file](https://docs.qgis.org/3.16/en/docs/user_manual/managing_data_source/create_layers.html#save-layer-from-an-existing-file) ይሂዱ
 
+#### ንብርብሮች በማስታወሻ ውስጥ
 
-#### **Layers in Memory**
+አንዳንድ ጊዜ፣ በኮምፒተሮቻችን ውስጥ በመተንተን የምንጠቀምባቸውን ንብርብሮች፣ በተለይም ጊዜያዊ ከሆኑ፣ በአካል ማስቀመጥ አንፈልግም።
 
-Sometimes, we don’t need or want to physically save the layers we use in our analysis in our computers, especially if they are just temporary.
+QGIS ይህንን ተረድቶ ተጠቃሚዎች **ጊዜያዊ** / **የጭረት** ንብርብሮችን እንዲፈጥሩ ያስችላቸዋል። እነዚህ ንብርብሮች ከመደበኛ የቬክተር ንጣፎች ጋር ተመሳሳይ ሆነው ሊያገለግሉ ይችላሉ ነገር ግን QGIS በማስታወሻ ወይም በራም ውስጥ ስለሚያከማቸው በእኛ ማከማቻ ድራይቮች ውስጥ በቋሚነት ወደ **ማህደር** ውስጥ መጫን አያስፈልጋቸውም። ጊዚያዊ ንብርብሮች ከዚህ አዶ  ![Temporary layer symbol](media/symbol-temp.png "Temporary layer symbol") ጋር በንብርብር ፓነል ውስጥ ይታያሉ።
 
-QGIS understands this and allows users to create **temporary / scratch** layers. These layers can be used similar to regular vector layers but do not need to be permanently saved into a file in our storage drives because QGIS stores them in memory or RAM. Temporary layers are shown in the Layer Panel with this icon ![Temporary layer symbol](media/symbol-temp.png "Temporary layer symbol").
+የአሰራር ስልተ ቀመሮች ውጤቶች በነባሪነት እንደ ጊዜያዊ ንብርብሮች ይቀመጣሉ።
 
-The outputs of processing algorithms are stored as temporary layers by default.
+የጊዜያዊ ንብርብሮች መጥፎነት QGIS በሚዘጋበት ጊዜ እነዚህን **“ማስታወሻ ውስጥ ያሉ ንብርብሮች” “መርሳቱ”** ነው። ይህንን ለማስተካከል፣ ጊዜያዊ ንብርብሮቻችንን ዘላቂ እንዲሆኑ ለማስቻል **የማስታወሻ ንብርብር ማስቀመጫ ተሰኪን** መጠቀም እንችላለን። ጊዜያዊ ንብርብሮችን የሚጠቀም የ QGIS ፕሮጀክትን ሲያስቀምጡ፣ በመጀመሪያ የማስታወሻ ንብርብር ማስቀመጫ ተሰኪን ማስጀመር/ማሰራት ጥሩ ልምድ ነው። የማስታወሻ ንብርብር ማስቀመጫ ተሰኪን ለመጠቀም፣ የ QGIS ፕሮጀክትዎን ከመቆጠብ እና ከመዝጋትዎ በፊት በቀላሉ ወደ **ተሰኪዎች** **‣** **የማስታወሻ ንብርብር ማስቀመጫ** ይሂዱ። በሚቀጥለው ጊዜ የ QGIS ፕሮጀክትዎን ሲከፍቱ፣ ጊዜያዊ ንብርብሮች (ወይም በማስታወሻ ውስጥ ያሉ ንብርብሮች) አሁንም መኖር አለባቸው።
 
-The downside of temporary layers is that QGIS “**forgets**” these “**layers in memory**” when it is closed. To remedy this, we can use the **Memory Layer Saver plugin** to allow our temporary layers to be persistent. When saving a QGIS project that uses temporary layers, it is good practice to run/activate the Memory Layer Saver plugin first. To use the Memory Layer Saver plugin, simply go to **Plugins ‣ Memory Layer Saver** before saving and closing your QGIS project. The next time you open your QGIS project, the temporary layers (or layers in memory) should still be present.
-
-Of course you can also just make the temporary layer permanent by exporting the layer to a file. Clicking the ![Temporary layer symbol](media/symbol-temp.png "Temporary layer symbol") icon will automatically open an export layer dialog.
-
-
-#### **Virtual Layers**
-
-A virtual layer is a special type of vector layer that is created “on the fly” as a result of a query or data from another layer.
-
-For example, we can create a virtual layer that creates a buffer around another feature layer. Whenever a new feature is added to the source feature layer, the virtual layer will be updated accordingly. 
-
-Currently, virtual layers don’t seem to work with source layers in memory.
-
-Virtual layers are dynamic. This means that when the base/source layer is updated, the virtual layer is updated as well. This can save space and reduce data duplication since the virtual layer data will simply get data from the base layer without needing to save anything to your disk although there can be some performance overhead if complex queries or operations are used to define the virtual layer.
-
-SQL-like constructs are used to define the virtual layer. 
-
-Virtual layers are dependent on other layers so it is important that the base layers are not moved or renamed.
-
-When the base layer is updated, you need to refresh the map display by panning or zooming the map to show the virtual layer update.
+በእርግጥ እርስዎ በተጨማሪ ሽፋኑን ወደ **ማህደር** በመላክ ጊዚያዊውን ንብርብር ዘላቂ ማድረግ ይችላሉ። ![Temporary layer symbol](media/symbol-temp.png "Temporary layer symbol") አዶውን ጠቅ ማድረግ የማስወጫ ንብርብር መገናኛን በራስ-ሰር ይከፍታል።
 
 
-#### **Quiz questions**
+#### ምናባዊ ንብርብሮች
 
-1. True or False:
-    
-    1. When exporting a vector layer, you can select the format to save it to. -- ***True***
-    2. Temporary (or scratch) layers are always forgotten by QGIS when it is closed. -- ***False (they can be made persistent by using the Memroy Layer Saver plugin)***
-    3. When the base layer for a virtual layer is updated, the virtual layer is automatically updated on the map canvas without need for user input. -- ***False (the user needs to update the  map canvas either by panning or zooming before the virtual layer update is reflected on the canvas)***
+ቨርቹዋል ንብርብር ከሌላው ንብርብር በሚገኝ ጥያቄ ወይም ውሂብ ምክንያት  “በራሪ ላይ” የተፈጠረ ልዩ ዓይነት የቬክተር ሽፋን ነው።
 
+ለምሳ፣ በሌላ የባህሪ ንብርብር ዙሪያ ቋት የሚይዝ ምናባዊ ንብርብር መፍጠር እንችላለን። አዲስ ባህርይ የምንጭ ባህሪው ንብርብር ላይ በሚታከልበት ጊዜ ሁሉ፣ ምናባዊው ንብርብር በዚሁ መሠረት ይዘምናል።
 
-### If you want to go further:  
+በአሁኑ ጊዜ፣ ምናባዊ ንብርብሮች በማስታወሻ ውስጥ ካሉ የምንጭ ንብርብሮች ጋር የሚሰሩ አይመስሉም።
 
+ምናባዊ ንብርብሮች ተለዋዋጭ ናቸው። ይህ ማለት የመሠረት/የምንጭ ንብርብሩ ሲዘምን፣ ምናባዊው ንብርብር እንዲሁ ዘምኗል ማለት ነው። ውስብስብ ጥያቄዎች ወይም ክዋኔዎች ምናባዊ ንብርብርን ለመለየት ጥቅም ላይ የሚውሉ ከሆነ የተወሰነ የአፈጻጸም ስራ ሊኖር የሚችል ቢሆንም በዲስክዎ ላይ ማንኛውንም ነገር ለማስቀመጥ ሳያስፈልግ ምናባዊ ንብርብር በቀላሉ ከመሠረቱ ንብርብር ላይ ውሂብ ስለሚያገኝ ይህ ቦታን መቆጠብ እና የውሂብ መባዛትን ሊቀንስ ይችላል።
 
-#### **Install some plugins that serve as data sources**
+እንደ SQL ያሉ ግንባታዎች ምናባዊውን ንብርብር ለመግለጽ ያገለግላሉ።
 
-Some plugins provide the functionality to load data into QGIS. These include vector data, satellite imagery, raster files, basemaps, etc. Try to install the following plugins and find out what kind of data they load in QGIS:
+ምናባዊ ንብርብሮች በሌሎች ንብርብሮች ላይ ጥገኛ ስለሆኑ የመሠረቱ ንጣፎች እንዳይዛወሩ ወይም እንደገና እንዳይሰየሙ ማድረግ አስፈላጊ ነው።
 
-*   QuickOSM ([https://plugins.qgis.org/plugins/QuickOSM/](https://plugins.qgis.org/plugins/QuickOSM/))
-*   SRTM-Downloader ([https://plugins.qgis.org/plugins/SRTM-Downloader/](https://plugins.qgis.org/plugins/SRTM-Downloader/))
-*   QuickMapServices ([https://plugins.qgis.org/plugins/quick_map_services/](https://plugins.qgis.org/plugins/quick_map_services/))
-
-P.S. Some of these plugins require you to sign up for an account with the data provider.
+የመሠረቱ ንብርብር ሲዘምን፣ ምናባዊውን የንብርብር አዲስ መረጃ ለማሳየት ካርታውን በመለየት ወይም በማጉላት የካርታ ማሳያውን ማደስ ያስፈልግዎታል።
 
 
-#### **Connect to GeoNode instances**
+#### የፈተና ጥያቄዎች
 
-GeoNode ([https://geonode.org/](https://geonode.org/)) is an open-source Geospatial Content Management System built with a mature FOSS4G stack that includes PostGIS, GeoServer, MapStore, etc. You can think of GeoNode as a geospatial data portal. You can easily connect QGIS to a GeoNode instance via the GeoNode connector in the Browser Panel or the Data Source Manager.
+1. እውነት ወይም ሐሰት፦
+    1. የቬክተር ንጣፍ ወደ ውጭ በሚያወጡበት ጊዜ፣ የሚያስቀምጡበትን ቅርጸት መምረጥ ይችላሉ። -- **_እውነት_**
+    2. ጊዜያዊ (ወይም ጭረት) ንብርብሮች QGIS በሚዘጋበት ጊዜ ይረሳሉ።** **--**_ሐሰት (የማስታወሻ ንብርብር ማስቀመጫ ተሰኪን በመጠቀም ቀጣይነት እንዲኖራቸው ማድረግ ይቻላል)_**
+    3. ለምናባዊ ንብርብር የመሠረት ንብርብር ሲዘመን፣ ምናባዊው ንብርብር የተጠቃሚ ግብዓት ሳያስፈልገው በካርታው ሸራ ላይ በራስ-ሰር ይዘመናል። -- **_ሐሰት (ምናባዊ የንብርብር አዲስ መረጃ በሸራው ላይ ከመታየቱ በፊት ተጠቃሚው የካርታውን ሸራ በመለየት ወይም በማጉላት ማዘመን አለበት)_**
 
-1. Go to the **Browser Panel**
-2. Right-click **GeoNode ‣ New Connection**
-3. Add the following:
+
+### ከዚህ በላይ መሄድ ከፈለጉ፦
+
+
+#### እንደ ውሂብ ምንጮች የሚያገለግሉ አንዳንድ ተሰኪዎችን ይጫኑ
+
+አንዳንድ ተሰኪዎች መረጃን ወደ QGIS ለመጫን ተግባራዊነትን ይሰጣሉ። ይህ የቬክተር ውሂቦችን፣ የሳተላይት ምስሎችን፣ የራስተር ፋይሎችን፣ ቤዝ ካርታዎችን፣ ወዘተ ያካትታሉ። የሚከተሉትን ተሰኪዎች ለመጫን ይሞክሩ እና በQGIS ውስጥ ምን ዓይነት ውሂብ እንደሚጫኑ ለማወቅ ይሞክሩ፦
+
+* QuickOSM ([https://plugins.qgis.org/plugins/QuickOSM/](https://plugins.qgis.org/plugins/QuickOSM/))
+* SRTM-Downloader ([https://plugins.qgis.org/plugins/SRTM-Downloader/](https://plugins.qgis.org/plugins/SRTM-Downloader/))
+* QuickMapServices ([https://plugins.qgis.org/plugins/quick_map_services/](https://plugins.qgis.org/plugins/quick_map_services/))
+
+P.S. ከእነዚህ ተሰኪዎች ውስጥ አንዳንዶቹ ከመረጃ አቅራቢው ጋር ለመለያ እንዲመዘገቡ ይጠይቅዎታል።
+
+
+#### የ GeoNode ሁኔታዎች ጋር ይገናኙ
+
+GeoNode ([ https://geonode.org/](https://geonode.org/)) PostGIS፣GeoServer፣ MapStore፣ ወዘተ ያካተተ በበሰለ የ FOSS4G ስታክ የተገነባ የክፍት ምንጭ የጂኦስፓሻል ይዘት አስተዳደር ስርዓት ነው። GeoNode ን እንደ ጂኦግራፊያዊ የውሂብ ፖርታል ማሰብ ይችላሉ። QGISን በአሳሽ ፓነል ውስጥ ወይም በውሂብ ምንጭ ማኔጀር ውስጥ ባለው የ GeoNode አገናኝ በኩል በቀላሉ ከ GeoNode ምሳሌ ጋር ማገናኘት ይችላሉ።
+
+1. ወደ **የአሳሽ ፓነል** ይሂዱ
+2. **GeoNode** **‣** **አዲስ ግንኙነት **የሚለውን በቀኝ-ጠቅ ያድርጉ
+3. የሚከተሉትን ያክሉ፦
 ```
 Name: UNESCO IHP-WINS
 URL: [http://ihp-wins.unesco.org/](http://ihp-wins.unesco.org/) 
@@ -560,35 +551,36 @@ URL: [http://ihp-wins.unesco.org/](http://ihp-wins.unesco.org/)
 
 ![Connect to GeoNode](media/connect-geonode.png "Connect to GeoNode")
 
-You can learn more about connecting QGIS to remote services at: [https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html](https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html)
+QGISን ከሩቅ አገልግሎቶች ጋር ስለማገናኘት [https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html](https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html) የበለጠ ማወቅ ይችላሉ
 
 
-#### **Exercise/Tutorial on Virtual Layers**
+#### የአካል ብቃት እንቅስቃሴ/ስልጠና በምናባዊ ንብርብሮች ላይ
 
-1. Open QGIS.
-2. Load a satellite image or satellite basemap via XYZ tiles or QuickMapServices plugin (e.g. Google Satellite).
-3. Create a new geopackage layer with ![Create new geopakage symbol](media/symbol-gpkg.png "Create new geopakage symbol") in the Data Source Manager toolbar. Name it Trees, add a radius (integer) and species (text) fields, and use a projected CRS (e.g. EPSG:3857)
+1. QGISን ይክፈቱ።
+2. በ XYZ ሰድሮች ወይም በፈጣን የካርታ አገልግሎቶች ተሰኪ በኩል የሳተላይት ምስልን ወይም የሳተላይት ቤዝ ካርታውን (ለምሳሌ ጉግል ሳተላይት) ይጫኑ።
+3. በውሂብ ምንጭ ማኔጀር የመሳሪያ አሞሌ ውስጥ ![Create new geopakage symbol](media/symbol-gpkg.png "Create new geopakage symbol") አዲስ የ geopackage ንብርብር ይፍጠሩ። Trees ብለው ይሰይሙ፣ ራዲየስ (ኢንቲጀር) እና የዝርያዎች (ጽሑፍ) መስኮችን ይጨምሩ እና የተተወረ CRS ን ይጠቀሙ (ለምሳሌ EPSG: 3857)
 
 ![New GeoPackage Layer](media/virtual-1.png "New GeoPackage Layer")
 
-When you are prompted that the file already exists, select Add New Layer.
+ማህደሩ ቀድሞ እንዳለ ሲጠየቁ፣ Add New Layer (አዲስ ንብርብር አክል) የሚለውን ይምረጡ።
 
 ![GeoPackage Layer exists](media/virtual-2.png "GeoPackage Layer exists")
 
 
-4. Toggle editing on Trees by right-clicking on it ‣ Toggle editing or clicking ![Toggle editing symbol](media/symbol-edit.png "Toggle editing symbol") in the Digitizing Toolbar.
-5. Select an area on the satellite image that has trees.
-6. With Editing toggled on, enable adding points to the Trees layer by clicking ![Add new point symbol](media/symbol-add-point.png "[Add new point symbol") (CTRL + .).
-7. Digitize individual trees by clicking on their location and adding the attribute information. Do this for 4 trees. For this exercise, can just guess the information.
+4. Trees ላይ በቀኝ ጠቅ በማድረግ እርማትዎን ይቀያይሩ ‣ \
+ እርማትዎን ይቀያይሩ ወይም ![Toggle editing symbol](media/symbol-edit.png "Toggle editing symbol")  በዲጂታይዚንግ የመሣሪያ አሞሌውን ጠቅ ያድርጉ።
+5. ዛፎች ያሉት የሳተላይት ምስል ላይ አንድ አካባቢ ይምረጡ።
+6. ከተቀየረ እርማት ጋር፣  ![Add new point symbol](media/symbol-add-point.png "[Add new point symbol") (CTRL +)ን ጠቅ በማድረግ በዛፎች ንብርብር ላይ ነጥቦችን ማከል ያስችሉ።
+7. የግለሰብ ዛፎችን በአካባቢያቸው ላይ ጠቅ በማድረግ እና የባህሪ መረጃዎችን በመጨመር ዲጂታላይዝ ያድርጉ። ይህንን ለ 4 ዛፎች ያድርጉ። ለዚህ መልመጃ፣ መረጃውን መገመት ይችላል።
 
 ![Add new trees](media/virtual-3.png "Add new trees")
 
-8. After adding the points, don’t forget to save your edits by clicking ![Save edits symbol](media/symbol-save-edits.png "Save edits symbol") in the Digitizing toolbar before toggling the Editing off.
+8. ነጥቦቹን ከጨመሩ በኋላ፣ እርማቱን ከማጥፋትዎ በፊት ዲጂታል የሚያደርገውን የመሣሪያ አሞሌ ![Save edits symbol](media/symbol-save-edits.png "Save edits symbol")  ጠቅ በማድረግ እርማቶችዎን ማስቀመጥዎን አይርሱ።
 
 ![New points (trees) added](media/virtual-4.png "New points (trees) added]")
 
-9. Add a virtual layer by clicking ![Add virtual layer symbol](media/symbol-virtual.png "Add virtual layer symbol") in the Data Source Manager toolbar.
-10. Set Layer name to Tree Canopy. Import Trees. Add the following query: 
+9. በውሂብ ምንጭ ማኔጀር የመሳሪያ አሞሌን ![Add virtual layer symbol](media/symbol-virtual.png "Add virtual layer symbol")  ጠቅ በማድረግ ምናባዊ ንብርብር ያክሉ።
+10. Tree Canopy ብለው የንብርብር ስም ያዘጋጁ። ዛፎችን ያስገቡ። የሚከተለውን ጥያቄ ያክሉ፦ 
 
 ```
 select fid, buffer(geometry, radius), species from Trees
@@ -598,25 +590,24 @@ select fid, buffer(geometry, radius), species from Trees
 
 ![Virtual layer in QGIS](media/virtual-6.png "Virtual layer in QGIS")
 
-Add a new point then refresh the map display (by zooming or panning the map canvas) to see the update in the virtual layer. What did you notice?
+በምናባዊው ንብርብር ውስጥ ዝመናውን ለማየት አዲስ ነጥብ ያክሉ ከዚያም የካርታ ማሳያውን (የካርታውን ሸራ በማጉላት ወይም በማንኳኳት)ያድሱ። ምን አስተዋሉ?
 
 
-### To practice your new skills, try to…
+### አዲሱን ችሎታዎን ለመለማመድ፣ የሚከተለውን ይሞክሩ
 
-#### **Load rasters and vectors found on the internet**
+#### በይነመረብ ላይ የሚገኙ ራስተሮች እና ቬክተሮችን ይጫኑ
 
-Aside from local binary files (vectors, rasters), QGIS can also load vectors and rasters found on the internet. Use the Data Source Manager to load the data from the following URL:
+ከአከባቢው የሁለትዮሽ ፋይሎች (ቬክተሮች፣ ራስተሮች) በተጨማሪ፣ QGIS በይነመረብ ላይ የተገኙ ቬክተሮች እና ራስተሮችን መጫን ይችላል። ውሂቡን ከሚከተለው URL ለመጫን የውሂብ ምንጭ ማኔጀሩን ይጠቀሙ፦
 
 https://raw.githubusercontent.com/benhur07b/stomp-covid19-data/master/spatial/stompcovidph_regions.geojson
 
 
-#### **Load a Spreadsheets in QGIS using the Spreadsheet Layers plugin**
+#### የስፕሪድሺት ንብርብሮች ተሰኪን በመጠቀም ስፕሪድሺቶችን QGIS ውስጥ ይጫኑ
 
-Install the Spreadsheet Layers plugin and try to load a spreadsheet in QGIS. The plugin accepts Open Document Standard formats (.ods) and Microsoft Excel files (.xls, .xlsx).
+የስፕሪድሺት ንብርብሮች ተሰኪን ይጫኑ እና ስፕሪድሺቱን QGIS ውስጥ ለመጫን ይሞክሩ። ተሰኪው የክፍት ሰነድ መደበኛ ቅርጸቶችን (.ods) እና የማይክሮሶፍት ኤክሴል ፋይሎችን (.xls ፣ .xlsx) ይቀበላል።
 
-Read here: [https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html](https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html)
+እዚህ ያንብቡ፦[https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html](https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html)
 
+### ጠቃሚ ምክሮች 
 
-### Tips 
-
-1. If you ever need a world map layer, try typing **world** in the Coordinate bar of the Status bar. What happens? This is just one of the easter eggs found in QGIS when you type certain words in the Coordinate bar.
+1. የዓለም ካርታ ንብርብር የሚፈልጉ ከሆነ፣ የሁኔታ አሞሌው የመግጠሚያ አሞሌ ውስጥ **world** ብለው ለመጻፍ ይሞክሩ። ምን ይሆናል? በመጋጠሚያ አሞሌ ውስጥ የተወሰኑ ቃላትን ሲጽፉ QGIS ውስጥ ከሚገኙት የምሥራቅ እንቁላሎች አንዱ ይህ ነው።
