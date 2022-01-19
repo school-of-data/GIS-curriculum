@@ -2,6 +2,7 @@
 
 ## Localisations
 - [**Argentina**](argentina/)
+- [**Australia**](australia/)
 - [**Bangladesh** (in English)](bangladesh/)
 - [**Brazil**](brazil/)
 - [**Egypt**](egypt/)
@@ -11,6 +12,7 @@
 - [**Ghana** (in English)](ghana/)
 - [**India** (in English)](india/)
 - [**Kenya** (in English)](kenya/)
+- [**Nigeria** (in English)](nigeria/)
 - [**Mexico**](mexico/)
 - [**Philippines**](philippines/)
 - [**South Africa** (in English)](south-africa/)

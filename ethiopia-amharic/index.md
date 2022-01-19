@@ -2,7 +2,7 @@
 
 ### [ሞጁል 0 - ለ GIS ጽንሰ ሀሳቦች ቀላል መግቢያ](module0/module0.html)
 ### [ሞጁል 1. የQGIS መግቢያ](module1/module1.html)
-### [Module 2: Layers in QGIS](module2/module2.html)
+### [ሞጁል 2 - በQGIS ውስጥ ንብርብሮች](module2/module2.html)
 ### [Module 3: Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)](module3/module3.html)
 ### [Module 4: Layer Styling and Symbology](module4/module4.html)
 ### [Module 5: Map Design and Creation](module5/module5.html)
