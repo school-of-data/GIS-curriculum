@@ -53,6 +53,7 @@ The data used in the modules for each country can be found below:
 - [**India**](https://drive.google.com/drive/folders/1Tt518b5L7pi_FFqqVq5X_HVfoSYIhpqt?usp=sharing)
 - [**Kenya**](https://drive.google.com/drive/folders/1Yg-Hwmsf488tvq7B6tHDtiX-k9pPYG9m?usp=sharing)
 - [**Mexico**](https://drive.google.com/drive/folders/1ZTpu7SR3aVF21TiSJt19C_Itdo5xHC_b?usp=sharing)
+- [**Nigeria**](https://drive.google.com/drive/folders/18P0Qm9byk-NeGuZtrO3eTRSdg3XHhG8V?usp=sharing)
 - [**Philippines**](https://drive.google.com/drive/folders/1VF2fYgy6DxvVLnwMTK2v99RFMMOUbbHt?usp=sharing)
 - [**South Africa**](https://drive.google.com/drive/folders/1l2xpJzO17wJO0lTkGo1-IGBKPFvQARYT?usp=sharing)
 - [**Sri Lanka**](https://drive.google.com/drive/folders/1ZjYYDz-SfqSV2lwQGpF16uiMw5gRmJUi?usp=sharing)
